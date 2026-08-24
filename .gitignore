@@ -22,3 +22,6 @@ Thumbs.db
 # Local overrides
 docker-compose.override.yml
 .env
+
+# Release archives
+dist/

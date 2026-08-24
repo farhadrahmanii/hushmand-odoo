@@ -1,4 +1,15 @@
 # =============================================================================
+#  FOR FARHAD'S OWN TESTING ONLY -- NEVER GIVE THIS FILE TO A CUSTOMER.
+#
+#  It clones the WHOLE private repository with a GitHub token, so whoever runs
+#  it gets every module in the catalogue, including ones they did not buy and
+#  ones not released yet.
+#
+#  Customers get one of these instead, plus a single-module download link:
+#     install-new-odoo.yml            they have no Odoo
+#     install-into-existing-odoo.yml  they already run Odoo
+# =============================================================================
+# =============================================================================
 #  Odoo 19 + af_jalali  --  single-file deployment for Hostinger Docker Manager
 # =============================================================================
 #

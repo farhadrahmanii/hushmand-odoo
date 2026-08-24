@@ -1,0 +1,137 @@
+# =============================================================================
+#  CASE 2 -- You ALREADY have Odoo running.
+#  This adds the Hushmand modules to it. It does NOT install Odoo, does NOT
+#  touch your database, and does NOT change your Odoo configuration.
+# =============================================================================
+#
+#  If you do not have Odoo yet, use install-new-odoo.yml instead.
+#
+#  HOW IT WORKS
+#  One container runs, downloads the modules, copies them into your existing
+#  Odoo addons folder, and exits. Then you restart Odoo and install them from
+#  the Apps menu, exactly as you would any other Odoo app.
+#
+#  STEP 1 -- find where your Odoo reads extra modules from
+#  ------------------------------------------------------
+#  Look at your existing Odoo compose file or container for a volume mapped to
+#  /mnt/extra-addons. It is one of two shapes:
+#
+#    a) a folder on the server:      - /opt/odoo/addons:/mnt/extra-addons
+#       -> your ADDONS_TARGET is     /opt/odoo/addons
+#
+#    b) a named Docker volume:       - odoo-extra-addons:/mnt/extra-addons
+#       -> your volume name is       odoo-extra-addons
+#
+#  If you cannot find one, your Odoo has no extra-addons folder yet. Create one
+#  (e.g. /opt/odoo/addons), add it to your Odoo compose as above, make sure
+#  --addons-path includes /mnt/extra-addons, and restart Odoo once.
+#
+#  STEP 2 -- edit this file for your shape, (a) or (b). Both are below.
+#  STEP 3 -- deploy this stack. It runs once and stops. That is normal.
+#  STEP 4 -- restart YOUR Odoo container.
+#  STEP 5 -- in Odoo: turn on developer mode
+#              (Settings -> scroll to the bottom -> Activate developer mode)
+#            then Apps -> Update Apps List -> search "Jalali" -> Install.
+#
+#  Nothing here can damage an existing installation: it only writes new folders
+#  into your addons directory.
+# =============================================================================
+
+services:
+
+  install-modules:
+    image: alpine:3
+    container_name: hushmand-module-installer
+    restart: "no"
+    environment:
+      # The download link you were given. One archive per purchase.
+      MODULE_ARCHIVE_URL: "https://example.com/af_jalali-19.0.1.0.0.zip"   # <<< CHANGE ME
+    volumes:
+      # ----- SHAPE (a): a folder on the server. This is the common case. -----
+      # Put YOUR path on the left of the colon. Leave /addons on the right.
+      - /opt/odoo/addons:/addons                                          # <<< CHANGE ME
+      #
+      # ----- SHAPE (b): a named Docker volume -----
+      # Delete the line above, uncomment the line below, and put your volume
+      # name on the left. Then also uncomment the "volumes:" block at the
+      # bottom of this file and set the same name there.
+      # - odoo-extra-addons:/addons
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        set -e
+        apk add --no-cache curl unzip >/dev/null
+
+        echo "=============================================="
+        echo " Installing Hushmand modules into your Odoo"
+        echo "=============================================="
+
+        if [ ! -d /addons ]; then
+          echo "ERROR: the addons folder was not mounted. Check the volumes"
+          echo "section of this file against your Odoo setup."
+          exit 1
+        fi
+
+        echo "Downloading..."
+        curl -fsSL "$${MODULE_ARCHIVE_URL}" -o /tmp/modules.zip
+
+        rm -rf /tmp/unpacked
+        mkdir -p /tmp/unpacked
+        unzip -q /tmp/modules.zip -d /tmp/unpacked
+
+        found=0
+        for manifest in $$(find /tmp/unpacked -maxdepth 3 -name __manifest__.py); do
+          moddir=$$(dirname "$$manifest")
+          name=$$(basename "$$moddir")
+          if [ -d "/addons/$$name" ]; then
+            echo "  updating $$name (replacing the existing copy)"
+            rm -rf "/addons/$$name"
+          else
+            echo "  adding $$name"
+          fi
+          cp -r "$$moddir" /addons/
+          found=1
+        done
+
+        if [ "$$found" = "0" ]; then
+          echo "ERROR: no Odoo module found in the archive."
+          echo "The archive should contain a folder with an __manifest__.py."
+          exit 1
+        fi
+
+        # Odoo runs as uid 101 and must be able to read these files.
+        chmod -R a+rX /addons
+        echo ""
+        echo "Your addons folder now contains:"
+        ls -1 /addons
+        echo ""
+        echo "=============================================="
+        echo " DONE. Two steps left, both in your own Odoo:"
+        echo "   1. Restart your Odoo container"
+        echo "   2. Activate developer mode, then"
+        echo "      Apps -> Update Apps List -> search Jalali -> Install"
+        echo "=============================================="
+
+# ----- Only needed for SHAPE (b), a named volume -----
+# Uncomment these three lines and use your real volume name. "external: true"
+# means "this volume already exists, do not create a new one" -- that is what
+# connects this installer to your running Odoo.
+#
+# volumes:
+#   odoo-extra-addons:
+#     external: true
+
+# =============================================================================
+#  UPDATING LATER
+#  Change MODULE_ARCHIVE_URL to the new download link and deploy this stack
+#  again. It replaces the module folder, keeps your data, and then you restart
+#  Odoo and use Apps -> Upgrade on the module.
+#
+#  IF THE MODULE DOES NOT APPEAR IN THE APPS LIST
+#    1. Did you restart Odoo after running this? It only reads addons at start.
+#    2. Is developer mode on? Without it there is no "Update Apps List".
+#    3. Does your Odoo --addons-path actually include /mnt/extra-addons?
+#    4. Clear the Apps filter -- Odoo shows only "Apps" by default and this is
+#       a technical module. Remove the "Apps" filter to see everything.
+# =============================================================================

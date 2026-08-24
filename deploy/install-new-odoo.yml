@@ -1,0 +1,180 @@
+# =============================================================================
+#  CASE 1 -- You do NOT have Odoo yet.
+#  This installs Odoo 19, PostgreSQL, and the Hushmand modules together.
+# =============================================================================
+#
+#  If you ALREADY run Odoo, do not use this file -- it would create a second,
+#  separate Odoo. Use install-into-existing-odoo.yml instead.
+#
+#  WHAT YOU EDIT: the five values marked  <<< CHANGE ME >>>. Nothing else.
+#
+#  WHAT HAPPENS: PostgreSQL starts, the modules are downloaded and unpacked,
+#  the database is created with the modules installed, then Odoo starts.
+#  First boot takes 3-6 minutes. Watch the "odoo-init" container logs until
+#  you see "Modules loaded."
+#
+#  THEN: open  http://YOUR_SERVER_IP:8069  and log in as  admin
+#
+#  REQUIREMENTS: 2 GB RAM minimum. Below that the install is killed part-way
+#  and leaves a broken database.
+# =============================================================================
+
+services:
+
+  db:
+    image: postgres:16
+    container_name: hushmand-odoo-db
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: "CHANGE_THIS_DB_PASSWORD"        # <<< CHANGE ME (1/5)
+      POSTGRES_DB: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    restart: unless-stopped
+    # Deliberately not published. Only the Odoo container can reach it.
+
+  # ---------------------------------------------------------------------------
+  # Downloads and unpacks the modules you purchased, then exits.
+  # ---------------------------------------------------------------------------
+  modules:
+    image: alpine:3
+    container_name: hushmand-odoo-modules
+    restart: "no"
+    environment:
+      # The download link you were given. One archive per purchase.
+      MODULE_ARCHIVE_URL: "https://example.com/af_jalali-19.0.1.0.0.zip"   # <<< CHANGE ME (2/5)
+    volumes:
+      - odoo-addons:/addons
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        set -e
+        apk add --no-cache curl unzip >/dev/null
+        echo "Downloading modules..."
+        curl -fsSL "$${MODULE_ARCHIVE_URL}" -o /tmp/modules.zip
+        rm -rf /tmp/unpacked /addons/*
+        mkdir -p /tmp/unpacked
+        unzip -q /tmp/modules.zip -d /tmp/unpacked
+        # Copy every Odoo module found, whatever folder depth the archive uses.
+        found=0
+        for manifest in $$(find /tmp/unpacked -maxdepth 3 -name __manifest__.py); do
+          moddir=$$(dirname "$$manifest")
+          echo "  installing $$(basename $$moddir)"
+          cp -r "$$moddir" /addons/
+          found=1
+        done
+        if [ "$$found" = "0" ]; then
+          echo "ERROR: no Odoo module found in the archive."
+          echo "The archive should contain a folder with an __manifest__.py in it."
+          exit 1
+        fi
+        chmod -R a+rX /addons
+        echo "Done. Modules ready:"
+        ls -1 /addons
+
+  # ---------------------------------------------------------------------------
+  # Creates the database and installs the modules, then exits.
+  # Safe to re-run.
+  # ---------------------------------------------------------------------------
+  odoo-init:
+    image: odoo:19
+    container_name: hushmand-odoo-init
+    restart: "no"
+    depends_on:
+      db:
+        condition: service_healthy
+      modules:
+        condition: service_completed_successfully
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - odoo-addons:/mnt/extra-addons:ro
+    command: >
+      odoo
+      --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons
+      --db_host=db
+      --db_user=odoo
+      --db_password=CHANGE_THIS_DB_PASSWORD
+      --database=hushmand
+      --init=af_jalali
+      --stop-after-init
+      --load-language=en_US
+      --limit-time-real=3600
+      --limit-time-cpu=1800
+      --log-level=info
+    #
+    #  --db_password  <<< CHANGE ME (3/5) -- must match POSTGRES_PASSWORD above
+    #  --init         list every module you bought, comma separated,
+    #                 e.g. --init=af_jalali,af_l10n_base
+
+  odoo:
+    image: odoo:19
+    container_name: hushmand-odoo
+    depends_on:
+      db:
+        condition: service_healthy
+      odoo-init:
+        condition: service_completed_successfully
+    ports:
+      - "8069:8069"
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - odoo-addons:/mnt/extra-addons:ro
+    command: >
+      odoo
+      --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons
+      --db_host=db
+      --db_user=odoo
+      --db_password=CHANGE_THIS_DB_PASSWORD
+      --database=hushmand
+      --db-filter=^hushmand$$
+      --no-database-list
+      --admin-passwd=CHANGE_THIS_MASTER_PASSWORD
+      --workers=0
+      --limit-time-real=600
+      --limit-time-cpu=300
+      --log-level=info
+    #
+    #  --db_password   <<< CHANGE ME (4/5) -- same password again
+    #  --admin-passwd  <<< CHANGE ME (5/5) -- Odoo master password, needed to
+    #                  create or restore databases. Long and random. This is
+    #                  NOT your login password.
+    #
+    #  --no-database-list  hides the database manager. Leave this on.
+    #  --workers=0         threaded mode: low memory, and live updates work on
+    #                      port 8069 with no reverse proxy. Right for a test or
+    #                      small installation. Behind a proxy, raise it.
+    restart: unless-stopped
+
+volumes:
+  odoo-db-data:
+  odoo-web-data:
+  odoo-addons:
+
+# =============================================================================
+#  ADDING HTTPS LATER
+#  Point a subdomain at this server, then: delete the "ports:" block from the
+#  odoo service, add --proxy-mode to its command, and uncomment this:
+#
+#  caddy:
+#    image: caddy:2
+#    depends_on: [odoo]
+#    ports: ["80:80", "443:443"]
+#    command: caddy reverse-proxy --from odoo.example.com --to odoo:8069
+#    volumes: ["caddy-data:/data"]
+#    restart: unless-stopped
+#
+#  ...and add  caddy-data:  under volumes. Certificates are automatic.
+#
+#  UPDATING TO A NEW MODULE VERSION
+#  Change MODULE_ARCHIVE_URL to the new link, restart the "modules" container,
+#  then run odoo once with --update=af_jalali instead of --no-database-list.
+#  Your data is kept in the volumes.
+# =============================================================================
