@@ -1,0 +1,3281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- GENERATED FILE - do not edit by hand.
+     Regenerate with: python tools/generate_geography_data.py
+     Source: tools/data/af_geography.json (Hushmand ERP production data) -->
+<odoo noupdate="1">
+        <record id="district_af_103" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Chahar Asyab</field>
+            <field name="name_dr">چهارآسیاب</field>
+            <field name="name_ps">چهارآسیاب</field>
+        </record>
+        <record id="district_af_104" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Bagrami</field>
+            <field name="name_dr">بگرامی</field>
+            <field name="name_ps">بگرامی</field>
+        </record>
+        <record id="district_af_105" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Dehsabz</field>
+            <field name="name_dr">ده سبز</field>
+            <field name="name_ps">ده سبز</field>
+        </record>
+        <record id="district_af_106" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Shakar Dara</field>
+            <field name="name_dr">شکردره</field>
+            <field name="name_ps">شکردره</field>
+        </record>
+        <record id="district_af_107" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Musahi</field>
+            <field name="name_dr">موسئی</field>
+            <field name="name_ps">موسئی</field>
+        </record>
+        <record id="district_af_108" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Mir Bacha Kot</field>
+            <field name="name_dr">میر بچه کوت</field>
+            <field name="name_ps">میر بچه کوت</field>
+        </record>
+        <record id="district_af_109" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Khak-E-Jabar</field>
+            <field name="name_dr">خاک جبار</field>
+            <field name="name_ps">خاک جبار</field>
+        </record>
+        <record id="district_af_110" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Kalakan</field>
+            <field name="name_dr">کلکان</field>
+            <field name="name_ps">کلکان</field>
+        </record>
+        <record id="district_af_111" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Guldara</field>
+            <field name="name_dr">گلدره</field>
+            <field name="name_ps">گلدره</field>
+        </record>
+        <record id="district_af_112" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Farza</field>
+            <field name="name_dr">فرزه</field>
+            <field name="name_ps">فرزه</field>
+        </record>
+        <record id="district_af_113" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Estalef</field>
+            <field name="name_dr">استالف</field>
+            <field name="name_ps">استالف</field>
+        </record>
+        <record id="district_af_114" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Qara Bagh</field>
+            <field name="name_dr">قره باغ</field>
+            <field name="name_ps">قره باغ</field>
+        </record>
+        <record id="district_af_115" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Surubi</field>
+            <field name="name_dr">سروبی</field>
+            <field name="name_ps">سروبی</field>
+        </record>
+        <record id="district_af_116" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd1</field>
+            <field name="name_dr">ناحیه1</field>
+            <field name="name_ps">ناحیه1</field>
+        </record>
+        <record id="district_af_117" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd2</field>
+            <field name="name_dr">ناحیه2</field>
+            <field name="name_ps">ناحیه2</field>
+        </record>
+        <record id="district_af_118" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd3</field>
+            <field name="name_dr">ناحیه3</field>
+            <field name="name_ps">ناحیه3</field>
+        </record>
+        <record id="district_af_119" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 4</field>
+            <field name="name_dr">ناحیه 4</field>
+            <field name="name_ps">ناحیه 4</field>
+        </record>
+        <record id="district_af_120" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 5</field>
+            <field name="name_dr">ناحیه 5</field>
+            <field name="name_ps">ناحیه 5</field>
+        </record>
+        <record id="district_af_121" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 6</field>
+            <field name="name_dr">ناحیه 6</field>
+            <field name="name_ps">ناحیه 6</field>
+        </record>
+        <record id="district_af_122" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 7</field>
+            <field name="name_dr">ناحیه 7</field>
+            <field name="name_ps">ناحیه 7</field>
+        </record>
+        <record id="district_af_123" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 8</field>
+            <field name="name_dr">ناحیه 8</field>
+            <field name="name_ps">ناحیه 8</field>
+        </record>
+        <record id="district_af_124" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 9</field>
+            <field name="name_dr">ناحیه 9</field>
+            <field name="name_ps">ناحیه 9</field>
+        </record>
+        <record id="district_af_125" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 10</field>
+            <field name="name_dr">ناحیه 10</field>
+            <field name="name_ps">ناحیه 10</field>
+        </record>
+        <record id="district_af_126" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 11</field>
+            <field name="name_dr">ناحیه 11</field>
+            <field name="name_ps">ناحیه 11</field>
+        </record>
+        <record id="district_af_127" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 12</field>
+            <field name="name_dr">ناحیه 12</field>
+            <field name="name_ps">ناحیه 12</field>
+        </record>
+        <record id="district_af_128" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 13</field>
+            <field name="name_dr">ناحیه 13</field>
+            <field name="name_ps">ناحیه 13</field>
+        </record>
+        <record id="district_af_129" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 14</field>
+            <field name="name_dr">ناحیه 14</field>
+            <field name="name_ps">ناحیه 14</field>
+        </record>
+        <record id="district_af_130" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 15</field>
+            <field name="name_dr">ناحیه 15</field>
+            <field name="name_ps">ناحیه 15</field>
+        </record>
+        <record id="district_af_131" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 16</field>
+            <field name="name_dr">ناحیه 16</field>
+            <field name="name_ps">ناحیه 16</field>
+        </record>
+        <record id="district_af_132" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 17</field>
+            <field name="name_dr">ناحیه 17</field>
+            <field name="name_ps">ناحیه 17</field>
+        </record>
+        <record id="district_af_133" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 18</field>
+            <field name="name_dr">ناحیه 18</field>
+            <field name="name_ps">ناحیه 18</field>
+        </record>
+        <record id="district_af_134" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 19</field>
+            <field name="name_dr">ناحیه 19</field>
+            <field name="name_ps">ناحیه 19</field>
+        </record>
+        <record id="district_af_135" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 20</field>
+            <field name="name_dr">ناحیه 20</field>
+            <field name="name_ps">ناحیه 20</field>
+        </record>
+        <record id="district_af_136" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 21</field>
+            <field name="name_dr">ناحیه 21</field>
+            <field name="name_ps">ناحیه 21</field>
+        </record>
+        <record id="district_af_137" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Pd 22</field>
+            <field name="name_dr">ناحیه 22</field>
+            <field name="name_ps">ناحیه 22</field>
+        </record>
+        <record id="district_af_139" model="af.district">
+            <field name="state_id" ref="state_af_kab"/>
+            <field name="name">Paghman</field>
+            <field name="name_dr">پغمان</field>
+            <field name="name_ps">پغمان</field>
+        </record>
+        <record id="district_af_201" model="af.district">
+            <field name="state_id" ref="state_af_kap"/>
+            <field name="name">Provincial Capital Of Kapisa (mahmudi Raqi)</field>
+            <field name="name_dr">( مرکز ولایت کاپیسا) محمود راقی</field>
+            <field name="name_ps">( مرکز ولایت کاپیسا) محمود راقی</field>
+        </record>
+        <record id="district_af_202" model="af.district">
+            <field name="state_id" ref="state_af_kap"/>
+            <field name="name">Hissa-E- Duwumi Kohistan</field>
+            <field name="name_dr">حصه دوم کوهستان</field>
+            <field name="name_ps">حصه دوم کوهستان</field>
+        </record>
+        <record id="district_af_203" model="af.district">
+            <field name="state_id" ref="state_af_kap"/>
+            <field name="name">Koh Band</field>
+            <field name="name_dr">کوه بند</field>
+            <field name="name_ps">کوه بند</field>
+        </record>
+        <record id="district_af_204" model="af.district">
+            <field name="state_id" ref="state_af_kap"/>
+            <field name="name">Hissa-E-Awali Kohistan</field>
+            <field name="name_dr">حصه اول کوهستان</field>
+            <field name="name_ps">حصه اول کوهستان</field>
+        </record>
+        <record id="district_af_205" model="af.district">
+            <field name="state_id" ref="state_af_kap"/>
+            <field name="name">Nijrab</field>
+            <field name="name_dr">نجراب</field>
+            <field name="name_ps">نجراب</field>
+        </record>
+        <record id="district_af_206" model="af.district">
+            <field name="state_id" ref="state_af_kap"/>
+            <field name="name">Tagab</field>
+            <field name="name_dr">تگاب</field>
+            <field name="name_ps">تگاب</field>
+        </record>
+        <record id="district_af_207" model="af.district">
+            <field name="state_id" ref="state_af_kap"/>
+            <field name="name">Alasay</field>
+            <field name="name_dr">اله سای</field>
+            <field name="name_ps">اله سای</field>
+        </record>
+        <record id="district_af_209" model="af.district">
+            <field name="state_id" ref="state_af_kap"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_210" model="af.district">
+            <field name="state_id" ref="state_af_kap"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه 2</field>
+            <field name="name_ps">ناحیه 2</field>
+        </record>
+        <record id="district_af_301" model="af.district">
+            <field name="state_id" ref="state_af_par"/>
+            <field name="name">Provincial Capital Of Parwan (charikar)</field>
+            <field name="name_dr">( مرکز ولایت پروان) چاریکار</field>
+            <field name="name_ps">( مرکز ولایت پروان) چاریکار</field>
+        </record>
+        <record id="district_af_302" model="af.district">
+            <field name="state_id" ref="state_af_par"/>
+            <field name="name">Bagram</field>
+            <field name="name_dr">بگرام</field>
+            <field name="name_ps">بگرام</field>
+        </record>
+        <record id="district_af_303" model="af.district">
+            <field name="state_id" ref="state_af_par"/>
+            <field name="name">Shinwari</field>
+            <field name="name_dr">شینواری</field>
+            <field name="name_ps">شینواری</field>
+        </record>
+        <record id="district_af_304" model="af.district">
+            <field name="state_id" ref="state_af_par"/>
+            <field name="name">Sayid Khale</field>
+            <field name="name_dr">سید خیل</field>
+            <field name="name_ps">سید خیل</field>
+        </record>
+        <record id="district_af_305" model="af.district">
+            <field name="state_id" ref="state_af_par"/>
+            <field name="name">Jabulussaraj</field>
+            <field name="name_dr">جبل السراج</field>
+            <field name="name_ps">جبل السراج</field>
+        </record>
+        <record id="district_af_306" model="af.district">
+            <field name="state_id" ref="state_af_par"/>
+            <field name="name">Salang</field>
+            <field name="name_dr">سالنگ</field>
+            <field name="name_ps">سالنگ</field>
+        </record>
+        <record id="district_af_307" model="af.district">
+            <field name="state_id" ref="state_af_par"/>
+            <field name="name">Syahgirdi Ghorband</field>
+            <field name="name_dr">سیاه گرد غوربند</field>
+            <field name="name_ps">سیاه گرد غوربند</field>
+        </record>
+        <record id="district_af_308" model="af.district">
+            <field name="state_id" ref="state_af_par"/>
+            <field name="name">Kohi Safi</field>
+            <field name="name_dr">کوه صافی</field>
+            <field name="name_ps">کوه صافی</field>
+        </record>
+        <record id="district_af_309" model="af.district">
+            <field name="state_id" ref="state_af_par"/>
+            <field name="name">Sorkhi Parsa</field>
+            <field name="name_dr">سرخ پارسا</field>
+            <field name="name_ps">سرخ پارسا</field>
+        </record>
+        <record id="district_af_310" model="af.district">
+            <field name="state_id" ref="state_af_par"/>
+            <field name="name">Shaykh Ali</field>
+            <field name="name_dr">شیخ علی</field>
+            <field name="name_ps">شیخ علی</field>
+        </record>
+        <record id="district_af_313" model="af.district">
+            <field name="state_id" ref="state_af_par"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_314" model="af.district">
+            <field name="state_id" ref="state_af_par"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه 2</field>
+            <field name="name_ps">ناحیه 2</field>
+        </record>
+        <record id="district_af_315" model="af.district">
+            <field name="state_id" ref="state_af_par"/>
+            <field name="name">Pd 3</field>
+            <field name="name_dr">ناحیه 3</field>
+            <field name="name_ps">ناحیه 3</field>
+        </record>
+        <record id="district_af_316" model="af.district">
+            <field name="state_id" ref="state_af_par"/>
+            <field name="name">Pd 4</field>
+            <field name="name_dr">ناحیه 4</field>
+            <field name="name_ps">ناحیه 4</field>
+        </record>
+        <record id="district_af_317" model="af.district">
+            <field name="state_id" ref="state_af_par"/>
+            <field name="name">Pd 5</field>
+            <field name="name_dr">ناحیه 5</field>
+            <field name="name_ps">ناحیه 5</field>
+        </record>
+        <record id="district_af_318" model="af.district">
+            <field name="state_id" ref="state_af_par"/>
+            <field name="name">Pd 6</field>
+            <field name="name_dr">ناحیه 6</field>
+            <field name="name_ps">ناحیه 6</field>
+        </record>
+        <record id="district_af_319" model="af.district">
+            <field name="state_id" ref="state_af_par"/>
+            <field name="name">Pd 7</field>
+            <field name="name_dr">ناحیه 7</field>
+            <field name="name_ps">ناحیه 7</field>
+        </record>
+        <record id="district_af_401" model="af.district">
+            <field name="state_id" ref="state_af_war"/>
+            <field name="name">Provincial Capital Of Wardak (maydan Shahr)</field>
+            <field name="name_dr">( مرکز ولایت وردک) میدان شهر</field>
+            <field name="name_ps">( مرکز ولایت وردک) میدان شهر</field>
+        </record>
+        <record id="district_af_402" model="af.district">
+            <field name="state_id" ref="state_af_war"/>
+            <field name="name">Nerkh</field>
+            <field name="name_dr">نرخ</field>
+            <field name="name_ps">نرخ</field>
+        </record>
+        <record id="district_af_403" model="af.district">
+            <field name="state_id" ref="state_af_war"/>
+            <field name="name">Jalrez</field>
+            <field name="name_dr">جلریز</field>
+            <field name="name_ps">جلریز</field>
+        </record>
+        <record id="district_af_404" model="af.district">
+            <field name="state_id" ref="state_af_war"/>
+            <field name="name">Chaki Wardak</field>
+            <field name="name_dr">چک وردک</field>
+            <field name="name_ps">چک وردک</field>
+        </record>
+        <record id="district_af_405" model="af.district">
+            <field name="state_id" ref="state_af_war"/>
+            <field name="name">Sayydabad</field>
+            <field name="name_dr">سید آباد</field>
+            <field name="name_ps">سید آباد</field>
+        </record>
+        <record id="district_af_406" model="af.district">
+            <field name="state_id" ref="state_af_war"/>
+            <field name="name">Daymirdad</field>
+            <field name="name_dr">دایمیرداد</field>
+            <field name="name_ps">دایمیرداد</field>
+        </record>
+        <record id="district_af_407" model="af.district">
+            <field name="state_id" ref="state_af_war"/>
+            <field name="name">Hissa-E-Awali Bihsud</field>
+            <field name="name_dr">حصه اول بهسود</field>
+            <field name="name_ps">حصه اول بهسود</field>
+        </record>
+        <record id="district_af_408" model="af.district">
+            <field name="state_id" ref="state_af_war"/>
+            <field name="name">Jaghatu</field>
+            <field name="name_dr">جغتو</field>
+            <field name="name_ps">جغتو</field>
+        </record>
+        <record id="district_af_409" model="af.district">
+            <field name="state_id" ref="state_af_war"/>
+            <field name="name">Markaz-E-Behsud</field>
+            <field name="name_dr">مرکز بهسود</field>
+            <field name="name_ps">مرکز بهسود</field>
+        </record>
+        <record id="district_af_501" model="af.district">
+            <field name="state_id" ref="state_af_log"/>
+            <field name="name">(provincial Capital Of Logar) Puli Alam</field>
+            <field name="name_dr">(مرکز ولایت لوگر) پل علم</field>
+            <field name="name_ps">(مرکز ولایت لوگر) پل علم</field>
+        </record>
+        <record id="district_af_502" model="af.district">
+            <field name="state_id" ref="state_af_log"/>
+            <field name="name">Baraki Barak</field>
+            <field name="name_dr">برکی برک</field>
+            <field name="name_ps">برکی برک</field>
+        </record>
+        <record id="district_af_503" model="af.district">
+            <field name="state_id" ref="state_af_log"/>
+            <field name="name">Charkh</field>
+            <field name="name_dr">چرخ</field>
+            <field name="name_ps">چرخ</field>
+        </record>
+        <record id="district_af_504" model="af.district">
+            <field name="state_id" ref="state_af_log"/>
+            <field name="name">Khushi</field>
+            <field name="name_dr">خوشی</field>
+            <field name="name_ps">خوشی</field>
+        </record>
+        <record id="district_af_505" model="af.district">
+            <field name="state_id" ref="state_af_log"/>
+            <field name="name">Mohammad Agha</field>
+            <field name="name_dr">محمد آغه</field>
+            <field name="name_ps">محمد آغه</field>
+        </record>
+        <record id="district_af_506" model="af.district">
+            <field name="state_id" ref="state_af_log"/>
+            <field name="name">Khar War</field>
+            <field name="name_dr">خروار</field>
+            <field name="name_ps">خروار</field>
+        </record>
+        <record id="district_af_507" model="af.district">
+            <field name="state_id" ref="state_af_log"/>
+            <field name="name">Azra</field>
+            <field name="name_dr">ازره</field>
+            <field name="name_ps">ازره</field>
+        </record>
+        <record id="district_af_602" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Behsud</field>
+            <field name="name_dr">بهسود</field>
+            <field name="name_ps">بهسود</field>
+        </record>
+        <record id="district_af_603" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Sorkh Rud</field>
+            <field name="name_dr">سرخرود</field>
+            <field name="name_ps">سرخرود</field>
+        </record>
+        <record id="district_af_604" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Chaparhar</field>
+            <field name="name_dr">چپرهار</field>
+            <field name="name_ps">چپرهار</field>
+        </record>
+        <record id="district_af_605" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Kama</field>
+            <field name="name_dr">کامه</field>
+            <field name="name_ps">کامه</field>
+        </record>
+        <record id="district_af_606" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Kuzkunar</field>
+            <field name="name_dr">کوزکنر</field>
+            <field name="name_ps">کوزکنر</field>
+        </record>
+        <record id="district_af_607" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Rodat</field>
+            <field name="name_dr">رودات</field>
+            <field name="name_ps">رودات</field>
+        </record>
+        <record id="district_af_608" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Khugyani</field>
+            <field name="name_dr">خوگیانی</field>
+            <field name="name_ps">خوگیانی</field>
+        </record>
+        <record id="district_af_609" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Bati Kot</field>
+            <field name="name_dr">بتی کوت</field>
+            <field name="name_ps">بتی کوت</field>
+        </record>
+        <record id="district_af_610" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Deh Bala</field>
+            <field name="name_dr">ده بالا</field>
+            <field name="name_ps">ده بالا</field>
+        </record>
+        <record id="district_af_611" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Pachir Wagam</field>
+            <field name="name_dr">پچیرواگام</field>
+            <field name="name_ps">پچیرواگام</field>
+        </record>
+        <record id="district_af_612" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Darah-E-Noor</field>
+            <field name="name_dr">دره نور</field>
+            <field name="name_ps">دره نور</field>
+        </record>
+        <record id="district_af_613" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Kot</field>
+            <field name="name_dr">کوت</field>
+            <field name="name_ps">کوت</field>
+        </record>
+        <record id="district_af_614" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Goshta</field>
+            <field name="name_dr">گوشته</field>
+            <field name="name_ps">گوشته</field>
+        </record>
+        <record id="district_af_615" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Achin</field>
+            <field name="name_dr">اچین</field>
+            <field name="name_ps">اچین</field>
+        </record>
+        <record id="district_af_616" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Shinwar</field>
+            <field name="name_dr">شینوار</field>
+            <field name="name_ps">شینوار</field>
+        </record>
+        <record id="district_af_617" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Muhmand Dara</field>
+            <field name="name_dr">مهمنددره</field>
+            <field name="name_ps">مهمنددره</field>
+        </record>
+        <record id="district_af_618" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Lalpoor</field>
+            <field name="name_dr">لعل پور</field>
+            <field name="name_ps">لعل پور</field>
+        </record>
+        <record id="district_af_619" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Sher Zad</field>
+            <field name="name_dr">شیرزاد</field>
+            <field name="name_ps">شیرزاد</field>
+        </record>
+        <record id="district_af_620" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Nazyan</field>
+            <field name="name_dr">نازیان</field>
+            <field name="name_ps">نازیان</field>
+        </record>
+        <record id="district_af_621" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Hesarak</field>
+            <field name="name_dr">حصارک</field>
+            <field name="name_ps">حصارک</field>
+        </record>
+        <record id="district_af_622" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Dur Baba</field>
+            <field name="name_dr">دربابا</field>
+            <field name="name_ps">دربابا</field>
+        </record>
+        <record id="district_af_624" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_625" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه 2</field>
+            <field name="name_ps">ناحیه 2</field>
+        </record>
+        <record id="district_af_626" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Pd 3</field>
+            <field name="name_dr">ناحیه 3</field>
+            <field name="name_ps">ناحیه 3</field>
+        </record>
+        <record id="district_af_627" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Pd 4</field>
+            <field name="name_dr">ناحیه 4</field>
+            <field name="name_ps">ناحیه 4</field>
+        </record>
+        <record id="district_af_628" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Pd 5</field>
+            <field name="name_dr">ناحیه 5</field>
+            <field name="name_ps">ناحیه 5</field>
+        </record>
+        <record id="district_af_629" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Provincial Capital Of Nangarhar) Jalalabad)</field>
+            <field name="name_dr">(مرکز لایت ننگرهار) جلال آباد</field>
+            <field name="name_ps">(مرکز لایت ننگرهار) جلال آباد</field>
+        </record>
+        <record id="district_af_630" model="af.district">
+            <field name="state_id" ref="state_af_nan"/>
+            <field name="name">Spenghar</field>
+            <field name="name_dr">اسپین غر</field>
+            <field name="name_ps">اسپین غر</field>
+        </record>
+        <record id="district_af_701" model="af.district">
+            <field name="state_id" ref="state_af_lag"/>
+            <field name="name">(provincial Capital Of Laghman) Mehterlam</field>
+            <field name="name_dr">( مرکز ولایت لغمان) مهترلام</field>
+            <field name="name_ps">( مرکز ولایت لغمان) مهترلام</field>
+        </record>
+        <record id="district_af_702" model="af.district">
+            <field name="state_id" ref="state_af_lag"/>
+            <field name="name">Qarghayee</field>
+            <field name="name_dr">قرغیی</field>
+            <field name="name_ps">قرغیی</field>
+        </record>
+        <record id="district_af_703" model="af.district">
+            <field name="state_id" ref="state_af_lag"/>
+            <field name="name">Alishing</field>
+            <field name="name_dr">علیشنگ</field>
+            <field name="name_ps">علیشنگ</field>
+        </record>
+        <record id="district_af_704" model="af.district">
+            <field name="state_id" ref="state_af_lag"/>
+            <field name="name">Alingar</field>
+            <field name="name_dr">علینگار</field>
+            <field name="name_ps">علینگار</field>
+        </record>
+        <record id="district_af_705" model="af.district">
+            <field name="state_id" ref="state_af_lag"/>
+            <field name="name">Dawlat Shah</field>
+            <field name="name_dr">دولت شاه</field>
+            <field name="name_ps">دولت شاه</field>
+        </record>
+        <record id="district_af_707" model="af.district">
+            <field name="state_id" ref="state_af_lag"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_708" model="af.district">
+            <field name="state_id" ref="state_af_lag"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه 2</field>
+            <field name="name_ps">ناحیه 2</field>
+        </record>
+        <record id="district_af_801" model="af.district">
+            <field name="state_id" ref="state_af_pan"/>
+            <field name="name">Provincial Capital Of Panjsher ( Bazarak )</field>
+            <field name="name_dr">( مرکز ولایت پنجشیر) بازارک</field>
+            <field name="name_ps">( مرکز ولایت پنجشیر) بازارک</field>
+        </record>
+        <record id="district_af_802" model="af.district">
+            <field name="state_id" ref="state_af_pan"/>
+            <field name="name">Rukha</field>
+            <field name="name_dr">رخه</field>
+            <field name="name_ps">رخه</field>
+        </record>
+        <record id="district_af_803" model="af.district">
+            <field name="state_id" ref="state_af_pan"/>
+            <field name="name">Darah</field>
+            <field name="name_dr">دره</field>
+            <field name="name_ps">دره</field>
+        </record>
+        <record id="district_af_804" model="af.district">
+            <field name="state_id" ref="state_af_pan"/>
+            <field name="name">Hissa-E-Awal ( Khinj )</field>
+            <field name="name_dr">حصه اول - خنج</field>
+            <field name="name_ps">حصه اول - خنج</field>
+        </record>
+        <record id="district_af_805" model="af.district">
+            <field name="state_id" ref="state_af_pan"/>
+            <field name="name">Unaba</field>
+            <field name="name_dr">عنابه</field>
+            <field name="name_ps">عنابه</field>
+        </record>
+        <record id="district_af_806" model="af.district">
+            <field name="state_id" ref="state_af_pan"/>
+            <field name="name">Shutul</field>
+            <field name="name_dr">شتل</field>
+            <field name="name_ps">شتل</field>
+        </record>
+        <record id="district_af_807" model="af.district">
+            <field name="state_id" ref="state_af_pan"/>
+            <field name="name">Paryan</field>
+            <field name="name_dr">پریان</field>
+            <field name="name_ps">پریان</field>
+        </record>
+        <record id="district_af_901" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Provincial Capital Of Baghlan ( Pul-E-Khumri )</field>
+            <field name="name_dr">( مرکز ولایت بغلان) پلخمری</field>
+            <field name="name_ps">( مرکز ولایت بغلان) پلخمری</field>
+        </record>
+        <record id="district_af_902" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Dahana-E-Ghuri</field>
+            <field name="name_dr">دهنه غوری</field>
+            <field name="name_ps">دهنه غوری</field>
+        </record>
+        <record id="district_af_903" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Dushi</field>
+            <field name="name_dr">دوشی</field>
+            <field name="name_ps">دوشی</field>
+        </record>
+        <record id="district_af_904" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Nahreen</field>
+            <field name="name_dr">نهرین</field>
+            <field name="name_ps">نهرین</field>
+        </record>
+        <record id="district_af_905" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Baghlan-E-Jadeed</field>
+            <field name="name_dr">بغلان جید</field>
+            <field name="name_ps">بغلان جید</field>
+        </record>
+        <record id="district_af_906" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Khinjan</field>
+            <field name="name_dr">خنجان</field>
+            <field name="name_ps">خنجان</field>
+        </record>
+        <record id="district_af_907" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Andarab</field>
+            <field name="name_dr">اندراب</field>
+            <field name="name_ps">اندراب</field>
+        </record>
+        <record id="district_af_908" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Deh Salah</field>
+            <field name="name_dr">ده صلاح</field>
+            <field name="name_ps">ده صلاح</field>
+        </record>
+        <record id="district_af_909" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Jalga</field>
+            <field name="name_dr">جلگه</field>
+            <field name="name_ps">جلگه</field>
+        </record>
+        <record id="district_af_910" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Burka</field>
+            <field name="name_dr">برکه</field>
+            <field name="name_ps">برکه</field>
+        </record>
+        <record id="district_af_911" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Tala Wa Barfak</field>
+            <field name="name_dr">تاله وبرفک</field>
+            <field name="name_ps">تاله وبرفک</field>
+        </record>
+        <record id="district_af_912" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Pul-E-Hisar</field>
+            <field name="name_dr">پل حصار</field>
+            <field name="name_ps">پل حصار</field>
+        </record>
+        <record id="district_af_913" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Khost Wa Firing</field>
+            <field name="name_dr">خوست و فرنگ</field>
+            <field name="name_ps">خوست و فرنگ</field>
+        </record>
+        <record id="district_af_914" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Gozargah-E-Noor</field>
+            <field name="name_dr">گذرگاه نور</field>
+            <field name="name_ps">گذرگاه نور</field>
+        </record>
+        <record id="district_af_915" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Firing Wa Gharu</field>
+            <field name="name_dr">فرنگ وغارو</field>
+            <field name="name_ps">فرنگ وغارو</field>
+        </record>
+        <record id="district_af_916" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_917" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه 2</field>
+            <field name="name_ps">ناحیه 2</field>
+        </record>
+        <record id="district_af_918" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Pd 3</field>
+            <field name="name_dr">ناحیه 3</field>
+            <field name="name_ps">ناحیه 3</field>
+        </record>
+        <record id="district_af_919" model="af.district">
+            <field name="state_id" ref="state_af_bgl"/>
+            <field name="name">Pd 4</field>
+            <field name="name_dr">ناحیه 4</field>
+            <field name="name_ps">ناحیه 4</field>
+        </record>
+        <record id="district_af_1001" model="af.district">
+            <field name="state_id" ref="state_af_bam"/>
+            <field name="name">Provincial Capital Of Bamyan ( Bamyan )</field>
+            <field name="name_dr">( مرکز ولایت بامیان) بامیان</field>
+            <field name="name_ps">( مرکز ولایت بامیان) بامیان</field>
+        </record>
+        <record id="district_af_1002" model="af.district">
+            <field name="state_id" ref="state_af_bam"/>
+            <field name="name">Shebar</field>
+            <field name="name_dr">شیبر</field>
+            <field name="name_ps">شیبر</field>
+        </record>
+        <record id="district_af_1003" model="af.district">
+            <field name="state_id" ref="state_af_bam"/>
+            <field name="name">Saighan</field>
+            <field name="name_dr">سیغان</field>
+            <field name="name_ps">سیغان</field>
+        </record>
+        <record id="district_af_1004" model="af.district">
+            <field name="state_id" ref="state_af_bam"/>
+            <field name="name">Kahmard</field>
+            <field name="name_dr">کهمرد</field>
+            <field name="name_ps">کهمرد</field>
+        </record>
+        <record id="district_af_1005" model="af.district">
+            <field name="state_id" ref="state_af_bam"/>
+            <field name="name">Yakawlang</field>
+            <field name="name_dr">یکاولنگ</field>
+            <field name="name_ps">یکاولنگ</field>
+        </record>
+        <record id="district_af_1006" model="af.district">
+            <field name="state_id" ref="state_af_bam"/>
+            <field name="name">Panjab</field>
+            <field name="name_dr">پنجاب</field>
+            <field name="name_ps">پنجاب</field>
+        </record>
+        <record id="district_af_1007" model="af.district">
+            <field name="state_id" ref="state_af_bam"/>
+            <field name="name">Waras</field>
+            <field name="name_dr">ورس</field>
+            <field name="name_ps">ورس</field>
+        </record>
+        <record id="district_af_1101" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Provincial Capital Of Ghazni ( Ghazni )</field>
+            <field name="name_dr">(مرکز ولایت غزنی) غزنی</field>
+            <field name="name_ps">(مرکز ولایت غزنی) غزنی</field>
+        </record>
+        <record id="district_af_1102" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Wali Mohammad Shahid Khugyani</field>
+            <field name="name_dr">ولی محمد شهید خوگیانی</field>
+            <field name="name_ps">ولی محمد شهید خوگیانی</field>
+        </record>
+        <record id="district_af_1103" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Khwaja Omari</field>
+            <field name="name_dr">خواجه عمری</field>
+            <field name="name_ps">خواجه عمری</field>
+        </record>
+        <record id="district_af_1104" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Waghaz</field>
+            <field name="name_dr">واغظ</field>
+            <field name="name_ps">واغظ</field>
+        </record>
+        <record id="district_af_1105" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Deh Yak</field>
+            <field name="name_dr">ده یک</field>
+            <field name="name_ps">ده یک</field>
+        </record>
+        <record id="district_af_1106" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Jaghatu</field>
+            <field name="name_dr">جغتو</field>
+            <field name="name_ps">جغتو</field>
+        </record>
+        <record id="district_af_1107" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Andar</field>
+            <field name="name_dr">اندر</field>
+            <field name="name_ps">اندر</field>
+        </record>
+        <record id="district_af_1108" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Zanakhan</field>
+            <field name="name_dr">زنخان</field>
+            <field name="name_ps">زنخان</field>
+        </record>
+        <record id="district_af_1109" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Rashidan</field>
+            <field name="name_dr">رشیدان</field>
+            <field name="name_ps">رشیدان</field>
+        </record>
+        <record id="district_af_1110" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Nawur</field>
+            <field name="name_dr">ناور</field>
+            <field name="name_ps">ناور</field>
+        </record>
+        <record id="district_af_1111" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Qara Bagh</field>
+            <field name="name_dr">قره باغ</field>
+            <field name="name_ps">قره باغ</field>
+        </record>
+        <record id="district_af_1112" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Giro</field>
+            <field name="name_dr">گیرو</field>
+            <field name="name_ps">گیرو</field>
+        </record>
+        <record id="district_af_1113" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Ab Band</field>
+            <field name="name_dr">آب بند</field>
+            <field name="name_ps">آب بند</field>
+        </record>
+        <record id="district_af_1114" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Jaghuri</field>
+            <field name="name_dr">جاغوری</field>
+            <field name="name_ps">جاغوری</field>
+        </record>
+        <record id="district_af_1115" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Muqur</field>
+            <field name="name_dr">مقر</field>
+            <field name="name_ps">مقر</field>
+        </record>
+        <record id="district_af_1116" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Malistan</field>
+            <field name="name_dr">مالستان</field>
+            <field name="name_ps">مالستان</field>
+        </record>
+        <record id="district_af_1117" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Gelan</field>
+            <field name="name_dr">گیلان</field>
+            <field name="name_ps">گیلان</field>
+        </record>
+        <record id="district_af_1118" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Ajristan</field>
+            <field name="name_dr">اجرستان</field>
+            <field name="name_ps">اجرستان</field>
+        </record>
+        <record id="district_af_1119" model="af.district">
+            <field name="state_id" ref="state_af_gha"/>
+            <field name="name">Nawa</field>
+            <field name="name_dr">ناوه</field>
+            <field name="name_ps">ناوه</field>
+        </record>
+        <record id="district_af_1201" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Provincial Capital Of Paktika ( Sharan )</field>
+            <field name="name_dr">( مرکز ولایت پکتیکا) شرن</field>
+            <field name="name_ps">( مرکز ولایت پکتیکا) شرن</field>
+        </record>
+        <record id="district_af_1202" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Mata Khan</field>
+            <field name="name_dr">متاخان</field>
+            <field name="name_ps">متاخان</field>
+        </record>
+        <record id="district_af_1203" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Yosuf Khel</field>
+            <field name="name_dr">یوسف خیل</field>
+            <field name="name_ps">یوسف خیل</field>
+        </record>
+        <record id="district_af_1204" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Yahya Khel</field>
+            <field name="name_dr">یحیی خیل</field>
+            <field name="name_ps">یحیی خیل</field>
+        </record>
+        <record id="district_af_1205" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Sar Rawza</field>
+            <field name="name_dr">سرروضه</field>
+            <field name="name_ps">سرروضه</field>
+        </record>
+        <record id="district_af_1206" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Omna</field>
+            <field name="name_dr">اومنه</field>
+            <field name="name_ps">اومنه</field>
+        </record>
+        <record id="district_af_1207" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Zarghun Shahr</field>
+            <field name="name_dr">زرغون شهر</field>
+            <field name="name_ps">زرغون شهر</field>
+        </record>
+        <record id="district_af_1208" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Gomal</field>
+            <field name="name_dr">گومل</field>
+            <field name="name_ps">گومل</field>
+        </record>
+        <record id="district_af_1209" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Jani Khel</field>
+            <field name="name_dr">جانی خیل</field>
+            <field name="name_ps">جانی خیل</field>
+        </record>
+        <record id="district_af_1210" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Surubi</field>
+            <field name="name_dr">سروبی</field>
+            <field name="name_ps">سروبی</field>
+        </record>
+        <record id="district_af_1211" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Urgoon</field>
+            <field name="name_dr">اورگون</field>
+            <field name="name_ps">اورگون</field>
+        </record>
+        <record id="district_af_1212" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Ziruk</field>
+            <field name="name_dr">زیروک</field>
+            <field name="name_ps">زیروک</field>
+        </record>
+        <record id="district_af_1213" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Nika</field>
+            <field name="name_dr">نیکه</field>
+            <field name="name_ps">نیکه</field>
+        </record>
+        <record id="district_af_1214" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Barmal</field>
+            <field name="name_dr">برمل</field>
+            <field name="name_ps">برمل</field>
+        </record>
+        <record id="district_af_1215" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Giyan</field>
+            <field name="name_dr">گیان</field>
+            <field name="name_ps">گیان</field>
+        </record>
+        <record id="district_af_1216" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Dila Wa Khushamand</field>
+            <field name="name_dr">دیله و خوش آمند</field>
+            <field name="name_ps">دیله و خوش آمند</field>
+        </record>
+        <record id="district_af_1217" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Wazakhwah</field>
+            <field name="name_dr">وازه خوا</field>
+            <field name="name_ps">وازه خوا</field>
+        </record>
+        <record id="district_af_1218" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Wormamay</field>
+            <field name="name_dr">ورممی</field>
+            <field name="name_ps">ورممی</field>
+        </record>
+        <record id="district_af_1219" model="af.district">
+            <field name="state_id" ref="state_af_pka"/>
+            <field name="name">Turwo</field>
+            <field name="name_dr">تروو</field>
+            <field name="name_ps">تروو</field>
+        </record>
+        <record id="district_af_1301" model="af.district">
+            <field name="state_id" ref="state_af_pia"/>
+            <field name="name">Provincial Capital Of Paktya ( Gardez )</field>
+            <field name="name_dr">(مرکز ولایت پکتیا) گردیز</field>
+            <field name="name_ps">(مرکز ولایت پکتیا) گردیز</field>
+        </record>
+        <record id="district_af_1302" model="af.district">
+            <field name="state_id" ref="state_af_pia"/>
+            <field name="name">Ahmadaba</field>
+            <field name="name_dr">احمدآبا</field>
+            <field name="name_ps">احمدآبا</field>
+        </record>
+        <record id="district_af_1303" model="af.district">
+            <field name="state_id" ref="state_af_pia"/>
+            <field name="name">Zurmat</field>
+            <field name="name_dr">زرمت</field>
+            <field name="name_ps">زرمت</field>
+        </record>
+        <record id="district_af_1304" model="af.district">
+            <field name="state_id" ref="state_af_pia"/>
+            <field name="name">Shwak</field>
+            <field name="name_dr">شواک</field>
+            <field name="name_ps">شواک</field>
+        </record>
+        <record id="district_af_1305" model="af.district">
+            <field name="state_id" ref="state_af_pia"/>
+            <field name="name">Wuza Jadran</field>
+            <field name="name_dr">وزه جدران</field>
+            <field name="name_ps">وزه جدران</field>
+        </record>
+        <record id="district_af_1306" model="af.district">
+            <field name="state_id" ref="state_af_pia"/>
+            <field name="name">Sayyid Karam</field>
+            <field name="name_dr">سیدکرم</field>
+            <field name="name_ps">سیدکرم</field>
+        </record>
+        <record id="district_af_1307" model="af.district">
+            <field name="state_id" ref="state_af_pia"/>
+            <field name="name">Jaji</field>
+            <field name="name_dr">جاجی</field>
+            <field name="name_ps">جاجی</field>
+        </record>
+        <record id="district_af_1308" model="af.district">
+            <field name="state_id" ref="state_af_pia"/>
+            <field name="name">Laja Ahmad Khel</field>
+            <field name="name_dr">لجه احمدخیل</field>
+            <field name="name_ps">لجه احمدخیل</field>
+        </record>
+        <record id="district_af_1309" model="af.district">
+            <field name="state_id" ref="state_af_pia"/>
+            <field name="name">Jani Khel</field>
+            <field name="name_dr">جانی خیل</field>
+            <field name="name_ps">جانی خیل</field>
+        </record>
+        <record id="district_af_1310" model="af.district">
+            <field name="state_id" ref="state_af_pia"/>
+            <field name="name">Samkani</field>
+            <field name="name_dr">څمکنی</field>
+            <field name="name_ps">څمکنی</field>
+        </record>
+        <record id="district_af_1311" model="af.district">
+            <field name="state_id" ref="state_af_pia"/>
+            <field name="name">Dand Patan</field>
+            <field name="name_dr">دند پتان</field>
+            <field name="name_ps">دند پتان</field>
+        </record>
+        <record id="district_af_1401" model="af.district">
+            <field name="state_id" ref="state_af_kho"/>
+            <field name="name">Provincial Capital Of Khost ( Khost )</field>
+            <field name="name_dr">(مرکز ولایت خوست) خوست</field>
+            <field name="name_ps">(مرکز ولایت خوست) خوست</field>
+        </record>
+        <record id="district_af_1402" model="af.district">
+            <field name="state_id" ref="state_af_kho"/>
+            <field name="name">Manduzay (esmayel Khel)</field>
+            <field name="name_dr">(مندوزی) اسماعیل خیل</field>
+            <field name="name_ps">(مندوزی) اسماعیل خیل</field>
+        </record>
+        <record id="district_af_1403" model="af.district">
+            <field name="state_id" ref="state_af_kho"/>
+            <field name="name">Gurbuz</field>
+            <field name="name_dr">گربز</field>
+            <field name="name_ps">گربز</field>
+        </record>
+        <record id="district_af_1404" model="af.district">
+            <field name="state_id" ref="state_af_kho"/>
+            <field name="name">Tanay</field>
+            <field name="name_dr">تنی</field>
+            <field name="name_ps">تنی</field>
+        </record>
+        <record id="district_af_1405" model="af.district">
+            <field name="state_id" ref="state_af_kho"/>
+            <field name="name">Musa Khel</field>
+            <field name="name_dr">موسی خیل</field>
+            <field name="name_ps">موسی خیل</field>
+        </record>
+        <record id="district_af_1406" model="af.district">
+            <field name="state_id" ref="state_af_kho"/>
+            <field name="name">Nadirshah Kot</field>
+            <field name="name_dr">نادرشاه کوت</field>
+            <field name="name_ps">نادرشاه کوت</field>
+        </record>
+        <record id="district_af_1407" model="af.district">
+            <field name="state_id" ref="state_af_kho"/>
+            <field name="name">Sabari (yaqubi)</field>
+            <field name="name_dr">(صبری) یعقوبی</field>
+            <field name="name_ps">(صبری) یعقوبی</field>
+        </record>
+        <record id="district_af_1408" model="af.district">
+            <field name="state_id" ref="state_af_kho"/>
+            <field name="name">Ali Sher</field>
+            <field name="name_dr">علی شیر</field>
+            <field name="name_ps">علی شیر</field>
+        </record>
+        <record id="district_af_1409" model="af.district">
+            <field name="state_id" ref="state_af_kho"/>
+            <field name="name">Baak</field>
+            <field name="name_dr">باک</field>
+            <field name="name_ps">باک</field>
+        </record>
+        <record id="district_af_1410" model="af.district">
+            <field name="state_id" ref="state_af_kho"/>
+            <field name="name">Qalandar</field>
+            <field name="name_dr">قلندر</field>
+            <field name="name_ps">قلندر</field>
+        </record>
+        <record id="district_af_1411" model="af.district">
+            <field name="state_id" ref="state_af_kho"/>
+            <field name="name">Spera</field>
+            <field name="name_dr">اسپیره</field>
+            <field name="name_ps">اسپیره</field>
+        </record>
+        <record id="district_af_1412" model="af.district">
+            <field name="state_id" ref="state_af_kho"/>
+            <field name="name">Shamul</field>
+            <field name="name_dr">شمل</field>
+            <field name="name_ps">شمل</field>
+        </record>
+        <record id="district_af_1413" model="af.district">
+            <field name="state_id" ref="state_af_kho"/>
+            <field name="name">Jaji Maidan</field>
+            <field name="name_dr">جاجی میدان</field>
+            <field name="name_ps">جاجی میدان</field>
+        </record>
+        <record id="district_af_1501" model="af.district">
+            <field name="state_id" ref="state_af_knr"/>
+            <field name="name">Provincial Capital Of Kunarha ( Asad Abad )</field>
+            <field name="name_dr">(مرکز ولایت کنرها) اسدآباد</field>
+            <field name="name_ps">(مرکز ولایت کنرها) اسدآباد</field>
+        </record>
+        <record id="district_af_1502" model="af.district">
+            <field name="state_id" ref="state_af_knr"/>
+            <field name="name">Mara Wara</field>
+            <field name="name_dr">مره وره</field>
+            <field name="name_ps">مره وره</field>
+        </record>
+        <record id="district_af_1503" model="af.district">
+            <field name="state_id" ref="state_af_knr"/>
+            <field name="name">Watapoor</field>
+            <field name="name_dr">واته پور</field>
+            <field name="name_ps">واته پور</field>
+        </record>
+        <record id="district_af_1504" model="af.district">
+            <field name="state_id" ref="state_af_knr"/>
+            <field name="name">Narang Wa Badil</field>
+            <field name="name_dr">نرنگ وبادیل</field>
+            <field name="name_ps">نرنگ وبادیل</field>
+        </record>
+        <record id="district_af_1505" model="af.district">
+            <field name="state_id" ref="state_af_knr"/>
+            <field name="name">Sar Kani</field>
+            <field name="name_dr">سرکانی</field>
+            <field name="name_ps">سرکانی</field>
+        </record>
+        <record id="district_af_1506" model="af.district">
+            <field name="state_id" ref="state_af_knr"/>
+            <field name="name">Shigal Wa Sheltan</field>
+            <field name="name_dr">شیگل و شیلتن</field>
+            <field name="name_ps">شیگل و شیلتن</field>
+        </record>
+        <record id="district_af_1507" model="af.district">
+            <field name="state_id" ref="state_af_knr"/>
+            <field name="name">Dara-E-Pech</field>
+            <field name="name_dr">دره پیچ</field>
+            <field name="name_ps">دره پیچ</field>
+        </record>
+        <record id="district_af_1508" model="af.district">
+            <field name="state_id" ref="state_af_knr"/>
+            <field name="name">Bar Kunar</field>
+            <field name="name_dr">برکنر</field>
+            <field name="name_ps">برکنر</field>
+        </record>
+        <record id="district_af_1509" model="af.district">
+            <field name="state_id" ref="state_af_knr"/>
+            <field name="name">Sawkai</field>
+            <field name="name_dr">څوکی</field>
+            <field name="name_ps">څوکی</field>
+        </record>
+        <record id="district_af_1510" model="af.district">
+            <field name="state_id" ref="state_af_knr"/>
+            <field name="name">Khas Kunar</field>
+            <field name="name_dr">خاص کنر</field>
+            <field name="name_ps">خاص کنر</field>
+        </record>
+        <record id="district_af_1511" model="af.district">
+            <field name="state_id" ref="state_af_knr"/>
+            <field name="name">Ghazi Abad</field>
+            <field name="name_dr">غازی آباد</field>
+            <field name="name_ps">غازی آباد</field>
+        </record>
+        <record id="district_af_1512" model="af.district">
+            <field name="state_id" ref="state_af_knr"/>
+            <field name="name">Dangam</field>
+            <field name="name_dr">دانگام</field>
+            <field name="name_ps">دانگام</field>
+        </record>
+        <record id="district_af_1513" model="af.district">
+            <field name="state_id" ref="state_af_knr"/>
+            <field name="name">Chapa Dara</field>
+            <field name="name_dr">چپه دره</field>
+            <field name="name_ps">چپه دره</field>
+        </record>
+        <record id="district_af_1514" model="af.district">
+            <field name="state_id" ref="state_af_knr"/>
+            <field name="name">Noor Gal</field>
+            <field name="name_dr">نورگل</field>
+            <field name="name_ps">نورگل</field>
+        </record>
+        <record id="district_af_1515" model="af.district">
+            <field name="state_id" ref="state_af_knr"/>
+            <field name="name">Nari</field>
+            <field name="name_dr">نری</field>
+            <field name="name_ps">نری</field>
+        </record>
+        <record id="district_af_1601" model="af.district">
+            <field name="state_id" ref="state_af_nur"/>
+            <field name="name">Provincial Capital Of Nooristan ( Paroon )</field>
+            <field name="name_dr">( مرکز ولایت نورستان) پارون</field>
+            <field name="name_ps">( مرکز ولایت نورستان) پارون</field>
+        </record>
+        <record id="district_af_1602" model="af.district">
+            <field name="state_id" ref="state_af_nur"/>
+            <field name="name">Waygal</field>
+            <field name="name_dr">وایگل</field>
+            <field name="name_ps">وایگل</field>
+        </record>
+        <record id="district_af_1603" model="af.district">
+            <field name="state_id" ref="state_af_nur"/>
+            <field name="name">Wama</field>
+            <field name="name_dr">واما</field>
+            <field name="name_ps">واما</field>
+        </record>
+        <record id="district_af_1604" model="af.district">
+            <field name="state_id" ref="state_af_nur"/>
+            <field name="name">Noor Gram</field>
+            <field name="name_dr">نورگرام</field>
+            <field name="name_ps">نورگرام</field>
+        </record>
+        <record id="district_af_1605" model="af.district">
+            <field name="state_id" ref="state_af_nur"/>
+            <field name="name">Duab</field>
+            <field name="name_dr">دوآب</field>
+            <field name="name_ps">دوآب</field>
+        </record>
+        <record id="district_af_1606" model="af.district">
+            <field name="state_id" ref="state_af_nur"/>
+            <field name="name">Kamdesh</field>
+            <field name="name_dr">کامدیش</field>
+            <field name="name_ps">کامدیش</field>
+        </record>
+        <record id="district_af_1607" model="af.district">
+            <field name="state_id" ref="state_af_nur"/>
+            <field name="name">Mandol</field>
+            <field name="name_dr">مندول</field>
+            <field name="name_ps">مندول</field>
+        </record>
+        <record id="district_af_1608" model="af.district">
+            <field name="state_id" ref="state_af_nur"/>
+            <field name="name">Barg-E-Matal</field>
+            <field name="name_dr">برگ متال</field>
+            <field name="name_ps">برگ متال</field>
+        </record>
+        <record id="district_af_1701" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Provincial Capital Of Badakhshan ( Faiz Abad )</field>
+            <field name="name_dr">( مرکز ولایت بدخشان) فیض آباد</field>
+            <field name="name_ps">( مرکز ولایت بدخشان) فیض آباد</field>
+        </record>
+        <record id="district_af_1702" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Argo</field>
+            <field name="name_dr">ارگو</field>
+            <field name="name_ps">ارگو</field>
+        </record>
+        <record id="district_af_1703" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Arghanj Khwah</field>
+            <field name="name_dr">ارغنجخواه</field>
+            <field name="name_ps">ارغنجخواه</field>
+        </record>
+        <record id="district_af_1704" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Yaftal-E-Sofla</field>
+            <field name="name_dr">یفتل سفلی</field>
+            <field name="name_ps">یفتل سفلی</field>
+        </record>
+        <record id="district_af_1705" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Khash</field>
+            <field name="name_dr">خاش</field>
+            <field name="name_ps">خاش</field>
+        </record>
+        <record id="district_af_1706" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Baharak</field>
+            <field name="name_dr">بهارک</field>
+            <field name="name_ps">بهارک</field>
+        </record>
+        <record id="district_af_1707" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Darayim</field>
+            <field name="name_dr">درایم</field>
+            <field name="name_ps">درایم</field>
+        </record>
+        <record id="district_af_1708" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Kohistan</field>
+            <field name="name_dr">کوهستان</field>
+            <field name="name_ps">کوهستان</field>
+        </record>
+        <record id="district_af_1709" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Yawan</field>
+            <field name="name_dr">یاوان</field>
+            <field name="name_ps">یاوان</field>
+        </record>
+        <record id="district_af_1710" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Jurm</field>
+            <field name="name_dr">جرم</field>
+            <field name="name_ps">جرم</field>
+        </record>
+        <record id="district_af_1711" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Tashkan</field>
+            <field name="name_dr">تشکان</field>
+            <field name="name_ps">تشکان</field>
+        </record>
+        <record id="district_af_1712" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Shuhada</field>
+            <field name="name_dr">شهدا</field>
+            <field name="name_ps">شهدا</field>
+        </record>
+        <record id="district_af_1713" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Shahr-E-Buzurg</field>
+            <field name="name_dr">شهربزرگ</field>
+            <field name="name_ps">شهربزرگ</field>
+        </record>
+        <record id="district_af_1714" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Raghistan</field>
+            <field name="name_dr">راغستان</field>
+            <field name="name_ps">راغستان</field>
+        </record>
+        <record id="district_af_1715" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Kishm</field>
+            <field name="name_dr">کشم</field>
+            <field name="name_ps">کشم</field>
+        </record>
+        <record id="district_af_1716" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Wardooj</field>
+            <field name="name_dr">وردوج</field>
+            <field name="name_ps">وردوج</field>
+        </record>
+        <record id="district_af_1717" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Tagab</field>
+            <field name="name_dr">تگاب</field>
+            <field name="name_ps">تگاب</field>
+        </record>
+        <record id="district_af_1718" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Yamgan</field>
+            <field name="name_dr">یمگان</field>
+            <field name="name_ps">یمگان</field>
+        </record>
+        <record id="district_af_1719" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Shighnan</field>
+            <field name="name_dr">شغنان</field>
+            <field name="name_ps">شغنان</field>
+        </record>
+        <record id="district_af_1720" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Khwahan</field>
+            <field name="name_dr">خواهان</field>
+            <field name="name_ps">خواهان</field>
+        </record>
+        <record id="district_af_1721" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Kufab</field>
+            <field name="name_dr">کوف آب</field>
+            <field name="name_ps">کوف آب</field>
+        </record>
+        <record id="district_af_1722" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Darwaz-E-Payin (mamay)</field>
+            <field name="name_dr">درواز پائین مایمی</field>
+            <field name="name_ps">درواز پائین مایمی</field>
+        </record>
+        <record id="district_af_1723" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Eshkashim</field>
+            <field name="name_dr">اشکاشم</field>
+            <field name="name_ps">اشکاشم</field>
+        </record>
+        <record id="district_af_1724" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Shiki</field>
+            <field name="name_dr">شکی</field>
+            <field name="name_ps">شکی</field>
+        </record>
+        <record id="district_af_1725" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Zebak</field>
+            <field name="name_dr">زیباک</field>
+            <field name="name_ps">زیباک</field>
+        </record>
+        <record id="district_af_1726" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Kiran Wa Menjan</field>
+            <field name="name_dr">کران ومنجان</field>
+            <field name="name_ps">کران ومنجان</field>
+        </record>
+        <record id="district_af_1727" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Darwaz-E-Bala (nesay)</field>
+            <field name="name_dr">درواز بالا نسی</field>
+            <field name="name_ps">درواز بالا نسی</field>
+        </record>
+        <record id="district_af_1728" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Wakhan</field>
+            <field name="name_dr">واخان</field>
+            <field name="name_ps">واخان</field>
+        </record>
+        <record id="district_af_1729" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_1730" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه 2</field>
+            <field name="name_ps">ناحیه 2</field>
+        </record>
+        <record id="district_af_1731" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Pd 3</field>
+            <field name="name_dr">ناحیه 3</field>
+            <field name="name_ps">ناحیه 3</field>
+        </record>
+        <record id="district_af_1732" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Pd 4</field>
+            <field name="name_dr">ناحیه 4</field>
+            <field name="name_ps">ناحیه 4</field>
+        </record>
+        <record id="district_af_1733" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Pd 5</field>
+            <field name="name_dr">ناحیه 5</field>
+            <field name="name_ps">ناحیه 5</field>
+        </record>
+        <record id="district_af_1734" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Pd 6</field>
+            <field name="name_dr">ناحیه 6</field>
+            <field name="name_ps">ناحیه 6</field>
+        </record>
+        <record id="district_af_1735" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Pd 7</field>
+            <field name="name_dr">ناحیه 7</field>
+            <field name="name_ps">ناحیه 7</field>
+        </record>
+        <record id="district_af_1736" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Pd 8</field>
+            <field name="name_dr">ناحیه 8</field>
+            <field name="name_ps">ناحیه 8</field>
+        </record>
+        <record id="district_af_1737" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Pd 9</field>
+            <field name="name_dr">ناحیه 9</field>
+            <field name="name_ps">ناحیه 9</field>
+        </record>
+        <record id="district_af_1738" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Pd 10</field>
+            <field name="name_dr">ناحیه 10</field>
+            <field name="name_ps">ناحیه 10</field>
+        </record>
+        <record id="district_af_1739" model="af.district">
+            <field name="state_id" ref="state_af_bds"/>
+            <field name="name">Pd 11</field>
+            <field name="name_dr">ناحیه 11</field>
+            <field name="name_ps">ناحیه 11</field>
+        </record>
+        <record id="district_af_1801" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Provincial Capital Of Takhar ( Taluqan )</field>
+            <field name="name_dr">( مرکز ولایت تخار) تالقان</field>
+            <field name="name_ps">( مرکز ولایت تخار) تالقان</field>
+        </record>
+        <record id="district_af_1802" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Hazar Sumuch</field>
+            <field name="name_dr">هزارسموچ</field>
+            <field name="name_ps">هزارسموچ</field>
+        </record>
+        <record id="district_af_1803" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Baharak</field>
+            <field name="name_dr">بهارک</field>
+            <field name="name_ps">بهارک</field>
+        </record>
+        <record id="district_af_1804" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Bangi</field>
+            <field name="name_dr">بنگی</field>
+            <field name="name_ps">بنگی</field>
+        </record>
+        <record id="district_af_1805" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Chal</field>
+            <field name="name_dr">چال</field>
+            <field name="name_ps">چال</field>
+        </record>
+        <record id="district_af_1806" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Namak Ab</field>
+            <field name="name_dr">نمک آب</field>
+            <field name="name_ps">نمک آب</field>
+        </record>
+        <record id="district_af_1807" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Kalafgan</field>
+            <field name="name_dr">کلفگان</field>
+            <field name="name_ps">کلفگان</field>
+        </record>
+        <record id="district_af_1808" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Farkhar</field>
+            <field name="name_dr">فرخار</field>
+            <field name="name_ps">فرخار</field>
+        </record>
+        <record id="district_af_1809" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Khwaja Ghar</field>
+            <field name="name_dr">خواجه غار</field>
+            <field name="name_ps">خواجه غار</field>
+        </record>
+        <record id="district_af_1810" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Rustaq</field>
+            <field name="name_dr">رستاق</field>
+            <field name="name_ps">رستاق</field>
+        </record>
+        <record id="district_af_1811" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Eshkamesh</field>
+            <field name="name_dr">اشکمش</field>
+            <field name="name_ps">اشکمش</field>
+        </record>
+        <record id="district_af_1812" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Dasht-E-Qala</field>
+            <field name="name_dr">دشت قلعه</field>
+            <field name="name_ps">دشت قلعه</field>
+        </record>
+        <record id="district_af_1813" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Warsaj</field>
+            <field name="name_dr">ورسج</field>
+            <field name="name_ps">ورسج</field>
+        </record>
+        <record id="district_af_1814" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Khwaja Bahawuddin</field>
+            <field name="name_dr">خواجه بهاوالدین</field>
+            <field name="name_ps">خواجه بهاوالدین</field>
+        </record>
+        <record id="district_af_1815" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Darqad</field>
+            <field name="name_dr">درقد</field>
+            <field name="name_ps">درقد</field>
+        </record>
+        <record id="district_af_1816" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Chahab</field>
+            <field name="name_dr">چاه آب</field>
+            <field name="name_ps">چاه آب</field>
+        </record>
+        <record id="district_af_1817" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Yangi Qala</field>
+            <field name="name_dr">ینگی قلعه</field>
+            <field name="name_ps">ینگی قلعه</field>
+        </record>
+        <record id="district_af_1818" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_1819" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه 2</field>
+            <field name="name_ps">ناحیه 2</field>
+        </record>
+        <record id="district_af_1820" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Pd 3</field>
+            <field name="name_dr">ناحیه 3</field>
+            <field name="name_ps">ناحیه 3</field>
+        </record>
+        <record id="district_af_1821" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Pd 4</field>
+            <field name="name_dr">ناحیه 4</field>
+            <field name="name_ps">ناحیه 4</field>
+        </record>
+        <record id="district_af_1823" model="af.district">
+            <field name="state_id" ref="state_af_tak"/>
+            <field name="name">Gul Bad</field>
+            <field name="name_dr">کل باد</field>
+            <field name="name_ps">کل باد</field>
+        </record>
+        <record id="district_af_1901" model="af.district">
+            <field name="state_id" ref="state_af_kdz"/>
+            <field name="name">Provincial Capital Of Kunduz ( Kunduz )</field>
+            <field name="name_dr">(مرکز ولایت کندز) کندز</field>
+            <field name="name_ps">(مرکز ولایت کندز) کندز</field>
+        </record>
+        <record id="district_af_1902" model="af.district">
+            <field name="state_id" ref="state_af_kdz"/>
+            <field name="name">Char Darah</field>
+            <field name="name_dr">چاردره</field>
+            <field name="name_ps">چاردره</field>
+        </record>
+        <record id="district_af_1903" model="af.district">
+            <field name="state_id" ref="state_af_kdz"/>
+            <field name="name">Ali Abad</field>
+            <field name="name_dr">علی آباد</field>
+            <field name="name_ps">علی آباد</field>
+        </record>
+        <record id="district_af_1904" model="af.district">
+            <field name="state_id" ref="state_af_kdz"/>
+            <field name="name">Khan Abad</field>
+            <field name="name_dr">خان آباد</field>
+            <field name="name_ps">خان آباد</field>
+        </record>
+        <record id="district_af_1905" model="af.district">
+            <field name="state_id" ref="state_af_kdz"/>
+            <field name="name">Hazrati Imam Sahib</field>
+            <field name="name_dr">حضرت امام صاحب</field>
+            <field name="name_ps">حضرت امام صاحب</field>
+        </record>
+        <record id="district_af_1906" model="af.district">
+            <field name="state_id" ref="state_af_kdz"/>
+            <field name="name">Dashti-E-Archi</field>
+            <field name="name_dr">دشت ارچی</field>
+            <field name="name_ps">دشت ارچی</field>
+        </record>
+        <record id="district_af_1907" model="af.district">
+            <field name="state_id" ref="state_af_kdz"/>
+            <field name="name">Qala-E-Zal</field>
+            <field name="name_dr">قلعه ذال</field>
+            <field name="name_ps">قلعه ذال</field>
+        </record>
+        <record id="district_af_1909" model="af.district">
+            <field name="state_id" ref="state_af_kdz"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_1910" model="af.district">
+            <field name="state_id" ref="state_af_kdz"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه 2</field>
+            <field name="name_ps">ناحیه 2</field>
+        </record>
+        <record id="district_af_1911" model="af.district">
+            <field name="state_id" ref="state_af_kdz"/>
+            <field name="name">Pd 3</field>
+            <field name="name_dr">ناحیه 3</field>
+            <field name="name_ps">ناحیه 3</field>
+        </record>
+        <record id="district_af_1912" model="af.district">
+            <field name="state_id" ref="state_af_kdz"/>
+            <field name="name">Pd 4</field>
+            <field name="name_dr">ناحیه 4</field>
+            <field name="name_ps">ناحیه 4</field>
+        </record>
+        <record id="district_af_1913" model="af.district">
+            <field name="state_id" ref="state_af_kdz"/>
+            <field name="name">Pd 5</field>
+            <field name="name_dr">ناحیه 5</field>
+            <field name="name_ps">ناحیه 5</field>
+        </record>
+        <record id="district_af_3503" model="af.district">
+            <field name="state_id" ref="state_af_kdz"/>
+            <field name="name">Pd 6</field>
+            <field name="name_dr">ناحیه 6</field>
+            <field name="name_ps">ناحیه 6</field>
+        </record>
+        <record id="district_af_2001" model="af.district">
+            <field name="state_id" ref="state_af_sam"/>
+            <field name="name">Provincial Capital Of Samangan ( Aybak )</field>
+            <field name="name_dr">( مرکز ولایت سمنگان) ایبک</field>
+            <field name="name_ps">( مرکز ولایت سمنگان) ایبک</field>
+        </record>
+        <record id="district_af_2002" model="af.district">
+            <field name="state_id" ref="state_af_sam"/>
+            <field name="name">Hazrat-E-Sultan</field>
+            <field name="name_dr">حضرت سلطان</field>
+            <field name="name_ps">حضرت سلطان</field>
+        </record>
+        <record id="district_af_2003" model="af.district">
+            <field name="state_id" ref="state_af_sam"/>
+            <field name="name">Khuram Wa Sarbagh</field>
+            <field name="name_dr">خرم و سارباغ</field>
+            <field name="name_ps">خرم و سارباغ</field>
+        </record>
+        <record id="district_af_2004" model="af.district">
+            <field name="state_id" ref="state_af_sam"/>
+            <field name="name">Feroz Nakhcheer</field>
+            <field name="name_dr">فیروزنخچیر</field>
+            <field name="name_ps">فیروزنخچیر</field>
+        </record>
+        <record id="district_af_2005" model="af.district">
+            <field name="state_id" ref="state_af_sam"/>
+            <field name="name">Roi-Do-Ab</field>
+            <field name="name_dr">روی دوآب</field>
+            <field name="name_ps">روی دوآب</field>
+        </record>
+        <record id="district_af_2006" model="af.district">
+            <field name="state_id" ref="state_af_sam"/>
+            <field name="name">Dara-E-Soof-E-Payin</field>
+            <field name="name_dr">دره صوف پائین</field>
+            <field name="name_ps">دره صوف پائین</field>
+        </record>
+        <record id="district_af_2007" model="af.district">
+            <field name="state_id" ref="state_af_sam"/>
+            <field name="name">Dara-E-Soof-E-Bala</field>
+            <field name="name_dr">دره صوف  بالا</field>
+            <field name="name_ps">دره صوف  بالا</field>
+        </record>
+        <record id="district_af_2008" model="af.district">
+            <field name="state_id" ref="state_af_sam"/>
+            <field name="name">Pd 3</field>
+            <field name="name_dr">ناحیه 3</field>
+            <field name="name_ps">ناحیه 3</field>
+        </record>
+        <record id="district_af_2010" model="af.district">
+            <field name="state_id" ref="state_af_sam"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_2011" model="af.district">
+            <field name="state_id" ref="state_af_sam"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه 2</field>
+            <field name="name_ps">ناحیه 2</field>
+        </record>
+        <record id="district_af_2102" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Nahr-E-Shahi</field>
+            <field name="name_dr">نهر شاهی</field>
+            <field name="name_ps">نهر شاهی</field>
+        </record>
+        <record id="district_af_2103" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Dehdadi</field>
+            <field name="name_dr">دهدادی</field>
+            <field name="name_ps">دهدادی</field>
+        </record>
+        <record id="district_af_2104" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Char Kent</field>
+            <field name="name_dr">چارکنت</field>
+            <field name="name_ps">چارکنت</field>
+        </record>
+        <record id="district_af_2105" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Marmul</field>
+            <field name="name_dr">مارمل</field>
+            <field name="name_ps">مارمل</field>
+        </record>
+        <record id="district_af_2106" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Balkh</field>
+            <field name="name_dr">بلخ</field>
+            <field name="name_ps">بلخ</field>
+        </record>
+        <record id="district_af_2107" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Sholgara</field>
+            <field name="name_dr">شولگره</field>
+            <field name="name_ps">شولگره</field>
+        </record>
+        <record id="district_af_2108" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Chimtal</field>
+            <field name="name_dr">چمتال</field>
+            <field name="name_ps">چمتال</field>
+        </record>
+        <record id="district_af_2109" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Dawlat Abad</field>
+            <field name="name_dr">دولت آباد</field>
+            <field name="name_ps">دولت آباد</field>
+        </record>
+        <record id="district_af_2110" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Khulm</field>
+            <field name="name_dr">خلم</field>
+            <field name="name_ps">خلم</field>
+        </record>
+        <record id="district_af_2111" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Char Bolak</field>
+            <field name="name_dr">چاربولک</field>
+            <field name="name_ps">چاربولک</field>
+        </record>
+        <record id="district_af_2112" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Shortepa</field>
+            <field name="name_dr">شورتیپه</field>
+            <field name="name_ps">شورتیپه</field>
+        </record>
+        <record id="district_af_2113" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Kaldar</field>
+            <field name="name_dr">کلدار</field>
+            <field name="name_ps">کلدار</field>
+        </record>
+        <record id="district_af_2114" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Kishindeh</field>
+            <field name="name_dr">کشنده</field>
+            <field name="name_ps">کشنده</field>
+        </record>
+        <record id="district_af_2115" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Zari</field>
+            <field name="name_dr">زاری</field>
+            <field name="name_ps">زاری</field>
+        </record>
+        <record id="district_af_2116" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Ailaq Che Paeen</field>
+            <field name="name_dr">ایلقچی پاین</field>
+            <field name="name_ps">ایلقچی پاین</field>
+        </record>
+        <record id="district_af_2117" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_2118" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه 2</field>
+            <field name="name_ps">ناحیه 2</field>
+        </record>
+        <record id="district_af_2119" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Pd 3</field>
+            <field name="name_dr">ناحیه 3</field>
+            <field name="name_ps">ناحیه 3</field>
+        </record>
+        <record id="district_af_2120" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Pd 4</field>
+            <field name="name_dr">ناحیه 4</field>
+            <field name="name_ps">ناحیه 4</field>
+        </record>
+        <record id="district_af_2121" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Pd 5</field>
+            <field name="name_dr">ناحیه 5</field>
+            <field name="name_ps">ناحیه 5</field>
+        </record>
+        <record id="district_af_2122" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Pd 6</field>
+            <field name="name_dr">ناحیه 6</field>
+            <field name="name_ps">ناحیه 6</field>
+        </record>
+        <record id="district_af_2123" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Pd 7</field>
+            <field name="name_dr">ناحیه 7</field>
+            <field name="name_ps">ناحیه 7</field>
+        </record>
+        <record id="district_af_2124" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Pd 8</field>
+            <field name="name_dr">ناحیه 8</field>
+            <field name="name_ps">ناحیه 8</field>
+        </record>
+        <record id="district_af_2125" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Pd 9</field>
+            <field name="name_dr">ناحیه 9</field>
+            <field name="name_ps">ناحیه 9</field>
+        </record>
+        <record id="district_af_2127" model="af.district">
+            <field name="state_id" ref="state_af_bal"/>
+            <field name="name">Provincial Capital Of Balkh (mazar-E-Sharif)</field>
+            <field name="name_dr">(مرکز ولایت بلخ) مزار شریف</field>
+            <field name="name_ps">(مرکز ولایت بلخ) مزار شریف</field>
+        </record>
+        <record id="district_af_2201" model="af.district">
+            <field name="state_id" ref="state_af_sar"/>
+            <field name="name">Provincial Capital Of Sar-E-Pul (sar-E-Pul)</field>
+            <field name="name_dr">( مرکزولایت سرپل) سرپل</field>
+            <field name="name_ps">( مرکزولایت سرپل) سرپل</field>
+        </record>
+        <record id="district_af_2202" model="af.district">
+            <field name="state_id" ref="state_af_sar"/>
+            <field name="name">Sayyad</field>
+            <field name="name_dr">صیاد</field>
+            <field name="name_ps">صیاد</field>
+        </record>
+        <record id="district_af_2203" model="af.district">
+            <field name="state_id" ref="state_af_sar"/>
+            <field name="name">Kohistanat</field>
+            <field name="name_dr">کوهستانات</field>
+            <field name="name_ps">کوهستانات</field>
+        </record>
+        <record id="district_af_2204" model="af.district">
+            <field name="state_id" ref="state_af_sar"/>
+            <field name="name">Sozma Qala</field>
+            <field name="name_dr">سوزمه قلعه</field>
+            <field name="name_ps">سوزمه قلعه</field>
+        </record>
+        <record id="district_af_2205" model="af.district">
+            <field name="state_id" ref="state_af_sar"/>
+            <field name="name">Sangcharak</field>
+            <field name="name_dr">سنگ چارک</field>
+            <field name="name_ps">سنگ چارک</field>
+        </record>
+        <record id="district_af_2206" model="af.district">
+            <field name="state_id" ref="state_af_sar"/>
+            <field name="name">Gosfandi</field>
+            <field name="name_dr">گوسفندی</field>
+            <field name="name_ps">گوسفندی</field>
+        </record>
+        <record id="district_af_2207" model="af.district">
+            <field name="state_id" ref="state_af_sar"/>
+            <field name="name">Balkhab</field>
+            <field name="name_dr">بلخاب</field>
+            <field name="name_ps">بلخاب</field>
+        </record>
+        <record id="district_af_2209" model="af.district">
+            <field name="state_id" ref="state_af_sar"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_2210" model="af.district">
+            <field name="state_id" ref="state_af_sar"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه 2</field>
+            <field name="name_ps">ناحیه 2</field>
+        </record>
+        <record id="district_af_2301" model="af.district">
+            <field name="state_id" ref="state_af_gho"/>
+            <field name="name">Provincial Capital Of Ghor ( Chighcheran )</field>
+            <field name="name_dr">( مرکز ولایت غور) چغچران</field>
+            <field name="name_ps">( مرکز ولایت غور) چغچران</field>
+        </record>
+        <record id="district_af_2302" model="af.district">
+            <field name="state_id" ref="state_af_gho"/>
+            <field name="name">Duleena</field>
+            <field name="name_dr">دولینه</field>
+            <field name="name_ps">دولینه</field>
+        </record>
+        <record id="district_af_2303" model="af.district">
+            <field name="state_id" ref="state_af_gho"/>
+            <field name="name">Dawlatyar</field>
+            <field name="name_dr">دولت یار</field>
+            <field name="name_ps">دولت یار</field>
+        </record>
+        <record id="district_af_2304" model="af.district">
+            <field name="state_id" ref="state_af_gho"/>
+            <field name="name">Char Sada</field>
+            <field name="name_dr">چارصده</field>
+            <field name="name_ps">چارصده</field>
+        </record>
+        <record id="district_af_2305" model="af.district">
+            <field name="state_id" ref="state_af_gho"/>
+            <field name="name">Pasaband</field>
+            <field name="name_dr">پسابند</field>
+            <field name="name_ps">پسابند</field>
+        </record>
+        <record id="district_af_2306" model="af.district">
+            <field name="state_id" ref="state_af_gho"/>
+            <field name="name">Shahrak</field>
+            <field name="name_dr">شهرک</field>
+            <field name="name_ps">شهرک</field>
+        </record>
+        <record id="district_af_2307" model="af.district">
+            <field name="state_id" ref="state_af_gho"/>
+            <field name="name">Lal Wa Sarjangal</field>
+            <field name="name_dr">لعل وسرجنگل</field>
+            <field name="name_ps">لعل وسرجنگل</field>
+        </record>
+        <record id="district_af_2308" model="af.district">
+            <field name="state_id" ref="state_af_gho"/>
+            <field name="name">Taywara</field>
+            <field name="name_dr">تیوره</field>
+            <field name="name_ps">تیوره</field>
+        </record>
+        <record id="district_af_2309" model="af.district">
+            <field name="state_id" ref="state_af_gho"/>
+            <field name="name">Tulak</field>
+            <field name="name_dr">تولک</field>
+            <field name="name_ps">تولک</field>
+        </record>
+        <record id="district_af_2310" model="af.district">
+            <field name="state_id" ref="state_af_gho"/>
+            <field name="name">Saghar</field>
+            <field name="name_dr">ساغر</field>
+            <field name="name_ps">ساغر</field>
+        </record>
+        <record id="district_af_2312" model="af.district">
+            <field name="state_id" ref="state_af_gho"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_2313" model="af.district">
+            <field name="state_id" ref="state_af_gho"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه 2</field>
+            <field name="name_ps">ناحیه 2</field>
+        </record>
+        <record id="district_af_2314" model="af.district">
+            <field name="state_id" ref="state_af_gho"/>
+            <field name="name">Pd 3</field>
+            <field name="name_dr">ناحیه 3</field>
+            <field name="name_ps">ناحیه 3</field>
+        </record>
+        <record id="district_af_2315" model="af.district">
+            <field name="state_id" ref="state_af_gho"/>
+            <field name="name">Pd 4</field>
+            <field name="name_dr">ناحیه 4</field>
+            <field name="name_ps">ناحیه 4</field>
+        </record>
+        <record id="district_af_2401" model="af.district">
+            <field name="state_id" ref="state_af_day"/>
+            <field name="name">Provincial Capital Of Daykundi ( Nili )</field>
+            <field name="name_dr">(مرکز ولایت دایکندی) نیلی</field>
+            <field name="name_ps">(مرکز ولایت دایکندی) نیلی</field>
+        </record>
+        <record id="district_af_2402" model="af.district">
+            <field name="state_id" ref="state_af_day"/>
+            <field name="name">Shahristan</field>
+            <field name="name_dr">شهرستان</field>
+            <field name="name_ps">شهرستان</field>
+        </record>
+        <record id="district_af_2403" model="af.district">
+            <field name="state_id" ref="state_af_day"/>
+            <field name="name">Gizab</field>
+            <field name="name_dr">گیزاب</field>
+            <field name="name_ps">گیزاب</field>
+        </record>
+        <record id="district_af_2404" model="af.district">
+            <field name="state_id" ref="state_af_day"/>
+            <field name="name">Ishterlai</field>
+            <field name="name_dr">اشترلی</field>
+            <field name="name_ps">اشترلی</field>
+        </record>
+        <record id="district_af_2405" model="af.district">
+            <field name="state_id" ref="state_af_day"/>
+            <field name="name">Khedir</field>
+            <field name="name_dr">خدیر</field>
+            <field name="name_ps">خدیر</field>
+        </record>
+        <record id="district_af_2406" model="af.district">
+            <field name="state_id" ref="state_af_day"/>
+            <field name="name">Geti</field>
+            <field name="name_dr">گیتی</field>
+            <field name="name_ps">گیتی</field>
+        </record>
+        <record id="district_af_2407" model="af.district">
+            <field name="state_id" ref="state_af_day"/>
+            <field name="name">Miramor</field>
+            <field name="name_dr">میرامور</field>
+            <field name="name_ps">میرامور</field>
+        </record>
+        <record id="district_af_2408" model="af.district">
+            <field name="state_id" ref="state_af_day"/>
+            <field name="name">Sang-E-Takht</field>
+            <field name="name_dr">سنگ تخت</field>
+            <field name="name_ps">سنگ تخت</field>
+        </record>
+        <record id="district_af_2409" model="af.district">
+            <field name="state_id" ref="state_af_day"/>
+            <field name="name">Kejran</field>
+            <field name="name_dr">کیجران</field>
+            <field name="name_ps">کیجران</field>
+        </record>
+        <record id="district_af_2411" model="af.district">
+            <field name="state_id" ref="state_af_day"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_2501" model="af.district">
+            <field name="state_id" ref="state_af_uru"/>
+            <field name="name">Provincial Capital Of Urozgan ( Tirinkot )</field>
+            <field name="name_dr">(مرکز ولایت ارزگان) ترینکوت</field>
+            <field name="name_ps">(مرکز ولایت ارزگان) ترینکوت</field>
+        </record>
+        <record id="district_af_2502" model="af.district">
+            <field name="state_id" ref="state_af_uru"/>
+            <field name="name">Dehraoud</field>
+            <field name="name_dr">دهراود</field>
+            <field name="name_ps">دهراود</field>
+        </record>
+        <record id="district_af_2503" model="af.district">
+            <field name="state_id" ref="state_af_uru"/>
+            <field name="name">Chora</field>
+            <field name="name_dr">چوره</field>
+            <field name="name_ps">چوره</field>
+        </record>
+        <record id="district_af_2504" model="af.district">
+            <field name="state_id" ref="state_af_uru"/>
+            <field name="name">Shahid-E-Hassas</field>
+            <field name="name_dr">شهید حساس</field>
+            <field name="name_ps">شهید حساس</field>
+        </record>
+        <record id="district_af_2505" model="af.district">
+            <field name="state_id" ref="state_af_uru"/>
+            <field name="name">Khas Urozgan</field>
+            <field name="name_dr">خاص ارزگان</field>
+            <field name="name_ps">خاص ارزگان</field>
+        </record>
+        <record id="district_af_2506" model="af.district">
+            <field name="state_id" ref="state_af_uru"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_2507" model="af.district">
+            <field name="state_id" ref="state_af_uru"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه 2</field>
+            <field name="name_ps">ناحیه 2</field>
+        </record>
+        <record id="district_af_2508" model="af.district">
+            <field name="state_id" ref="state_af_uru"/>
+            <field name="name">Pd 3</field>
+            <field name="name_dr">ناحیه 3</field>
+            <field name="name_ps">ناحیه 3</field>
+        </record>
+        <record id="district_af_2509" model="af.district">
+            <field name="state_id" ref="state_af_uru"/>
+            <field name="name">Pd 4</field>
+            <field name="name_dr">ناحیه 4</field>
+            <field name="name_ps">ناحیه 4</field>
+        </record>
+        <record id="district_af_2511" model="af.district">
+            <field name="state_id" ref="state_af_uru"/>
+            <field name="name">Chahar Chino</field>
+            <field name="name_dr">چهارچینو</field>
+            <field name="name_ps">چهارچینو</field>
+        </record>
+        <record id="district_af_2601" model="af.district">
+            <field name="state_id" ref="state_af_zab"/>
+            <field name="name">Provincial Capital Of Zabul ( Qalat )</field>
+            <field name="name_dr">( مرکز ولایت زابل) قلات</field>
+            <field name="name_ps">( مرکز ولایت زابل) قلات</field>
+        </record>
+        <record id="district_af_2602" model="af.district">
+            <field name="state_id" ref="state_af_zab"/>
+            <field name="name">Tarank Wa Jaldak</field>
+            <field name="name_dr">ترنک وجلدک</field>
+            <field name="name_ps">ترنک وجلدک</field>
+        </record>
+        <record id="district_af_2603" model="af.district">
+            <field name="state_id" ref="state_af_zab"/>
+            <field name="name">Shinkai</field>
+            <field name="name_dr">شینکی</field>
+            <field name="name_ps">شینکی</field>
+        </record>
+        <record id="district_af_2604" model="af.district">
+            <field name="state_id" ref="state_af_zab"/>
+            <field name="name">Mizan</field>
+            <field name="name_dr">میزان</field>
+            <field name="name_ps">میزان</field>
+        </record>
+        <record id="district_af_2605" model="af.district">
+            <field name="state_id" ref="state_af_zab"/>
+            <field name="name">Arghandab</field>
+            <field name="name_dr">ارغنداب</field>
+            <field name="name_ps">ارغنداب</field>
+        </record>
+        <record id="district_af_2606" model="af.district">
+            <field name="state_id" ref="state_af_zab"/>
+            <field name="name">Shah Joi</field>
+            <field name="name_dr">شاه جوی</field>
+            <field name="name_ps">شاه جوی</field>
+        </record>
+        <record id="district_af_2607" model="af.district">
+            <field name="state_id" ref="state_af_zab"/>
+            <field name="name">Daichopan</field>
+            <field name="name_dr">دایچوپان</field>
+            <field name="name_ps">دایچوپان</field>
+        </record>
+        <record id="district_af_2608" model="af.district">
+            <field name="state_id" ref="state_af_zab"/>
+            <field name="name">Atghar</field>
+            <field name="name_dr">اتغر</field>
+            <field name="name_ps">اتغر</field>
+        </record>
+        <record id="district_af_2609" model="af.district">
+            <field name="state_id" ref="state_af_zab"/>
+            <field name="name">Naw Bahar</field>
+            <field name="name_dr">نوبهار</field>
+            <field name="name_ps">نوبهار</field>
+        </record>
+        <record id="district_af_2610" model="af.district">
+            <field name="state_id" ref="state_af_zab"/>
+            <field name="name">Shemel Zayee</field>
+            <field name="name_dr">شملزایی</field>
+            <field name="name_ps">شملزایی</field>
+        </record>
+        <record id="district_af_2611" model="af.district">
+            <field name="state_id" ref="state_af_zab"/>
+            <field name="name">Kakari (khak-E-Afghan)</field>
+            <field name="name_dr">(کاکری) خاک افغان</field>
+            <field name="name_ps">(کاکری) خاک افغان</field>
+        </record>
+        <record id="district_af_2701" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Provincial Capital Of Kandahar ( Kandahar )</field>
+            <field name="name_dr">(مرکز ولایت کندهار) کندهار</field>
+            <field name="name_ps">(مرکز ولایت کندهار) کندهار</field>
+        </record>
+        <record id="district_af_2702" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Arghandab</field>
+            <field name="name_dr">ارغنداب</field>
+            <field name="name_ps">ارغنداب</field>
+        </record>
+        <record id="district_af_2703" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Daman</field>
+            <field name="name_dr">دامان</field>
+            <field name="name_ps">دامان</field>
+        </record>
+        <record id="district_af_2704" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Panjwayee</field>
+            <field name="name_dr">پنجوائی</field>
+            <field name="name_ps">پنجوائی</field>
+        </record>
+        <record id="district_af_2705" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Zhire</field>
+            <field name="name_dr">ژیری</field>
+            <field name="name_ps">ژیری</field>
+        </record>
+        <record id="district_af_2706" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Shah Wali Kot</field>
+            <field name="name_dr">شاه ولی کوت</field>
+            <field name="name_ps">شاه ولی کوت</field>
+        </record>
+        <record id="district_af_2707" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Khakrez</field>
+            <field name="name_dr">خاکریز</field>
+            <field name="name_ps">خاکریز</field>
+        </record>
+        <record id="district_af_2708" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Arghistan</field>
+            <field name="name_dr">ارغستان</field>
+            <field name="name_ps">ارغستان</field>
+        </record>
+        <record id="district_af_2709" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Ghorak</field>
+            <field name="name_dr">غورک</field>
+            <field name="name_ps">غورک</field>
+        </record>
+        <record id="district_af_2710" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Maiwand</field>
+            <field name="name_dr">میوند</field>
+            <field name="name_ps">میوند</field>
+        </record>
+        <record id="district_af_2711" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Spin Boldak</field>
+            <field name="name_dr">سپین بولدک</field>
+            <field name="name_ps">سپین بولدک</field>
+        </record>
+        <record id="district_af_2712" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Nesh</field>
+            <field name="name_dr">نیش</field>
+            <field name="name_ps">نیش</field>
+        </record>
+        <record id="district_af_2713" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Miyaneshin</field>
+            <field name="name_dr">میانشین</field>
+            <field name="name_ps">میانشین</field>
+        </record>
+        <record id="district_af_2714" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Shorabak</field>
+            <field name="name_dr">شورابک</field>
+            <field name="name_ps">شورابک</field>
+        </record>
+        <record id="district_af_2715" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Maruf</field>
+            <field name="name_dr">معروف</field>
+            <field name="name_ps">معروف</field>
+        </record>
+        <record id="district_af_2716" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Reg (shiga)</field>
+            <field name="name_dr">ریگ(شگه)</field>
+            <field name="name_ps">ریگ(شگه)</field>
+        </record>
+        <record id="district_af_2718" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_2719" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه 2</field>
+            <field name="name_ps">ناحیه 2</field>
+        </record>
+        <record id="district_af_2720" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Pd 3</field>
+            <field name="name_dr">ناحیه 3</field>
+            <field name="name_ps">ناحیه 3</field>
+        </record>
+        <record id="district_af_2721" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Pd 4</field>
+            <field name="name_dr">ناحیه 4</field>
+            <field name="name_ps">ناحیه 4</field>
+        </record>
+        <record id="district_af_2722" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Pd 5</field>
+            <field name="name_dr">ناحیه 5</field>
+            <field name="name_ps">ناحیه 5</field>
+        </record>
+        <record id="district_af_2723" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Pd 6</field>
+            <field name="name_dr">ناحیه 6</field>
+            <field name="name_ps">ناحیه 6</field>
+        </record>
+        <record id="district_af_2724" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Pd 7</field>
+            <field name="name_dr">ناحیه 7</field>
+            <field name="name_ps">ناحیه 7</field>
+        </record>
+        <record id="district_af_2725" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Pd 8</field>
+            <field name="name_dr">ناحیه 8</field>
+            <field name="name_ps">ناحیه 8</field>
+        </record>
+        <record id="district_af_2726" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Pd 9</field>
+            <field name="name_dr">ناحیه 9</field>
+            <field name="name_ps">ناحیه 9</field>
+        </record>
+        <record id="district_af_2727" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Pd 10</field>
+            <field name="name_dr">ناحیه 10</field>
+            <field name="name_ps">ناحیه 10</field>
+        </record>
+        <record id="district_af_2728" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Pd 11</field>
+            <field name="name_dr">ناحیه 11</field>
+            <field name="name_ps">ناحیه 11</field>
+        </record>
+        <record id="district_af_2729" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Pd 12</field>
+            <field name="name_dr">ناحیه 12</field>
+            <field name="name_ps">ناحیه 12</field>
+        </record>
+        <record id="district_af_2730" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Pd 13</field>
+            <field name="name_dr">ناحیه 13</field>
+            <field name="name_ps">ناحیه 13</field>
+        </record>
+        <record id="district_af_2731" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Pd 14</field>
+            <field name="name_dr">ناحیه 14</field>
+            <field name="name_ps">ناحیه 14</field>
+        </record>
+        <record id="district_af_2732" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Pd 15</field>
+            <field name="name_dr">ناحیه 15</field>
+            <field name="name_ps">ناحیه 15</field>
+        </record>
+        <record id="district_af_2733" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Pd 16</field>
+            <field name="name_dr">ناحیه 16</field>
+            <field name="name_ps">ناحیه 16</field>
+        </record>
+        <record id="district_af_2734" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Pd 17</field>
+            <field name="name_dr">ناحیه 17</field>
+            <field name="name_ps">ناحیه 17</field>
+        </record>
+        <record id="district_af_2735" model="af.district">
+            <field name="state_id" ref="state_af_kan"/>
+            <field name="name">Dand</field>
+            <field name="name_dr">دند</field>
+            <field name="name_ps">دند</field>
+        </record>
+        <record id="district_af_2801" model="af.district">
+            <field name="state_id" ref="state_af_jow"/>
+            <field name="name">Provincial Capital Of Jawzjan [ Sheberghan ]</field>
+            <field name="name_dr">( مرکز ولایت جوزجان) شبرغان</field>
+            <field name="name_ps">( مرکز ولایت جوزجان) شبرغان</field>
+        </record>
+        <record id="district_af_2802" model="af.district">
+            <field name="state_id" ref="state_af_jow"/>
+            <field name="name">Khwaja Dukoh</field>
+            <field name="name_dr">خواجه دوکوه</field>
+            <field name="name_ps">خواجه دوکوه</field>
+        </record>
+        <record id="district_af_2803" model="af.district">
+            <field name="state_id" ref="state_af_jow"/>
+            <field name="name">Khanaqa</field>
+            <field name="name_dr">خانقاً</field>
+            <field name="name_ps">خانقاً</field>
+        </record>
+        <record id="district_af_2804" model="af.district">
+            <field name="state_id" ref="state_af_jow"/>
+            <field name="name">Mingajik</field>
+            <field name="name_dr">منگجیک</field>
+            <field name="name_ps">منگجیک</field>
+        </record>
+        <record id="district_af_2805" model="af.district">
+            <field name="state_id" ref="state_af_jow"/>
+            <field name="name">Qush Tepa</field>
+            <field name="name_dr">قوش تیپه</field>
+            <field name="name_ps">قوش تیپه</field>
+        </record>
+        <record id="district_af_2806" model="af.district">
+            <field name="state_id" ref="state_af_jow"/>
+            <field name="name">Khamyab</field>
+            <field name="name_dr">خم آب</field>
+            <field name="name_ps">خم آب</field>
+        </record>
+        <record id="district_af_2807" model="af.district">
+            <field name="state_id" ref="state_af_jow"/>
+            <field name="name">Aqchah</field>
+            <field name="name_dr">آقچه</field>
+            <field name="name_ps">آقچه</field>
+        </record>
+        <record id="district_af_2808" model="af.district">
+            <field name="state_id" ref="state_af_jow"/>
+            <field name="name">Faizabad</field>
+            <field name="name_dr">فیض آباد</field>
+            <field name="name_ps">فیض آباد</field>
+        </record>
+        <record id="district_af_2809" model="af.district">
+            <field name="state_id" ref="state_af_jow"/>
+            <field name="name">Mardyan</field>
+            <field name="name_dr">مردیان</field>
+            <field name="name_ps">مردیان</field>
+        </record>
+        <record id="district_af_2810" model="af.district">
+            <field name="state_id" ref="state_af_jow"/>
+            <field name="name">Qarqin</field>
+            <field name="name_dr">قرقین</field>
+            <field name="name_ps">قرقین</field>
+        </record>
+        <record id="district_af_2811" model="af.district">
+            <field name="state_id" ref="state_af_jow"/>
+            <field name="name">Darzab</field>
+            <field name="name_dr">درز آب</field>
+            <field name="name_ps">درز آب</field>
+        </record>
+        <record id="district_af_2812" model="af.district">
+            <field name="state_id" ref="state_af_jow"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_2813" model="af.district">
+            <field name="state_id" ref="state_af_jow"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه 2</field>
+            <field name="name_ps">ناحیه 2</field>
+        </record>
+        <record id="district_af_2814" model="af.district">
+            <field name="state_id" ref="state_af_jow"/>
+            <field name="name">Pd 3</field>
+            <field name="name_dr">ناحیه 3</field>
+            <field name="name_ps">ناحیه 3</field>
+        </record>
+        <record id="district_af_2815" model="af.district">
+            <field name="state_id" ref="state_af_jow"/>
+            <field name="name">Pd 4</field>
+            <field name="name_dr">ناحیه 4</field>
+            <field name="name_ps">ناحیه 4</field>
+        </record>
+        <record id="district_af_2902" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Pashtun Kot</field>
+            <field name="name_dr">پشتون کوت</field>
+            <field name="name_ps">پشتون کوت</field>
+        </record>
+        <record id="district_af_2903" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Khwaja Sabz Posh-E-Wali</field>
+            <field name="name_dr">خواجه سبز پوش ولی</field>
+            <field name="name_ps">خواجه سبز پوش ولی</field>
+        </record>
+        <record id="district_af_2904" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Almar</field>
+            <field name="name_dr">المار</field>
+            <field name="name_ps">المار</field>
+        </record>
+        <record id="district_af_2905" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Bil Chiragh</field>
+            <field name="name_dr">بل چراغ</field>
+            <field name="name_ps">بل چراغ</field>
+        </record>
+        <record id="district_af_2906" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Shirin Tagab</field>
+            <field name="name_dr">شرین تگاب</field>
+            <field name="name_ps">شرین تگاب</field>
+        </record>
+        <record id="district_af_2907" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Qaisar</field>
+            <field name="name_dr">قیصار</field>
+            <field name="name_ps">قیصار</field>
+        </record>
+        <record id="district_af_2908" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Gurziwan</field>
+            <field name="name_dr">گرزیوان</field>
+            <field name="name_ps">گرزیوان</field>
+        </record>
+        <record id="district_af_2909" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Dawlat Abad</field>
+            <field name="name_dr">دولت آباد</field>
+            <field name="name_ps">دولت آباد</field>
+        </record>
+        <record id="district_af_2910" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Kohistan</field>
+            <field name="name_dr">کوهستان</field>
+            <field name="name_ps">کوهستان</field>
+        </record>
+        <record id="district_af_2911" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Qaram Qole</field>
+            <field name="name_dr">قرمقول</field>
+            <field name="name_ps">قرمقول</field>
+        </record>
+        <record id="district_af_2912" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Qurghan</field>
+            <field name="name_dr">قرغان</field>
+            <field name="name_ps">قرغان</field>
+        </record>
+        <record id="district_af_2913" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Andkhoy</field>
+            <field name="name_dr">اندخوی</field>
+            <field name="name_ps">اندخوی</field>
+        </record>
+        <record id="district_af_2914" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Khan Charbagh</field>
+            <field name="name_dr">خان چارباغ</field>
+            <field name="name_ps">خان چارباغ</field>
+        </record>
+        <record id="district_af_2916" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_2917" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه 2</field>
+            <field name="name_ps">ناحیه 2</field>
+        </record>
+        <record id="district_af_2918" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Pd 3</field>
+            <field name="name_dr">ناحیه 3</field>
+            <field name="name_ps">ناحیه 3</field>
+        </record>
+        <record id="district_af_2919" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Pd 4</field>
+            <field name="name_dr">ناحیه 4</field>
+            <field name="name_ps">ناحیه 4</field>
+        </record>
+        <record id="district_af_2920" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Pd 5</field>
+            <field name="name_dr">ناحیه 5</field>
+            <field name="name_ps">ناحیه 5</field>
+        </record>
+        <record id="district_af_2921" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Pd 6</field>
+            <field name="name_dr">ناحیه 6</field>
+            <field name="name_ps">ناحیه 6</field>
+        </record>
+        <record id="district_af_2922" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Pd 7</field>
+            <field name="name_dr">ناحیه 7</field>
+            <field name="name_ps">ناحیه 7</field>
+        </record>
+        <record id="district_af_2923" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Pd 8</field>
+            <field name="name_dr">ناحیه 8</field>
+            <field name="name_ps">ناحیه 8</field>
+        </record>
+        <record id="district_af_2924" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Pd 9</field>
+            <field name="name_dr">ناحیه 9</field>
+            <field name="name_ps">ناحیه 9</field>
+        </record>
+        <record id="district_af_2925" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Pd 10</field>
+            <field name="name_dr">ناحیه 10</field>
+            <field name="name_ps">ناحیه 10</field>
+        </record>
+        <record id="district_af_2926" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">(provincial Capital Of Faryab) Maymana</field>
+            <field name="name_dr">(مرکزولایت فاریاب) میمنه</field>
+            <field name="name_ps">(مرکزولایت فاریاب) میمنه</field>
+        </record>
+        <record id="district_af_2927" model="af.district">
+            <field name="state_id" ref="state_af_fyb"/>
+            <field name="name">Ghormach</field>
+            <field name="name_dr">غورماچ</field>
+            <field name="name_ps">غورماچ</field>
+        </record>
+        <record id="district_af_3001" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Provincial Capital Of Helmand (lashkargah)</field>
+            <field name="name_dr">( مرکز ولایت هلمند) لشکرگاه</field>
+            <field name="name_ps">( مرکز ولایت هلمند) لشکرگاه</field>
+        </record>
+        <record id="district_af_3002" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Nad Ali</field>
+            <field name="name_dr">نادعلی</field>
+            <field name="name_ps">نادعلی</field>
+        </record>
+        <record id="district_af_3003" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Nawa-I- Barikzayee</field>
+            <field name="name_dr">نـاوه بـارکـزائـی</field>
+            <field name="name_ps">نـاوه بـارکـزائـی</field>
+        </record>
+        <record id="district_af_3004" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Naher-I- Saraj</field>
+            <field name="name_dr">نـهـر ســراج</field>
+            <field name="name_ps">نـهـر ســراج</field>
+        </record>
+        <record id="district_af_3005" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Washer</field>
+            <field name="name_dr">واشـــیــر</field>
+            <field name="name_ps">واشـــیــر</field>
+        </record>
+        <record id="district_af_3006" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Garm Ser</field>
+            <field name="name_dr">گرم سیر</field>
+            <field name="name_ps">گرم سیر</field>
+        </record>
+        <record id="district_af_3007" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Nawzad</field>
+            <field name="name_dr">نوزاد</field>
+            <field name="name_ps">نوزاد</field>
+        </record>
+        <record id="district_af_3008" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Sangin Qala</field>
+            <field name="name_dr">سنگـیــن قـلــعه</field>
+            <field name="name_ps">سنگـیــن قـلــعه</field>
+        </record>
+        <record id="district_af_3009" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Musa Qala</field>
+            <field name="name_dr">مــوســی قـلــعـه</field>
+            <field name="name_ps">مــوســی قـلــعـه</field>
+        </record>
+        <record id="district_af_3010" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Kajaki</field>
+            <field name="name_dr">کجکی</field>
+            <field name="name_ps">کجکی</field>
+        </record>
+        <record id="district_af_3011" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Reg-E-Khan Nishin</field>
+            <field name="name_dr">ریـک خـانـشــیـن</field>
+            <field name="name_ps">ریـک خـانـشــیـن</field>
+        </record>
+        <record id="district_af_3012" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Baghran</field>
+            <field name="name_dr">باغران</field>
+            <field name="name_ps">باغران</field>
+        </record>
+        <record id="district_af_3013" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Deshu</field>
+            <field name="name_dr">دیشو</field>
+            <field name="name_ps">دیشو</field>
+        </record>
+        <record id="district_af_3015" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_3016" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه 2</field>
+            <field name="name_ps">ناحیه 2</field>
+        </record>
+        <record id="district_af_3017" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Pd 3</field>
+            <field name="name_dr">ناحیه 3</field>
+            <field name="name_ps">ناحیه 3</field>
+        </record>
+        <record id="district_af_3018" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Pd 4</field>
+            <field name="name_dr">ناحیه 4</field>
+            <field name="name_ps">ناحیه 4</field>
+        </record>
+        <record id="district_af_3019" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Garashk</field>
+            <field name="name_dr">گرشک</field>
+            <field name="name_ps">گرشک</field>
+        </record>
+        <record id="district_af_3020" model="af.district">
+            <field name="state_id" ref="state_af_hel"/>
+            <field name="name">Maarja</field>
+            <field name="name_dr">مارجه</field>
+            <field name="name_ps">مارجه</field>
+        </record>
+        <record id="district_af_3101" model="af.district">
+            <field name="state_id" ref="state_af_bdg"/>
+            <field name="name">Provincial Capital Of Badghis ( Qala-E-Now )</field>
+            <field name="name_dr">( مرکز ولایت بادغیس) قلعه نو</field>
+            <field name="name_ps">( مرکز ولایت بادغیس) قلعه نو</field>
+        </record>
+        <record id="district_af_3102" model="af.district">
+            <field name="state_id" ref="state_af_bdg"/>
+            <field name="name">Ab Kamari</field>
+            <field name="name_dr">آبکمــری</field>
+            <field name="name_ps">آبکمــری</field>
+        </record>
+        <record id="district_af_3103" model="af.district">
+            <field name="state_id" ref="state_af_bdg"/>
+            <field name="name">Muqur</field>
+            <field name="name_dr">مقـــر</field>
+            <field name="name_ps">مقـــر</field>
+        </record>
+        <record id="district_af_3104" model="af.district">
+            <field name="state_id" ref="state_af_bdg"/>
+            <field name="name">Qadis</field>
+            <field name="name_dr">قادس</field>
+            <field name="name_ps">قادس</field>
+        </record>
+        <record id="district_af_3105" model="af.district">
+            <field name="state_id" ref="state_af_bdg"/>
+            <field name="name">Bala Murghab</field>
+            <field name="name_dr">بالامــرغــاب</field>
+            <field name="name_ps">بالامــرغــاب</field>
+        </record>
+        <record id="district_af_3106" model="af.district">
+            <field name="state_id" ref="state_af_bdg"/>
+            <field name="name">Jawand</field>
+            <field name="name_dr">جونـد</field>
+            <field name="name_ps">جونـد</field>
+        </record>
+        <record id="district_af_3107" model="af.district">
+            <field name="state_id" ref="state_af_bdg"/>
+            <field name="name">Ghormach</field>
+            <field name="name_dr">غـورمــاچ</field>
+            <field name="name_ps">غـورمــاچ</field>
+        </record>
+        <record id="district_af_3202" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Enjil</field>
+            <field name="name_dr">انجیل</field>
+            <field name="name_ps">انجیل</field>
+        </record>
+        <record id="district_af_3203" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Nizam-E-Shahid (guzara)</field>
+            <field name="name_dr">(نظام شهید) گذره</field>
+            <field name="name_ps">(نظام شهید) گذره</field>
+        </record>
+        <record id="district_af_3204" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Karrukh</field>
+            <field name="name_dr">کرخ</field>
+            <field name="name_ps">کرخ</field>
+        </record>
+        <record id="district_af_3205" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Zendajan</field>
+            <field name="name_dr">زنده جان</field>
+            <field name="name_ps">زنده جان</field>
+        </record>
+        <record id="district_af_3206" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Pashtun Zarghun</field>
+            <field name="name_dr">پشتون زرغون</field>
+            <field name="name_ps">پشتون زرغون</field>
+        </record>
+        <record id="district_af_3207" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Kushk (rubat-E-Sangi)</field>
+            <field name="name_dr">(کشک) رباط سنگی</field>
+            <field name="name_ps">(کشک) رباط سنگی</field>
+        </record>
+        <record id="district_af_3208" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Gulran</field>
+            <field name="name_dr">گلران</field>
+            <field name="name_ps">گلران</field>
+        </record>
+        <record id="district_af_3209" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Adraskan</field>
+            <field name="name_dr">ادرسکن</field>
+            <field name="name_ps">ادرسکن</field>
+        </record>
+        <record id="district_af_3210" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Kushk-E-Kohna</field>
+            <field name="name_dr">کشک کهنه</field>
+            <field name="name_ps">کشک کهنه</field>
+        </record>
+        <record id="district_af_3211" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Ghoryan</field>
+            <field name="name_dr">غوریان</field>
+            <field name="name_ps">غوریان</field>
+        </record>
+        <record id="district_af_3212" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Obe</field>
+            <field name="name_dr">اوبه</field>
+            <field name="name_ps">اوبه</field>
+        </record>
+        <record id="district_af_3213" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Kohsan</field>
+            <field name="name_dr">کهسان</field>
+            <field name="name_ps">کهسان</field>
+        </record>
+        <record id="district_af_3214" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Shindand</field>
+            <field name="name_dr">شیندند</field>
+            <field name="name_ps">شیندند</field>
+        </record>
+        <record id="district_af_3215" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Fersi</field>
+            <field name="name_dr">فرسی</field>
+            <field name="name_ps">فرسی</field>
+        </record>
+        <record id="district_af_3216" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Chisht-E-Sharif</field>
+            <field name="name_dr">چشت شریف</field>
+            <field name="name_ps">چشت شریف</field>
+        </record>
+        <record id="district_af_3218" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه1</field>
+            <field name="name_ps">ناحیه1</field>
+        </record>
+        <record id="district_af_3219" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه2</field>
+            <field name="name_ps">ناحیه2</field>
+        </record>
+        <record id="district_af_3220" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Pd 3</field>
+            <field name="name_dr">ناحیه3</field>
+            <field name="name_ps">ناحیه3</field>
+        </record>
+        <record id="district_af_3221" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Pd 4</field>
+            <field name="name_dr">ناحیه4</field>
+            <field name="name_ps">ناحیه4</field>
+        </record>
+        <record id="district_af_3222" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Pd 5</field>
+            <field name="name_dr">ناحیه5</field>
+            <field name="name_ps">ناحیه5</field>
+        </record>
+        <record id="district_af_3223" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Pd 6</field>
+            <field name="name_dr">ناحیه6</field>
+            <field name="name_ps">ناحیه6</field>
+        </record>
+        <record id="district_af_3224" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Pd 7</field>
+            <field name="name_dr">ناحیه7</field>
+            <field name="name_ps">ناحیه7</field>
+        </record>
+        <record id="district_af_3225" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Pd 8</field>
+            <field name="name_dr">ناحیه8</field>
+            <field name="name_ps">ناحیه8</field>
+        </record>
+        <record id="district_af_3226" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Pd 9</field>
+            <field name="name_dr">ناحیه9</field>
+            <field name="name_ps">ناحیه9</field>
+        </record>
+        <record id="district_af_3227" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Pd 10</field>
+            <field name="name_dr">ناحیه10</field>
+            <field name="name_ps">ناحیه10</field>
+        </record>
+        <record id="district_af_3228" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Pd 11</field>
+            <field name="name_dr">ناحیه11</field>
+            <field name="name_ps">ناحیه11</field>
+        </record>
+        <record id="district_af_3229" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Pd 12</field>
+            <field name="name_dr">ناحیه12</field>
+            <field name="name_ps">ناحیه12</field>
+        </record>
+        <record id="district_af_3230" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Pd 13</field>
+            <field name="name_dr">ناحیه13</field>
+            <field name="name_ps">ناحیه13</field>
+        </record>
+        <record id="district_af_3231" model="af.district">
+            <field name="state_id" ref="state_af_her"/>
+            <field name="name">Provincial Capital Of Herat) Herat)</field>
+            <field name="name_dr">(مرکز ولایت هرات) هرات</field>
+            <field name="name_ps">(مرکز ولایت هرات) هرات</field>
+        </record>
+        <record id="district_af_3301" model="af.district">
+            <field name="state_id" ref="state_af_fra"/>
+            <field name="name">Provincial Capital Of Farah (farah)</field>
+            <field name="name_dr">( مرکز ولایت فراه) فراه</field>
+            <field name="name_ps">( مرکز ولایت فراه) فراه</field>
+        </record>
+        <record id="district_af_3302" model="af.district">
+            <field name="state_id" ref="state_af_fra"/>
+            <field name="name">Pushtrud</field>
+            <field name="name_dr">پشت رود</field>
+            <field name="name_ps">پشت رود</field>
+        </record>
+        <record id="district_af_3303" model="af.district">
+            <field name="state_id" ref="state_af_fra"/>
+            <field name="name">Khak-E-Safed</field>
+            <field name="name_dr">خاک سفید</field>
+            <field name="name_ps">خاک سفید</field>
+        </record>
+        <record id="district_af_3304" model="af.district">
+            <field name="state_id" ref="state_af_fra"/>
+            <field name="name">Qala-E-Kah</field>
+            <field name="name_dr">قلعه کاه</field>
+            <field name="name_ps">قلعه کاه</field>
+        </record>
+        <record id="district_af_3305" model="af.district">
+            <field name="state_id" ref="state_af_fra"/>
+            <field name="name">Shib Koh</field>
+            <field name="name_dr">شیب کوه</field>
+            <field name="name_ps">شیب کوه</field>
+        </record>
+        <record id="district_af_3306" model="af.district">
+            <field name="state_id" ref="state_af_fra"/>
+            <field name="name">Bala Buluk</field>
+            <field name="name_dr">بالا بلوک</field>
+            <field name="name_ps">بالا بلوک</field>
+        </record>
+        <record id="district_af_3307" model="af.district">
+            <field name="state_id" ref="state_af_fra"/>
+            <field name="name">Anar Dara</field>
+            <field name="name_dr">اناردره</field>
+            <field name="name_ps">اناردره</field>
+        </record>
+        <record id="district_af_3308" model="af.district">
+            <field name="state_id" ref="state_af_fra"/>
+            <field name="name">Bakwa</field>
+            <field name="name_dr">بکواه</field>
+            <field name="name_ps">بکواه</field>
+        </record>
+        <record id="district_af_3309" model="af.district">
+            <field name="state_id" ref="state_af_fra"/>
+            <field name="name">Lash-E-Juwayn</field>
+            <field name="name_dr">لاش جوین</field>
+            <field name="name_ps">لاش جوین</field>
+        </record>
+        <record id="district_af_3310" model="af.district">
+            <field name="state_id" ref="state_af_fra"/>
+            <field name="name">Gulistan</field>
+            <field name="name_dr">گلستان</field>
+            <field name="name_ps">گلستان</field>
+        </record>
+        <record id="district_af_3311" model="af.district">
+            <field name="state_id" ref="state_af_fra"/>
+            <field name="name">Pur Chaman</field>
+            <field name="name_dr">پرچمن</field>
+            <field name="name_ps">پرچمن</field>
+        </record>
+        <record id="district_af_3313" model="af.district">
+            <field name="state_id" ref="state_af_fra"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_3314" model="af.district">
+            <field name="state_id" ref="state_af_fra"/>
+            <field name="name">Pd 2</field>
+            <field name="name_dr">ناحیه 2</field>
+            <field name="name_ps">ناحیه 2</field>
+        </record>
+        <record id="district_af_3315" model="af.district">
+            <field name="state_id" ref="state_af_fra"/>
+            <field name="name">Pd 3</field>
+            <field name="name_dr">ناحیه 3</field>
+            <field name="name_ps">ناحیه 3</field>
+        </record>
+        <record id="district_af_3316" model="af.district">
+            <field name="state_id" ref="state_af_fra"/>
+            <field name="name">Pd 4</field>
+            <field name="name_dr">ناحیه 4</field>
+            <field name="name_ps">ناحیه 4</field>
+        </record>
+        <record id="district_af_3317" model="af.district">
+            <field name="state_id" ref="state_af_fra"/>
+            <field name="name">---</field>
+            <field name="name_dr">---</field>
+            <field name="name_ps">---</field>
+        </record>
+        <record id="district_af_3401" model="af.district">
+            <field name="state_id" ref="state_af_nim"/>
+            <field name="name">Provincial Capital Of Nimroz (zaranj)</field>
+            <field name="name_dr">( مرکز ولایت نیمروز) زرنج</field>
+            <field name="name_ps">( مرکز ولایت نیمروز) زرنج</field>
+        </record>
+        <record id="district_af_3402" model="af.district">
+            <field name="state_id" ref="state_af_nim"/>
+            <field name="name">Kang</field>
+            <field name="name_dr">کنگ</field>
+            <field name="name_ps">کنگ</field>
+        </record>
+        <record id="district_af_3403" model="af.district">
+            <field name="state_id" ref="state_af_nim"/>
+            <field name="name">Asl-E-Chakhansur</field>
+            <field name="name_dr">اصل چخانسور</field>
+            <field name="name_ps">اصل چخانسور</field>
+        </record>
+        <record id="district_af_3404" model="af.district">
+            <field name="state_id" ref="state_af_nim"/>
+            <field name="name">Char Burjak</field>
+            <field name="name_dr">چهاربرجک</field>
+            <field name="name_ps">چهاربرجک</field>
+        </record>
+        <record id="district_af_3405" model="af.district">
+            <field name="state_id" ref="state_af_nim"/>
+            <field name="name">Khashrod</field>
+            <field name="name_dr">خاشرود</field>
+            <field name="name_ps">خاشرود</field>
+        </record>
+        <record id="district_af_3407" model="af.district">
+            <field name="state_id" ref="state_af_nim"/>
+            <field name="name">Pd 1</field>
+            <field name="name_dr">ناحیه 1</field>
+            <field name="name_ps">ناحیه 1</field>
+        </record>
+        <record id="district_af_3408" model="af.district">
+            <field name="state_id" ref="state_af_nim"/>
+            <field name="name">Delaram</field>
+            <field name="name_dr">دلارام</field>
+        </record>
+</odoo>

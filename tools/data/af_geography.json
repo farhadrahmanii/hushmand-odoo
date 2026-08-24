@@ -1,0 +1,4034 @@
+{
+    "source": "Hushmand ERP production database",
+    "extracted": "2026-08-24",
+    "provinces": [
+        {
+            "id": 1,
+            "en": "KABUL",
+            "dr": "کابل",
+            "pa": "کابل"
+        },
+        {
+            "id": 2,
+            "en": "KAPISA",
+            "dr": "کاپیسا",
+            "pa": "کاپیسا"
+        },
+        {
+            "id": 3,
+            "en": "PARWAN",
+            "dr": "پروان",
+            "pa": "پروان"
+        },
+        {
+            "id": 4,
+            "en": "WARDAK",
+            "dr": "وردک",
+            "pa": "وردک"
+        },
+        {
+            "id": 5,
+            "en": "LOGAR",
+            "dr": "لوگر",
+            "pa": "لوگر"
+        },
+        {
+            "id": 6,
+            "en": "NANGARHAR",
+            "dr": "ننگرهار",
+            "pa": "ننگرهار"
+        },
+        {
+            "id": 7,
+            "en": "LAGHMAN",
+            "dr": "لغمان",
+            "pa": "لغمان"
+        },
+        {
+            "id": 8,
+            "en": "PANJSHER",
+            "dr": "پنجشیر",
+            "pa": "پنجشیر"
+        },
+        {
+            "id": 9,
+            "en": "BAGHLAN",
+            "dr": "بغلان",
+            "pa": "بغلان"
+        },
+        {
+            "id": 10,
+            "en": "BAMYAN",
+            "dr": "بامیان",
+            "pa": "بامیان"
+        },
+        {
+            "id": 11,
+            "en": "GHAZNI",
+            "dr": "غزنی",
+            "pa": "غزنی"
+        },
+        {
+            "id": 12,
+            "en": "PAKTIKA",
+            "dr": "پکتیکا",
+            "pa": "پکتیکا"
+        },
+        {
+            "id": 13,
+            "en": "PAKTYA",
+            "dr": "پکتیا",
+            "pa": "پکتیا"
+        },
+        {
+            "id": 14,
+            "en": "KHOST",
+            "dr": "خوست",
+            "pa": "خوست"
+        },
+        {
+            "id": 15,
+            "en": "KUNARHA",
+            "dr": "کنرها",
+            "pa": "کنرها"
+        },
+        {
+            "id": 16,
+            "en": "NOORISTAN",
+            "dr": "نورستان",
+            "pa": "نورستان"
+        },
+        {
+            "id": 17,
+            "en": "BADAKHSHAN",
+            "dr": "بدخشان",
+            "pa": "بدخشان"
+        },
+        {
+            "id": 18,
+            "en": "TAKHAR",
+            "dr": "تخار",
+            "pa": "تخار"
+        },
+        {
+            "id": 19,
+            "en": "KUNDUZ",
+            "dr": "کندوز",
+            "pa": "کندوز"
+        },
+        {
+            "id": 20,
+            "en": "SAMANGAN",
+            "dr": "سمنگان",
+            "pa": "سمنگان"
+        },
+        {
+            "id": 21,
+            "en": "BALKH",
+            "dr": "بلخ",
+            "pa": "بلخ"
+        },
+        {
+            "id": 22,
+            "en": "SAR-E-PUL",
+            "dr": "سرپل",
+            "pa": "سرپل"
+        },
+        {
+            "id": 23,
+            "en": "GHOR",
+            "dr": "غور",
+            "pa": "غور"
+        },
+        {
+            "id": 24,
+            "en": "DAYKUNDI",
+            "dr": "دایکوندی",
+            "pa": "دایکوندی"
+        },
+        {
+            "id": 25,
+            "en": "UROZGAN",
+            "dr": "اورزگان",
+            "pa": "اورزگان"
+        },
+        {
+            "id": 26,
+            "en": "ZABUL",
+            "dr": "زابل",
+            "pa": "زابل"
+        },
+        {
+            "id": 27,
+            "en": "KANDAHAR",
+            "dr": "کندهار",
+            "pa": "کندهار"
+        },
+        {
+            "id": 28,
+            "en": "JAWZJAN",
+            "dr": "جوزجان",
+            "pa": "جوزجان"
+        },
+        {
+            "id": 29,
+            "en": "FARYAB",
+            "dr": "فاریاب",
+            "pa": "فاریاب"
+        },
+        {
+            "id": 30,
+            "en": "HELMAND",
+            "dr": "هلمند",
+            "pa": "هلمند"
+        },
+        {
+            "id": 31,
+            "en": "BADGHIS",
+            "dr": "بادغیس",
+            "pa": "بادغیس"
+        },
+        {
+            "id": 32,
+            "en": "HERAT",
+            "dr": "هرات",
+            "pa": "هرات"
+        },
+        {
+            "id": 33,
+            "en": "FARAH",
+            "dr": "فراه",
+            "pa": "فراه"
+        },
+        {
+            "id": 34,
+            "en": "NIMROZ",
+            "dr": "نیمروز",
+            "pa": "نیمروز"
+        }
+    ],
+    "districts": [
+        {
+            "id": 103,
+            "province_id": 1,
+            "en": "CHAHAR ASYAB",
+            "dr": "چهارآسیاب",
+            "pa": "چهارآسیاب"
+        },
+        {
+            "id": 104,
+            "province_id": 1,
+            "en": "BAGRAMI",
+            "dr": "بگرامی",
+            "pa": "بگرامی"
+        },
+        {
+            "id": 105,
+            "province_id": 1,
+            "en": "DEHSABZ",
+            "dr": "ده سبز",
+            "pa": "ده سبز"
+        },
+        {
+            "id": 106,
+            "province_id": 1,
+            "en": "SHAKAR DARA",
+            "dr": "شکردره",
+            "pa": "شکردره"
+        },
+        {
+            "id": 107,
+            "province_id": 1,
+            "en": "MUSAHI",
+            "dr": "موسئی",
+            "pa": "موسئی"
+        },
+        {
+            "id": 108,
+            "province_id": 1,
+            "en": "MIR BACHA KOT",
+            "dr": "میر بچه کوت",
+            "pa": "میر بچه کوت"
+        },
+        {
+            "id": 109,
+            "province_id": 1,
+            "en": "KHAK-E-JABAR",
+            "dr": "خاک جبار",
+            "pa": "خاک جبار"
+        },
+        {
+            "id": 110,
+            "province_id": 1,
+            "en": "KALAKAN",
+            "dr": "کلکان",
+            "pa": "کلکان"
+        },
+        {
+            "id": 111,
+            "province_id": 1,
+            "en": "GULDARA",
+            "dr": "گلدره",
+            "pa": "گلدره"
+        },
+        {
+            "id": 112,
+            "province_id": 1,
+            "en": "FARZA",
+            "dr": "فرزه",
+            "pa": "فرزه"
+        },
+        {
+            "id": 113,
+            "province_id": 1,
+            "en": "ESTALEF",
+            "dr": "استالف",
+            "pa": "استالف"
+        },
+        {
+            "id": 114,
+            "province_id": 1,
+            "en": "QARA BAGH",
+            "dr": "قره باغ",
+            "pa": "قره باغ"
+        },
+        {
+            "id": 115,
+            "province_id": 1,
+            "en": "SURUBI",
+            "dr": "سروبی",
+            "pa": "سروبی"
+        },
+        {
+            "id": 116,
+            "province_id": 1,
+            "en": "PD1",
+            "dr": "ناحیه1",
+            "pa": "ناحیه1"
+        },
+        {
+            "id": 117,
+            "province_id": 1,
+            "en": "PD2",
+            "dr": "ناحیه2",
+            "pa": "ناحیه2"
+        },
+        {
+            "id": 118,
+            "province_id": 1,
+            "en": "PD3",
+            "dr": "ناحیه3",
+            "pa": "ناحیه3"
+        },
+        {
+            "id": 119,
+            "province_id": 1,
+            "en": "PD 4",
+            "dr": "ناحیه 4",
+            "pa": "ناحیه 4"
+        },
+        {
+            "id": 120,
+            "province_id": 1,
+            "en": "PD 5",
+            "dr": "ناحیه 5",
+            "pa": "ناحیه 5"
+        },
+        {
+            "id": 121,
+            "province_id": 1,
+            "en": "PD 6",
+            "dr": "ناحیه 6",
+            "pa": "ناحیه 6"
+        },
+        {
+            "id": 122,
+            "province_id": 1,
+            "en": "PD 7",
+            "dr": "ناحیه 7",
+            "pa": "ناحیه 7"
+        },
+        {
+            "id": 123,
+            "province_id": 1,
+            "en": "PD 8",
+            "dr": "ناحیه 8",
+            "pa": "ناحیه 8"
+        },
+        {
+            "id": 124,
+            "province_id": 1,
+            "en": "PD 9",
+            "dr": "ناحیه 9",
+            "pa": "ناحیه 9"
+        },
+        {
+            "id": 125,
+            "province_id": 1,
+            "en": "PD 10",
+            "dr": "ناحیه 10",
+            "pa": "ناحیه 10"
+        },
+        {
+            "id": 126,
+            "province_id": 1,
+            "en": "PD 11",
+            "dr": "ناحیه 11",
+            "pa": "ناحیه 11"
+        },
+        {
+            "id": 127,
+            "province_id": 1,
+            "en": "PD 12",
+            "dr": "ناحیه 12",
+            "pa": "ناحیه 12"
+        },
+        {
+            "id": 128,
+            "province_id": 1,
+            "en": "PD 13",
+            "dr": "ناحیه 13",
+            "pa": "ناحیه 13"
+        },
+        {
+            "id": 129,
+            "province_id": 1,
+            "en": "PD 14",
+            "dr": "ناحیه 14",
+            "pa": "ناحیه 14"
+        },
+        {
+            "id": 130,
+            "province_id": 1,
+            "en": "PD 15",
+            "dr": "ناحیه 15",
+            "pa": "ناحیه 15"
+        },
+        {
+            "id": 131,
+            "province_id": 1,
+            "en": "PD 16",
+            "dr": "ناحیه 16",
+            "pa": "ناحیه 16"
+        },
+        {
+            "id": 132,
+            "province_id": 1,
+            "en": "PD 17",
+            "dr": "ناحیه 17",
+            "pa": "ناحیه 17"
+        },
+        {
+            "id": 133,
+            "province_id": 1,
+            "en": "PD 18",
+            "dr": "ناحیه 18",
+            "pa": "ناحیه 18"
+        },
+        {
+            "id": 134,
+            "province_id": 1,
+            "en": "PD 19",
+            "dr": "ناحیه 19",
+            "pa": "ناحیه 19"
+        },
+        {
+            "id": 135,
+            "province_id": 1,
+            "en": "PD 20",
+            "dr": "ناحیه 20",
+            "pa": "ناحیه 20"
+        },
+        {
+            "id": 136,
+            "province_id": 1,
+            "en": "PD 21",
+            "dr": "ناحیه 21",
+            "pa": "ناحیه 21"
+        },
+        {
+            "id": 137,
+            "province_id": 1,
+            "en": "PD 22",
+            "dr": "ناحیه 22",
+            "pa": "ناحیه 22"
+        },
+        {
+            "id": 139,
+            "province_id": 1,
+            "en": "Paghman",
+            "dr": "پغمان",
+            "pa": "پغمان"
+        },
+        {
+            "id": 201,
+            "province_id": 2,
+            "en": "PROVINCIAL CAPITAL OF KAPISA (MAHMUDI RAQI)",
+            "dr": "( مرکز ولایت کاپیسا) محمود راقی",
+            "pa": "( مرکز ولایت کاپیسا) محمود راقی"
+        },
+        {
+            "id": 202,
+            "province_id": 2,
+            "en": "HISSA-E- DUWUMI KOHISTAN",
+            "dr": "حصه دوم کوهستان",
+            "pa": "حصه دوم کوهستان"
+        },
+        {
+            "id": 203,
+            "province_id": 2,
+            "en": "KOH BAND",
+            "dr": "کوه بند",
+            "pa": "کوه بند"
+        },
+        {
+            "id": 204,
+            "province_id": 2,
+            "en": "HISSA-E-AWALI KOHISTAN",
+            "dr": "حصه اول کوهستان",
+            "pa": "حصه اول کوهستان"
+        },
+        {
+            "id": 205,
+            "province_id": 2,
+            "en": "NIJRAB",
+            "dr": "نجراب",
+            "pa": "نجراب"
+        },
+        {
+            "id": 206,
+            "province_id": 2,
+            "en": "TAGAB",
+            "dr": "تگاب",
+            "pa": "تگاب"
+        },
+        {
+            "id": 207,
+            "province_id": 2,
+            "en": "ALASAY",
+            "dr": "اله سای",
+            "pa": "اله سای"
+        },
+        {
+            "id": 209,
+            "province_id": 2,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 210,
+            "province_id": 2,
+            "en": "PD 2",
+            "dr": "ناحیه 2",
+            "pa": "ناحیه 2"
+        },
+        {
+            "id": 301,
+            "province_id": 3,
+            "en": "PROVINCIAL CAPITAL OF PARWAN (CHARIKAR)",
+            "dr": "( مرکز ولایت پروان) چاریکار",
+            "pa": "( مرکز ولایت پروان) چاریکار"
+        },
+        {
+            "id": 302,
+            "province_id": 3,
+            "en": "BAGRAM",
+            "dr": "بگرام",
+            "pa": "بگرام"
+        },
+        {
+            "id": 303,
+            "province_id": 3,
+            "en": "SHINWARI",
+            "dr": "شینواری",
+            "pa": "شینواری"
+        },
+        {
+            "id": 304,
+            "province_id": 3,
+            "en": "SAYID KHALE",
+            "dr": "سید خیل",
+            "pa": "سید خیل"
+        },
+        {
+            "id": 305,
+            "province_id": 3,
+            "en": "JABULUSSARAJ",
+            "dr": "جبل السراج",
+            "pa": "جبل السراج"
+        },
+        {
+            "id": 306,
+            "province_id": 3,
+            "en": "SALANG",
+            "dr": "سالنگ",
+            "pa": "سالنگ"
+        },
+        {
+            "id": 307,
+            "province_id": 3,
+            "en": "SYAHGIRDI GHORBAND",
+            "dr": "سیاه گرد غوربند",
+            "pa": "سیاه گرد غوربند"
+        },
+        {
+            "id": 308,
+            "province_id": 3,
+            "en": "KOHI SAFI",
+            "dr": "کوه صافی",
+            "pa": "کوه صافی"
+        },
+        {
+            "id": 309,
+            "province_id": 3,
+            "en": "SORKHI PARSA",
+            "dr": "سرخ پارسا",
+            "pa": "سرخ پارسا"
+        },
+        {
+            "id": 310,
+            "province_id": 3,
+            "en": "SHAYKH ALI",
+            "dr": "شیخ علی",
+            "pa": "شیخ علی"
+        },
+        {
+            "id": 313,
+            "province_id": 3,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 314,
+            "province_id": 3,
+            "en": "PD 2",
+            "dr": "ناحیه 2",
+            "pa": "ناحیه 2"
+        },
+        {
+            "id": 315,
+            "province_id": 3,
+            "en": "PD 3",
+            "dr": "ناحیه 3",
+            "pa": "ناحیه 3"
+        },
+        {
+            "id": 316,
+            "province_id": 3,
+            "en": "PD 4",
+            "dr": "ناحیه 4",
+            "pa": "ناحیه 4"
+        },
+        {
+            "id": 317,
+            "province_id": 3,
+            "en": "PD 5",
+            "dr": "ناحیه 5",
+            "pa": "ناحیه 5"
+        },
+        {
+            "id": 318,
+            "province_id": 3,
+            "en": "PD 6",
+            "dr": "ناحیه 6",
+            "pa": "ناحیه 6"
+        },
+        {
+            "id": 319,
+            "province_id": 3,
+            "en": "PD 7",
+            "dr": "ناحیه 7",
+            "pa": "ناحیه 7"
+        },
+        {
+            "id": 401,
+            "province_id": 4,
+            "en": "PROVINCIAL CAPITAL OF WARDAK (MAYDAN SHAHR)",
+            "dr": "( مرکز ولایت وردک) میدان شهر",
+            "pa": "( مرکز ولایت وردک) میدان شهر"
+        },
+        {
+            "id": 402,
+            "province_id": 4,
+            "en": "NERKH",
+            "dr": "نرخ",
+            "pa": "نرخ"
+        },
+        {
+            "id": 403,
+            "province_id": 4,
+            "en": "JALREZ",
+            "dr": "جلریز",
+            "pa": "جلریز"
+        },
+        {
+            "id": 404,
+            "province_id": 4,
+            "en": "CHAKI WARDAK",
+            "dr": "چک وردک",
+            "pa": "چک وردک"
+        },
+        {
+            "id": 405,
+            "province_id": 4,
+            "en": "SAYYDABAD",
+            "dr": "سید آباد",
+            "pa": "سید آباد"
+        },
+        {
+            "id": 406,
+            "province_id": 4,
+            "en": "DAYMIRDAD",
+            "dr": "دایمیرداد",
+            "pa": "دایمیرداد"
+        },
+        {
+            "id": 407,
+            "province_id": 4,
+            "en": "HISSA-E-AWALI BIHSUD",
+            "dr": "حصه اول بهسود",
+            "pa": "حصه اول بهسود"
+        },
+        {
+            "id": 408,
+            "province_id": 4,
+            "en": "JAGHATU",
+            "dr": "جغتو",
+            "pa": "جغتو"
+        },
+        {
+            "id": 409,
+            "province_id": 4,
+            "en": "MARKAZ-E-BEHSUD",
+            "dr": "مرکز بهسود",
+            "pa": "مرکز بهسود"
+        },
+        {
+            "id": 501,
+            "province_id": 5,
+            "en": "(PROVINCIAL CAPITAL OF  LOGAR) PULI ALAM",
+            "dr": "(مرکز ولایت لوگر) پل علم",
+            "pa": "(مرکز ولایت لوگر) پل علم"
+        },
+        {
+            "id": 502,
+            "province_id": 5,
+            "en": "BARAKI BARAK",
+            "dr": "برکی برک",
+            "pa": "برکی برک"
+        },
+        {
+            "id": 503,
+            "province_id": 5,
+            "en": "CHARKH",
+            "dr": "چرخ",
+            "pa": "چرخ"
+        },
+        {
+            "id": 504,
+            "province_id": 5,
+            "en": "KHUSHI",
+            "dr": "خوشی",
+            "pa": "خوشی"
+        },
+        {
+            "id": 505,
+            "province_id": 5,
+            "en": "MOHAMMAD AGHA",
+            "dr": "محمد آغه",
+            "pa": "محمد آغه"
+        },
+        {
+            "id": 506,
+            "province_id": 5,
+            "en": "KHAR WAR",
+            "dr": "خروار",
+            "pa": "خروار"
+        },
+        {
+            "id": 507,
+            "province_id": 5,
+            "en": "AZRA",
+            "dr": "ازره",
+            "pa": "ازره"
+        },
+        {
+            "id": 602,
+            "province_id": 6,
+            "en": "BEHSUD",
+            "dr": "بهسود",
+            "pa": "بهسود"
+        },
+        {
+            "id": 603,
+            "province_id": 6,
+            "en": "SORKH RUD",
+            "dr": "سرخرود",
+            "pa": "سرخرود"
+        },
+        {
+            "id": 604,
+            "province_id": 6,
+            "en": "CHAPARHAR",
+            "dr": "چپرهار",
+            "pa": "چپرهار"
+        },
+        {
+            "id": 605,
+            "province_id": 6,
+            "en": "KAMA",
+            "dr": "کامه",
+            "pa": "کامه"
+        },
+        {
+            "id": 606,
+            "province_id": 6,
+            "en": "KUZKUNAR",
+            "dr": "کوزکنر",
+            "pa": "کوزکنر"
+        },
+        {
+            "id": 607,
+            "province_id": 6,
+            "en": "RODAT",
+            "dr": "رودات",
+            "pa": "رودات"
+        },
+        {
+            "id": 608,
+            "province_id": 6,
+            "en": "KHUGYANI",
+            "dr": "خوگیانی",
+            "pa": "خوگیانی"
+        },
+        {
+            "id": 609,
+            "province_id": 6,
+            "en": "BATI KOT",
+            "dr": "بتی کوت",
+            "pa": "بتی کوت"
+        },
+        {
+            "id": 610,
+            "province_id": 6,
+            "en": "DEH BALA",
+            "dr": "ده بالا",
+            "pa": "ده بالا"
+        },
+        {
+            "id": 611,
+            "province_id": 6,
+            "en": "PACHIR WAGAM",
+            "dr": "پچیرواگام",
+            "pa": "پچیرواگام"
+        },
+        {
+            "id": 612,
+            "province_id": 6,
+            "en": "DARAH-E-NOOR",
+            "dr": "دره نور",
+            "pa": "دره نور"
+        },
+        {
+            "id": 613,
+            "province_id": 6,
+            "en": "KOT",
+            "dr": "کوت",
+            "pa": "کوت"
+        },
+        {
+            "id": 614,
+            "province_id": 6,
+            "en": "GOSHTA",
+            "dr": "گوشته",
+            "pa": "گوشته"
+        },
+        {
+            "id": 615,
+            "province_id": 6,
+            "en": "ACHIN",
+            "dr": "اچین",
+            "pa": "اچین"
+        },
+        {
+            "id": 616,
+            "province_id": 6,
+            "en": "SHINWAR",
+            "dr": "شینوار",
+            "pa": "شینوار"
+        },
+        {
+            "id": 617,
+            "province_id": 6,
+            "en": "MUHMAND DARA",
+            "dr": "مهمنددره",
+            "pa": "مهمنددره"
+        },
+        {
+            "id": 618,
+            "province_id": 6,
+            "en": "LALPOOR",
+            "dr": "لعل پور",
+            "pa": "لعل پور"
+        },
+        {
+            "id": 619,
+            "province_id": 6,
+            "en": "SHER ZAD",
+            "dr": "شیرزاد",
+            "pa": "شیرزاد"
+        },
+        {
+            "id": 620,
+            "province_id": 6,
+            "en": "NAZYAN",
+            "dr": "نازیان",
+            "pa": "نازیان"
+        },
+        {
+            "id": 621,
+            "province_id": 6,
+            "en": "HESARAK",
+            "dr": "حصارک",
+            "pa": "حصارک"
+        },
+        {
+            "id": 622,
+            "province_id": 6,
+            "en": "DUR BABA",
+            "dr": "دربابا",
+            "pa": "دربابا"
+        },
+        {
+            "id": 624,
+            "province_id": 6,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 625,
+            "province_id": 6,
+            "en": "PD 2",
+            "dr": "ناحیه 2",
+            "pa": "ناحیه 2"
+        },
+        {
+            "id": 626,
+            "province_id": 6,
+            "en": "PD 3",
+            "dr": "ناحیه 3",
+            "pa": "ناحیه 3"
+        },
+        {
+            "id": 627,
+            "province_id": 6,
+            "en": "PD 4",
+            "dr": "ناحیه 4",
+            "pa": "ناحیه 4"
+        },
+        {
+            "id": 628,
+            "province_id": 6,
+            "en": "PD 5",
+            "dr": "ناحیه 5",
+            "pa": "ناحیه 5"
+        },
+        {
+            "id": 629,
+            "province_id": 6,
+            "en": "Provincial Capital of Nangarhar) Jalalabad)",
+            "dr": "(مرکز لایت ننگرهار) جلال آباد",
+            "pa": "(مرکز لایت ننگرهار) جلال آباد"
+        },
+        {
+            "id": 630,
+            "province_id": 6,
+            "en": "SPENGHAR",
+            "dr": "اسپین غر",
+            "pa": "اسپین غر"
+        },
+        {
+            "id": 701,
+            "province_id": 7,
+            "en": "(PROVINCIAL CAPITAL OF  LAGHMAN) MEHTERLAM",
+            "dr": "( مرکز ولایت لغمان) مهترلام",
+            "pa": "( مرکز ولایت لغمان) مهترلام"
+        },
+        {
+            "id": 702,
+            "province_id": 7,
+            "en": "QARGHAYEE",
+            "dr": "قرغیی",
+            "pa": "قرغیی"
+        },
+        {
+            "id": 703,
+            "province_id": 7,
+            "en": "ALISHING",
+            "dr": "علیشنگ",
+            "pa": "علیشنگ"
+        },
+        {
+            "id": 704,
+            "province_id": 7,
+            "en": "ALINGAR",
+            "dr": "علینگار",
+            "pa": "علینگار"
+        },
+        {
+            "id": 705,
+            "province_id": 7,
+            "en": "DAWLAT SHAH",
+            "dr": "دولت شاه",
+            "pa": "دولت شاه"
+        },
+        {
+            "id": 707,
+            "province_id": 7,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 708,
+            "province_id": 7,
+            "en": "PD 2",
+            "dr": "ناحیه 2",
+            "pa": "ناحیه 2"
+        },
+        {
+            "id": 801,
+            "province_id": 8,
+            "en": "PROVINCIAL CAPITAL OF  PANJSHER ( BAZARAK )",
+            "dr": "( مرکز ولایت پنجشیر) بازارک",
+            "pa": "( مرکز ولایت پنجشیر) بازارک"
+        },
+        {
+            "id": 802,
+            "province_id": 8,
+            "en": "RUKHA",
+            "dr": "رخه",
+            "pa": "رخه"
+        },
+        {
+            "id": 803,
+            "province_id": 8,
+            "en": "DARAH",
+            "dr": "دره",
+            "pa": "دره"
+        },
+        {
+            "id": 804,
+            "province_id": 8,
+            "en": "HISSA-E-AWAL ( KHINJ )",
+            "dr": "حصه اول - خنج",
+            "pa": "حصه اول - خنج"
+        },
+        {
+            "id": 805,
+            "province_id": 8,
+            "en": "UNABA",
+            "dr": "عنابه",
+            "pa": "عنابه"
+        },
+        {
+            "id": 806,
+            "province_id": 8,
+            "en": "SHUTUL",
+            "dr": "شتل",
+            "pa": "شتل"
+        },
+        {
+            "id": 807,
+            "province_id": 8,
+            "en": "PARYAN",
+            "dr": "پریان",
+            "pa": "پریان"
+        },
+        {
+            "id": 901,
+            "province_id": 9,
+            "en": "PROVINCIAL CAPITAL OF BAGHLAN ( PUL-E-KHUMRI )",
+            "dr": "( مرکز ولایت بغلان) پلخمری",
+            "pa": "( مرکز ولایت بغلان) پلخمری"
+        },
+        {
+            "id": 902,
+            "province_id": 9,
+            "en": "DAHANA-E-GHURI",
+            "dr": "دهنه غوری",
+            "pa": "دهنه غوری"
+        },
+        {
+            "id": 903,
+            "province_id": 9,
+            "en": "DUSHI",
+            "dr": "دوشی",
+            "pa": "دوشی"
+        },
+        {
+            "id": 904,
+            "province_id": 9,
+            "en": "NAHREEN",
+            "dr": "نهرین",
+            "pa": "نهرین"
+        },
+        {
+            "id": 905,
+            "province_id": 9,
+            "en": "BAGHLAN-E-JADEED",
+            "dr": "بغلان جید",
+            "pa": "بغلان جید"
+        },
+        {
+            "id": 906,
+            "province_id": 9,
+            "en": "KHINJAN",
+            "dr": "خنجان",
+            "pa": "خنجان"
+        },
+        {
+            "id": 907,
+            "province_id": 9,
+            "en": "ANDARAB",
+            "dr": "اندراب",
+            "pa": "اندراب"
+        },
+        {
+            "id": 908,
+            "province_id": 9,
+            "en": "DEH SALAH",
+            "dr": "ده صلاح",
+            "pa": "ده صلاح"
+        },
+        {
+            "id": 909,
+            "province_id": 9,
+            "en": "JALGA",
+            "dr": "جلگه",
+            "pa": "جلگه"
+        },
+        {
+            "id": 910,
+            "province_id": 9,
+            "en": "BURKA",
+            "dr": "برکه",
+            "pa": "برکه"
+        },
+        {
+            "id": 911,
+            "province_id": 9,
+            "en": "TALA WA BARFAK",
+            "dr": "تاله وبرفک",
+            "pa": "تاله وبرفک"
+        },
+        {
+            "id": 912,
+            "province_id": 9,
+            "en": "PUL-E-HISAR",
+            "dr": "پل حصار",
+            "pa": "پل حصار"
+        },
+        {
+            "id": 913,
+            "province_id": 9,
+            "en": "KHOST WA FIRING",
+            "dr": "خوست و فرنگ",
+            "pa": "خوست و فرنگ"
+        },
+        {
+            "id": 914,
+            "province_id": 9,
+            "en": "GOZARGAH-E-NOOR",
+            "dr": "گذرگاه نور",
+            "pa": "گذرگاه نور"
+        },
+        {
+            "id": 915,
+            "province_id": 9,
+            "en": "FIRING WA GHARU",
+            "dr": "فرنگ وغارو",
+            "pa": "فرنگ وغارو"
+        },
+        {
+            "id": 916,
+            "province_id": 9,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 917,
+            "province_id": 9,
+            "en": "PD 2",
+            "dr": "ناحیه 2",
+            "pa": "ناحیه 2"
+        },
+        {
+            "id": 918,
+            "province_id": 9,
+            "en": "PD 3",
+            "dr": "ناحیه 3",
+            "pa": "ناحیه 3"
+        },
+        {
+            "id": 919,
+            "province_id": 9,
+            "en": "PD 4",
+            "dr": "ناحیه 4",
+            "pa": "ناحیه 4"
+        },
+        {
+            "id": 1001,
+            "province_id": 10,
+            "en": "PROVINCIAL CAPITAL OF  BAMYAN ( BAMYAN )",
+            "dr": "( مرکز ولایت بامیان) بامیان",
+            "pa": "( مرکز ولایت بامیان) بامیان"
+        },
+        {
+            "id": 1002,
+            "province_id": 10,
+            "en": "SHEBAR",
+            "dr": "شیبر",
+            "pa": "شیبر"
+        },
+        {
+            "id": 1003,
+            "province_id": 10,
+            "en": "SAIGHAN",
+            "dr": "سیغان",
+            "pa": "سیغان"
+        },
+        {
+            "id": 1004,
+            "province_id": 10,
+            "en": "KAHMARD",
+            "dr": "کهمرد",
+            "pa": "کهمرد"
+        },
+        {
+            "id": 1005,
+            "province_id": 10,
+            "en": "YAKAWLANG",
+            "dr": "یکاولنگ",
+            "pa": "یکاولنگ"
+        },
+        {
+            "id": 1006,
+            "province_id": 10,
+            "en": "PANJAB",
+            "dr": "پنجاب",
+            "pa": "پنجاب"
+        },
+        {
+            "id": 1007,
+            "province_id": 10,
+            "en": "WARAS",
+            "dr": "ورس",
+            "pa": "ورس"
+        },
+        {
+            "id": 1101,
+            "province_id": 11,
+            "en": "PROVINCIAL CAPITAL OF  GHAZNI ( GHAZNI )",
+            "dr": "(مرکز ولایت غزنی) غزنی",
+            "pa": "(مرکز ولایت غزنی) غزنی"
+        },
+        {
+            "id": 1102,
+            "province_id": 11,
+            "en": "WALI MOHAMMAD SHAHID KHUGYANI",
+            "dr": "ولی محمد شهید خوگیانی",
+            "pa": "ولی محمد شهید خوگیانی"
+        },
+        {
+            "id": 1103,
+            "province_id": 11,
+            "en": "KHWAJA OMARI",
+            "dr": "خواجه عمری",
+            "pa": "خواجه عمری"
+        },
+        {
+            "id": 1104,
+            "province_id": 11,
+            "en": "WAGHAZ",
+            "dr": "واغظ",
+            "pa": "واغظ"
+        },
+        {
+            "id": 1105,
+            "province_id": 11,
+            "en": "DEH YAK",
+            "dr": "ده یک",
+            "pa": "ده یک"
+        },
+        {
+            "id": 1106,
+            "province_id": 11,
+            "en": "JAGHATU",
+            "dr": "جغتو",
+            "pa": "جغتو"
+        },
+        {
+            "id": 1107,
+            "province_id": 11,
+            "en": "ANDAR",
+            "dr": "اندر",
+            "pa": "اندر"
+        },
+        {
+            "id": 1108,
+            "province_id": 11,
+            "en": "ZANAKHAN",
+            "dr": "زنخان",
+            "pa": "زنخان"
+        },
+        {
+            "id": 1109,
+            "province_id": 11,
+            "en": "RASHIDAN",
+            "dr": "رشیدان",
+            "pa": "رشیدان"
+        },
+        {
+            "id": 1110,
+            "province_id": 11,
+            "en": "NAWUR",
+            "dr": "ناور",
+            "pa": "ناور"
+        },
+        {
+            "id": 1111,
+            "province_id": 11,
+            "en": "QARA BAGH",
+            "dr": "قره باغ",
+            "pa": "قره باغ"
+        },
+        {
+            "id": 1112,
+            "province_id": 11,
+            "en": "GIRO",
+            "dr": "گیرو",
+            "pa": "گیرو"
+        },
+        {
+            "id": 1113,
+            "province_id": 11,
+            "en": "AB BAND",
+            "dr": "آب بند",
+            "pa": "آب بند"
+        },
+        {
+            "id": 1114,
+            "province_id": 11,
+            "en": "JAGHURI",
+            "dr": "جاغوری",
+            "pa": "جاغوری"
+        },
+        {
+            "id": 1115,
+            "province_id": 11,
+            "en": "MUQUR",
+            "dr": "مقر",
+            "pa": "مقر"
+        },
+        {
+            "id": 1116,
+            "province_id": 11,
+            "en": "MALISTAN",
+            "dr": "مالستان",
+            "pa": "مالستان"
+        },
+        {
+            "id": 1117,
+            "province_id": 11,
+            "en": "GELAN",
+            "dr": "گیلان",
+            "pa": "گیلان"
+        },
+        {
+            "id": 1118,
+            "province_id": 11,
+            "en": "AJRISTAN",
+            "dr": "اجرستان",
+            "pa": "اجرستان"
+        },
+        {
+            "id": 1119,
+            "province_id": 11,
+            "en": "NAWA",
+            "dr": "ناوه",
+            "pa": "ناوه"
+        },
+        {
+            "id": 1201,
+            "province_id": 12,
+            "en": "PROVINCIAL CAPITAL OF  PAKTIKA ( SHARAN )",
+            "dr": "( مرکز ولایت پکتیکا) شرن",
+            "pa": "( مرکز ولایت پکتیکا) شرن"
+        },
+        {
+            "id": 1202,
+            "province_id": 12,
+            "en": "MATA KHAN",
+            "dr": "متاخان",
+            "pa": "متاخان"
+        },
+        {
+            "id": 1203,
+            "province_id": 12,
+            "en": "YOSUF KHEL",
+            "dr": "یوسف خیل",
+            "pa": "یوسف خیل"
+        },
+        {
+            "id": 1204,
+            "province_id": 12,
+            "en": "YAHYA KHEL",
+            "dr": "یحیی خیل",
+            "pa": "یحیی خیل"
+        },
+        {
+            "id": 1205,
+            "province_id": 12,
+            "en": "SAR RAWZA",
+            "dr": "سرروضه",
+            "pa": "سرروضه"
+        },
+        {
+            "id": 1206,
+            "province_id": 12,
+            "en": "OMNA",
+            "dr": "اومنه",
+            "pa": "اومنه"
+        },
+        {
+            "id": 1207,
+            "province_id": 12,
+            "en": "ZARGHUN SHAHR",
+            "dr": "زرغون شهر",
+            "pa": "زرغون شهر"
+        },
+        {
+            "id": 1208,
+            "province_id": 12,
+            "en": "GOMAL",
+            "dr": "گومل",
+            "pa": "گومل"
+        },
+        {
+            "id": 1209,
+            "province_id": 12,
+            "en": "JANI KHEL",
+            "dr": "جانی خیل",
+            "pa": "جانی خیل"
+        },
+        {
+            "id": 1210,
+            "province_id": 12,
+            "en": "SURUBI",
+            "dr": "سروبی",
+            "pa": "سروبی"
+        },
+        {
+            "id": 1211,
+            "province_id": 12,
+            "en": "URGOON",
+            "dr": "اورگون",
+            "pa": "اورگون"
+        },
+        {
+            "id": 1212,
+            "province_id": 12,
+            "en": "ZIRUK",
+            "dr": "زیروک",
+            "pa": "زیروک"
+        },
+        {
+            "id": 1213,
+            "province_id": 12,
+            "en": "NIKA",
+            "dr": "نیکه",
+            "pa": "نیکه"
+        },
+        {
+            "id": 1214,
+            "province_id": 12,
+            "en": "BARMAL",
+            "dr": "برمل",
+            "pa": "برمل"
+        },
+        {
+            "id": 1215,
+            "province_id": 12,
+            "en": "GIYAN",
+            "dr": "گیان",
+            "pa": "گیان"
+        },
+        {
+            "id": 1216,
+            "province_id": 12,
+            "en": "DILA WA KHUSHAMAND",
+            "dr": "دیله و خوش آمند",
+            "pa": "دیله و خوش آمند"
+        },
+        {
+            "id": 1217,
+            "province_id": 12,
+            "en": "WAZAKHWAH",
+            "dr": "وازه خوا",
+            "pa": "وازه خوا"
+        },
+        {
+            "id": 1218,
+            "province_id": 12,
+            "en": "WORMAMAY",
+            "dr": "ورممی",
+            "pa": "ورممی"
+        },
+        {
+            "id": 1219,
+            "province_id": 12,
+            "en": "TURWO",
+            "dr": "تروو",
+            "pa": "تروو"
+        },
+        {
+            "id": 1301,
+            "province_id": 13,
+            "en": "PROVINCIAL CAPITAL OF PAKTYA ( GARDEZ )",
+            "dr": "(مرکز ولایت پکتیا) گردیز",
+            "pa": "(مرکز ولایت پکتیا) گردیز"
+        },
+        {
+            "id": 1302,
+            "province_id": 13,
+            "en": "AHMADABA",
+            "dr": "احمدآبا",
+            "pa": "احمدآبا"
+        },
+        {
+            "id": 1303,
+            "province_id": 13,
+            "en": "ZURMAT",
+            "dr": "زرمت",
+            "pa": "زرمت"
+        },
+        {
+            "id": 1304,
+            "province_id": 13,
+            "en": "SHWAK",
+            "dr": "شواک",
+            "pa": "شواک"
+        },
+        {
+            "id": 1305,
+            "province_id": 13,
+            "en": "WUZA JADRAN",
+            "dr": "وزه جدران",
+            "pa": "وزه جدران"
+        },
+        {
+            "id": 1306,
+            "province_id": 13,
+            "en": "SAYYID KARAM",
+            "dr": "سیدکرم",
+            "pa": "سیدکرم"
+        },
+        {
+            "id": 1307,
+            "province_id": 13,
+            "en": "JAJI",
+            "dr": "جاجی",
+            "pa": "جاجی"
+        },
+        {
+            "id": 1308,
+            "province_id": 13,
+            "en": "LAJA AHMAD KHEL",
+            "dr": "لجه احمدخیل",
+            "pa": "لجه احمدخیل"
+        },
+        {
+            "id": 1309,
+            "province_id": 13,
+            "en": "JANI KHEL",
+            "dr": "جانی خیل",
+            "pa": "جانی خیل"
+        },
+        {
+            "id": 1310,
+            "province_id": 13,
+            "en": "SAMKANI",
+            "dr": "څمکنی",
+            "pa": "څمکنی"
+        },
+        {
+            "id": 1311,
+            "province_id": 13,
+            "en": "DAND PATAN",
+            "dr": "دند پتان",
+            "pa": "دند پتان"
+        },
+        {
+            "id": 1401,
+            "province_id": 14,
+            "en": "PROVINCIAL CAPITAL OF KHOST ( KHOST )",
+            "dr": "(مرکز ولایت خوست) خوست",
+            "pa": "(مرکز ولایت خوست) خوست"
+        },
+        {
+            "id": 1402,
+            "province_id": 14,
+            "en": "MANDUZAY (ESMAYEL KHEL)",
+            "dr": "(مندوزی) اسماعیل خیل",
+            "pa": "(مندوزی) اسماعیل خیل"
+        },
+        {
+            "id": 1403,
+            "province_id": 14,
+            "en": "GURBUZ",
+            "dr": "گربز",
+            "pa": "گربز"
+        },
+        {
+            "id": 1404,
+            "province_id": 14,
+            "en": "TANAY",
+            "dr": "تنی",
+            "pa": "تنی"
+        },
+        {
+            "id": 1405,
+            "province_id": 14,
+            "en": "MUSA KHEL",
+            "dr": "موسی خیل",
+            "pa": "موسی خیل"
+        },
+        {
+            "id": 1406,
+            "province_id": 14,
+            "en": "NADIRSHAH KOT",
+            "dr": "نادرشاه کوت",
+            "pa": "نادرشاه کوت"
+        },
+        {
+            "id": 1407,
+            "province_id": 14,
+            "en": "SABARI (YAQUBI)",
+            "dr": "(صبری) یعقوبی",
+            "pa": "(صبری) یعقوبی"
+        },
+        {
+            "id": 1408,
+            "province_id": 14,
+            "en": "ALI SHER",
+            "dr": "علی شیر",
+            "pa": "علی شیر"
+        },
+        {
+            "id": 1409,
+            "province_id": 14,
+            "en": "BAAK",
+            "dr": "باک",
+            "pa": "باک"
+        },
+        {
+            "id": 1410,
+            "province_id": 14,
+            "en": "QALANDAR",
+            "dr": "قلندر",
+            "pa": "قلندر"
+        },
+        {
+            "id": 1411,
+            "province_id": 14,
+            "en": "SPERA",
+            "dr": "اسپیره",
+            "pa": "اسپیره"
+        },
+        {
+            "id": 1412,
+            "province_id": 14,
+            "en": "SHAMUL",
+            "dr": "شمل",
+            "pa": "شمل"
+        },
+        {
+            "id": 1413,
+            "province_id": 14,
+            "en": "JAJI MAIDAN",
+            "dr": "جاجی میدان",
+            "pa": "جاجی میدان"
+        },
+        {
+            "id": 1501,
+            "province_id": 15,
+            "en": "PROVINCIAL CAPITAL OF KUNARHA ( ASAD ABAD )",
+            "dr": "(مرکز ولایت کنرها) اسدآباد",
+            "pa": "(مرکز ولایت کنرها) اسدآباد"
+        },
+        {
+            "id": 1502,
+            "province_id": 15,
+            "en": "MARA WARA",
+            "dr": "مره وره",
+            "pa": "مره وره"
+        },
+        {
+            "id": 1503,
+            "province_id": 15,
+            "en": "WATAPOOR",
+            "dr": "واته پور",
+            "pa": "واته پور"
+        },
+        {
+            "id": 1504,
+            "province_id": 15,
+            "en": "NARANG WA BADIL",
+            "dr": "نرنگ وبادیل",
+            "pa": "نرنگ وبادیل"
+        },
+        {
+            "id": 1505,
+            "province_id": 15,
+            "en": "SAR KANI",
+            "dr": "سرکانی",
+            "pa": "سرکانی"
+        },
+        {
+            "id": 1506,
+            "province_id": 15,
+            "en": "SHIGAL WA SHELTAN",
+            "dr": "شیگل و شیلتن",
+            "pa": "شیگل و شیلتن"
+        },
+        {
+            "id": 1507,
+            "province_id": 15,
+            "en": "DARA-E-PECH",
+            "dr": "دره پیچ",
+            "pa": "دره پیچ"
+        },
+        {
+            "id": 1508,
+            "province_id": 15,
+            "en": "BAR KUNAR",
+            "dr": "برکنر",
+            "pa": "برکنر"
+        },
+        {
+            "id": 1509,
+            "province_id": 15,
+            "en": "SAWKAI",
+            "dr": "څوکی",
+            "pa": "څوکی"
+        },
+        {
+            "id": 1510,
+            "province_id": 15,
+            "en": "KHAS KUNAR",
+            "dr": "خاص کنر",
+            "pa": "خاص کنر"
+        },
+        {
+            "id": 1511,
+            "province_id": 15,
+            "en": "GHAZI ABAD",
+            "dr": "غازی آباد",
+            "pa": "غازی آباد"
+        },
+        {
+            "id": 1512,
+            "province_id": 15,
+            "en": "DANGAM",
+            "dr": "دانگام",
+            "pa": "دانگام"
+        },
+        {
+            "id": 1513,
+            "province_id": 15,
+            "en": "CHAPA DARA",
+            "dr": "چپه دره",
+            "pa": "چپه دره"
+        },
+        {
+            "id": 1514,
+            "province_id": 15,
+            "en": "NOOR GAL",
+            "dr": "نورگل",
+            "pa": "نورگل"
+        },
+        {
+            "id": 1515,
+            "province_id": 15,
+            "en": "NARI",
+            "dr": "نری",
+            "pa": "نری"
+        },
+        {
+            "id": 1601,
+            "province_id": 16,
+            "en": "PROVINCIAL CAPITAL OF NOORISTAN ( PAROON )",
+            "dr": "( مرکز ولایت نورستان) پارون",
+            "pa": "( مرکز ولایت نورستان) پارون"
+        },
+        {
+            "id": 1602,
+            "province_id": 16,
+            "en": "WAYGAL",
+            "dr": "وایگل",
+            "pa": "وایگل"
+        },
+        {
+            "id": 1603,
+            "province_id": 16,
+            "en": "WAMA",
+            "dr": "واما",
+            "pa": "واما"
+        },
+        {
+            "id": 1604,
+            "province_id": 16,
+            "en": "NOOR GRAM",
+            "dr": "نورگرام",
+            "pa": "نورگرام"
+        },
+        {
+            "id": 1605,
+            "province_id": 16,
+            "en": "DUAB",
+            "dr": "دوآب",
+            "pa": "دوآب"
+        },
+        {
+            "id": 1606,
+            "province_id": 16,
+            "en": "KAMDESH",
+            "dr": "کامدیش",
+            "pa": "کامدیش"
+        },
+        {
+            "id": 1607,
+            "province_id": 16,
+            "en": "MANDOL",
+            "dr": "مندول",
+            "pa": "مندول"
+        },
+        {
+            "id": 1608,
+            "province_id": 16,
+            "en": "BARG-E-MATAL",
+            "dr": "برگ متال",
+            "pa": "برگ متال"
+        },
+        {
+            "id": 1701,
+            "province_id": 17,
+            "en": "PROVINCIAL CAPITAL OF BADAKHSHAN ( FAIZ ABAD )",
+            "dr": "( مرکز ولایت بدخشان) فیض آباد",
+            "pa": "( مرکز ولایت بدخشان) فیض آباد"
+        },
+        {
+            "id": 1702,
+            "province_id": 17,
+            "en": "ARGO",
+            "dr": "ارگو",
+            "pa": "ارگو"
+        },
+        {
+            "id": 1703,
+            "province_id": 17,
+            "en": "ARGHANJ KHWAH",
+            "dr": "ارغنجخواه",
+            "pa": "ارغنجخواه"
+        },
+        {
+            "id": 1704,
+            "province_id": 17,
+            "en": "YAFTAL-E-SOFLA",
+            "dr": "یفتل سفلی",
+            "pa": "یفتل سفلی"
+        },
+        {
+            "id": 1705,
+            "province_id": 17,
+            "en": "KHASH",
+            "dr": "خاش",
+            "pa": "خاش"
+        },
+        {
+            "id": 1706,
+            "province_id": 17,
+            "en": "BAHARAK",
+            "dr": "بهارک",
+            "pa": "بهارک"
+        },
+        {
+            "id": 1707,
+            "province_id": 17,
+            "en": "DARAYIM",
+            "dr": "درایم",
+            "pa": "درایم"
+        },
+        {
+            "id": 1708,
+            "province_id": 17,
+            "en": "KOHISTAN",
+            "dr": "کوهستان",
+            "pa": "کوهستان"
+        },
+        {
+            "id": 1709,
+            "province_id": 17,
+            "en": "YAWAN",
+            "dr": "یاوان",
+            "pa": "یاوان"
+        },
+        {
+            "id": 1710,
+            "province_id": 17,
+            "en": "JURM",
+            "dr": "جرم",
+            "pa": "جرم"
+        },
+        {
+            "id": 1711,
+            "province_id": 17,
+            "en": "TASHKAN",
+            "dr": "تشکان",
+            "pa": "تشکان"
+        },
+        {
+            "id": 1712,
+            "province_id": 17,
+            "en": "SHUHADA",
+            "dr": "شهدا",
+            "pa": "شهدا"
+        },
+        {
+            "id": 1713,
+            "province_id": 17,
+            "en": "SHAHR-E-BUZURG",
+            "dr": "شهربزرگ",
+            "pa": "شهربزرگ"
+        },
+        {
+            "id": 1714,
+            "province_id": 17,
+            "en": "RAGHISTAN",
+            "dr": "راغستان",
+            "pa": "راغستان"
+        },
+        {
+            "id": 1715,
+            "province_id": 17,
+            "en": "KISHM",
+            "dr": "کشم",
+            "pa": "کشم"
+        },
+        {
+            "id": 1716,
+            "province_id": 17,
+            "en": "WARDOOJ",
+            "dr": "وردوج",
+            "pa": "وردوج"
+        },
+        {
+            "id": 1717,
+            "province_id": 17,
+            "en": "TAGAB",
+            "dr": "تگاب",
+            "pa": "تگاب"
+        },
+        {
+            "id": 1718,
+            "province_id": 17,
+            "en": "YAMGAN",
+            "dr": "یمگان",
+            "pa": "یمگان"
+        },
+        {
+            "id": 1719,
+            "province_id": 17,
+            "en": "SHIGHNAN",
+            "dr": "شغنان",
+            "pa": "شغنان"
+        },
+        {
+            "id": 1720,
+            "province_id": 17,
+            "en": "KHWAHAN",
+            "dr": "خواهان",
+            "pa": "خواهان"
+        },
+        {
+            "id": 1721,
+            "province_id": 17,
+            "en": "KUFAB",
+            "dr": "کوف آب",
+            "pa": "کوف آب"
+        },
+        {
+            "id": 1722,
+            "province_id": 17,
+            "en": "DARWAZ-E-PAYIN (MAMAY)",
+            "dr": "درواز پائین مایمی",
+            "pa": "درواز پائین مایمی"
+        },
+        {
+            "id": 1723,
+            "province_id": 17,
+            "en": "ESHKASHIM",
+            "dr": "اشکاشم",
+            "pa": "اشکاشم"
+        },
+        {
+            "id": 1724,
+            "province_id": 17,
+            "en": "SHIKI",
+            "dr": "شکی",
+            "pa": "شکی"
+        },
+        {
+            "id": 1725,
+            "province_id": 17,
+            "en": "ZEBAK",
+            "dr": "زیباک",
+            "pa": "زیباک"
+        },
+        {
+            "id": 1726,
+            "province_id": 17,
+            "en": "KIRAN WA MENJAN",
+            "dr": "کران ومنجان",
+            "pa": "کران ومنجان"
+        },
+        {
+            "id": 1727,
+            "province_id": 17,
+            "en": "DARWAZ-E-BALA (NESAY)",
+            "dr": "درواز بالا نسی",
+            "pa": "درواز بالا نسی"
+        },
+        {
+            "id": 1728,
+            "province_id": 17,
+            "en": "WAKHAN",
+            "dr": "واخان",
+            "pa": "واخان"
+        },
+        {
+            "id": 1729,
+            "province_id": 17,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 1730,
+            "province_id": 17,
+            "en": "PD 2",
+            "dr": "ناحیه 2",
+            "pa": "ناحیه 2"
+        },
+        {
+            "id": 1731,
+            "province_id": 17,
+            "en": "PD 3",
+            "dr": "ناحیه 3",
+            "pa": "ناحیه 3"
+        },
+        {
+            "id": 1732,
+            "province_id": 17,
+            "en": "PD 4",
+            "dr": "ناحیه 4",
+            "pa": "ناحیه 4"
+        },
+        {
+            "id": 1733,
+            "province_id": 17,
+            "en": "PD 5",
+            "dr": "ناحیه 5",
+            "pa": "ناحیه 5"
+        },
+        {
+            "id": 1734,
+            "province_id": 17,
+            "en": "PD 6",
+            "dr": "ناحیه 6",
+            "pa": "ناحیه 6"
+        },
+        {
+            "id": 1735,
+            "province_id": 17,
+            "en": "PD 7",
+            "dr": "ناحیه 7",
+            "pa": "ناحیه 7"
+        },
+        {
+            "id": 1736,
+            "province_id": 17,
+            "en": "PD 8",
+            "dr": "ناحیه 8",
+            "pa": "ناحیه 8"
+        },
+        {
+            "id": 1737,
+            "province_id": 17,
+            "en": "PD 9",
+            "dr": "ناحیه 9",
+            "pa": "ناحیه 9"
+        },
+        {
+            "id": 1738,
+            "province_id": 17,
+            "en": "PD 10",
+            "dr": "ناحیه 10",
+            "pa": "ناحیه 10"
+        },
+        {
+            "id": 1739,
+            "province_id": 17,
+            "en": "PD 11",
+            "dr": "ناحیه 11",
+            "pa": "ناحیه 11"
+        },
+        {
+            "id": 1801,
+            "province_id": 18,
+            "en": "PROVINCIAL CAPITAL OF TAKHAR ( TALUQAN )",
+            "dr": "( مرکز ولایت تخار) تالقان",
+            "pa": "( مرکز ولایت تخار) تالقان"
+        },
+        {
+            "id": 1802,
+            "province_id": 18,
+            "en": "HAZAR SUMUCH",
+            "dr": "هزارسموچ",
+            "pa": "هزارسموچ"
+        },
+        {
+            "id": 1803,
+            "province_id": 18,
+            "en": "BAHARAK",
+            "dr": "بهارک",
+            "pa": "بهارک"
+        },
+        {
+            "id": 1804,
+            "province_id": 18,
+            "en": "BANGI",
+            "dr": "بنگی",
+            "pa": "بنگی"
+        },
+        {
+            "id": 1805,
+            "province_id": 18,
+            "en": "CHAL",
+            "dr": "چال",
+            "pa": "چال"
+        },
+        {
+            "id": 1806,
+            "province_id": 18,
+            "en": "NAMAK AB",
+            "dr": "نمک آب",
+            "pa": "نمک آب"
+        },
+        {
+            "id": 1807,
+            "province_id": 18,
+            "en": "KALAFGAN",
+            "dr": "کلفگان",
+            "pa": "کلفگان"
+        },
+        {
+            "id": 1808,
+            "province_id": 18,
+            "en": "FARKHAR",
+            "dr": "فرخار",
+            "pa": "فرخار"
+        },
+        {
+            "id": 1809,
+            "province_id": 18,
+            "en": "KHWAJA GHAR",
+            "dr": "خواجه غار",
+            "pa": "خواجه غار"
+        },
+        {
+            "id": 1810,
+            "province_id": 18,
+            "en": "RUSTAQ",
+            "dr": "رستاق",
+            "pa": "رستاق"
+        },
+        {
+            "id": 1811,
+            "province_id": 18,
+            "en": "ESHKAMESH",
+            "dr": "اشکمش",
+            "pa": "اشکمش"
+        },
+        {
+            "id": 1812,
+            "province_id": 18,
+            "en": "DASHT-E-QALA",
+            "dr": "دشت قلعه",
+            "pa": "دشت قلعه"
+        },
+        {
+            "id": 1813,
+            "province_id": 18,
+            "en": "WARSAJ",
+            "dr": "ورسج",
+            "pa": "ورسج"
+        },
+        {
+            "id": 1814,
+            "province_id": 18,
+            "en": "KHWAJA BAHAWUDDIN",
+            "dr": "خواجه بهاوالدین",
+            "pa": "خواجه بهاوالدین"
+        },
+        {
+            "id": 1815,
+            "province_id": 18,
+            "en": "DARQAD",
+            "dr": "درقد",
+            "pa": "درقد"
+        },
+        {
+            "id": 1816,
+            "province_id": 18,
+            "en": "CHAHAB",
+            "dr": "چاه آب",
+            "pa": "چاه آب"
+        },
+        {
+            "id": 1817,
+            "province_id": 18,
+            "en": "YANGI QALA",
+            "dr": "ینگی قلعه",
+            "pa": "ینگی قلعه"
+        },
+        {
+            "id": 1818,
+            "province_id": 18,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 1819,
+            "province_id": 18,
+            "en": "PD 2",
+            "dr": "ناحیه 2",
+            "pa": "ناحیه 2"
+        },
+        {
+            "id": 1820,
+            "province_id": 18,
+            "en": "PD 3",
+            "dr": "ناحیه 3",
+            "pa": "ناحیه 3"
+        },
+        {
+            "id": 1821,
+            "province_id": 18,
+            "en": "PD 4",
+            "dr": "ناحیه 4",
+            "pa": "ناحیه 4"
+        },
+        {
+            "id": 1823,
+            "province_id": 18,
+            "en": "Gul bad",
+            "dr": "کل باد",
+            "pa": "کل باد"
+        },
+        {
+            "id": 1901,
+            "province_id": 19,
+            "en": "PROVINCIAL CAPITAL OF KUNDUZ ( KUNDUZ )",
+            "dr": "(مرکز ولایت کندز) کندز",
+            "pa": "(مرکز ولایت کندز) کندز"
+        },
+        {
+            "id": 1902,
+            "province_id": 19,
+            "en": "CHAR DARAH",
+            "dr": "چاردره",
+            "pa": "چاردره"
+        },
+        {
+            "id": 1903,
+            "province_id": 19,
+            "en": "ALI ABAD",
+            "dr": "علی آباد",
+            "pa": "علی آباد"
+        },
+        {
+            "id": 1904,
+            "province_id": 19,
+            "en": "KHAN ABAD",
+            "dr": "خان آباد",
+            "pa": "خان آباد"
+        },
+        {
+            "id": 1905,
+            "province_id": 19,
+            "en": "HAZRATI IMAM SAHIB",
+            "dr": "حضرت امام صاحب",
+            "pa": "حضرت امام صاحب"
+        },
+        {
+            "id": 1906,
+            "province_id": 19,
+            "en": "DASHTI-E-ARCHI",
+            "dr": "دشت ارچی",
+            "pa": "دشت ارچی"
+        },
+        {
+            "id": 1907,
+            "province_id": 19,
+            "en": "QALA-E-ZAL",
+            "dr": "قلعه ذال",
+            "pa": "قلعه ذال"
+        },
+        {
+            "id": 1909,
+            "province_id": 19,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 1910,
+            "province_id": 19,
+            "en": "PD 2",
+            "dr": "ناحیه 2",
+            "pa": "ناحیه 2"
+        },
+        {
+            "id": 1911,
+            "province_id": 19,
+            "en": "PD 3",
+            "dr": "ناحیه 3",
+            "pa": "ناحیه 3"
+        },
+        {
+            "id": 1912,
+            "province_id": 19,
+            "en": "PD 4",
+            "dr": "ناحیه 4",
+            "pa": "ناحیه 4"
+        },
+        {
+            "id": 1913,
+            "province_id": 19,
+            "en": "PD 5",
+            "dr": "ناحیه 5",
+            "pa": "ناحیه 5"
+        },
+        {
+            "id": 3503,
+            "province_id": 19,
+            "en": "PD 6",
+            "dr": "ناحیه 6",
+            "pa": "ناحیه 6"
+        },
+        {
+            "id": 2001,
+            "province_id": 20,
+            "en": "PROVINCIAL CAPITAL OF SAMANGAN ( AYBAK )",
+            "dr": "( مرکز ولایت سمنگان) ایبک",
+            "pa": "( مرکز ولایت سمنگان) ایبک"
+        },
+        {
+            "id": 2002,
+            "province_id": 20,
+            "en": "HAZRAT-E-SULTAN",
+            "dr": "حضرت سلطان",
+            "pa": "حضرت سلطان"
+        },
+        {
+            "id": 2003,
+            "province_id": 20,
+            "en": "KHURAM WA SARBAGH",
+            "dr": "خرم و سارباغ",
+            "pa": "خرم و سارباغ"
+        },
+        {
+            "id": 2004,
+            "province_id": 20,
+            "en": "FEROZ NAKHCHEER",
+            "dr": "فیروزنخچیر",
+            "pa": "فیروزنخچیر"
+        },
+        {
+            "id": 2005,
+            "province_id": 20,
+            "en": "ROI-DO-AB",
+            "dr": "روی دوآب",
+            "pa": "روی دوآب"
+        },
+        {
+            "id": 2006,
+            "province_id": 20,
+            "en": "DARA-E-SOOF-E-PAYIN",
+            "dr": "دره صوف پائین",
+            "pa": "دره صوف پائین"
+        },
+        {
+            "id": 2007,
+            "province_id": 20,
+            "en": "DARA-E-SOOF-E-BALA",
+            "dr": "دره صوف  بالا",
+            "pa": "دره صوف  بالا"
+        },
+        {
+            "id": 2008,
+            "province_id": 20,
+            "en": "PD 3",
+            "dr": "ناحیه 3",
+            "pa": "ناحیه 3"
+        },
+        {
+            "id": 2010,
+            "province_id": 20,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 2011,
+            "province_id": 20,
+            "en": "PD 2",
+            "dr": "ناحیه 2",
+            "pa": "ناحیه 2"
+        },
+        {
+            "id": 2102,
+            "province_id": 21,
+            "en": "NAHR-E-SHAHI",
+            "dr": "نهر شاهی",
+            "pa": "نهر شاهی"
+        },
+        {
+            "id": 2103,
+            "province_id": 21,
+            "en": "DEHDADI",
+            "dr": "دهدادی",
+            "pa": "دهدادی"
+        },
+        {
+            "id": 2104,
+            "province_id": 21,
+            "en": "CHAR KENT",
+            "dr": "چارکنت",
+            "pa": "چارکنت"
+        },
+        {
+            "id": 2105,
+            "province_id": 21,
+            "en": "MARMUL",
+            "dr": "مارمل",
+            "pa": "مارمل"
+        },
+        {
+            "id": 2106,
+            "province_id": 21,
+            "en": "BALKH",
+            "dr": "بلخ",
+            "pa": "بلخ"
+        },
+        {
+            "id": 2107,
+            "province_id": 21,
+            "en": "SHOLGARA",
+            "dr": "شولگره",
+            "pa": "شولگره"
+        },
+        {
+            "id": 2108,
+            "province_id": 21,
+            "en": "CHIMTAL",
+            "dr": "چمتال",
+            "pa": "چمتال"
+        },
+        {
+            "id": 2109,
+            "province_id": 21,
+            "en": "DAWLAT ABAD",
+            "dr": "دولت آباد",
+            "pa": "دولت آباد"
+        },
+        {
+            "id": 2110,
+            "province_id": 21,
+            "en": "KHULM",
+            "dr": "خلم",
+            "pa": "خلم"
+        },
+        {
+            "id": 2111,
+            "province_id": 21,
+            "en": "CHAR BOLAK",
+            "dr": "چاربولک",
+            "pa": "چاربولک"
+        },
+        {
+            "id": 2112,
+            "province_id": 21,
+            "en": "SHORTEPA",
+            "dr": "شورتیپه",
+            "pa": "شورتیپه"
+        },
+        {
+            "id": 2113,
+            "province_id": 21,
+            "en": "KALDAR",
+            "dr": "کلدار",
+            "pa": "کلدار"
+        },
+        {
+            "id": 2114,
+            "province_id": 21,
+            "en": "KISHINDEH",
+            "dr": "کشنده",
+            "pa": "کشنده"
+        },
+        {
+            "id": 2115,
+            "province_id": 21,
+            "en": "ZARI",
+            "dr": "زاری",
+            "pa": "زاری"
+        },
+        {
+            "id": 2116,
+            "province_id": 21,
+            "en": "Ailaq che paeen",
+            "dr": "ایلقچی پاین",
+            "pa": "ایلقچی پاین"
+        },
+        {
+            "id": 2117,
+            "province_id": 21,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 2118,
+            "province_id": 21,
+            "en": "PD 2",
+            "dr": "ناحیه 2",
+            "pa": "ناحیه 2"
+        },
+        {
+            "id": 2119,
+            "province_id": 21,
+            "en": "PD 3",
+            "dr": "ناحیه 3",
+            "pa": "ناحیه 3"
+        },
+        {
+            "id": 2120,
+            "province_id": 21,
+            "en": "PD 4",
+            "dr": "ناحیه 4",
+            "pa": "ناحیه 4"
+        },
+        {
+            "id": 2121,
+            "province_id": 21,
+            "en": "PD 5",
+            "dr": "ناحیه 5",
+            "pa": "ناحیه 5"
+        },
+        {
+            "id": 2122,
+            "province_id": 21,
+            "en": "PD 6",
+            "dr": "ناحیه 6",
+            "pa": "ناحیه 6"
+        },
+        {
+            "id": 2123,
+            "province_id": 21,
+            "en": "PD 7",
+            "dr": "ناحیه 7",
+            "pa": "ناحیه 7"
+        },
+        {
+            "id": 2124,
+            "province_id": 21,
+            "en": "PD 8",
+            "dr": "ناحیه 8",
+            "pa": "ناحیه 8"
+        },
+        {
+            "id": 2125,
+            "province_id": 21,
+            "en": "PD 9",
+            "dr": "ناحیه 9",
+            "pa": "ناحیه 9"
+        },
+        {
+            "id": 2127,
+            "province_id": 21,
+            "en": "Provincial Capital of Balkh (Mazar-e-sharif)",
+            "dr": "(مرکز ولایت بلخ) مزار شریف",
+            "pa": "(مرکز ولایت بلخ) مزار شریف"
+        },
+        {
+            "id": 2201,
+            "province_id": 22,
+            "en": "PROVINCIAL CAPITAL OF SAR-E-PUL (SAR-E-PUL)",
+            "dr": "( مرکزولایت سرپل) سرپل",
+            "pa": "( مرکزولایت سرپل) سرپل"
+        },
+        {
+            "id": 2202,
+            "province_id": 22,
+            "en": "SAYYAD",
+            "dr": "صیاد",
+            "pa": "صیاد"
+        },
+        {
+            "id": 2203,
+            "province_id": 22,
+            "en": "KOHISTANAT",
+            "dr": "کوهستانات",
+            "pa": "کوهستانات"
+        },
+        {
+            "id": 2204,
+            "province_id": 22,
+            "en": "SOZMA QALA",
+            "dr": "سوزمه قلعه",
+            "pa": "سوزمه قلعه"
+        },
+        {
+            "id": 2205,
+            "province_id": 22,
+            "en": "SANGCHARAK",
+            "dr": "سنگ چارک",
+            "pa": "سنگ چارک"
+        },
+        {
+            "id": 2206,
+            "province_id": 22,
+            "en": "GOSFANDI",
+            "dr": "گوسفندی",
+            "pa": "گوسفندی"
+        },
+        {
+            "id": 2207,
+            "province_id": 22,
+            "en": "BALKHAB",
+            "dr": "بلخاب",
+            "pa": "بلخاب"
+        },
+        {
+            "id": 2209,
+            "province_id": 22,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 2210,
+            "province_id": 22,
+            "en": "PD 2",
+            "dr": "ناحیه 2",
+            "pa": "ناحیه 2"
+        },
+        {
+            "id": 2301,
+            "province_id": 23,
+            "en": "PROVINCIAL CAPITAL OF GHOR ( CHIGHCHERAN )",
+            "dr": "( مرکز ولایت غور) چغچران",
+            "pa": "( مرکز ولایت غور) چغچران"
+        },
+        {
+            "id": 2302,
+            "province_id": 23,
+            "en": "DULEENA",
+            "dr": "دولینه",
+            "pa": "دولینه"
+        },
+        {
+            "id": 2303,
+            "province_id": 23,
+            "en": "DAWLATYAR",
+            "dr": "دولت یار",
+            "pa": "دولت یار"
+        },
+        {
+            "id": 2304,
+            "province_id": 23,
+            "en": "CHAR SADA",
+            "dr": "چارصده",
+            "pa": "چارصده"
+        },
+        {
+            "id": 2305,
+            "province_id": 23,
+            "en": "PASABAND",
+            "dr": "پسابند",
+            "pa": "پسابند"
+        },
+        {
+            "id": 2306,
+            "province_id": 23,
+            "en": "SHAHRAK",
+            "dr": "شهرک",
+            "pa": "شهرک"
+        },
+        {
+            "id": 2307,
+            "province_id": 23,
+            "en": "LAL WA SARJANGAL",
+            "dr": "لعل وسرجنگل",
+            "pa": "لعل وسرجنگل"
+        },
+        {
+            "id": 2308,
+            "province_id": 23,
+            "en": "TAYWARA",
+            "dr": "تیوره",
+            "pa": "تیوره"
+        },
+        {
+            "id": 2309,
+            "province_id": 23,
+            "en": "TULAK",
+            "dr": "تولک",
+            "pa": "تولک"
+        },
+        {
+            "id": 2310,
+            "province_id": 23,
+            "en": "SAGHAR",
+            "dr": "ساغر",
+            "pa": "ساغر"
+        },
+        {
+            "id": 2312,
+            "province_id": 23,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 2313,
+            "province_id": 23,
+            "en": "PD 2",
+            "dr": "ناحیه 2",
+            "pa": "ناحیه 2"
+        },
+        {
+            "id": 2314,
+            "province_id": 23,
+            "en": "PD 3",
+            "dr": "ناحیه 3",
+            "pa": "ناحیه 3"
+        },
+        {
+            "id": 2315,
+            "province_id": 23,
+            "en": "PD 4",
+            "dr": "ناحیه 4",
+            "pa": "ناحیه 4"
+        },
+        {
+            "id": 2401,
+            "province_id": 24,
+            "en": "PROVINCIAL CAPITAL OF DAYKUNDI ( NILI )",
+            "dr": "(مرکز ولایت دایکندی) نیلی",
+            "pa": "(مرکز ولایت دایکندی) نیلی"
+        },
+        {
+            "id": 2402,
+            "province_id": 24,
+            "en": "SHAHRISTAN",
+            "dr": "شهرستان",
+            "pa": "شهرستان"
+        },
+        {
+            "id": 2403,
+            "province_id": 24,
+            "en": "GIZAB",
+            "dr": "گیزاب",
+            "pa": "گیزاب"
+        },
+        {
+            "id": 2404,
+            "province_id": 24,
+            "en": "ISHTERLAI",
+            "dr": "اشترلی",
+            "pa": "اشترلی"
+        },
+        {
+            "id": 2405,
+            "province_id": 24,
+            "en": "KHEDIR",
+            "dr": "خدیر",
+            "pa": "خدیر"
+        },
+        {
+            "id": 2406,
+            "province_id": 24,
+            "en": "GETI",
+            "dr": "گیتی",
+            "pa": "گیتی"
+        },
+        {
+            "id": 2407,
+            "province_id": 24,
+            "en": "MIRAMOR",
+            "dr": "میرامور",
+            "pa": "میرامور"
+        },
+        {
+            "id": 2408,
+            "province_id": 24,
+            "en": "SANG-E-TAKHT",
+            "dr": "سنگ تخت",
+            "pa": "سنگ تخت"
+        },
+        {
+            "id": 2409,
+            "province_id": 24,
+            "en": "KEJRAN",
+            "dr": "کیجران",
+            "pa": "کیجران"
+        },
+        {
+            "id": 2411,
+            "province_id": 24,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 2501,
+            "province_id": 25,
+            "en": "PROVINCIAL CAPITAL OF  UROZGAN ( TIRINKOT )",
+            "dr": "(مرکز ولایت ارزگان) ترینکوت",
+            "pa": "(مرکز ولایت ارزگان) ترینکوت"
+        },
+        {
+            "id": 2502,
+            "province_id": 25,
+            "en": "DEHRAOUD",
+            "dr": "دهراود",
+            "pa": "دهراود"
+        },
+        {
+            "id": 2503,
+            "province_id": 25,
+            "en": "CHORA",
+            "dr": "چوره",
+            "pa": "چوره"
+        },
+        {
+            "id": 2504,
+            "province_id": 25,
+            "en": "SHAHID-E-HASSAS",
+            "dr": "شهید حساس",
+            "pa": "شهید حساس"
+        },
+        {
+            "id": 2505,
+            "province_id": 25,
+            "en": "KHAS UROZGAN",
+            "dr": "خاص ارزگان",
+            "pa": "خاص ارزگان"
+        },
+        {
+            "id": 2506,
+            "province_id": 25,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 2507,
+            "province_id": 25,
+            "en": "PD 2",
+            "dr": "ناحیه 2",
+            "pa": "ناحیه 2"
+        },
+        {
+            "id": 2508,
+            "province_id": 25,
+            "en": "PD 3",
+            "dr": "ناحیه 3",
+            "pa": "ناحیه 3"
+        },
+        {
+            "id": 2509,
+            "province_id": 25,
+            "en": "PD 4",
+            "dr": "ناحیه 4",
+            "pa": "ناحیه 4"
+        },
+        {
+            "id": 2511,
+            "province_id": 25,
+            "en": "Chahar Chino",
+            "dr": "چهارچینو",
+            "pa": "چهارچینو"
+        },
+        {
+            "id": 2601,
+            "province_id": 26,
+            "en": "PROVINCIAL CAPITAL OF  ZABUL ( QALAT )",
+            "dr": "( مرکز ولایت زابل) قلات",
+            "pa": "( مرکز ولایت زابل) قلات"
+        },
+        {
+            "id": 2602,
+            "province_id": 26,
+            "en": "TARANK WA JALDAK",
+            "dr": "ترنک وجلدک",
+            "pa": "ترنک وجلدک"
+        },
+        {
+            "id": 2603,
+            "province_id": 26,
+            "en": "SHINKAI",
+            "dr": "شینکی",
+            "pa": "شینکی"
+        },
+        {
+            "id": 2604,
+            "province_id": 26,
+            "en": "MIZAN",
+            "dr": "میزان",
+            "pa": "میزان"
+        },
+        {
+            "id": 2605,
+            "province_id": 26,
+            "en": "ARGHANDAB",
+            "dr": "ارغنداب",
+            "pa": "ارغنداب"
+        },
+        {
+            "id": 2606,
+            "province_id": 26,
+            "en": "SHAH JOI",
+            "dr": "شاه جوی",
+            "pa": "شاه جوی"
+        },
+        {
+            "id": 2607,
+            "province_id": 26,
+            "en": "DAICHOPAN",
+            "dr": "دایچوپان",
+            "pa": "دایچوپان"
+        },
+        {
+            "id": 2608,
+            "province_id": 26,
+            "en": "ATGHAR",
+            "dr": "اتغر",
+            "pa": "اتغر"
+        },
+        {
+            "id": 2609,
+            "province_id": 26,
+            "en": "NAW BAHAR",
+            "dr": "نوبهار",
+            "pa": "نوبهار"
+        },
+        {
+            "id": 2610,
+            "province_id": 26,
+            "en": "SHEMEL ZAYEE",
+            "dr": "شملزایی",
+            "pa": "شملزایی"
+        },
+        {
+            "id": 2611,
+            "province_id": 26,
+            "en": "KAKARI (KHAK-E-AFGHAN)",
+            "dr": "(کاکری) خاک افغان",
+            "pa": "(کاکری) خاک افغان"
+        },
+        {
+            "id": 2701,
+            "province_id": 27,
+            "en": "PROVINCIAL CAPITAL OF  KANDAHAR ( KANDAHAR )",
+            "dr": "(مرکز ولایت کندهار) کندهار",
+            "pa": "(مرکز ولایت کندهار) کندهار"
+        },
+        {
+            "id": 2702,
+            "province_id": 27,
+            "en": "ARGHANDAB",
+            "dr": "ارغنداب",
+            "pa": "ارغنداب"
+        },
+        {
+            "id": 2703,
+            "province_id": 27,
+            "en": "DAMAN",
+            "dr": "دامان",
+            "pa": "دامان"
+        },
+        {
+            "id": 2704,
+            "province_id": 27,
+            "en": "PANJWAYEE",
+            "dr": "پنجوائی",
+            "pa": "پنجوائی"
+        },
+        {
+            "id": 2705,
+            "province_id": 27,
+            "en": "ZHIRE",
+            "dr": "ژیری",
+            "pa": "ژیری"
+        },
+        {
+            "id": 2706,
+            "province_id": 27,
+            "en": "SHAH WALI KOT",
+            "dr": "شاه ولی کوت",
+            "pa": "شاه ولی کوت"
+        },
+        {
+            "id": 2707,
+            "province_id": 27,
+            "en": "KHAKREZ",
+            "dr": "خاکریز",
+            "pa": "خاکریز"
+        },
+        {
+            "id": 2708,
+            "province_id": 27,
+            "en": "ARGHISTAN",
+            "dr": "ارغستان",
+            "pa": "ارغستان"
+        },
+        {
+            "id": 2709,
+            "province_id": 27,
+            "en": "GHORAK",
+            "dr": "غورک",
+            "pa": "غورک"
+        },
+        {
+            "id": 2710,
+            "province_id": 27,
+            "en": "MAIWAND",
+            "dr": "میوند",
+            "pa": "میوند"
+        },
+        {
+            "id": 2711,
+            "province_id": 27,
+            "en": "SPIN BOLDAK",
+            "dr": "سپین بولدک",
+            "pa": "سپین بولدک"
+        },
+        {
+            "id": 2712,
+            "province_id": 27,
+            "en": "NESH",
+            "dr": "نیش",
+            "pa": "نیش"
+        },
+        {
+            "id": 2713,
+            "province_id": 27,
+            "en": "MIYANESHIN",
+            "dr": "میانشین",
+            "pa": "میانشین"
+        },
+        {
+            "id": 2714,
+            "province_id": 27,
+            "en": "SHORABAK",
+            "dr": "شورابک",
+            "pa": "شورابک"
+        },
+        {
+            "id": 2715,
+            "province_id": 27,
+            "en": "MARUF",
+            "dr": "معروف",
+            "pa": "معروف"
+        },
+        {
+            "id": 2716,
+            "province_id": 27,
+            "en": "REG (SHIGA)",
+            "dr": "ریگ(شگه)",
+            "pa": "ریگ(شگه)"
+        },
+        {
+            "id": 2718,
+            "province_id": 27,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 2719,
+            "province_id": 27,
+            "en": "PD 2",
+            "dr": "ناحیه 2",
+            "pa": "ناحیه 2"
+        },
+        {
+            "id": 2720,
+            "province_id": 27,
+            "en": "PD 3",
+            "dr": "ناحیه 3",
+            "pa": "ناحیه 3"
+        },
+        {
+            "id": 2721,
+            "province_id": 27,
+            "en": "PD 4",
+            "dr": "ناحیه 4",
+            "pa": "ناحیه 4"
+        },
+        {
+            "id": 2722,
+            "province_id": 27,
+            "en": "PD 5",
+            "dr": "ناحیه 5",
+            "pa": "ناحیه 5"
+        },
+        {
+            "id": 2723,
+            "province_id": 27,
+            "en": "PD 6",
+            "dr": "ناحیه 6",
+            "pa": "ناحیه 6"
+        },
+        {
+            "id": 2724,
+            "province_id": 27,
+            "en": "PD 7",
+            "dr": "ناحیه 7",
+            "pa": "ناحیه 7"
+        },
+        {
+            "id": 2725,
+            "province_id": 27,
+            "en": "PD 8",
+            "dr": "ناحیه 8",
+            "pa": "ناحیه 8"
+        },
+        {
+            "id": 2726,
+            "province_id": 27,
+            "en": "PD 9",
+            "dr": "ناحیه 9",
+            "pa": "ناحیه 9"
+        },
+        {
+            "id": 2727,
+            "province_id": 27,
+            "en": "PD 10",
+            "dr": "ناحیه 10",
+            "pa": "ناحیه 10"
+        },
+        {
+            "id": 2728,
+            "province_id": 27,
+            "en": "PD 11",
+            "dr": "ناحیه 11",
+            "pa": "ناحیه 11"
+        },
+        {
+            "id": 2729,
+            "province_id": 27,
+            "en": "PD 12",
+            "dr": "ناحیه 12",
+            "pa": "ناحیه 12"
+        },
+        {
+            "id": 2730,
+            "province_id": 27,
+            "en": "PD 13",
+            "dr": "ناحیه 13",
+            "pa": "ناحیه 13"
+        },
+        {
+            "id": 2731,
+            "province_id": 27,
+            "en": "PD 14",
+            "dr": "ناحیه 14",
+            "pa": "ناحیه 14"
+        },
+        {
+            "id": 2732,
+            "province_id": 27,
+            "en": "PD 15",
+            "dr": "ناحیه 15",
+            "pa": "ناحیه 15"
+        },
+        {
+            "id": 2733,
+            "province_id": 27,
+            "en": "PD 16",
+            "dr": "ناحیه 16",
+            "pa": "ناحیه 16"
+        },
+        {
+            "id": 2734,
+            "province_id": 27,
+            "en": "PD 17",
+            "dr": "ناحیه 17",
+            "pa": "ناحیه 17"
+        },
+        {
+            "id": 2735,
+            "province_id": 27,
+            "en": "Dand",
+            "dr": "دند",
+            "pa": "دند"
+        },
+        {
+            "id": 2801,
+            "province_id": 28,
+            "en": "PROVINCIAL CAPITAL OF  JAWZJAN [ SHEBERGHAN ]",
+            "dr": "( مرکز ولایت جوزجان) شبرغان",
+            "pa": "( مرکز ولایت جوزجان) شبرغان"
+        },
+        {
+            "id": 2802,
+            "province_id": 28,
+            "en": "KHWAJA DUKOH",
+            "dr": "خواجه دوکوه",
+            "pa": "خواجه دوکوه"
+        },
+        {
+            "id": 2803,
+            "province_id": 28,
+            "en": "KHANAQA",
+            "dr": "خانقاً",
+            "pa": "خانقاً"
+        },
+        {
+            "id": 2804,
+            "province_id": 28,
+            "en": "MINGAJIK",
+            "dr": "منگجیک",
+            "pa": "منگجیک"
+        },
+        {
+            "id": 2805,
+            "province_id": 28,
+            "en": "QUSH TEPA",
+            "dr": "قوش تیپه",
+            "pa": "قوش تیپه"
+        },
+        {
+            "id": 2806,
+            "province_id": 28,
+            "en": "KHAMYAB",
+            "dr": "خم آب",
+            "pa": "خم آب"
+        },
+        {
+            "id": 2807,
+            "province_id": 28,
+            "en": "AQCHAH",
+            "dr": "آقچه",
+            "pa": "آقچه"
+        },
+        {
+            "id": 2808,
+            "province_id": 28,
+            "en": "FAIZABAD",
+            "dr": "فیض آباد",
+            "pa": "فیض آباد"
+        },
+        {
+            "id": 2809,
+            "province_id": 28,
+            "en": "MARDYAN",
+            "dr": "مردیان",
+            "pa": "مردیان"
+        },
+        {
+            "id": 2810,
+            "province_id": 28,
+            "en": "QARQIN",
+            "dr": "قرقین",
+            "pa": "قرقین"
+        },
+        {
+            "id": 2811,
+            "province_id": 28,
+            "en": "DARZAB",
+            "dr": "درز آب",
+            "pa": "درز آب"
+        },
+        {
+            "id": 2812,
+            "province_id": 28,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 2813,
+            "province_id": 28,
+            "en": "PD 2",
+            "dr": "ناحیه 2",
+            "pa": "ناحیه 2"
+        },
+        {
+            "id": 2814,
+            "province_id": 28,
+            "en": "PD 3",
+            "dr": "ناحیه 3",
+            "pa": "ناحیه 3"
+        },
+        {
+            "id": 2815,
+            "province_id": 28,
+            "en": "PD 4",
+            "dr": "ناحیه 4",
+            "pa": "ناحیه 4"
+        },
+        {
+            "id": 2902,
+            "province_id": 29,
+            "en": "PASHTUN KOT",
+            "dr": "پشتون کوت",
+            "pa": "پشتون کوت"
+        },
+        {
+            "id": 2903,
+            "province_id": 29,
+            "en": "KHWAJA SABZ POSH-E-WALI",
+            "dr": "خواجه سبز پوش ولی",
+            "pa": "خواجه سبز پوش ولی"
+        },
+        {
+            "id": 2904,
+            "province_id": 29,
+            "en": "ALMAR",
+            "dr": "المار",
+            "pa": "المار"
+        },
+        {
+            "id": 2905,
+            "province_id": 29,
+            "en": "BIL CHIRAGH",
+            "dr": "بل چراغ",
+            "pa": "بل چراغ"
+        },
+        {
+            "id": 2906,
+            "province_id": 29,
+            "en": "SHIRIN TAGAB",
+            "dr": "شرین تگاب",
+            "pa": "شرین تگاب"
+        },
+        {
+            "id": 2907,
+            "province_id": 29,
+            "en": "QAISAR",
+            "dr": "قیصار",
+            "pa": "قیصار"
+        },
+        {
+            "id": 2908,
+            "province_id": 29,
+            "en": "GURZIWAN",
+            "dr": "گرزیوان",
+            "pa": "گرزیوان"
+        },
+        {
+            "id": 2909,
+            "province_id": 29,
+            "en": "DAWLAT ABAD",
+            "dr": "دولت آباد",
+            "pa": "دولت آباد"
+        },
+        {
+            "id": 2910,
+            "province_id": 29,
+            "en": "KOHISTAN",
+            "dr": "کوهستان",
+            "pa": "کوهستان"
+        },
+        {
+            "id": 2911,
+            "province_id": 29,
+            "en": "QARAM QOLE",
+            "dr": "قرمقول",
+            "pa": "قرمقول"
+        },
+        {
+            "id": 2912,
+            "province_id": 29,
+            "en": "QURGHAN",
+            "dr": "قرغان",
+            "pa": "قرغان"
+        },
+        {
+            "id": 2913,
+            "province_id": 29,
+            "en": "ANDKHOY",
+            "dr": "اندخوی",
+            "pa": "اندخوی"
+        },
+        {
+            "id": 2914,
+            "province_id": 29,
+            "en": "KHAN CHARBAGH",
+            "dr": "خان چارباغ",
+            "pa": "خان چارباغ"
+        },
+        {
+            "id": 2916,
+            "province_id": 29,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 2917,
+            "province_id": 29,
+            "en": "PD 2",
+            "dr": "ناحیه 2",
+            "pa": "ناحیه 2"
+        },
+        {
+            "id": 2918,
+            "province_id": 29,
+            "en": "PD 3",
+            "dr": "ناحیه 3",
+            "pa": "ناحیه 3"
+        },
+        {
+            "id": 2919,
+            "province_id": 29,
+            "en": "PD 4",
+            "dr": "ناحیه 4",
+            "pa": "ناحیه 4"
+        },
+        {
+            "id": 2920,
+            "province_id": 29,
+            "en": "PD 5",
+            "dr": "ناحیه 5",
+            "pa": "ناحیه 5"
+        },
+        {
+            "id": 2921,
+            "province_id": 29,
+            "en": "PD 6",
+            "dr": "ناحیه 6",
+            "pa": "ناحیه 6"
+        },
+        {
+            "id": 2922,
+            "province_id": 29,
+            "en": "PD 7",
+            "dr": "ناحیه 7",
+            "pa": "ناحیه 7"
+        },
+        {
+            "id": 2923,
+            "province_id": 29,
+            "en": "PD 8",
+            "dr": "ناحیه 8",
+            "pa": "ناحیه 8"
+        },
+        {
+            "id": 2924,
+            "province_id": 29,
+            "en": "PD 9",
+            "dr": "ناحیه 9",
+            "pa": "ناحیه 9"
+        },
+        {
+            "id": 2925,
+            "province_id": 29,
+            "en": "PD 10",
+            "dr": "ناحیه 10",
+            "pa": "ناحیه 10"
+        },
+        {
+            "id": 2926,
+            "province_id": 29,
+            "en": "(PROVINCIAL CAPITAL OF FARYAB) MAYMANA",
+            "dr": "(مرکزولایت فاریاب) میمنه",
+            "pa": "(مرکزولایت فاریاب) میمنه"
+        },
+        {
+            "id": 2927,
+            "province_id": 29,
+            "en": "GHORMACH",
+            "dr": "غورماچ",
+            "pa": "غورماچ"
+        },
+        {
+            "id": 3001,
+            "province_id": 30,
+            "en": "PROVINCIAL CAPITAL OF  HELMAND (LASHKARGAH)",
+            "dr": "( مرکز ولایت هلمند) لشکرگاه",
+            "pa": "( مرکز ولایت هلمند) لشکرگاه"
+        },
+        {
+            "id": 3002,
+            "province_id": 30,
+            "en": "NAD ALI",
+            "dr": "نادعلی",
+            "pa": "نادعلی"
+        },
+        {
+            "id": 3003,
+            "province_id": 30,
+            "en": "NAWA-I- BARIKZAYEE",
+            "dr": "نـاوه بـارکـزائـی",
+            "pa": "نـاوه بـارکـزائـی"
+        },
+        {
+            "id": 3004,
+            "province_id": 30,
+            "en": "NAHER-I- SARAJ",
+            "dr": "نـهـر ســراج",
+            "pa": "نـهـر ســراج"
+        },
+        {
+            "id": 3005,
+            "province_id": 30,
+            "en": "WASHER",
+            "dr": "واشـــیــر",
+            "pa": "واشـــیــر"
+        },
+        {
+            "id": 3006,
+            "province_id": 30,
+            "en": "GARM SER",
+            "dr": "گرم سیر",
+            "pa": "گرم سیر"
+        },
+        {
+            "id": 3007,
+            "province_id": 30,
+            "en": "NAWZAD",
+            "dr": "نوزاد",
+            "pa": "نوزاد"
+        },
+        {
+            "id": 3008,
+            "province_id": 30,
+            "en": "SANGIN QALA",
+            "dr": "سنگـیــن قـلــعه",
+            "pa": "سنگـیــن قـلــعه"
+        },
+        {
+            "id": 3009,
+            "province_id": 30,
+            "en": "MUSA QALA",
+            "dr": "مــوســی قـلــعـه",
+            "pa": "مــوســی قـلــعـه"
+        },
+        {
+            "id": 3010,
+            "province_id": 30,
+            "en": "KAJAKI",
+            "dr": "کجکی",
+            "pa": "کجکی"
+        },
+        {
+            "id": 3011,
+            "province_id": 30,
+            "en": "REG-E-KHAN NISHIN",
+            "dr": "ریـک خـانـشــیـن",
+            "pa": "ریـک خـانـشــیـن"
+        },
+        {
+            "id": 3012,
+            "province_id": 30,
+            "en": "BAGHRAN",
+            "dr": "باغران",
+            "pa": "باغران"
+        },
+        {
+            "id": 3013,
+            "province_id": 30,
+            "en": "DESHU",
+            "dr": "دیشو",
+            "pa": "دیشو"
+        },
+        {
+            "id": 3015,
+            "province_id": 30,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 3016,
+            "province_id": 30,
+            "en": "PD 2",
+            "dr": "ناحیه 2",
+            "pa": "ناحیه 2"
+        },
+        {
+            "id": 3017,
+            "province_id": 30,
+            "en": "PD 3",
+            "dr": "ناحیه 3",
+            "pa": "ناحیه 3"
+        },
+        {
+            "id": 3018,
+            "province_id": 30,
+            "en": "PD 4",
+            "dr": "ناحیه 4",
+            "pa": "ناحیه 4"
+        },
+        {
+            "id": 3019,
+            "province_id": 30,
+            "en": "Garashk",
+            "dr": "گرشک",
+            "pa": "گرشک"
+        },
+        {
+            "id": 3020,
+            "province_id": 30,
+            "en": "Maarja",
+            "dr": "مارجه",
+            "pa": "مارجه"
+        },
+        {
+            "id": 3101,
+            "province_id": 31,
+            "en": "PROVINCIAL CAPITAL OF  BADGHIS ( QALA-E-NOW )",
+            "dr": "( مرکز ولایت بادغیس) قلعه نو",
+            "pa": "( مرکز ولایت بادغیس) قلعه نو"
+        },
+        {
+            "id": 3102,
+            "province_id": 31,
+            "en": "AB KAMARI",
+            "dr": "آبکمــری",
+            "pa": "آبکمــری"
+        },
+        {
+            "id": 3103,
+            "province_id": 31,
+            "en": "MUQUR",
+            "dr": "مقـــر",
+            "pa": "مقـــر"
+        },
+        {
+            "id": 3104,
+            "province_id": 31,
+            "en": "QADIS",
+            "dr": "قادس",
+            "pa": "قادس"
+        },
+        {
+            "id": 3105,
+            "province_id": 31,
+            "en": "BALA MURGHAB",
+            "dr": "بالامــرغــاب",
+            "pa": "بالامــرغــاب"
+        },
+        {
+            "id": 3106,
+            "province_id": 31,
+            "en": "JAWAND",
+            "dr": "جونـد",
+            "pa": "جونـد"
+        },
+        {
+            "id": 3107,
+            "province_id": 31,
+            "en": "GHORMACH",
+            "dr": "غـورمــاچ",
+            "pa": "غـورمــاچ"
+        },
+        {
+            "id": 3202,
+            "province_id": 32,
+            "en": "ENJIL",
+            "dr": "انجیل",
+            "pa": "انجیل"
+        },
+        {
+            "id": 3203,
+            "province_id": 32,
+            "en": "NIZAM-E-SHAHID (GUZARA)",
+            "dr": "(نظام شهید) گذره",
+            "pa": "(نظام شهید) گذره"
+        },
+        {
+            "id": 3204,
+            "province_id": 32,
+            "en": "KARRUKH",
+            "dr": "کرخ",
+            "pa": "کرخ"
+        },
+        {
+            "id": 3205,
+            "province_id": 32,
+            "en": "ZENDAJAN",
+            "dr": "زنده جان",
+            "pa": "زنده جان"
+        },
+        {
+            "id": 3206,
+            "province_id": 32,
+            "en": "PASHTUN ZARGHUN",
+            "dr": "پشتون زرغون",
+            "pa": "پشتون زرغون"
+        },
+        {
+            "id": 3207,
+            "province_id": 32,
+            "en": "KUSHK (RUBAT-E-SANGI)",
+            "dr": "(کشک) رباط سنگی",
+            "pa": "(کشک) رباط سنگی"
+        },
+        {
+            "id": 3208,
+            "province_id": 32,
+            "en": "GULRAN",
+            "dr": "گلران",
+            "pa": "گلران"
+        },
+        {
+            "id": 3209,
+            "province_id": 32,
+            "en": "ADRASKAN",
+            "dr": "ادرسکن",
+            "pa": "ادرسکن"
+        },
+        {
+            "id": 3210,
+            "province_id": 32,
+            "en": "KUSHK-E-KOHNA",
+            "dr": "کشک کهنه",
+            "pa": "کشک کهنه"
+        },
+        {
+            "id": 3211,
+            "province_id": 32,
+            "en": "GHORYAN",
+            "dr": "غوریان",
+            "pa": "غوریان"
+        },
+        {
+            "id": 3212,
+            "province_id": 32,
+            "en": "OBE",
+            "dr": "اوبه",
+            "pa": "اوبه"
+        },
+        {
+            "id": 3213,
+            "province_id": 32,
+            "en": "KOHSAN",
+            "dr": "کهسان",
+            "pa": "کهسان"
+        },
+        {
+            "id": 3214,
+            "province_id": 32,
+            "en": "SHINDAND",
+            "dr": "شیندند",
+            "pa": "شیندند"
+        },
+        {
+            "id": 3215,
+            "province_id": 32,
+            "en": "FERSI",
+            "dr": "فرسی",
+            "pa": "فرسی"
+        },
+        {
+            "id": 3216,
+            "province_id": 32,
+            "en": "CHISHT-E-SHARIF",
+            "dr": "چشت شریف",
+            "pa": "چشت شریف"
+        },
+        {
+            "id": 3218,
+            "province_id": 32,
+            "en": "PD 1",
+            "dr": "ناحیه1",
+            "pa": "ناحیه1"
+        },
+        {
+            "id": 3219,
+            "province_id": 32,
+            "en": "PD 2",
+            "dr": "ناحیه2",
+            "pa": "ناحیه2"
+        },
+        {
+            "id": 3220,
+            "province_id": 32,
+            "en": "PD 3",
+            "dr": "ناحیه3",
+            "pa": "ناحیه3"
+        },
+        {
+            "id": 3221,
+            "province_id": 32,
+            "en": "PD 4",
+            "dr": "ناحیه4",
+            "pa": "ناحیه4"
+        },
+        {
+            "id": 3222,
+            "province_id": 32,
+            "en": "PD 5",
+            "dr": "ناحیه5",
+            "pa": "ناحیه5"
+        },
+        {
+            "id": 3223,
+            "province_id": 32,
+            "en": "PD 6",
+            "dr": "ناحیه6",
+            "pa": "ناحیه6"
+        },
+        {
+            "id": 3224,
+            "province_id": 32,
+            "en": "PD 7",
+            "dr": "ناحیه7",
+            "pa": "ناحیه7"
+        },
+        {
+            "id": 3225,
+            "province_id": 32,
+            "en": "PD 8",
+            "dr": "ناحیه8",
+            "pa": "ناحیه8"
+        },
+        {
+            "id": 3226,
+            "province_id": 32,
+            "en": "PD 9",
+            "dr": "ناحیه9",
+            "pa": "ناحیه9"
+        },
+        {
+            "id": 3227,
+            "province_id": 32,
+            "en": "PD 10",
+            "dr": "ناحیه10",
+            "pa": "ناحیه10"
+        },
+        {
+            "id": 3228,
+            "province_id": 32,
+            "en": "PD 11",
+            "dr": "ناحیه11",
+            "pa": "ناحیه11"
+        },
+        {
+            "id": 3229,
+            "province_id": 32,
+            "en": "PD 12",
+            "dr": "ناحیه12",
+            "pa": "ناحیه12"
+        },
+        {
+            "id": 3230,
+            "province_id": 32,
+            "en": "PD 13",
+            "dr": "ناحیه13",
+            "pa": "ناحیه13"
+        },
+        {
+            "id": 3231,
+            "province_id": 32,
+            "en": "Provincial capital of Herat) Herat)",
+            "dr": "(مرکز ولایت هرات) هرات",
+            "pa": "(مرکز ولایت هرات) هرات"
+        },
+        {
+            "id": 3301,
+            "province_id": 33,
+            "en": "PROVINCIAL CAPITAL OF  FARAH (FARAH)",
+            "dr": "( مرکز ولایت فراه) فراه",
+            "pa": "( مرکز ولایت فراه) فراه"
+        },
+        {
+            "id": 3302,
+            "province_id": 33,
+            "en": "PUSHTRUD",
+            "dr": "پشت رود",
+            "pa": "پشت رود"
+        },
+        {
+            "id": 3303,
+            "province_id": 33,
+            "en": "KHAK-E-SAFED",
+            "dr": "خاک سفید",
+            "pa": "خاک سفید"
+        },
+        {
+            "id": 3304,
+            "province_id": 33,
+            "en": "QALA-E-KAH",
+            "dr": "قلعه کاه",
+            "pa": "قلعه کاه"
+        },
+        {
+            "id": 3305,
+            "province_id": 33,
+            "en": "SHIB KOH",
+            "dr": "شیب کوه",
+            "pa": "شیب کوه"
+        },
+        {
+            "id": 3306,
+            "province_id": 33,
+            "en": "BALA BULUK",
+            "dr": "بالا بلوک",
+            "pa": "بالا بلوک"
+        },
+        {
+            "id": 3307,
+            "province_id": 33,
+            "en": "ANAR DARA",
+            "dr": "اناردره",
+            "pa": "اناردره"
+        },
+        {
+            "id": 3308,
+            "province_id": 33,
+            "en": "BAKWA",
+            "dr": "بکواه",
+            "pa": "بکواه"
+        },
+        {
+            "id": 3309,
+            "province_id": 33,
+            "en": "LASH-E-JUWAYN",
+            "dr": "لاش جوین",
+            "pa": "لاش جوین"
+        },
+        {
+            "id": 3310,
+            "province_id": 33,
+            "en": "GULISTAN",
+            "dr": "گلستان",
+            "pa": "گلستان"
+        },
+        {
+            "id": 3311,
+            "province_id": 33,
+            "en": "PUR CHAMAN",
+            "dr": "پرچمن",
+            "pa": "پرچمن"
+        },
+        {
+            "id": 3313,
+            "province_id": 33,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 3314,
+            "province_id": 33,
+            "en": "PD 2",
+            "dr": "ناحیه 2",
+            "pa": "ناحیه 2"
+        },
+        {
+            "id": 3315,
+            "province_id": 33,
+            "en": "PD 3",
+            "dr": "ناحیه 3",
+            "pa": "ناحیه 3"
+        },
+        {
+            "id": 3316,
+            "province_id": 33,
+            "en": "PD 4",
+            "dr": "ناحیه 4",
+            "pa": "ناحیه 4"
+        },
+        {
+            "id": 3317,
+            "province_id": 33,
+            "en": "---",
+            "dr": "---",
+            "pa": "---"
+        },
+        {
+            "id": 3401,
+            "province_id": 34,
+            "en": "PROVINCIAL CAPITAL OF  NIMROZ (ZARANJ)",
+            "dr": "( مرکز ولایت نیمروز) زرنج",
+            "pa": "( مرکز ولایت نیمروز) زرنج"
+        },
+        {
+            "id": 3402,
+            "province_id": 34,
+            "en": "KANG",
+            "dr": "کنگ",
+            "pa": "کنگ"
+        },
+        {
+            "id": 3403,
+            "province_id": 34,
+            "en": "ASL-E-CHAKHANSUR",
+            "dr": "اصل چخانسور",
+            "pa": "اصل چخانسور"
+        },
+        {
+            "id": 3404,
+            "province_id": 34,
+            "en": "CHAR BURJAK",
+            "dr": "چهاربرجک",
+            "pa": "چهاربرجک"
+        },
+        {
+            "id": 3405,
+            "province_id": 34,
+            "en": "KHASHROD",
+            "dr": "خاشرود",
+            "pa": "خاشرود"
+        },
+        {
+            "id": 3407,
+            "province_id": 34,
+            "en": "PD 1",
+            "dr": "ناحیه 1",
+            "pa": "ناحیه 1"
+        },
+        {
+            "id": 3408,
+            "province_id": 34,
+            "en": "Delaram",
+            "dr": "دلارام",
+            "pa": ""
+        }
+    ]
+}

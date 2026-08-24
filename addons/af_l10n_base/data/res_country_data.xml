@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+      Afghan postal addresses are written largest-to-smallest and normally
+      include the district, which Odoo's default format has no place for.
+      res_partner.py supplies %(district_name)s and %(village_name)s to the
+      formatter; everything else is standard Odoo.
+    -->
+    <record id="base.af" model="res.country">
+        <field name="address_format">%(street)s
+%(street2)s
+%(village_name)s
+%(district_name)s
+%(city)s %(zip)s
+%(state_name)s
+%(country_name)s</field>
+    </record>
+
+</odoo>

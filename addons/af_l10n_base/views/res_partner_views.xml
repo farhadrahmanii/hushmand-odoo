@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_partner_view_form" model="ir.ui.view">
+        <field name="name">res.partner.form.inherit.af.l10n.base</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <!-- Province already exists as state_id, since Afghan provinces
+                 are country states. District and village slot in beneath it. -->
+            <field name="state_id" position="after">
+                <field name="af_district_id"
+                       placeholder="District"
+                       class="o_address_city"
+                       domain="[('state_id', '=?', state_id)]"
+                       options="{'no_open': True, 'no_create': True}"/>
+                <field name="af_village_id"
+                       placeholder="Village"
+                       class="o_address_city"
+                       domain="[('district_id', '=?', af_district_id)]"
+                       options="{'no_open': True, 'no_create': True}"
+                       invisible="not af_district_id"/>
+            </field>
+
+            <field name="vat" position="after">
+                <field name="af_tazkira" placeholder="Tazkira number"/>
+                <field name="af_tin" placeholder="TIN"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>

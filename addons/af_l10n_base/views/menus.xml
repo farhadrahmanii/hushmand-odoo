@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_af_localization"
+              name="Afghanistan"
+              parent="base.menu_administration"
+              sequence="95"/>
+
+    <menuitem id="menu_af_district"
+              name="Districts"
+              parent="menu_af_localization"
+              action="action_af_district"
+              sequence="10"/>
+
+    <menuitem id="menu_af_village"
+              name="Villages"
+              parent="menu_af_localization"
+              action="action_af_village"
+              sequence="20"/>
+
+</odoo>

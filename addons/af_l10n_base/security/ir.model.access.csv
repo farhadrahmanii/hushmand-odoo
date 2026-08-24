@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_af_district_user,af.district read,model_af_district,base.group_user,1,0,0,0
+access_af_district_manager,af.district manage,model_af_district,base.group_system,1,1,1,1
+access_af_village_user,af.village read,model_af_village,base.group_user,1,0,0,0
+access_af_village_manager,af.village manage,model_af_village,base.group_system,1,1,1,1

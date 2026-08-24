@@ -62,16 +62,16 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Install and run the module test suite
-        # --test-tags /af_jalali restricts the run to this module's tests.
-        # Without it Odoo also runs its own ~991 base-module tests, which fail
-        # for container-environment reasons that have nothing to do with us.
+        # --test-tags restricts the run to our own modules. Without it Odoo
+        # also runs its own ~991 base-module tests, which fail for
+        # container-environment reasons that have nothing to do with us.
         run: |
           odoo -d ci \
             --db_host=postgres --db_user=odoo --db_password=odoo \
             --data-dir=/tmp/odoo-data \
             --addons-path=/usr/lib/python3/dist-packages/odoo/addons,$GITHUB_WORKSPACE/addons \
-            -i af_jalali \
-            --test-enable --test-tags /af_jalali \
+            -i af_jalali,af_l10n_base \
+            --test-enable --test-tags /af_jalali,/af_l10n_base \
             --stop-after-init --log-level=info 2>&1 | tee odoo.log
           # Odoo exits 0 even when tests fail, so inspect the log.
           if grep -qE "^[0-9-]+ [0-9:,]+ [0-9]+ (ERROR|CRITICAL)" odoo.log; then
