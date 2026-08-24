@@ -1,0 +1,210 @@
+# =============================================================================
+#  Odoo 19 + af_jalali  --  single-file deployment for Hostinger Docker Manager
+# =============================================================================
+#
+#  WHAT THIS DOES
+#  Brings up PostgreSQL 16 and Odoo 19, pulls the af_jalali module from your
+#  private GitHub repo, creates the database and installs the module. When it
+#  finishes you open http://YOUR_SERVER_IP:8069 and log in.
+#
+#  BEFORE YOU PASTE THIS IN, EDIT THE FOUR VALUES MARKED  <<< CHANGE ME >>>
+#  Nothing else needs touching.
+#
+#  For the GitHub token: github.com -> Settings -> Developer settings ->
+#  Personal access tokens -> Fine-grained tokens -> Generate new token.
+#  Repository access: only "hushmand-odoo". Permissions: Contents = Read-only.
+#  That token can do nothing except read this one repository.
+#
+#  FIRST BOOT TAKES 3-6 MINUTES. Odoo is creating the database and installing
+#  base plus af_jalali. If the page does not load yet, it is still working --
+#  check the odoo container logs until you see "Modules loaded."
+#
+#  THEN, IN ODOO
+#    1. Log in with the admin password you set below (user: admin)
+#    2. Settings -> General Settings -> Calendar -> tick "Jalali Calendar"
+#    3. Choose Afghan month names, save
+#    4. Open any record with a date and confirm it reads e.g. 1405/06/02
+#    5. Preferences (top right) -> Calendar -> try "Always Gregorian"
+#
+#  SECURITY NOTE. This is a TEST configuration reachable over plain HTTP on
+#  port 8069. Database listing is off and the master password is yours, so it
+#  is not wide open -- but do not put customer data in it, and do not treat it
+#  as production. Production needs HTTPS via a reverse proxy; see the commented
+#  Caddy service at the bottom of this file.
+# =============================================================================
+
+services:
+
+  # ---------------------------------------------------------------------------
+  # PostgreSQL
+  # ---------------------------------------------------------------------------
+  db:
+    image: postgres:16
+    container_name: odoo-db
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: "CHANGE_THIS_DB_PASSWORD"        # <<< CHANGE ME (1/4)
+      POSTGRES_DB: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    restart: unless-stopped
+    # Not published to the internet. Only the Odoo container can reach it.
+
+  # ---------------------------------------------------------------------------
+  # One-shot: fetch the private addons into a shared volume, then exit.
+  # ---------------------------------------------------------------------------
+  addons-init:
+    image: alpine/git:latest
+    container_name: odoo-addons-init
+    restart: "no"
+    environment:
+      GITHUB_TOKEN: "CHANGE_THIS_GITHUB_TOKEN"            # <<< CHANGE ME (2/4)
+      REPO: "farhadrahmanii/hushmand-odoo"
+      BRANCH: "main"
+    volumes:
+      - odoo-addons:/addons
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        set -e
+        echo "Fetching addons from $${REPO} ($${BRANCH})..."
+        rm -rf /tmp/repo
+        git clone --depth 1 --branch "$${BRANCH}" \
+          "https://x-access-token:$${GITHUB_TOKEN}@github.com/$${REPO}.git" /tmp/repo
+        rm -rf /addons/*
+        cp -r /tmp/repo/addons/* /addons/
+        # The Odoo container runs as uid 101; make sure it can read these.
+        chmod -R a+rX /addons
+        echo "Addons installed:"
+        ls -1 /addons
+
+  # ---------------------------------------------------------------------------
+  # One-shot: create the database and install af_jalali, then exit.
+  # Safe to re-run; installing an already-installed module is a no-op.
+  # ---------------------------------------------------------------------------
+  odoo-init:
+    image: odoo:19
+    container_name: odoo-init
+    restart: "no"
+    depends_on:
+      db:
+        condition: service_healthy
+      addons-init:
+        condition: service_completed_successfully
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - odoo-addons:/mnt/extra-addons:ro
+    command: >
+      odoo
+      --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons
+      --db_host=db
+      --db_port=5432
+      --db_user=odoo
+      --db_password=CHANGE_THIS_DB_PASSWORD
+      --database=hushmand
+      --init=af_jalali
+      --stop-after-init
+      --load-language=en_US
+      --limit-time-real=3600
+      --limit-time-cpu=1800
+      --log-level=info
+    # NOTE: --db_password above must match POSTGRES_PASSWORD in the db service.
+
+  # ---------------------------------------------------------------------------
+  # Odoo
+  # ---------------------------------------------------------------------------
+  odoo:
+    image: odoo:19
+    container_name: odoo
+    depends_on:
+      db:
+        condition: service_healthy
+      odoo-init:
+        condition: service_completed_successfully
+    ports:
+      - "8069:8069"
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - odoo-addons:/mnt/extra-addons:ro
+    command: >
+      odoo
+      --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons
+      --db_host=db
+      --db_port=5432
+      --db_user=odoo
+      --db_password=CHANGE_THIS_DB_PASSWORD
+      --database=hushmand
+      --db-filter=^hushmand$$
+      --no-database-list
+      --admin-passwd=CHANGE_THIS_MASTER_PASSWORD
+      --workers=0
+      --limit-time-real=600
+      --limit-time-cpu=300
+      --log-level=info
+    #
+    #  --db_password           <<< CHANGE ME (3/4) -- same as POSTGRES_PASSWORD
+    #  --admin-passwd          <<< CHANGE ME (4/4) -- the Odoo master password,
+    #                          needed to create or restore databases. Make it
+    #                          long and random. This is NOT your login password.
+    #
+    #  --no-database-list      hides the database manager. Leave this on.
+    #  --db-filter=^hushmand$$ serves only this one database.
+    #  --workers=0             threaded mode: lowest memory, and websockets work
+    #                          on port 8069 without a reverse proxy. Correct for
+    #                          a test box. For production put a proxy in front
+    #                          and raise this to (CPU cores * 2) + 1.
+    restart: unless-stopped
+
+volumes:
+  odoo-db-data:
+  odoo-web-data:
+  odoo-addons:
+
+# =============================================================================
+#  LATER: HTTPS on a real domain
+# =============================================================================
+#  Point a subdomain (e.g. odoo.hushmand.af) at this server's IP, then:
+#    1. remove the "ports:" block from the odoo service above, so Odoo is no
+#       longer reachable directly on 8069
+#    2. add --proxy-mode to the odoo command
+#    3. uncomment the service below and set your domain and email
+#
+#  caddy:
+#    image: caddy:2
+#    container_name: odoo-caddy
+#    depends_on: [odoo]
+#    ports:
+#      - "80:80"
+#      - "443:443"
+#    command: caddy reverse-proxy --from odoo.example.com --to odoo:8069
+#    volumes:
+#      - caddy-data:/data
+#    restart: unless-stopped
+#
+#  and add "caddy-data:" under volumes. Caddy obtains and renews the TLS
+#  certificate automatically; there is no Caddyfile to write.
+# =============================================================================
+#
+#  UPDATING THE MODULE AFTER YOU PUSH NEW CODE
+#    In Docker Manager, restart the "addons-init" container to re-pull, then run
+#    the odoo container with --update=af_jalali once, then restart it normally.
+#    Or simply redeploy the whole stack: the volumes keep your database.
+#
+#  IF SOMETHING GOES WRONG
+#    Check container logs in this order: addons-init (did the clone work? a bad
+#    token shows as "Authentication failed"), then odoo-init (did the module
+#    install? look for "Modules loaded."), then odoo.
+#
+#  REQUIREMENTS
+#    2 GB RAM minimum. With less, installation is killed part-way and the
+#    database is left half-built -- if that happens, delete the odoo-db-data
+#    volume and redeploy on a larger plan.
+# =============================================================================
