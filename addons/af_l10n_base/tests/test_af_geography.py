@@ -51,8 +51,11 @@ class TestAfGeographyData(common.TransactionCase):
         self.assertFalse(orphans)
 
     def test_districts_are_trilingual(self):
+        """Delaram had no Pashto name in the source database; the generator
+        falls back to Dari and reports it, so nothing ships blank."""
         untranslated = self.env["af.district"].search(
-            ["|", ("name_dr", "=", False), ("name_ps", "=", False)]
+            ["|", ("name_dr", "in", [False, ""]),
+                  ("name_ps", "in", [False, ""])]
         )
         self.assertFalse(
             untranslated,
@@ -84,19 +87,29 @@ class TestLanguageAwareNames(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        # Odoo refuses an inactive language in the context, so switch on the
+        # two this module creates.
+        cls.env["res.lang"]._activate_lang("fa_AF")
+        cls.env["res.lang"]._activate_lang("ps_AF")
         cls.kabul_province = cls.env.ref("af_l10n_base.state_af_kab")
         cls.district = cls.env["af.district"].search(
             [("state_id", "=", cls.kabul_province.id)], limit=1
         )
 
     def test_province_english_by_default(self):
-        self.assertEqual(
-            self.kabul_province.with_context(lang="en_US").display_name, "Kabul"
-        )
+        # Core renders a state as "Kabul (AF)" in some contexts, so assert on
+        # the name rather than pinning core's exact wrapper.
+        display = self.kabul_province.with_context(lang="en_US").display_name
+        self.assertIn("Kabul", display)
 
     def test_province_in_dari(self):
-        name = self.kabul_province.with_context(lang="fa_AF").display_name
-        self.assertEqual(name, self.kabul_province.af_name_dr)
+        display = self.kabul_province.with_context(lang="fa_AF").display_name
+        self.assertIn(self.kabul_province.af_name_dr, display)
+        self.assertNotIn("Kabul", display)
+
+    def test_province_in_pashto(self):
+        display = self.kabul_province.with_context(lang="ps_AF").display_name
+        self.assertIn(self.kabul_province.af_name_ps, display)
 
     def test_other_countries_are_untouched(self):
         """Only Afghan states change; every other country keeps Odoo's own
@@ -115,6 +128,12 @@ class TestLanguageAwareNames(common.TransactionCase):
         self.assertEqual(
             self.district.with_context(lang="fa_AF").display_name,
             self.district.name_dr,
+        )
+
+    def test_district_in_pashto(self):
+        self.assertEqual(
+            self.district.with_context(lang="ps_AF").display_name,
+            self.district.name_ps,
         )
 
     def test_district_english_by_default(self):
@@ -245,3 +264,29 @@ class TestPartnerAddress(common.TransactionCase):
         self.assertNotIn(
             "af_district_name", self.env["res.partner"]._address_fields()
         )
+
+
+@tagged("post_install", "-at_install")
+class TestLanguages(common.TransactionCase):
+    """Odoo ships Persian and nothing else from the region. Without these two
+    records a customer cannot select Dari or Pashto at all, which would make
+    the module's trilingual data pointless."""
+
+    def test_dari_language_exists(self):
+        dari = self.env.ref("af_l10n_base.lang_fa_af")
+        self.assertEqual(dari.code, "fa_AF")
+        self.assertEqual(dari.direction, "rtl")
+
+    def test_pashto_language_exists(self):
+        pashto = self.env.ref("af_l10n_base.lang_ps_af")
+        self.assertEqual(pashto.code, "ps_AF")
+        self.assertEqual(pashto.direction, "rtl")
+
+    def test_week_starts_on_saturday(self):
+        for xml_id in ("af_l10n_base.lang_fa_af", "af_l10n_base.lang_ps_af"):
+            with self.subTest(xml_id):
+                self.assertEqual(self.env.ref(xml_id).week_start, "6")
+
+    def test_languages_can_be_activated(self):
+        self.env["res.lang"]._activate_lang("fa_AF")
+        self.assertTrue(self.env.ref("af_l10n_base.lang_fa_af").active)

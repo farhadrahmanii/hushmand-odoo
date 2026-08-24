@@ -28,6 +28,38 @@ jobs:
         # came from -- a bug nobody notices until a customer does.
         run: python tools/verify_js_python_parity.py --from 1800 --to 2200
 
+      - name: XML is well-formed and manifests are complete
+        # Cheap checks that would otherwise only surface four minutes into the
+        # Odoo job. A stray "--" inside an XML comment is illegal and has cost
+        # a full CI cycle before.
+        run: |
+          python - <<'PY'
+          import ast, pathlib, sys, xml.dom.minidom
+          failures = []
+          for f in pathlib.Path("addons").rglob("*.xml"):
+              try:
+                  xml.dom.minidom.parse(str(f))
+              except Exception as exc:
+                  failures.append("%s: %s" % (f, exc))
+          for manifest in pathlib.Path("addons").glob("*/__manifest__.py"):
+              src = manifest.read_text(encoding="utf-8")
+              meta = ast.literal_eval(src[src.index("{"):src.rindex("}") + 1])
+              module = manifest.parent
+              for entry in meta.get("data", []):
+                  if not (module / entry).is_file():
+                      failures.append("%s: missing data file %s" % (module.name, entry))
+              for bundle in meta.get("assets", {}).values():
+                  for asset in bundle:
+                      if "*" in asset:
+                          continue
+                      if not (pathlib.Path("addons") / asset).is_file():
+                          failures.append("%s: missing asset %s" % (module.name, asset))
+          if failures:
+              print("\n".join("::error::" + f for f in failures))
+              sys.exit(1)
+          print("XML and manifests OK")
+          PY
+
       - name: No AGPL dependency anywhere
         # An AGPL dependency would force these modules to AGPL too, letting any
         # customer redistribute paid software for free. See README.md.

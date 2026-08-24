@@ -37,5 +37,8 @@ class ResCountryState(models.Model):
             local = state.af_name_ps if lang.startswith("ps") else state.af_name_dr
             if lang.startswith("ps") and not local:
                 local = state.af_name_dr
-            if local:
-                state.display_name = local
+            if local and state.name and state.display_name:
+                # Core renders "Kabul (AF)" in some contexts and a bare name in
+                # others. Substituting only the name keeps whichever shape core
+                # chose, instead of second-guessing it.
+                state.display_name = state.display_name.replace(state.name, local)

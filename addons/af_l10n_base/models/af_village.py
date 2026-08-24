@@ -46,13 +46,10 @@ class AfVillage(models.Model):
     )
     active = fields.Boolean(default=True)
 
-    _sql_constraints = [
-        (
-            "name_district_uniq",
-            "unique(district_id, name)",
-            "A village with this name already exists in that district.",
-        ),
-    ]
+    _name_district_uniq = models.Constraint(
+        "unique(district_id, name)",
+        "A village with this name already exists in that district.",
+    )
 
     @api.depends("name", "name_dr", "name_ps")
     @api.depends_context("lang")

@@ -18,6 +18,9 @@ data rather than free-text boxes.
 * **Villages**, structure provided for organisations that work at that level.
 * Every place name in **English, Dari and Pashto**, shown in whichever
   language the user reads.
+* **Dari and Pashto added as Odoo languages.** Odoo ships Persian and
+  nothing else from the region, so without this a customer cannot select
+  their own language at all.
 * **Tazkira** and **TIN** fields on contacts.
 * Afghan address layout on printed documents, including the district.
 
@@ -32,6 +35,7 @@ daily use in Afghanistan for years, not from a scraped list.
     "depends": ["base", "contacts"],
     "data": [
         "security/ir.model.access.csv",
+        "data/res_lang_data.xml",
         "data/res_country_state_data.xml",
         "data/af_district_data.xml",
         "data/res_country_data.xml",

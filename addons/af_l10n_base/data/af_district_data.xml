@@ -3277,5 +3277,6 @@
             <field name="state_id" ref="state_af_nim"/>
             <field name="name">Delaram</field>
             <field name="name_dr">دلارام</field>
+            <field name="name_ps">دلارام</field>
         </record>
 </odoo>

@@ -146,6 +146,7 @@ def generate_districts(districts, provinces):
     by_id = {p["id"]: p for p in provinces}
     lines = [HEADER]
     count = 0
+    filled_from_dari = []
 
     for district in districts:
         province = by_id.get(district["province_id"])
@@ -156,19 +157,29 @@ def generate_districts(districts, provinces):
 
         # The xml id uses the source row id, so re-running the generator
         # updates records in place instead of creating duplicates.
+        # The source data has one district (Delaram, in Nimruz) with no Pashto
+        # name. Falling back to the Dari name here beats shipping a blank, and
+        # beats editing the source database. The count is reported so the gap
+        # stays visible rather than quietly papered over.
+        name_dr = district.get("dr") or ""
+        name_ps = district.get("pa") or ""
+        if not name_ps and name_dr:
+            name_ps = name_dr
+            filled_from_dari.append(district["en"])
+
         xml_id = "district_af_%s" % district["id"]
         lines.append('        <record id="%s" model="af.district">\n' % xml_id)
         lines.append(
             '            <field name="state_id" ref="state_af_%s"/>\n' % code.lower()
         )
         lines.append(field("name", title_case(district["en"])))
-        lines.append(field("name_dr", district.get("dr")))
-        lines.append(field("name_ps", district.get("pa")))
+        lines.append(field("name_dr", name_dr))
+        lines.append(field("name_ps", name_ps))
         lines.append("        </record>\n")
         count += 1
 
     lines.append(FOOTER)
-    return "".join(lines), count
+    return "".join(lines), count, filled_from_dari
 
 
 def main():
@@ -189,11 +200,16 @@ def main():
         province_xml, encoding="utf-8"
     )
 
-    district_xml, district_count = generate_districts(districts, provinces)
+    district_xml, district_count, filled = generate_districts(districts, provinces)
     (DATA_DIR / "af_district_data.xml").write_text(district_xml, encoding="utf-8")
 
     print("provinces: %d (%d distinct ISO codes)" % (len(provinces), len(codes)))
     print("districts: %d" % district_count)
+    if filled:
+        print(
+            "Pashto name taken from Dari for %d district(s): %s"
+            % (len(filled), ", ".join(filled))
+        )
     print("written to %s" % DATA_DIR)
     return 0
 

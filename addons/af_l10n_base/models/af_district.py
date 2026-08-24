@@ -44,13 +44,13 @@ class AfDistrict(models.Model):
     )
     active = fields.Boolean(default=True)
 
-    _sql_constraints = [
-        (
-            "name_state_uniq",
-            "unique(state_id, name)",
-            "A district with this name already exists in that province.",
-        ),
-    ]
+    # Odoo 19 replaced the _sql_constraints list with Constraint attributes.
+    # The old form is not an error -- it is silently ignored, which is worse:
+    # the constraint simply never reaches the database.
+    _name_state_uniq = models.Constraint(
+        "unique(state_id, name)",
+        "A district with this name already exists in that province.",
+    )
 
     @api.depends("village_ids")
     def _compute_village_count(self):
