@@ -230,4 +230,18 @@ class TestPartnerAddress(common.TransactionCase):
         self.assertIn(self.district.name, partner.contact_address)
 
     def test_address_format_registered_for_afghanistan(self):
-        self.assertIn("district_name", self.afghanistan.address_format)
+        self.assertIn("af_district_name", self.afghanistan.address_format)
+
+    def test_custom_keys_are_legal_format_keys(self):
+        """Odoo validates address_format against _formatting_address_fields,
+        and rejects any key it does not know. This is what that failure looked
+        like the first time: KeyError, then 'invalid format key'."""
+        allowed = self.env["res.partner"]._formatting_address_fields()
+        self.assertIn("af_district_name", allowed)
+        self.assertIn("af_village_name", allowed)
+
+    def test_parent_child_sync_is_not_affected(self):
+        """Only the formatting list is extended, never the sync list."""
+        self.assertNotIn(
+            "af_district_name", self.env["res.partner"]._address_fields()
+        )

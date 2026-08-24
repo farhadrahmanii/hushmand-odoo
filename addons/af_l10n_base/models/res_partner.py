@@ -27,6 +27,36 @@ class ResPartner(models.Model):
              "Revenue Department.",
     )
 
+    # Odoo builds a printed address by substituting field names into the
+    # country's address_format, and validates that format against
+    # _formatting_address_fields(). A key it does not know about is rejected
+    # outright, so the district and village have to be registered there as
+    # plain text fields -- the same approach Odoo's own base_address_extended
+    # takes for street_name and street_number.
+    af_district_name = fields.Char(
+        related="af_district_id.name",
+        string="District Name",
+        readonly=True,
+    )
+    af_village_name = fields.Char(
+        related="af_village_id.name",
+        string="Village Name",
+        readonly=True,
+    )
+
+    @api.model
+    def _formatting_address_fields(self):
+        """Allow %(af_district_name)s and %(af_village_name)s in a layout.
+
+        Only _formatting_address_fields is extended, not _address_fields:
+        these are for display, and must not join the set of fields Odoo
+        synchronises from a parent contact down to its children.
+        """
+        return super()._formatting_address_fields() + [
+            "af_district_name",
+            "af_village_name",
+        ]
+
     @api.onchange("state_id")
     def _onchange_state_clears_district(self):
         """A district from another province would be nonsense; drop it."""
@@ -50,13 +80,3 @@ class ResPartner(models.Model):
             if partner.af_village_id:
                 partner.af_district_id = partner.af_village_id.district_id
 
-    def _prepare_display_address(self, without_company=False):
-        """Make the district available to address formats as %(district_name)s.
-
-        Odoo builds printed addresses from a per-country format string. Adding
-        the value here is the supported way to expose an extra field to it.
-        """
-        address_format, args = super()._prepare_display_address(without_company)
-        args["district_name"] = self.af_district_id.name or ""
-        args["village_name"] = self.af_village_id.name or ""
-        return address_format, args
