@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="af_jalali.JalaliDateField">
+        <div class="o_field_jalali_date d-inline-flex align-items-center">
+            <t t-if="props.readonly">
+                <span t-att-title="title" t-esc="displayValue"/>
+            </t>
+            <t t-else="">
+                <input type="text"
+                       class="o_input o_field_jalali_input"
+                       t-att-class="{ 'o_field_invalid': state.invalid }"
+                       t-att-id="props.id"
+                       t-att-value="displayValue"
+                       t-att-placeholder="placeholder"
+                       t-att-title="title"
+                       t-att-aria-invalid="state.invalid ? 'true' : 'false'"
+                       autocomplete="off"
+                       t-on-change="onChange"
+                       t-on-keydown="onKeydown"/>
+                <span t-if="state.invalid"
+                      class="o_field_jalali_error text-danger ms-1"
+                      role="alert">
+                    Not a valid date
+                </span>
+            </t>
+        </div>
+    </t>
+
+</templates>

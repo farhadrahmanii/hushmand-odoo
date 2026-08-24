@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  tier0:
+    name: Tier 0 tests and Python/JavaScript parity
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Tier 0 tests (no Odoo required)
+        run: python tools/run_core_tests.py
+
+      - name: Python and JavaScript must agree
+        # Reports render in Python, forms render in JavaScript. If these two
+        # drift, a printed document shows a different date from the screen it
+        # came from -- a bug nobody notices until a customer does.
+        run: python tools/verify_js_python_parity.py --from 1800 --to 2200
+
+      - name: No AGPL dependency anywhere
+        # An AGPL dependency would force these modules to AGPL too, letting any
+        # customer redistribute paid software for free. See README.md.
+        run: |
+          if grep -rn "AGPL" addons/; then
+            echo "::error::AGPL reference found in addons/ -- see the licensing rule in README.md"
+            exit 1
+          fi
+          echo "clean"
+
+  odoo:
+    name: Install and test on Odoo 19
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: odoo
+          POSTGRES_PASSWORD: odoo
+          POSTGRES_DB: postgres
+        options: >-
+          --health-cmd "pg_isready -U odoo"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+    container:
+      image: odoo:19
+      options: --user root
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install and run the full suite
+        run: |
+          odoo -d ci \
+            --db_host=postgres --db_user=odoo --db_password=odoo \
+            --addons-path=/usr/lib/python3/dist-packages/odoo/addons,$GITHUB_WORKSPACE/addons \
+            -i af_jalali --test-enable --stop-after-init --log-level=warn

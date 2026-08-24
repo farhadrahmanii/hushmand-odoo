@@ -1,0 +1,51 @@
+# Local development stack for the Hushmand Odoo addons.
+#
+#   docker compose up -d
+#   docker compose exec odoo odoo -d dev -i af_jalali --stop-after-init
+#   open http://localhost:8069
+#
+# Addons are bind-mounted, so editing a file on Windows is visible to Odoo
+# immediately. Python changes still need a restart or --dev=reload.
+
+services:
+  db:
+    image: postgres:16
+    container_name: hushmand-odoo-db
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD: odoo
+      POSTGRES_DB: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  odoo:
+    image: odoo:19
+    container_name: hushmand-odoo
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8069:8069"
+      # Longpolling / websocket, needed for chatter and notifications.
+      - "8072:8072"
+    environment:
+      HOST: db
+      USER: odoo
+      PASSWORD: odoo
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - ./addons:/mnt/extra-addons:ro
+      - ./docker/odoo.conf:/etc/odoo/odoo.conf:ro
+    command: odoo --dev=reload,qweb,xml
+    restart: unless-stopped
+
+volumes:
+  odoo-db-data:
+  odoo-web-data:

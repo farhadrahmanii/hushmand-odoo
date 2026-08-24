@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.af.jalali</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <!-- Anchored on the General Settings <app> container rather than on
+                 a specific block, because block ids move between releases while
+                 the app container does not. This xpath is the single most
+                 likely thing to need attention when porting: check it first. -->
+            <xpath expr="//app[@name='base_setup']" position="inside">
+                <block title="Calendar" name="af_jalali_block">
+                    <setting id="af_jalali_enabled"
+                             string="Jalali Calendar"
+                             help="Show dates in the Jalali (Hijri-Shamsi) calendar. Dates stay stored as Gregorian.">
+                        <field name="jalali_enabled"/>
+                        <div class="content-group" invisible="not jalali_enabled">
+                            <div class="row mt16">
+                                <label for="jalali_scheme" class="col-lg-4 o_light_label"/>
+                                <field name="jalali_scheme"/>
+                            </div>
+                            <div class="row">
+                                <label for="jalali_date_format" class="col-lg-4 o_light_label"/>
+                                <field name="jalali_date_format" placeholder="yyyy/MM/dd"/>
+                            </div>
+                            <div class="row">
+                                <label for="jalali_datetime_format" class="col-lg-4 o_light_label"/>
+                                <field name="jalali_datetime_format" placeholder="yyyy/MM/dd HH:mm"/>
+                            </div>
+                            <div class="row">
+                                <label for="jalali_eastern_digits" class="col-lg-4 o_light_label"/>
+                                <field name="jalali_eastern_digits"/>
+                            </div>
+                            <div class="text-muted mt8">
+                                Tokens: yyyy, yy, MMMM, MMM, MM, M, dd, d, EEEE, HH, mm, ss
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

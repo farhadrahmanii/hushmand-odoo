@@ -1,0 +1,7 @@
+# Keep everything LF in the repository. CI and Odoo run on Linux; Windows
+# checkouts still get CRLF locally where the editor wants it.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.ico binary

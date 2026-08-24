@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Preferences dialog: let every user pick their own calendar. -->
+    <record id="res_users_view_form_preferences" model="ir.ui.view">
+        <field name="name">res.users.preferences.form.inherit.af.jalali</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form_simple_modif"/>
+        <field name="arch" type="xml">
+            <field name="tz" position="after">
+                <field name="jalali_calendar"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Full user form, for administrators. -->
+    <record id="res_users_view_form" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.af.jalali</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <field name="tz" position="after">
+                <field name="jalali_calendar"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
