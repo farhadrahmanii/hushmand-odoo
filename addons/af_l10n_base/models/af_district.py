@@ -75,6 +75,7 @@ class AfDistrict(models.Model):
                     % district.state_id.display_name
                 )
 
+    @api.depends("name", "name_dr", "name_ps")
     @api.depends_context("lang")
     def _compute_display_name(self):
         """Show the district in the reader's own language where we have it."""

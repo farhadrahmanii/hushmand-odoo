@@ -64,8 +64,12 @@
                        filter_domain="['|', '|', ('name', 'ilike', self), ('name_dr', 'ilike', self), ('name_ps', 'ilike', self)]"
                        string="District"/>
                 <field name="state_id"/>
+                <separator/>
                 <filter name="inactive" string="Archived" domain="[('active', '=', False)]"/>
-                <group expand="0" string="Group By">
+                <separator/>
+                <!-- Odoo 19 dropped the expand and string attributes on a
+                     search view's group; it is <group name="group_by"> now. -->
+                <group name="group_by">
                     <filter name="group_state" string="Province" context="{'group_by': 'state_id'}"/>
                 </group>
             </search>

@@ -54,6 +54,7 @@ class AfVillage(models.Model):
         ),
     ]
 
+    @api.depends("name", "name_dr", "name_ps")
     @api.depends_context("lang")
     def _compute_display_name(self):
         lang = self.env.context.get("lang") or "en_US"
