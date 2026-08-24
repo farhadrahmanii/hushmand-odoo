@@ -7,10 +7,14 @@
         <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
         <field name="arch" type="xml">
             <!-- Anchored on the General Settings <app> container rather than on
-                 a specific block, because block ids move between releases while
-                 the app container does not. This xpath is the single most
-                 likely thing to need attention when porting: check it first. -->
-            <xpath expr="//app[@name='base_setup']" position="inside">
+                 a specific block, because block names move between releases
+                 while the container does not. Note the container is called
+                 "general_settings", not "base_setup" after the module that
+                 defines it. This xpath is the single most likely thing to need
+                 attention when porting to a new Odoo release: check it first,
+                 against addons/base_setup/views/res_config_settings_views.xml
+                 in the Odoo source for that version. -->
+            <xpath expr="//app[@name='general_settings']" position="inside">
                 <block title="Calendar" name="af_jalali_block">
                     <setting id="af_jalali_enabled"
                              string="Jalali Calendar"
