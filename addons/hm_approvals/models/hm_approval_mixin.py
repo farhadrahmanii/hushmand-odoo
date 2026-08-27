@@ -62,7 +62,11 @@ class HmApprovalMixin(models.AbstractModel):
                 else "none"
             )
 
+    @api.depends_context("uid")
     def _compute_approval_can_act(self):
+        # Without depends_context the value computed for the first user is
+        # cached and served to the next one, which would show an Approve
+        # button to somebody who cannot approve.
         for record in self:
             request = record.approval_request_id
             line = request.current_line_id if request else False

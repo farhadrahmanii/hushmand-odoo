@@ -9,6 +9,7 @@ for the first time here.
 
 from odoo.exceptions import UserError
 from odoo.tests import common, new_test_user, tagged
+from odoo.tools import mute_logger
 
 
 @tagged("post_install", "-at_install")
@@ -73,6 +74,7 @@ class TestBasics(PurchaseRequestCase):
         request.line_ids[0].product_qty = 20
         self.assertAlmostEqual(request.amount_total, 900.0, places=2)
 
+    @mute_logger("odoo.sql_db")
     def test_quantity_must_be_positive(self):
         request = self._request()
         with self.assertRaises(Exception):
