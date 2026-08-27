@@ -1,0 +1,3 @@
+# Part of af_liaison. See LICENSE file for full copyright and licensing details.
+
+from . import test_liaison

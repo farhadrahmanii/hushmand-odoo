@@ -60,7 +60,7 @@ class HrEmployee(models.Model):
     )
     af_discipline_count = fields.Integer(
         compute="_compute_af_discipline_count",
-        string="Disciplinary Actions",
+        string="Disciplinary Action Count",
         groups="hr.group_hr_manager",
     )
 

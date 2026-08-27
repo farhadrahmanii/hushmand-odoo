@@ -162,8 +162,8 @@ class HmAsset(models.Model):
         inverse_name="asset_id",
         string="Depreciation",
     )
-    posted_count = fields.Integer(compute="_compute_totals", string="Posted")
-    pending_count = fields.Integer(compute="_compute_totals", string="Pending")
+    posted_count = fields.Integer(compute="_compute_counts", string="Posted")
+    pending_count = fields.Integer(compute="_compute_counts", string="Pending")
 
     _purchase_positive = models.Constraint(
         "CHECK (purchase_value > 0)",
@@ -185,12 +185,21 @@ class HmAsset(models.Model):
                 asset.purchase_value - asset.salvage_value, 0.0
             )
 
+    # Split deliberately: depreciated_value and book_value are stored, the two
+    # counts are not. Sharing one method means reading a count can trigger a
+    # write to the stored values, which Odoo warns about.
+
     @api.depends("line_ids.amount", "line_ids.posted", "purchase_value")
     def _compute_totals(self):
         for asset in self:
             posted = asset.line_ids.filtered("posted")
             asset.depreciated_value = sum(posted.mapped("amount"))
             asset.book_value = asset.purchase_value - asset.depreciated_value
+
+    @api.depends("line_ids.posted")
+    def _compute_counts(self):
+        for asset in self:
+            posted = asset.line_ids.filtered("posted")
             asset.posted_count = len(posted)
             asset.pending_count = len(asset.line_ids) - len(posted)
 

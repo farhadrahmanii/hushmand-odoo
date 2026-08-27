@@ -134,7 +134,7 @@ class HmExpiryDocument(models.Model):
 
     days_to_expiry = fields.Integer(
         string="Days Left",
-        compute="_compute_expiry_state",
+        compute="_compute_days_to_expiry",
         help="Negative once the document has lapsed.",
     )
     state = fields.Selection(
@@ -145,7 +145,7 @@ class HmExpiryDocument(models.Model):
             ("renewed", "Renewed"),
             ("cancelled", "Cancelled"),
         ],
-        compute="_compute_expiry_state",
+        compute="_compute_state",
         store=True,
         index=True,
         tracking=True,
@@ -185,23 +185,35 @@ class HmExpiryDocument(models.Model):
     # Status
     # ------------------------------------------------------------------
 
-    @api.depends("date_expiry", "manual_state", "type_id.reminder_days")
-    def _compute_expiry_state(self):
+    # Two compute methods, not one. days_to_expiry is not stored and state is,
+    # and Odoo warns that sharing a method means reading the cheap field can
+    # trigger a write to the stored one.
+
+    @api.depends("date_expiry")
+    def _compute_days_to_expiry(self):
         today = fields.Date.context_today(self)
         for document in self:
-            if document.date_expiry:
-                document.days_to_expiry = (document.date_expiry - today).days
-            else:
-                document.days_to_expiry = 0
+            document.days_to_expiry = (
+                (document.date_expiry - today).days
+                if document.date_expiry else 0
+            )
 
+    @api.depends("date_expiry", "manual_state", "type_id.reminder_days")
+    def _compute_state(self):
+        today = fields.Date.context_today(self)
+        for document in self:
             if document.manual_state:
                 document.state = document.manual_state
                 continue
 
+            days_left = (
+                (document.date_expiry - today).days
+                if document.date_expiry else 0
+            )
             lead = document.type_id.reminder_days or 0
-            if document.days_to_expiry < 0:
+            if days_left < 0:
                 document.state = "expired"
-            elif document.days_to_expiry <= lead:
+            elif days_left <= lead:
                 document.state = "expiring"
             else:
                 document.state = "valid"

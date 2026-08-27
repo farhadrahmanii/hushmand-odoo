@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--
+          The six documents an Afghan liaison office actually tracks. Validity
+          and notice periods are starting points, not rules: every one of these
+          is negotiable in practice, so they are editable rather than hardcoded.
+        -->
+
+        <record id="type_visa" model="hm.expiry.document.type">
+            <field name="name">Visa</field>
+            <field name="code">VISA</field>
+            <field name="validity_months">12</field>
+            <field name="reminder_days">45</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="type_work_permit" model="hm.expiry.document.type">
+            <field name="name">Work Permit</field>
+            <field name="code">WP</field>
+            <field name="validity_months">12</field>
+            <field name="reminder_days">45</field>
+            <field name="sequence">20</field>
+        </record>
+
+        <record id="type_vehicle_permit" model="hm.expiry.document.type">
+            <field name="name">Vehicle Permit</field>
+            <field name="code">VP</field>
+            <field name="validity_months">12</field>
+            <field name="reminder_days">30</field>
+            <field name="sequence">30</field>
+        </record>
+
+        <record id="type_weapon_licence" model="hm.expiry.document.type">
+            <field name="name">Weapon Licence</field>
+            <field name="code">WL</field>
+            <field name="validity_months">12</field>
+            <field name="reminder_days">60</field>
+            <field name="sequence">40</field>
+        </record>
+
+        <record id="type_membership_card" model="hm.expiry.document.type">
+            <field name="name">Membership Card</field>
+            <field name="code">MC</field>
+            <field name="validity_months">12</field>
+            <field name="reminder_days">30</field>
+            <field name="sequence">50</field>
+        </record>
+
+        <record id="type_cip_card" model="hm.expiry.document.type">
+            <field name="name">Airport CIP Card</field>
+            <field name="code">CIP</field>
+            <field name="validity_months">12</field>
+            <field name="reminder_days">30</field>
+            <field name="sequence">60</field>
+        </record>
+
+    </data>
+</odoo>

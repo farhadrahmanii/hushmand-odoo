@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_expiry_document_view_form_inherit" model="ir.ui.view">
+        <field name="name">hm.expiry.document.form.inherit.af.liaison</field>
+        <field name="model">hm.expiry.document</field>
+        <field name="inherit_id" ref="hm_expiry_docs.hm_expiry_document_view_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="before">
+                <field name="employee_id"
+                       options="{'no_create_edit': True}"/>
+            </field>
+            <field name="issuing_authority" position="after">
+                <field name="af_province_id"
+                       options="{'no_create': True}"/>
+                <field name="af_reference"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="hm_expiry_document_view_list_inherit" model="ir.ui.view">
+        <field name="name">hm.expiry.document.list.inherit.af.liaison</field>
+        <field name="model">hm.expiry.document</field>
+        <field name="inherit_id" ref="hm_expiry_docs.hm_expiry_document_view_list"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="before">
+                <field name="employee_id" optional="show"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="hm_expiry_document_view_search_inherit" model="ir.ui.view">
+        <field name="name">hm.expiry.document.search.inherit.af.liaison</field>
+        <field name="model">hm.expiry.document</field>
+        <field name="inherit_id" ref="hm_expiry_docs.hm_expiry_document_view_search"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="before">
+                <field name="employee_id"/>
+            </field>
+            <filter name="group_type" position="after">
+                <filter name="group_employee" string="Employee"
+                        context="{'group_by': 'employee_id'}"/>
+            </filter>
+        </field>
+    </record>
+
+    <record id="hr_employee_view_form_inherit" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.af.liaison</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="action_af_view_documents" type="object"
+                        class="oe_stat_button" icon="fa-id-card-o"
+                        groups="hr.group_hr_user">
+                    <field name="af_document_count" widget="statinfo"
+                           string="Documents"/>
+                </button>
+            </div>
+            <div name="button_box" position="before">
+                <!-- The ribbon must carry the same group as the field it
+                     tests. Without it a system administrator who is not also
+                     an HR user is shown an element depending on a field they
+                     cannot read, and Odoo flags the view as inconsistent. -->
+                <field name="af_document_alert" invisible="1"
+                       groups="hr.group_hr_user"/>
+                <widget name="web_ribbon" title="Document Expiring"
+                        bg_color="text-bg-warning"
+                        groups="hr.group_hr_user"
+                        invisible="not af_document_alert"/>
+            </div>
+        </field>
+    </record>
+
+    <menuitem id="menu_af_liaison_documents"
+              name="Liaison Documents"
+              parent="hr.menu_hr_employee_payroll"
+              action="hm_expiry_docs.action_hm_expiry_document"
+              sequence="70"
+              groups="hr.group_hr_user"/>
+
+</odoo>
