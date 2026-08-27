@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_visitor_view_list" model="ir.ui.view">
+        <field name="name">hm.visitor.list</field>
+        <field name="model">hm.visitor</field>
+        <field name="arch" type="xml">
+            <list string="Visitors"
+                  decoration-bf="state == 'on_site'"
+                  decoration-muted="state in ('left', 'cancelled')">
+                <field name="name"/>
+                <field name="organisation" optional="show"/>
+                <field name="host_id" optional="show"/>
+                <field name="purpose" optional="hide"/>
+                <field name="expected_date" optional="hide"/>
+                <field name="check_in"/>
+                <field name="check_out"/>
+                <field name="duration_minutes" string="Minutes" optional="hide"/>
+                <field name="badge_number" optional="hide"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'expected'"
+                       decoration-success="state == 'on_site'"
+                       decoration-muted="state in ('left', 'cancelled')"/>
+                <button name="action_check_in" type="object" string="Check In"
+                        icon="fa-sign-in" invisible="state != 'expected'"/>
+                <button name="action_check_out" type="object" string="Check Out"
+                        icon="fa-sign-out" invisible="state != 'on_site'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hm_visitor_view_form" model="ir.ui.view">
+        <field name="name">hm.visitor.form</field>
+        <field name="model">hm.visitor</field>
+        <field name="arch" type="xml">
+            <form string="Visitor">
+                <header>
+                    <button name="action_check_in" string="Check In"
+                            type="object" class="btn-primary"
+                            invisible="state != 'expected'"/>
+                    <button name="action_check_out" string="Check Out"
+                            type="object" class="btn-primary"
+                            invisible="state != 'on_site'"/>
+                    <button name="action_cancel" string="Cancel" type="object"
+                            invisible="state in ('left', 'cancelled')"/>
+                    <button name="action_reset_expected" string="Reset"
+                            type="object"
+                            invisible="state not in ('left', 'cancelled')"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="expected,on_site,left"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="On Site"
+                            bg_color="text-bg-success"
+                            invisible="state != 'on_site'"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="Visitor name"/></h1>
+                        <h3><field name="organisation" placeholder="Organisation"/></h3>
+                    </div>
+                    <group>
+                        <group string="Visit">
+                            <field name="host_id"/>
+                            <field name="purpose"/>
+                            <field name="location"/>
+                            <field name="expected_date"/>
+                        </group>
+                        <group string="At the Desk">
+                            <field name="id_document"/>
+                            <field name="badge_number"/>
+                            <field name="vehicle_plate"/>
+                            <field name="accompanying_count"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Contact">
+                            <field name="partner_id"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="email" widget="email"/>
+                            <field name="company_id"
+                                   groups="base.group_multi_company"/>
+                        </group>
+                        <group string="Timings">
+                            <field name="check_in"/>
+                            <field name="check_out"/>
+                            <field name="duration_minutes"
+                                   invisible="not check_out"/>
+                        </group>
+                    </group>
+                    <group string="Notes">
+                        <field name="notes" nolabel="1"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="hm_visitor_view_search" model="ir.ui.view">
+        <field name="name">hm.visitor.search</field>
+        <field name="model">hm.visitor</field>
+        <field name="arch" type="xml">
+            <search string="Visitors">
+                <field name="name"/>
+                <field name="organisation"/>
+                <field name="host_id"/>
+                <field name="badge_number"/>
+                <field name="vehicle_plate"/>
+                <separator/>
+                <filter name="on_site" string="On Site Now"
+                        domain="[('state', '=', 'on_site')]"/>
+                <filter name="expected" string="Expected"
+                        domain="[('state', '=', 'expected')]"/>
+                <separator/>
+                <filter name="my_visitors" string="My Visitors"
+                        domain="[('host_id', '=', uid)]"/>
+                <filter name="never_checked_out" string="Never Checked Out"
+                        domain="[('state', '=', 'on_site'), ('check_in', '&lt;', (context_today() - datetime.timedelta(days=1)).strftime('%Y-%m-%d'))]"/>
+                <separator/>
+                <filter name="today" string="Today" date="check_in"/>
+                <group name="group_by">
+                    <filter name="group_state" string="Status"
+                            context="{'group_by': 'state'}"/>
+                    <filter name="group_host" string="Host"
+                            context="{'group_by': 'host_id'}"/>
+                    <filter name="group_org" string="Organisation"
+                            context="{'group_by': 'organisation'}"/>
+                    <filter name="group_checkin" string="Check In"
+                            context="{'group_by': 'check_in'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_hm_visitor_on_site" model="ir.actions.act_window">
+        <field name="name">On Site Now</field>
+        <field name="res_model">hm.visitor</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('state', '=', 'on_site')]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Nobody is in the building</p>
+            <p>This is the list to open during a drill or an incident. It
+               answers who is on site without reading through a book.</p>
+        </field>
+    </record>
+
+    <record id="action_hm_visitor" model="ir.actions.act_window">
+        <field name="name">Visitors</field>
+        <field name="res_model">hm.visitor</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Register a visitor</p>
+            <p>Record who came in, who they came to see and when they left.
+               Expected visitors can be registered in advance and checked in
+               with one click.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_hm_frontdesk_root" name="Front Desk" sequence="94"/>
+
+    <menuitem id="menu_hm_visitor_on_site" name="On Site Now"
+              parent="menu_hm_frontdesk_root"
+              action="action_hm_visitor_on_site" sequence="10"/>
+
+    <menuitem id="menu_hm_visitor" name="All Visitors"
+              parent="menu_hm_frontdesk_root"
+              action="action_hm_visitor" sequence="20"/>
+
+</odoo>
