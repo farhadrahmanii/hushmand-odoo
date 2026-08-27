@@ -84,15 +84,6 @@ class HmApprovalProcess(models.Model):
         for process in self:
             process.request_count = counts.get(process, 0)
 
-    @api.constrains("step_ids")
-    def _check_has_steps(self):
-        for process in self:
-            if process.active and not process.step_ids:
-                raise ValidationError(
-                    _("%s needs at least one step before it can be used.")
-                    % process.name
-                )
-
     @api.model
     def _process_for(self, record):
         """The process governing a record, or an empty recordset."""

@@ -116,7 +116,17 @@ class HmApprovalRequest(models.Model):
 
     @api.model
     def _start(self, record, process):
-        """Create a request and open its first applicable step."""
+        """Create a request and open its first applicable step.
+
+        A process with no steps is refused here rather than at creation time.
+        Requiring steps up front would make the process form unusable, since
+        you cannot add steps to a process you were not allowed to save.
+        """
+        if not process.step_ids:
+            raise UserError(
+                _("%s has no steps yet, so there is nothing to approve.")
+                % process.name
+            )
         request = self.create({
             "process_id": process.id,
             "res_model": record._name,

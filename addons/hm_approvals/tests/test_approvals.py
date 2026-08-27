@@ -46,9 +46,17 @@ class ApprovalCase(common.TransactionCase):
 
 class TestProcessConfiguration(ApprovalCase):
 
-    def test_process_needs_steps(self):
-        with self.assertRaises(ValidationError):
-            self.Process.create({"name": "Empty", "model_id": self.model.id})
+    def test_a_process_can_be_saved_before_its_steps_exist(self):
+        """Otherwise the form is unusable: you cannot add steps to a process
+        you were not allowed to save."""
+        process = self.Process.create({"name": "Empty", "model_id": self.model.id})
+        self.assertTrue(process)
+        self.assertFalse(process.step_ids)
+
+    def test_a_stepless_process_cannot_be_submitted(self):
+        process = self.Process.create({"name": "Empty", "model_id": self.model.id})
+        with self.assertRaises(UserError):
+            self.Request._start(self._document(), process)
 
     def test_step_needs_an_approver(self):
         with self.assertRaises(ValidationError):

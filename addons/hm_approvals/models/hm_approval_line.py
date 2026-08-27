@@ -136,7 +136,10 @@ class HmApprovalLine(models.Model):
             if not record or not hasattr(record, "activity_schedule"):
                 continue
             for approver in line.approver_ids:
-                record.activity_schedule(
+                # sudo: whoever decided the previous step should not need
+                # rights to create an activity for the next approver.
+                # Notifying is the engine's job, not theirs.
+                record.sudo().activity_schedule(
                     user_id=approver.id,
                     summary=_("Approval: %s") % line.step_id.name,
                     note=_("%(document)s is waiting for your approval.")
