@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_report_wizard,hm.account.report.wizard,model_hm_account_report_wizard,account.group_account_readonly,1,1,1,1
+access_report_wizard_manager,hm.account.report.wizard manager,model_hm_account_report_wizard,account.group_account_manager,1,1,1,1

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_account_report_wizard_view_form" model="ir.ui.view">
+        <field name="name">hm.account.report.wizard.form</field>
+        <field name="model">hm.account.report.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Financial Report">
+                <group>
+                    <group>
+                        <field name="report_type" widget="radio"/>
+                        <field name="date_from"
+                               invisible="report_type == 'balance_sheet'"
+                               required="report_type != 'balance_sheet'"/>
+                        <field name="date_to"/>
+                    </group>
+                    <group>
+                        <field name="company_ids" widget="many2many_tags"
+                               options="{'no_create': True}"/>
+                        <field name="posted_only"/>
+                        <field name="hide_zero"/>
+                    </group>
+                </group>
+                <group string="Narrow it down" name="filters">
+                    <field name="journal_ids" widget="many2many_tags"
+                           options="{'no_create': True}"/>
+                    <field name="analytic_account_id"
+                           options="{'no_create': True}"/>
+                </group>
+                <div class="alert alert-warning" role="alert"
+                     invisible="posted_only">
+                    Draft entries are included. Do not file this.
+                </div>
+                <footer>
+                    <button name="action_print" string="Print" type="object"
+                            class="btn-primary"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hm_account_report" model="ir.actions.act_window">
+        <field name="name">Financial Reports</field>
+        <field name="res_model">hm.account.report.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem id="menu_hm_account_report"
+              name="Financial Reports"
+              parent="account.menu_finance_reports"
+              action="action_hm_account_report"
+              sequence="5"
+              groups="account.group_account_readonly"/>
+
+</odoo>

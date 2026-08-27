@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_financial" model="ir.actions.report">
+        <field name="name">Financial Report</field>
+        <field name="model">hm.account.report.wizard</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hm_account_reports.report_financial</field>
+        <field name="report_file">hm_account_reports.report_financial</field>
+        <field name="print_report_name">object.report_name</field>
+        <field name="paperformat_id" ref="base.paperformat_euro"/>
+    </record>
+
+    <!-- Shared heading, so the three statements identify themselves the same way. -->
+    <template id="report_financial_header">
+        <div class="mb-3">
+            <h2 style="margin-bottom:2px;"><span t-out="data['report_name']"/></h2>
+            <div style="font-size:12px;color:#555;">
+                <span t-out="data['company_names']"/>
+                <t t-if="data['report_type'] == 'balance_sheet'">
+                    — as at <span t-out="data['date_to']" t-options='{"widget": "date"}'/>
+                </t>
+                <t t-else="">
+                    — <span t-out="data['date_from']" t-options='{"widget": "date"}'/>
+                    to <span t-out="data['date_to']" t-options='{"widget": "date"}'/>
+                </t>
+            </div>
+            <div t-if="not data['posted_only']"
+                 style="font-size:11px;color:#b3261e;margin-top:4px;">
+                Includes draft entries. Not suitable for filing.
+            </div>
+        </div>
+    </template>
+
+    <template id="report_trial_balance">
+        <t t-call="hm_account_reports.report_financial_header"/>
+        <table class="table table-sm" style="font-size:11px;">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Account</th>
+                    <th class="text-end">Opening</th>
+                    <th class="text-end">Debit</th>
+                    <th class="text-end">Credit</th>
+                    <th class="text-end">Closing</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr t-foreach="data['lines']" t-as="line">
+                    <td><span t-out="line['code']"/></td>
+                    <td><span t-out="line['name']"/></td>
+                    <td class="text-end">
+                        <span t-out="line['opening']"
+                              t-options='{"widget": "monetary", "display_currency": data["currency"]}'/>
+                    </td>
+                    <td class="text-end">
+                        <span t-out="line['debit']"
+                              t-options='{"widget": "monetary", "display_currency": data["currency"]}'/>
+                    </td>
+                    <td class="text-end">
+                        <span t-out="line['credit']"
+                              t-options='{"widget": "monetary", "display_currency": data["currency"]}'/>
+                    </td>
+                    <td class="text-end">
+                        <span t-out="line['closing']"
+                              t-options='{"widget": "monetary", "display_currency": data["currency"]}'/>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr style="font-weight:bold;border-top:2px solid #333;">
+                    <td colspan="2">Total</td>
+                    <td class="text-end">
+                        <span t-out="data['totals']['opening']"
+                              t-options='{"widget": "monetary", "display_currency": data["currency"]}'/>
+                    </td>
+                    <td class="text-end">
+                        <span t-out="data['totals']['debit']"
+                              t-options='{"widget": "monetary", "display_currency": data["currency"]}'/>
+                    </td>
+                    <td class="text-end">
+                        <span t-out="data['totals']['credit']"
+                              t-options='{"widget": "monetary", "display_currency": data["currency"]}'/>
+                    </td>
+                    <td class="text-end">
+                        <span t-out="data['totals']['closing']"
+                              t-options='{"widget": "monetary", "display_currency": data["currency"]}'/>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+        <p style="font-size:10px;color:#777;">
+            Total debit and total credit must agree. Income and expense
+            accounts carry no opening figure because they reset each financial
+            year.
+        </p>
+    </template>
+
+    <template id="report_section_block">
+        <tr style="background:#eef1ee;font-weight:bold;">
+            <td colspan="2"><span t-out="section['label']"/></td>
+        </tr>
+        <tr t-foreach="section['lines']" t-as="line">
+            <td style="padding-left:18px;">
+                <span t-out="line['code']"/> <span t-out="line['name']"/>
+            </td>
+            <td class="text-end">
+                <span t-out="line['amount']"
+                      t-options='{"widget": "monetary", "display_currency": data["currency"]}'/>
+            </td>
+        </tr>
+        <tr style="font-weight:bold;">
+            <td class="text-end">Total <span t-out="section['label']"/></td>
+            <td class="text-end" style="border-top:1px solid #999;">
+                <span t-out="section['total']"
+                      t-options='{"widget": "monetary", "display_currency": data["currency"]}'/>
+            </td>
+        </tr>
+    </template>
+
+    <template id="report_profit_and_loss">
+        <t t-call="hm_account_reports.report_financial_header"/>
+        <table class="table table-sm" style="font-size:11px;">
+            <tbody>
+                <t t-foreach="data['sections']" t-as="section">
+                    <t t-call="hm_account_reports.report_section_block"/>
+                </t>
+            </tbody>
+            <tfoot>
+                <tr style="font-weight:bold;border-top:2px solid #333;">
+                    <td class="text-end">Total Income</td>
+                    <td class="text-end">
+                        <span t-out="data['income_total']"
+                              t-options='{"widget": "monetary", "display_currency": data["currency"]}'/>
+                    </td>
+                </tr>
+                <tr style="font-weight:bold;">
+                    <td class="text-end">Total Expenses</td>
+                    <td class="text-end">
+                        <span t-out="data['expense_total']"
+                              t-options='{"widget": "monetary", "display_currency": data["currency"]}'/>
+                    </td>
+                </tr>
+                <tr style="font-weight:bold;font-size:13px;border-top:2px solid #333;">
+                    <td class="text-end">
+                        <t t-if="data['net_result'] &gt;= 0">Net Profit</t>
+                        <t t-else="">Net Loss</t>
+                    </td>
+                    <td class="text-end">
+                        <span t-out="data['net_result']"
+                              t-options='{"widget": "monetary", "display_currency": data["currency"]}'/>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </template>
+
+    <template id="report_balance_sheet">
+        <t t-call="hm_account_reports.report_financial_header"/>
+        <table class="table table-sm" style="font-size:11px;">
+            <tbody>
+                <t t-foreach="data['sections']" t-as="section">
+                    <t t-call="hm_account_reports.report_section_block"/>
+                </t>
+                <tr style="background:#eef1ee;font-weight:bold;">
+                    <td colspan="2">Current Year Result</td>
+                </tr>
+                <tr>
+                    <td style="padding-left:18px;">
+                        Profit or loss for the period, not yet closed to equity
+                    </td>
+                    <td class="text-end">
+                        <span t-out="data['current_result']"
+                              t-options='{"widget": "monetary", "display_currency": data["currency"]}'/>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr style="font-weight:bold;border-top:2px solid #333;">
+                    <td class="text-end">Total Assets</td>
+                    <td class="text-end">
+                        <span t-out="data['assets_total']"
+                              t-options='{"widget": "monetary", "display_currency": data["currency"]}'/>
+                    </td>
+                </tr>
+                <tr style="font-weight:bold;">
+                    <td class="text-end">Total Liabilities and Equity</td>
+                    <td class="text-end">
+                        <span t-out="data['liabilities_and_equity']"
+                              t-options='{"widget": "monetary", "display_currency": data["currency"]}'/>
+                    </td>
+                </tr>
+                <tr t-if="not data['balanced']"
+                    style="color:#b3261e;font-weight:bold;">
+                    <td colspan="2" class="text-end">
+                        These totals do not agree. Something is unbalanced in
+                        the underlying entries.
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </template>
+
+    <template id="report_financial">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="wizard">
+                <t t-set="data" t-value="wizard._report_data()"/>
+                <t t-call="web.internal_layout">
+                    <div class="page">
+                        <t t-if="data['report_type'] == 'trial_balance'">
+                            <t t-call="hm_account_reports.report_trial_balance"/>
+                        </t>
+                        <t t-elif="data['report_type'] == 'profit_and_loss'">
+                            <t t-call="hm_account_reports.report_profit_and_loss"/>
+                        </t>
+                        <t t-else="">
+                            <t t-call="hm_account_reports.report_balance_sheet"/>
+                        </t>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
