@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_af_exchange_period"
+              name="Exchange Periods"
+              parent="account.menu_finance_configuration"
+              action="action_af_exchange_period"
+              sequence="25"
+              groups="account.group_account_manager"/>
+
+</odoo>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="af_exchange_period_view_list" model="ir.ui.view">
+        <field name="name">af.exchange.period.list</field>
+        <field name="model">af.exchange.period</field>
+        <field name="arch" type="xml">
+            <list string="Exchange Periods"
+                  decoration-muted="state == 'closed'"
+                  decoration-info="state == 'draft'">
+                <field name="name"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="currency_id"/>
+                <field name="rate" digits="[16,6]"/>
+                <field name="inverse_rate" digits="[16,6]" optional="hide"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'confirmed'"
+                       decoration-muted="state == 'closed'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="af_exchange_period_view_form" model="ir.ui.view">
+        <field name="name">af.exchange.period.form</field>
+        <field name="model">af.exchange.period</field>
+        <field name="arch" type="xml">
+            <form string="Exchange Period">
+                <header>
+                    <button name="action_confirm" string="Confirm" type="object"
+                            class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_close" string="Close" type="object"
+                            class="btn-primary" invisible="state != 'confirmed'"
+                            confirm="Closing locks the rate so figures already reported cannot change. Continue?"/>
+                    <button name="action_reset_draft" string="Reset to Draft" type="object"
+                            invisible="state != 'confirmed'"/>
+                    <button name="action_reopen" string="Reopen" type="object"
+                            invisible="state != 'closed'"
+                            groups="account.group_account_manager"
+                            confirm="Anything already reported using this rate will no longer match. Continue?"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,confirmed,closed"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="2026-08"/></h1>
+                    </div>
+                    <group>
+                        <group string="Period">
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="company_currency_id"/>
+                        </group>
+                        <group string="Rate">
+                            <field name="currency_id"/>
+                            <field name="rate" digits="[16,6]"/>
+                            <field name="inverse_rate" digits="[16,6]"/>
+                            <field name="rate_id" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="Notes">
+                        <field name="note" nolabel="1"
+                               placeholder="Where this rate came from, for example the central bank reference for 1 Sunbula."/>
+                    </group>
+                    <div class="alert alert-info" role="status" invisible="state != 'draft'">
+                        Confirming publishes this rate to Odoo, so invoices,
+                        accounting and reports all use it for dates in this period.
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="af_exchange_period_view_search" model="ir.ui.view">
+        <field name="name">af.exchange.period.search</field>
+        <field name="model">af.exchange.period</field>
+        <field name="arch" type="xml">
+            <search string="Exchange Periods">
+                <field name="name"/>
+                <field name="currency_id"/>
+                <separator/>
+                <filter name="draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="confirmed" string="Confirmed" domain="[('state', '=', 'confirmed')]"/>
+                <filter name="closed" string="Closed" domain="[('state', '=', 'closed')]"/>
+                <separator/>
+                <filter name="current" string="Covers Today"
+                        domain="[('date_from', '&lt;=', context_today().strftime('%Y-%m-%d')), ('date_to', '&gt;=', context_today().strftime('%Y-%m-%d'))]"/>
+                <separator/>
+                <group name="group_by">
+                    <filter name="group_currency" string="Currency" context="{'group_by': 'currency_id'}"/>
+                    <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_af_exchange_period" model="ir.actions.act_window">
+        <field name="name">Exchange Periods</field>
+        <field name="res_model">af.exchange.period</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Set a rate for a period</p>
+            <p>Odoo normally keeps one rate per day and picks the nearest one.
+               A period fixes a single agreed rate for a whole month and locks
+               it once reported, which is how payroll and tax filings work.</p>
+        </field>
+    </record>
+
+</odoo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+      The afghani ships with Odoo but is switched off, like every currency the
+      installation is not already using. Activating it here saves a customer
+      hunting for it before they can set up a single period.
+    -->
+    <record id="base.AFN" model="res.currency">
+        <field name="active" eval="True"/>
+    </record>
+
+</odoo>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.af.dual.currency</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//app[@name='general_settings']" position="inside">
+                <block title="Second Currency" name="af_dual_currency_block">
+                    <setting id="af_secondary_currency"
+                             string="Second Currency"
+                             help="Show amounts in a second currency, using the rate agreed for each period.">
+                        <field name="af_secondary_currency_id"
+                               options="{'no_create': True}"/>
+                        <div class="content-group" invisible="not af_secondary_currency_id">
+                            <div class="row mt16">
+                                <label for="af_show_secondary_on_documents" class="col-lg-4 o_light_label"/>
+                                <field name="af_show_secondary_on_documents"/>
+                            </div>
+                            <div class="text-muted mt8">
+                                Rates come from exchange periods, not the daily
+                                rate table, so a month's documents all share one
+                                agreed rate.
+                            </div>
+                        </div>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

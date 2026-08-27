@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_move_view_form" model="ir.ui.view">
+        <field name="name">account.move.form.inherit.af.dual.currency</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <field name="amount_total" position="after">
+                <field name="af_secondary_currency_id" invisible="1"/>
+                <field name="af_amount_total_secondary"
+                       invisible="not af_secondary_currency_id or not company_id.af_show_secondary_on_documents"/>
+                <field name="af_exchange_period_id"
+                       invisible="not af_amount_total_secondary"/>
+            </field>
+        </field>
+    </record>
+
+</odoo>
