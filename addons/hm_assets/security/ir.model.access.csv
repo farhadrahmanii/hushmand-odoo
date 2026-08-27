@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_asset_user,hm.asset read,model_hm_asset,account.group_account_user,1,0,0,0
+access_asset_manager,hm.asset manage,model_hm_asset,account.group_account_manager,1,1,1,1
+access_asset_line_user,hm.asset.depreciation.line read,model_hm_asset_depreciation_line,account.group_account_user,1,0,0,0
+access_asset_line_manager,hm.asset.depreciation.line manage,model_hm_asset_depreciation_line,account.group_account_manager,1,1,1,1
+access_asset_category_user,hm.asset.category read,model_hm_asset_category,account.group_account_user,1,0,0,0
+access_asset_category_manager,hm.asset.category manage,model_hm_asset_category,account.group_account_manager,1,1,1,1
