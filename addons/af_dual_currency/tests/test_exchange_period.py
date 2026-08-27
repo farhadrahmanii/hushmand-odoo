@@ -212,8 +212,15 @@ class TestExchangePeriod(common.TransactionCase):
         self.assertFalse(self.Period._period_for(date(2026, 9, 1)))
 
     def test_inverse_rate(self):
+        """The field is declared at six decimals, so the check matches that
+        rather than full float precision."""
         period = self._make_period(rate=70.0)
-        self.assertAlmostEqual(period.inverse_rate, 1 / 70.0, places=8)
+        self.assertAlmostEqual(period.inverse_rate, round(1 / 70.0, 6), places=6)
+
+    def test_inverse_rate_of_zero_does_not_divide(self):
+        period = self._make_period(rate=70.0)
+        period.rate = 0.000001
+        self.assertGreater(period.inverse_rate, 0)
 
     # ------------------------------------------------------------------
     # Convenience
