@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_license_view_list" model="ir.ui.view">
+        <field name="name">hm.license.list</field>
+        <field name="model">hm.license</field>
+        <field name="arch" type="xml">
+            <list string="Licences"
+                  decoration-danger="state in ('expired', 'invalid')"
+                  decoration-warning="state == 'expiring'">
+                <field name="customer"/>
+                <field name="licence_id"/>
+                <field name="modules"/>
+                <field name="expires"/>
+                <field name="max_users"/>
+                <field name="active_users"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'valid'"
+                       decoration-warning="state == 'expiring'"
+                       decoration-danger="state in ('expired', 'invalid')"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hm_license_view_form" model="ir.ui.view">
+        <field name="name">hm.license.form</field>
+        <field name="model">hm.license</field>
+        <field name="arch" type="xml">
+            <form string="Licence">
+                <header>
+                    <button name="action_verify" string="Check Again"
+                            type="object" class="btn-primary"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="valid,expiring,expired"/>
+                </header>
+                <sheet>
+                    <widget name="web_ribbon" title="Not Valid"
+                            bg_color="text-bg-danger"
+                            invisible="state != 'invalid'"/>
+                    <div class="oe_title">
+                        <h1><field name="customer" readonly="1"
+                                   placeholder="Paste a key below"/></h1>
+                    </div>
+
+                    <div class="alert alert-danger" role="alert"
+                         invisible="state not in ('invalid', 'expired')">
+                        <field name="status_detail" readonly="1" nolabel="1"/>
+                    </div>
+                    <div class="alert alert-warning" role="alert"
+                         invisible="state != 'expiring'">
+                        <field name="status_detail" readonly="1" nolabel="1"/>
+                    </div>
+                    <div class="alert alert-warning" role="alert"
+                         invisible="not over_user_limit">
+                        This licence allows
+                        <field name="max_users" class="oe_inline fw-bold"/>
+                        users and
+                        <field name="active_users" class="oe_inline fw-bold"/>
+                        are active. Contact your supplier to extend it.
+                    </div>
+
+                    <group>
+                        <group string="Licence">
+                            <field name="licence_id" readonly="1"/>
+                            <field name="modules" readonly="1"/>
+                            <field name="features" readonly="1"
+                                   invisible="not features"/>
+                        </group>
+                        <group string="Term">
+                            <field name="issued" readonly="1"/>
+                            <field name="expires" readonly="1"/>
+                            <field name="max_users" readonly="1"/>
+                            <field name="active_users" readonly="1"/>
+                            <field name="over_user_limit" invisible="1"/>
+                        </group>
+                    </group>
+                    <group string="Key">
+                        <field name="key" nolabel="1"
+                               placeholder="Paste the whole block supplied with your purchase, including every line."/>
+                    </group>
+                    <div class="text-muted">
+                        The key is checked on this machine against the
+                        supplier's signature. Nothing is sent anywhere, and no
+                        internet connection is needed.
+                    </div>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_hm_license" model="ir.actions.act_window">
+        <field name="name">Licences</field>
+        <field name="res_model">hm.license</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Enter your licence key</p>
+            <p>Paste the block of text supplied with your purchase. It is
+               checked on this machine against the supplier's signature, so
+               nothing is sent anywhere and no connection is needed.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_hm_license"
+              name="Licences"
+              parent="base.menu_administration"
+              action="action_hm_license"
+              sequence="96"
+              groups="base.group_system"/>
+
+</odoo>
