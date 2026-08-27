@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_purchase_request_view_list" model="ir.ui.view">
+        <field name="name">hm.purchase.request.list</field>
+        <field name="model">hm.purchase.request</field>
+        <field name="arch" type="xml">
+            <list string="Purchase Requests"
+                  decoration-muted="state in ('cancelled',)"
+                  decoration-danger="state == 'rejected'"
+                  decoration-success="state == 'approved'">
+                <field name="name"/>
+                <field name="date_request"/>
+                <field name="requester_id"/>
+                <field name="date_required" optional="show"/>
+                <field name="analytic_account_id" optional="show"/>
+                <field name="vendor_id" optional="hide"/>
+                <field name="amount_total" sum="Estimated Total"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="approval_current_step" string="Awaiting" optional="show"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'draft'"
+                       decoration-warning="state == 'to_approve'"
+                       decoration-success="state in ('approved', 'purchased')"
+                       decoration-danger="state == 'rejected'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hm_purchase_request_view_form" model="ir.ui.view">
+        <field name="name">hm.purchase.request.form</field>
+        <field name="model">hm.purchase.request</field>
+        <field name="arch" type="xml">
+            <form string="Purchase Request">
+                <header>
+                    <button name="action_submit" string="Submit for Approval"
+                            type="object" class="btn-primary"
+                            invisible="state != 'draft'"/>
+                    <button name="action_approve" string="Approve" type="object"
+                            class="btn-primary"
+                            invisible="state != 'to_approve' or not approval_can_act"/>
+                    <button name="action_reject" string="Reject" type="object"
+                            class="btn-secondary"
+                            invisible="state != 'to_approve' or not approval_can_act"/>
+                    <button name="action_create_rfq" string="Create Quotation"
+                            type="object" class="btn-primary"
+                            invisible="state != 'approved'"/>
+                    <button name="action_cancel" string="Cancel" type="object"
+                            invisible="state in ('purchased', 'cancelled')"/>
+                    <button name="action_reset_draft" string="Reset to Draft"
+                            type="object"
+                            invisible="state not in ('rejected', 'cancelled')"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,to_approve,approved,purchased"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_purchase_orders" type="object"
+                                class="oe_stat_button" icon="fa-shopping-cart"
+                                invisible="purchase_order_count == 0">
+                            <field name="purchase_order_count" widget="statinfo"
+                                   string="Orders"/>
+                        </button>
+                        <button name="action_view_approval" type="object"
+                                class="oe_stat_button" icon="fa-check-square-o"
+                                string="Approval"
+                                invisible="not approval_request_id"/>
+                    </div>
+
+                    <div class="alert alert-warning" role="alert"
+                         invisible="state != 'to_approve' or not approval_current_step">
+                        Waiting for <field name="approval_current_step" readonly="1"
+                                           class="oe_inline fw-bold"/>.
+                    </div>
+
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="requester_id"
+                                   readonly="state != 'draft'"/>
+                            <field name="date_request"
+                                   readonly="state != 'draft'"/>
+                            <field name="date_required"
+                                   readonly="state != 'draft'"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group>
+                            <field name="analytic_account_id"
+                                   readonly="state not in ('draft', 'to_approve')"/>
+                            <field name="vendor_id"
+                                   readonly="state in ('purchased', 'cancelled')"/>
+                            <field name="amount_total"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="approval_request_id" invisible="1"/>
+                            <field name="approval_can_act" invisible="1"/>
+                            <field name="approval_state" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Items" name="items">
+                            <field name="line_ids" readonly="state != 'draft'">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="product_id"
+                                           options='{"no_create_edit": True}'/>
+                                    <field name="name"/>
+                                    <field name="product_qty"/>
+                                    <field name="product_uom_id"
+                                           options='{"no_create": True}'/>
+                                    <field name="price_unit"/>
+                                    <field name="price_subtotal" sum="Total"/>
+                                    <field name="analytic_account_id" optional="hide"/>
+                                    <field name="notes" optional="hide"/>
+                                    <field name="currency_id" column_invisible="True"/>
+                                </list>
+                            </field>
+                            <group class="oe_subtotal_footer oe_right">
+                                <field name="amount_total"
+                                       class="oe_subtotal_footer_separator"/>
+                            </group>
+                        </page>
+                        <page string="Justification" name="reason">
+                            <field name="reason" nolabel="1"
+                                   readonly="state != 'draft'"
+                                   placeholder="Why this is needed. Approvers read this first."/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="hm_purchase_request_view_search" model="ir.ui.view">
+        <field name="name">hm.purchase.request.search</field>
+        <field name="model">hm.purchase.request</field>
+        <field name="arch" type="xml">
+            <search string="Purchase Requests">
+                <field name="name"/>
+                <field name="requester_id"/>
+                <field name="analytic_account_id"/>
+                <field name="line_ids" string="Item"
+                       filter_domain="[('line_ids.name', 'ilike', self)]"/>
+                <separator/>
+                <filter name="my_requests" string="My Requests"
+                        domain="[('requester_id', '=', uid)]"/>
+                <filter name="waiting_on_me" string="Waiting on Me"
+                        domain="[('state', '=', 'to_approve'), ('approval_request_id.current_line_id.approver_ids', 'in', [uid])]"/>
+                <separator/>
+                <filter name="draft" string="Draft" domain="[('state', '=', 'draft')]"/>
+                <filter name="to_approve" string="Waiting Approval"
+                        domain="[('state', '=', 'to_approve')]"/>
+                <filter name="approved" string="Approved"
+                        domain="[('state', '=', 'approved')]"/>
+                <separator/>
+                <group name="group_by">
+                    <filter name="group_requester" string="Requester"
+                            context="{'group_by': 'requester_id'}"/>
+                    <filter name="group_budget" string="Budget Line"
+                            context="{'group_by': 'analytic_account_id'}"/>
+                    <filter name="group_state" string="Status"
+                            context="{'group_by': 'state'}"/>
+                    <filter name="group_date" string="Request Date"
+                            context="{'group_by': 'date_request'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_hm_purchase_request" model="ir.actions.act_window">
+        <field name="name">Purchase Requests</field>
+        <field name="res_model">hm.purchase.request</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Raise a purchase request</p>
+            <p>Odoo starts at the quotation, where someone has already decided
+               what to buy and from whom. This is the step before: a department
+               asks for something, and it is approved on its own merits before
+               anyone talks to a supplier.</p>
+        </field>
+    </record>
+
+    <record id="purchase_order_view_form_inherit" model="ir.ui.view">
+        <field name="name">purchase.order.form.inherit.hm.purchase.request</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <field name="origin" position="after">
+                <field name="hm_request_id" invisible="not hm_request_id"/>
+            </field>
+        </field>
+    </record>
+
+    <menuitem id="menu_hm_purchase_request"
+              name="Purchase Requests"
+              parent="purchase.menu_procurement_management"
+              action="action_hm_purchase_request"
+              sequence="3"/>
+
+</odoo>
