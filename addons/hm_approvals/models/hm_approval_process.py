@@ -258,7 +258,8 @@ class HmApprovalStep(models.Model):
             return self.approver_user_id
 
         if self.approver_type == "group":
-            return self.approver_group_id.users.filtered("active")
+            # Odoo 19 renamed res.groups.users to user_ids.
+            return self.approver_group_id.user_ids.filtered("active")
 
         target = record
         for part in self.approver_field.split("."):

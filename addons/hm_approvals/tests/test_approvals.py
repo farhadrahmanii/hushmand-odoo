@@ -184,7 +184,7 @@ class TestGroupSteps(ApprovalCase):
 
     def test_anyone_in_the_group_can_approve(self):
         group = self.env["res.groups"].create({"name": "Approvers"})
-        group.users = [(6, 0, [self.alice.id, self.bob.id])]
+        group.user_ids = [(6, 0, [self.alice.id, self.bob.id])]
         process = self._process(steps=[{
             "name": "Any manager", "approver_type": "group",
             "approver_group_id": group.id,
@@ -198,7 +198,7 @@ class TestGroupSteps(ApprovalCase):
 
     def test_someone_outside_the_group_cannot(self):
         group = self.env["res.groups"].create({"name": "Approvers"})
-        group.users = [(6, 0, [self.alice.id])]
+        group.user_ids = [(6, 0, [self.alice.id])]
         process = self._process(steps=[{
             "name": "Any manager", "approver_type": "group",
             "approver_group_id": group.id,
