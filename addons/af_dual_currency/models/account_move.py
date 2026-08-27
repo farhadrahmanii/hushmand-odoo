@@ -11,6 +11,14 @@ class AccountMove(models.Model):
         string="Second Currency",
         readonly=True,
     )
+    # A view expression cannot walk a dotted path like
+    # company_id.af_show_secondary_on_documents, so the flag needs to be a
+    # field on this model for the form to test it.
+    af_show_secondary = fields.Boolean(
+        related="company_id.af_show_secondary_on_documents",
+        string="Show Second Currency",
+        readonly=True,
+    )
     af_exchange_period_id = fields.Many2one(
         comodel_name="af.exchange.period",
         string="Exchange Period",

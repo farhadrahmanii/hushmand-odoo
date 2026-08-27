@@ -6,12 +6,20 @@
         <field name="model">account.move</field>
         <field name="inherit_id" ref="account.view_move_form"/>
         <field name="arch" type="xml">
-            <field name="amount_total" position="after">
+            <!--
+              There is no plain amount_total field on this form. Since Odoo 17
+              the totals block is rendered by the account-tax-totals-field
+              widget, so tax_totals is the anchor. It appears exactly once in
+              view_move_form, which makes it a safe one.
+            -->
+            <field name="tax_totals" position="after">
                 <field name="af_secondary_currency_id" invisible="1"/>
+                <field name="af_show_secondary" invisible="1"/>
                 <field name="af_amount_total_secondary"
-                       invisible="not af_secondary_currency_id or not company_id.af_show_secondary_on_documents"/>
+                       class="oe_subtotal_footer_separator"
+                       invisible="not af_secondary_currency_id or not af_show_secondary"/>
                 <field name="af_exchange_period_id"
-                       invisible="not af_amount_total_secondary"/>
+                       invisible="not af_amount_total_secondary or not af_show_secondary"/>
             </field>
         </field>
     </record>
