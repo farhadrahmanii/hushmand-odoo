@@ -102,8 +102,8 @@ jobs:
             --db_host=postgres --db_user=odoo --db_password=odoo \
             --data-dir=/tmp/odoo-data \
             --addons-path=/usr/lib/python3/dist-packages/odoo/addons,$GITHUB_WORKSPACE/addons \
-            -i af_jalali,af_l10n_base,af_dual_currency,af_hr,hm_approvals,hm_purchase_request,hm_account_reports,hm_assets,hm_expiry_docs,af_liaison,af_correspondence,hm_frontdesk,hm_roster \
-            --test-enable --test-tags /af_jalali,/af_l10n_base,/af_dual_currency,/af_hr,/hm_approvals,/hm_purchase_request,/hm_account_reports,/hm_assets,/hm_expiry_docs,/af_liaison,/af_correspondence,/hm_frontdesk,/hm_roster \
+            -i af_jalali,af_l10n_base,af_dual_currency,af_hr,hm_approvals,hm_purchase_request,hm_account_reports,hm_assets,hm_expiry_docs,af_liaison,af_correspondence,hm_frontdesk,hm_roster,af_zakat \
+            --test-enable --test-tags /af_jalali,/af_l10n_base,/af_dual_currency,/af_hr,/hm_approvals,/hm_purchase_request,/hm_account_reports,/hm_assets,/hm_expiry_docs,/af_liaison,/af_correspondence,/hm_frontdesk,/hm_roster,/af_zakat \
             --stop-after-init --log-level=info 2>&1 | tee odoo.log
           # Odoo exits 0 even when tests fail, so inspect the log.
           if grep -qE "^[0-9-]+ [0-9:,]+ [0-9]+ (ERROR|CRITICAL)" odoo.log; then
