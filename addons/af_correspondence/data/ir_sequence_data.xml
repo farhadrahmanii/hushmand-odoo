@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--
+          Two series, not one. A paper register keeps separate incoming and
+          outgoing books, each starting at one, and a gap in either is a
+          question somebody has to answer.
+        -->
+        <record id="seq_correspondence_incoming" model="ir.sequence">
+            <field name="name">Correspondence: Incoming</field>
+            <field name="code">af.correspondence.incoming</field>
+            <field name="prefix">IN/%(year)s/</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+
+        <record id="seq_correspondence_outgoing" model="ir.sequence">
+            <field name="name">Correspondence: Outgoing</field>
+            <field name="code">af.correspondence.outgoing</field>
+            <field name="prefix">OUT/%(year)s/</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

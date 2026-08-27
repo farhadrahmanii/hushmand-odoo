@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="af_correspondence_view_list" model="ir.ui.view">
+        <field name="name">af.correspondence.list</field>
+        <field name="model">af.correspondence</field>
+        <field name="arch" type="xml">
+            <list string="Correspondence"
+                  decoration-muted="state in ('closed', 'cancelled')"
+                  decoration-bf="state == 'registered'">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="direction"/>
+                <field name="subject"/>
+                <field name="partner_id" optional="show"/>
+                <field name="correspondent_name" optional="hide"/>
+                <field name="letter_reference" optional="hide"/>
+                <field name="assigned_to_id" optional="show"/>
+                <field name="due_date" optional="show"
+                       decoration-danger="due_date &lt; current_date and state in ('registered', 'in_progress')"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'registered'"
+                       decoration-warning="state == 'in_progress'"
+                       decoration-success="state in ('answered', 'closed')"
+                       decoration-muted="state == 'cancelled'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="af_correspondence_view_form" model="ir.ui.view">
+        <field name="name">af.correspondence.form</field>
+        <field name="model">af.correspondence</field>
+        <field name="arch" type="xml">
+            <form string="Correspondence">
+                <header>
+                    <button name="action_start" string="Start" type="object"
+                            class="btn-primary" invisible="state != 'registered'"/>
+                    <button name="action_draft_reply" string="Draft Reply"
+                            type="object" class="btn-primary"
+                            invisible="direction != 'incoming' or state in ('closed', 'cancelled')"/>
+                    <button name="action_mark_answered" string="Mark Answered"
+                            type="object"
+                            invisible="state not in ('registered', 'in_progress')"/>
+                    <button name="action_close" string="Close" type="object"
+                            invisible="state in ('closed', 'cancelled')"/>
+                    <button name="action_cancel" string="Cancel" type="object"
+                            invisible="state in ('closed', 'cancelled')"/>
+                    <button name="action_reset" string="Reset" type="object"
+                            invisible="state != 'cancelled'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="registered,in_progress,answered,closed"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_replies" type="object"
+                                class="oe_stat_button" icon="fa-reply"
+                                invisible="reply_count == 0">
+                            <field name="reply_count" widget="statinfo"
+                                   string="Replies"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                        <h2><field name="subject" placeholder="What the letter is about"/></h2>
+                    </div>
+                    <group>
+                        <group string="Letter">
+                            <field name="direction"
+                                   readonly="name != 'New'"/>
+                            <field name="date"/>
+                            <field name="letter_date"/>
+                            <field name="letter_reference"/>
+                            <field name="company_id"
+                                   groups="base.group_multi_company"/>
+                        </group>
+                        <group string="Correspondent">
+                            <field name="partner_id"/>
+                            <field name="correspondent_name"
+                                   placeholder="If not a saved contact"/>
+                            <field name="department"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Handling">
+                            <field name="assigned_to_id"/>
+                            <field name="due_date"/>
+                        </group>
+                        <group string="Thread"
+                               invisible="not reply_to_id">
+                            <field name="reply_to_id" readonly="1"/>
+                        </group>
+                    </group>
+
+                    <div class="alert alert-warning" role="alert"
+                         invisible="not due_date or state in ('answered', 'closed', 'cancelled')">
+                        A reply is due by <field name="due_date"
+                                                 class="oe_inline fw-bold"
+                                                 readonly="1"/>.
+                    </div>
+
+                    <group string="Notes">
+                        <field name="notes" nolabel="1"
+                               placeholder="What was decided, who was consulted, where the original is filed."/>
+                    </group>
+                    <field name="attachment_count" invisible="1"/>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="af_correspondence_view_search" model="ir.ui.view">
+        <field name="name">af.correspondence.search</field>
+        <field name="model">af.correspondence</field>
+        <field name="arch" type="xml">
+            <search string="Correspondence">
+                <field name="name"/>
+                <field name="subject"/>
+                <field name="partner_id"/>
+                <field name="correspondent_name"/>
+                <field name="letter_reference"/>
+                <field name="assigned_to_id"/>
+                <separator/>
+                <filter name="incoming" string="Incoming"
+                        domain="[('direction', '=', 'incoming')]"/>
+                <filter name="outgoing" string="Outgoing"
+                        domain="[('direction', '=', 'outgoing')]"/>
+                <separator/>
+                <filter name="open" string="Open"
+                        domain="[('state', 'in', ('registered', 'in_progress'))]"/>
+                <filter name="mine" string="Assigned to Me"
+                        domain="[('assigned_to_id', '=', uid)]"/>
+                <filter name="overdue" string="Overdue"
+                        domain="[('due_date', '&lt;', context_today().strftime('%Y-%m-%d')), ('state', 'in', ('registered', 'in_progress'))]"/>
+                <separator/>
+                <filter name="filter_date" string="Register Date" date="date"/>
+                <group name="group_by">
+                    <filter name="group_direction" string="Direction"
+                            context="{'group_by': 'direction'}"/>
+                    <filter name="group_state" string="Status"
+                            context="{'group_by': 'state'}"/>
+                    <filter name="group_assigned" string="Assigned To"
+                            context="{'group_by': 'assigned_to_id'}"/>
+                    <filter name="group_partner" string="Correspondent"
+                            context="{'group_by': 'partner_id'}"/>
+                    <filter name="group_date" string="Register Date"
+                            context="{'group_by': 'date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_af_correspondence" model="ir.actions.act_window">
+        <field name="name">Correspondence</field>
+        <field name="res_model">af.correspondence</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_open': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Register a letter</p>
+            <p>The maktoob register: what came in, what went out, its number,
+               who it was from and who has to deal with it. Incoming and
+               outgoing are numbered in separate series, the way a paper
+               register keeps two books.</p>
+        </field>
+    </record>
+
+    <record id="action_af_correspondence_incoming" model="ir.actions.act_window">
+        <field name="name">Incoming</field>
+        <field name="res_model">af.correspondence</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('direction', '=', 'incoming')]</field>
+        <field name="context">{'default_direction': 'incoming', 'search_default_open': 1}</field>
+    </record>
+
+    <record id="action_af_correspondence_outgoing" model="ir.actions.act_window">
+        <field name="name">Outgoing</field>
+        <field name="res_model">af.correspondence</field>
+        <field name="view_mode">list,form</field>
+        <field name="domain">[('direction', '=', 'outgoing')]</field>
+        <field name="context">{'default_direction': 'outgoing', 'search_default_open': 1}</field>
+    </record>
+
+    <menuitem id="menu_af_correspondence_root" name="Correspondence" sequence="93"/>
+
+    <menuitem id="menu_af_correspondence_incoming" name="Incoming"
+              parent="menu_af_correspondence_root"
+              action="action_af_correspondence_incoming" sequence="10"/>
+
+    <menuitem id="menu_af_correspondence_outgoing" name="Outgoing"
+              parent="menu_af_correspondence_root"
+              action="action_af_correspondence_outgoing" sequence="20"/>
+
+    <menuitem id="menu_af_correspondence_all" name="All Letters"
+              parent="menu_af_correspondence_root"
+              action="action_af_correspondence" sequence="30"/>
+
+</odoo>
