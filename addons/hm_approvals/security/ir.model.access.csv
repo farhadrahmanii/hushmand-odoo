@@ -1,0 +1,10 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_process_user,hm.approval.process read,model_hm_approval_process,base.group_user,1,0,0,0
+access_process_manager,hm.approval.process manage,model_hm_approval_process,hm_approvals.group_approval_manager,1,1,1,1
+access_step_user,hm.approval.step read,model_hm_approval_step,base.group_user,1,0,0,0
+access_step_manager,hm.approval.step manage,model_hm_approval_step,hm_approvals.group_approval_manager,1,1,1,1
+access_request_user,hm.approval.request use,model_hm_approval_request,base.group_user,1,1,1,0
+access_request_manager,hm.approval.request manage,model_hm_approval_request,hm_approvals.group_approval_manager,1,1,1,1
+access_line_user,hm.approval.line use,model_hm_approval_line,base.group_user,1,1,1,0
+access_line_manager,hm.approval.line manage,model_hm_approval_line,hm_approvals.group_approval_manager,1,1,1,1
+access_reject_wizard,hm.approval.reject.wizard,model_hm_approval_reject_wizard,base.group_user,1,1,1,1

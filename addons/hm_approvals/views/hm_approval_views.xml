@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================ Process ============================ -->
+
+    <record id="hm_approval_process_view_list" model="ir.ui.view">
+        <field name="name">hm.approval.process.list</field>
+        <field name="model">hm.approval.process</field>
+        <field name="arch" type="xml">
+            <list string="Approval Processes">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="model_id"/>
+                <field name="step_count" string="Steps"/>
+                <field name="request_count" string="Requests"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hm_approval_process_view_form" model="ir.ui.view">
+        <field name="name">hm.approval.process.form</field>
+        <field name="model">hm.approval.process</field>
+        <field name="arch" type="xml">
+            <form string="Approval Process">
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_requests" type="object"
+                                class="oe_stat_button" icon="fa-list-ul">
+                            <field name="request_count" widget="statinfo" string="Requests"/>
+                        </button>
+                    </div>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger"
+                            invisible="active"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="Purchase request approval"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="model_id" options='{"no_create": True}'/>
+                            <field name="model_name" invisible="1"/>
+                            <field name="active" widget="boolean_toggle"/>
+                        </group>
+                        <group>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                            <field name="sequence"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Steps" name="steps">
+                            <field name="step_ids">
+                                <list string="Steps">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="name"/>
+                                    <field name="approver_type"/>
+                                    <field name="approver_user_id"
+                                           invisible="approver_type != 'user'"/>
+                                    <field name="approver_group_id"
+                                           invisible="approver_type != 'group'"/>
+                                    <field name="approver_field"
+                                           invisible="approver_type != 'field'"/>
+                                    <field name="condition_field" optional="show"/>
+                                    <field name="condition_operator" optional="hide"/>
+                                    <field name="condition_value" optional="hide"/>
+                                    <field name="allow_reject" optional="hide"/>
+                                </list>
+                                <form string="Step">
+                                    <group>
+                                        <group string="Step">
+                                            <field name="name" placeholder="Finance review"/>
+                                            <field name="sequence"/>
+                                            <field name="model_name" invisible="1"/>
+                                            <field name="approve_label"
+                                                   placeholder="Approve"/>
+                                        </group>
+                                        <group string="Approver">
+                                            <field name="approver_type" widget="radio"/>
+                                            <field name="approver_user_id"
+                                                   required="approver_type == 'user'"
+                                                   invisible="approver_type != 'user'"/>
+                                            <field name="approver_group_id"
+                                                   required="approver_type == 'group'"
+                                                   invisible="approver_type != 'group'"/>
+                                            <field name="approver_field"
+                                                   required="approver_type == 'field'"
+                                                   invisible="approver_type != 'field'"
+                                                   placeholder="employee_id.parent_id.user_id"/>
+                                        </group>
+                                    </group>
+                                    <group string="Only When" name="condition">
+                                        <div class="text-muted" colspan="2">
+                                            Leave the field empty and this step always runs.
+                                            Fill it in and the step is skipped unless the
+                                            condition holds, which is how one process can say
+                                            that large amounts need an extra signature.
+                                        </div>
+                                        <field name="condition_field"
+                                               placeholder="amount_total"/>
+                                        <field name="condition_operator"
+                                               invisible="not condition_field"/>
+                                        <field name="condition_value"
+                                               invisible="not condition_field or condition_operator in ('set', 'not_set')"/>
+                                    </group>
+                                    <group string="Behaviour">
+                                        <field name="allow_reject"/>
+                                        <field name="require_comment_on_reject"
+                                               invisible="not allow_reject"/>
+                                        <field name="require_comment"/>
+                                    </group>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="Notes" name="description">
+                            <field name="description" nolabel="1"
+                                   placeholder="What this process is for, and who maintains it."/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="hm_approval_process_view_search" model="ir.ui.view">
+        <field name="name">hm.approval.process.search</field>
+        <field name="model">hm.approval.process</field>
+        <field name="arch" type="xml">
+            <search string="Approval Processes">
+                <field name="name"/>
+                <field name="model_id"/>
+                <separator/>
+                <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
+                <separator/>
+                <group name="group_by">
+                    <filter name="group_model" string="Document" context="{'group_by': 'model_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_hm_approval_process" model="ir.actions.act_window">
+        <field name="name">Approval Processes</field>
+        <field name="res_model">hm.approval.process</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Define an approval process</p>
+            <p>Pick a document, add the steps it has to pass through, and say
+               who approves each one. Steps can be conditional, so a single
+               process can route small requests differently from large ones.</p>
+        </field>
+    </record>
+
+    <!-- ============================ Request ============================ -->
+
+    <record id="hm_approval_request_view_list" model="ir.ui.view">
+        <field name="name">hm.approval.request.list</field>
+        <field name="model">hm.approval.request</field>
+        <field name="arch" type="xml">
+            <list string="Approval Requests" create="false"
+                  decoration-muted="state in ('cancelled',)"
+                  decoration-danger="state == 'rejected'"
+                  decoration-success="state == 'approved'">
+                <field name="create_date" string="Submitted"/>
+                <field name="process_id"/>
+                <field name="reference"/>
+                <field name="requested_by_id"/>
+                <field name="current_step_name" string="Awaiting"/>
+                <field name="state" widget="badge"
+                       decoration-warning="state == 'pending'"
+                       decoration-success="state == 'approved'"
+                       decoration-danger="state == 'rejected'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hm_approval_request_view_form" model="ir.ui.view">
+        <field name="name">hm.approval.request.form</field>
+        <field name="model">hm.approval.request</field>
+        <field name="arch" type="xml">
+            <form string="Approval Request" create="false">
+                <header>
+                    <button name="action_cancel" string="Cancel Request"
+                            type="object" invisible="state != 'pending'"
+                            confirm="Cancel this approval request?"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="pending,approved"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_open_document" type="object"
+                                class="oe_stat_button" icon="fa-external-link"
+                                string="Document"/>
+                    </div>
+                    <div class="oe_title">
+                        <h1><field name="reference" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="process_id" readonly="1"/>
+                            <field name="requested_by_id" readonly="1"/>
+                            <field name="res_model" invisible="1"/>
+                            <field name="res_id" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="current_step_name" readonly="1"
+                                   invisible="state != 'pending'"/>
+                            <field name="date_done" readonly="1"
+                                   invisible="not date_done"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+                    <field name="line_ids" readonly="1">
+                        <list string="Steps" decoration-muted="state == 'cancelled'"
+                              decoration-danger="state == 'rejected'"
+                              decoration-success="state == 'approved'">
+                            <field name="sequence" string="#"/>
+                            <field name="name" string="Step"/>
+                            <field name="approver_ids" widget="many2many_tags"/>
+                            <field name="state" widget="badge"
+                                   decoration-warning="state == 'pending'"
+                                   decoration-success="state == 'approved'"
+                                   decoration-danger="state == 'rejected'"/>
+                            <field name="acted_by_id"/>
+                            <field name="acted_on"/>
+                            <field name="comment"/>
+                        </list>
+                    </field>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="hm_approval_request_view_search" model="ir.ui.view">
+        <field name="name">hm.approval.request.search</field>
+        <field name="model">hm.approval.request</field>
+        <field name="arch" type="xml">
+            <search string="Approval Requests">
+                <field name="reference"/>
+                <field name="process_id"/>
+                <field name="requested_by_id"/>
+                <separator/>
+                <filter name="pending" string="Pending" domain="[('state', '=', 'pending')]"/>
+                <filter name="mine" string="Submitted by Me"
+                        domain="[('requested_by_id', '=', uid)]"/>
+                <filter name="waiting_on_me" string="Waiting on Me"
+                        domain="[('state', '=', 'pending'), ('current_line_id.approver_ids', 'in', [uid])]"/>
+                <separator/>
+                <group name="group_by">
+                    <filter name="group_process" string="Process" context="{'group_by': 'process_id'}"/>
+                    <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_hm_approval_request" model="ir.actions.act_window">
+        <field name="name">Approval Requests</field>
+        <field name="res_model">hm.approval.request</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_pending': 1}</field>
+    </record>
+
+    <record id="action_hm_approval_my_approvals" model="ir.actions.act_window">
+        <field name="name">Waiting on Me</field>
+        <field name="res_model">hm.approval.request</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_waiting_on_me': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Nothing is waiting on you</p>
+            <p>Documents routed to you for approval appear here, and in your
+               Odoo activities.</p>
+        </field>
+    </record>
+
+    <!-- ======================== Reject wizard ========================== -->
+
+    <record id="hm_approval_reject_wizard_view_form" model="ir.ui.view">
+        <field name="name">hm.approval.reject.wizard.form</field>
+        <field name="model">hm.approval.reject.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Reject">
+                <group>
+                    <field name="request_id" invisible="1"/>
+                    <field name="step_name" readonly="1"/>
+                    <field name="reason" nolabel="1"
+                           placeholder="Why is this being rejected? The requester will see this."/>
+                </group>
+                <footer>
+                    <button name="action_confirm" string="Reject" type="object"
+                            class="btn-danger"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- ============================= Menus ============================= -->
+
+    <!-- web_icon is deliberately omitted until the icon artwork exists;
+         pointing it at a missing file breaks the app switcher. -->
+    <menuitem id="menu_hm_approvals_root" name="Approvals" sequence="95"/>
+
+    <menuitem id="menu_hm_approval_my" name="Waiting on Me"
+              parent="menu_hm_approvals_root"
+              action="action_hm_approval_my_approvals" sequence="10"/>
+
+    <menuitem id="menu_hm_approval_requests" name="All Requests"
+              parent="menu_hm_approvals_root"
+              action="action_hm_approval_request" sequence="20"/>
+
+    <menuitem id="menu_hm_approvals_config" name="Configuration"
+              parent="menu_hm_approvals_root" sequence="90"
+              groups="hm_approvals.group_approval_manager"/>
+
+    <menuitem id="menu_hm_approval_process" name="Processes"
+              parent="menu_hm_approvals_config"
+              action="action_hm_approval_process" sequence="10"/>
+
+</odoo>
