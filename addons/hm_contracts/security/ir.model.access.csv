@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_contract_user,hm.contract read,model_hm_contract,base.group_user,1,0,0,0
+access_contract_sales,hm.contract manage,model_hm_contract,account.group_account_invoice,1,1,1,0
+access_contract_manager,hm.contract admin,model_hm_contract,account.group_account_manager,1,1,1,1
+access_contract_line_user,hm.contract.line read,model_hm_contract_line,base.group_user,1,0,0,0
+access_contract_line_sales,hm.contract.line manage,model_hm_contract_line,account.group_account_invoice,1,1,1,1
+access_contract_line_manager,hm.contract.line admin,model_hm_contract_line,account.group_account_manager,1,1,1,1
