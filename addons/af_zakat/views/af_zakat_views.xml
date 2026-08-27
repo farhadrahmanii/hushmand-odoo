@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ============================== Fund ============================== -->
+
+    <record id="af_zakat_fund_view_list" model="ir.ui.view">
+        <field name="name">af.zakat.fund.list</field>
+        <field name="model">af.zakat.fund</field>
+        <field name="arch" type="xml">
+            <list string="Zakat Funds" decoration-muted="state == 'closed'">
+                <field name="name"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="amount_collected" sum="Collected"/>
+                <field name="amount_distributed" sum="Distributed"/>
+                <field name="amount_remaining" sum="Undistributed"
+                       decoration-warning="amount_remaining &gt; 0"/>
+                <field name="beneficiary_count" string="People Helped"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="state" widget="badge"
+                       decoration-success="state == 'open'"
+                       decoration-muted="state == 'closed'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="af_zakat_fund_view_form" model="ir.ui.view">
+        <field name="name">af.zakat.fund.form</field>
+        <field name="model">af.zakat.fund</field>
+        <field name="arch" type="xml">
+            <form string="Zakat Fund">
+                <header>
+                    <button name="action_close" string="Close Fund"
+                            type="object" invisible="state != 'open'"
+                            confirm="Closing is refused while any collected zakat remains undistributed. Continue?"/>
+                    <button name="action_reopen" string="Reopen" type="object"
+                            invisible="state != 'closed'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="open,closed"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_distributions" type="object"
+                                class="oe_stat_button" icon="fa-users">
+                            <field name="beneficiary_count" widget="statinfo"
+                                   string="People Helped"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="Ramadan 1447"/></h1>
+                    </div>
+                    <group>
+                        <group string="Period">
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                            <field name="company_id"
+                                   groups="base.group_multi_company"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                        <group string="Position">
+                            <field name="amount_collected"/>
+                            <field name="amount_distributed"/>
+                            <field name="amount_remaining"/>
+                        </group>
+                    </group>
+
+                    <div class="alert alert-warning" role="alert"
+                         invisible="amount_remaining &lt;= 0 or state == 'closed'">
+                        <field name="amount_remaining" class="oe_inline fw-bold"/>
+                        has been collected and not yet distributed. It is owed
+                        to beneficiaries, not held by the organisation.
+                    </div>
+
+                    <notebook>
+                        <page string="Contributions" name="contributions">
+                            <field name="contribution_ids">
+                                <list editable="bottom">
+                                    <field name="name" readonly="1"/>
+                                    <field name="date"/>
+                                    <field name="partner_id"/>
+                                    <field name="anonymous"/>
+                                    <field name="payment_method"/>
+                                    <field name="amount" sum="Total"/>
+                                    <field name="state"/>
+                                    <field name="currency_id" column_invisible="True"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Distributions" name="distributions">
+                            <field name="distribution_ids">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="date"/>
+                                    <field name="beneficiary_id"/>
+                                    <field name="category"/>
+                                    <field name="payment_method"/>
+                                    <field name="amount" sum="Total"/>
+                                    <field name="received_signature"/>
+                                    <field name="state"/>
+                                    <field name="currency_id" column_invisible="True"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Notes" name="notes">
+                            <field name="notes" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_af_zakat_fund" model="ir.actions.act_window">
+        <field name="name">Zakat Funds</field>
+        <field name="res_model">af.zakat.fund</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Open a zakat fund</p>
+            <p>A fund holds what was collected for a period and everything
+               distributed from it, so the two can be reconciled and shown to
+               anyone who asks.</p>
+        </field>
+    </record>
+
+    <!-- =========================== Beneficiary ========================== -->
+
+    <record id="af_zakat_beneficiary_view_list" model="ir.ui.view">
+        <field name="name">af.zakat.beneficiary.list</field>
+        <field name="model">af.zakat.beneficiary</field>
+        <field name="arch" type="xml">
+            <list string="Beneficiaries">
+                <field name="name"/>
+                <field name="father_name" optional="show"/>
+                <field name="category"/>
+                <field name="household_size"/>
+                <field name="state_id" optional="show"/>
+                <field name="district_id" optional="hide"/>
+                <field name="distribution_count" string="Times Helped"/>
+                <field name="total_received" sum="Total"/>
+                <field name="last_received"/>
+                <field name="verified_by_id" optional="hide"/>
+                <field name="currency_id" column_invisible="True"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="af_zakat_beneficiary_view_form" model="ir.ui.view">
+        <field name="name">af.zakat.beneficiary.form</field>
+        <field name="model">af.zakat.beneficiary</field>
+        <field name="arch" type="xml">
+            <form string="Beneficiary">
+                <sheet>
+                    <widget name="web_ribbon" title="Archived"
+                            bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <group string="Identity">
+                            <field name="father_name"/>
+                            <field name="tazkira"/>
+                            <field name="phone" widget="phone"/>
+                            <field name="partner_id"/>
+                            <field name="active" widget="boolean_toggle"/>
+                        </group>
+                        <group string="Eligibility">
+                            <field name="category"/>
+                            <field name="household_size"/>
+                            <field name="verified_by_id"/>
+                            <field name="verified_date"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Where">
+                            <field name="state_id"
+                                   options="{'no_create': True}"/>
+                            <field name="district_id"
+                                   domain="[('state_id', '=?', state_id)]"
+                                   options="{'no_create': True}"/>
+                            <field name="address"/>
+                        </group>
+                        <group string="History">
+                            <field name="distribution_count"/>
+                            <field name="total_received"/>
+                            <field name="last_received"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <group string="Assessment">
+                        <field name="assessment_notes" nolabel="1"
+                               placeholder="Why this person qualifies, and who verified it."/>
+                    </group>
+                    <notebook>
+                        <page string="Distributions" name="distributions">
+                            <field name="distribution_ids" readonly="1">
+                                <list>
+                                    <field name="name"/>
+                                    <field name="date"/>
+                                    <field name="fund_id"/>
+                                    <field name="amount"/>
+                                    <field name="state"/>
+                                    <field name="currency_id" column_invisible="True"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="af_zakat_beneficiary_view_search" model="ir.ui.view">
+        <field name="name">af.zakat.beneficiary.search</field>
+        <field name="model">af.zakat.beneficiary</field>
+        <field name="arch" type="xml">
+            <search string="Beneficiaries">
+                <field name="name"/>
+                <field name="father_name"/>
+                <field name="tazkira"/>
+                <field name="state_id"/>
+                <field name="district_id"/>
+                <separator/>
+                <filter name="never_helped" string="Never Helped"
+                        domain="[('distribution_count', '=', 0)]"/>
+                <filter name="unverified" string="Not Verified"
+                        domain="[('verified_by_id', '=', False)]"/>
+                <separator/>
+                <filter name="archived" string="Archived"
+                        domain="[('active', '=', False)]"/>
+                <group name="group_by">
+                    <filter name="group_category" string="Category"
+                            context="{'group_by': 'category'}"/>
+                    <filter name="group_province" string="Province"
+                            context="{'group_by': 'state_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_af_zakat_beneficiary" model="ir.actions.act_window">
+        <field name="name">Beneficiaries</field>
+        <field name="res_model">af.zakat.beneficiary</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Register a beneficiary</p>
+            <p>Recording who has been helped before, and how much, is what
+               stops the same households being reached twice while others are
+               missed.</p>
+        </field>
+    </record>
+
+    <!-- ========================== Distribution ========================== -->
+
+    <record id="af_zakat_distribution_view_list" model="ir.ui.view">
+        <field name="name">af.zakat.distribution.list</field>
+        <field name="model">af.zakat.distribution</field>
+        <field name="arch" type="xml">
+            <list string="Distributions"
+                  decoration-muted="state == 'cancelled'"
+                  decoration-info="state == 'planned'">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="fund_id" optional="show"/>
+                <field name="beneficiary_id"/>
+                <field name="category"/>
+                <field name="payment_method"/>
+                <field name="amount" sum="Total"/>
+                <field name="received_signature"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'planned'"
+                       decoration-success="state == 'paid'"
+                       decoration-muted="state == 'cancelled'"/>
+                <button name="action_mark_paid" type="object" string="Pay"
+                        icon="fa-check" invisible="state != 'planned'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="af_zakat_distribution_view_form" model="ir.ui.view">
+        <field name="name">af.zakat.distribution.form</field>
+        <field name="model">af.zakat.distribution</field>
+        <field name="arch" type="xml">
+            <form string="Distribution">
+                <header>
+                    <button name="action_mark_paid" string="Mark Paid"
+                            type="object" class="btn-primary"
+                            invisible="state != 'planned'"/>
+                    <button name="action_cancel" string="Cancel" type="object"
+                            invisible="state == 'cancelled'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="planned,paid"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="To Whom">
+                            <field name="beneficiary_id"
+                                   options="{'no_quick_create': True}"/>
+                            <field name="category"/>
+                            <field name="fund_id"
+                                   options="{'no_create': True}"/>
+                        </group>
+                        <group string="What">
+                            <field name="date"/>
+                            <field name="amount"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="payment_method"/>
+                            <field name="in_kind_description"
+                                   invisible="payment_method != 'in_kind'"
+                                   required="payment_method == 'in_kind'"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Record">
+                            <field name="approved_by_id"/>
+                            <field name="received_signature"/>
+                        </group>
+                    </group>
+                    <group string="Notes">
+                        <field name="notes" nolabel="1"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="af_zakat_distribution_view_search" model="ir.ui.view">
+        <field name="name">af.zakat.distribution.search</field>
+        <field name="model">af.zakat.distribution</field>
+        <field name="arch" type="xml">
+            <search string="Distributions">
+                <field name="name"/>
+                <field name="beneficiary_id"/>
+                <field name="fund_id"/>
+                <separator/>
+                <filter name="planned" string="Planned"
+                        domain="[('state', '=', 'planned')]"/>
+                <filter name="paid" string="Paid"
+                        domain="[('state', '=', 'paid')]"/>
+                <filter name="unsigned" string="No Signed Receipt"
+                        domain="[('state', '=', 'paid'), ('received_signature', '=', False)]"/>
+                <separator/>
+                <filter name="date" string="Date" date="date"/>
+                <group name="group_by">
+                    <filter name="group_fund" string="Fund"
+                            context="{'group_by': 'fund_id'}"/>
+                    <filter name="group_category" string="Category"
+                            context="{'group_by': 'category'}"/>
+                    <filter name="group_method" string="Method"
+                            context="{'group_by': 'payment_method'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_af_zakat_distribution" model="ir.actions.act_window">
+        <field name="name">Distributions</field>
+        <field name="res_model">af.zakat.distribution</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_af_zakat_contribution" model="ir.actions.act_window">
+        <field name="name">Contributions</field>
+        <field name="res_model">af.zakat.contribution</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <!-- ============================== Menus ============================= -->
+
+    <menuitem id="menu_af_zakat_root" name="Zakat" sequence="93"/>
+
+    <menuitem id="menu_af_zakat_fund" name="Funds"
+              parent="menu_af_zakat_root"
+              action="action_af_zakat_fund" sequence="10"/>
+
+    <menuitem id="menu_af_zakat_contribution" name="Contributions"
+              parent="menu_af_zakat_root"
+              action="action_af_zakat_contribution" sequence="20"/>
+
+    <menuitem id="menu_af_zakat_distribution" name="Distributions"
+              parent="menu_af_zakat_root"
+              action="action_af_zakat_distribution" sequence="30"/>
+
+    <menuitem id="menu_af_zakat_beneficiary" name="Beneficiaries"
+              parent="menu_af_zakat_root"
+              action="action_af_zakat_beneficiary" sequence="40"/>
+
+</odoo>

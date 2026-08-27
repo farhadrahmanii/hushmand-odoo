@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fund_user,af.zakat.fund read,model_af_zakat_fund,base.group_user,1,0,0,0
+access_fund_manager,af.zakat.fund manage,model_af_zakat_fund,base.group_system,1,1,1,1
+access_contribution_user,af.zakat.contribution use,model_af_zakat_contribution,base.group_user,1,1,1,0
+access_contribution_manager,af.zakat.contribution manage,model_af_zakat_contribution,base.group_system,1,1,1,1
+access_beneficiary_user,af.zakat.beneficiary use,model_af_zakat_beneficiary,base.group_user,1,1,1,0
+access_beneficiary_manager,af.zakat.beneficiary manage,model_af_zakat_beneficiary,base.group_system,1,1,1,1
+access_distribution_user,af.zakat.distribution use,model_af_zakat_distribution,base.group_user,1,1,1,0
+access_distribution_manager,af.zakat.distribution manage,model_af_zakat_distribution,base.group_system,1,1,1,1

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="seq_zakat_contribution" model="ir.sequence">
+            <field name="name">Zakat Contribution</field>
+            <field name="code">af.zakat.contribution</field>
+            <field name="prefix">ZC/%(year)s/</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="seq_zakat_distribution" model="ir.sequence">
+            <field name="name">Zakat Distribution</field>
+            <field name="code">af.zakat.distribution</field>
+            <field name="prefix">ZD/%(year)s/</field>
+            <field name="padding">4</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>
