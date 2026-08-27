@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_af_id_card" model="ir.actions.report">
+        <field name="name">Employee ID Card</field>
+        <field name="model">hr.employee</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">af_hr.report_af_id_card</field>
+        <field name="report_file">af_hr.report_af_id_card</field>
+        <field name="print_report_name">'ID Card - %s' % (object.name)</field>
+        <field name="binding_model_id" ref="hr.model_hr_employee"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_af_id_card_document">
+        <div class="page" style="font-family: sans-serif;">
+            <div style="border: 2px solid #0b6b57; border-radius: 8px; padding: 16px; max-width: 560px;">
+
+                <div style="display: flex; align-items: center; border-bottom: 1px solid #dce1db; padding-bottom: 10px; margin-bottom: 12px;">
+                    <img t-if="employee.company_id.logo"
+                         t-att-src="image_data_uri(employee.company_id.logo)"
+                         style="max-height: 42px; margin-right: 12px;"
+                         alt="Logo"/>
+                    <div>
+                        <div style="font-size: 15px; font-weight: bold;">
+                            <span t-field="employee.company_id.name"/>
+                        </div>
+                        <div style="font-size: 11px; color: #4c5a55;">Employee Identity Card</div>
+                    </div>
+                </div>
+
+                <div style="display: flex;">
+                    <div style="width: 110px; margin-right: 16px;">
+                        <img t-if="employee.image_1920"
+                             t-att-src="image_data_uri(employee.image_1920)"
+                             style="width: 100px; height: 120px; object-fit: cover; border: 1px solid #dce1db;"
+                             alt="Photo"/>
+                    </div>
+
+                    <div style="flex: 1; font-size: 12px;">
+                        <div style="font-size: 17px; font-weight: bold; margin-bottom: 2px;">
+                            <span t-field="employee.name"/>
+                        </div>
+                        <div t-if="employee.af_father_name" style="color: #4c5a55; margin-bottom: 8px;">
+                            s/o <span t-field="employee.af_father_name"/>
+                        </div>
+
+                        <table style="width: 100%; font-size: 11.5px;">
+                            <tr t-if="employee.job_title">
+                                <td style="color: #75837d; padding: 2px 8px 2px 0;">Position</td>
+                                <td><span t-field="employee.job_title"/></td>
+                            </tr>
+                            <tr t-if="employee.department_id">
+                                <td style="color: #75837d; padding: 2px 8px 2px 0;">Department</td>
+                                <td><span t-field="employee.department_id.name"/></td>
+                            </tr>
+                            <tr t-if="employee.af_tazkira_number">
+                                <td style="color: #75837d; padding: 2px 8px 2px 0;">e-Tazkira</td>
+                                <td><span t-field="employee.af_tazkira_number"/></td>
+                            </tr>
+                            <tr t-if="employee.af_tazkira_reference">
+                                <td style="color: #75837d; padding: 2px 8px 2px 0;">Tazkira</td>
+                                <td><span t-field="employee.af_tazkira_reference"/></td>
+                            </tr>
+                            <tr t-if="employee.af_tin">
+                                <td style="color: #75837d; padding: 2px 8px 2px 0;">TIN</td>
+                                <td><span t-field="employee.af_tin"/></td>
+                            </tr>
+                            <tr t-if="employee.work_phone">
+                                <td style="color: #75837d; padding: 2px 8px 2px 0;">Phone</td>
+                                <td><span t-field="employee.work_phone"/></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div style="border-top: 1px solid #dce1db; margin-top: 12px; padding-top: 8px; font-size: 10px; color: #75837d;">
+                    If found, please return this card to
+                    <span t-field="employee.company_id.name"/>.
+                </div>
+
+            </div>
+        </div>
+    </template>
+
+    <template id="report_af_id_card">
+        <t t-call="web.basic_layout">
+            <t t-foreach="docs" t-as="employee">
+                <t t-call="af_hr.report_af_id_card_document"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

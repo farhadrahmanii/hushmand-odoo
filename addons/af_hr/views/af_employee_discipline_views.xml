@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="af_employee_discipline_view_list" model="ir.ui.view">
+        <field name="name">af.employee.discipline.list</field>
+        <field name="model">af.employee.discipline</field>
+        <field name="arch" type="xml">
+            <list string="Disciplinary Actions"
+                  decoration-muted="state in ('closed', 'cancelled')"
+                  decoration-danger="action_type in ('final', 'termination')">
+                <field name="name"/>
+                <field name="date"/>
+                <field name="employee_id"/>
+                <field name="department_id" optional="show"/>
+                <field name="action_type"/>
+                <field name="reason"/>
+                <field name="issued_by_id" optional="hide"/>
+                <field name="follow_up_date" optional="hide"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'draft'"
+                       decoration-warning="state == 'issued'"
+                       decoration-success="state == 'acknowledged'"
+                       decoration-muted="state in ('closed', 'cancelled')"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="af_employee_discipline_view_form" model="ir.ui.view">
+        <field name="name">af.employee.discipline.form</field>
+        <field name="model">af.employee.discipline</field>
+        <field name="arch" type="xml">
+            <form string="Disciplinary Action">
+                <header>
+                    <button name="action_issue" string="Issue" type="object"
+                            class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_acknowledge" string="Mark Acknowledged"
+                            type="object" class="btn-primary"
+                            invisible="state != 'issued'"/>
+                    <button name="action_close" string="Close" type="object"
+                            invisible="state not in ('issued', 'acknowledged')"/>
+                    <button name="action_cancel" string="Cancel" type="object"
+                            invisible="state in ('closed', 'cancelled')"/>
+                    <button name="action_reset_draft" string="Reset to Draft"
+                            type="object" invisible="state != 'cancelled'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,issued,acknowledged,closed"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="Employee">
+                            <field name="employee_id"
+                                   options='{"no_create": True}'/>
+                            <field name="department_id"/>
+                            <field name="company_id" groups="base.group_multi_company"/>
+                        </group>
+                        <group string="Action">
+                            <field name="date"/>
+                            <field name="action_type"/>
+                            <field name="issued_by_id" options='{"no_create": True}'/>
+                            <field name="acknowledged_date"
+                                   invisible="not acknowledged_date"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Suspension"
+                               invisible="action_type != 'suspension'">
+                            <field name="suspension_date_from"
+                                   required="action_type == 'suspension'"/>
+                            <field name="suspension_date_to"/>
+                        </group>
+                        <group string="Follow Up">
+                            <field name="follow_up_date"/>
+                        </group>
+                    </group>
+                    <group string="Reason">
+                        <field name="reason" nolabel="1" placeholder="Short reason, as it will read on the record"/>
+                        <field name="description" nolabel="1"
+                               placeholder="What happened, when, who was present, and what was agreed."/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="af_employee_discipline_view_search" model="ir.ui.view">
+        <field name="name">af.employee.discipline.search</field>
+        <field name="model">af.employee.discipline</field>
+        <field name="arch" type="xml">
+            <search string="Disciplinary Actions">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="reason"/>
+                <separator/>
+                <filter name="open" string="Open"
+                        domain="[('state', 'in', ('draft', 'issued', 'acknowledged'))]"/>
+                <filter name="serious" string="Final or Termination"
+                        domain="[('action_type', 'in', ('final', 'termination'))]"/>
+                <separator/>
+                <filter name="to_review" string="Due for Review"
+                        domain="[('follow_up_date', '&lt;=', context_today().strftime('%Y-%m-%d')), ('state', 'not in', ('closed', 'cancelled'))]"/>
+                <separator/>
+                <group name="group_by">
+                    <filter name="group_employee" string="Employee" context="{'group_by': 'employee_id'}"/>
+                    <filter name="group_department" string="Department" context="{'group_by': 'department_id'}"/>
+                    <filter name="group_type" string="Action" context="{'group_by': 'action_type'}"/>
+                    <filter name="group_state" string="Status" context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_af_employee_discipline" model="ir.actions.act_window">
+        <field name="name">Disciplinary Actions</field>
+        <field name="res_model">af.employee.discipline</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Record a disciplinary action</p>
+            <p>Odoo has no equivalent in either edition. Issue and
+               acknowledgement are tracked separately, because whether the
+               employee actually saw it is the part that matters later.</p>
+        </field>
+    </record>
+
+</odoo>

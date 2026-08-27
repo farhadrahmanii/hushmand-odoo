@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hr_employee_view_form" model="ir.ui.view">
+        <field name="name">hr.employee.form.inherit.af.hr</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form"/>
+        <field name="arch" type="xml">
+
+            <div name="button_box" position="inside">
+                <button name="action_af_view_disciplines"
+                        type="object"
+                        class="oe_stat_button"
+                        icon="fa-gavel"
+                        groups="hr.group_hr_manager"
+                        invisible="af_discipline_count == 0">
+                    <field name="af_discipline_count" widget="statinfo" string="Discipline"/>
+                </button>
+            </div>
+
+            <!-- Afghan naming: there is no inherited surname, so the father's
+                 and grandfather's names are part of the identity, not extras. -->
+            <group name="citizenship" position="inside">
+                <field name="af_father_name"/>
+                <field name="af_grandfather_name"/>
+                <field name="af_full_identity"/>
+                <separator string="Tazkira"/>
+                <field name="af_tazkira_number"/>
+                <field name="af_tazkira_volume"/>
+                <field name="af_tazkira_page"/>
+                <field name="af_tazkira_register"/>
+                <field name="af_tazkira_state_id"
+                       options='{"no_open": True, "no_create": True}'/>
+                <field name="af_tin"/>
+            </group>
+
+            <!-- District and village sit under the province Odoo already has. -->
+            <field name="private_state_id" position="after">
+                <field name="af_private_district_id"
+                       class="o_address_city"
+                       placeholder="District"
+                       domain="[('state_id', '=?', private_state_id)]"
+                       options='{"no_open": True, "no_create": True}'/>
+                <field name="af_private_village_id"
+                       class="o_address_city"
+                       placeholder="Village"
+                       domain="[('district_id', '=?', af_private_district_id)]"
+                       options='{"no_open": True, "no_create": True}'
+                       invisible="not af_private_district_id"/>
+            </field>
+
+            <group name="hr_location_group" position="after">
+                <group string="Permanent Address" name="af_permanent_address">
+                    <field name="af_permanent_state_id"
+                           options='{"no_open": True, "no_create": True}'/>
+                    <field name="af_permanent_district_id"
+                           domain="[('state_id', '=?', af_permanent_state_id)]"
+                           options='{"no_open": True, "no_create": True}'/>
+                    <field name="af_permanent_village_id"
+                           domain="[('district_id', '=?', af_permanent_district_id)]"
+                           options='{"no_open": True, "no_create": True}'
+                           invisible="not af_permanent_district_id"/>
+                    <field name="af_permanent_street" placeholder="Village, area or landmark"/>
+                </group>
+            </group>
+
+        </field>
+    </record>
+
+</odoo>

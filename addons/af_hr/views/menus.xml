@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem id="menu_af_employee_discipline"
+              name="Disciplinary Actions"
+              parent="hr.menu_hr_employee_payroll"
+              action="action_af_employee_discipline"
+              sequence="60"
+              groups="hr.group_hr_user"/>
+</odoo>
