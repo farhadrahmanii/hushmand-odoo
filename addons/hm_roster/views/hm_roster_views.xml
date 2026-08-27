@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- ========================== Shift template ======================== -->
+
+    <record id="hm_shift_template_view_list" model="ir.ui.view">
+        <field name="name">hm.shift.template.list</field>
+        <field name="model">hm.shift.template</field>
+        <field name="arch" type="xml">
+            <list string="Shift Templates" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="hour_from" widget="float_time"/>
+                <field name="hour_to" widget="float_time"/>
+                <field name="duration_hours" widget="float_time" string="Length"/>
+                <field name="crosses_midnight" string="Ends Next Day"/>
+                <field name="color" widget="color_picker" optional="hide"/>
+                <field name="active" widget="boolean_toggle" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_hm_shift_template" model="ir.actions.act_window">
+        <field name="name">Shift Templates</field>
+        <field name="res_model">hm.shift.template</field>
+        <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Define a shift</p>
+            <p>The patterns you use over and over: Day 08:00-16:00,
+               Night 18:00-06:00. Building a month then means choosing a shift
+               and a person rather than typing times.</p>
+        </field>
+    </record>
+
+    <!-- ============================= Roster ============================= -->
+
+    <record id="hm_roster_view_list" model="ir.ui.view">
+        <field name="name">hm.roster.list</field>
+        <field name="model">hm.roster</field>
+        <field name="arch" type="xml">
+            <list string="Rosters"
+                  decoration-muted="state == 'closed'"
+                  decoration-warning="unassigned_count &gt; 0 and state == 'draft'">
+                <field name="name"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="location" optional="show"/>
+                <field name="shift_count" string="Shifts"/>
+                <field name="unassigned_count" string="Uncovered"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'draft'"
+                       decoration-success="state == 'published'"
+                       decoration-muted="state == 'closed'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hm_roster_view_form" model="ir.ui.view">
+        <field name="name">hm.roster.form</field>
+        <field name="model">hm.roster</field>
+        <field name="arch" type="xml">
+            <form string="Roster">
+                <header>
+                    <button name="action_publish" string="Publish" type="object"
+                            class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_publish_with_gaps"
+                            string="Publish With Gaps" type="object"
+                            invisible="state != 'draft' or unassigned_count == 0"
+                            confirm="Some shifts have nobody assigned. Publish anyway?"/>
+                    <button name="action_close" string="Close" type="object"
+                            invisible="state != 'published'"/>
+                    <button name="action_reset_draft" string="Reset to Draft"
+                            type="object" invisible="state != 'published'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,published,closed"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <button name="action_view_shifts" type="object"
+                                class="oe_stat_button" icon="fa-calendar">
+                            <field name="shift_count" widget="statinfo"
+                                   string="Shifts"/>
+                        </button>
+                    </div>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name" placeholder="Main gate, Sunbula 1405"/></h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="date_from"/>
+                            <field name="date_to"/>
+                        </group>
+                        <group>
+                            <field name="location"/>
+                            <field name="unassigned_count"/>
+                            <field name="company_id"
+                                   groups="base.group_multi_company"/>
+                        </group>
+                    </group>
+
+                    <div class="alert alert-warning" role="alert"
+                         invisible="unassigned_count == 0 or state != 'draft'">
+                        <field name="unassigned_count" class="oe_inline fw-bold"/>
+                        shift(s) have nobody assigned. Publishing will refuse
+                        until they are covered, or you use Publish With Gaps.
+                    </div>
+
+                    <notebook>
+                        <page string="Shifts" name="shifts">
+                            <field name="shift_ids"
+                                   readonly="state == 'closed'"
+                                   context="{'default_roster_id': id}">
+                                <list editable="bottom"
+                                      decoration-warning="not employee_id">
+                                    <field name="date"/>
+                                    <field name="template_id"
+                                           options="{'no_create_edit': True}"/>
+                                    <field name="hour_from" widget="float_time"/>
+                                    <field name="hour_to" widget="float_time"/>
+                                    <field name="duration_hours"
+                                           widget="float_time" string="Length"/>
+                                    <field name="employee_id"
+                                           options="{'no_create_edit': True}"/>
+                                    <field name="location" string="Post"/>
+                                    <field name="notes" optional="hide"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Notes" name="notes">
+                            <field name="notes" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="hm_roster_view_search" model="ir.ui.view">
+        <field name="name">hm.roster.search</field>
+        <field name="model">hm.roster</field>
+        <field name="arch" type="xml">
+            <search string="Rosters">
+                <field name="name"/>
+                <field name="location"/>
+                <separator/>
+                <filter name="draft" string="Draft"
+                        domain="[('state', '=', 'draft')]"/>
+                <filter name="published" string="Published"
+                        domain="[('state', '=', 'published')]"/>
+                <filter name="has_gaps" string="Has Uncovered Shifts"
+                        domain="[('shift_ids.employee_id', '=', False)]"/>
+                <group name="group_by">
+                    <filter name="group_state" string="Status"
+                            context="{'group_by': 'state'}"/>
+                    <filter name="group_location" string="Location"
+                            context="{'group_by': 'location'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_hm_roster" model="ir.actions.act_window">
+        <field name="name">Rosters</field>
+        <field name="res_model">hm.roster</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Build a roster</p>
+            <p>Set the period, add the shifts, assign people. Double-booking is
+               refused as it happens, and publishing a roster with uncovered
+               shifts takes a second, deliberate action.</p>
+        </field>
+    </record>
+
+    <!-- ============================== Shifts ============================ -->
+
+    <record id="hm_roster_shift_view_list" model="ir.ui.view">
+        <field name="name">hm.roster.shift.list</field>
+        <field name="model">hm.roster.shift</field>
+        <field name="arch" type="xml">
+            <list string="Shifts" decoration-warning="not employee_id">
+                <field name="date"/>
+                <field name="roster_id" optional="show"/>
+                <field name="template_id"/>
+                <field name="hour_from" widget="float_time"/>
+                <field name="hour_to" widget="float_time"/>
+                <field name="employee_id"/>
+                <field name="location" string="Post" optional="show"/>
+                <field name="state" widget="badge" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hm_roster_shift_view_search" model="ir.ui.view">
+        <field name="name">hm.roster.shift.search</field>
+        <field name="model">hm.roster.shift</field>
+        <field name="arch" type="xml">
+            <search string="Shifts">
+                <field name="employee_id"/>
+                <field name="roster_id"/>
+                <field name="location"/>
+                <separator/>
+                <filter name="unassigned" string="Uncovered"
+                        domain="[('employee_id', '=', False)]"/>
+                <filter name="published" string="Published"
+                        domain="[('state', '=', 'published')]"/>
+                <separator/>
+                <filter name="filter_date" string="Date" date="date"/>
+                <group name="group_by">
+                    <filter name="group_employee" string="Assigned To"
+                            context="{'group_by': 'employee_id'}"/>
+                    <filter name="group_date" string="Date"
+                            context="{'group_by': 'date'}"/>
+                    <filter name="group_roster" string="Roster"
+                            context="{'group_by': 'roster_id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_hm_roster_shift" model="ir.actions.act_window">
+        <field name="name">Shifts</field>
+        <field name="res_model">hm.roster.shift</field>
+        <field name="view_mode">list</field>
+    </record>
+
+    <!-- ============================== Menus ============================= -->
+
+    <menuitem id="menu_hm_roster_root" name="Rosters" sequence="96"/>
+
+    <menuitem id="menu_hm_roster" name="Rosters"
+              parent="menu_hm_roster_root"
+              action="action_hm_roster" sequence="10"/>
+
+    <menuitem id="menu_hm_roster_shift" name="All Shifts"
+              parent="menu_hm_roster_root"
+              action="action_hm_roster_shift" sequence="20"/>
+
+    <menuitem id="menu_hm_roster_config" name="Configuration"
+              parent="menu_hm_roster_root" sequence="90"
+              groups="hr.group_hr_manager"/>
+
+    <menuitem id="menu_hm_shift_template" name="Shift Templates"
+              parent="menu_hm_roster_config"
+              action="action_hm_shift_template" sequence="10"/>
+
+</odoo>

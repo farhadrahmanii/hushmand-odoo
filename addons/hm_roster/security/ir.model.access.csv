@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_shift_template_user,hm.shift.template read,model_hm_shift_template,base.group_user,1,0,0,0
+access_shift_template_manager,hm.shift.template manage,model_hm_shift_template,hr.group_hr_manager,1,1,1,1
+access_roster_user,hm.roster read,model_hm_roster,base.group_user,1,0,0,0
+access_roster_manager,hm.roster manage,model_hm_roster,hr.group_hr_manager,1,1,1,1
+access_roster_shift_user,hm.roster.shift read,model_hm_roster_shift,base.group_user,1,0,0,0
+access_roster_shift_manager,hm.roster.shift manage,model_hm_roster_shift,hr.group_hr_manager,1,1,1,1
