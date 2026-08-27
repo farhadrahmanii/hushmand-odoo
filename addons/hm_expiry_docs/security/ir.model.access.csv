@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_expiry_type_user,hm.expiry.document.type read,model_hm_expiry_document_type,base.group_user,1,0,0,0
+access_expiry_type_manager,hm.expiry.document.type manage,model_hm_expiry_document_type,base.group_system,1,1,1,1
+access_expiry_doc_user,hm.expiry.document use,model_hm_expiry_document,base.group_user,1,1,1,0
+access_expiry_doc_manager,hm.expiry.document manage,model_hm_expiry_document,base.group_system,1,1,1,1

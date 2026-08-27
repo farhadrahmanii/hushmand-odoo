@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!--
+          Odoo 19 moved the executable part of a cron onto ir.actions.server,
+          which ir.cron delegates to. The old numbercall and doall fields no
+          longer exist and must not be set here.
+        -->
+        <record id="cron_expiry_reminders" model="ir.cron">
+            <field name="name">Expiring Documents: raise reminders</field>
+            <field name="model_id" ref="model_hm_expiry_document"/>
+            <field name="state">code</field>
+            <field name="code">model._cron_raise_reminders()</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>
