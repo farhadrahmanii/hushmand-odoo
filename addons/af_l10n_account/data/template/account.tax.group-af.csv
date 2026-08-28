@@ -1,0 +1,4 @@
+"id","country_id","name","tax_payable_account_id","tax_receivable_account_id"
+"tax_group_af_brt","base.af","Business Receipts Tax","af_200301","af_200302"
+"tax_group_af_wht","base.af","Withholding Tax","af_200313","af_200302"
+"tax_group_af_exempt","base.af","Exempt","af_200301","af_200302"
