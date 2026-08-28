@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_comparative_user,af.comparative.form use,model_af_comparative_form,base.group_user,1,1,1,0
+access_comparative_manager,af.comparative.form manage,model_af_comparative_form,purchase.group_purchase_manager,1,1,1,1
+access_quote_user,af.comparative.quote use,model_af_comparative_quote,base.group_user,1,1,1,1
+access_quote_manager,af.comparative.quote manage,model_af_comparative_quote,purchase.group_purchase_manager,1,1,1,1

@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="af_comparative_form_view_list" model="ir.ui.view">
+        <field name="name">af.comparative.form.list</field>
+        <field name="model">af.comparative.form</field>
+        <field name="arch" type="xml">
+            <list string="Comparative Forms"
+                  decoration-muted="state == 'cancelled'"
+                  decoration-warning="not_lowest and state == 'done'">
+                <field name="reference"/>
+                <field name="name"/>
+                <field name="request_id"/>
+                <field name="date"/>
+                <field name="quote_count" string="Quotes"/>
+                <field name="selected_quote_id"/>
+                <field name="not_lowest" string="Not Lowest"/>
+                <field name="prepared_by_id" optional="hide"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'draft'"
+                       decoration-success="state == 'done'"
+                       decoration-muted="state == 'cancelled'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="af_comparative_form_view_form" model="ir.ui.view">
+        <field name="name">af.comparative.form.form</field>
+        <field name="model">af.comparative.form</field>
+        <field name="arch" type="xml">
+            <form string="Comparative Form">
+                <header>
+                    <button name="action_done" string="Complete" type="object"
+                            class="btn-primary" invisible="state != 'draft'"/>
+                    <button name="action_apply_to_request"
+                            string="Set Supplier on Request" type="object"
+                            invisible="state != 'done'"/>
+                    <button name="action_cancel" string="Cancel" type="object"
+                            invisible="state != 'draft'"/>
+                    <button name="action_reset_draft" string="Reset to Draft"
+                            type="object" invisible="state != 'cancelled'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="reference" readonly="1"/></h1>
+                        <h2><field name="name"
+                                   placeholder="What is being compared"/></h2>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="request_id"
+                                   options="{'no_create': True}"/>
+                            <field name="date"/>
+                            <field name="prepared_by_id"/>
+                        </group>
+                        <group>
+                            <field name="quote_count"/>
+                            <field name="lowest_quote_id" readonly="1"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="company_id" invisible="1"/>
+                            <field name="not_lowest" invisible="1"/>
+                        </group>
+                    </group>
+
+                    <field name="quote_ids" readonly="state != 'draft'">
+                        <list editable="bottom" string="Quotations"
+                              decoration-success="is_selected">
+                            <field name="partner_id"/>
+                            <field name="quotation_ref"/>
+                            <field name="quotation_date"/>
+                            <field name="total_amount"/>
+                            <field name="delivery_days"/>
+                            <field name="warranty_months" optional="hide"/>
+                            <field name="payment_terms" optional="hide"/>
+                            <field name="notes"/>
+                            <field name="is_selected" readonly="1"/>
+                            <field name="currency_id" column_invisible="True"/>
+                        </list>
+                    </field>
+
+                    <group string="Recommendation">
+                        <field name="selected_quote_id"
+                               readonly="state != 'draft'"
+                               options="{'no_create': True}"/>
+                        <div class="alert alert-warning" colspan="2"
+                             role="alert" invisible="not not_lowest">
+                            This is not the lowest quotation. Write down why it
+                            was chosen — that sentence is what an auditor will
+                            ask for, and it is far easier to write now than to
+                            reconstruct next year.
+                        </div>
+                        <field name="selection_reason" nolabel="1" colspan="2"
+                               readonly="state != 'draft'"
+                               placeholder="Why this supplier, in a sentence or two."/>
+                    </group>
+                    <group string="Notes">
+                        <field name="notes" nolabel="1"/>
+                    </group>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="af_comparative_form_view_search" model="ir.ui.view">
+        <field name="name">af.comparative.form.search</field>
+        <field name="model">af.comparative.form</field>
+        <field name="arch" type="xml">
+            <search string="Comparative Forms">
+                <field name="reference"/>
+                <field name="name"/>
+                <field name="request_id"/>
+                <field name="selected_quote_id"/>
+                <separator/>
+                <filter name="draft" string="Draft"
+                        domain="[('state', '=', 'draft')]"/>
+                <filter name="done" string="Completed"
+                        domain="[('state', '=', 'done')]"/>
+                <separator/>
+                <filter name="not_lowest" string="Not the Lowest Quotation"
+                        domain="[('not_lowest', '=', True)]"
+                        help="The comparisons an auditor looks at first."/>
+                <group name="group_by">
+                    <filter name="group_request" string="Purchase Request"
+                            context="{'group_by': 'request_id'}"/>
+                    <filter name="group_state" string="Status"
+                            context="{'group_by': 'state'}"/>
+                    <filter name="group_date" string="Date"
+                            context="{'group_by': 'date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_af_comparative_form" model="ir.actions.act_window">
+        <field name="name">Comparative Forms</field>
+        <field name="res_model">af.comparative.form</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Record a comparison</p>
+            <p>Which suppliers were asked, what each quoted, and why the chosen
+               one was chosen. Odoo has no concept of this sheet, and it is
+               exactly the document a donor or an auditor asks for when they
+               want to know why a particular supplier was used.</p>
+        </field>
+    </record>
+
+    <record id="hm_purchase_request_view_form_af" model="ir.ui.view">
+        <field name="name">hm.purchase.request.form.inherit.af.procurement</field>
+        <field name="model">hm.purchase.request</field>
+        <field name="inherit_id" ref="hm_purchase_request.hm_purchase_request_view_form"/>
+        <field name="arch" type="xml">
+            <div name="button_box" position="inside">
+                <button name="action_af_view_comparatives" type="object"
+                        class="oe_stat_button" icon="fa-balance-scale"
+                        invisible="af_comparative_count == 0">
+                    <field name="af_comparative_count" widget="statinfo"
+                           string="Comparisons"/>
+                </button>
+            </div>
+            <button name="action_create_rfq" position="before">
+                <button name="action_af_create_comparative"
+                        string="Compare Quotations" type="object"
+                        invisible="state not in ('to_approve', 'approved')"/>
+            </button>
+        </field>
+    </record>
+
+    <menuitem id="menu_af_comparative_form"
+              name="Comparative Forms"
+              parent="purchase.menu_procurement_management"
+              action="action_af_comparative_form"
+              sequence="4"/>
+
+</odoo>
