@@ -15,7 +15,7 @@ from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
 from cryptography.hazmat.primitives import serialization
 
 from odoo.exceptions import UserError, ValidationError
-from odoo.tests import common, tagged
+from odoo.tests import common, new_test_user, tagged
 from odoo.tools import mute_logger
 
 MODULE = "odoo.addons.hm_license.models.hm_license"
@@ -227,16 +227,29 @@ class TestUserLimit(LicenceCase):
         self.assertFalse(licence.over_user_limit)
 
     def test_over_the_limit_is_detected(self):
+        """The limit is compared against however many internal users exist,
+        so the test creates them rather than assuming the database already
+        has some. It had two locally and one in CI, which is exactly the kind
+        of assumption that passes on one machine and fails on another."""
         licence = self._install(self._payload(max_users=1))
+        new_test_user(self.env, login="licence_seat_a")
+        new_test_user(self.env, login="licence_seat_b")
+
         licence.invalidate_recordset(["active_users", "over_user_limit"])
-        self.assertTrue(
-            licence.over_user_limit,
-            "a demo database has more than one internal user",
-        )
+        self.assertGreater(licence.active_users, 1)
+        self.assertTrue(licence.over_user_limit)
+
+    def test_within_the_limit_is_fine(self):
+        licence = self._install(self._payload(max_users=9999))
+        licence.invalidate_recordset(["active_users", "over_user_limit"])
+        self.assertFalse(licence.over_user_limit)
 
     def test_the_gate_refuses_over_the_limit(self):
         self.Licence.search([]).unlink()
         self._install(self._payload(max_users=1))
+        new_test_user(self.env, login="licence_seat_c")
+        new_test_user(self.env, login="licence_seat_d")
+
         ok, message = self.Licence.check()
         self.assertFalse(ok)
         self.assertIn("are active", message)
