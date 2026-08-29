@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_hm_payslip" model="ir.actions.report">
+        <field name="name">Payslip</field>
+        <field name="model">hm.payslip</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hm_payroll.report_hm_payslip</field>
+        <field name="report_file">hm_payroll.report_hm_payslip</field>
+        <field name="print_report_name">'Payslip - %s' % (object.number or object.employee_id.name)</field>
+        <field name="binding_model_id" ref="model_hm_payslip"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <template id="report_hm_payslip_document">
+        <t t-set="currency" t-value="o.currency_id"/>
+        <div class="page">
+
+            <h2 style="margin-bottom: 2px;">Payslip</h2>
+            <div style="color: #666; margin-bottom: 14px;">
+                <span t-field="o.number"/>
+            </div>
+
+            <table class="table table-sm" style="margin-bottom: 16px;">
+                <tr>
+                    <td style="width: 15%; color: #666;">Employee</td>
+                    <td style="width: 35%;"><span t-field="o.employee_id.name"/></td>
+                    <td style="width: 15%; color: #666;">Period</td>
+                    <td style="width: 35%;">
+                        <span t-field="o.date_from"/> to <span t-field="o.date_to"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="color: #666;">Job Position</td>
+                    <td><span t-field="o.employee_id.job_title"/></td>
+                    <td style="color: #666;">Structure</td>
+                    <td><span t-field="o.structure_id.name"/></td>
+                </tr>
+                <tr>
+                    <td style="color: #666;">Department</td>
+                    <td><span t-field="o.employee_id.department_id"/></td>
+                    <td style="color: #666;">Status</td>
+                    <td><span t-field="o.state"/></td>
+                </tr>
+            </table>
+
+            <!-- appears_on_payslip is what this table is for: intermediate
+                 rules still compute and still feed their category, but the
+                 employee is shown the lines that concern them. -->
+            <table class="table table-sm o_main_table">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Description</th>
+                        <th class="text-end">Quantity</th>
+                        <th class="text-end">Rate</th>
+                        <th class="text-end">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr t-foreach="o.line_ids.filtered('appears_on_payslip')" t-as="line">
+                        <td><span t-field="line.code"/></td>
+                        <td><span t-field="line.name"/></td>
+                        <td class="text-end"><span t-field="line.quantity"/></td>
+                        <td class="text-end"><span t-field="line.rate"/>%</td>
+                        <td class="text-end">
+                            <span t-field="line.total"
+                                  t-options='{"widget": "monetary", "display_currency": currency}'/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="row justify-content-end" style="margin-top: 4px;">
+                <div class="col-5">
+                    <table class="table table-sm">
+                        <tr>
+                            <td style="color: #666;">Gross</td>
+                            <td class="text-end">
+                                <span t-field="o.gross_wage"
+                                      t-options='{"widget": "monetary", "display_currency": currency}'/>
+                            </td>
+                        </tr>
+                        <tr t-if="o.advance_due">
+                            <td style="color: #666;">of which advance recovered</td>
+                            <td class="text-end">
+                                <span t-field="o.advance_due"
+                                      t-options='{"widget": "monetary", "display_currency": currency}'/>
+                            </td>
+                        </tr>
+                        <tr style="border-top: 2px solid #000;">
+                            <td><strong>Net Pay</strong></td>
+                            <td class="text-end">
+                                <strong>
+                                    <span t-field="o.net_wage"
+                                          t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                </strong>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <p style="font-size: 11px; color: #444; margin-top: 6px;">
+                <strong>In words:</strong>
+                <span t-esc="currency.amount_to_text(o.net_wage)"/>
+            </p>
+
+            <div t-if="o.advance_line_ids" style="margin-top: 14px; font-size: 11px; color: #444;">
+                <strong>Advance recovery</strong>
+                <t t-foreach="o.advance_line_ids" t-as="instalment">
+                    <div>
+                        <span t-field="instalment.advance_id.name"/>:
+                        instalment <span t-field="instalment.sequence"/>
+                        of <span t-field="instalment.advance_id.installments"/>,
+                        <span t-field="instalment.amount"
+                              t-options='{"widget": "monetary", "display_currency": currency}'/>.
+                        Still owed after this payslip:
+                        <span t-field="instalment.advance_id.amount_outstanding"
+                              t-options='{"widget": "monetary", "display_currency": currency}'/>.
+                    </div>
+                </t>
+            </div>
+
+            <div class="row" style="margin-top: 42px; font-size: 11px;">
+                <div class="col-4">
+                    <div style="border-top: 1px solid #000; padding-top: 4px;">
+                        Prepared by
+                    </div>
+                </div>
+                <div class="col-4 offset-4">
+                    <div style="border-top: 1px solid #000; padding-top: 4px;">
+                        Received by (<span t-field="o.employee_id.name"/>)
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </template>
+
+    <template id="report_hm_payslip">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <t t-call="hm_payroll.report_hm_payslip_document"/>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>

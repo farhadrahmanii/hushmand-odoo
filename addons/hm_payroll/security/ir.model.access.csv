@@ -12,3 +12,7 @@ access_payslip_input_user,hm.payslip.input use,model_hm_payslip_input,hm_payroll
 access_payslip_run_user,hm.payslip.run use,model_hm_payslip_run,hm_payroll.group_payroll_user,1,1,1,0
 access_payslip_run_manager,hm.payslip.run manage,model_hm_payslip_run,hm_payroll.group_payroll_manager,1,1,1,1
 access_payslip_generate_user,hm.payslip.generate use,model_hm_payslip_generate,hm_payroll.group_payroll_user,1,1,1,1
+access_advance_user,hm.salary.advance use,model_hm_salary_advance,hm_payroll.group_payroll_user,1,1,1,0
+access_advance_manager,hm.salary.advance manage,model_hm_salary_advance,hm_payroll.group_payroll_manager,1,1,1,1
+access_advance_line_user,hm.salary.advance.line use,model_hm_salary_advance_line,hm_payroll.group_payroll_user,1,1,1,1
+access_advance_line_manager,hm.salary.advance.line manage,model_hm_salary_advance_line,hm_payroll.group_payroll_manager,1,1,1,1

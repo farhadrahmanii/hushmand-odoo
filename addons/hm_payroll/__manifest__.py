@@ -23,6 +23,24 @@ This module is that engine.
 * **Batches** generate one payslip per employee for a period and confirm
   them together.
 
+Salary advances
+---------------
+
+Money paid before it is earned, recovered over as many payslips as you
+choose. The schedule is built when the advance is approved; each payslip
+claims the instalments due to it while it is still a draft -- so two payslips
+can never recover the same instalment -- and actually recovers them when it is
+confirmed. Cancelling a payslip puts them back, and an advance cannot be
+cancelled once part of it has been recovered.
+
+A payslip to hand over
+----------------------
+
+A printed payslip, with the lines the employee should see, the net in words,
+and space for both signatures. Rules marked as not appearing on the payslip
+still compute and still feed their category; they simply stay off the
+document.
+
 Nothing posts by itself
 -----------------------
 
@@ -53,6 +71,8 @@ engine stays generic so that it works anywhere.
         "data/ir_sequence_data.xml",
         "data/hm_salary_rule_category_data.xml",
         "views/hm_payroll_views.xml",
+        "views/hm_salary_advance_views.xml",
+        "report/hm_payslip_report.xml",
     ],
     "demo": [
         "demo/hm_payroll_demo.xml",

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="hm_salary_advance_view_list" model="ir.ui.view">
+        <field name="name">hm.salary.advance.list</field>
+        <field name="model">hm.salary.advance</field>
+        <field name="arch" type="xml">
+            <list string="Salary Advances"
+                  decoration-muted="state == 'cancelled'"
+                  decoration-info="state == 'draft'"
+                  decoration-success="state == 'done'">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <field name="date"/>
+                <field name="amount" sum="Advanced"/>
+                <field name="installments"/>
+                <field name="amount_recovered" sum="Recovered"/>
+                <field name="amount_outstanding" sum="Still Owed"/>
+                <field name="currency_id" column_invisible="True"/>
+                <field name="state" widget="badge"
+                       decoration-info="state == 'draft'"
+                       decoration-warning="state == 'approved'"
+                       decoration-success="state == 'done'"
+                       decoration-muted="state == 'cancelled'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="hm_salary_advance_view_form" model="ir.ui.view">
+        <field name="name">hm.salary.advance.form</field>
+        <field name="model">hm.salary.advance</field>
+        <field name="arch" type="xml">
+            <form string="Salary Advance">
+                <header>
+                    <button name="action_approve" string="Approve"
+                            type="object" class="btn-primary"
+                            invisible="state != 'draft'"
+                            help="Builds the recovery schedule. Nothing is deducted until a payslip is computed."/>
+                    <button name="action_cancel" string="Cancel" type="object"
+                            invisible="state not in ('draft', 'approved')"/>
+                    <button name="action_reset_draft" string="Reset to Draft"
+                            type="object" invisible="state != 'cancelled'"/>
+                    <field name="state" widget="statusbar"
+                           statusbar_visible="draft,approved,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1><field name="name" readonly="1"/></h1>
+                    </div>
+                    <group>
+                        <group string="Advance">
+                            <field name="employee_id"
+                                   readonly="state != 'draft'"/>
+                            <field name="date" readonly="state != 'draft'"/>
+                            <field name="amount" readonly="state != 'draft'"/>
+                            <field name="company_id"
+                                   groups="base.group_multi_company"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                        <group string="Recovery">
+                            <field name="installments"
+                                   readonly="state != 'draft'"/>
+                            <field name="date_first_recovery"
+                                   readonly="state != 'draft'"
+                                   placeholder="The month after the advance"/>
+                            <field name="amount_recovered"/>
+                            <field name="amount_outstanding"
+                                   class="fw-bold"/>
+                        </group>
+                    </group>
+
+                    <div class="alert alert-info" role="status"
+                         invisible="state != 'draft'">
+                        Approving builds the schedule below. Each instalment is
+                        taken by the first payslip whose period reaches its due
+                        date, and only when that payslip is confirmed.
+                    </div>
+
+                    <notebook>
+                        <page string="Schedule" name="schedule">
+                            <field name="line_ids" readonly="1">
+                                <list string="Instalments"
+                                      decoration-muted="recovered">
+                                    <field name="sequence"/>
+                                    <field name="date"/>
+                                    <field name="amount" sum="Total"/>
+                                    <field name="recovered" widget="boolean_toggle"
+                                           readonly="1"/>
+                                    <field name="payslip_id"/>
+                                    <field name="currency_id"
+                                           column_invisible="True"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Reason" name="reason">
+                            <field name="reason"
+                                   placeholder="Why the advance was given"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="hm_salary_advance_view_search" model="ir.ui.view">
+        <field name="name">hm.salary.advance.search</field>
+        <field name="model">hm.salary.advance</field>
+        <field name="arch" type="xml">
+            <search string="Salary Advances">
+                <field name="name"/>
+                <field name="employee_id"/>
+                <separator/>
+                <filter name="outstanding" string="Still Owed"
+                        domain="[('amount_outstanding', '&gt;', 0),
+                                 ('state', '=', 'approved')]"/>
+                <filter name="approved" string="Approved"
+                        domain="[('state', '=', 'approved')]"/>
+                <filter name="done" string="Fully Recovered"
+                        domain="[('state', '=', 'done')]"/>
+                <group name="group_by">
+                    <filter name="group_employee" string="Employee"
+                            context="{'group_by': 'employee_id'}"/>
+                    <filter name="group_state" string="Status"
+                            context="{'group_by': 'state'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_hm_salary_advance" model="ir.actions.act_window">
+        <field name="name">Salary Advances</field>
+        <field name="res_model">hm.salary.advance</field>
+        <field name="view_mode">list,form</field>
+        <field name="search_view_id" ref="hm_salary_advance_view_search"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Record a salary advance</p>
+            <p>Money paid to an employee before it is earned. Choose how many
+               payslips to recover it over, press Approve, and each payslip
+               deducts its share by itself until nothing is owed.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_hm_salary_advance" name="Salary Advances"
+              parent="menu_hm_payroll_root"
+              action="action_hm_salary_advance" sequence="30"/>
+
+</odoo>

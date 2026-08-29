@@ -107,6 +107,20 @@ class HmPayslip(models.Model):
         index="btree_not_null",
     )
 
+    advance_line_ids = fields.One2many(
+        comodel_name="hm.salary.advance.line",
+        inverse_name="payslip_id",
+        string="Advance Instalments",
+        readonly=True,
+    )
+    advance_due = fields.Monetary(
+        string="Advance Recovery",
+        compute="_compute_advance_due",
+        store=True,
+        help="Advance instalments this payslip recovers. A deduction rule "
+             "reads it as inputs.get('ADVANCE', 0.0).",
+    )
+
     basic_wage = fields.Monetary(
         string="Basic", compute="_compute_summary", store=True,
     )
@@ -244,11 +258,45 @@ class HmPayslip(models.Model):
                     _("%s has no contract version to read the wage from.")
                     % slip.employee_id.name
                 )
+            slip._claim_advance_instalments()
             slip.line_ids.unlink()
             slip.write({
                 "line_ids": [(0, 0, vals) for vals in slip._compute_lines()],
             })
         return True
+
+    # ------------------------------------------------------------------
+    # Salary advances
+    # ------------------------------------------------------------------
+
+    def _claim_advance_instalments(self):
+        """Take hold of the advance instalments this payslip will recover.
+
+        Claiming happens at compute rather than at confirm so that two draft
+        payslips for one employee cannot both plan to recover the same
+        instalment. Recomputing releases what this payslip held and claims
+        again, so a change of period is honoured.
+        """
+        self.ensure_one()
+        self.advance_line_ids.filtered(lambda l: not l.recovered).write(
+            {"payslip_id": False}
+        )
+        due = self.env["hm.salary.advance"]._instalments_due(
+            self.employee_id, self.date_to, self.company_id
+        )
+        due.write({"payslip_id": self.id})
+
+    def _release_advance_instalments(self):
+        """Give back instalments this payslip was holding or had recovered."""
+        for slip in self:
+            slip.advance_line_ids.write(
+                {"recovered": False, "payslip_id": False}
+            )
+
+    @api.depends("advance_line_ids.amount")
+    def _compute_advance_due(self):
+        for slip in self:
+            slip.advance_due = sum(slip.advance_line_ids.mapped("amount"))
 
     def _rule_eval_context(self, categories, inputs):
         """What a salary rule can see when it is evaluated.
@@ -284,6 +332,11 @@ class HmPayslip(models.Model):
             for line in self.input_line_ids
             if line.code
         }
+        # Advance instalments claimed by this payslip reach rules under a
+        # reserved code, so a deduction rule is written the same way as any
+        # other: -inputs.get("ADVANCE", 0.0). An input line typed by hand
+        # under the same code wins, which is the manual override.
+        inputs.setdefault("ADVANCE", self.advance_due)
         localdict = self._rule_eval_context(categories, inputs)
         vals_list = []
         rules = self.structure_id.rule_ids.filtered("active").sorted(
@@ -333,6 +386,10 @@ class HmPayslip(models.Model):
                 "state": "done",
                 "move_id": move.id if move else False,
             })
+            # The money is now genuinely taken off the employee's pay, so
+            # the instalments this payslip was holding are recovered.
+            slip.advance_line_ids.write({"recovered": True})
+            slip.advance_line_ids.advance_id._refresh_state()
         return True
 
     def _create_move(self):
@@ -450,6 +507,10 @@ class HmPayslip(models.Model):
                 )
             if move:
                 move.unlink()
+            # The deduction never happened, so the advance is owed again.
+            advances = slip.advance_line_ids.advance_id
+            slip._release_advance_instalments()
+            advances._refresh_state()
             slip.state = "cancelled"
         return True
 
@@ -469,6 +530,9 @@ class HmPayslip(models.Model):
                     _("%s is confirmed. Cancel it before deleting it.")
                     % slip.display_name
                 )
+        # Deleting a draft payslip must not take its claim on an advance
+        # with it, or the instalment becomes unrecoverable.
+        self._release_advance_instalments()
         return super().unlink()
 
 

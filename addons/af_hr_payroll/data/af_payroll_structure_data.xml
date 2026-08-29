@@ -68,6 +68,21 @@ replace this with a fixed percentage: the scale is progressive, so a flat rate
 is wrong at every salary except one.</field>
         </record>
 
+        <record id="rule_advance" model="hm.salary.rule">
+            <field name="name">Salary Advance Recovery</field>
+            <field name="code">ADV</field>
+            <field name="sequence">180</field>
+            <field name="structure_id" ref="structure_af_monthly"/>
+            <field name="category_id" ref="hm_payroll.category_deduction"/>
+            <field name="condition_select">always</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python">result = -inputs.get('ADVANCE', 0.0)</field>
+            <field name="note">Recovers the advance instalments this payslip
+has claimed. It runs after the tax deliberately: an advance is a repayment of
+money already received, not a reduction in what was earned, so it must not
+reduce the taxable amount.</field>
+        </record>
+
         <record id="rule_net" model="hm.salary.rule">
             <field name="name">Net Salary</field>
             <field name="code">NET</field>

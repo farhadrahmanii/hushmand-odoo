@@ -84,6 +84,8 @@
                         <group string="Summary">
                             <field name="basic_wage"/>
                             <field name="gross_wage"/>
+                            <field name="advance_due"
+                                   invisible="not advance_due"/>
                             <field name="net_wage" class="fw-bold"/>
                         </group>
                         <group string="Accounting"
@@ -124,6 +126,26 @@
                                 Inputs reach the rules as
                                 <code>inputs.get('CODE', 0.0)</code>.
                                 Recompute the payslip after changing them.
+                            </div>
+                        </page>
+                        <page string="Advances" name="advances"
+                              invisible="not advance_line_ids">
+                            <field name="advance_line_ids" readonly="1">
+                                <list string="Advance Instalments">
+                                    <field name="advance_id"/>
+                                    <field name="sequence" string="Instalment"/>
+                                    <field name="date"/>
+                                    <field name="amount" sum="Recovered"/>
+                                    <field name="recovered"
+                                           widget="boolean_toggle" readonly="1"/>
+                                    <field name="currency_id"
+                                           column_invisible="True"/>
+                                </list>
+                            </field>
+                            <div class="alert alert-info" role="status">
+                                Claimed while this payslip is a draft so no other
+                                payslip can take them, and actually recovered when
+                                it is confirmed. Cancelling gives them back.
                             </div>
                         </page>
                         <page string="Notes" name="notes">

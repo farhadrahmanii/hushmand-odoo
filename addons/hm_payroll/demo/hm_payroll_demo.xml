@@ -58,6 +58,16 @@ Copy it, rename it, and change the numbers to yours.</field>
         <field name="amount_percentage">-10</field>
         <field name="amount_percentage_base">categories['GROSS']</field>
     </record>
+    <record id="demo_rule_advance" model="hm.salary.rule">
+        <field name="structure_id" ref="demo_structure"/>
+        <field name="name">Salary Advance Recovery</field>
+        <field name="code">ADV</field>
+        <field name="sequence">45</field>
+        <field name="category_id" ref="category_deduction"/>
+        <field name="amount_select">code</field>
+        <field name="amount_python">result = -inputs.get('ADVANCE', 0.0)</field>
+    </record>
+
     <record id="demo_rule_net" model="hm.salary.rule">
         <field name="structure_id" ref="demo_structure"/>
         <field name="name">Net Salary</field>
