@@ -212,7 +212,8 @@
 
     <!-- ============================== Menus ============================= -->
 
-    <menuitem id="menu_hm_expiry_root" name="Documents" sequence="92"/>
+    <menuitem id="menu_hm_expiry_root" name="Documents" sequence="92"
+              web_icon="hm_expiry_docs,static/description/icon.png"/>
 
     <menuitem id="menu_hm_expiry_document" name="Documents"
               parent="menu_hm_expiry_root"

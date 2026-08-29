@@ -231,7 +231,8 @@
 
     <!-- ============================== Menus ============================= -->
 
-    <menuitem id="menu_hm_roster_root" name="Rosters" sequence="96"/>
+    <menuitem id="menu_hm_roster_root" name="Rosters" sequence="96"
+              web_icon="hm_roster,static/description/icon.png"/>
 
     <menuitem id="menu_hm_roster" name="Rosters"
               parent="menu_hm_roster_root"

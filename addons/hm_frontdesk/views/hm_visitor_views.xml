@@ -156,7 +156,8 @@
         </field>
     </record>
 
-    <menuitem id="menu_hm_frontdesk_root" name="Front Desk" sequence="94"/>
+    <menuitem id="menu_hm_frontdesk_root" name="Front Desk" sequence="94"
+              web_icon="hm_frontdesk,static/description/icon.png"/>
 
     <menuitem id="menu_hm_visitor_on_site" name="On Site Now"
               parent="menu_hm_frontdesk_root"

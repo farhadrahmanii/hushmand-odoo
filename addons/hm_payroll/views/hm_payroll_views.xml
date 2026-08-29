@@ -458,7 +458,8 @@
     <!-- ============================= Menus ============================= -->
 
     <menuitem id="menu_hm_payroll_root" name="Payroll"
-              sequence="86" groups="hm_payroll.group_payroll_user"/>
+              sequence="86" groups="hm_payroll.group_payroll_user"
+              web_icon="hm_payroll,static/description/icon.png"/>
     <menuitem id="menu_hm_payslip" name="Payslips"
               parent="menu_hm_payroll_root" action="action_hm_payslip"
               sequence="10"/>

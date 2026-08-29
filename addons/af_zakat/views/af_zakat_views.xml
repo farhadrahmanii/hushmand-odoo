@@ -383,7 +383,8 @@
 
     <!-- ============================== Menus ============================= -->
 
-    <menuitem id="menu_af_zakat_root" name="Zakat" sequence="93"/>
+    <menuitem id="menu_af_zakat_root" name="Zakat" sequence="93"
+              web_icon="af_zakat,static/description/icon.png"/>
 
     <menuitem id="menu_af_zakat_fund" name="Funds"
               parent="menu_af_zakat_root"

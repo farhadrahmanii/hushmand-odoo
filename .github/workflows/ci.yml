@@ -58,10 +58,31 @@ jobs:
                           continue
                       if not (pathlib.Path("addons") / asset).is_file():
                           failures.append("%s: missing asset %s" % (module.name, asset))
+          # Every module needs a tile in the Apps list, and any web_icon must
+          # point at a file that exists -- a missing one breaks the app
+          # switcher rather than just looking wrong.
+          import re
+          for module in sorted(pathlib.Path("addons").iterdir()):
+              if not module.is_dir():
+                  continue
+              if not (module / "static/description/icon.png").is_file():
+                  failures.append(
+                      "%s: no static/description/icon.png "
+                      "(run tools/generate_icons.py)" % module.name)
+          for f in pathlib.Path("addons").rglob("*.xml"):
+              for m in re.finditer(r'web_icon="([^"]+)"', f.read_text(encoding="utf-8")):
+                  spec = m.group(1)
+                  if "," not in spec:
+                      failures.append("%s: malformed web_icon %s" % (f, spec))
+                      continue
+                  mod, rel = spec.split(",", 1)
+                  if not (pathlib.Path("addons") / mod / rel.strip()).is_file():
+                      failures.append("%s: web_icon points at missing %s" % (f, spec))
+
           if failures:
               print("\n".join("::error::" + f for f in failures))
               sys.exit(1)
-          print("XML and manifests OK")
+          print("XML, manifests and icons OK")
           PY
 
       - name: No AGPL dependency anywhere

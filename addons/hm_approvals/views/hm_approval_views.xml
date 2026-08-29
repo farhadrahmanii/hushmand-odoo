@@ -301,9 +301,8 @@
 
     <!-- ============================= Menus ============================= -->
 
-    <!-- web_icon is deliberately omitted until the icon artwork exists;
-         pointing it at a missing file breaks the app switcher. -->
-    <menuitem id="menu_hm_approvals_root" name="Approvals" sequence="95"/>
+    <menuitem id="menu_hm_approvals_root" name="Approvals" sequence="95"
+              web_icon="hm_approvals,static/description/icon.png"/>
 
     <menuitem id="menu_hm_approval_my" name="Waiting on Me"
               parent="menu_hm_approvals_root"

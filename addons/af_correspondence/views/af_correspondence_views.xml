@@ -188,7 +188,8 @@
         </field>
     </record>
 
-    <menuitem id="menu_af_correspondence_root" name="Correspondence" sequence="93"/>
+    <menuitem id="menu_af_correspondence_root" name="Correspondence" sequence="93"
+              web_icon="af_correspondence,static/description/icon.png"/>
 
     <menuitem id="menu_af_correspondence_incoming" name="Incoming"
               parent="menu_af_correspondence_root"
