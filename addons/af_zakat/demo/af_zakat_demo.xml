@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Loaded only when the database was created with demonstration data.
+         A fund with two contributions, two beneficiaries and one draft
+         distribution — the whole story on one screen. -->
+
+    <record id="demo_fund" model="af.zakat.fund">
+        <field name="name">Zakat Fund (Demo)</field>
+        <field name="date_from" eval="(DateTime.today() + relativedelta(month=1, day=1)).strftime('%Y-%m-%d')"/>
+        <field name="date_to" eval="(DateTime.today() + relativedelta(month=12, day=31)).strftime('%Y-%m-%d')"/>
+    </record>
+
+    <record id="demo_contributor" model="res.partner">
+        <field name="name">Haji Abdul Qadir (Demo)</field>
+    </record>
+    <record id="demo_contribution_1" model="af.zakat.contribution">
+        <field name="fund_id" ref="demo_fund"/>
+        <field name="partner_id" ref="demo_contributor"/>
+        <field name="amount">50000</field>
+        <field name="payment_method">cash</field>
+    </record>
+    <record id="demo_contribution_2" model="af.zakat.contribution">
+        <field name="fund_id" ref="demo_fund"/>
+        <field name="anonymous" eval="True"/>
+        <field name="amount">20000</field>
+        <field name="payment_method">bank</field>
+    </record>
+
+    <record id="demo_beneficiary_1" model="af.zakat.beneficiary">
+        <field name="name">Bibi Hawa (Demo)</field>
+        <field name="father_name">Ghulam Sakhi</field>
+        <field name="category">faqir</field>
+    </record>
+    <record id="demo_beneficiary_2" model="af.zakat.beneficiary">
+        <field name="name">Sayed Omar (Demo)</field>
+        <field name="father_name">Sayed Anwar</field>
+        <field name="category">gharim</field>
+    </record>
+
+    <record id="demo_distribution" model="af.zakat.distribution">
+        <field name="fund_id" ref="demo_fund"/>
+        <field name="beneficiary_id" ref="demo_beneficiary_1"/>
+        <field name="category">faqir</field>
+        <field name="amount">10000</field>
+        <field name="payment_method">cash</field>
+    </record>
+</odoo>

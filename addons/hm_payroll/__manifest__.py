@@ -54,6 +54,9 @@ engine stays generic so that it works anywhere.
         "data/hm_salary_rule_category_data.xml",
         "views/hm_payroll_views.xml",
     ],
+    "demo": [
+        "demo/hm_payroll_demo.xml",
+    ],
     "installable": True,
     "application": True,
     "auto_install": False,

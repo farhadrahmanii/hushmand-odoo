@@ -40,6 +40,9 @@ Purchasing sees everything.
         "data/ir_sequence_data.xml",
         "views/hm_purchase_request_views.xml",
     ],
+    "demo": [
+        "demo/hm_purchase_request_demo.xml",
+    ],
     "installable": True,
     "application": False,
     "auto_install": False,

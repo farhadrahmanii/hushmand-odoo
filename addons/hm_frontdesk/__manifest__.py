@@ -41,6 +41,9 @@ a record that admits it does not know.
         "data/ir_cron_data.xml",
         "views/hm_visitor_views.xml",
     ],
+    "demo": [
+        "demo/hm_frontdesk_demo.xml",
+    ],
     "installable": True,
     "application": True,
     "auto_install": False,

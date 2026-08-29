@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Loaded only when the database was created with demonstration data. -->
+    <record id="demo_employee" model="hr.employee">
+        <field name="name">Farid Ahmad (Demo)</field>
+    </record>
+    <record id="demo_work_permit" model="hm.expiry.document">
+        <field name="type_id" ref="type_work_permit"/>
+        <field name="name">WP-1405-0042</field>
+        <field name="employee_id" ref="demo_employee"/>
+        <field name="issuing_authority">Ministry of Labour</field>
+        <field name="date_issue" eval="(DateTime.today() + relativedelta(months=-10)).strftime('%Y-%m-%d')"/>
+        <field name="date_expiry" eval="(DateTime.today() + relativedelta(days=40)).strftime('%Y-%m-%d')"/>
+    </record>
+</odoo>

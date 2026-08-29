@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Loaded only when the database was created with demonstration data.
+         A draft asset with no accounts set: pressing Compute Depreciation
+         shows the schedule without touching the books. -->
+    <record id="demo_category" model="hm.asset.category">
+        <field name="name">Vehicles (Demo)</field>
+        <field name="company_id" ref="base.main_company"/>
+        <field name="method">linear</field>
+        <field name="period_length">12</field>
+        <field name="period_count">5</field>
+    </record>
+    <record id="demo_asset" model="hm.asset">
+        <field name="name">Toyota Hilux (Demo)</field>
+        <field name="category_id" ref="demo_category"/>
+        <field name="purchase_value">30000</field>
+        <field name="salvage_value">3000</field>
+        <field name="date_start" eval="(DateTime.today() + relativedelta(months=-2, day=1)).strftime('%Y-%m-%d')"/>
+    </record>
+</odoo>

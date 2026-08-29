@@ -223,6 +223,10 @@
         <field name="name">Shifts</field>
         <field name="res_model">hm.roster.shift</field>
         <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">No shifts yet</p>
+            <p>Shifts are usually created from a roster. Open Rosters, plan the week, and the shifts appear here.</p>
+        </field>
     </record>
 
     <!-- ============================== Menus ============================= -->

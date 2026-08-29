@@ -41,6 +41,9 @@ would still read valid years after it lapsed.
         "data/ir_cron_data.xml",
         "views/hm_expiry_document_views.xml",
     ],
+    "demo": [
+        "demo/hm_expiry_docs_demo.xml",
+    ],
     "installable": True,
     "application": True,
     "auto_install": False,

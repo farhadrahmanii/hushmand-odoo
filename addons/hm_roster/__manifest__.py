@@ -40,6 +40,9 @@ shift and a person rather than typing times.
         "security/ir.model.access.csv",
         "views/hm_roster_views.xml",
     ],
+    "demo": [
+        "demo/hm_roster_demo.xml",
+    ],
     "installable": True,
     "application": True,
     "auto_install": False,

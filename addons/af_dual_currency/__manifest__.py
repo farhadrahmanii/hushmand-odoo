@@ -51,6 +51,9 @@ than a floating one.
         "views/account_move_views.xml",
         "views/menus.xml",
     ],
+    "demo": [
+        "demo/af_dual_currency_demo.xml",
+    ],
     "installable": True,
     "application": False,
     "auto_install": False,

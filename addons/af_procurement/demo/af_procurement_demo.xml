@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Loaded only when the database was created with demonstration data.
+         Three quotations for the demo purchase request. The middle one is
+         cheapest but slow — picking a faster one shows why the form
+         demands a written reason. -->
+
+    <record id="demo_supplier_1" model="res.partner">
+        <field name="name">Kabul Office Supplies (Demo)</field>
+    </record>
+    <record id="demo_supplier_2" model="res.partner">
+        <field name="name">Herat Trading Co. (Demo)</field>
+    </record>
+    <record id="demo_supplier_3" model="res.partner">
+        <field name="name">Pamir Technology (Demo)</field>
+    </record>
+
+    <record id="demo_form" model="af.comparative.form">
+        <field name="name">Printer purchase (Demo)</field>
+        <field name="request_id" ref="hm_purchase_request.demo_request"/>
+        <field name="quote_ids" eval="[
+            (0, 0, {'partner_id': ref('demo_supplier_1'), 'total_amount': 27500.0, 'delivery_days': 3, 'warranty_months': 6}),
+            (0, 0, {'partner_id': ref('demo_supplier_2'), 'total_amount': 26000.0, 'delivery_days': 21}),
+            (0, 0, {'partner_id': ref('demo_supplier_3'), 'total_amount': 28900.0, 'delivery_days': 2, 'warranty_months': 12}),
+        ]"/>
+    </record>
+</odoo>

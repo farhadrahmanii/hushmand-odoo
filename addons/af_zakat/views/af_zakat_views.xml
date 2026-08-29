@@ -365,12 +365,20 @@
         <field name="name">Distributions</field>
         <field name="res_model">af.zakat.distribution</field>
         <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Record a distribution</p>
+            <p>Choose the fund and the beneficiary. The system refuses to give out more than the fund actually holds.</p>
+        </field>
     </record>
 
     <record id="action_af_zakat_contribution" model="ir.actions.act_window">
         <field name="name">Contributions</field>
         <field name="res_model">af.zakat.contribution</field>
         <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Record a contribution</p>
+            <p>Money entering the fund is recorded here. Nothing can be distributed that was never collected.</p>
+        </field>
     </record>
 
     <!-- ============================== Menus ============================= -->

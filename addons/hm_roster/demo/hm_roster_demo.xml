@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Loaded only when the database was created with demonstration data.
+         Two templates and a week's roster with one shift left unassigned,
+         so the warning the module exists for is visible immediately. -->
+
+    <record id="demo_guard" model="hr.employee">
+        <field name="name">Rahmatullah (Demo Guard)</field>
+    </record>
+
+    <record id="demo_template_day" model="hm.shift.template">
+        <field name="name">Day Guard (Demo)</field>
+        <field name="hour_from">6.0</field>
+        <field name="hour_to">18.0</field>
+    </record>
+    <record id="demo_template_night" model="hm.shift.template">
+        <field name="name">Night Guard (Demo)</field>
+        <field name="hour_from">18.0</field>
+        <field name="hour_to">6.0</field>
+        <field name="crosses_midnight" eval="True"/>
+    </record>
+
+    <record id="demo_roster" model="hm.roster">
+        <field name="name">Gate Roster, This Week (Demo)</field>
+        <field name="location">Main gate</field>
+        <field name="date_from" eval="(DateTime.today()).strftime('%Y-%m-%d')"/>
+        <field name="date_to" eval="(DateTime.today() + relativedelta(days=6)).strftime('%Y-%m-%d')"/>
+    </record>
+
+    <record id="demo_shift_1" model="hm.roster.shift">
+        <field name="roster_id" ref="demo_roster"/>
+        <field name="template_id" ref="demo_template_day"/>
+        <field name="date" eval="(DateTime.today()).strftime('%Y-%m-%d')"/>
+        <field name="hour_from">6.0</field>
+        <field name="hour_to">18.0</field>
+        <field name="employee_id" ref="demo_guard"/>
+    </record>
+    <record id="demo_shift_2" model="hm.roster.shift">
+        <field name="roster_id" ref="demo_roster"/>
+        <field name="template_id" ref="demo_template_night"/>
+        <field name="date" eval="(DateTime.today()).strftime('%Y-%m-%d')"/>
+        <field name="hour_from">18.0</field>
+        <field name="hour_to">6.0</field>
+    </record>
+</odoo>

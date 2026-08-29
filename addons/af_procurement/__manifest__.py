@@ -45,6 +45,9 @@ reasoning sits on the document people actually open.
         "data/af_procurement_data.xml",
         "views/af_comparative_views.xml",
     ],
+    "demo": [
+        "demo/af_procurement_demo.xml",
+    ],
     "installable": True,
     "application": False,
     "auto_install": False,

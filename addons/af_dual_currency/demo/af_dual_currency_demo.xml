@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Loaded only when the database was created with demonstration data.
+         One draft exchange period for the current month, ready to confirm. -->
+    <record id="demo_period" model="af.exchange.period">
+        <field name="name">This Month (Demo)</field>
+        <field name="currency_id" ref="base.AFN"/>
+        <field name="date_from" eval="(DateTime.today() + relativedelta(day=1)).strftime('%Y-%m-%d')"/>
+        <field name="date_to" eval="(DateTime.today() + relativedelta(day=31)).strftime('%Y-%m-%d')"/>
+        <field name="rate">70.5</field>
+        <field name="note">A sample rate. Change it to the rate your office
+agreed for this month, then press Confirm.</field>
+    </record>
+</odoo>

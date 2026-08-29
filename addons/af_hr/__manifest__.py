@@ -47,6 +47,9 @@ before.
         "report/af_employee_id_card.xml",
         "views/menus.xml",
     ],
+    "demo": [
+        "demo/af_hr_demo.xml",
+    ],
     "installable": True,
     "application": False,
     "auto_install": False,

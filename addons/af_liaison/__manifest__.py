@@ -35,6 +35,9 @@ the officer who has to do the renewing -- not the employee whose permit it is.
         "data/af_document_type_data.xml",
         "views/af_liaison_views.xml",
     ],
+    "demo": [
+        "demo/af_liaison_demo.xml",
+    ],
     "installable": True,
     "application": False,
     "auto_install": False,

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Loaded only when the database was created with demonstration data.
+         Two employees, one structure, one empty batch: enough to press
+         Generate Payslips and watch a payroll happen. -->
+
+    <record id="demo_employee_1" model="hr.employee">
+        <field name="name">Naseer Ahmad (Demo)</field>
+        <field name="wage">25000</field>
+    </record>
+    <record id="demo_employee_2" model="hr.employee">
+        <field name="name">Freshta Noori (Demo)</field>
+        <field name="wage">32000</field>
+    </record>
+
+    <record id="demo_structure" model="hm.payroll.structure">
+        <field name="name">Monthly Salaries (Demo)</field>
+        <field name="note">A worked example: basic pay from the contract,
+a fixed transport allowance, ten percent tax, and the net.
+Copy it, rename it, and change the numbers to yours.</field>
+    </record>
+
+    <record id="demo_rule_basic" model="hm.salary.rule">
+        <field name="structure_id" ref="demo_structure"/>
+        <field name="name">Basic Salary</field>
+        <field name="code">BASIC</field>
+        <field name="sequence">10</field>
+        <field name="category_id" ref="category_basic"/>
+        <field name="amount_select">code</field>
+        <field name="amount_python">result = version.wage</field>
+    </record>
+    <record id="demo_rule_transport" model="hm.salary.rule">
+        <field name="structure_id" ref="demo_structure"/>
+        <field name="name">Transport Allowance</field>
+        <field name="code">TRANS</field>
+        <field name="sequence">20</field>
+        <field name="category_id" ref="category_allowance"/>
+        <field name="amount_select">fix</field>
+        <field name="amount_fix">1500</field>
+    </record>
+    <record id="demo_rule_gross" model="hm.salary.rule">
+        <field name="structure_id" ref="demo_structure"/>
+        <field name="name">Gross</field>
+        <field name="code">GROSS</field>
+        <field name="sequence">30</field>
+        <field name="category_id" ref="category_gross"/>
+        <field name="amount_select">code</field>
+        <field name="amount_python">result = categories['BASIC'] + categories['ALW']</field>
+        <field name="appears_on_payslip" eval="False"/>
+    </record>
+    <record id="demo_rule_tax" model="hm.salary.rule">
+        <field name="structure_id" ref="demo_structure"/>
+        <field name="name">Income Tax</field>
+        <field name="code">TAX</field>
+        <field name="sequence">40</field>
+        <field name="category_id" ref="category_deduction"/>
+        <field name="amount_select">percentage</field>
+        <field name="amount_percentage">-10</field>
+        <field name="amount_percentage_base">categories['GROSS']</field>
+    </record>
+    <record id="demo_rule_net" model="hm.salary.rule">
+        <field name="structure_id" ref="demo_structure"/>
+        <field name="name">Net Salary</field>
+        <field name="code">NET</field>
+        <field name="sequence">50</field>
+        <field name="category_id" ref="category_net"/>
+        <field name="amount_select">code</field>
+        <field name="amount_python">result = categories['GROSS'] + categories['DED']</field>
+    </record>
+
+    <record id="demo_run" model="hm.payslip.run">
+        <field name="name">First Month (Demo)</field>
+        <field name="structure_id" ref="demo_structure"/>
+    </record>
+</odoo>

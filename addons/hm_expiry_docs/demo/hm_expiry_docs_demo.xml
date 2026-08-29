@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Loaded only when the database was created with demonstration data.
+         One document about to expire and one that is fine, so both colours
+         of the list are visible on first open. -->
+
+    <record id="demo_type_lease" model="hm.expiry.document.type">
+        <field name="name">Office Lease (Demo)</field>
+        <field name="validity_months">12</field>
+        <field name="reminder_days">60</field>
+    </record>
+    <record id="demo_type_registration" model="hm.expiry.document.type">
+        <field name="name">Ministry Registration (Demo)</field>
+        <field name="validity_months">12</field>
+        <field name="reminder_days">90</field>
+    </record>
+
+    <record id="demo_doc_lease" model="hm.expiry.document">
+        <field name="type_id" ref="demo_type_lease"/>
+        <field name="name">LEASE-1405-07</field>
+        <field name="subject">Main office, Karte Se, Kabul</field>
+        <field name="date_issue" eval="(DateTime.today() + relativedelta(months=-11)).strftime('%Y-%m-%d')"/>
+        <field name="date_expiry" eval="(DateTime.today() + relativedelta(days=25)).strftime('%Y-%m-%d')"/>
+    </record>
+    <record id="demo_doc_registration" model="hm.expiry.document">
+        <field name="type_id" ref="demo_type_registration"/>
+        <field name="name">REG-88231</field>
+        <field name="subject">Company registration</field>
+        <field name="issuing_authority">Ministry of Commerce</field>
+        <field name="date_expiry" eval="(DateTime.today() + relativedelta(months=10)).strftime('%Y-%m-%d')"/>
+    </record>
+</odoo>

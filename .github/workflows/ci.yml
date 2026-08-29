@@ -45,9 +45,13 @@ jobs:
               src = manifest.read_text(encoding="utf-8")
               meta = ast.literal_eval(src[src.index("{"):src.rindex("}") + 1])
               module = manifest.parent
-              for entry in meta.get("data", []):
-                  if not (module / entry).is_file():
-                      failures.append("%s: missing data file %s" % (module.name, entry))
+              # Both keys: a demo file named in the manifest but absent fails
+              # the install just as hard as a missing data file, and demo data
+              # loads in this workflow because --without-demo is not passed.
+              for key in ("data", "demo"):
+                  for entry in meta.get(key, []):
+                      if not (module / entry).is_file():
+                          failures.append("%s: missing %s file %s" % (module.name, key, entry))
               for bundle in meta.get("assets", {}).values():
                   for asset in bundle:
                       if "*" in asset:

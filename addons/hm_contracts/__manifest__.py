@@ -47,6 +47,9 @@ Also included
         "data/contract_data.xml",
         "views/hm_contract_views.xml",
     ],
+    "demo": [
+        "demo/hm_contracts_demo.xml",
+    ],
     "installable": True,
     "application": False,
     "auto_install": False,

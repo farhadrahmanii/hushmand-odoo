@@ -38,6 +38,9 @@ reverse its journal entry, so the ledger keeps a record of both.
         "security/ir.model.access.csv",
         "views/hm_asset_views.xml",
     ],
+    "demo": [
+        "demo/hm_assets_demo.xml",
+    ],
     "installable": True,
     "application": False,
     "auto_install": False,

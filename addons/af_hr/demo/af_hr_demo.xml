@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Loaded only when the database was created with demonstration data. -->
+    <record id="demo_employee" model="hr.employee">
+        <field name="name">Ahmad Wali (Demo)</field>
+        <field name="af_father_name">Mohammad Nabi</field>
+        <field name="af_grandfather_name">Abdul Ghani</field>
+        <field name="af_tin">9001112223</field>
+    </record>
+</odoo>

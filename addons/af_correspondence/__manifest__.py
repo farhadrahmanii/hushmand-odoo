@@ -41,6 +41,9 @@ record of what happened, not a scratchpad.
         "data/ir_sequence_data.xml",
         "views/af_correspondence_views.xml",
     ],
+    "demo": [
+        "demo/af_correspondence_demo.xml",
+    ],
     "installable": True,
     "application": True,
     "auto_install": False,

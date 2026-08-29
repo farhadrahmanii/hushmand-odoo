@@ -264,6 +264,10 @@
         <field name="name">Payslip Batches</field>
         <field name="res_model">hm.payslip.run</field>
         <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Create a payslip batch</p>
+            <p>Name it after the month, press Generate Payslips, and confirm everyone together.</p>
+        </field>
     </record>
 
     <!-- =========================== Structure =========================== -->
@@ -335,6 +339,10 @@
         <field name="name">Salary Structures</field>
         <field name="res_model">hm.payroll.structure</field>
         <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Build a salary structure</p>
+            <p>The ordered list of pay lines every payslip follows. If demonstration data is loaded, copy the demo structure and change the numbers to yours.</p>
+        </field>
     </record>
 
     <!-- ============================= Rule ============================== -->
@@ -414,6 +422,10 @@
         <field name="name">Rule Categories</field>
         <field name="res_model">hm.salary.rule.category</field>
         <field name="view_mode">list</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Categories group payslip lines</p>
+            <p>The standard five are created for you. BASIC, GROSS and NET also feed the totals shown on each payslip.</p>
+        </field>
     </record>
 
     <!-- ============================ Wizard ============================= -->

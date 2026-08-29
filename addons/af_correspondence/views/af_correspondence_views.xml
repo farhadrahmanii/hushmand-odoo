@@ -170,6 +170,10 @@
         <field name="view_mode">list,form</field>
         <field name="domain">[('direction', '=', 'incoming')]</field>
         <field name="context">{'default_direction': 'incoming', 'search_default_open': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Register an incoming letter</p>
+            <p>It receives the next number in the register automatically. Attach the scan so the letter can always be found again.</p>
+        </field>
     </record>
 
     <record id="action_af_correspondence_outgoing" model="ir.actions.act_window">
@@ -178,6 +182,10 @@
         <field name="view_mode">list,form</field>
         <field name="domain">[('direction', '=', 'outgoing')]</field>
         <field name="context">{'default_direction': 'outgoing', 'search_default_open': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Register an outgoing letter</p>
+            <p>The number is stamped in order. Record the letter here before it leaves the office.</p>
+        </field>
     </record>
 
     <menuitem id="menu_af_correspondence_root" name="Correspondence" sequence="93"/>

@@ -49,6 +49,9 @@ notes whether a receipt was signed.
         "data/ir_sequence_data.xml",
         "views/af_zakat_views.xml",
     ],
+    "demo": [
+        "demo/af_zakat_demo.xml",
+    ],
     "installable": True,
     "application": True,
     "auto_install": False,

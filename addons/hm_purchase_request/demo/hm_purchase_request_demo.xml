@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Loaded only when the database was created with demonstration data.
+
+         The approval process ships ARCHIVED on purpose: an active process
+         would silently start routing real submissions. Activating it is the
+         demo's first exercise. -->
+
+    <record id="demo_process" model="hm.approval.process">
+        <field name="name">Purchase request approval (Demo -- activate to use)</field>
+        <field name="active" eval="False"/>
+        <field name="model_id" ref="model_hm_purchase_request"/>
+        <field name="description">A two-step example chain. Open it, press
+the archive toggle to activate it, and submitted purchase requests will
+start flowing through it.</field>
+    </record>
+    <record id="demo_step_supervisor" model="hm.approval.step">
+        <field name="process_id" ref="demo_process"/>
+        <field name="name">Supervisor</field>
+        <field name="sequence">10</field>
+        <field name="approver_type">group</field>
+        <field name="approver_group_id" ref="purchase.group_purchase_manager"/>
+    </record>
+    <record id="demo_step_director" model="hm.approval.step">
+        <field name="process_id" ref="demo_process"/>
+        <field name="name">Director</field>
+        <field name="sequence">20</field>
+        <field name="approver_type">group</field>
+        <field name="approver_group_id" ref="base.group_system"/>
+        <field name="require_comment_on_reject" eval="True"/>
+    </record>
+
+    <record id="demo_request" model="hm.purchase.request">
+        <field name="reason">The finance office printer has failed beyond
+repair; vouchers cannot be printed. (Demo)</field>
+        <field name="line_ids" eval="[
+            (0, 0, {'name': 'Laser printer, duplex', 'product_qty': 1.0, 'price_unit': 18000.0}),
+            (0, 0, {'name': 'Toner cartridge', 'product_qty': 4.0, 'price_unit': 2500.0}),
+        ]"/>
+    </record>
+</odoo>

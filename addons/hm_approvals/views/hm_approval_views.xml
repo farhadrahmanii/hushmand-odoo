@@ -259,6 +259,10 @@
         <field name="res_model">hm.approval.request</field>
         <field name="view_mode">list,form</field>
         <field name="context">{'search_default_pending': 1}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Nothing waiting here yet</p>
+            <p>Approval requests appear here by themselves when a document is submitted. Your own queue is under Waiting on Me.</p>
+        </field>
     </record>
 
     <record id="action_hm_approval_my_approvals" model="ir.actions.act_window">

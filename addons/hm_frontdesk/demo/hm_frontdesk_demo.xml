@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Loaded only when the database was created with demonstration data.
+         One visitor inside the building and one expected later today. -->
+    <record id="demo_visitor_on_site" model="hm.visitor">
+        <field name="name">Eng. Sharif Rahimi (Demo)</field>
+        <field name="organisation">Kabul Power Services</field>
+        <field name="purpose">Generator inspection</field>
+        <field name="state">on_site</field>
+        <field name="check_in" eval="(DateTime.now() + relativedelta(hours=-1)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="badge_number">V-04</field>
+    </record>
+    <record id="demo_visitor_expected" model="hm.visitor">
+        <field name="name">Mrs. Laila Karimi (Demo)</field>
+        <field name="organisation">Aria Consulting</field>
+        <field name="purpose">Interview</field>
+        <field name="expected_date" eval="(DateTime.now() + relativedelta(hours=3)).strftime('%Y-%m-%d %H:%M:%S')"/>
+    </record>
+</odoo>
