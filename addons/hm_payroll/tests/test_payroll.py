@@ -18,6 +18,13 @@ class TestPayroll(AccountTestInvoicingCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
+        # AccountTestInvoicingCommon runs as an accounting user, and payroll
+        # is HR work: without HR rights the employee cannot even be created.
+        # Running the whole suite as that user also proves the module's ACLs
+        # work for a person, not just for the superuser.
+        cls.env.ref("hr.group_hr_manager").sudo().write(
+            {"user_ids": [(4, cls.env.user.id)]}
+        )
         cls.company = cls.env.company
         cls.journal = cls.env["account.journal"].search(
             [("type", "=", "general"), ("company_id", "=", cls.company.id)],
