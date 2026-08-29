@@ -129,8 +129,11 @@ class AfComparativeForm(models.Model):
              "the sentence an auditor reads.",
     )
     not_lowest = fields.Boolean(
-        compute="_compute_quote_stats",
+        compute="_compute_not_lowest",
+        store=True,
         string="Not the Lowest",
+        help="Stored so the search filter can find these forms; this flag is "
+             "what an auditor filters on.",
     )
 
     state = fields.Selection(
@@ -150,18 +153,30 @@ class AfComparativeForm(models.Model):
     # Computes
     # ------------------------------------------------------------------
 
+    # Split deliberately: not_lowest is stored (the search filter needs it),
+    # the other two are not. Sharing one method means reading a count can
+    # trigger a write to the stored value, which Odoo warns about.
+
     @api.depends("quote_ids.total_amount", "selected_quote_id")
     def _compute_quote_stats(self):
         for form in self:
-            quotes = form.quote_ids.filtered(lambda q: q.total_amount > 0)
             form.quote_count = len(form.quote_ids)
-            lowest = min(quotes, key=lambda q: q.total_amount) if quotes else False
-            form.lowest_quote_id = lowest
+            form.lowest_quote_id = form._lowest_quote()
+
+    @api.depends("quote_ids.total_amount", "selected_quote_id")
+    def _compute_not_lowest(self):
+        for form in self:
+            lowest = form._lowest_quote()
             form.not_lowest = bool(
                 form.selected_quote_id
                 and lowest
                 and form.selected_quote_id != lowest
             )
+
+    def _lowest_quote(self):
+        self.ensure_one()
+        quotes = self.quote_ids.filtered(lambda q: q.total_amount > 0)
+        return min(quotes, key=lambda q: q.total_amount) if quotes else False
 
     @api.model_create_multi
     def create(self, vals_list):
