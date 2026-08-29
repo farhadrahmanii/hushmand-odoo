@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- noupdate: a customer will add allowances and change wording. An
+             upgrade must not overwrite the structure their payroll runs on. -->
+
+        <record id="structure_af_monthly" model="hm.payroll.structure">
+            <field name="name">Afghanistan — Monthly Salary</field>
+            <field name="code">AF_MONTHLY</field>
+            <field name="note">A monthly salary taxed on the Afghan
+withholding scale. Add allowances as further rules in the Allowance category;
+they land in the gross and are taxed with it, which is how salary allowances
+are treated unless a specific exemption applies.</field>
+        </record>
+
+        <record id="rule_basic" model="hm.salary.rule">
+            <field name="name">Basic Salary</field>
+            <field name="code">BASIC</field>
+            <field name="sequence">10</field>
+            <field name="structure_id" ref="structure_af_monthly"/>
+            <field name="category_id" ref="hm_payroll.category_basic"/>
+            <field name="condition_select">always</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python">result = version.wage</field>
+        </record>
+
+        <record id="rule_allowance" model="hm.salary.rule">
+            <field name="name">Allowances</field>
+            <field name="code">ALW</field>
+            <field name="sequence">50</field>
+            <field name="structure_id" ref="structure_af_monthly"/>
+            <field name="category_id" ref="hm_payroll.category_allowance"/>
+            <field name="condition_select">python</field>
+            <field name="condition_python">inputs.get('ALW', 0) != 0</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python">result = inputs.get('ALW', 0)</field>
+            <field name="note">Driven by a payslip input coded ALW, so a
+one-off transport or fuel allowance can be entered on the slip without
+changing anyone's contract. Standing allowances are better added as their own
+rule.</field>
+        </record>
+
+        <record id="rule_gross" model="hm.salary.rule">
+            <field name="name">Gross</field>
+            <field name="code">GROSS</field>
+            <field name="sequence">100</field>
+            <field name="structure_id" ref="structure_af_monthly"/>
+            <field name="category_id" ref="hm_payroll.category_gross"/>
+            <field name="condition_select">always</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python">result = categories['BASIC'] + categories['ALW']</field>
+        </record>
+
+        <record id="rule_income_tax" model="hm.salary.rule">
+            <field name="name">Income Tax Withheld</field>
+            <field name="code">TAX</field>
+            <field name="sequence">150</field>
+            <field name="structure_id" ref="structure_af_monthly"/>
+            <field name="category_id" ref="hm_payroll.category_deduction"/>
+            <field name="condition_select">always</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python">result = -af_income_tax(categories['GROSS'])</field>
+            <field name="note">af_income_tax() reads the tax scale in force
+for this payslip's period. It converts to afghani first if the company keeps
+its books in another currency, because the tax is assessed in afghani. Do not
+replace this with a fixed percentage: the scale is progressive, so a flat rate
+is wrong at every salary except one.</field>
+        </record>
+
+        <record id="rule_net" model="hm.salary.rule">
+            <field name="name">Net Salary</field>
+            <field name="code">NET</field>
+            <field name="sequence">200</field>
+            <field name="structure_id" ref="structure_af_monthly"/>
+            <field name="category_id" ref="hm_payroll.category_net"/>
+            <field name="condition_select">always</field>
+            <field name="amount_select">code</field>
+            <field name="amount_python">result = categories['GROSS'] + categories['DED']</field>
+        </record>
+
+    </data>
+</odoo>

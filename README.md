@@ -86,13 +86,14 @@ python tools/verify_js_python_parity.py
 
 ## Modules
 
-All 19 install and pass their tests on Odoo 19 in CI (461 tests).
+All 20 install and pass their tests on Odoo 19 in CI (497 tests).
 
 | Module | Line | What it does | Tests |
 |--------|------|--------------|-------|
 | `af_correspondence` | Afghanistan | Incoming and outgoing official letters, numbered in order | 17 |
 | `af_dual_currency` | Afghanistan | One agreed AFN/USD rate per month, locked once reported, with totals shown in both currencies | 29 |
 | `af_hr` | Afghanistan | Tazkira, father and grandfather names, Afghan addresses, ID cards and disciplinary actions | 23 |
+| `af_hr_payroll` | Afghanistan | Afghan wage withholding tax on a dated, editable scale, with salaries paid in dollars taxed in afghani | 36 |
 | `af_jalali` | Afghanistan | Hijri-Shamsi dates across Odoo, with Afghan and Iranian month names | 62 |
 | `af_l10n_account` | Afghanistan | Chart of accounts and taxes for Afghanistan | 15 |
 | `af_l10n_base` | Afghanistan | Afghan provinces and districts, tazkira and TIN fields, trilingual and ready to use | 31 |

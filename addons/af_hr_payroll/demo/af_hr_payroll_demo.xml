@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Loaded only when the database was created with demonstration data.
+
+         A superseded scale sitting beside the current one, because that is
+         the thing about this module worth seeing: scales are not edited when
+         the law changes, they are closed off and replaced. A payslip for a
+         period this scale covered is still taxed by this scale, and reopening
+         it years later does not quietly retax it at today's rates. -->
+
+    <record id="demo_tax_scale_superseded" model="af.income.tax.scale">
+        <field name="name">Afghanistan wage withholding (superseded example)</field>
+        <field name="date_from">2023-01-01</field>
+        <field name="date_to">2023-12-31</field>
+        <field name="currency_id" ref="base.AFN"/>
+        <field name="note">An example of a closed scale. It is not a record of
+any real historical rate — it exists so the dating is visible on a demo
+database. Delete it before setting up a real company.</field>
+    </record>
+
+    <record id="demo_bracket_1" model="af.income.tax.bracket">
+        <field name="scale_id" ref="demo_tax_scale_superseded"/>
+        <field name="amount_from">0</field>
+        <field name="amount_to">5000</field>
+        <field name="base_amount">0</field>
+        <field name="rate">0</field>
+    </record>
+    <record id="demo_bracket_2" model="af.income.tax.bracket">
+        <field name="scale_id" ref="demo_tax_scale_superseded"/>
+        <field name="amount_from">5000</field>
+        <field name="amount_to">12500</field>
+        <field name="base_amount">0</field>
+        <field name="rate">2</field>
+    </record>
+    <record id="demo_bracket_3" model="af.income.tax.bracket">
+        <field name="scale_id" ref="demo_tax_scale_superseded"/>
+        <field name="amount_from">12500</field>
+        <field name="amount_to">0</field>
+        <field name="base_amount">150</field>
+        <field name="rate">10</field>
+    </record>
+
+</odoo>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!-- noupdate: this is a starting point, not a managed table. Once a
+             customer has corrected a rate or closed the scale off with an end
+             date, a module upgrade must not quietly put the old figures back.
+
+             CONFIRM THE RATES BEFORE RUNNING REAL PAYROLL. These are the
+             published monthly withholding brackets for salaried income, and
+             they are supplied so a new database computes something sensible
+             on day one. They are not a substitute for the current Income Tax
+             Law, and Hushmand does not warrant them. Edit them in Payroll >
+             Configuration > Income Tax Scales. -->
+
+        <record id="tax_scale_af" model="af.income.tax.scale">
+            <field name="name">Afghanistan wage withholding (monthly)</field>
+            <field name="date_from">2024-01-01</field>
+            <field name="currency_id" ref="base.AFN"/>
+            <field name="note">Monthly withholding brackets for salaried
+income, in afghani. Supplied so a new database computes something sensible
+immediately. Confirm them against the Income Tax Law in force before running
+real payroll, and when the rates change, close this scale with an end date and
+create a new one rather than editing these figures — payslips already issued
+should stay taxed the way they were taxed.</field>
+        </record>
+
+        <record id="tax_bracket_1" model="af.income.tax.bracket">
+            <field name="scale_id" ref="tax_scale_af"/>
+            <field name="amount_from">0</field>
+            <field name="amount_to">5000</field>
+            <field name="base_amount">0</field>
+            <field name="rate">0</field>
+        </record>
+        <record id="tax_bracket_2" model="af.income.tax.bracket">
+            <field name="scale_id" ref="tax_scale_af"/>
+            <field name="amount_from">5000</field>
+            <field name="amount_to">12500</field>
+            <field name="base_amount">0</field>
+            <field name="rate">2</field>
+        </record>
+        <record id="tax_bracket_3" model="af.income.tax.bracket">
+            <field name="scale_id" ref="tax_scale_af"/>
+            <field name="amount_from">12500</field>
+            <field name="amount_to">100000</field>
+            <!-- 2% of the 7,500 inside the bracket below. Each base_amount is
+                 the tax already due at this bracket's floor, so the scale is
+                 continuous: a salary one afghani over a boundary is taxed one
+                 afghani's worth more, not a whole band more. -->
+            <field name="base_amount">150</field>
+            <field name="rate">10</field>
+        </record>
+        <record id="tax_bracket_4" model="af.income.tax.bracket">
+            <field name="scale_id" ref="tax_scale_af"/>
+            <field name="amount_from">100000</field>
+            <field name="amount_to">0</field>
+            <!-- 150 + 10% of the 87,500 inside the bracket below. -->
+            <field name="base_amount">8900</field>
+            <field name="rate">20</field>
+        </record>
+
+    </data>
+</odoo>

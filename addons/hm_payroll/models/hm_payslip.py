@@ -250,6 +250,27 @@ class HmPayslip(models.Model):
             })
         return True
 
+    def _rule_eval_context(self, categories, inputs):
+        """What a salary rule can see when it is evaluated.
+
+        Rule code is written by a payroll manager, but evaluated by whichever
+        officer computes the slip -- and the wage field is HR-manager-gated.
+        The records are elevated only inside the evaluation context, never
+        handed back to the caller.
+
+        Localization modules extend this to hand rules a helper rather than
+        making every customer paste a tax formula into a text field. The
+        Afghan payroll module adds an income-tax function this way.
+        """
+        self.ensure_one()
+        return {
+            "employee": self.employee_id.sudo(),
+            "version": self.version_id.sudo(),
+            "payslip": self,
+            "categories": categories,
+            "inputs": inputs,
+        }
+
     def _compute_lines(self):
         """Run the structure's rules in order and return line values.
 
@@ -263,17 +284,7 @@ class HmPayslip(models.Model):
             for line in self.input_line_ids
             if line.code
         }
-        # Rule code is written by a payroll manager, but evaluated by
-        # whichever officer computes the slip -- and the wage field is
-        # HR-manager-gated. The records are elevated only inside the
-        # evaluation context, never handed back to the caller.
-        localdict = {
-            "employee": self.employee_id.sudo(),
-            "version": self.version_id.sudo(),
-            "payslip": self,
-            "categories": categories,
-            "inputs": inputs,
-        }
+        localdict = self._rule_eval_context(categories, inputs)
         vals_list = []
         rules = self.structure_id.rule_ids.filtered("active").sorted(
             key=lambda r: (r.sequence, r.id)

@@ -30,6 +30,7 @@ ICONS = {
     "af_correspondence":   ("CR", "#B23A2E"),
     "af_dual_currency":    ("FX", "#C4761B"),
     "af_hr":               ("HR", "#8E442A"),
+    "af_hr_payroll":       ("PT", "#A85C1F"),
     "af_jalali":           ("JL", "#A03050"),
     "af_l10n_account":     ("AC", "#7A5C1E"),
     "af_l10n_base":        ("AF", "#6B3F2A"),

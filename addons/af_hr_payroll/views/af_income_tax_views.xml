@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="af_income_tax_scale_view_list" model="ir.ui.view">
+        <field name="name">af.income.tax.scale.list</field>
+        <field name="model">af.income.tax.scale</field>
+        <field name="arch" type="xml">
+            <list string="Income Tax Scales" decoration-muted="not active">
+                <field name="name"/>
+                <field name="date_from"/>
+                <field name="date_to"/>
+                <field name="currency_id"/>
+                <field name="company_id" groups="base.group_multi_company" optional="hide"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="af_income_tax_scale_view_form" model="ir.ui.view">
+        <field name="name">af.income.tax.scale.form</field>
+        <field name="model">af.income.tax.scale</field>
+        <field name="arch" type="xml">
+            <form string="Income Tax Scale">
+                <sheet>
+                    <widget name="web_ribbon" title="Archived"
+                            bg_color="text-bg-danger" invisible="active"/>
+                    <div class="oe_title">
+                        <label for="name"/>
+                        <h1><field name="name"
+                                   placeholder="Wage withholding, 1404"/></h1>
+                    </div>
+                    <group>
+                        <group string="In Force">
+                            <field name="date_from"/>
+                            <field name="date_to"
+                                   placeholder="Empty while current"/>
+                        </group>
+                        <group string="Stated In">
+                            <field name="currency_id"
+                                   options="{'no_create': True}"/>
+                            <field name="company_id"
+                                   groups="base.group_multi_company"/>
+                            <field name="active" widget="boolean_toggle"/>
+                        </group>
+                    </group>
+
+                    <div class="alert alert-warning" role="alert">
+                        When rates change, close this scale with an end date
+                        and create a new one. Editing these figures retaxes
+                        every payslip that is recomputed afterwards, including
+                        ones already issued.
+                    </div>
+
+                    <field name="bracket_ids">
+                        <list string="Brackets" editable="bottom">
+                            <field name="amount_from"/>
+                            <field name="amount_to"/>
+                            <field name="base_amount"/>
+                            <field name="rate"/>
+                            <field name="currency_id" column_invisible="True"/>
+                        </list>
+                    </field>
+                    <div class="text-muted">
+                        Each bracket has to start exactly where the one below
+                        it ends, the lowest starts at zero, and the highest is
+                        left open by setting its ceiling to zero. The fixed
+                        amount is the tax already due at the bracket's floor,
+                        so the rate applies only to the part of the salary
+                        inside the bracket.
+                    </div>
+
+                    <group string="Notes">
+                        <field name="note" nolabel="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_af_income_tax_scale" model="ir.actions.act_window">
+        <field name="name">Income Tax Scales</field>
+        <field name="res_model">af.income.tax.scale</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">Set up an income tax scale</p>
+            <p>A scale is the bracket table used to withhold tax from salaries,
+               and it is dated, so a payslip for last year stays taxed the way
+               last year was taxed.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_af_income_tax_scale" name="Income Tax Scales"
+              parent="hm_payroll.menu_hm_payroll_config"
+              action="action_af_income_tax_scale" sequence="30"/>
+
+</odoo>
