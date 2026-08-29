@@ -1,0 +1,536 @@
+# Part of hm_payroll. See LICENSE file for full copyright and licensing details.
+"""Payslips, their lines, their inputs, and the batch that groups them.
+
+The lifecycle is deliberate: **compute** builds the lines and writes nothing
+anywhere else; **confirm** freezes the slip and creates a *draft* journal
+entry; an accountant posts that entry; **mark paid** records that the money
+went out. Nothing reaches the ledger without a person deciding it should.
+"""
+
+from collections import defaultdict
+
+from odoo import _, api, fields, models
+from odoo.exceptions import UserError
+from odoo.tools import date_utils, format_date
+
+
+class HmPayslip(models.Model):
+    _name = "hm.payslip"
+    _description = "Payslip"
+    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _order = "date_to desc, id desc"
+
+    name = fields.Char(compute="_compute_name", store=True)
+    number = fields.Char(
+        string="Reference", readonly=True, copy=False, index=True,
+    )
+    employee_id = fields.Many2one(
+        comodel_name="hr.employee",
+        string="Employee",
+        required=True,
+        tracking=True,
+        index=True,
+    )
+    version_id = fields.Many2one(
+        comodel_name="hr.version",
+        string="Contract Version",
+        compute="_compute_version",
+        store=True,
+        readonly=False,
+        domain="[('employee_id', '=', employee_id)]",
+        help="The contract version whose wage and terms the rules read. "
+             "Defaults to the employee's current version.",
+    )
+    structure_id = fields.Many2one(
+        comodel_name="hm.payroll.structure",
+        string="Salary Structure",
+        required=True,
+        tracking=True,
+    )
+    date_from = fields.Date(
+        string="From",
+        required=True,
+        default=lambda self: fields.Date.context_today(self).replace(day=1),
+    )
+    date_to = fields.Date(
+        string="To",
+        required=True,
+        default=lambda self: date_utils.end_of(
+            fields.Date.context_today(self), "month"
+        ),
+    )
+    company_id = fields.Many2one(
+        comodel_name="res.company",
+        required=True,
+        default=lambda self: self.env.company,
+    )
+    currency_id = fields.Many2one(
+        related="company_id.currency_id", readonly=True,
+    )
+    run_id = fields.Many2one(
+        comodel_name="hm.payslip.run",
+        string="Batch",
+        ondelete="set null",
+        index="btree_not_null",
+    )
+
+    state = fields.Selection(
+        selection=[
+            ("draft", "Draft"),
+            ("done", "Confirmed"),
+            ("paid", "Paid"),
+            ("cancelled", "Cancelled"),
+        ],
+        default="draft",
+        required=True,
+        tracking=True,
+        index=True,
+    )
+    line_ids = fields.One2many(
+        comodel_name="hm.payslip.line",
+        inverse_name="payslip_id",
+        string="Lines",
+    )
+    input_line_ids = fields.One2many(
+        comodel_name="hm.payslip.input",
+        inverse_name="payslip_id",
+        string="Other Inputs",
+    )
+    move_id = fields.Many2one(
+        comodel_name="account.move",
+        string="Journal Entry",
+        readonly=True,
+        copy=False,
+        index="btree_not_null",
+    )
+
+    basic_wage = fields.Monetary(
+        string="Basic", compute="_compute_summary", store=True,
+    )
+    gross_wage = fields.Monetary(
+        string="Gross", compute="_compute_summary", store=True,
+    )
+    net_wage = fields.Monetary(
+        string="Net", compute="_compute_summary", store=True,
+    )
+    notes = fields.Text()
+
+    _dates_ordered = models.Constraint(
+        "CHECK (date_from <= date_to)",
+        "A payslip period cannot end before it starts.",
+    )
+
+    # ------------------------------------------------------------------
+    # Computes
+    # ------------------------------------------------------------------
+
+    @api.depends("employee_id", "date_to")
+    def _compute_name(self):
+        for slip in self:
+            if slip.employee_id and slip.date_to:
+                slip.name = _("Salary Slip of %(employee)s for %(month)s") % {
+                    "employee": slip.employee_id.name,
+                    "month": format_date(
+                        self.env, slip.date_to, date_format="MMMM y"
+                    ),
+                }
+            else:
+                slip.name = _("Salary Slip")
+
+    @api.depends("employee_id")
+    def _compute_version(self):
+        for slip in self:
+            if not slip.version_id or (
+                slip.version_id.employee_id != slip.employee_id
+            ):
+                slip.version_id = slip.employee_id.version_id
+
+    @api.depends("line_ids.total", "line_ids.category_id.code")
+    def _compute_summary(self):
+        for slip in self:
+            totals = defaultdict(float)
+            for line in slip.line_ids:
+                totals[line.category_id.code] += line.total
+            slip.basic_wage = totals.get("BASIC", 0.0)
+            slip.gross_wage = totals.get("GROSS", 0.0)
+            slip.net_wage = totals.get("NET", 0.0)
+
+    @api.onchange("employee_id")
+    def _onchange_employee(self):
+        for slip in self:
+            if slip.employee_id and not slip.structure_id:
+                structures = self.env["hm.payroll.structure"].search(
+                    [("company_id", "in", [self.env.company.id, False])]
+                )
+                structure_type = slip.version_id.structure_type_id
+                slip.structure_id = (
+                    structures.filtered(
+                        lambda s: s.type_id == structure_type
+                    )[:1]
+                    or structures[:1]
+                )
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+            if not vals.get("number"):
+                vals["number"] = (
+                    self.env["ir.sequence"].next_by_code("hm.payslip") or "/"
+                )
+        return super().create(vals_list)
+
+    # ------------------------------------------------------------------
+    # Computation
+    # ------------------------------------------------------------------
+
+    def action_compute_sheet(self):
+        for slip in self:
+            if slip.state != "draft":
+                raise UserError(
+                    _("%s is not a draft. Only a draft payslip can be "
+                      "recomputed.") % slip.display_name
+                )
+            if not slip.version_id:
+                raise UserError(
+                    _("%s has no contract version to read the wage from.")
+                    % slip.employee_id.name
+                )
+            slip.line_ids.unlink()
+            slip.write({
+                "line_ids": [(0, 0, vals) for vals in slip._compute_lines()],
+            })
+        return True
+
+    def _compute_lines(self):
+        """Run the structure's rules in order and return line values.
+
+        Each rule sees ``categories``, the running totals of everything
+        computed before it -- the ordering is the arithmetic.
+        """
+        self.ensure_one()
+        categories = defaultdict(float)
+        inputs = {
+            line.code: line.amount
+            for line in self.input_line_ids
+            if line.code
+        }
+        localdict = {
+            "employee": self.employee_id,
+            "version": self.version_id,
+            "payslip": self,
+            "categories": categories,
+            "inputs": inputs,
+        }
+        vals_list = []
+        rules = self.structure_id.rule_ids.filtered("active").sorted(
+            key=lambda r: (r.sequence, r.id)
+        )
+        for rule in rules:
+            localdict.update(
+                {"result": None, "result_qty": 1.0, "result_rate": 100.0}
+            )
+            if not rule._satisfies_condition(localdict):
+                continue
+            amount, quantity, rate = rule._compute_amount(localdict)
+            total = quantity * amount * rate / 100.0
+            categories[rule.category_id.code] += total
+            vals_list.append({
+                "rule_id": rule.id,
+                "sequence": rule.sequence,
+                "code": rule.code,
+                "name": rule.name,
+                "category_id": rule.category_id.id,
+                "quantity": quantity,
+                "rate": rate,
+                "amount": amount,
+            })
+        return vals_list
+
+    # ------------------------------------------------------------------
+    # Workflow
+    # ------------------------------------------------------------------
+
+    def action_confirm(self):
+        for slip in self:
+            if slip.state != "draft":
+                raise UserError(
+                    _("Only a draft payslip can be confirmed.")
+                )
+            if not slip.line_ids:
+                raise UserError(
+                    _("Compute %s before confirming it.") % slip.display_name
+                )
+            move = slip._create_move()
+            slip.write({
+                "state": "done",
+                "move_id": move.id if move else False,
+            })
+        return True
+
+    def _create_move(self):
+        """Create the draft journal entry, aggregated per account.
+
+        Each line's total goes to its rule's debit account as a debit and to
+        its credit account as a credit; a negative total flips the side. If
+        no rule carries an account the slip posts nothing, and if the
+        configured accounts do not balance the confirmation is refused --
+        an unbalanced payroll entry is a configuration error, not something
+        to paper over with a plug account.
+        """
+        self.ensure_one()
+        currency = self.currency_id
+        debit_totals = defaultdict(float)
+        credit_totals = defaultdict(float)
+        for line in self.line_ids:
+            if currency.is_zero(line.total):
+                continue
+            rule = line.rule_id
+            if rule.account_debit_id:
+                debit_totals[rule.account_debit_id.id] += line.total
+            if rule.account_credit_id:
+                credit_totals[rule.account_credit_id.id] += line.total
+
+        if not debit_totals and not credit_totals:
+            return False
+        if not self.structure_id.journal_id:
+            raise UserError(
+                _("%(structure)s has salary rules with accounts but no "
+                  "salary journal. Set the journal on the structure.")
+                % {"structure": self.structure_id.name}
+            )
+
+        debit_sum = sum(debit_totals.values())
+        credit_sum = sum(credit_totals.values())
+        if currency.compare_amounts(debit_sum, credit_sum) != 0:
+            raise UserError(
+                _("The journal entry for %(slip)s does not balance: "
+                  "%(debit)s to debit against %(credit)s to credit. Check "
+                  "the debit and credit accounts on the structure's rules.")
+                % {
+                    "slip": self.display_name,
+                    "debit": currency.format(debit_sum),
+                    "credit": currency.format(credit_sum),
+                }
+            )
+
+        label = _("Payroll: %(number)s (%(employee)s)") % {
+            "number": self.number, "employee": self.employee_id.name,
+        }
+        line_vals = []
+        for account_id, amount in debit_totals.items():
+            amount = currency.round(amount)
+            if currency.is_zero(amount):
+                continue
+            line_vals.append((0, 0, {
+                "name": label,
+                "account_id": account_id,
+                "debit": amount if amount > 0 else 0.0,
+                "credit": -amount if amount < 0 else 0.0,
+            }))
+        for account_id, amount in credit_totals.items():
+            amount = currency.round(amount)
+            if currency.is_zero(amount):
+                continue
+            line_vals.append((0, 0, {
+                "name": label,
+                "account_id": account_id,
+                "debit": -amount if amount < 0 else 0.0,
+                "credit": amount if amount > 0 else 0.0,
+            }))
+        return self.env["account.move"].create({
+            "move_type": "entry",
+            "journal_id": self.structure_id.journal_id.id,
+            "date": self.date_to,
+            "ref": self.number,
+            "company_id": self.company_id.id,
+            "line_ids": line_vals,
+        })
+
+    def action_mark_paid(self):
+        for slip in self:
+            if slip.state != "done":
+                raise UserError(
+                    _("Only a confirmed payslip can be marked paid.")
+                )
+            slip.state = "paid"
+        return True
+
+    def action_cancel(self):
+        for slip in self:
+            if slip.move_id and slip.move_id.state == "posted":
+                raise UserError(
+                    _("The journal entry for %s is posted. Reverse it "
+                      "first, so the ledger keeps a record of both.")
+                    % slip.display_name
+                )
+            if slip.move_id:
+                slip.move_id.unlink()
+            slip.state = "cancelled"
+        return True
+
+    def action_reset_draft(self):
+        for slip in self:
+            if slip.state != "cancelled":
+                raise UserError(
+                    _("Only a cancelled payslip can go back to draft.")
+                )
+            slip.state = "draft"
+        return True
+
+    def unlink(self):
+        for slip in self:
+            if slip.state not in ("draft", "cancelled"):
+                raise UserError(
+                    _("%s is confirmed. Cancel it before deleting it.")
+                    % slip.display_name
+                )
+        return super().unlink()
+
+
+class HmPayslipLine(models.Model):
+    _name = "hm.payslip.line"
+    _description = "Payslip Line"
+    _order = "sequence, id"
+
+    payslip_id = fields.Many2one(
+        comodel_name="hm.payslip",
+        required=True,
+        ondelete="cascade",
+        index=True,
+    )
+    rule_id = fields.Many2one(
+        comodel_name="hm.salary.rule",
+        string="Rule",
+        required=True,
+        ondelete="restrict",
+    )
+    category_id = fields.Many2one(
+        comodel_name="hm.salary.rule.category",
+        string="Category",
+        required=True,
+    )
+    sequence = fields.Integer(default=100)
+    code = fields.Char(required=True)
+    name = fields.Char(required=True)
+    quantity = fields.Float(default=1.0)
+    rate = fields.Float(string="Rate (%)", default=100.0)
+    amount = fields.Monetary()
+    total = fields.Monetary(compute="_compute_total", store=True)
+    currency_id = fields.Many2one(
+        related="payslip_id.currency_id", readonly=True,
+    )
+    appears_on_payslip = fields.Boolean(
+        related="rule_id.appears_on_payslip", readonly=True,
+    )
+
+    @api.depends("quantity", "amount", "rate")
+    def _compute_total(self):
+        for line in self:
+            line.total = line.quantity * line.amount * line.rate / 100.0
+
+
+class HmPayslipInput(models.Model):
+    _name = "hm.payslip.input"
+    _description = "Payslip Input"
+    _order = "id"
+
+    payslip_id = fields.Many2one(
+        comodel_name="hm.payslip",
+        required=True,
+        ondelete="cascade",
+        index=True,
+    )
+    name = fields.Char(required=True)
+    code = fields.Char(
+        required=True,
+        help="How rules read this value, e.g. inputs.get('BONUS', 0.0).",
+    )
+    amount = fields.Monetary()
+    currency_id = fields.Many2one(
+        related="payslip_id.currency_id", readonly=True,
+    )
+
+
+class HmPayslipRun(models.Model):
+    _name = "hm.payslip.run"
+    _description = "Payslip Batch"
+    _order = "date_to desc, id desc"
+
+    name = fields.Char(required=True)
+    structure_id = fields.Many2one(
+        comodel_name="hm.payroll.structure",
+        string="Salary Structure",
+        required=True,
+    )
+    date_from = fields.Date(
+        string="From",
+        required=True,
+        default=lambda self: fields.Date.context_today(self).replace(day=1),
+    )
+    date_to = fields.Date(
+        string="To",
+        required=True,
+        default=lambda self: date_utils.end_of(
+            fields.Date.context_today(self), "month"
+        ),
+    )
+    company_id = fields.Many2one(
+        comodel_name="res.company",
+        required=True,
+        default=lambda self: self.env.company,
+    )
+    state = fields.Selection(
+        selection=[("draft", "Draft"), ("closed", "Closed")],
+        default="draft",
+        required=True,
+        index=True,
+    )
+    slip_ids = fields.One2many(
+        comodel_name="hm.payslip",
+        inverse_name="run_id",
+        string="Payslips",
+    )
+    slip_count = fields.Integer(compute="_compute_slip_count")
+
+    _dates_ordered = models.Constraint(
+        "CHECK (date_from <= date_to)",
+        "A batch period cannot end before it starts.",
+    )
+
+    @api.depends("slip_ids")
+    def _compute_slip_count(self):
+        for run in self:
+            run.slip_count = len(run.slip_ids)
+
+    def action_open_generate(self):
+        self.ensure_one()
+        if self.state != "draft":
+            raise UserError(_("%s is closed.") % self.name)
+        return {
+            "type": "ir.actions.act_window",
+            "name": _("Generate Payslips"),
+            "res_model": "hm.payslip.generate",
+            "view_mode": "form",
+            "target": "new",
+            "context": {"default_run_id": self.id},
+        }
+
+    def action_confirm_all(self):
+        for run in self:
+            drafts = run.slip_ids.filtered(lambda s: s.state == "draft")
+            if not drafts:
+                raise UserError(
+                    _("%s has no draft payslips to confirm.") % run.name
+                )
+            drafts.action_confirm()
+        return True
+
+    def action_close(self):
+        for run in self:
+            if any(slip.state == "draft" for slip in run.slip_ids):
+                raise UserError(
+                    _("Confirm or cancel every payslip in %s before closing "
+                      "it.") % run.name
+                )
+            run.state = "closed"
+        return True
