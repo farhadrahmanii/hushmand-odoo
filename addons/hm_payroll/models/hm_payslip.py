@@ -578,6 +578,9 @@ class HmPayslipInput(models.Model):
                       "payslip to draft first.")
                     % record.payslip_id.display_name
                 )
+
+
+class HmPayslipRun(models.Model):
     _name = "hm.payslip.run"
     _description = "Payslip Batch"
     _order = "date_to desc, id desc"
