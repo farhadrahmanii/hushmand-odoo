@@ -7,7 +7,7 @@ created at all, and a batch that cannot pay the same employee twice.
 """
 
 from odoo.addons.account.tests.common import AccountTestInvoicingCommon
-from odoo.exceptions import UserError
+from odoo.exceptions import UserError, ValidationError
 from odoo.tests import tagged
 from odoo.tools import mute_logger
 
@@ -18,13 +18,16 @@ class TestPayroll(AccountTestInvoicingCommon):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        # AccountTestInvoicingCommon runs as an accounting user, and payroll
-        # is HR work: without HR rights the employee cannot even be created.
-        # Running the whole suite as that user also proves the module's ACLs
-        # work for a person, not just for the superuser.
-        cls.env.ref("hr.group_hr_manager").sudo().write(
-            {"user_ids": [(4, cls.env.user.id)]}
+        # AccountTestInvoicingCommon runs as an accounting user. HR manager
+        # is needed to create the employee and write the wage; payroll
+        # manager is what the module's own ACLs check. Running the whole
+        # suite as that user proves the ACLs work for a person, not just
+        # for the superuser.
+        groups = (
+            cls.env.ref("hr.group_hr_manager")
+            + cls.env.ref("hm_payroll.group_payroll_manager")
         )
+        groups.sudo().write({"user_ids": [(4, cls.env.user.id)]})
         cls.company = cls.env.company
         cls.journal = cls.env["account.journal"].search(
             [("type", "=", "general"), ("company_id", "=", cls.company.id)],
@@ -278,6 +281,56 @@ class TestPayroll(AccountTestInvoicingCommon):
         slip.action_confirm()
         with self.assertRaises(UserError):
             slip.unlink()
+
+    def test_confirmed_slip_is_frozen_at_the_orm(self):
+        """The form's readonly attributes are suggestions; these guards are
+        the guarantee. Lines, inputs and the slip's identity must refuse
+        changes once the slip has left draft."""
+        slip = self._slip()
+        slip.action_compute_sheet()
+        slip.action_confirm()
+        with self.assertRaises(UserError):
+            slip.line_ids[0].unlink()
+        with self.assertRaises(UserError):
+            slip.line_ids[0].write({"amount": 1.0})
+        with self.assertRaises(UserError):
+            slip.write({"date_to": "2026-01-30"})
+        with self.assertRaises(UserError):
+            self.env["hm.payslip.input"].create({
+                "payslip_id": slip.id,
+                "name": "Late Bonus",
+                "code": "LATE",
+                "amount": 100.0,
+            })
+
+    def test_structure_of_another_company_is_refused(self):
+        company2 = self.env["res.company"].sudo().create({"name": "Branch"})
+        structure2 = self.env["hm.payroll.structure"].create({
+            "name": "Branch Salaries",
+            "company_id": company2.id,
+        })
+        with self.assertRaises(ValidationError):
+            self._slip(structure_id=structure2.id)
+
+    def test_version_follows_the_period(self):
+        """A raise given in February must not rewrite January. The payslip
+        reads the contract version in force during its period, which is the
+        whole point of hr.version being a dated timeline."""
+        self.employee.version_id.date_version = "2026-01-01"
+        self.employee.create_version({
+            "date_version": "2026-02-01",
+            "wage": 30000.0,
+        })
+
+        january = self._slip()
+        january.action_compute_sheet()
+        self.assertAlmostEqual(january.basic_wage, 20000.0)
+
+        february = self._slip(
+            date_from="2026-02-01", date_to="2026-02-28",
+        )
+        february.action_compute_sheet()
+        self.assertAlmostEqual(february.basic_wage, 30000.0)
 
     @mute_logger("odoo.sql_db")
     def test_period_dates_must_be_ordered(self):

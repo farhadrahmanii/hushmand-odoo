@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Payroll gets its own privilege. Salary data is the most sensitive
+         thing in the database; being an HR officer must not be enough to
+         read what everyone earns. -->
+
+    <record model="res.groups.privilege" id="res_groups_privilege_payroll">
+        <field name="name">Payroll</field>
+        <field name="sequence">85</field>
+        <field name="category_id" ref="base.module_category_human_resources"/>
+    </record>
+
+    <record id="group_payroll_user" model="res.groups">
+        <field name="name">Officer: Process payslips</field>
+        <field name="sequence">10</field>
+        <field name="privilege_id" ref="res_groups_privilege_payroll"/>
+        <field name="implied_ids" eval="[(6, 0, [ref('hr.group_hr_user')])]"/>
+        <field name="comment">Compute and confirm payslips and run batches.
+            Implies HR officer, because a payslip cannot be processed without
+            reading the employee's contract version.</field>
+    </record>
+
+    <record id="group_payroll_manager" model="res.groups">
+        <field name="name">Administrator</field>
+        <field name="sequence">20</field>
+        <field name="privilege_id" ref="res_groups_privilege_payroll"/>
+        <field name="implied_ids" eval="[(4, ref('group_payroll_user'))]"/>
+        <field name="user_ids" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+        <field name="comment">Configure salary structures, rules and
+            categories.</field>
+    </record>
+
+</odoo>

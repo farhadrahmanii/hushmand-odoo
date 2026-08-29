@@ -13,9 +13,14 @@ class HmPayslipGenerate(models.TransientModel):
         string="Batch",
         required=True,
     )
+    company_id = fields.Many2one(
+        related="run_id.company_id", readonly=True,
+    )
     employee_ids = fields.Many2many(
         comodel_name="hr.employee",
         string="Employees",
+        domain="['|', ('company_id', '=', False),"
+               " ('company_id', '=', company_id)]",
     )
 
     def action_generate(self):

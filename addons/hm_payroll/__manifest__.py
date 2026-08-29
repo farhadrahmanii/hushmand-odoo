@@ -48,6 +48,7 @@ engine stays generic so that it works anywhere.
     "license": "OPL-1",
     "depends": ["hr", "account", "mail"],
     "data": [
+        "security/hm_payroll_security.xml",
         "security/ir.model.access.csv",
         "data/ir_sequence_data.xml",
         "data/hm_salary_rule_category_data.xml",

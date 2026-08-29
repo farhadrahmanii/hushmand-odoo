@@ -51,8 +51,9 @@ class HmPayrollStructure(models.Model):
     )
     company_id = fields.Many2one(
         comodel_name="res.company",
-        required=True,
         default=lambda self: self.env.company,
+        help="Leave empty to share the structure across companies. Its "
+             "journal still ties each payslip to one company's books.",
     )
     journal_id = fields.Many2one(
         comodel_name="account.journal",

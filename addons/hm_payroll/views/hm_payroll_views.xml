@@ -86,7 +86,8 @@
                             <field name="gross_wage"/>
                             <field name="net_wage" class="fw-bold"/>
                         </group>
-                        <group string="Accounting">
+                        <group string="Accounting"
+                               groups="account.group_account_user">
                             <field name="move_id"/>
                         </group>
                     </group>
@@ -379,8 +380,7 @@
                                required="amount_select == 'percentage'"/>
                         <field name="amount_python"
                                invisible="amount_select != 'code'"
-                               required="amount_select == 'code'"
-                               widget="code" options="{'mode': 'python'}"/>
+                               required="amount_select == 'code'"/>
                     </group>
                     <group string="Accounting">
                         <field name="account_debit_id"
@@ -425,6 +425,7 @@
             <form string="Generate Payslips">
                 <group>
                     <field name="run_id" readonly="1"/>
+                    <field name="company_id" invisible="1"/>
                     <field name="employee_ids" widget="many2many_tags"/>
                 </group>
                 <p class="text-muted">
@@ -445,7 +446,7 @@
     <!-- ============================= Menus ============================= -->
 
     <menuitem id="menu_hm_payroll_root" name="Payroll"
-              sequence="86" groups="hr.group_hr_user"/>
+              sequence="86" groups="hm_payroll.group_payroll_user"/>
     <menuitem id="menu_hm_payslip" name="Payslips"
               parent="menu_hm_payroll_root" action="action_hm_payslip"
               sequence="10"/>
@@ -454,7 +455,7 @@
               sequence="20"/>
     <menuitem id="menu_hm_payroll_config" name="Configuration"
               parent="menu_hm_payroll_root" sequence="90"
-              groups="hr.group_hr_manager"/>
+              groups="hm_payroll.group_payroll_manager"/>
     <menuitem id="menu_hm_payroll_structure" name="Salary Structures"
               parent="menu_hm_payroll_config"
               action="action_hm_payroll_structure" sequence="10"/>

@@ -10,7 +10,7 @@ went out. Nothing reaches the ledger without a person deciding it should.
 from collections import defaultdict
 
 from odoo import _, api, fields, models
-from odoo.exceptions import UserError
+from odoo.exceptions import UserError, ValidationError
 from odoo.tools import date_utils, format_date
 
 
@@ -39,13 +39,16 @@ class HmPayslip(models.Model):
         readonly=False,
         domain="[('employee_id', '=', employee_id)]",
         help="The contract version whose wage and terms the rules read. "
-             "Defaults to the employee's current version.",
+             "Defaults to the version in force during the payslip period, "
+             "so a raise given in March does not rewrite January.",
     )
     structure_id = fields.Many2one(
         comodel_name="hm.payroll.structure",
         string="Salary Structure",
         required=True,
         tracking=True,
+        domain="['|', ('company_id', '=', False),"
+               " ('company_id', '=', company_id)]",
     )
     date_from = fields.Date(
         string="From",
@@ -119,6 +122,45 @@ class HmPayslip(models.Model):
         "CHECK (date_from <= date_to)",
         "A payslip period cannot end before it starts.",
     )
+    _number_uniq = models.Constraint(
+        "unique(number, company_id)",
+        "A payslip reference must be unique per company.",
+    )
+
+    # Frozen once the slip leaves draft. The form makes these readonly, but
+    # a view attribute is a suggestion; this is the guarantee.
+    _PROTECTED_AFTER_DRAFT = (
+        "employee_id", "version_id", "structure_id",
+        "date_from", "date_to", "company_id",
+    )
+
+    @api.constrains("company_id", "structure_id")
+    def _check_company_consistency(self):
+        for slip in self:
+            structure_company = slip.structure_id.company_id
+            if structure_company and structure_company != slip.company_id:
+                raise ValidationError(
+                    _("%(slip)s belongs to %(company)s but its salary "
+                      "structure belongs to %(other)s. A payslip cannot "
+                      "post into another company's books.")
+                    % {
+                        "slip": slip.display_name,
+                        "company": slip.company_id.name,
+                        "other": structure_company.name,
+                    }
+                )
+
+    def write(self, vals):
+        touched = [f for f in self._PROTECTED_AFTER_DRAFT if f in vals]
+        if touched:
+            frozen = self.filtered(lambda s: s.state != "draft")
+            if frozen:
+                raise UserError(
+                    _("%(slips)s left draft; the employee, structure and "
+                      "period are frozen. Reset to draft to change them.")
+                    % {"slips": ", ".join(frozen.mapped("display_name"))}
+                )
+        return super().write(vals)
 
     # ------------------------------------------------------------------
     # Computes
@@ -137,13 +179,20 @@ class HmPayslip(models.Model):
             else:
                 slip.name = _("Salary Slip")
 
-    @api.depends("employee_id")
+    @api.depends("employee_id", "date_to")
     def _compute_version(self):
+        """The version in force at the end of the period, not today's.
+
+        hr.version is a dated timeline precisely so that amendments keep
+        their history; a January payslip computed after a March raise must
+        still read January's wage.
+        """
         for slip in self:
-            if not slip.version_id or (
-                slip.version_id.employee_id != slip.employee_id
-            ):
-                slip.version_id = slip.employee_id.version_id
+            if not slip.employee_id:
+                slip.version_id = False
+                continue
+            date = slip.date_to or fields.Date.context_today(slip)
+            slip.version_id = slip.employee_id._get_version(date)
 
     @api.depends("line_ids.total", "line_ids.category_id.code")
     def _compute_summary(self):
@@ -214,9 +263,13 @@ class HmPayslip(models.Model):
             for line in self.input_line_ids
             if line.code
         }
+        # Rule code is written by a payroll manager, but evaluated by
+        # whichever officer computes the slip -- and the wage field is
+        # HR-manager-gated. The records are elevated only inside the
+        # evaluation context, never handed back to the caller.
         localdict = {
-            "employee": self.employee_id,
-            "version": self.version_id,
+            "employee": self.employee_id.sudo(),
+            "version": self.version_id.sudo(),
             "payslip": self,
             "categories": categories,
             "inputs": inputs,
@@ -232,7 +285,11 @@ class HmPayslip(models.Model):
             if not rule._satisfies_condition(localdict):
                 continue
             amount, quantity, rate = rule._compute_amount(localdict)
-            total = quantity * amount * rate / 100.0
+            # Rounded here so the category totals later rules read agree to
+            # the cent with the stored lines -- otherwise a NET computed
+            # from categories can differ from the sum of its parts and the
+            # journal entry fails at posting time.
+            total = self.currency_id.round(quantity * amount * rate / 100.0)
             categories[rule.category_id.code] += total
             vals_list.append({
                 "rule_id": rule.id,
@@ -292,11 +349,23 @@ class HmPayslip(models.Model):
 
         if not debit_totals and not credit_totals:
             return False
-        if not self.structure_id.journal_id:
+        journal = self.structure_id.journal_id.sudo()
+        if not journal:
             raise UserError(
                 _("%(structure)s has salary rules with accounts but no "
                   "salary journal. Set the journal on the structure.")
                 % {"structure": self.structure_id.name}
+            )
+        if journal.company_id != self.company_id:
+            raise UserError(
+                _("The salary journal %(journal)s belongs to %(other)s, "
+                  "not to %(company)s. A payslip cannot post into another "
+                  "company's books.")
+                % {
+                    "journal": journal.name,
+                    "other": journal.company_id.name,
+                    "company": self.company_id.name,
+                }
             )
 
         debit_sum = sum(debit_totals.values())
@@ -337,9 +406,13 @@ class HmPayslip(models.Model):
                 "debit": -amount if amount < 0 else 0.0,
                 "credit": amount if amount > 0 else 0.0,
             }))
-        return self.env["account.move"].create({
+        # Confirming a payslip is payroll work, not accounting work: the
+        # officer's right to do it is the payslip ACL, and the resulting
+        # entry is a draft an accountant still has to post. Created with
+        # sudo so a payroll officer without journal rights is not blocked.
+        return self.env["account.move"].sudo().create({
             "move_type": "entry",
-            "journal_id": self.structure_id.journal_id.id,
+            "journal_id": journal.id,
             "date": self.date_to,
             "ref": self.number,
             "company_id": self.company_id.id,
@@ -357,14 +430,15 @@ class HmPayslip(models.Model):
 
     def action_cancel(self):
         for slip in self:
-            if slip.move_id and slip.move_id.state == "posted":
+            move = slip.move_id.sudo()
+            if move and move.state == "posted":
                 raise UserError(
                     _("The journal entry for %s is posted. Reverse it "
                       "first, so the ledger keeps a record of both.")
                     % slip.display_name
                 )
-            if slip.move_id:
-                slip.move_id.unlink()
+            if move:
+                move.unlink()
             slip.state = "cancelled"
         return True
 
@@ -426,7 +500,36 @@ class HmPayslipLine(models.Model):
     @api.depends("quantity", "amount", "rate")
     def _compute_total(self):
         for line in self:
-            line.total = line.quantity * line.amount * line.rate / 100.0
+            total = line.quantity * line.amount * line.rate / 100.0
+            currency = line.payslip_id.currency_id
+            line.total = currency.round(total) if currency else total
+
+    # The form shows lines readonly; this is the actual guarantee. The
+    # engine only ever rebuilds lines while the slip is draft, so a guard
+    # on the parent's state cannot get in its way.
+
+    @api.model_create_multi
+    def create(self, vals_list):
+        records = super().create(vals_list)
+        records._check_payslip_is_draft()
+        return records
+
+    def write(self, vals):
+        self._check_payslip_is_draft()
+        return super().write(vals)
+
+    def unlink(self):
+        self._check_payslip_is_draft()
+        return super().unlink()
+
+    def _check_payslip_is_draft(self):
+        for line in self:
+            if line.payslip_id.state != "draft":
+                raise UserError(
+                    _("%s left draft; its lines are frozen. Reset the "
+                      "payslip to draft first.")
+                    % line.payslip_id.display_name
+                )
 
 
 class HmPayslipInput(models.Model):
@@ -450,8 +553,31 @@ class HmPayslipInput(models.Model):
         related="payslip_id.currency_id", readonly=True,
     )
 
+    # Changing an input after confirmation would leave the stored lines
+    # telling a different story from the inputs that produced them.
 
-class HmPayslipRun(models.Model):
+    @api.model_create_multi
+    def create(self, vals_list):
+        records = super().create(vals_list)
+        records._check_payslip_is_draft()
+        return records
+
+    def write(self, vals):
+        self._check_payslip_is_draft()
+        return super().write(vals)
+
+    def unlink(self):
+        self._check_payslip_is_draft()
+        return super().unlink()
+
+    def _check_payslip_is_draft(self):
+        for record in self:
+            if record.payslip_id.state != "draft":
+                raise UserError(
+                    _("%s left draft; its inputs are frozen. Reset the "
+                      "payslip to draft first.")
+                    % record.payslip_id.display_name
+                )
     _name = "hm.payslip.run"
     _description = "Payslip Batch"
     _order = "date_to desc, id desc"
@@ -461,6 +587,8 @@ class HmPayslipRun(models.Model):
         comodel_name="hm.payroll.structure",
         string="Salary Structure",
         required=True,
+        domain="['|', ('company_id', '=', False),"
+               " ('company_id', '=', company_id)]",
     )
     date_from = fields.Date(
         string="From",
@@ -496,6 +624,21 @@ class HmPayslipRun(models.Model):
         "CHECK (date_from <= date_to)",
         "A batch period cannot end before it starts.",
     )
+
+    @api.constrains("company_id", "structure_id")
+    def _check_company_consistency(self):
+        for run in self:
+            structure_company = run.structure_id.company_id
+            if structure_company and structure_company != run.company_id:
+                raise ValidationError(
+                    _("%(run)s belongs to %(company)s but its salary "
+                      "structure belongs to %(other)s.")
+                    % {
+                        "run": run.name,
+                        "company": run.company_id.name,
+                        "other": structure_company.name,
+                    }
+                )
 
     @api.depends("slip_ids")
     def _compute_slip_count(self):
