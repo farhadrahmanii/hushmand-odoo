@@ -46,8 +46,9 @@ jobs:
               meta = ast.literal_eval(src[src.index("{"):src.rindex("}") + 1])
               module = manifest.parent
               # Both keys: a demo file named in the manifest but absent fails
-              # the install just as hard as a missing data file, and demo data
-              # loads in this workflow because --without-demo is not passed.
+              # the install just as hard as a missing data file, for every
+              # customer who ticks "Load demonstration data". The demo job
+              # installs with --with-demo and proves each one loads.
               for key in ("data", "demo"):
                   for entry in meta.get(key, []):
                       if not (module / entry).is_file():
@@ -135,3 +136,80 @@ jobs:
             echo "::error::Odoo reported errors during install or tests"
             exit 1
           fi
+          # This job installs WITHOUT demo data (Odoo 19 defaults with_demo to
+          # False). Prove that: a customer who declines the samples must get a
+          # database with none of them in it.
+          if grep -qE "loading [a-z_]+/demo/" odoo.log; then
+            echo "::error::Demo data loaded in the no-demo job"
+            exit 1
+          fi
+
+  demo:
+    name: Install with demo data on Odoo 19
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: odoo
+          POSTGRES_PASSWORD: odoo
+          POSTGRES_DB: postgres
+        options: >-
+          --health-cmd "pg_isready -U odoo"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+    container:
+      image: odoo:19
+      options: --user root
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install the catalogue with demo data
+        # The other job proves the modules install clean. This one proves the
+        # samples a customer sees when they tick "Load demonstration data"
+        # actually install -- broken demo data breaks their very first login.
+        #
+        # Odoo 19 flipped this default: with_demo is False unless --with-demo
+        # is passed (older versions loaded demo unless --without-demo was).
+        # Without the flag these files are never exercised at all.
+        #
+        # Tests are deliberately not run here. They assert on record counts,
+        # and demo records would change those counts for reasons that have
+        # nothing to do with the code under test.
+        run: |
+          odoo -d demo --with-demo \
+            --db_host=postgres --db_user=odoo --db_password=odoo \
+            --data-dir=/tmp/odoo-data \
+            --addons-path=/usr/lib/python3/dist-packages/odoo/addons,$GITHUB_WORKSPACE/addons \
+            -i af_jalali,af_l10n_base,af_dual_currency,af_hr,hm_approvals,hm_purchase_request,hm_account_reports,hm_assets,hm_expiry_docs,af_liaison,af_correspondence,hm_frontdesk,hm_roster,af_zakat,hm_contracts,hm_license,af_l10n_account,af_procurement,hm_payroll,af_hr_payroll \
+            --stop-after-init --log-level=info 2>&1 | tee demo.log
+          if grep -qE "^[0-9-]+ [0-9:,]+ [0-9]+ (ERROR|CRITICAL)" demo.log; then
+            echo "::error::Odoo reported errors while installing demo data"
+            exit 1
+          fi
+
+      - name: Every declared demo file must actually have loaded
+        # A silent no-op is the failure mode that hid here for a whole day:
+        # the files existed, the manifests named them, CI was green, and not
+        # one of them had ever been loaded.
+        run: |
+          python3 - <<'PY'
+          import ast, pathlib, re, sys
+          declared = set()
+          for manifest in pathlib.Path("addons").glob("*/__manifest__.py"):
+              src = manifest.read_text(encoding="utf-8")
+              meta = ast.literal_eval(src[src.index("{"):src.rindex("}") + 1])
+              for entry in meta.get("demo", []):
+                  declared.add("%s/%s" % (manifest.parent.name, entry))
+          log = pathlib.Path("demo.log").read_text(encoding="utf-8", errors="replace")
+          loaded = set(re.findall(r"loading ([a-z0-9_]+/demo/[a-z0-9_]+\.xml)", log))
+          missing = sorted(declared - loaded)
+          if missing:
+              for m in missing:
+                  print("::error::declared as demo data but never loaded: %s" % m)
+              sys.exit(1)
+          print("all %d demo files loaded" % len(declared))
+          PY
