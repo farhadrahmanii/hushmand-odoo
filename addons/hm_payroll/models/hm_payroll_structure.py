@@ -204,9 +204,10 @@ class HmSalaryRule(models.Model):
                     safe_eval(self.amount_percentage_base or "0.0", localdict)
                 )
                 return base, 1.0, self.amount_percentage
-            safe_eval(
-                self.amount_python or "", localdict, mode="exec", nocopy=True
-            )
+            # Odoo 19's safe_eval always mutates the context it is given
+            # (the old nocopy parameter is gone), so 'result' lands straight
+            # in localdict.
+            safe_eval(self.amount_python or "", localdict, mode="exec")
             result = localdict.get("result")
             if result is None:
                 raise UserError(
