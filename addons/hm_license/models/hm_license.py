@@ -58,6 +58,17 @@ VENDOR_PUBLIC_KEY = PLACEHOLDER_PUBLIC_KEY
 #: Payload fields a licence must carry to be considered well-formed.
 REQUIRED_CLAIMS = ("licence_id", "customer", "modules", "expires")
 
+#: How long before expiry the warning starts.
+WARNING_DAYS = 30
+
+#: How long a lapsed licence keeps working before the gate closes.
+#:
+#: A licence that stops a payroll run on the morning it expires costs the
+#: customer far more than the lapse costs the vendor -- and the vendor gets
+#: blamed for it either way. The grace month turns a hard stop into a
+#: conversation, which is the whole design intent of this module.
+GRACE_DAYS = 30
+
 
 class HmLicense(models.Model):
     _name = "hm.license"
@@ -96,6 +107,7 @@ class HmLicense(models.Model):
             ("invalid", "Not Valid"),
             ("valid", "Valid"),
             ("expiring", "Expiring Soon"),
+            ("grace", "Lapsed - Grace Period"),
             ("expired", "Expired"),
         ],
         default="invalid",
@@ -248,21 +260,38 @@ class HmLicense(models.Model):
             if not licence.licence_id or not licence.expires:
                 continue
             days_left = (licence.expires - today).days
-            if days_left < 0:
-                licence.write({
+            if days_left < -GRACE_DAYS:
+                values = {
                     "state": "expired",
                     "status_detail": _("Expired on %s.") % licence.expires,
-                })
-            elif days_left <= 30:
-                licence.write({
+                }
+            elif days_left < 0:
+                values = {
+                    "state": "grace",
+                    "status_detail": _(
+                        "Lapsed on %(date)s. This system stops accepting new "
+                        "work in %(days)s day(s)."
+                    ) % {
+                        "date": licence.expires,
+                        "days": GRACE_DAYS + days_left,
+                    },
+                }
+            elif days_left <= WARNING_DAYS:
+                values = {
                     "state": "expiring",
                     "status_detail": _("Expires in %s day(s).") % days_left,
-                })
+                }
             else:
-                licence.write({
+                values = {
                     "state": "valid",
                     "status_detail": _("Valid until %s.") % licence.expires,
-                })
+                }
+            # Only when something actually moved. The gate calls this on every
+            # create and write of every gated document in the catalogue, and
+            # an unconditional write would put an UPDATE -- and a tracking
+            # lookup -- behind every save the customer makes.
+            if any(licence[field] != value for field, value in values.items()):
+                licence.write(values)
 
     @api.model_create_multi
     def create(self, vals_list):
@@ -287,14 +316,22 @@ class HmLicense(models.Model):
         :return: ``(ok, message)``. ``ok`` is False for an absent, invalid or
             expired licence, or one that does not cover ``module``.
         """
-        licences = self.search([])
+        # sudo, because refreshing the state writes, and an ordinary user has
+        # read access to a licence and nothing more. A payroll clerk who trips
+        # the gate must be told their licence has lapsed -- not handed an
+        # access error about a model they have never heard of.
+        licences = self.sudo().search([])
         if not licences:
             return False, _("No licence has been entered.")
 
         licences._refresh_state()
-        usable = licences.filtered(lambda l: l.state in ("valid", "expiring"))
+        usable = licences.filtered(
+            lambda l: l.state in ("valid", "expiring", "grace")
+        )
         if not usable:
-            return False, _("The licence has expired.")
+            return False, _(
+                "The licence expired more than %s days ago."
+            ) % GRACE_DAYS
 
         if module:
             covering = usable.filtered(
@@ -328,12 +365,75 @@ class HmLicense(models.Model):
         return True
 
     @api.model
+    def enforced(self):
+        """Whether this build gates anything at all.
+
+        A checkout that still carries the placeholder key is a development
+        copy: it has no vendor to enforce for, and arming the gate there would
+        mean every test in the catalogue needed a signed licence to run. A
+        release is armed by definition -- ``tools/build_release.py`` refuses to
+        package a module while the placeholder is still in place.
+        """
+        return VENDOR_PUBLIC_KEY != PLACEHOLDER_PUBLIC_KEY
+
+    @api.model
+    def status(self):
+        """A one-line summary for the systray indicator.
+
+        Read by every internal user, so it returns the state and nothing else
+        -- never the key, never the customer's own licence text.
+        """
+        if not self.enforced():
+            return {"level": "off", "message": "", "state": False}
+
+        licences = self.sudo().search([])
+        if not licences:
+            return {
+                "level": "danger",
+                "message": _("No licence has been entered."),
+                "state": "missing",
+            }
+
+        licences._refresh_state()
+        worst = (
+            licences.filtered(lambda l: l.state == "expired")
+            or licences.filtered(lambda l: l.state == "invalid")
+            or licences.filtered(lambda l: l.state == "grace")
+            or licences.filtered(lambda l: l.state == "expiring")
+            or licences.filtered(lambda l: l.over_user_limit)
+        )
+        if not worst:
+            return {"level": "ok", "message": "", "state": "valid"}
+
+        licence = worst[0]
+        if licence.over_user_limit and licence.state not in (
+            "expired", "invalid", "grace", "expiring",
+        ):
+            return {
+                "level": "warning",
+                "message": _(
+                    "%(actual)s users are active and the licence allows "
+                    "%(allowed)s."
+                ) % {
+                    "actual": licence.active_users,
+                    "allowed": licence.max_users,
+                },
+                "state": "over_users",
+            }
+        return {
+            "level": "danger" if licence.state in ("expired", "invalid")
+            else "warning",
+            "message": licence.status_detail or "",
+            "state": licence.state,
+        }
+
+    @api.model
     def _cron_refresh(self):
         """Keep the status honest as the calendar moves."""
         licences = self.search([])
         licences._refresh_state()
         for licence in licences.filtered(
-            lambda l: l.state in ("expiring", "expired")
+            lambda l: l.state in ("expiring", "grace", "expired")
         ):
             licence.message_post(body=licence.status_detail)
         return len(licences)

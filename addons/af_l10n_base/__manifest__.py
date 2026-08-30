@@ -32,7 +32,7 @@ daily use in Afghanistan for years, not from a scraped list.
     "author": "Farhad Rahmani",
     "website": "https://hushmand.af",
     "license": "OPL-1",
-    "depends": ["base", "contacts"],
+    "depends": ["base", "contacts", "hm_license"],
     "data": [
         "security/ir.model.access.csv",
         "data/res_lang_data.xml",

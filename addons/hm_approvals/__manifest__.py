@@ -57,7 +57,7 @@ That is the whole integration.
     "author": "Farhad Rahmani",
     "website": "https://hushmand.af",
     "license": "OPL-1",
-    "depends": ["base", "mail"],
+    "depends": ["base", "mail", "hm_license"],
     "data": [
         "security/hm_approvals_groups.xml",
         "security/ir.model.access.csv",

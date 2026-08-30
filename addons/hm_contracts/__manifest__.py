@@ -41,7 +41,7 @@ Also included
     "author": "Farhad Rahmani",
     "website": "https://hushmand.af",
     "license": "OPL-1",
-    "depends": ["account"],
+    "depends": ["account", "hm_license"],
     "data": [
         "security/ir.model.access.csv",
         "data/contract_data.xml",

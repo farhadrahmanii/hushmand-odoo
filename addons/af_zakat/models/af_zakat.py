@@ -142,7 +142,8 @@ class AfZakatFund(models.Model):
 class AfZakatContribution(models.Model):
     _name = "af.zakat.contribution"
     _description = "Zakat Contribution"
-    _inherit = ["mail.thread"]
+    _inherit = ["mail.thread", "hm.license.gate"]
+    _licence_module = "af_zakat"
     _order = "date desc, id desc"
 
     name = fields.Char(
@@ -328,7 +329,8 @@ class AfZakatBeneficiary(models.Model):
 class AfZakatDistribution(models.Model):
     _name = "af.zakat.distribution"
     _description = "Zakat Distribution"
-    _inherit = ["mail.thread"]
+    _inherit = ["mail.thread", "hm.license.gate"]
+    _licence_module = "af_zakat"
     _order = "date desc, id desc"
 
     name = fields.Char(

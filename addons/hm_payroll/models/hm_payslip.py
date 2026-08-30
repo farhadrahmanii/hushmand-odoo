@@ -17,7 +17,8 @@ from odoo.tools import date_utils, format_date
 class HmPayslip(models.Model):
     _name = "hm.payslip"
     _description = "Payslip"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _inherit = ["mail.thread", "mail.activity.mixin", "hm.license.gate"]
+    _licence_module = "hm_payroll"
     _order = "date_to desc, id desc"
 
     name = fields.Char(compute="_compute_name", store=True)
@@ -658,6 +659,8 @@ class HmPayslipInput(models.Model):
 class HmPayslipRun(models.Model):
     _name = "hm.payslip.run"
     _description = "Payslip Batch"
+    _inherit = ["hm.license.gate"]
+    _licence_module = "hm_payroll"
     _order = "date_to desc, id desc"
 
     name = fields.Char(required=True)

@@ -1,0 +1,19 @@
+// Part of hm_license.
+//
+// The badge sits among Odoo's own systray items, so it borrows their spacing
+// rather than inventing its own.
+.o_hm_licence_indicator {
+    margin: 0 0.25rem;
+
+    .o_hm_licence_badge {
+        white-space: nowrap;
+
+        // A disabled button still has to read as text for the users who
+        // cannot open the licence screen: they need the message, not a
+        // greyed-out control that looks broken.
+        &:disabled {
+            opacity: 1;
+            cursor: default;
+        }
+    }
+}

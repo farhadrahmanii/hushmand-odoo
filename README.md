@@ -116,6 +116,47 @@ All 20 install and pass their tests on Odoo 19 in CI (497 tests).
 
 ---
 
+## Licence enforcement
+
+Every paid module depends on `hm_license` and gates its main document model
+behind `hm.license.gate`. The gate blocks `create` and `write`. It does not
+block reading, printing, exporting or deleting: an unlicensed database goes
+read-only in the modules it has not paid for, and every payslip, contract and
+report the customer already produced stays visible forever. Holding a
+customer's own data hostage turns a late renewal into a dispute; refusing new
+work is enough pressure on its own.
+
+A lapsed licence keeps working for a further **30 days** (`GRACE_DAYS`), with
+a countdown in the systray throughout. Payroll must not stop on the morning a
+renewal invoice happens to be late.
+
+Four modules carry no gate of their own, each for a reason recorded in
+`UNGATED` in `tools/build_release.py`: `hm_license` is the licence module,
+`af_jalali` and `af_l10n_account` ship only widgets and data with no documents
+to gate, and `af_liaison` gates through `hm_expiry_docs`, whose documents it
+extends. A test reads that list rather than repeating it, so the packaging
+guard and the test cannot drift apart.
+
+### Arming it — the one manual step before any sale
+
+The gate enforces nothing until a real vendor public key replaces the
+placeholder in `addons/hm_license/models/hm_license.py`. That is deliberate:
+it keeps the whole catalogue testable without a signed licence. It also means
+a forgotten key produces modules that install, run, sell — and check nothing.
+A failure that is invisible because everything appears to work.
+
+```bash
+python tools/issue_license.py --generate-keys
+```
+
+Put the public half into `VENDOR_PUBLIC_KEY`. **Keep the private half off this
+repository and off every customer machine** — it is the only thing preventing
+anyone from minting their own licences. `tools/build_release.py` refuses to
+package anything while the placeholder is still in place, and refuses any
+module that inherits no gate.
+
+---
+
 ## Before releasing any module
 
 - [x] Installs on a clean database with no other addon present — the CI
@@ -133,4 +174,8 @@ All 20 install and pass their tests on Odoo 19 in CI (497 tests).
 - [ ] `static/description/index.html` written, with screenshots
 - [ ] Version bumped, changelog updated
 - [ ] Licence header on every file
+- [x] Gated behind `hm.license.gate`, or listed in `UNGATED` with a reason —
+      CI fails if a module checks no licence, and packaging refuses it
+- [ ] `VENDOR_PUBLIC_KEY` set to a real key — until then the gate is inert,
+      and `tools/build_release.py` will not package anything
 - [x] No AGPL dependency anywhere in the tree — CI fails on the string

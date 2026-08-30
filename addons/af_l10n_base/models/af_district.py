@@ -7,6 +7,8 @@ from odoo.exceptions import ValidationError
 class AfDistrict(models.Model):
     _name = "af.district"
     _description = "District"
+    _inherit = ["hm.license.gate"]
+    _licence_module = "af_l10n_base"
     _order = "state_id, name"
 
     name = fields.Char(

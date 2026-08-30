@@ -80,7 +80,8 @@ class HmShiftTemplate(models.Model):
 class HmRoster(models.Model):
     _name = "hm.roster"
     _description = "Roster"
-    _inherit = ["mail.thread"]
+    _inherit = ["mail.thread", "hm.license.gate"]
+    _licence_module = "hm_roster"
     _order = "date_from desc, id desc"
 
     name = fields.Char(required=True, tracking=True)

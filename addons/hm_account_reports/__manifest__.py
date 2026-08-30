@@ -38,7 +38,7 @@ its face that it is not suitable for filing.
     "author": "Farhad Rahmani",
     "website": "https://hushmand.af",
     "license": "OPL-1",
-    "depends": ["account"],
+    "depends": ["account", "hm_license"],
     "data": [
         "security/ir.model.access.csv",
         "report/hm_account_report_templates.xml",

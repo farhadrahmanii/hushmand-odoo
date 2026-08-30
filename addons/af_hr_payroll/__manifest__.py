@@ -59,7 +59,7 @@ force before running real payroll. They are a starting point, not tax advice.
     "author": "Farhad Rahmani",
     "website": "https://hushmand.af",
     "license": "OPL-1",
-    "depends": ["hm_payroll", "af_hr", "af_dual_currency"],
+    "depends": ["hm_payroll", "af_hr", "af_dual_currency", "hm_license"],
     "data": [
         "security/ir.model.access.csv",
         "data/af_income_tax_data.xml",

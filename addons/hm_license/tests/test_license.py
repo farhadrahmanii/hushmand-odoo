@@ -8,76 +8,28 @@ committed anywhere: the point of the design is that only the vendor holds one.
 
 import base64
 import json
-from datetime import date, timedelta
-from unittest.mock import patch
+from datetime import timedelta
 
 from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey
-from cryptography.hazmat.primitives import serialization
 
+from odoo.addons.hm_license.models.hm_license import GRACE_DAYS
+from odoo.addons.hm_license.tests.common import LICENCE_MODULE, LicenceKeyMixin
 from odoo.exceptions import UserError, ValidationError
 from odoo.tests import common, new_test_user, tagged
 from odoo.tools import mute_logger
 
-MODULE = "odoo.addons.hm_license.models.hm_license"
+MODULE = LICENCE_MODULE
 
 
 @tagged("post_install", "-at_install")
-class LicenceCase(common.TransactionCase):
+class LicenceCase(LicenceKeyMixin, common.TransactionCase):
 
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        cls.signing_key = Ed25519PrivateKey.generate()
-        cls.public_b64 = base64.b64encode(
-            cls.signing_key.public_key().public_bytes(
-                encoding=serialization.Encoding.Raw,
-                format=serialization.PublicFormat.Raw,
-            )
-        ).decode()
+        cls.setUpLicenceKeys()
         cls.Licence = cls.env["hm.license"]
-        cls.today = date.today()
 
-    def _payload(self, **overrides):
-        payload = {
-            "licence_id": "TEST-0001",
-            "customer": "Test Customer",
-            "modules": ["af_jalali", "af_hr"],
-            "features": [],
-            "issued": self.today.isoformat(),
-            "expires": (self.today + timedelta(days=365)).isoformat(),
-            "max_users": 0,
-        }
-        payload.update(overrides)
-        return payload
-
-    def _key(self, payload=None, signer=None):
-        """Produce a licence key the way the issuing tool does."""
-        payload = payload or self._payload()
-        signer = signer or self.signing_key
-        payload_bytes = json.dumps(
-            payload, sort_keys=True, separators=(",", ":")
-        ).encode()
-        envelope = {
-            "payload": payload,
-            "sig": base64.b64encode(signer.sign(payload_bytes)).decode(),
-        }
-        return base64.b64encode(
-            json.dumps(envelope, sort_keys=True, separators=(",", ":")).encode()
-        ).decode()
-
-    def _install(self, payload=None, signer=None):
-        with patch.object(
-            __import__(MODULE, fromlist=["x"]), "VENDOR_PUBLIC_KEY",
-            self.public_b64,
-        ):
-            return self.Licence.create({"key": self._key(payload, signer)})
-
-    def _with_key(self):
-        """Context manager patching in this test's public key."""
-        return patch.object(
-            __import__(MODULE, fromlist=["x"]), "VENDOR_PUBLIC_KEY",
-            self.public_b64,
-        )
 
 
 class TestVerification(LicenceCase):
@@ -160,10 +112,17 @@ class TestExpiry(LicenceCase):
         ))
         self.assertEqual(licence.state, "expiring")
 
-    def test_expired_once_past(self):
+    def test_lapsed_yesterday_is_still_inside_the_grace_month(self):
+        licence = self._install(self._payload(
+            licence_id="TEST-LAPSED",
+            expires=(self.today - timedelta(days=1)).isoformat(),
+        ))
+        self.assertEqual(licence.state, "grace")
+
+    def test_expired_once_the_grace_month_is_over(self):
         licence = self._install(self._payload(
             licence_id="TEST-OLD",
-            expires=(self.today - timedelta(days=1)).isoformat(),
+            expires=(self.today - timedelta(days=GRACE_DAYS + 1)).isoformat(),
         ))
         self.assertEqual(licence.state, "expired")
 
@@ -186,10 +145,19 @@ class TestTheGate(LicenceCase):
         ok, _message = self.Licence.check()
         self.assertTrue(ok)
 
+    def test_a_lapsed_licence_still_passes_during_grace(self):
+        """Deliberate: a renewal that is a week late must not stop work."""
+        self.Licence.search([]).unlink()
+        self._install(self._payload(
+            expires=(self.today - timedelta(days=7)).isoformat()
+        ))
+        ok, _message = self.Licence.check()
+        self.assertTrue(ok)
+
     def test_an_expired_licence_fails(self):
         self.Licence.search([]).unlink()
         self._install(self._payload(
-            expires=(self.today - timedelta(days=1)).isoformat()
+            expires=(self.today - timedelta(days=GRACE_DAYS + 1)).isoformat()
         ))
         ok, message = self.Licence.check()
         self.assertFalse(ok)
@@ -292,4 +260,7 @@ class TestHousekeeping(LicenceCase):
         self.assertEqual(licence.state, "valid", "precondition: stale status")
 
         self.Licence._cron_refresh()
-        self.assertEqual(licence.state, "expired")
+        # Five days past expiry is inside the grace month, so the honest
+        # refreshed state is "grace" -- the point of the test is that the cron
+        # noticed the calendar had moved at all.
+        self.assertEqual(licence.state, "grace")

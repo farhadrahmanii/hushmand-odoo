@@ -28,7 +28,8 @@ RECURRENCE = [
 class HmContract(models.Model):
     _name = "hm.contract"
     _description = "Service Contract"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _inherit = ["mail.thread", "mail.activity.mixin", "hm.license.gate"]
+    _licence_module = "hm_contracts"
     _order = "date_start desc, id desc"
     _check_company_auto = True
 

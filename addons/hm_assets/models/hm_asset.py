@@ -22,7 +22,8 @@ from odoo.exceptions import UserError, ValidationError
 class HmAsset(models.Model):
     _name = "hm.asset"
     _description = "Fixed Asset"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _inherit = ["mail.thread", "mail.activity.mixin", "hm.license.gate"]
+    _licence_module = "hm_assets"
     _order = "date_start desc, id desc"
     _check_company_auto = True
 

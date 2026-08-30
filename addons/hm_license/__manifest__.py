@@ -19,6 +19,17 @@ unreliable, and for anyone who would rather their ERP did not phone home.
 signature and the licence is refused. Every field displayed is read out of the
 signed payload rather than typed in.
 
+What happens when it lapses
+---------------------------
+
+Nothing sudden. A lapsed licence keeps working for a further thirty days, with
+a countdown in the corner of the screen throughout. Only after that do the
+modules it covers stop accepting **new** work.
+
+They never stop showing old work. Reading, printing and exporting keep working
+whatever the licence says, so every payslip, contract and report already
+produced stays available permanently. The data is the customer's.
+
 What this is not
 ----------------
 
@@ -49,6 +60,13 @@ licences. The private key never leaves the supplier.
         "data/ir_cron_data.xml",
         "views/hm_license_views.xml",
     ],
+    "assets": {
+        "web.assets_backend": [
+            "hm_license/static/src/js/license_systray.js",
+            "hm_license/static/src/xml/license_systray.xml",
+            "hm_license/static/src/scss/license.scss",
+        ],
+    },
     "installable": True,
     "application": False,
     "auto_install": False,

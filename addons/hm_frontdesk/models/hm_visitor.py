@@ -22,7 +22,8 @@ from odoo.exceptions import UserError
 class HmVisitor(models.Model):
     _name = "hm.visitor"
     _description = "Visitor"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _inherit = ["mail.thread", "mail.activity.mixin", "hm.license.gate"]
+    _licence_module = "hm_frontdesk"
     _order = "check_in desc, expected_date desc, id desc"
 
     name = fields.Char(string="Visitor", required=True, tracking=True)

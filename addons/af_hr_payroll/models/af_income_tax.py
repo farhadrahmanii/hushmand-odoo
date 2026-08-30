@@ -19,6 +19,8 @@ from odoo.exceptions import ValidationError
 class AfIncomeTaxScale(models.Model):
     _name = "af.income.tax.scale"
     _description = "Income Tax Scale"
+    _inherit = ["hm.license.gate"]
+    _licence_module = "af_hr_payroll"
     _order = "date_from desc, id desc"
 
     name = fields.Char(required=True)

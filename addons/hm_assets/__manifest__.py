@@ -33,7 +33,7 @@ reverse its journal entry, so the ledger keeps a record of both.
     "author": "Farhad Rahmani",
     "website": "https://hushmand.af",
     "license": "OPL-1",
-    "depends": ["account"],
+    "depends": ["account", "hm_license"],
     "data": [
         "security/ir.model.access.csv",
         "views/hm_asset_views.xml",

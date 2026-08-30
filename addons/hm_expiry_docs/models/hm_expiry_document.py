@@ -86,7 +86,8 @@ class HmExpiryDocumentType(models.Model):
 class HmExpiryDocument(models.Model):
     _name = "hm.expiry.document"
     _description = "Expiring Document"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _inherit = ["mail.thread", "mail.activity.mixin", "hm.license.gate"]
+    _licence_module = "hm_expiry_docs"
     _order = "date_expiry, id"
 
     name = fields.Char(

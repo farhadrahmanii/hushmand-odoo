@@ -33,7 +33,7 @@ Purchasing sees everything.
     "author": "Farhad Rahmani",
     "website": "https://hushmand.af",
     "license": "OPL-1",
-    "depends": ["purchase", "hm_approvals"],
+    "depends": ["purchase", "hm_approvals", "hm_license"],
     "data": [
         "security/ir.model.access.csv",
         "security/hm_purchase_request_rules.xml",

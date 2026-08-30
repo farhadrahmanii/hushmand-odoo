@@ -18,7 +18,8 @@ from odoo.exceptions import UserError
 class HmPurchaseRequest(models.Model):
     _name = "hm.purchase.request"
     _description = "Purchase Request"
-    _inherit = ["hm.approval.mixin", "mail.thread", "mail.activity.mixin"]
+    _inherit = ["hm.approval.mixin", "mail.thread", "mail.activity.mixin", "hm.license.gate"]
+    _licence_module = "hm_purchase_request"
     _order = "date_request desc, id desc"
 
     name = fields.Char(

@@ -42,7 +42,7 @@ than a floating one.
     "author": "Farhad Rahmani",
     "website": "https://hushmand.af",
     "license": "OPL-1",
-    "depends": ["base", "base_setup", "account"],
+    "depends": ["base", "base_setup", "account", "hm_license"],
     "data": [
         "security/ir.model.access.csv",
         "data/res_currency_data.xml",

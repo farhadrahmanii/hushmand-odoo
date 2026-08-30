@@ -27,6 +27,8 @@ from odoo.exceptions import UserError, ValidationError
 class AfExchangePeriod(models.Model):
     _name = "af.exchange.period"
     _description = "Exchange Rate Period"
+    _inherit = ["hm.license.gate"]
+    _licence_module = "af_dual_currency"
     _order = "date_from desc, id desc"
     _rec_name = "display_name"
 

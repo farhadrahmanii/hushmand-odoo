@@ -39,7 +39,7 @@ empty database.
     "website": "https://hushmand.af",
     "license": "OPL-1",
     "countries": ["af"],
-    "depends": ["account"],
+    "depends": ["account", "hm_license"],
     # Odoo's own localizations auto-install alongside account. This one does
     # not: it is a paid module in a catalogue where several other modules run
     # their own accounting tests, and a chart that installs itself would

@@ -39,7 +39,7 @@ reasoning sits on the document people actually open.
     "author": "Farhad Rahmani",
     "website": "https://hushmand.af",
     "license": "OPL-1",
-    "depends": ["hm_purchase_request"],
+    "depends": ["hm_purchase_request", "hm_license"],
     "data": [
         "security/ir.model.access.csv",
         "data/af_procurement_data.xml",

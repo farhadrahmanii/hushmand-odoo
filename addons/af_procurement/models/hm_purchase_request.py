@@ -71,7 +71,8 @@ class HmPurchaseRequest(models.Model):
 class AfComparativeForm(models.Model):
     _name = "af.comparative.form"
     _description = "Comparative Form"
-    _inherit = ["mail.thread"]
+    _inherit = ["mail.thread", "hm.license.gate"]
+    _licence_module = "af_procurement"
     _order = "date desc, id desc"
 
     name = fields.Char(required=True, tracking=True)

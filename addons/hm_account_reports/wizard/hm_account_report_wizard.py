@@ -14,6 +14,8 @@ def _year_start():
 class HmAccountReportWizard(models.TransientModel):
     _name = "hm.account.report.wizard"
     _description = "Financial Report"
+    _inherit = ["hm.license.gate"]
+    _licence_module = "hm_account_reports"
 
     report_type = fields.Selection(
         selection=[

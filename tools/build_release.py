@@ -32,6 +32,58 @@ EXCLUDE_DIRS = {"__pycache__", ".git", ".idea", ".vscode", "node_modules"}
 EXCLUDE_SUFFIXES = {".pyc", ".pyo", ".pyd", ".log", ".swp"}
 EXCLUDE_NAMES = {".DS_Store", "Thumbs.db"}
 
+#: Modules that carry no licence gate of their own, and why. Everything else
+#: must inherit hm.license.gate somewhere, or packaging refuses.
+UNGATED = {
+    "hm_license": "is the licence module",
+    "af_jalali": "ships only widgets and services, with no documents to gate",
+    "af_l10n_account": "ships only a chart-of-accounts template",
+    "af_liaison": "gates through hm_expiry_docs, whose documents it extends",
+}
+
+
+def check_licence_key_is_real():
+    """Refuse to ship a build whose gate is disarmed.
+
+    hm_license only enforces once a genuine vendor public key has replaced the
+    placeholder. Forgetting that step produces modules that install, run and
+    never check anything -- a failure that is invisible precisely because
+    everything works. So it is checked here, at the one point every customer
+    copy has to pass through.
+    """
+    source = (ADDONS / "hm_license" / "models" / "hm_license.py").read_text(
+        encoding="utf-8"
+    )
+    if "VENDOR_PUBLIC_KEY = PLACEHOLDER_PUBLIC_KEY" in source:
+        raise SystemExit(
+            """Refusing to package: hm_license still carries the placeholder
+public key, so the licence gate would be inert in the customer's database.
+
+    python tools/issue_license.py --generate-keys
+
+Then put the public half into VENDOR_PUBLIC_KEY in
+addons/hm_license/models/hm_license.py. Keep the private half off this
+repository -- it is the only thing preventing anyone from minting licences."""
+        )
+
+
+def check_module_is_gated(module):
+    """Refuse to ship a paid module that never asks whether it is licensed."""
+    if module in UNGATED:
+        return
+    module_path = ADDONS / module
+    gated = any(
+        "hm.license.gate" in p.read_text(encoding="utf-8")
+        for p in module_path.rglob("*.py")
+        if "__pycache__" not in p.parts
+    )
+    if not gated:
+        raise SystemExit(
+            "Refusing to package %s: no model inherits hm.license.gate, so "
+            "the module would never check its licence. Gate its main document "
+            "model, or add it to UNGATED in this file with the reason." % module
+        )
+
 
 def read_manifest(module_path):
     manifest_file = module_path / "__manifest__.py"
@@ -69,6 +121,9 @@ def build(module, out_dir):
             "Refusing to package %s: its licence is %s, which obliges you to "
             "let customers redistribute it freely. See README.md." % (module, licence)
         )
+
+    check_licence_key_is_real()
+    check_module_is_gated(module)
 
     out_dir.mkdir(parents=True, exist_ok=True)
     archive = out_dir / ("%s-%s.zip" % (module, version))

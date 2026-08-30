@@ -1,3 +1,4 @@
 # Part of hm_license. See LICENSE file for full copyright and licensing details.
 
 from . import hm_license
+from . import hm_license_gate

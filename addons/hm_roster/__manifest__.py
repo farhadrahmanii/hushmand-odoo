@@ -35,7 +35,7 @@ shift and a person rather than typing times.
     "author": "Farhad Rahmani",
     "website": "https://hushmand.af",
     "license": "OPL-1",
-    "depends": ["base", "mail", "hr"],
+    "depends": ["base", "mail", "hr", "hm_license"],
     "data": [
         "security/ir.model.access.csv",
         "views/hm_roster_views.xml",

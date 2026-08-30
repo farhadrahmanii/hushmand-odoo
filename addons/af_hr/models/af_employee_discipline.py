@@ -13,7 +13,8 @@ from odoo.exceptions import UserError
 class AfEmployeeDiscipline(models.Model):
     _name = "af.employee.discipline"
     _description = "Disciplinary Action"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _inherit = ["mail.thread", "mail.activity.mixin", "hm.license.gate"]
+    _licence_module = "af_hr"
     _order = "date desc, id desc"
 
     name = fields.Char(

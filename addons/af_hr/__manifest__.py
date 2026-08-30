@@ -38,7 +38,7 @@ before.
     "author": "Farhad Rahmani",
     "website": "https://hushmand.af",
     "license": "OPL-1",
-    "depends": ["hr", "af_l10n_base"],
+    "depends": ["hr", "af_l10n_base", "hm_license"],
     "data": [
         "security/ir.model.access.csv",
         "data/ir_sequence_data.xml",

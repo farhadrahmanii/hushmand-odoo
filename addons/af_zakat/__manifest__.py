@@ -43,7 +43,7 @@ notes whether a receipt was signed.
     "author": "Farhad Rahmani",
     "website": "https://hushmand.af",
     "license": "OPL-1",
-    "depends": ["base", "mail", "af_l10n_base"],
+    "depends": ["base", "mail", "af_l10n_base", "hm_license"],
     "data": [
         "security/ir.model.access.csv",
         "data/ir_sequence_data.xml",

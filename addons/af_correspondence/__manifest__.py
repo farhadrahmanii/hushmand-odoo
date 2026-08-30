@@ -35,7 +35,7 @@ record of what happened, not a scratchpad.
     "author": "Farhad Rahmani",
     "website": "https://hushmand.af",
     "license": "OPL-1",
-    "depends": ["base", "mail"],
+    "depends": ["base", "mail", "hm_license"],
     "data": [
         "security/ir.model.access.csv",
         "data/ir_sequence_data.xml",

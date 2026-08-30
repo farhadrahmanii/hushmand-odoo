@@ -28,7 +28,7 @@ Solar Hijri calendar is.
     "author": "Farhad Rahmani",
     "website": "https://hushmand.af",
     "license": "OPL-1",
-    "depends": ["base", "base_setup", "web"],
+    "depends": ["base", "base_setup", "web", "hm_license"],
     "data": [
         "views/res_config_settings_views.xml",
         "views/res_users_views.xml",

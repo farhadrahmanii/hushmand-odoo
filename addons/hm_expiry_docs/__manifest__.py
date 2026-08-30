@@ -35,7 +35,7 @@ would still read valid years after it lapsed.
     "author": "Farhad Rahmani",
     "website": "https://hushmand.af",
     "license": "OPL-1",
-    "depends": ["base", "mail"],
+    "depends": ["base", "mail", "hm_license"],
     "data": [
         "security/ir.model.access.csv",
         "data/ir_cron_data.xml",

@@ -15,6 +15,8 @@ class AfVillage(models.Model):
 
     _name = "af.village"
     _description = "Village"
+    _inherit = ["hm.license.gate"]
+    _licence_module = "af_l10n_base"
     _order = "district_id, name"
 
     name = fields.Char(string="Name", required=True, index=True)

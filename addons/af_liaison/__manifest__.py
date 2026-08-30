@@ -30,7 +30,7 @@ the officer who has to do the renewing -- not the employee whose permit it is.
     "author": "Farhad Rahmani",
     "website": "https://hushmand.af",
     "license": "OPL-1",
-    "depends": ["hm_expiry_docs", "hr", "af_l10n_base"],
+    "depends": ["hm_expiry_docs", "hr", "af_l10n_base", "hm_license"],
     "data": [
         "data/af_document_type_data.xml",
         "views/af_liaison_views.xml",

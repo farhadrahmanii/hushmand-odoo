@@ -64,7 +64,7 @@ engine stays generic so that it works anywhere.
     "author": "Farhad Rahmani",
     "website": "https://hushmand.af",
     "license": "OPL-1",
-    "depends": ["hr", "account", "mail"],
+    "depends": ["hr", "account", "mail", "hm_license"],
     "data": [
         "security/hm_payroll_security.xml",
         "security/ir.model.access.csv",

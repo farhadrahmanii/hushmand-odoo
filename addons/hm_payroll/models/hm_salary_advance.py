@@ -21,7 +21,8 @@ from odoo.exceptions import UserError
 class HmSalaryAdvance(models.Model):
     _name = "hm.salary.advance"
     _description = "Salary Advance"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _inherit = ["mail.thread", "mail.activity.mixin", "hm.license.gate"]
+    _licence_module = "hm_payroll"
     _order = "date desc, id desc"
 
     name = fields.Char(

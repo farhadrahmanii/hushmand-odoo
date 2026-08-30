@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="hm_license.LicenceIndicator">
+        <div t-if="visible" class="o_hm_licence_indicator d-flex align-items-center">
+            <button type="button"
+                    class="btn btn-sm o_hm_licence_badge"
+                    t-att-class="state.level === 'danger' ? 'btn-danger' : 'btn-warning'"
+                    t-att-title="state.message"
+                    t-att-disabled="state.canOpen ? undefined : 'disabled'"
+                    t-on-click="openLicences">
+                <i class="fa fa-exclamation-triangle me-1" role="img" aria-label="Licence"/>
+                <span t-esc="label"/>
+            </button>
+        </div>
+    </t>
+
+</templates>

@@ -8,7 +8,8 @@ from odoo.exceptions import AccessError, UserError
 class HmApprovalRequest(models.Model):
     _name = "hm.approval.request"
     _description = "Approval Request"
-    _inherit = ["mail.thread"]
+    _inherit = ["mail.thread", "hm.license.gate"]
+    _licence_module = "hm_approvals"
     _order = "create_date desc, id desc"
     _rec_name = "display_name"
 

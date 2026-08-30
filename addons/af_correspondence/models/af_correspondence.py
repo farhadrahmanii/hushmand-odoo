@@ -18,7 +18,8 @@ from odoo.exceptions import UserError
 class AfCorrespondence(models.Model):
     _name = "af.correspondence"
     _description = "Correspondence"
-    _inherit = ["mail.thread", "mail.activity.mixin"]
+    _inherit = ["mail.thread", "mail.activity.mixin", "hm.license.gate"]
+    _licence_module = "af_correspondence"
     _order = "date desc, id desc"
 
     name = fields.Char(
