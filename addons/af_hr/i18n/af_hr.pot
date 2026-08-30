@@ -1,0 +1,737 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* af_hr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20260817\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: af_hr
+#: model:ir.actions.report,print_report_name:af_hr.action_report_af_id_card
+msgid "'ID Card - %s' % (object.name)"
+msgstr ""
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/af_employee_discipline.py:0
+msgid ""
+"A closed action cannot be cancelled. Record a new action instead, so the "
+"history stays intact."
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.constraint,message:af_hr.constraint_af_employee_discipline_suspension_dates
+msgid "A suspension cannot end before it starts."
+msgstr ""
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/af_employee_discipline.py:0
+msgid "A suspension needs a start date."
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__state__acknowledged
+msgid "Acknowledged"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__acknowledged_date
+msgid "Acknowledged On"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__action_type
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_search
+msgid "Action"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__state__cancelled
+msgid "Cancelled"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Close"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__state__closed
+msgid "Closed"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__company_id
+msgid "Company"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_private_district_id
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_private_district_id
+msgid "Current District"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_private_village_id
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_private_village_id
+msgid "Current Village"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__date
+msgid "Date"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__department_id
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_search
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "Department"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__description
+msgid "Details"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model,name:af_hr.model_af_employee_discipline
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Disciplinary Action"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_discipline_count
+msgid "Disciplinary Action Count"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.actions.act_window,name:af_hr.action_af_employee_discipline
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_discipline_ids
+#: model:ir.ui.menu,name:af_hr.menu_af_employee_discipline
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_list
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_search
+msgid "Disciplinary Actions"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.hr_employee_view_form
+msgid "Discipline"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__display_name
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.hr_employee_view_form
+msgid "District"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_search
+msgid "Due for Review"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model,name:af_hr.model_hr_employee
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__employee_id
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_search
+msgid "Employee"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.actions.report,name:af_hr.action_report_af_id_card
+msgid "Employee ID Card"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "Employee Identity Card"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_father_name
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_father_name
+msgid "Father's Name"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__action_type__final
+msgid "Final Warning"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_search
+msgid "Final or Termination"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Follow Up"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_full_identity
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_full_identity
+msgid "Full Identity"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_grandfather_name
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_grandfather_name
+msgid "Grandfather's Name"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__id
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__id
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__id
+msgid "ID"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__message_has_error
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "If found, please return this card to"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Issue"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__state__issued
+msgid "Issued"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__issued_by_id
+msgid "Issued By"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_hr_employee__af_tazkira_volume
+#: model:ir.model.fields,help:af_hr.field_hr_version__af_tazkira_volume
+msgid "Jild, on a paper tazkira."
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "Logo"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Mark Acknowledged"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_hr_employee__af_tazkira_number
+#: model:ir.model.fields,help:af_hr.field_hr_version__af_tazkira_number
+msgid "National identity number on an electronic tazkira."
+msgstr ""
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/af_employee_discipline.py:0
+msgid "New"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.actions.act_window,help:af_hr.action_af_employee_discipline
+msgid ""
+"Odoo has no equivalent in either edition. Issue and\n"
+"               acknowledgement are tracked separately, because whether the\n"
+"               employee actually saw it is the part that matters later."
+msgstr ""
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/af_employee_discipline.py:0
+msgid "Only a cancelled action can be reset."
+msgstr ""
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/af_employee_discipline.py:0
+msgid "Only a draft action can be issued."
+msgstr ""
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/af_employee_discipline.py:0
+msgid "Only an issued action can be acknowledged."
+msgstr ""
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/af_employee_discipline.py:0
+msgid "Only an issued or acknowledged action can be closed."
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_search
+msgid "Open"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_permanent_street
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_permanent_street
+#: model_terms:ir.ui.view,arch_db:af_hr.hr_employee_view_form
+msgid "Permanent Address"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_permanent_district_id
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_permanent_district_id
+msgid "Permanent District"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_permanent_state_id
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_permanent_state_id
+msgid "Permanent Province"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_permanent_village_id
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_permanent_village_id
+msgid "Permanent Village"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "Phone"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "Photo"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "Position"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__reason
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Reason"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.actions.act_window,help:af_hr.action_af_employee_discipline
+msgid "Record a disciplinary action"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__name
+msgid "Reference"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Reset to Draft"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__follow_up_date
+msgid "Review On"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_hr_employee__af_tazkira_register
+#: model:ir.model.fields,help:af_hr.field_hr_version__af_tazkira_register
+msgid "Sabt, the registration entry on a paper tazkira."
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_hr_employee__af_tazkira_page
+#: model:ir.model.fields,help:af_hr.field_hr_version__af_tazkira_page
+msgid "Safha, on a paper tazkira."
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Short reason, as it will read on the record"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__state
+msgid "State"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_search
+msgid "Status"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__suspension_date_from
+msgid "Suspended From"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__suspension_date_to
+msgid "Suspended To"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__action_type__suspension
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Suspension"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_tin
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_tin
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "TIN"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_hr_employee__af_tin
+#: model:ir.model.fields,help:af_hr.field_hr_version__af_tin
+msgid "Taxpayer Identification Number, required on the payroll return."
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.hr_employee_view_form
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "Tazkira"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_tazkira_state_id
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_tazkira_state_id
+msgid "Tazkira Issued In"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_tazkira_page
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_tazkira_page
+msgid "Tazkira Page"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_tazkira_reference
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_tazkira_reference
+msgid "Tazkira Reference"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_tazkira_register
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_tazkira_register
+msgid "Tazkira Register"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_tazkira_volume
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_tazkira_volume
+msgid "Tazkira Volume"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__action_type__termination
+msgid "Termination"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_hr_employee__af_full_identity
+#: model:ir.model.fields,help:af_hr.field_hr_version__af_full_identity
+msgid "The name as it is written on official documents and letters."
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_hr_employee__af_permanent_state_id
+#: model:ir.model.fields,help:af_hr.field_hr_version__af_permanent_state_id
+msgid "The province recorded on the tazkira."
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_hr_employee__af_tazkira_state_id
+#: model:ir.model.fields,help:af_hr.field_hr_version__af_tazkira_state_id
+msgid "The province that issued the tazkira."
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__action_type__verbal
+msgid "Verbal Warning"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model,name:af_hr.model_hr_version
+msgid "Version"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.hr_employee_view_form
+msgid "Village"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.hr_employee_view_form
+msgid "Village, area or landmark"
+msgstr ""
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/hr_version.py:0
+msgid "Volume %(volume)s, Page %(page)s, Register %(register)s"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_hr_employee__af_tazkira_reference
+#: model:ir.model.fields,help:af_hr.field_hr_version__af_tazkira_reference
+msgid "Volume, page and register written the way a clerk reads them."
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "What happened, when, who was present, and what was agreed."
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__follow_up_date
+msgid ""
+"When this should be revisited, for example the end of a probationary warning"
+" period."
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__action_type__written
+msgid "Written Warning"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "e-Tazkira"
+msgstr ""
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_tazkira_number
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_tazkira_number
+msgid "e-Tazkira / NID"
+msgstr ""
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/hr_version.py:0
+msgid "g/o %s"
+msgstr ""
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "s/o"
+msgstr ""
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/hr_version.py:0
+msgid "s/o %s"
+msgstr ""

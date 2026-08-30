@@ -1,0 +1,381 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_account_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20260817\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_trial_balance
+msgid "Account"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields.selection,name:hm_account_reports.selection__hm_account_report_wizard__report_type__balance_sheet
+msgid "Balance Sheet"
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Bank and Cash"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__analytic_account_id
+msgid "Budget Line"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.hm_account_report_wizard_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_trial_balance
+msgid "Closing"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_trial_balance
+msgid "Code"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__company_ids
+msgid "Companies"
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Cost of Revenue"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_trial_balance
+msgid "Credit"
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Credit Card"
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Current Assets"
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Current Liabilities"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_balance_sheet
+msgid "Current Year Result"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_trial_balance
+msgid "Debit"
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Depreciation"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report__display_name
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.hm_account_report_wizard_view_form
+msgid "Draft entries are included. Do not file this."
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Equity"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.actions.report,name:hm_account_reports.action_report_financial
+#: model:ir.model,name:hm_account_reports.model_hm_account_report_wizard
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.hm_account_report_wizard_view_form
+msgid "Financial Report"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model,name:hm_account_reports.model_hm_account_report
+msgid "Financial Report Engine"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.actions.act_window,name:hm_account_reports.action_hm_account_report
+#: model:ir.ui.menu,name:hm_account_reports.menu_hm_account_report
+msgid "Financial Reports"
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Fixed Assets"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__date_from
+msgid "From"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__hide_zero
+msgid "Hide Empty Accounts"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report__id
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_financial_header
+msgid "Includes draft entries. Not suitable for filing."
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__journal_ids
+msgid "Journals"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields,help:hm_account_reports.field_hm_account_report_wizard__journal_ids
+msgid "Leave empty for all journals."
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields,help:hm_account_reports.field_hm_account_report_wizard__posted_only
+msgid ""
+"Leave this on for anything you intend to file. Draft entries are not part of"
+" the books yet."
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.hm_account_report_wizard_view_form
+msgid "Narrow it down"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_profit_and_loss
+msgid "Net Loss"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_profit_and_loss
+msgid "Net Profit"
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Non-current Assets"
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Non-current Liabilities"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_trial_balance
+msgid "Opening"
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Operating Expenses"
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Operating Income"
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Other Expenses"
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Other Income"
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Payables"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__posted_only
+msgid "Posted Entries Only"
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Prepayments"
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Previous Years Earnings"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.hm_account_report_wizard_view_form
+msgid "Print"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields.selection,name:hm_account_reports.selection__hm_account_report_wizard__report_type__profit_and_loss
+msgid "Profit and Loss"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_balance_sheet
+msgid "Profit or loss for the period, not yet closed to equity"
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Receivables"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__report_type
+msgid "Report"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields,help:hm_account_reports.field_hm_account_report_wizard__analytic_account_id
+msgid "Restrict to entries carrying this analytic account."
+msgstr ""
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/wizard/hm_account_report_wizard.py:0
+msgid "The start date is after the end date."
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_balance_sheet
+msgid ""
+"These totals do not agree. Something is unbalanced in\n"
+"                        the underlying entries."
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__date_to
+msgid "To"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_section_block
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_trial_balance
+msgid "Total"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_balance_sheet
+msgid "Total Assets"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_profit_and_loss
+msgid "Total Expenses"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_profit_and_loss
+msgid "Total Income"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_balance_sheet
+msgid "Total Liabilities and Equity"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_trial_balance
+msgid ""
+"Total debit and total credit must agree. Income and expense\n"
+"            accounts carry no opening figure because they reset each financial\n"
+"            year."
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.model.fields.selection,name:hm_account_reports.selection__hm_account_report_wizard__report_type__trial_balance
+msgid "Trial Balance"
+msgstr ""
+
+#. module: hm_account_reports
+#: model:ir.actions.report,print_report_name:hm_account_reports.action_report_financial
+msgid "object.report_name"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_financial_header
+msgid "to"
+msgstr ""
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_financial_header
+msgid "— as at"
+msgstr ""

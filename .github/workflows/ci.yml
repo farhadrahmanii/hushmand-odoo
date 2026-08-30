@@ -150,6 +150,10 @@ jobs:
         # It can only read terms out of an installed module, so it runs here,
         # against the database the step above just built.
         run: |
+          # Keep what is committed, to compare against afterwards. Templates
+          # are named after their module, so a flat directory cannot collide.
+          mkdir -p /tmp/pot-before
+          cp addons/*/i18n/*.pot /tmp/pot-before/ 2>/dev/null || true
           cat > /tmp/odoo-i18n.conf <<EOF
           [options]
           db_host = postgres
@@ -167,6 +171,19 @@ jobs:
           python3 tools/normalise_pot.py
           echo "Exported:"
           wc -l addons/*/i18n/*.pot
+
+      - name: The templates must match the source
+        # A string added to a model and never re-exported is invisible: the
+        # module works, CI is green, and the term simply cannot be translated
+        # because no translator ever sees it. Compare instead of trusting.
+        run: |
+          mkdir -p /tmp/pot-after
+          cp addons/*/i18n/*.pot /tmp/pot-after/
+          if ! diff -ru /tmp/pot-before /tmp/pot-after; then
+            echo "::error::Translatable strings changed without the templates being regenerated. Download the translation-templates artifact from this run and commit it."
+            exit 1
+          fi
+          echo "Templates match the source"
 
       - name: Upload the translation templates
         if: always()

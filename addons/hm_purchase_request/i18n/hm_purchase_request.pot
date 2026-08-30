@@ -1,0 +1,615 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_purchase_request
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20260817\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "%s cannot be cancelled."
+msgstr ""
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "%s has already been submitted."
+msgstr ""
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "%s has to be approved before it can be ordered."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.constraint,message:hm_purchase_request.constraint_hm_purchase_request_line_qty_positive
+msgid "A requested quantity must be greater than zero."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "Add at least one item to %s before submitting it."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__amount_total
+msgid ""
+"An estimate from the requester. The real figure comes from the quotation."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__approval_request_id
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Approval"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__approval_state
+msgid "Approval Status"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Approve"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields.selection,name:hm_purchase_request.selection__hm_purchase_request__state__approved
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Approved"
+msgstr ""
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "Approved. This request can now be ordered."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__approval_current_step
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_list
+msgid "Awaiting"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__analytic_account_id
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__analytic_account_id
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Budget Line"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields.selection,name:hm_purchase_request.selection__hm_purchase_request__state__cancelled
+msgid "Cancelled"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__company_id
+msgid "Company"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Create Quotation"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__create_uid
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__create_date
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__currency_id
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__name
+msgid "Description"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__display_name
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__display_name
+#: model:ir.model.fields,field_description:hm_purchase_request.field_purchase_order__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields.selection,name:hm_purchase_request.selection__hm_purchase_request__state__draft
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Draft"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__price_unit
+msgid "Estimated Price"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__amount_total
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_list
+msgid "Estimated Total"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__id
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__id
+#: model:ir.model.fields,field_description:hm_purchase_request.field_purchase_order__id
+msgid "ID"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__message_has_error
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Item"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__line_ids
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Items"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__reason
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Justification"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__write_uid
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__write_date
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "My Requests"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__date_required
+msgid "Needed By"
+msgstr ""
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "New"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__notes
+msgid "Notes"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model_terms:ir.actions.act_window,help:hm_purchase_request.action_hm_purchase_request
+msgid ""
+"Odoo starts at the quotation, where someone has already decided\n"
+"               what to buy and from whom. This is the step before: a department\n"
+"               asks for something, and it is approved on its own merits before\n"
+"               anyone talks to a supplier."
+msgstr ""
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "Only a rejected or cancelled request can be reopened."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request_line__product_id
+msgid ""
+"Optional. A request can describe something that is not yet a product in the "
+"catalogue."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__vendor_id
+msgid "Optional. A suggestion from the requester, not a commitment."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields.selection,name:hm_purchase_request.selection__hm_purchase_request__state__purchased
+msgid "Ordered"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__purchase_order_count
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Orders"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request_line__analytic_account_id
+msgid "Overrides the budget line set on the request."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__product_id
+msgid "Product"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model,name:hm_purchase_request.model_purchase_order
+msgid "Purchase Order"
+msgstr ""
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__purchase_order_ids
+msgid "Purchase Orders"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model,name:hm_purchase_request.model_hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_purchase_order__hm_request_id
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Purchase Request"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model,name:hm_purchase_request.model_hm_purchase_request_line
+msgid "Purchase Request Item"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.actions.act_window,name:hm_purchase_request.action_hm_purchase_request
+#: model:ir.ui.menu,name:hm_purchase_request.menu_hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_list
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Purchase Requests"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__product_qty
+msgid "Quantity"
+msgstr ""
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "Quotation %s created."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model_terms:ir.actions.act_window,help:hm_purchase_request.action_hm_purchase_request
+msgid "Raise a purchase request"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__name
+msgid "Reference"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Reject"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields.selection,name:hm_purchase_request.selection__hm_purchase_request__state__rejected
+msgid "Rejected"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__request_id
+msgid "Request"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__date_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Request Date"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__requester_id
+msgid "Requested By"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Requester"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Reset to Draft"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "Set a vendor on %s before creating a quotation."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__state
+msgid "State"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Status"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Submit for Approval"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__price_subtotal
+msgid "Subtotal"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__vendor_id
+msgid "Suggested Vendor"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_purchase_order__hm_request_id
+msgid "The approved request this order came from."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__analytic_account_id
+msgid "The budget this request is to be charged against."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Total"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__product_uom_id
+msgid "Unit"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields.selection,name:hm_purchase_request.selection__hm_purchase_request__state__to_approve
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Waiting Approval"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Waiting for"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Waiting on Me"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request_line__name
+msgid "What is being requested, in the requester's own words."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__date_required
+msgid "When the goods or services are actually needed."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__approval_can_act
+msgid "Whether the current user is an approver for the current step."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__reason
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Why this is needed. Approvers read this first."
+msgstr ""
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__approval_can_act
+msgid "You Can Approve"
+msgstr ""
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "hm_request_id"
+msgstr ""

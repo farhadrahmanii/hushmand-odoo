@@ -1,0 +1,470 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_license
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20260817\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "%(actual)s users are active and the licence allows %(allowed)s."
+msgstr ""
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid ""
+"%(reason)s\n"
+"\n"
+"Contact your supplier to renew or extend the licence."
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "Check Again"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__company_id
+msgid "Company"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__modules
+msgid "Covers"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__customer
+msgid "Customer"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__status_detail
+msgid "Detail"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__display_name
+#: model:ir.model.fields,field_description:hm_license.field_hm_license_gate__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: hm_license
+#: model_terms:ir.actions.act_window,help:hm_license.action_hm_license
+msgid "Enter your licence key"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields.selection,name:hm_license.selection__hm_license__state__expired
+msgid "Expired"
+msgstr ""
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "Expired on %s."
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__expires
+msgid "Expires"
+msgstr ""
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "Expires in %s day(s)."
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields.selection,name:hm_license.selection__hm_license__state__expiring
+msgid "Expiring Soon"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__features
+msgid "Features"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__id
+#: model:ir.model.fields,field_description:hm_license.field_hm_license_gate__id
+msgid "ID"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,help:hm_license.field_hm_license__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,help:hm_license.field_hm_license__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__issued
+msgid "Issued"
+msgstr ""
+
+#. module: hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "Key"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields.selection,name:hm_license.selection__hm_license__state__grace
+msgid "Lapsed - Grace Period"
+msgstr ""
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid ""
+"Lapsed on %(date)s. This system stops accepting new work in %(days)s day(s)."
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hm_license
+#. odoo-javascript
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+#: code:addons/hm_license/static/src/js/license_systray.js:0
+#: code:addons/hm_license/static/src/xml/license_systray.xml:0
+#: model:ir.model,name:hm_license.model_hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__licence_id
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__name
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "Licence"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__key
+msgid "Licence Key"
+msgstr ""
+
+#. module: hm_license
+#. odoo-javascript
+#: code:addons/hm_license/static/src/js/license_systray.js:0
+msgid "Licence expired"
+msgstr ""
+
+#. module: hm_license
+#. odoo-javascript
+#: code:addons/hm_license/static/src/js/license_systray.js:0
+msgid "Licence expiring"
+msgstr ""
+
+#. module: hm_license
+#. odoo-javascript
+#: code:addons/hm_license/static/src/js/license_systray.js:0
+msgid "Licence lapsed"
+msgstr ""
+
+#. module: hm_license
+#. odoo-javascript
+#: code:addons/hm_license/static/src/js/license_systray.js:0
+msgid "Licence not valid"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model,name:hm_license.model_hm_license_gate
+msgid "Licence-Gated Document"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.actions.server,name:hm_license.cron_license_refresh_ir_actions_server
+msgid "Licence: refresh status"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.actions.act_window,name:hm_license.action_hm_license
+#: model:ir.ui.menu,name:hm_license.menu_hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_list
+msgid "Licences"
+msgstr ""
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "Licensed."
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__max_users
+msgid "Max Users"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,help:hm_license.field_hm_license__modules
+msgid "Modules this licence entitles you to use."
+msgstr ""
+
+#. module: hm_license
+#. odoo-javascript
+#: code:addons/hm_license/static/src/js/license_systray.js:0
+msgid "No licence"
+msgstr ""
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "No licence has been entered."
+msgstr ""
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid ""
+"No signing key has been configured for this build. Run "
+"tools/issue_license.py --generate-keys and put the public key into "
+"hm_license."
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields.selection,name:hm_license.selection__hm_license__state__invalid
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "Not Valid"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,help:hm_license.field_hm_license__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,help:hm_license.field_hm_license__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__over_user_limit
+msgid "Over User Limit"
+msgstr ""
+
+#. module: hm_license
+#. odoo-javascript
+#: code:addons/hm_license/static/src/js/license_systray.js:0
+msgid "Over user limit"
+msgstr ""
+
+#. module: hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "Paste a key below"
+msgstr ""
+
+#. module: hm_license
+#: model_terms:ir.actions.act_window,help:hm_license.action_hm_license
+msgid ""
+"Paste the block of text supplied with your purchase. It is\n"
+"               checked on this machine against the supplier's signature, so\n"
+"               nothing is sent anywhere and no connection is needed."
+msgstr ""
+
+#. module: hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid ""
+"Paste the whole block supplied with your purchase, including every line."
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__state
+msgid "State"
+msgstr ""
+
+#. module: hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "Term"
+msgstr ""
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid ""
+"That does not look like a licence key. Paste the whole block exactly as it "
+"was supplied."
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.constraint,message:hm_license.constraint_hm_license_licence_unique
+msgid "That licence has already been entered."
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,help:hm_license.field_hm_license__key
+msgid "The block of text supplied with your purchase. Paste it whole."
+msgstr ""
+
+#. module: hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid ""
+"The key is checked on this machine against the\n"
+"                        supplier's signature. Nothing is sent anywhere, and no\n"
+"                        internet connection is needed."
+msgstr ""
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "The licence expired more than %s days ago."
+msgstr ""
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "The licence is missing: %s"
+msgstr ""
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "The licence key is empty."
+msgstr ""
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid ""
+"The signature does not match. This key has been altered, or was not issued "
+"for this product."
+msgstr ""
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid ""
+"This installation cannot verify licences: the cryptography library is "
+"missing."
+msgstr ""
+
+#. module: hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "This licence allows"
+msgstr ""
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "This licence allows %(allowed)s users and %(actual)s are active."
+msgstr ""
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "This licence does not cover %s."
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__active_users
+msgid "Users In Use"
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields.selection,name:hm_license.selection__hm_license__state__valid
+msgid "Valid"
+msgstr ""
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "Valid until %s."
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,help:hm_license.field_hm_license__status_detail
+msgid "Why the licence is in this state, in plain words."
+msgstr ""
+
+#. module: hm_license
+#: model:ir.model.fields,help:hm_license.field_hm_license__max_users
+msgid "Zero means no limit."
+msgstr ""
+
+#. module: hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "are active. Contact your supplier to extend it."
+msgstr ""
+
+#. module: hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "users and"
+msgstr ""

@@ -1,0 +1,1588 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20260817\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_salary_advance.py:0
+msgid ""
+"%(advance)s has already had %(amount)s recovered from payslips. Cancel those"
+" payslips first, so the money taken back is not lost from the record."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid ""
+"%(run)s belongs to %(company)s but its salary structure belongs to "
+"%(other)s."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid ""
+"%(slip)s belongs to %(company)s but its salary structure belongs to "
+"%(other)s. A payslip cannot post into another company's books."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid ""
+"%(slips)s left draft; the employee, structure and period are frozen. Reset "
+"to draft to change them."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid ""
+"%(structure)s has salary rules with accounts but no salary journal. Set the "
+"journal on the structure."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid "%s has no contract version to read the wage from."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid "%s has no draft payslips to confirm."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_salary_advance.py:0
+msgid "%s is approved. Cancel it before deleting it."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+#: code:addons/hm_payroll/wizard/hm_payslip_generate.py:0
+msgid "%s is closed."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid "%s is confirmed. Cancel it before deleting it."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid "%s is not a draft. Only a draft payslip can be recomputed."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid ""
+"%s left draft; its inputs are frozen. Reset the payslip to draft first."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid "%s left draft; its lines are frozen. Reset the payslip to draft first."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.actions.report,print_report_name:hm_payroll.action_report_hm_payslip
+msgid "'Payslip - %s' % (object.number or object.employee_id.name)"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid ""
+".\n"
+"                        Still owed after this payslip:"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid ""
+":\n"
+"                        instalment"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "<strong>Advance recovery</strong>"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "<strong>In words:</strong>"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "<strong>Net Pay</strong>"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_rule__amount_percentage_base
+msgid ""
+"A Python expression giving the base, e.g. version.wage or "
+"categories['GROSS']."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_rule__condition_python
+msgid ""
+"A Python expression. The rule applies when it is true. In scope: employee, "
+"version, payslip, categories, inputs."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.constraint,message:hm_payroll.constraint_hm_payslip_run_dates_ordered
+msgid "A batch period cannot end before it starts."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.constraint,message:hm_payroll.constraint_hm_payslip_dates_ordered
+msgid "A payslip period cannot end before it starts."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.constraint,message:hm_payroll.constraint_hm_payslip_number_uniq
+msgid "A payslip reference must be unique per company."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.constraint,message:hm_payroll.constraint_hm_salary_rule_category_code_uniq
+msgid "A salary rule category code must be unique."
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_rule_view_form
+msgid "Accounting"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__message_needaction
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payroll_structure__active
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__active
+msgid "Active"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__activity_ids
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__activity_exception_decoration
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__activity_state
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__activity_type_icon
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: hm_payroll
+#: model:res.groups,name:hm_payroll.group_payroll_manager
+msgid "Administrator"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance_line__advance_id
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_form
+msgid "Advance"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__advance_line_ids
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+msgid "Advance Instalments"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__advance_due
+msgid "Advance Recovery"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_payslip__advance_due
+msgid ""
+"Advance instalments this payslip recovers. A deduction rule reads it as "
+"inputs.get('ADVANCE', 0.0)."
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_list
+msgid "Advanced"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__date
+msgid "Advanced On"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+msgid "Advances"
+msgstr ""
+
+#. module: hm_payroll
+#: model:hm.salary.rule.category,name:hm_payroll.category_allowance
+msgid "Allowance"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields.selection,name:hm_payroll.selection__hm_salary_rule__condition_select__always
+msgid "Always True"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_input__amount
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_line__amount
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__amount
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance_line__amount
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_rule_view_form
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "Amount"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__amount_select
+msgid "Amount Type"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.constraint,message:hm_payroll.constraint_hm_salary_advance_amount_positive
+msgid "An advance must be greater than zero."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.constraint,message:hm_payroll.constraint_hm_salary_advance_installments_positive
+msgid "An advance must be recovered over at least one payslip."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_salary_advance.py:0
+msgid ""
+"An instalment already recovered from a payslip cannot be deleted. Cancel the"
+" payslip instead."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.constraint,message:hm_payroll.constraint_hm_salary_advance_line_amount_positive
+msgid "An instalment must be greater than zero."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_line__appears_on_payslip
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__appears_on_payslip
+msgid "Appears on Payslip"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_form
+msgid "Approve"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields.selection,name:hm_payroll.selection__hm_salary_advance__state__approved
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_search
+msgid "Approved"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_form
+msgid ""
+"Approving builds the schedule below. Each instalment is\n"
+"                        taken by the first payslip whose period reaches its due\n"
+"                        date, and only when that payslip is confirmed."
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payroll_structure_view_form
+msgid "Archived"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__message_attachment_count
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: hm_payroll
+#: model:hm.salary.rule.category,name:hm_payroll.category_basic
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__basic_wage
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_list
+msgid "Basic"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_rule_view_form
+msgid "Basic Salary"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__run_id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_generate__run_id
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_search
+msgid "Batch"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.ui.menu,name:hm_payroll.menu_hm_payslip_run
+msgid "Batches"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.actions.act_window,help:hm_payroll.action_hm_payroll_structure
+msgid "Build a salary structure"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_form
+msgid ""
+"Builds the recovery schedule. Nothing is deducted until a payslip is "
+"computed."
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_generate_view_form
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields.selection,name:hm_payroll.selection__hm_payslip__state__cancelled
+#: model:ir.model.fields.selection,name:hm_payroll.selection__hm_salary_advance__state__cancelled
+msgid "Cancelled"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.actions.act_window,help:hm_payroll.action_hm_salary_rule_category
+msgid "Categories group payslip lines"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_line__category_id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__category_id
+msgid "Category"
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/wizard/hm_payslip_generate.py:0
+msgid "Choose at least one employee."
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+msgid ""
+"Claimed while this payslip is a draft so no other\n"
+"                                payslip can take them, and actually recovered when\n"
+"                                it is confirmed. Cancelling gives them back."
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_run_view_form
+msgid "Close"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields.selection,name:hm_payroll.selection__hm_payslip_run__state__closed
+msgid "Closed"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_input__code
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_line__code
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__code
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule_category__code
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "Code"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payroll_structure__company_id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__company_id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_generate__company_id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_run__company_id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__company_id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance_line__company_id
+msgid "Company"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+msgid "Compute"
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid "Compute %s before confirming it."
+msgstr ""
+
+#. module: hm_payroll
+#: model:res.groups,comment:hm_payroll.group_payroll_user
+msgid ""
+"Compute and confirm payslips and run batches.\n"
+"            Implies HR officer, because a payslip cannot be processed without\n"
+"            reading the employee's contract version."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__condition_select
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_rule_view_form
+msgid "Condition"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__condition_python
+msgid "Condition Expression"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.ui.menu,name:hm_payroll.menu_hm_payroll_config
+msgid "Configuration"
+msgstr ""
+
+#. module: hm_payroll
+#: model:res.groups,comment:hm_payroll.group_payroll_manager
+msgid ""
+"Configure salary structures, rules and\n"
+"            categories."
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_run_view_form
+msgid "Confirm All"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_run_view_form
+msgid ""
+"Confirm every draft payslip in this batch and create their journal entries?"
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid "Confirm or cancel every payslip in %s before closing it."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields.selection,name:hm_payroll.selection__hm_payslip__state__done
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_search
+msgid "Confirmed"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__version_id
+msgid "Contract Version"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.actions.act_window,help:hm_payroll.action_hm_payslip
+msgid "Create a payslip"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.actions.act_window,help:hm_payroll.action_hm_payslip_run
+msgid "Create a payslip batch"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payroll_structure__create_uid
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__create_uid
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_generate__create_uid
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_input__create_uid
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_line__create_uid
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_run__create_uid
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__create_uid
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance_line__create_uid
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__create_uid
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule_category__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payroll_structure__create_date
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__create_date
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_generate__create_date
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_input__create_date
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_line__create_date
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_run__create_date
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__create_date
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance_line__create_date
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__create_date
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule_category__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__account_credit_id
+msgid "Credit Account"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__currency_id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_input__currency_id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_line__currency_id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__currency_id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance_line__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__account_debit_id
+msgid "Debit Account"
+msgstr ""
+
+#. module: hm_payroll
+#: model:hm.salary.rule.category,name:hm_payroll.category_deduction
+msgid "Deduction"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "Department"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payroll_structure__note
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__note
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule_category__note
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payroll_structure_view_form
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_rule_view_form
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "Description"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payroll_structure__display_name
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__display_name
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_generate__display_name
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_input__display_name
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_line__display_name
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_run__display_name
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__display_name
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance_line__display_name
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__display_name
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule_category__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields.selection,name:hm_payroll.selection__hm_payslip__state__draft
+#: model:ir.model.fields.selection,name:hm_payroll.selection__hm_payslip_run__state__draft
+#: model:ir.model.fields.selection,name:hm_payroll.selection__hm_salary_advance__state__draft
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_search
+msgid "Draft"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance_line__date
+msgid "Due"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__employee_id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__employee_id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance_line__employee_id
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_search
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_search
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "Employee"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_generate__employee_ids
+msgid "Employees"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__date_first_recovery
+msgid "First Recovery"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__amount_fix
+#: model:ir.model.fields.selection,name:hm_payroll.selection__hm_salary_rule__amount_select__fix
+msgid "Fixed Amount"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__message_follower_ids
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__message_partner_ids
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_payslip__activity_type_icon
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_advance__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+msgid ""
+"Freezes the payslip and creates a draft journal entry for the accountant to "
+"post."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__date_from
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_run__date_from
+msgid "From"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_search
+msgid "Fully Recovered"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_generate_view_form
+msgid "Generate"
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+#: model:ir.model,name:hm_payroll.model_hm_payslip_generate
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_generate_view_form
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_run_view_form
+msgid "Generate Payslips"
+msgstr ""
+
+#. module: hm_payroll
+#: model:hm.salary.rule.category,name:hm_payroll.category_gross
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__gross_wage
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_list
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "Gross"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__has_message
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_advance__installments
+msgid ""
+"How many payslips the recovery is spread across. One means the whole advance"
+" comes off the next payslip."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_payslip_input__code
+msgid "How rules read this value, e.g. inputs.get('BONUS', 0.0)."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_rule_category__code
+msgid ""
+"How rules refer to this category's running total, e.g. categories['GROSS']. "
+"Keep it short and stable; payslip summaries key on BASIC, GROSS and NET."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payroll_structure__id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_generate__id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_input__id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_line__id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_run__id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance_line__id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule_category__id
+msgid "ID"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__activity_exception_icon
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_payslip__activity_exception_icon
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_advance__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_payslip__message_needaction
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_advance__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_payslip__message_has_error
+#: model:ir.model.fields,help:hm_payroll.field_hm_payslip__message_has_sms_error
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_advance__message_has_error
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_advance__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+msgid ""
+"Inputs reach the rules as\n"
+"                                <code>inputs.get('CODE', 0.0)</code>.\n"
+"                                Recompute the payslip after changing them."
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+msgid "Instalment"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__line_ids
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_form
+msgid "Instalments"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+msgid "Internal notes"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__message_is_follower
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_run_view_form
+msgid "January 2026 Salaries"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "Job Position"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__move_id
+msgid "Journal Entry"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payroll_structure__write_uid
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__write_uid
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_generate__write_uid
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_input__write_uid
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_line__write_uid
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_run__write_uid
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__write_uid
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance_line__write_uid
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__write_uid
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule_category__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payroll_structure__write_date
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__write_date
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_generate__write_date
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_input__write_date
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_line__write_date
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_run__write_date
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__write_date
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance_line__write_date
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__write_date
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule_category__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_payroll_structure__company_id
+msgid ""
+"Leave empty to share the structure across companies. Its journal still ties "
+"each payslip to one company's books."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__line_ids
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+msgid "Lines"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+msgid "Mark Paid"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_rule__amount_percentage
+msgid "May be negative: a deduction of ten percent is -10."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__message_has_error
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__message_ids
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.actions.act_window,help:hm_payroll.action_hm_salary_advance
+msgid ""
+"Money paid to an employee before it is earned. Choose how many\n"
+"               payslips to recover it over, press Approve, and each payslip\n"
+"               deducts its share by itself until nothing is owed."
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payroll_structure_view_form
+msgid "Monthly Salaries"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__my_activity_date_deadline
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payroll_structure__name
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__name
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_input__name
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_line__name
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_run__name
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__name
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule_category__name
+msgid "Name"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.actions.act_window,help:hm_payroll.action_hm_payslip_run
+msgid ""
+"Name it after the month, press Generate Payslips, and confirm everyone "
+"together."
+msgstr ""
+
+#. module: hm_payroll
+#: model:hm.salary.rule.category,name:hm_payroll.category_net
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__net_wage
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_run_view_form
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_list
+msgid "Net"
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_salary_advance.py:0
+msgid "New"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__activity_date_deadline
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__activity_summary
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__activity_type_id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__notes
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+msgid "Notes"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__message_needaction_counter
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__message_has_error_counter
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_payslip__message_needaction_counter
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_advance__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_payslip__message_has_error_counter
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_advance__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: hm_payroll
+#: model:res.groups,name:hm_payroll.group_payroll_user
+msgid "Officer: Process payslips"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_generate_view_form
+msgid ""
+"One draft payslip per employee, computed immediately.\n"
+"                    Employees who already have a payslip in this batch are\n"
+"                    skipped."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_salary_advance.py:0
+msgid "Only a cancelled advance can go back to draft."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid "Only a cancelled payslip can go back to draft."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid "Only a confirmed payslip can be marked paid."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_salary_advance.py:0
+msgid "Only a draft advance can be approved."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid "Only a draft payslip can be confirmed."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__input_line_ids
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+msgid "Other Inputs"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields.selection,name:hm_payroll.selection__hm_payslip__state__paid
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_search
+msgid "Paid"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.ui.menu,name:hm_payroll.menu_hm_payroll_root
+#: model:res.groups.privilege,name:hm_payroll.res_groups_privilege_payroll
+msgid "Payroll"
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid "Payroll: %(number)s (%(employee)s)"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.actions.report,name:hm_payroll.action_report_hm_payslip
+#: model:ir.model,name:hm_payroll.model_hm_payslip
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_input__payslip_id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_line__payslip_id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance_line__payslip_id
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "Payslip"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model,name:hm_payroll.model_hm_payslip_run
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_run_view_form
+msgid "Payslip Batch"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.actions.act_window,name:hm_payroll.action_hm_payslip_run
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_run_view_list
+msgid "Payslip Batches"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model,name:hm_payroll.model_hm_payslip_input
+msgid "Payslip Input"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model,name:hm_payroll.model_hm_payslip_line
+msgid "Payslip Line"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+msgid "Payslip Lines"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.actions.act_window,name:hm_payroll.action_hm_payslip
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_run__slip_ids
+#: model:ir.ui.menu,name:hm_payroll.menu_hm_payslip
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_run_view_form
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_run_view_list
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_list
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_search
+msgid "Payslips"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__amount_percentage
+#: model:ir.model.fields.selection,name:hm_payroll.selection__hm_salary_rule__amount_select__percentage
+msgid "Percentage (%)"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__amount_percentage_base
+msgid "Percentage Based On"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "Period"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.actions.act_window,help:hm_payroll.action_hm_payslip
+msgid ""
+"Pick an employee and a salary structure, then Compute.\n"
+"               Nothing reaches the ledger until the slip is confirmed and\n"
+"               its entry posted."
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "Prepared by"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__amount_python
+#: model:ir.model.fields.selection,name:hm_payroll.selection__hm_salary_rule__amount_select__code
+msgid "Python Code"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields.selection,name:hm_payroll.selection__hm_salary_rule__condition_select__python
+msgid "Python Expression"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_rule__amount_python
+msgid ""
+"Python statements that set 'result' (the amount) and may set 'result_qty' "
+"and 'result_rate'. The line total is quantity * amount * rate / 100. In "
+"scope: employee, version, payslip, categories, inputs."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_line__quantity
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "Quantity"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "Rate"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_line__rate
+msgid "Rate (%)"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__reason
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_form
+msgid "Reason"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+msgid ""
+"Rebuilds the lines from the structure's rules. Writes nothing to the ledger."
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "Received by ("
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.actions.act_window,help:hm_payroll.action_hm_salary_advance
+msgid "Record a salary advance"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__installments
+msgid "Recover Over"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__amount_recovered
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance_line__recovered
+#: model:ir.model.fields.selection,name:hm_payroll.selection__hm_salary_advance__state__done
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_list
+msgid "Recovered"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_form
+msgid "Recovery"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payroll_structure__code
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__number
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__name
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payroll_structure_view_form
+msgid "Reference"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_form
+msgid "Reset to Draft"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__activity_user_id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_line__rule_id
+msgid "Rule"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.actions.act_window,name:hm_payroll.action_hm_salary_rule_category
+#: model:ir.ui.menu,name:hm_payroll.menu_hm_salary_rule_category
+msgid "Rule Categories"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.constraint,message:hm_payroll.constraint_hm_salary_rule_code_per_structure_uniq
+msgid "Rule codes must be unique within a salary structure."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_rule__code
+msgid ""
+"Rule codes name the payslip lines. They must be unique within the structure."
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payroll_structure_view_form
+msgid "Rules"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_rule__sequence
+msgid ""
+"Rules run in sequence order, and each one sees only the category totals of "
+"the rules that ran before it."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__message_has_sms_error
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model,name:hm_payroll.model_hm_salary_advance
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_form
+msgid "Salary Advance"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model,name:hm_payroll.model_hm_salary_advance_line
+msgid "Salary Advance Instalment"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.actions.act_window,name:hm_payroll.action_hm_salary_advance
+#: model:ir.ui.menu,name:hm_payroll.menu_hm_salary_advance
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_list
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_search
+msgid "Salary Advances"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payroll_structure__journal_id
+msgid "Salary Journal"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model,name:hm_payroll.model_hm_salary_rule
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_rule_view_form
+msgid "Salary Rule"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_rule_category_view_list
+msgid "Salary Rule Categories"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model,name:hm_payroll.model_hm_salary_rule_category
+msgid "Salary Rule Category"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payroll_structure__rule_ids
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payroll_structure_view_form
+msgid "Salary Rules"
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid "Salary Slip"
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid "Salary Slip of %(employee)s for %(month)s"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model,name:hm_payroll.model_hm_payroll_structure
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__structure_id
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_run__structure_id
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payroll_structure_view_form
+msgid "Salary Structure"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.actions.act_window,name:hm_payroll.action_hm_payroll_structure
+#: model:ir.ui.menu,name:hm_payroll.menu_hm_payroll_structure
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payroll_structure_view_list
+msgid "Salary Structures"
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payroll_structure.py:0
+msgid ""
+"Salary rule %(rule)s [%(code)s]: the amount could not be computed.\n"
+"%(error)s"
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payroll_structure.py:0
+msgid ""
+"Salary rule %(rule)s [%(code)s]: the condition could not be evaluated.\n"
+"%(error)s"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_form
+msgid "Schedule"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_line__sequence
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__sequence
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule_category__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_advance_line__recovered
+msgid "Set when the payslip that took this instalment was confirmed."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_run__slip_count
+msgid "Slip Count"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__state
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_run__state
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__state
+msgid "State"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_search
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_search
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "Status"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_payslip__activity_state
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_advance__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__amount_outstanding
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_list
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_search
+msgid "Still Owed"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_rule__structure_id
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_search
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "Structure"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payroll_structure__type_id
+msgid "Structure Type"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+msgid "Summary"
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payroll_structure.py:0
+msgid "The code never set 'result'."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_payslip__version_id
+msgid ""
+"The contract version whose wage and terms the rules read. Defaults to the "
+"version in force during the payslip period, so a raise given in March does "
+"not rewrite January."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid ""
+"The journal entry for %(slip)s does not balance: %(debit)s to debit against "
+"%(credit)s to credit. Check the debit and credit accounts on the structure's"
+" rules."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid ""
+"The journal entry for %s is posted. Reverse it first, so the ledger keeps a "
+"record of both."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_rule__category_id
+msgid ""
+"The line's total accumulates into this category, where later rules can read "
+"it."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_rule__account_credit_id
+msgid ""
+"The line's total is credited here; a negative total flips to the debit side."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_rule__account_debit_id
+msgid ""
+"The line's total is debited here; a negative total flips to the credit side."
+" A deduction rule therefore books its liability by putting the payable "
+"account in this field."
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_form
+msgid "The month after the advance"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_advance__date_first_recovery
+msgid ""
+"The month the first instalment is taken from. Defaults to the month after "
+"the advance was given."
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.actions.act_window,help:hm_payroll.action_hm_payroll_structure
+msgid ""
+"The ordered list of pay lines every payslip follows. If demonstration data "
+"is loaded, copy the demo structure and change the numbers to yours."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_advance_line__payslip_id
+msgid ""
+"The payslip that has claimed this instalment. Set while the payslip is still"
+" a draft, so no other payslip can take it."
+msgstr ""
+
+#. module: hm_payroll
+#. odoo-python
+#: code:addons/hm_payroll/models/hm_payslip.py:0
+msgid ""
+"The salary journal %(journal)s belongs to %(other)s, not to %(company)s. A "
+"payslip cannot post into another company's books."
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.actions.act_window,help:hm_payroll.action_hm_salary_rule_category
+msgid ""
+"The standard five are created for you. BASIC, GROSS and NET also feed the "
+"totals shown on each payslip."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_payroll_structure__type_id
+msgid ""
+"The structure type from core HR. An employee's contract version carries a "
+"structure type, which is how a payslip suggests the right structure."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__date_to
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_run__date_to
+msgid "To"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip_line__total
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_payslip_view_form
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_form
+msgid "Total"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_payslip__activity_exception_decoration
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_advance__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_payslip_line__appears_on_payslip
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_rule__appears_on_payslip
+msgid ""
+"Untick for intermediate rules that the employee should not see printed. The "
+"line is still computed and still counts toward its category."
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__website_message_ids
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_payslip__website_message_ids
+#: model:ir.model.fields,help:hm_payroll.field_hm_salary_advance__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: hm_payroll
+#: model:ir.model.fields,help:hm_payroll.field_hm_payroll_structure__journal_id
+msgid ""
+"Where confirmed payslips create their journal entry. Leave empty for a "
+"structure that is purely informational and never posts."
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_form
+msgid "Why the advance was given"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "of"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "of which advance recovered"
+msgstr ""
+
+#. module: hm_payroll
+#: model_terms:ir.ui.view,arch_db:hm_payroll.report_hm_payslip_document
+msgid "to"
+msgstr ""

@@ -1,0 +1,292 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* af_l10n_base
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20260817\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: af_l10n_base
+#: model:ir.model.constraint,message:af_l10n_base.constraint_af_district_name_state_uniq
+msgid "A district with this name already exists in that province."
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.constraint,message:af_l10n_base.constraint_af_village_name_district_uniq
+msgid "A village with this name already exists in that district."
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_district__active
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_village__active
+msgid "Active"
+msgstr ""
+
+#. module: af_l10n_base
+#: model_terms:ir.actions.act_window,help:af_l10n_base.action_af_district
+msgid "Add a district"
+msgstr ""
+
+#. module: af_l10n_base
+#: model_terms:ir.actions.act_window,help:af_l10n_base.action_af_village
+msgid "Add a village"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,help:af_l10n_base.field_res_partner__af_tazkira
+#: model:ir.model.fields,help:af_l10n_base.field_res_users__af_tazkira
+msgid "Afghan national identity document number."
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.ui.menu,name:af_l10n_base.menu_af_localization
+msgid "Afghanistan"
+msgstr ""
+
+#. module: af_l10n_base
+#: model_terms:ir.actions.act_window,help:af_l10n_base.action_af_district
+msgid ""
+"Afghanistan's 546 districts are loaded with this module, in\n"
+"               English, Dari and Pashto. Add your own if you need one that\n"
+"               is not listed."
+msgstr ""
+
+#. module: af_l10n_base
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_district_view_search
+msgid "Archived"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_district__code
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_village__code
+msgid "Code"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model,name:af_l10n_base.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_district__country_id
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_village__country_id
+msgid "Country"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model,name:af_l10n_base.model_res_country_state
+msgid "Country state"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_district__create_uid
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_village__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_district__create_date
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_village__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_district__display_name
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_village__display_name
+#: model:ir.model.fields,field_description:af_l10n_base.field_res_country_state__display_name
+#: model:ir.model.fields,field_description:af_l10n_base.field_res_partner__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model,name:af_l10n_base.model_af_district
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_village__district_id
+#: model:ir.model.fields,field_description:af_l10n_base.field_res_partner__af_district_id
+#: model:ir.model.fields,field_description:af_l10n_base.field_res_users__af_district_id
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_district_view_form
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_district_view_search
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_village_view_search
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.res_partner_view_form
+msgid "District"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,field_description:af_l10n_base.field_res_partner__af_district_name
+#: model:ir.model.fields,field_description:af_l10n_base.field_res_users__af_district_name
+msgid "District Name"
+msgstr ""
+
+#. module: af_l10n_base
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_district_view_form
+msgid "District name"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,help:af_l10n_base.field_af_district__name
+#: model:ir.model.fields,help:af_l10n_base.field_res_partner__af_district_name
+#: model:ir.model.fields,help:af_l10n_base.field_res_users__af_district_name
+msgid "District name in English."
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,help:af_l10n_base.field_res_partner__af_district_id
+#: model:ir.model.fields,help:af_l10n_base.field_res_users__af_district_id
+msgid "District within the selected province."
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.actions.act_window,name:af_l10n_base.action_af_district
+#: model:ir.ui.menu,name:af_l10n_base.menu_af_district
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_district_view_list
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_district_view_search
+msgid "Districts"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_district__id
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_village__id
+#: model:ir.model.fields,field_description:af_l10n_base.field_res_country_state__id
+#: model:ir.model.fields,field_description:af_l10n_base.field_res_partner__id
+msgid "ID"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_district__write_uid
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_village__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_district__write_date
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_village__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: af_l10n_base
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_district_view_form
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_village_view_form
+msgid "Location"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_district__name
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_village__name
+msgid "Name"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_district__name_dr
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_village__name_dr
+#: model:ir.model.fields,field_description:af_l10n_base.field_res_country_state__af_name_dr
+msgid "Name (Dari)"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_district__name_ps
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_village__name_ps
+#: model:ir.model.fields,field_description:af_l10n_base.field_res_country_state__af_name_ps
+msgid "Name (Pashto)"
+msgstr ""
+
+#. module: af_l10n_base
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_district_view_form
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_village_view_form
+msgid "Names"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,help:af_l10n_base.field_af_district__code
+msgid "Optional local or statistical code for this district."
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,help:af_l10n_base.field_af_village__code
+msgid "Optional village code, for example from a census or survey."
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_district__state_id
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_village__state_id
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_district_view_search
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_village_view_search
+msgid "Province"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,field_description:af_l10n_base.field_res_partner__af_tin
+#: model:ir.model.fields,field_description:af_l10n_base.field_res_users__af_tin
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.res_partner_view_form
+msgid "TIN"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,help:af_l10n_base.field_res_partner__af_tin
+#: model:ir.model.fields,help:af_l10n_base.field_res_users__af_tin
+msgid ""
+"Taxpayer Identification Number issued by the Afghanistan Revenue Department."
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,field_description:af_l10n_base.field_res_partner__af_tazkira
+#: model:ir.model.fields,field_description:af_l10n_base.field_res_users__af_tazkira
+msgid "Tazkira Number"
+msgstr ""
+
+#. module: af_l10n_base
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.res_partner_view_form
+msgid "Tazkira number"
+msgstr ""
+
+#. module: af_l10n_base
+#. odoo-python
+#: code:addons/af_l10n_base/models/af_district.py:0
+msgid "The province %s is not linked to a country."
+msgstr ""
+
+#. module: af_l10n_base
+#: model_terms:ir.actions.act_window,help:af_l10n_base.action_af_village
+msgid ""
+"This list starts empty on purpose. No reliable public dataset of\n"
+"               Afghan villages exists, so rather than ship invented data the\n"
+"               module leaves it to you. Add the villages your organisation\n"
+"               actually works in."
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model,name:af_l10n_base.model_af_village
+#: model:ir.model.fields,field_description:af_l10n_base.field_res_partner__af_village_id
+#: model:ir.model.fields,field_description:af_l10n_base.field_res_users__af_village_id
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_village_view_form
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_village_view_search
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.res_partner_view_form
+msgid "Village"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.model.fields,field_description:af_l10n_base.field_res_partner__af_village_name
+#: model:ir.model.fields,field_description:af_l10n_base.field_res_users__af_village_name
+msgid "Village Name"
+msgstr ""
+
+#. module: af_l10n_base
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_village_view_form
+msgid "Village name"
+msgstr ""
+
+#. module: af_l10n_base
+#: model:ir.actions.act_window,name:af_l10n_base.action_af_village
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_district__village_count
+#: model:ir.model.fields,field_description:af_l10n_base.field_af_district__village_ids
+#: model:ir.ui.menu,name:af_l10n_base.menu_af_village
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_district_view_form
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_village_view_list
+#: model_terms:ir.ui.view,arch_db:af_l10n_base.af_village_view_search
+msgid "Villages"
+msgstr ""

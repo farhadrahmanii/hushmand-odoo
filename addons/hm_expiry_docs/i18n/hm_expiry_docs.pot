@@ -1,0 +1,630 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_expiry_docs
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20260817\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_expiry_docs
+#. odoo-python
+#: code:addons/hm_expiry_docs/models/hm_expiry_document.py:0
+msgid "%(document)s expired %(days)s day(s) ago."
+msgstr ""
+
+#. module: hm_expiry_docs
+#. odoo-python
+#: code:addons/hm_expiry_docs/models/hm_expiry_document.py:0
+msgid "%(document)s expires in %(days)s day(s), on %(date)s."
+msgstr ""
+
+#. module: hm_expiry_docs
+#. odoo-python
+#: code:addons/hm_expiry_docs/models/hm_expiry_document.py:0
+msgid "%s is already closed."
+msgstr ""
+
+#. module: hm_expiry_docs
+#. odoo-python
+#: code:addons/hm_expiry_docs/models/hm_expiry_document.py:0
+msgid "%s needs a document number."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.constraint,message:hm_expiry_docs.constraint_hm_expiry_document_expiry_after_issue
+msgid "A document cannot expire before it was issued."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document_type__requires_number
+msgid "A passport has a number; a signed undertaking may not."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.actions.act_window,help:hm_expiry_docs.action_hm_expiry_document_type
+msgid ""
+"A type says how long a document is valid and how many days of warning you "
+"want. Set the types up once; the documents then look after themselves."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__active
+msgid "Active"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields.selection,name:hm_expiry_docs.selection__hm_expiry_document__manual_state__cancelled
+#: model:ir.model.fields.selection,name:hm_expiry_docs.selection__hm_expiry_document__state__cancelled
+msgid "Cancelled"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__manual_state
+msgid "Closed As"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__code
+msgid "Code"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__company_id
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__company_id
+msgid "Company"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.ui.menu,name:hm_expiry_docs.menu_hm_expiry_config
+msgid "Configuration"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__partner_id
+msgid "Contact"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.actions.act_window,help:hm_expiry_docs.action_hm_expiry_document_type
+msgid "Create a document type"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__create_uid
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__create_date
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__days_to_expiry
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_list
+msgid "Days Left"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document_type__reminder_days
+msgid "Days before expiry to raise an activity for the responsible person."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__display_name
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Document"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__document_count
+msgid "Document Count"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model,name:hm_expiry_docs.model_hm_expiry_document_type
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_type_view_form
+msgid "Document Type"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.actions.act_window,name:hm_expiry_docs.action_hm_expiry_document_type
+#: model:ir.ui.menu,name:hm_expiry_docs.menu_hm_expiry_document_type
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_type_view_list
+msgid "Document Types"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Document number"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.actions.act_window,name:hm_expiry_docs.action_hm_expiry_document
+#: model:ir.ui.menu,name:hm_expiry_docs.menu_hm_expiry_document
+#: model:ir.ui.menu,name:hm_expiry_docs.menu_hm_expiry_root
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_type_view_form
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_type_view_list
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_list
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Documents"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields.selection,name:hm_expiry_docs.selection__hm_expiry_document__state__expired
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Expired"
+msgstr ""
+
+#. module: hm_expiry_docs
+#. odoo-python
+#: code:addons/hm_expiry_docs/models/hm_expiry_document.py:0
+msgid "Expired: %s"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__date_expiry
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Expires"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__expiring_count
+msgid "Expiring Count"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model,name:hm_expiry_docs.model_hm_expiry_document
+msgid "Expiring Document"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.actions.server,name:hm_expiry_docs.cron_expiry_reminders_ir_actions_server
+msgid "Expiring Documents: raise reminders"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields.selection,name:hm_expiry_docs.selection__hm_expiry_document__state__expiring
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Expiring Soon"
+msgstr ""
+
+#. module: hm_expiry_docs
+#. odoo-python
+#: code:addons/hm_expiry_docs/models/hm_expiry_document.py:0
+msgid "Expiring: %s"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Expiry Date"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__subject
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Held By"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__id
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__id
+msgid "ID"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__date_issue
+msgid "Issued"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__issuing_authority
+msgid "Issued By"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__write_uid
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__write_date
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document_type__company_id
+msgid "Leave empty to share across companies."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.actions.act_window,help:hm_expiry_docs.action_hm_expiry_document
+msgid ""
+"Licences, permits, visas, insurance, registrations,\n"
+"               certifications. Whoever is named as responsible gets an activity\n"
+"               before it lapses, so it does not depend on somebody remembering\n"
+"               to open a spreadsheet."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document_type__validity_months
+msgid ""
+"Months a document of this type is normally valid for. Used to suggest an "
+"expiry date; it can always be overridden."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "My Responsibility"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__name
+msgid "Name"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_type_view_list
+msgid "Need Attention"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Needs Attention"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__days_to_expiry
+msgid "Negative once the document has lapsed."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__notes
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Notes"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__name
+msgid "Number"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__requires_number
+msgid "Number Required"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Opens a replacement and closes this one."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Or a vehicle, a building, the company"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__reminder_days
+msgid "Remind Before"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__reminder_sent
+msgid "Reminder Raised"
+msgstr ""
+
+#. module: hm_expiry_docs
+#. odoo-python
+#: code:addons/hm_expiry_docs/models/hm_expiry_document.py:0
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Renew"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Renewal"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields.selection,name:hm_expiry_docs.selection__hm_expiry_document__manual_state__renewed
+#: model:ir.model.fields.selection,name:hm_expiry_docs.selection__hm_expiry_document__state__renewed
+msgid "Renewed"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__renewal_ids
+msgid "Renewed By"
+msgstr ""
+
+#. module: hm_expiry_docs
+#. odoo-python
+#: code:addons/hm_expiry_docs/models/hm_expiry_document.py:0
+msgid "Renewed by %s."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__renewed_from_id
+msgid "Renews"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Reopen"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__responsible_id
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Responsible"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__manual_state
+msgid ""
+"Set when a document is superseded or withdrawn. Overrides the date-driven "
+"status."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document_type__code
+msgid "Short code used on lists and references."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__state
+msgid "State"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Status"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__renewed_from_id
+msgid "The document this one replaces."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__name
+msgid "The document's own number or reference."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.constraint,message:hm_expiry_docs.constraint_hm_expiry_document_type_reminder_positive
+msgid "The reminder period cannot be negative."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "This expires in"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.actions.act_window,help:hm_expiry_docs.action_hm_expiry_document
+msgid "Track a document that expires"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__type_id
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Type"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__validity_months
+msgid "Usual Validity"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields.selection,name:hm_expiry_docs.selection__hm_expiry_document__state__valid
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Valid"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__state
+msgid ""
+"Valid, expiring and expired follow the dates. Renewed and cancelled are set "
+"by hand and stop the reminders."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Validity"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__responsible_id
+msgid ""
+"Who gets the reminder. A document nobody owns is a document nobody renews."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__subject
+msgid ""
+"Who or what the document belongs to, when that is not a contact -- a "
+"vehicle, a building, the company itself."
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_type_view_form
+msgid "Work Permit"
+msgstr ""
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "day(s)."
+msgstr ""

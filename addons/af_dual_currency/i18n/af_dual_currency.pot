@@ -1,0 +1,418 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* af_dual_currency
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20260817\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: af_dual_currency
+#. odoo-python
+#: code:addons/af_dual_currency/models/af_exchange_period.py:0
+msgid ""
+"%s is closed. Reopen it before changing the rate, and be aware that anything"
+" already reported using it will no longer match."
+msgstr ""
+
+#. module: af_dual_currency
+#. odoo-python
+#: code:addons/af_dual_currency/models/af_exchange_period.py:0
+msgid "A closed period cannot be deleted."
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,help:af_dual_currency.field_af_exchange_period__name
+msgid "A label for the period, for example 2026-08 or Sunbula 1405."
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.constraint,message:af_dual_currency.constraint_af_exchange_period_date_order
+msgid "A period cannot end before it starts."
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,help:af_dual_currency.field_account_bank_statement_line__af_secondary_currency_id
+#: model:ir.model.fields,help:af_dual_currency.field_account_move__af_secondary_currency_id
+#: model:ir.model.fields,help:af_dual_currency.field_res_company__af_secondary_currency_id
+#: model:ir.model.fields,help:af_dual_currency.field_res_config_settings__af_secondary_currency_id
+msgid ""
+"A second currency to show amounts in alongside the company currency, "
+"normally AFN. Rates come from exchange periods, not from the daily rate "
+"table."
+msgstr ""
+
+#. module: af_dual_currency
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_form
+msgid ""
+"Anything already reported using this rate will no longer match. Continue?"
+msgstr ""
+
+#. module: af_dual_currency
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_form
+msgid "Close"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields.selection,name:af_dual_currency.selection__af_exchange_period__state__closed
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_search
+msgid "Closed"
+msgstr ""
+
+#. module: af_dual_currency
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_form
+msgid ""
+"Closing locks the rate so figures already reported cannot change. Continue?"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model,name:af_dual_currency.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_af_exchange_period__company_id
+msgid "Company"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_af_exchange_period__company_currency_id
+msgid "Company Currency"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model,name:af_dual_currency.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: af_dual_currency
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields.selection,name:af_dual_currency.selection__af_exchange_period__state__confirmed
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_search
+msgid "Confirmed"
+msgstr ""
+
+#. module: af_dual_currency
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_form
+msgid ""
+"Confirming publishes this rate to Odoo, so invoices,\n"
+"                        accounting and reports all use it for dates in this period."
+msgstr ""
+
+#. module: af_dual_currency
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_search
+msgid "Covers Today"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_af_exchange_period__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_af_exchange_period__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: af_dual_currency
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_search
+msgid "Currency"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_account_move__display_name
+#: model:ir.model.fields,field_description:af_dual_currency.field_af_exchange_period__display_name
+#: model:ir.model.fields,field_description:af_dual_currency.field_res_company__display_name
+#: model:ir.model.fields,field_description:af_dual_currency.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields.selection,name:af_dual_currency.selection__af_exchange_period__state__draft
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_search
+msgid "Draft"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,help:af_dual_currency.field_af_exchange_period__state
+msgid ""
+"Draft periods can still be edited. Confirming publishes the rate to Odoo. "
+"Closing locks it so reported figures cannot change afterwards."
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_account_bank_statement_line__af_exchange_period_id
+#: model:ir.model.fields,field_description:af_dual_currency.field_account_move__af_exchange_period_id
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_form
+msgid "Exchange Period"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.actions.act_window,name:af_dual_currency.action_af_exchange_period
+#: model:ir.ui.menu,name:af_dual_currency.menu_af_exchange_period
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_list
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_search
+msgid "Exchange Periods"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model,name:af_dual_currency.model_af_exchange_period
+msgid "Exchange Rate Period"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_af_exchange_period__date_from
+msgid "From"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_account_move__id
+#: model:ir.model.fields,field_description:af_dual_currency.field_af_exchange_period__id
+#: model:ir.model.fields,field_description:af_dual_currency.field_res_company__id
+#: model:ir.model.fields,field_description:af_dual_currency.field_res_config_settings__id
+msgid "ID"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_af_exchange_period__inverse_rate
+msgid "Inverse Rate"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model,name:af_dual_currency.model_account_move
+msgid "Journal Entry"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_af_exchange_period__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_af_exchange_period__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_af_exchange_period__note
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_form
+msgid "Notes"
+msgstr ""
+
+#. module: af_dual_currency
+#: model_terms:ir.actions.act_window,help:af_dual_currency.action_af_exchange_period
+msgid ""
+"Odoo normally keeps one rate per day and picks the nearest one.\n"
+"               A period fixes a single agreed rate for a whole month and locks\n"
+"               it once reported, which is how payroll and tax filings work."
+msgstr ""
+
+#. module: af_dual_currency
+#. odoo-python
+#: code:addons/af_dual_currency/models/af_exchange_period.py:0
+msgid "Only a closed period can be reopened."
+msgstr ""
+
+#. module: af_dual_currency
+#. odoo-python
+#: code:addons/af_dual_currency/models/af_exchange_period.py:0
+msgid "Only a confirmed period can be closed."
+msgstr ""
+
+#. module: af_dual_currency
+#. odoo-python
+#: code:addons/af_dual_currency/models/af_exchange_period.py:0
+msgid "Only a draft period can be confirmed."
+msgstr ""
+
+#. module: af_dual_currency
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_form
+msgid "Period"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_af_exchange_period__rate_id
+msgid "Published Rate"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_af_exchange_period__rate
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_form
+msgid "Rate"
+msgstr ""
+
+#. module: af_dual_currency
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.res_config_settings_view_form
+msgid ""
+"Rates come from exchange periods, not the daily\n"
+"                                rate table, so a month's documents all share one\n"
+"                                agreed rate."
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_af_exchange_period__name
+msgid "Reference"
+msgstr ""
+
+#. module: af_dual_currency
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_form
+msgid "Reopen"
+msgstr ""
+
+#. module: af_dual_currency
+#. odoo-python
+#: code:addons/af_dual_currency/models/af_exchange_period.py:0
+msgid "Reopen %s before returning it to draft."
+msgstr ""
+
+#. module: af_dual_currency
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_form
+msgid "Reset to Draft"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_account_bank_statement_line__af_secondary_currency_id
+#: model:ir.model.fields,field_description:af_dual_currency.field_account_move__af_secondary_currency_id
+#: model:ir.model.fields,field_description:af_dual_currency.field_af_exchange_period__currency_id
+#: model:ir.model.fields,field_description:af_dual_currency.field_res_company__af_secondary_currency_id
+#: model:ir.model.fields,field_description:af_dual_currency.field_res_config_settings__af_secondary_currency_id
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.res_config_settings_view_form
+msgid "Second Currency"
+msgstr ""
+
+#. module: af_dual_currency
+#: model_terms:ir.actions.act_window,help:af_dual_currency.action_af_exchange_period
+msgid "Set a rate for a period"
+msgstr ""
+
+#. module: af_dual_currency
+#. odoo-python
+#: code:addons/af_dual_currency/models/af_exchange_period.py:0
+msgid "Set a second currency on %s first."
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_account_bank_statement_line__af_show_secondary
+#: model:ir.model.fields,field_description:af_dual_currency.field_account_move__af_show_secondary
+msgid "Show Second Currency"
+msgstr ""
+
+#. module: af_dual_currency
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.res_config_settings_view_form
+msgid ""
+"Show amounts in a second currency, using the rate agreed for each period."
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_res_company__af_show_secondary_on_documents
+#: model:ir.model.fields,field_description:af_dual_currency.field_res_config_settings__af_show_secondary_on_documents
+msgid "Show on Documents"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,help:af_dual_currency.field_account_bank_statement_line__af_show_secondary
+#: model:ir.model.fields,help:af_dual_currency.field_account_move__af_show_secondary
+#: model:ir.model.fields,help:af_dual_currency.field_res_company__af_show_secondary_on_documents
+#: model:ir.model.fields,help:af_dual_currency.field_res_config_settings__af_show_secondary_on_documents
+msgid "Show the second-currency total on invoices and bills."
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_af_exchange_period__state
+msgid "State"
+msgstr ""
+
+#. module: af_dual_currency
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_search
+msgid "Status"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,help:af_dual_currency.field_af_exchange_period__rate_id
+msgid "The Odoo currency rate created when this period was confirmed."
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,help:af_dual_currency.field_af_exchange_period__currency_id
+msgid "The currency this period sets a rate for, normally AFN."
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,help:af_dual_currency.field_account_bank_statement_line__af_amount_total_secondary
+#: model:ir.model.fields,help:af_dual_currency.field_account_move__af_amount_total_secondary
+msgid ""
+"The document total converted at the rate agreed for its period. Zero means "
+"no confirmed period covers this date."
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,help:af_dual_currency.field_account_bank_statement_line__af_exchange_period_id
+#: model:ir.model.fields,help:af_dual_currency.field_account_move__af_exchange_period_id
+msgid "The period whose rate was used for the second-currency total."
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.constraint,message:af_dual_currency.constraint_af_exchange_period_rate_positive
+msgid "The rate must be greater than zero."
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,help:af_dual_currency.field_af_exchange_period__inverse_rate
+msgid "The same rate read the other way round, for checking."
+msgstr ""
+
+#. module: af_dual_currency
+#. odoo-python
+#: code:addons/af_dual_currency/models/af_exchange_period.py:0
+msgid "The second currency must differ from the company currency (%s)."
+msgstr ""
+
+#. module: af_dual_currency
+#. odoo-python
+#: code:addons/af_dual_currency/models/af_exchange_period.py:0
+msgid ""
+"This period overlaps with %(other)s, which already covers %(start)s to "
+"%(end)s."
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_af_exchange_period__date_to
+msgid "To"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,field_description:af_dual_currency.field_account_bank_statement_line__af_amount_total_secondary
+#: model:ir.model.fields,field_description:af_dual_currency.field_account_move__af_amount_total_secondary
+msgid "Total in Second Currency"
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,help:af_dual_currency.field_af_exchange_period__rate
+msgid ""
+"Units of the second currency for one unit of the company currency. With a "
+"company in USD and a rate of 70, one dollar is 70 afghani."
+msgstr ""
+
+#. module: af_dual_currency
+#: model:ir.model.fields,help:af_dual_currency.field_af_exchange_period__note
+msgid ""
+"Where the rate came from, for example the central bank reference for a given"
+" day."
+msgstr ""
+
+#. module: af_dual_currency
+#: model_terms:ir.ui.view,arch_db:af_dual_currency.af_exchange_period_view_form
+msgid ""
+"Where this rate came from, for example the central bank reference for 1 "
+"Sunbula."
+msgstr ""
