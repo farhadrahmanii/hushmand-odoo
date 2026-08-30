@@ -191,16 +191,19 @@ jobs:
         # So this does not check that nothing went wrong. It activates the
         # language, exports Dari back OUT of the database, and counts what
         # came back.
+        #
+        # One export per module, never one export of all twenty: a combined
+        # export lists each shared term only once, which makes every module
+        # that inherits chatter look half-translated.
         run: |
           odoo i18n loadlang -c /tmp/odoo-i18n.conf -d ci -l fa_AF
-          odoo i18n export -c /tmp/odoo-i18n.conf -d ci -l fa_AF \
-            -o /tmp/fa_AF-loaded.po \
-            af_jalali af_l10n_base af_dual_currency af_hr hm_approvals \
-            hm_purchase_request hm_account_reports hm_assets hm_expiry_docs \
-            af_liaison af_correspondence hm_frontdesk hm_roster af_zakat \
-            hm_contracts hm_license af_l10n_account af_procurement \
-            hm_payroll af_hr_payroll
-          python3 tools/check_translations_loaded.py fa_AF /tmp/fa_AF-loaded.po
+          mkdir -p /tmp/loaded
+          for module in addons/*/; do
+            module=$(basename "$module")
+            odoo i18n export -c /tmp/odoo-i18n.conf -d ci -l fa_AF \
+              -o "/tmp/loaded/$module.po" "$module"
+          done
+          python3 tools/check_translations_loaded.py fa_AF /tmp/loaded
 
       - name: Upload the translation templates
         if: always()
