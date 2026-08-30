@@ -144,6 +144,38 @@ jobs:
             exit 1
           fi
 
+      - name: Export the translation templates
+        # Odoo 19 dropped --i18n-export for an "odoo i18n export" subcommand,
+        # which writes addons/<module>/i18n/<module>.pot for every module named.
+        # It can only read terms out of an installed module, so it runs here,
+        # against the database the step above just built.
+        run: |
+          cat > /tmp/odoo-i18n.conf <<EOF
+          [options]
+          db_host = postgres
+          db_user = odoo
+          db_password = odoo
+          data_dir = /tmp/odoo-data
+          addons_path = /usr/lib/python3/dist-packages/odoo/addons,$GITHUB_WORKSPACE/addons
+          EOF
+          odoo i18n export -c /tmp/odoo-i18n.conf -d ci \
+            af_jalali af_l10n_base af_dual_currency af_hr hm_approvals \
+            hm_purchase_request hm_account_reports hm_assets hm_expiry_docs \
+            af_liaison af_correspondence hm_frontdesk hm_roster af_zakat \
+            hm_contracts hm_license af_l10n_account af_procurement \
+            hm_payroll af_hr_payroll
+          python3 tools/normalise_pot.py
+          echo "Exported:"
+          wc -l addons/*/i18n/*.pot
+
+      - name: Upload the translation templates
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: translation-templates
+          path: addons/*/i18n/*.pot
+          if-no-files-found: error
+
   demo:
     name: Install with demo data on Odoo 19
     runs-on: ubuntu-latest
