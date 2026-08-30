@@ -1,0 +1,741 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* af_hr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: af_hr
+#: model:ir.actions.report,print_report_name:af_hr.action_report_af_id_card
+msgid "'ID Card - %s' % (object.name)"
+msgstr "'ID Card - %s' % (object.name)"
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/af_employee_discipline.py:0
+msgid "A closed action cannot be cancelled. Record a new action instead, so the history stays intact."
+msgstr "اقدام بسته‌شده لغو شده نمی‌تواند. به‌جای آن یک اقدام جدید ثبت کنید، تا سابقه دست‌نخورده بماند."
+
+#. module: af_hr
+#: model:ir.model.constraint,message:af_hr.constraint_af_employee_discipline_suspension_dates
+msgid "A suspension cannot end before it starts."
+msgstr "تعلیق پیش از آغازش پایان یافته نمی‌تواند."
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/af_employee_discipline.py:0
+msgid "A suspension needs a start date."
+msgstr "تعلیق به تاریخ آغاز ضرورت دارد."
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__state__acknowledged
+msgid "Acknowledged"
+msgstr "اطلاع‌داده‌شده"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__acknowledged_date
+msgid "Acknowledged On"
+msgstr "تاریخ اطلاع"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__action_type
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_search
+msgid "Action"
+msgstr "اقدام"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_needaction
+msgid "Action Needed"
+msgstr "نیازمند اقدام"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__activity_ids
+msgid "Activities"
+msgstr "فعالیت‌ها"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "نشانه استثنای فعالیت"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__activity_state
+msgid "Activity State"
+msgstr "حالت فعالیت"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "آیکن نوع فعالیت"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_attachment_count
+msgid "Attachment Count"
+msgstr "تعداد ضمایم"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Cancel"
+msgstr "لغو"
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__state__cancelled
+msgid "Cancelled"
+msgstr "لغوشده"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Close"
+msgstr "بستن"
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__state__closed
+msgid "Closed"
+msgstr "بسته"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__company_id
+msgid "Company"
+msgstr "شرکت"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__create_uid
+msgid "Created by"
+msgstr "ایجادکننده"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__create_date
+msgid "Created on"
+msgstr "تاریخ ایجاد"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_private_district_id
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_private_district_id
+msgid "Current District"
+msgstr "ولسوالی فعلی"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_private_village_id
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_private_village_id
+msgid "Current Village"
+msgstr "قریه فعلی"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__date
+msgid "Date"
+msgstr "تاریخ"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__department_id
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_search
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "Department"
+msgstr "بخش"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__description
+msgid "Details"
+msgstr "جزئیات"
+
+#. module: af_hr
+#: model:ir.model,name:af_hr.model_af_employee_discipline
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Disciplinary Action"
+msgstr "اقدام انضباطی"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_discipline_count
+msgid "Disciplinary Action Count"
+msgstr "تعداد اقدامات انضباطی"
+
+#. module: af_hr
+#: model:ir.actions.act_window,name:af_hr.action_af_employee_discipline
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_discipline_ids
+#: model:ir.ui.menu,name:af_hr.menu_af_employee_discipline
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_list
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_search
+msgid "Disciplinary Actions"
+msgstr "اقدامات انضباطی"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.hr_employee_view_form
+msgid "Discipline"
+msgstr "انضباط"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__display_name
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.hr_employee_view_form
+msgid "District"
+msgstr "ولسوالی"
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__state__draft
+msgid "Draft"
+msgstr "مسوده"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_search
+msgid "Due for Review"
+msgstr "موعد بازنگری"
+
+#. module: af_hr
+#: model:ir.model,name:af_hr.model_hr_employee
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__employee_id
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_search
+msgid "Employee"
+msgstr "کارمند"
+
+#. module: af_hr
+#: model:ir.actions.report,name:af_hr.action_report_af_id_card
+msgid "Employee ID Card"
+msgstr "کارت هویت کارمند"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "Employee Identity Card"
+msgstr "کارت هویت کارمند"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_father_name
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_father_name
+msgid "Father's Name"
+msgstr "نام پدر"
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__action_type__final
+msgid "Final Warning"
+msgstr "اخطار نهایی"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_search
+msgid "Final or Termination"
+msgstr "نهایی یا فسخ"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Follow Up"
+msgstr "پیگیری"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_follower_ids
+msgid "Followers"
+msgstr "دنبال‌کنندگان"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "دنبال‌کنندگان (مخاطبین)"
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "آیکن Font Awesome، مثلاً fa-tasks"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_full_identity
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_full_identity
+msgid "Full Identity"
+msgstr "هویت مکمل"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_grandfather_name
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_grandfather_name
+msgid "Grandfather's Name"
+msgstr "نام پدرکلان"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__has_message
+msgid "Has Message"
+msgstr "دارای پیام"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__id
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__id
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__activity_exception_icon
+msgid "Icon"
+msgstr "آیکن"
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "آیکنی که فعالیت استثنایی را نشان می‌دهد."
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "در صورت انتخاب، پیام‌های جدید نیازمند توجه شماست."
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__message_has_error
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "در صورت انتخاب، برخی پیام‌ها خطای ارسال دارند."
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "If found, please return this card to"
+msgstr "در صورت یافتن، لطفاً این کارت را به این آدرس برگردانید"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_is_follower
+msgid "Is Follower"
+msgstr "دنبال‌کننده است"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Issue"
+msgstr "صدور"
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__state__issued
+msgid "Issued"
+msgstr "صادرشده"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__issued_by_id
+msgid "Issued By"
+msgstr "صادرکننده"
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_hr_employee__af_tazkira_volume
+#: model:ir.model.fields,help:af_hr.field_hr_version__af_tazkira_volume
+msgid "Jild, on a paper tazkira."
+msgstr "جلد، در تذکره کاغذی."
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__write_uid
+msgid "Last Updated by"
+msgstr "آخرین ویرایش توسط"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__write_date
+msgid "Last Updated on"
+msgstr "تاریخ آخرین ویرایش"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "Logo"
+msgstr "لوگو"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Mark Acknowledged"
+msgstr "ثبت اطلاع کارمند"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_has_error
+msgid "Message Delivery error"
+msgstr "خطای ارسال پیام"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_ids
+msgid "Messages"
+msgstr "پیام‌ها"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "مهلت فعالیت من"
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_hr_employee__af_tazkira_number
+#: model:ir.model.fields,help:af_hr.field_hr_version__af_tazkira_number
+msgid "National identity number on an electronic tazkira."
+msgstr "نمبر هویت ملی روی تذکره الکترونیکی."
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/af_employee_discipline.py:0
+msgid "New"
+msgstr "جدید"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "مهلت فعالیت بعدی"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__activity_summary
+msgid "Next Activity Summary"
+msgstr "خلاصه فعالیت بعدی"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع فعالیت بعدی"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_needaction_counter
+msgid "Number of Actions"
+msgstr "تعداد اقدامات"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_has_error_counter
+msgid "Number of errors"
+msgstr "تعداد خطاها"
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "تعداد پیام‌های نیازمند اقدام"
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "تعداد پیام‌های دارای خطای ارسال"
+
+#. module: af_hr
+#: model_terms:ir.actions.act_window,help:af_hr.action_af_employee_discipline
+msgid ""
+"Odoo has no equivalent in either edition. Issue and\n"
+"               acknowledgement are tracked separately, because whether the\n"
+"               employee actually saw it is the part that matters later."
+msgstr ""
+"اودو در هیچ‌یک از نسخه‌هایش معادلی برای این ندارد. صدور و\n"
+"               اطلاع کارمند جداگانه پیگیری می‌شوند، زیرا اینکه کارمند واقعاً\n"
+"               آن را دیده یا نه، همان بخشی است که بعداً اهمیت پیدا می‌کند."
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/af_employee_discipline.py:0
+msgid "Only a cancelled action can be reset."
+msgstr "تنها اقدام لغوشده بازنشانی شده می‌تواند."
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/af_employee_discipline.py:0
+msgid "Only a draft action can be issued."
+msgstr "تنها اقدام مسوده صادر شده می‌تواند."
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/af_employee_discipline.py:0
+msgid "Only an issued action can be acknowledged."
+msgstr "تنها اقدام صادرشده اطلاع‌داده شده می‌تواند."
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/af_employee_discipline.py:0
+msgid "Only an issued or acknowledged action can be closed."
+msgstr "تنها اقدام صادرشده یا اطلاع‌داده‌شده بسته شده می‌تواند."
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_search
+msgid "Open"
+msgstr "باز"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_permanent_street
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_permanent_street
+#: model_terms:ir.ui.view,arch_db:af_hr.hr_employee_view_form
+msgid "Permanent Address"
+msgstr "آدرس دایمی"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_permanent_district_id
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_permanent_district_id
+msgid "Permanent District"
+msgstr "ولسوالی دایمی"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_permanent_state_id
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_permanent_state_id
+msgid "Permanent Province"
+msgstr "ولایت دایمی"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_permanent_village_id
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_permanent_village_id
+msgid "Permanent Village"
+msgstr "قریه دایمی"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "Phone"
+msgstr "تیلفون"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "Photo"
+msgstr "عکس"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "Position"
+msgstr "بست"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__reason
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Reason"
+msgstr "دلیل"
+
+#. module: af_hr
+#: model_terms:ir.actions.act_window,help:af_hr.action_af_employee_discipline
+msgid "Record a disciplinary action"
+msgstr "ثبت یک اقدام انضباطی"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__name
+msgid "Reference"
+msgstr "مرجع"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Reset to Draft"
+msgstr "بازگشت به مسوده"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__activity_user_id
+msgid "Responsible User"
+msgstr "کاربر مسئول"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__follow_up_date
+msgid "Review On"
+msgstr "تاریخ بازنگری"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطای ارسال پیامک"
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_hr_employee__af_tazkira_register
+#: model:ir.model.fields,help:af_hr.field_hr_version__af_tazkira_register
+msgid "Sabt, the registration entry on a paper tazkira."
+msgstr "ثبت، مدخل راجستر در تذکره کاغذی."
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_hr_employee__af_tazkira_page
+#: model:ir.model.fields,help:af_hr.field_hr_version__af_tazkira_page
+msgid "Safha, on a paper tazkira."
+msgstr "صفحه، در تذکره کاغذی."
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Short reason, as it will read on the record"
+msgstr "دلیل کوتاه، همان‌گونه که در سابقه خوانده می‌شود"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__state
+msgid "State"
+msgstr "حالت"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_search
+msgid "Status"
+msgstr "وضعیت"
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"حالت بر اساس فعالیت‌ها\n"
+"معوق: تاریخ سررسید گذشته است\n"
+"امروز: تاریخ فعالیت امروز است\n"
+"پلان‌شده: فعالیت‌های آینده."
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__suspension_date_from
+msgid "Suspended From"
+msgstr "تعلیق از"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__suspension_date_to
+msgid "Suspended To"
+msgstr "تعلیق تا"
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__action_type__suspension
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "Suspension"
+msgstr "تعلیق"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_tin
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_tin
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "TIN"
+msgstr "نمبر تشخیصیه (TIN)"
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_hr_employee__af_tin
+#: model:ir.model.fields,help:af_hr.field_hr_version__af_tin
+msgid "Taxpayer Identification Number, required on the payroll return."
+msgstr "نمبر تشخیصیه مالیه‌دهنده، که در اظهارنامه معاشات لازم است."
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.hr_employee_view_form
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "Tazkira"
+msgstr "تذکره"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_tazkira_state_id
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_tazkira_state_id
+msgid "Tazkira Issued In"
+msgstr "تذکره صادرشده در"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_tazkira_page
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_tazkira_page
+msgid "Tazkira Page"
+msgstr "صفحه تذکره"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_tazkira_reference
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_tazkira_reference
+msgid "Tazkira Reference"
+msgstr "مرجع تذکره"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_tazkira_register
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_tazkira_register
+msgid "Tazkira Register"
+msgstr "ثبت تذکره"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_tazkira_volume
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_tazkira_volume
+msgid "Tazkira Volume"
+msgstr "جلد تذکره"
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__action_type__termination
+msgid "Termination"
+msgstr "فسخ وظیفه"
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_hr_employee__af_full_identity
+#: model:ir.model.fields,help:af_hr.field_hr_version__af_full_identity
+msgid "The name as it is written on official documents and letters."
+msgstr "نام همان‌گونه که در اسناد و مکاتیب رسمی نوشته می‌شود."
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_hr_employee__af_permanent_state_id
+#: model:ir.model.fields,help:af_hr.field_hr_version__af_permanent_state_id
+msgid "The province recorded on the tazkira."
+msgstr "ولایتی که در تذکره ثبت شده است."
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_hr_employee__af_tazkira_state_id
+#: model:ir.model.fields,help:af_hr.field_hr_version__af_tazkira_state_id
+msgid "The province that issued the tazkira."
+msgstr "ولایتی که تذکره را صادر کرده است."
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع فعالیت استثنایی روی سند."
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__action_type__verbal
+msgid "Verbal Warning"
+msgstr "اخطار شفاهی"
+
+#. module: af_hr
+#: model:ir.model,name:af_hr.model_hr_version
+msgid "Version"
+msgstr "نسخه"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.hr_employee_view_form
+msgid "Village"
+msgstr "قریه"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.hr_employee_view_form
+msgid "Village, area or landmark"
+msgstr "قریه، ساحه یا نشانی"
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/hr_version.py:0
+msgid "Volume %(volume)s, Page %(page)s, Register %(register)s"
+msgstr "جلد %(volume)s، صفحه %(page)s، ثبت %(register)s"
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_hr_employee__af_tazkira_reference
+#: model:ir.model.fields,help:af_hr.field_hr_version__af_tazkira_reference
+msgid "Volume, page and register written the way a clerk reads them."
+msgstr "جلد، صفحه و ثبت، نوشته‌شده به همان شکلی که یک مأمور آن‌ها را می‌خواند."
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__website_message_ids
+msgid "Website Messages"
+msgstr "پیام‌های ویب‌سایت"
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__website_message_ids
+msgid "Website communication history"
+msgstr "تاریخچه ارتباطات ویب‌سایت"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
+msgid "What happened, when, who was present, and what was agreed."
+msgstr "اینکه چه واقع شد، چه وقت، چه کسانی حاضر بودند، و بر چه توافق شد."
+
+#. module: af_hr
+#: model:ir.model.fields,help:af_hr.field_af_employee_discipline__follow_up_date
+msgid "When this should be revisited, for example the end of a probationary warning period."
+msgstr "اینکه این موضوع چه وقت باید دوباره بررسی شود، مثلاً پایان دوره اخطار آزمایشی."
+
+#. module: af_hr
+#: model:ir.model.fields.selection,name:af_hr.selection__af_employee_discipline__action_type__written
+msgid "Written Warning"
+msgstr "اخطار کتبی"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "e-Tazkira"
+msgstr "تذکره الکترونیکی"
+
+#. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_hr_employee__af_tazkira_number
+#: model:ir.model.fields,field_description:af_hr.field_hr_version__af_tazkira_number
+msgid "e-Tazkira / NID"
+msgstr "تذکره الکترونیکی / NID"
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/hr_version.py:0
+msgid "g/o %s"
+msgstr "بن %s"
+
+#. module: af_hr
+#: model_terms:ir.ui.view,arch_db:af_hr.report_af_id_card_document
+msgid "s/o"
+msgstr "ولد"
+
+#. module: af_hr
+#. odoo-python
+#: code:addons/af_hr/models/hr_version.py:0
+msgid "s/o %s"
+msgstr "ولد %s"

@@ -1,0 +1,754 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_contracts
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "%(contract)s is due to be invoiced for the period beginning %(date)s."
+msgstr "%(contract)s برای دوره‌ای که از %(date)s آغاز می‌شود، سررسید بل شدن است."
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "%(contract)s with %(partner)s ends on %(date)s. Renew it or let it lapse."
+msgstr "%(contract)s با %(partner)s در تاریخ %(date)s پایان می‌یابد. آن را تمدید کنید یا بگذارید منقضی شود."
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "%s has been invoiced and cannot be cancelled. Close it instead, so the invoices keep their contract."
+msgstr "برای %s بل صادر شده و لغو شده نمی‌تواند. به‌جای آن ببندیدش، تا بل‌ها قرارداد خود را نگه دارند."
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "%s has invoices raised against it."
+msgstr "در برابر %s بل‌هایی صادر شده است."
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "%s has nothing on it to bill."
+msgstr "%s چیزی برای بل کردن ندارد."
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "%s has nothing to bill."
+msgstr "%s چیزی برای بل کردن ندارد."
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "%s is a supplier contract and does not raise invoices."
+msgstr "%s یک قرارداد عرضه‌کننده است و بل صادر نمی‌کند."
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "%s is already closed."
+msgstr "%s قبلاً بسته شده است."
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "%s is not running."
+msgstr "%s جاری نیست."
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "%s is open-ended and does not need renewing."
+msgstr "%s بدون تاریخ پایان است و به تمدید ضرورت ندارد."
+
+#. module: hm_contracts
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_form
+msgid ""
+".\n"
+"                        Renew it or let it lapse — but decide before the date,\n"
+"                        not after."
+msgstr ""
+".\n"
+"                        آن را تمدید کنید یا بگذارید منقضی شود — اما پیش از آن\n"
+"                        تاریخ تصمیم بگیرید، نه پس از آن."
+
+#. module: hm_contracts
+#: model:ir.model.constraint,message:hm_contracts.constraint_hm_contract_dates_in_order
+msgid "A contract cannot end before it starts."
+msgstr "قرارداد پیش از آغازش پایان یافته نمی‌تواند."
+
+#. module: hm_contracts
+#: model:ir.model.constraint,message:hm_contracts.constraint_hm_contract_line_quantity_positive
+msgid "A contract line needs a quantity greater than zero."
+msgstr "هر قلم قرارداد به مقداری بزرگ‌تر از صفر ضرورت دارد."
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract_line__account_id
+msgid "Account"
+msgstr "حساب"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__message_needaction
+msgid "Action Needed"
+msgstr "نیازمند اقدام"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__activity_ids
+msgid "Activities"
+msgstr "فعالیت‌ها"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "نشانه استثنای فعالیت"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__activity_state
+msgid "Activity State"
+msgstr "حالت فعالیت"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "آیکن نوع فعالیت"
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "Add at least one line to %s first."
+msgstr "نخست حداقل یک قلم به %s بیفزایید."
+
+#. module: hm_contracts
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_form
+msgid "Annual security services"
+msgstr "خدمات امنیتی سالانه"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__amount_annual
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_list
+msgid "Annualised"
+msgstr "سالانه‌شده"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__message_attachment_count
+msgid "Attachment Count"
+msgstr "تعداد ضمایم"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__recurrence
+msgid "Billed"
+msgstr "بل‌شده"
+
+#. module: hm_contracts
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_search
+msgid "Billing Cycle"
+msgstr "دوره بل"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract_line__analytic_account_id
+msgid "Budget Line"
+msgstr "لین بودجه"
+
+#. module: hm_contracts
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_form
+msgid "Cancel"
+msgstr "لغو"
+
+#. module: hm_contracts
+#: model:ir.model.fields.selection,name:hm_contracts.selection__hm_contract__state__cancelled
+msgid "Cancelled"
+msgstr "لغوشده"
+
+#. module: hm_contracts
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_form
+msgid "Close"
+msgstr "بستن"
+
+#. module: hm_contracts
+#: model:ir.model.fields.selection,name:hm_contracts.selection__hm_contract__state__closed
+msgid "Closed"
+msgstr "بسته"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__company_id
+msgid "Company"
+msgstr "شرکت"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_account_bank_statement_line__hm_contract_id
+#: model:ir.model.fields,field_description:hm_contracts.field_account_move__hm_contract_id
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__title
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract_line__contract_id
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_form
+msgid "Contract"
+msgstr "قرارداد"
+
+#. module: hm_contracts
+#: model:ir.model,name:hm_contracts.model_hm_contract_line
+msgid "Contract Line"
+msgstr "قلم قرارداد"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__contract_type
+msgid "Contract Type"
+msgstr "نوع قرارداد"
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "Contract ending: %s"
+msgstr "پایان قرارداد: %s"
+
+#. module: hm_contracts
+#: model:ir.actions.act_window,name:hm_contracts.action_hm_contract
+#: model:ir.ui.menu,name:hm_contracts.menu_hm_contract
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_list
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_search
+msgid "Contracts"
+msgstr "قراردادها"
+
+#. module: hm_contracts
+#: model:ir.actions.server,name:hm_contracts.cron_contracts_ir_actions_server
+msgid "Contracts: renewals and invoices due"
+msgstr "قراردادها: تمدیدها و بل‌های سررسیدشده"
+
+#. module: hm_contracts
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_form
+msgid "Create Invoice"
+msgstr "ایجاد بل"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__create_uid
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract_line__create_uid
+msgid "Created by"
+msgstr "ایجادکننده"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__create_date
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract_line__create_date
+msgid "Created on"
+msgstr "تاریخ ایجاد"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__currency_id
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract_line__currency_id
+msgid "Currency"
+msgstr "اسعار"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__partner_id
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_search
+msgid "Customer"
+msgstr "مشتری"
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract__notice_days
+msgid "Days before the end date to raise a reminder, so a renewal or termination decision is not made late."
+msgstr "تعداد روزهای پیش از تاریخ پایان برای یادآوری، تا تصمیم تمدید یا فسخ دیر گرفته نشود."
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract_line__name
+msgid "Description"
+msgstr "توضیحات"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_account_move__display_name
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__display_name
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract_line__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: hm_contracts
+#: model:ir.model.fields.selection,name:hm_contracts.selection__hm_contract__state__draft
+msgid "Draft"
+msgstr "مسوده"
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "Draft invoice %s raised."
+msgstr "بل مسوده %s صادر شد."
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract__state
+msgid "Draft, running, closed and cancelled are set deliberately. Expiring is derived from the end date by _refresh_state, which the daily job calls -- it cannot be a computed field, because the derivation has to read the current state to know whether a contract is eligible at all."
+msgstr "حالت‌های مسوده، جاری، بسته و لغوشده عمداً تعیین می‌شوند. حالت رو به انقضا توسط _refresh_state از تاریخ پایان به دست می‌آید، که وظیفه روزانه آن را صدا می‌زند -- این حالت فیلد محاسبوی شده نمی‌تواند، زیرا استخراج آن باید حالت فعلی را بخواند تا بداند که آیا قرارداد اصلاً واجد شرایط است یا نه."
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__date_end
+msgid "Ends"
+msgstr "پایان"
+
+#. module: hm_contracts
+#: model:ir.model.fields.selection,name:hm_contracts.selection__hm_contract__recurrence__6
+msgid "Every Six Months"
+msgstr "هر شش ماه"
+
+#. module: hm_contracts
+#: model:ir.model.fields.selection,name:hm_contracts.selection__hm_contract__state__expiring
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_form
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_search
+msgid "Expiring"
+msgstr "رو به انقضا"
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract__auto_renew
+msgid "Extends the end date by one term when it is reached, rather than expiring."
+msgstr "هنگام رسیدن به تاریخ پایان، آن را به اندازه یک مدت تمدید می‌کند، به‌جای اینکه منقضی شود."
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__message_follower_ids
+msgid "Followers"
+msgstr "دنبال‌کنندگان"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "دنبال‌کنندگان (مخاطبین)"
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "آیکن Font Awesome، مثلاً fa-tasks"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__has_message
+msgid "Has Message"
+msgstr "دارای پیام"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_account_move__id
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__id
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract_line__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__activity_exception_icon
+msgid "Icon"
+msgstr "آیکن"
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "آیکنی که فعالیت استثنایی را نشان می‌دهد."
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "در صورت انتخاب، پیام‌های جدید نیازمند توجه شماست."
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract__message_has_error
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "در صورت انتخاب، برخی پیام‌ها خطای ارسال دارند."
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__invoice_count
+msgid "Invoice Count"
+msgstr "تعداد بل‌ها"
+
+#. module: hm_contracts
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_search
+msgid "Invoice Due"
+msgstr "بل سررسیدشده"
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "Invoice due: %s"
+msgstr "بل سررسیدشده: %s"
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__invoice_ids
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_form
+msgid "Invoices"
+msgstr "بل‌ها"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__message_is_follower
+msgid "Is Follower"
+msgstr "دنبال‌کننده است"
+
+#. module: hm_contracts
+#: model:ir.model,name:hm_contracts.model_account_move
+msgid "Journal Entry"
+msgstr "قید روزنامچه"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__write_uid
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract_line__write_uid
+msgid "Last Updated by"
+msgstr "آخرین ویرایش توسط"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__write_date
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract_line__write_date
+msgid "Last Updated on"
+msgstr "تاریخ آخرین ویرایش"
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract__date_end
+msgid "Leave empty for an open-ended contract."
+msgstr "برای قرارداد بدون تاریخ پایان خالی بگذارید."
+
+#. module: hm_contracts
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_form
+msgid "Leave empty for open-ended"
+msgstr "برای بدون تاریخ پایان خالی بگذارید"
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract_line__account_id
+msgid "Leave empty to let Odoo choose from the product or the journal."
+msgstr "خالی بگذارید تا اودو آن را از محصول یا روزنامچه انتخاب کند."
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__line_ids
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_form
+msgid "Lines"
+msgstr "اقلام"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__message_has_error
+msgid "Message Delivery error"
+msgstr "خطای ارسال پیام"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__message_ids
+msgid "Messages"
+msgstr "پیام‌ها"
+
+#. module: hm_contracts
+#: model:ir.model.fields.selection,name:hm_contracts.selection__hm_contract__recurrence__1
+msgid "Monthly"
+msgstr "ماهوار"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "مهلت فعالیت من"
+
+#. module: hm_contracts
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_search
+msgid "My Contracts"
+msgstr "قراردادهای من"
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "New"
+msgstr "جدید"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "مهلت فعالیت بعدی"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__activity_summary
+msgid "Next Activity Summary"
+msgstr "خلاصه فعالیت بعدی"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع فعالیت بعدی"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__date_next_invoice
+msgid "Next Invoice"
+msgstr "بل بعدی"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__notes
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_form
+msgid "Notes"
+msgstr "یادداشت‌ها"
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "Nothing was due."
+msgstr "چیزی سررسید نشده بود."
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__notice_days
+msgid "Notice Period"
+msgstr "مدت اطلاع قبلی"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__message_needaction_counter
+msgid "Number of Actions"
+msgstr "تعداد اقدامات"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__message_has_error_counter
+msgid "Number of errors"
+msgstr "تعداد خطاها"
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "تعداد پیام‌های نیازمند اقدام"
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "تعداد پیام‌های دارای خطای ارسال"
+
+#. module: hm_contracts
+#: model_terms:ir.actions.act_window,help:hm_contracts.action_hm_contract
+msgid ""
+"Odoo Subscriptions is Enterprise, so a Community user with a\n"
+"               maintenance agreement or an office lease has an invoice they\n"
+"               remember to raise, or forget to. A contract knows when it is\n"
+"               next due and raises the draft when you ask it to."
+msgstr ""
+"ماژول اشتراک‌های اودو مربوط به نسخه انترپرایز است، بنابراین کاربر\n"
+"               کمیونیتی که قرارداد نگهداری یا کرایه دفتر دارد، بلی دارد که یا\n"
+"               به یادش می‌ماند یا فراموشش می‌کند. قرارداد می‌داند که بار بعدی\n"
+"               کی سررسید است و هر وقت بخواهید مسوده را صادر می‌کند."
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "Only a draft contract can be started."
+msgstr "تنها قرارداد مسوده آغاز شده می‌تواند."
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract_line__product_id
+msgid "Optional. A contract line can describe a service that is not a catalogue product."
+msgstr "اختیاری. یک قلم قرارداد خدمتی را توصیف کرده می‌تواند که محصول کتلاگ نیست."
+
+#. module: hm_contracts
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_form
+msgid "Parties"
+msgstr "طرفین"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__amount_recurring
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_form
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_list
+msgid "Per Period"
+msgstr "در هر دوره"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract_line__product_id
+msgid "Product"
+msgstr "محصول"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract_line__quantity
+msgid "Quantity"
+msgstr "مقدار"
+
+#. module: hm_contracts
+#: model:ir.model.fields.selection,name:hm_contracts.selection__hm_contract__recurrence__3
+msgid "Quarterly"
+msgstr "ربع‌وار"
+
+#. module: hm_contracts
+#: model_terms:ir.actions.act_window,help:hm_contracts.action_hm_contract
+msgid "Record a service contract"
+msgstr "ثبت یک قرارداد خدماتی"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__name
+msgid "Reference"
+msgstr "مرجع"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__reminder_sent
+msgid "Reminder Sent"
+msgstr "یادآوری فرستاده شد"
+
+#. module: hm_contracts
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_form
+msgid "Renew"
+msgstr "تمدید"
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "Renewed to %s."
+msgstr "تا %s تمدید شد."
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__auto_renew
+msgid "Renews Automatically"
+msgstr "خودکار تمدید می‌شود"
+
+#. module: hm_contracts
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_form
+msgid "Reset to Draft"
+msgstr "بازگشت به مسوده"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__user_id
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_search
+msgid "Responsible"
+msgstr "مسئول"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__activity_user_id
+msgid "Responsible User"
+msgstr "کاربر مسئول"
+
+#. module: hm_contracts
+#: model:ir.model.fields.selection,name:hm_contracts.selection__hm_contract__state__running
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_search
+msgid "Running"
+msgstr "جاری"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطای ارسال پیامک"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract_line__sequence
+msgid "Sequence"
+msgstr "ترتیب"
+
+#. module: hm_contracts
+#: model:ir.model,name:hm_contracts.model_hm_contract
+msgid "Service Contract"
+msgstr "قرارداد خدماتی"
+
+#. module: hm_contracts
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_form
+msgid "Start"
+msgstr "شروع"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__date_start
+msgid "Starts"
+msgstr "آغاز"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__state
+msgid "State"
+msgstr "حالت"
+
+#. module: hm_contracts
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_search
+msgid "Status"
+msgstr "وضعیت"
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"حالت بر اساس فعالیت‌ها\n"
+"معوق: تاریخ سررسید گذشته است\n"
+"امروز: تاریخ فعالیت امروز است\n"
+"پلان‌شده: فعالیت‌های آینده."
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract_line__subtotal
+msgid "Subtotal"
+msgstr "جمع جزء"
+
+#. module: hm_contracts
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_form
+msgid "Term"
+msgstr "مدت"
+
+#. module: hm_contracts
+#: model:ir.model.constraint,message:hm_contracts.constraint_hm_contract_notice_not_negative
+msgid "The notice period cannot be negative."
+msgstr "مدت اطلاع قبلی منفی شده نمی‌تواند."
+
+#. module: hm_contracts
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_form
+msgid "This contract ends on"
+msgstr "این قرارداد پایان می‌یابد در"
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع فعالیت استثنایی روی سند."
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract_line__price_unit
+msgid "Unit Price"
+msgstr "قیمت واحد"
+
+#. module: hm_contracts
+#: model:ir.model.fields.selection,name:hm_contracts.selection__hm_contract__contract_type__customer
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_search
+msgid "We Provide"
+msgstr "ما عرضه می‌کنیم"
+
+#. module: hm_contracts
+#: model:ir.model.fields.selection,name:hm_contracts.selection__hm_contract__contract_type__supplier
+#: model_terms:ir.ui.view,arch_db:hm_contracts.hm_contract_view_search
+msgid "We Receive"
+msgstr "ما دریافت می‌کنیم"
+
+#. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__website_message_ids
+msgid "Website Messages"
+msgstr "پیام‌های ویب‌سایت"
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract__website_message_ids
+msgid "Website communication history"
+msgstr "تاریخچه ارتباطات ویب‌سایت"
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract__title
+msgid "What the contract is for, in the customer's language."
+msgstr "اینکه قرارداد برای چیست، به زبان مشتری."
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract__amount_annual
+msgid "What the contract is worth over a year, so contracts on different cycles can be compared."
+msgstr "ارزش قرارداد در طول یک سال، تا قراردادهای دارای دوره‌های متفاوت مقایسه شده بتوانند."
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract__date_next_invoice
+msgid "When the next invoice is due to be raised."
+msgstr "اینکه بل بعدی چه وقت باید صادر شود."
+
+#. module: hm_contracts
+#: model:ir.model.fields,help:hm_contracts.field_hm_contract__contract_type
+msgid "Whether this contract bills a customer or is billed by a supplier. Both are worth tracking; only one produces invoices."
+msgstr "اینکه این قرارداد برای مشتری بل صادر می‌کند یا عرضه‌کننده برای آن بل می‌فرستد. هر دو ارزش پیگیری دارند؛ تنها یکی بل تولید می‌کند."
+
+#. module: hm_contracts
+#: model:ir.model.fields.selection,name:hm_contracts.selection__hm_contract__recurrence__12
+msgid "Yearly"
+msgstr "سالانه"
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "hm_contract_id"
+msgstr "hm_contract_id"
+
+#. module: hm_contracts
+#. odoo-python
+#: code:addons/hm_contracts/models/hm_contract.py:0
+msgid "id"
+msgstr "شناسه"

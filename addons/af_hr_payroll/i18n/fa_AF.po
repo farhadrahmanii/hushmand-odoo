@@ -1,0 +1,339 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* af_hr_payroll
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: af_hr_payroll
+#: model:ir.model.constraint,message:af_hr_payroll.constraint_af_income_tax_bracket_bracket_order
+msgid "A bracket has to end above where it starts."
+msgstr "یک طبقه باید بالاتر از نقطه آغازش پایان یابد."
+
+#. module: af_hr_payroll
+#: model:ir.model.constraint,message:af_hr_payroll.constraint_af_income_tax_scale_period_order
+msgid "A scale cannot end before it starts."
+msgstr "یک جدول پیش از آغازش پایان یافته نمی‌تواند."
+
+#. module: af_hr_payroll
+#: model_terms:ir.actions.act_window,help:af_hr_payroll.action_af_income_tax_scale
+msgid ""
+"A scale is the bracket table used to withhold tax from salaries,\n"
+"               and it is dated, so a payslip for last year stays taxed the way\n"
+"               last year was taxed."
+msgstr ""
+"جدول همان جدول طبقات است که برای وضع مالیه از معاشات به کار می‌رود،\n"
+"               و تاریخ‌دار است، تا فیش معاش سال گذشته به همان شکلی که سال\n"
+"               گذشته مالیه گرفته می‌شد، مالیه‌دار بماند."
+
+#. module: af_hr_payroll
+#: model:ir.model.constraint,message:af_hr_payroll.constraint_af_income_tax_bracket_rate_is_a_percentage
+msgid "A tax rate has to be between 0 and 100 percent."
+msgstr "نرخ مالیه باید بین ۰ و ۱۰۰ فیصد باشد."
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_scale__active
+msgid "Active"
+msgstr "فعال"
+
+#. module: af_hr_payroll
+#: model:hm.salary.rule,name:af_hr_payroll.rule_allowance
+msgid "Allowances"
+msgstr "امتیازات"
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,help:af_hr_payroll.field_af_income_tax_bracket__rate
+msgid "Applied to the part of the salary above the bracket floor, not to the whole salary."
+msgstr "بر بخشی از معاش که بالاتر از کف طبقه است تطبیق می‌شود، نه بر تمام معاش."
+
+#. module: af_hr_payroll
+#: model_terms:ir.ui.view,arch_db:af_hr_payroll.af_income_tax_scale_view_form
+msgid "Archived"
+msgstr "بایگانی‌شده"
+
+#. module: af_hr_payroll
+#: model:hm.salary.rule,name:af_hr_payroll.rule_basic
+msgid "Basic Salary"
+msgstr "معاش اساسی"
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_scale__bracket_ids
+#: model_terms:ir.ui.view,arch_db:af_hr_payroll.af_income_tax_scale_view_form
+msgid "Brackets"
+msgstr "طبقات"
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_scale__company_id
+msgid "Company"
+msgstr "شرکت"
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_bracket__create_uid
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_scale__create_uid
+msgid "Created by"
+msgstr "ایجادکننده"
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_bracket__create_date
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_scale__create_date
+msgid "Created on"
+msgstr "تاریخ ایجاد"
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_bracket__currency_id
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_scale__currency_id
+msgid "Currency"
+msgstr "اسعار"
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_scale__date_from
+msgid "Date From"
+msgstr "از تاریخ"
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_scale__date_to
+msgid "Date To"
+msgstr "تا تاریخ"
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_bracket__display_name
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_scale__display_name
+#: model:ir.model.fields,field_description:af_hr_payroll.field_hm_payslip__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: af_hr_payroll
+#: model_terms:ir.ui.view,arch_db:af_hr_payroll.af_income_tax_scale_view_form
+msgid ""
+"Each bracket has to start exactly where the one below\n"
+"                        it ends, the lowest starts at zero, and the highest is\n"
+"                        left open by setting its ceiling to zero. The fixed\n"
+"                        amount is the tax already due at the bracket's floor,\n"
+"                        so the rate applies only to the part of the salary\n"
+"                        inside the bracket."
+msgstr ""
+"هر طبقه باید دقیقاً از همان جایی آغاز شود که طبقه\n"
+"                        زیرین آن پایان می‌یابد، پایین‌ترین طبقه از صفر آغاز\n"
+"                        می‌شود، و بالاترین طبقه با تعیین سقف صفر باز گذاشته\n"
+"                        می‌شود. مبلغ ثابت همان مالیه‌ای است که در کف طبقه\n"
+"                        از قبل واجب شده، بنابراین نرخ تنها بر بخشی از معاش\n"
+"                        که داخل طبقه است تطبیق می‌شود."
+
+#. module: af_hr_payroll
+#: model_terms:ir.ui.view,arch_db:af_hr_payroll.af_income_tax_scale_view_form
+msgid "Empty while current"
+msgstr "تا زمانی که جاری است خالی"
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_bracket__base_amount
+msgid "Fixed Amount"
+msgstr "مبلغ ثابت"
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_bracket__amount_from
+msgid "From"
+msgstr "از"
+
+#. module: af_hr_payroll
+#: model:hm.salary.rule,name:af_hr_payroll.rule_gross
+msgid "Gross"
+msgstr "ناخالص"
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_bracket__id
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_scale__id
+#: model:ir.model.fields,field_description:af_hr_payroll.field_hm_payslip__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: af_hr_payroll
+#: model_terms:ir.ui.view,arch_db:af_hr_payroll.af_income_tax_scale_view_form
+msgid "In Force"
+msgstr "نافذ"
+
+#. module: af_hr_payroll
+#: model:ir.model,name:af_hr_payroll.model_af_income_tax_bracket
+msgid "Income Tax Bracket"
+msgstr "طبقه مالیه بر عایدات"
+
+#. module: af_hr_payroll
+#: model:ir.model,name:af_hr_payroll.model_af_income_tax_scale
+#: model_terms:ir.ui.view,arch_db:af_hr_payroll.af_income_tax_scale_view_form
+msgid "Income Tax Scale"
+msgstr "جدول مالیه بر عایدات"
+
+#. module: af_hr_payroll
+#: model:ir.actions.act_window,name:af_hr_payroll.action_af_income_tax_scale
+#: model:ir.ui.menu,name:af_hr_payroll.menu_af_income_tax_scale
+#: model_terms:ir.ui.view,arch_db:af_hr_payroll.af_income_tax_scale_view_list
+msgid "Income Tax Scales"
+msgstr "جداول مالیه بر عایدات"
+
+#. module: af_hr_payroll
+#: model:hm.salary.rule,name:af_hr_payroll.rule_income_tax
+msgid "Income Tax Withheld"
+msgstr "مالیه بر عایدات وضع‌شده"
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_bracket__write_uid
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_scale__write_uid
+msgid "Last Updated by"
+msgstr "آخرین ویرایش توسط"
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_bracket__write_date
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_scale__write_date
+msgid "Last Updated on"
+msgstr "تاریخ آخرین ویرایش"
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,help:af_hr_payroll.field_af_income_tax_bracket__amount_to
+msgid "Leave at zero for the highest bracket, which has no ceiling."
+msgstr "برای بالاترین طبقه که سقف ندارد، صفر بگذارید."
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,help:af_hr_payroll.field_af_income_tax_scale__date_to
+msgid "Leave empty while the scale is the current one."
+msgstr "تا زمانی که جدول جاری است، خالی بگذارید."
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_scale__name
+msgid "Name"
+msgstr "نام"
+
+#. module: af_hr_payroll
+#: model:hm.salary.rule,name:af_hr_payroll.rule_net
+msgid "Net Salary"
+msgstr "معاش خالص"
+
+#. module: af_hr_payroll
+#. odoo-python
+#: code:addons/af_hr_payroll/models/hm_payslip.py:0
+msgid ""
+"No income tax scale is in force for %(date)s.\n"
+"\n"
+"Payroll cannot compute tax without one. Open Payroll > Configuration > Income Tax Scales and set the period the scale covers."
+msgstr ""
+"برای %(date)s هیچ جدول مالیه بر عایدات نافذ نیست.\n"
+"\n"
+"معاشات بدون آن مالیه را محاسبه کرده نمی‌تواند. معاشات > تنظیمات > جداول مالیه بر عایدات را باز کنید و دوره‌ای را که جدول پوشش می‌دهد تعیین نمایید."
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_scale__note
+#: model_terms:ir.ui.view,arch_db:af_hr_payroll.af_income_tax_scale_view_form
+msgid "Notes"
+msgstr "یادداشت‌ها"
+
+#. module: af_hr_payroll
+#. odoo-python
+#: code:addons/af_hr_payroll/models/af_income_tax.py:0
+msgid "Only the highest bracket of %s may be open-ended."
+msgstr "تنها بالاترین طبقه %s می‌تواند بدون سقف باشد."
+
+#. module: af_hr_payroll
+#: model:ir.model,name:af_hr_payroll.model_hm_payslip
+msgid "Payslip"
+msgstr "فیش معاش"
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_bracket__rate
+msgid "Rate (%)"
+msgstr "نرخ (٪)"
+
+#. module: af_hr_payroll
+#: model:hm.salary.rule,name:af_hr_payroll.rule_advance
+msgid "Salary Advance Recovery"
+msgstr "بازیافت پیش‌پرداخت معاش"
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_bracket__scale_id
+msgid "Scale"
+msgstr "جدول"
+
+#. module: af_hr_payroll
+#: model_terms:ir.actions.act_window,help:af_hr_payroll.action_af_income_tax_scale
+msgid "Set up an income tax scale"
+msgstr "تنظیم جدول مالیه بر عایدات"
+
+#. module: af_hr_payroll
+#: model_terms:ir.ui.view,arch_db:af_hr_payroll.af_income_tax_scale_view_form
+msgid "Stated In"
+msgstr "بیان‌شده به"
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,help:af_hr_payroll.field_af_income_tax_bracket__base_amount
+msgid "Tax on everything below this bracket, carried forward so the rate only applies to the part of the salary inside it."
+msgstr "مالیه هر چه پایین‌تر از این طبقه است، که انتقال داده می‌شود تا نرخ تنها بر بخشی از معاش که داخل طبقه است تطبیق شود."
+
+#. module: af_hr_payroll
+#. odoo-python
+#: code:addons/af_hr_payroll/models/af_income_tax.py:0
+msgid "The brackets of %(scale)s leave a gap or overlap between %(lower)s and %(upper)s. Each bracket has to start exactly where the one below it ends."
+msgstr "طبقات %(scale)s میان %(lower)s و %(upper)s خلا یا تداخل دارند. هر طبقه باید دقیقاً از همان جایی آغاز شود که طبقه زیرین آن پایان می‌یابد."
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,help:af_hr_payroll.field_af_income_tax_bracket__currency_id
+#: model:ir.model.fields,help:af_hr_payroll.field_af_income_tax_scale__currency_id
+msgid "The currency the brackets are stated in. Afghan tax is assessed in afghani, so a salary paid in dollars is converted before the scale is applied."
+msgstr "اسعاری که طبقات به آن بیان شده است. مالیه افغانستان به افغانی سنجش می‌شود، بنابراین معاشی که به دالر پرداخت می‌شود پیش از تطبیق جدول تبدیل می‌گردد."
+
+#. module: af_hr_payroll
+#. odoo-python
+#: code:addons/af_hr_payroll/models/af_income_tax.py:0
+msgid "The highest bracket of %s has to be open-ended, or a large enough salary would fall off the top of the scale untaxed."
+msgstr "بالاترین طبقه %s باید بدون سقف باشد، ورنه معاشی به‌اندازه کافی بزرگ از بالای جدول بیرون می‌افتد و مالیه نمی‌پردازد."
+
+#. module: af_hr_payroll
+#. odoo-python
+#: code:addons/af_hr_payroll/models/af_income_tax.py:0
+msgid "The lowest bracket of %s has to start at zero, or salaries below it would not be taxed at all."
+msgstr "پایین‌ترین طبقه %s باید از صفر آغاز شود، ورنه معاشات پایین‌تر از آن اصلاً مالیه نمی‌پردازند."
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,help:af_hr_payroll.field_af_income_tax_scale__date_from
+msgid "The scale applies to payslips whose period starts on or after this date."
+msgstr "این جدول بر فیش‌های معاشی تطبیق می‌شود که دوره آن‌ها در این تاریخ یا پس از آن آغاز می‌شود."
+
+#. module: af_hr_payroll
+#. odoo-python
+#: code:addons/af_hr_payroll/models/hm_payslip.py:0
+msgid ""
+"This payslip is in %(slip)s but Afghan income tax is assessed in %(scale)s, and no confirmed exchange period covers %(date)s.\n"
+"\n"
+"Confirm the exchange period for that month, then compute the payslip again."
+msgstr ""
+"این فیش معاش به %(slip)s است اما مالیه بر عایدات افغانستان به %(scale)s سنجش می‌شود، و هیچ دوره تبادله تأییدشده‌ای %(date)s را پوشش نمی‌دهد.\n"
+"\n"
+"دوره تبادله آن ماه را تأیید کنید، سپس فیش معاش را دوباره محاسبه نمایید."
+
+#. module: af_hr_payroll
+#: model:ir.model.fields,field_description:af_hr_payroll.field_af_income_tax_bracket__amount_to
+msgid "To"
+msgstr "تا"
+
+#. module: af_hr_payroll
+#: model_terms:ir.ui.view,arch_db:af_hr_payroll.af_income_tax_scale_view_form
+msgid "Wage withholding, 1404"
+msgstr "وضع مالیه از معاش، ۱۴۰۴"
+
+#. module: af_hr_payroll
+#: model_terms:ir.ui.view,arch_db:af_hr_payroll.af_income_tax_scale_view_form
+msgid ""
+"When rates change, close this scale with an end date\n"
+"                        and create a new one. Editing these figures retaxes\n"
+"                        every payslip that is recomputed afterwards, including\n"
+"                        ones already issued."
+msgstr ""
+"وقتی نرخ‌ها تغییر می‌کنند، این جدول را با یک تاریخ پایان\n"
+"                        ببندید و جدول جدیدی بسازید. ویرایش این ارقام هر فیش\n"
+"                        معاشی را که پس از آن دوباره محاسبه شود، از جمله\n"
+"                        فیش‌های صادرشده، دوباره مالیه‌دار می‌کند."

@@ -1,0 +1,621 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_purchase_request
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "%s cannot be cancelled."
+msgstr "%s لغو شده نمی‌تواند."
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "%s has already been submitted."
+msgstr "%s از قبل ارائه شده است."
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "%s has to be approved before it can be ordered."
+msgstr "%s باید پیش از سفارش دادن منظور شود."
+
+#. module: hm_purchase_request
+#: model:ir.model.constraint,message:hm_purchase_request.constraint_hm_purchase_request_line_qty_positive
+msgid "A requested quantity must be greater than zero."
+msgstr "مقدار درخواست‌شده باید بزرگ‌تر از صفر باشد."
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_needaction
+msgid "Action Needed"
+msgstr "نیازمند اقدام"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__activity_ids
+msgid "Activities"
+msgstr "فعالیت‌ها"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "نشانه استثنای فعالیت"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__activity_state
+msgid "Activity State"
+msgstr "حالت فعالیت"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "آیکن نوع فعالیت"
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "Add at least one item to %s before submitting it."
+msgstr "پیش از ارائه %s حداقل یک قلم به آن بیفزایید."
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__amount_total
+msgid "An estimate from the requester. The real figure comes from the quotation."
+msgstr "تخمینی از سوی درخواست‌کننده. رقم واقعی از نرخ‌دهی می‌آید."
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__approval_request_id
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Approval"
+msgstr "منظوری"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__approval_state
+msgid "Approval Status"
+msgstr "وضعیت منظوری"
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Approve"
+msgstr "منظوری"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields.selection,name:hm_purchase_request.selection__hm_purchase_request__state__approved
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Approved"
+msgstr "منظورشده"
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "Approved. This request can now be ordered."
+msgstr "منظور شد. این درخواست اکنون سفارش داده شده می‌تواند."
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_attachment_count
+msgid "Attachment Count"
+msgstr "تعداد ضمایم"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__approval_current_step
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_list
+msgid "Awaiting"
+msgstr "در انتظار"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__analytic_account_id
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__analytic_account_id
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Budget Line"
+msgstr "لین بودجه"
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Cancel"
+msgstr "لغو"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields.selection,name:hm_purchase_request.selection__hm_purchase_request__state__cancelled
+msgid "Cancelled"
+msgstr "لغوشده"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__company_id
+msgid "Company"
+msgstr "شرکت"
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Create Quotation"
+msgstr "ایجاد نرخ‌دهی"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__create_uid
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__create_uid
+msgid "Created by"
+msgstr "ایجادکننده"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__create_date
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__create_date
+msgid "Created on"
+msgstr "تاریخ ایجاد"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__currency_id
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__currency_id
+msgid "Currency"
+msgstr "اسعار"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__name
+msgid "Description"
+msgstr "توضیحات"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__display_name
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__display_name
+#: model:ir.model.fields,field_description:hm_purchase_request.field_purchase_order__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields.selection,name:hm_purchase_request.selection__hm_purchase_request__state__draft
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Draft"
+msgstr "مسوده"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__price_unit
+msgid "Estimated Price"
+msgstr "قیمت تخمینی"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__amount_total
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_list
+msgid "Estimated Total"
+msgstr "مجموع تخمینی"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_follower_ids
+msgid "Followers"
+msgstr "دنبال‌کنندگان"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "دنبال‌کنندگان (مخاطبین)"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "آیکن Font Awesome، مثلاً fa-tasks"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__has_message
+msgid "Has Message"
+msgstr "دارای پیام"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__id
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__id
+#: model:ir.model.fields,field_description:hm_purchase_request.field_purchase_order__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__activity_exception_icon
+msgid "Icon"
+msgstr "آیکن"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "آیکنی که فعالیت استثنایی را نشان می‌دهد."
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "در صورت انتخاب، پیام‌های جدید نیازمند توجه شماست."
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__message_has_error
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "در صورت انتخاب، برخی پیام‌ها خطای ارسال دارند."
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_is_follower
+msgid "Is Follower"
+msgstr "دنبال‌کننده است"
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Item"
+msgstr "قلم"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__line_ids
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Items"
+msgstr "اقلام"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__reason
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Justification"
+msgstr "توجیه"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__write_uid
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__write_uid
+msgid "Last Updated by"
+msgstr "آخرین ویرایش توسط"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__write_date
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__write_date
+msgid "Last Updated on"
+msgstr "تاریخ آخرین ویرایش"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_has_error
+msgid "Message Delivery error"
+msgstr "خطای ارسال پیام"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_ids
+msgid "Messages"
+msgstr "پیام‌ها"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "مهلت فعالیت من"
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "My Requests"
+msgstr "درخواست‌های من"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__date_required
+msgid "Needed By"
+msgstr "مورد ضرورت تا"
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "New"
+msgstr "جدید"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "مهلت فعالیت بعدی"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__activity_summary
+msgid "Next Activity Summary"
+msgstr "خلاصه فعالیت بعدی"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع فعالیت بعدی"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__notes
+msgid "Notes"
+msgstr "یادداشت‌ها"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr "تعداد اقدامات"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_has_error_counter
+msgid "Number of errors"
+msgstr "تعداد خطاها"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "تعداد پیام‌های نیازمند اقدام"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "تعداد پیام‌های دارای خطای ارسال"
+
+#. module: hm_purchase_request
+#: model_terms:ir.actions.act_window,help:hm_purchase_request.action_hm_purchase_request
+msgid ""
+"Odoo starts at the quotation, where someone has already decided\n"
+"               what to buy and from whom. This is the step before: a department\n"
+"               asks for something, and it is approved on its own merits before\n"
+"               anyone talks to a supplier."
+msgstr ""
+"اودو از نرخ‌دهی آغاز می‌کند، جایی که کسی از قبل تصمیم گرفته چه\n"
+"               بخرد و از کی. این مرحله پیش از آن است: یک بخش چیزی می‌خواهد، و\n"
+"               آن درخواست بر اساس شایستگی خودش منظور می‌شود، پیش از آنکه کسی\n"
+"               با عرضه‌کننده صحبت کند."
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "Only a rejected or cancelled request can be reopened."
+msgstr "تنها درخواست ردشده یا لغوشده بازگشایی شده می‌تواند."
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request_line__product_id
+msgid "Optional. A request can describe something that is not yet a product in the catalogue."
+msgstr "اختیاری. یک درخواست چیزی را توصیف کرده می‌تواند که هنوز در کتلاگ محصول نیست."
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__vendor_id
+msgid "Optional. A suggestion from the requester, not a commitment."
+msgstr "اختیاری. پیشنهادی از سوی درخواست‌کننده، نه یک تعهد."
+
+#. module: hm_purchase_request
+#: model:ir.model.fields.selection,name:hm_purchase_request.selection__hm_purchase_request__state__purchased
+msgid "Ordered"
+msgstr "سفارش‌شده"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__purchase_order_count
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Orders"
+msgstr "سفارشات"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request_line__analytic_account_id
+msgid "Overrides the budget line set on the request."
+msgstr "بر لین بودجه تعیین‌شده روی درخواست اولویت دارد."
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__product_id
+msgid "Product"
+msgstr "محصول"
+
+#. module: hm_purchase_request
+#: model:ir.model,name:hm_purchase_request.model_purchase_order
+msgid "Purchase Order"
+msgstr "سفارش خریداری"
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__purchase_order_ids
+msgid "Purchase Orders"
+msgstr "سفارشات خریداری"
+
+#. module: hm_purchase_request
+#: model:ir.model,name:hm_purchase_request.model_hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_purchase_order__hm_request_id
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Purchase Request"
+msgstr "درخواست خریداری"
+
+#. module: hm_purchase_request
+#: model:ir.model,name:hm_purchase_request.model_hm_purchase_request_line
+msgid "Purchase Request Item"
+msgstr "قلم درخواست خریداری"
+
+#. module: hm_purchase_request
+#: model:ir.actions.act_window,name:hm_purchase_request.action_hm_purchase_request
+#: model:ir.ui.menu,name:hm_purchase_request.menu_hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_list
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Purchase Requests"
+msgstr "درخواست‌های خریداری"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__product_qty
+msgid "Quantity"
+msgstr "مقدار"
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "Quotation %s created."
+msgstr "نرخ‌دهی %s ایجاد شد."
+
+#. module: hm_purchase_request
+#: model_terms:ir.actions.act_window,help:hm_purchase_request.action_hm_purchase_request
+msgid "Raise a purchase request"
+msgstr "ثبت یک درخواست خریداری"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__name
+msgid "Reference"
+msgstr "مرجع"
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Reject"
+msgstr "رد"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields.selection,name:hm_purchase_request.selection__hm_purchase_request__state__rejected
+msgid "Rejected"
+msgstr "ردشده"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__request_id
+msgid "Request"
+msgstr "درخواست"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__date_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Request Date"
+msgstr "تاریخ درخواست"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__requester_id
+msgid "Requested By"
+msgstr "درخواست‌کننده"
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Requester"
+msgstr "درخواست‌کننده"
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Reset to Draft"
+msgstr "بازگشت به مسوده"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__activity_user_id
+msgid "Responsible User"
+msgstr "کاربر مسئول"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطای ارسال پیامک"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__sequence
+msgid "Sequence"
+msgstr "ترتیب"
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "Set a vendor on %s before creating a quotation."
+msgstr "پیش از ایجاد نرخ‌دهی، برای %s یک عرضه‌کننده تعیین کنید."
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__state
+msgid "State"
+msgstr "حالت"
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Status"
+msgstr "وضعیت"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"حالت بر اساس فعالیت‌ها\n"
+"معوق: تاریخ سررسید گذشته است\n"
+"امروز: تاریخ فعالیت امروز است\n"
+"پلان‌شده: فعالیت‌های آینده."
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Submit for Approval"
+msgstr "ارائه برای منظوری"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__price_subtotal
+msgid "Subtotal"
+msgstr "جمع جزء"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__vendor_id
+msgid "Suggested Vendor"
+msgstr "عرضه‌کننده پیشنهادی"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_purchase_order__hm_request_id
+msgid "The approved request this order came from."
+msgstr "درخواست منظورشده‌ای که این سفارش از آن آمده است."
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__analytic_account_id
+msgid "The budget this request is to be charged against."
+msgstr "بودجه‌ای که این درخواست باید بر آن وضع شود."
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Total"
+msgstr "مجموع"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع فعالیت استثنایی روی سند."
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request_line__product_uom_id
+msgid "Unit"
+msgstr "واحد"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields.selection,name:hm_purchase_request.selection__hm_purchase_request__state__to_approve
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Waiting Approval"
+msgstr "در انتظار منظوری"
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Waiting for"
+msgstr "در انتظار"
+
+#. module: hm_purchase_request
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_search
+msgid "Waiting on Me"
+msgstr "در انتظار من"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__website_message_ids
+msgid "Website Messages"
+msgstr "پیام‌های ویب‌سایت"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__website_message_ids
+msgid "Website communication history"
+msgstr "تاریخچه ارتباطات ویب‌سایت"
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request_line__name
+msgid "What is being requested, in the requester's own words."
+msgstr "آنچه درخواست می‌شود، به بیان خود درخواست‌کننده."
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__date_required
+msgid "When the goods or services are actually needed."
+msgstr "اینکه اجناس یا خدمات واقعاً چه وقت مورد ضرورت است."
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__approval_can_act
+msgid "Whether the current user is an approver for the current step."
+msgstr "اینکه آیا کاربر فعلی در مرحله جاری منظورکننده است."
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,help:hm_purchase_request.field_hm_purchase_request__reason
+#: model_terms:ir.ui.view,arch_db:hm_purchase_request.hm_purchase_request_view_form
+msgid "Why this is needed. Approvers read this first."
+msgstr "اینکه چرا این مورد ضرورت است. منظورکنندگان نخست همین را می‌خوانند."
+
+#. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__approval_can_act
+msgid "You Can Approve"
+msgstr "شما می‌توانید منظور کنید"
+
+#. module: hm_purchase_request
+#. odoo-python
+#: code:addons/hm_purchase_request/models/hm_purchase_request.py:0
+msgid "hm_request_id"
+msgstr "hm_request_id"

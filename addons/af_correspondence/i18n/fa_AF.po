@@ -1,0 +1,567 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* af_correspondence
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: af_correspondence
+#. odoo-python
+#: code:addons/af_correspondence/models/af_correspondence.py:0
+msgid "A cancelled letter cannot be closed."
+msgstr "مکتوب لغوشده بسته شده نمی‌تواند."
+
+#. module: af_correspondence
+#. odoo-python
+#: code:addons/af_correspondence/models/af_correspondence.py:0
+msgid "A closed letter cannot be cancelled. The register is a record of what happened."
+msgstr "مکتوب بسته‌شده لغو شده نمی‌تواند. راجستر سابقه‌ای از آنچه واقع شده است."
+
+#. module: af_correspondence
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_form
+msgid "A reply is due by"
+msgstr "موعد جواب تا"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__message_needaction
+msgid "Action Needed"
+msgstr "نیازمند اقدام"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__activity_ids
+msgid "Activities"
+msgstr "فعالیت‌ها"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "نشانه استثنای فعالیت"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__activity_state
+msgid "Activity State"
+msgstr "حالت فعالیت"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "آیکن نوع فعالیت"
+
+#. module: af_correspondence
+#: model:ir.ui.menu,name:af_correspondence.menu_af_correspondence_all
+msgid "All Letters"
+msgstr "تمام مکاتیب"
+
+#. module: af_correspondence
+#: model:ir.model.fields.selection,name:af_correspondence.selection__af_correspondence__state__answered
+msgid "Answered"
+msgstr "جواب‌داده‌شده"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__assigned_to_id
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_search
+msgid "Assigned To"
+msgstr "واگذارشده به"
+
+#. module: af_correspondence
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_search
+msgid "Assigned to Me"
+msgstr "واگذارشده به من"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__attachment_count
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__message_attachment_count
+msgid "Attachment Count"
+msgstr "تعداد ضمایم"
+
+#. module: af_correspondence
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_form
+msgid "Cancel"
+msgstr "لغو"
+
+#. module: af_correspondence
+#: model:ir.model.fields.selection,name:af_correspondence.selection__af_correspondence__state__cancelled
+msgid "Cancelled"
+msgstr "لغوشده"
+
+#. module: af_correspondence
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_form
+msgid "Close"
+msgstr "بستن"
+
+#. module: af_correspondence
+#: model:ir.model.fields.selection,name:af_correspondence.selection__af_correspondence__state__closed
+msgid "Closed"
+msgstr "بسته"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__company_id
+msgid "Company"
+msgstr "شرکت"
+
+#. module: af_correspondence
+#: model:ir.actions.act_window,name:af_correspondence.action_af_correspondence
+#: model:ir.model,name:af_correspondence.model_af_correspondence
+#: model:ir.ui.menu,name:af_correspondence.menu_af_correspondence_root
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_form
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_list
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_search
+msgid "Correspondence"
+msgstr "مکاتیب"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__partner_id
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_form
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_search
+msgid "Correspondent"
+msgstr "مکاتبه‌کننده"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__create_uid
+msgid "Created by"
+msgstr "ایجادکننده"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__create_date
+msgid "Created on"
+msgstr "تاریخ ایجاد"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__department
+msgid "Department"
+msgstr "بخش"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__direction
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_search
+msgid "Direction"
+msgstr "جهت"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: af_correspondence
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_form
+msgid "Draft Reply"
+msgstr "مسوده جواب"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__message_follower_ids
+msgid "Followers"
+msgstr "دنبال‌کنندگان"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "دنبال‌کنندگان (مخاطبین)"
+
+#. module: af_correspondence
+#: model:ir.model.fields,help:af_correspondence.field_af_correspondence__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "آیکن Font Awesome، مثلاً fa-tasks"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__correspondent_name
+msgid "From / To"
+msgstr "از / به"
+
+#. module: af_correspondence
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_form
+msgid "Handling"
+msgstr "رسیدگی"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__has_message
+msgid "Has Message"
+msgstr "دارای پیام"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__activity_exception_icon
+msgid "Icon"
+msgstr "آیکن"
+
+#. module: af_correspondence
+#: model:ir.model.fields,help:af_correspondence.field_af_correspondence__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "آیکنی که فعالیت استثنایی را نشان می‌دهد."
+
+#. module: af_correspondence
+#: model:ir.model.fields,help:af_correspondence.field_af_correspondence__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "در صورت انتخاب، پیام‌های جدید نیازمند توجه شماست."
+
+#. module: af_correspondence
+#: model:ir.model.fields,help:af_correspondence.field_af_correspondence__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "در صورت انتخاب، برخی پیام‌ها خطای ارسال دارند."
+
+#. module: af_correspondence
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_form
+msgid "If not a saved contact"
+msgstr "اگر مخاطب ذخیره‌شده نیست"
+
+#. module: af_correspondence
+#: model:ir.model.fields.selection,name:af_correspondence.selection__af_correspondence__state__in_progress
+msgid "In Progress"
+msgstr "در جریان"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__reply_to_id
+msgid "In Reply To"
+msgstr "در جواب"
+
+#. module: af_correspondence
+#: model:ir.actions.act_window,name:af_correspondence.action_af_correspondence_incoming
+#: model:ir.model.fields.selection,name:af_correspondence.selection__af_correspondence__direction__incoming
+#: model:ir.ui.menu,name:af_correspondence.menu_af_correspondence_incoming
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_search
+msgid "Incoming"
+msgstr "وارده"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__message_is_follower
+msgid "Is Follower"
+msgstr "دنبال‌کننده است"
+
+#. module: af_correspondence
+#: model:ir.model.fields,help:af_correspondence.field_af_correspondence__name
+msgid "Issued in order by the register. Not editable, because the sequence is the point."
+msgstr "به ترتیب از سوی راجستر صادر می‌شود. قابل ویرایش نیست، زیرا همین ترتیب اصل موضوع است."
+
+#. module: af_correspondence
+#: model_terms:ir.actions.act_window,help:af_correspondence.action_af_correspondence_incoming
+msgid "It receives the next number in the register automatically. Attach the scan so the letter can always be found again."
+msgstr "به‌صورت خودکار نمبر بعدی راجستر را می‌گیرد. سکن آن را ضمیمه کنید تا مکتوب همیشه دوباره یافته شود."
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__write_uid
+msgid "Last Updated by"
+msgstr "آخرین ویرایش توسط"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__write_date
+msgid "Last Updated on"
+msgstr "تاریخ آخرین ویرایش"
+
+#. module: af_correspondence
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_form
+msgid "Letter"
+msgstr "مکتوب"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__letter_date
+msgid "Letter Date"
+msgstr "تاریخ مکتوب"
+
+#. module: af_correspondence
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_form
+msgid "Mark Answered"
+msgstr "ثبت به‌عنوان جواب‌داده‌شده"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__message_has_error
+msgid "Message Delivery error"
+msgstr "خطای ارسال پیام"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__message_ids
+msgid "Messages"
+msgstr "پیام‌ها"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "مهلت فعالیت من"
+
+#. module: af_correspondence
+#. odoo-python
+#: code:addons/af_correspondence/models/af_correspondence.py:0
+msgid "New"
+msgstr "جدید"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "مهلت فعالیت بعدی"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__activity_summary
+msgid "Next Activity Summary"
+msgstr "خلاصه فعالیت بعدی"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع فعالیت بعدی"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__notes
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_form
+msgid "Notes"
+msgstr "یادداشت‌ها"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__message_needaction_counter
+msgid "Number of Actions"
+msgstr "تعداد اقدامات"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__message_has_error_counter
+msgid "Number of errors"
+msgstr "تعداد خطاها"
+
+#. module: af_correspondence
+#: model:ir.model.fields,help:af_correspondence.field_af_correspondence__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "تعداد پیام‌های نیازمند اقدام"
+
+#. module: af_correspondence
+#: model:ir.model.fields,help:af_correspondence.field_af_correspondence__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "تعداد پیام‌های دارای خطای ارسال"
+
+#. module: af_correspondence
+#. odoo-python
+#: code:addons/af_correspondence/models/af_correspondence.py:0
+msgid "Only a registered letter can be started."
+msgstr "تنها مکتوب راجسترشده آغاز شده می‌تواند."
+
+#. module: af_correspondence
+#. odoo-python
+#: code:addons/af_correspondence/models/af_correspondence.py:0
+msgid "Only an incoming letter is replied to."
+msgstr "تنها به مکتوب وارده جواب داده می‌شود."
+
+#. module: af_correspondence
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_search
+msgid "Open"
+msgstr "باز"
+
+#. module: af_correspondence
+#: model:ir.actions.act_window,name:af_correspondence.action_af_correspondence_outgoing
+#: model:ir.model.fields.selection,name:af_correspondence.selection__af_correspondence__direction__outgoing
+#: model:ir.ui.menu,name:af_correspondence.menu_af_correspondence_outgoing
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_search
+msgid "Outgoing"
+msgstr "صادره"
+
+#. module: af_correspondence
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_search
+msgid "Overdue"
+msgstr "معوق"
+
+#. module: af_correspondence
+#. odoo-python
+#: code:addons/af_correspondence/models/af_correspondence.py:0
+msgid "Re: %s"
+msgstr "در پاسخ به: %s"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__date
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_search
+msgid "Register Date"
+msgstr "تاریخ راجستر"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__name
+msgid "Register No."
+msgstr "نمبر راجستر"
+
+#. module: af_correspondence
+#: model_terms:ir.actions.act_window,help:af_correspondence.action_af_correspondence
+msgid "Register a letter"
+msgstr "راجستر یک مکتوب"
+
+#. module: af_correspondence
+#: model_terms:ir.actions.act_window,help:af_correspondence.action_af_correspondence_incoming
+msgid "Register an incoming letter"
+msgstr "راجستر یک مکتوب وارده"
+
+#. module: af_correspondence
+#: model_terms:ir.actions.act_window,help:af_correspondence.action_af_correspondence_outgoing
+msgid "Register an outgoing letter"
+msgstr "راجستر یک مکتوب صادره"
+
+#. module: af_correspondence
+#: model:ir.model.fields.selection,name:af_correspondence.selection__af_correspondence__state__registered
+msgid "Registered"
+msgstr "راجسترشده"
+
+#. module: af_correspondence
+#. odoo-python
+#: code:addons/af_correspondence/models/af_correspondence.py:0
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__reply_ids
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_form
+msgid "Replies"
+msgstr "جواب‌ها"
+
+#. module: af_correspondence
+#. odoo-python
+#: code:addons/af_correspondence/models/af_correspondence.py:0
+msgid "Reply"
+msgstr "جواب"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__due_date
+msgid "Reply By"
+msgstr "موعد جواب"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__reply_count
+msgid "Reply Count"
+msgstr "تعداد جواب‌ها"
+
+#. module: af_correspondence
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_form
+msgid "Reset"
+msgstr "بازنشانی"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__activity_user_id
+msgid "Responsible User"
+msgstr "کاربر مسئول"
+
+#. module: af_correspondence
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_form
+msgid "Start"
+msgstr "شروع"
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__state
+msgid "State"
+msgstr "حالت"
+
+#. module: af_correspondence
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_search
+msgid "Status"
+msgstr "وضعیت"
+
+#. module: af_correspondence
+#: model:ir.model.fields,help:af_correspondence.field_af_correspondence__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"حالت بر اساس فعالیت‌ها\n"
+"معوق: تاریخ سررسید گذشته است\n"
+"امروز: تاریخ فعالیت امروز است\n"
+"پلان‌شده: فعالیت‌های آینده."
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__subject
+msgid "Subject"
+msgstr "موضوع"
+
+#. module: af_correspondence
+#: model:ir.model.constraint,message:af_correspondence.constraint_af_correspondence_register_no_uniq
+msgid "That register number has already been used."
+msgstr "آن نمبر راجستر قبلاً استفاده شده است."
+
+#. module: af_correspondence
+#: model:ir.model.fields,help:af_correspondence.field_af_correspondence__letter_date
+msgid "The date written on the letter itself, which is often not the day it arrived."
+msgstr "تاریخی که روی خود مکتوب نوشته شده، که اغلب همان روز رسیدن آن نیست."
+
+#. module: af_correspondence
+#. odoo-python
+#: code:addons/af_correspondence/models/af_correspondence.py:0
+msgid "The direction cannot be changed once a letter is registered — its number comes from that series. Cancel it and register a new one."
+msgstr "پس از راجستر شدن مکتوب، جهت آن تغییر داده شده نمی‌تواند — نمبر آن از همان سلسله می‌آید. آن را لغو کنید و مکتوب جدیدی راجستر نمایید."
+
+#. module: af_correspondence
+#: model:ir.model.fields,help:af_correspondence.field_af_correspondence__reply_to_id
+msgid "The incoming letter this one answers."
+msgstr "مکتوب وارده‌ای که این مکتوب جواب آن است."
+
+#. module: af_correspondence
+#: model_terms:ir.actions.act_window,help:af_correspondence.action_af_correspondence
+msgid ""
+"The maktoob register: what came in, what went out, its number,\n"
+"               who it was from and who has to deal with it. Incoming and\n"
+"               outgoing are numbered in separate series, the way a paper\n"
+"               register keeps two books."
+msgstr ""
+"راجستر مکاتیب: چه وارد شد، چه صادر شد، نمبر آن،\n"
+"               از کی بود و چه کسی باید به آن رسیدگی کند. مکاتیب وارده و\n"
+"               صادره در سلسله‌های جداگانه نمبر می‌خورند، همان‌گونه که یک\n"
+"               راجستر کاغذی دو کتاب جداگانه دارد."
+
+#. module: af_correspondence
+#: model:ir.model.fields,help:af_correspondence.field_af_correspondence__partner_id
+msgid "The ministry, office or person at the other end."
+msgstr "وزارت، اداره یا شخصی که در طرف مقابل قرار دارد."
+
+#. module: af_correspondence
+#: model_terms:ir.actions.act_window,help:af_correspondence.action_af_correspondence_outgoing
+msgid "The number is stamped in order. Record the letter here before it leaves the office."
+msgstr "نمبر به ترتیب مهر می‌شود. مکتوب را پیش از خروج از اداره اینجا ثبت کنید."
+
+#. module: af_correspondence
+#: model:ir.model.fields,help:af_correspondence.field_af_correspondence__letter_reference
+msgid "The number the other office put on it."
+msgstr "نمبری که اداره مقابل روی آن گذاشته است."
+
+#. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__letter_reference
+msgid "Their Reference"
+msgstr "مرجع آن‌ها"
+
+#. module: af_correspondence
+#. odoo-python
+#: code:addons/af_correspondence/models/af_correspondence.py:0
+msgid "This letter is already finished."
+msgstr "این مکتوب از قبل تکمیل شده است."
+
+#. module: af_correspondence
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_form
+msgid "Thread"
+msgstr "رشته"
+
+#. module: af_correspondence
+#: model:ir.model.fields,help:af_correspondence.field_af_correspondence__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع فعالیت استثنایی روی سند."
+
+#. module: af_correspondence
+#: model:ir.model.fields,help:af_correspondence.field_af_correspondence__correspondent_name
+msgid "Used when the correspondent is not a contact in the system, which for a one-off letter from a district office is normal."
+msgstr "زمانی استفاده می‌شود که مکاتبه‌کننده در سیستم مخاطب نباشد، که برای یک مکتوب یک‌باره از یک ولسوالی عادی است."
+
+#. module: af_correspondence
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_form
+msgid "What the letter is about"
+msgstr "اینکه مکتوب در مورد چیست"
+
+#. module: af_correspondence
+#: model_terms:ir.ui.view,arch_db:af_correspondence.af_correspondence_view_form
+msgid "What was decided, who was consulted, where the original is filed."
+msgstr "اینکه چه تصمیم گرفته شد، با چه کسانی مشوره شد، و اصل سند کجا دوسیه شده است."
+
+#. module: af_correspondence
+#: model:ir.model.fields,help:af_correspondence.field_af_correspondence__assigned_to_id
+msgid "Who has to act on it. An incoming letter nobody owns is a letter nobody answers."
+msgstr "اینکه چه کسی باید به آن اقدام کند. مکتوب وارده‌ای که صاحب ندارد، مکتوبی است که کسی جوابش را نمی‌دهد."
+
+#. module: af_correspondence
+#. odoo-python
+#: code:addons/af_correspondence/models/af_correspondence.py:0
+msgid "reply_to_id"
+msgstr "reply_to_id"

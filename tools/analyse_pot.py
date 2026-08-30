@@ -32,7 +32,21 @@ def main():
                         help="list terms that appear in more than one module")
     parser.add_argument("--untranslated", metavar="LANG",
                         help="report coverage of <lang>.po against the template")
+    parser.add_argument("--missing", nargs=2, metavar=("LANG", "MODULE"),
+                        help="print the terms of MODULE that LANG has not translated")
     args = parser.parse_args()
+
+    if args.missing:
+        language, module = args.missing
+        template = ADDONS / module / "i18n" / ("%s.pot" % module)
+        target = ADDONS / module / "i18n" / ("%s.po" % language)
+        done = set()
+        if target.is_file():
+            done = {e.msgid for e in po.parse(target) if e.msgstr}
+        for entry in terms(template):
+            if entry.msgid not in done:
+                print("%r" % entry.msgid)
+        return 0
 
     counter = collections.Counter()
     per_module = {}

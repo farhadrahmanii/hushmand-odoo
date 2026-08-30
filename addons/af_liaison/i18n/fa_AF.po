@@ -1,0 +1,133 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* af_liaison
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: af_liaison
+#: model:hm.expiry.document.type,name:af_liaison.type_cip_card
+msgid "Airport CIP Card"
+msgstr "کارت CIP میدان هوایی"
+
+#. module: af_liaison
+#: model:ir.model.fields,help:af_liaison.field_hr_employee__af_document_alert
+msgid "At least one document is expiring or has expired."
+msgstr "حداقل یک سند در حال انقضا یا منقضی‌شده است."
+
+#. module: af_liaison
+#: model:ir.model.fields,field_description:af_liaison.field_hm_expiry_document__display_name
+#: model:ir.model.fields,field_description:af_liaison.field_hr_employee__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: af_liaison
+#: model_terms:ir.ui.view,arch_db:af_liaison.hr_employee_view_form_inherit
+msgid "Document Expiring"
+msgstr "سند در حال انقضا"
+
+#. module: af_liaison
+#: model:ir.model.fields,field_description:af_liaison.field_hr_employee__af_document_alert
+msgid "Document Needs Attention"
+msgstr "سند نیازمند توجه"
+
+#. module: af_liaison
+#: model:ir.model.fields,field_description:af_liaison.field_hr_employee__af_document_count
+#: model_terms:ir.ui.view,arch_db:af_liaison.hr_employee_view_form_inherit
+msgid "Documents"
+msgstr "اسناد"
+
+#. module: af_liaison
+#: model:ir.model,name:af_liaison.model_hr_employee
+#: model:ir.model.fields,field_description:af_liaison.field_hm_expiry_document__employee_id
+#: model_terms:ir.ui.view,arch_db:af_liaison.hm_expiry_document_view_search_inherit
+msgid "Employee"
+msgstr "کارمند"
+
+#. module: af_liaison
+#: model:ir.model,name:af_liaison.model_hm_expiry_document
+msgid "Expiring Document"
+msgstr "سند دارای انقضا"
+
+#. module: af_liaison
+#: model:ir.model.fields,field_description:af_liaison.field_hm_expiry_document__id
+#: model:ir.model.fields,field_description:af_liaison.field_hr_employee__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: af_liaison
+#: model:ir.model.fields,field_description:af_liaison.field_hm_expiry_document__af_province_id
+msgid "Issued In"
+msgstr "صادرشده در"
+
+#. module: af_liaison
+#: model:ir.ui.menu,name:af_liaison.menu_af_liaison_documents
+msgid "Liaison Documents"
+msgstr "اسناد لیازون"
+
+#. module: af_liaison
+#: model:hm.expiry.document.type,name:af_liaison.type_membership_card
+msgid "Membership Card"
+msgstr "کارت عضویت"
+
+#. module: af_liaison
+#. odoo-python
+#: code:addons/af_liaison/models/af_liaison_document.py:0
+#: model:ir.model.fields,field_description:af_liaison.field_hr_employee__af_document_ids
+msgid "Official Documents"
+msgstr "اسناد رسمی"
+
+#. module: af_liaison
+#: model:ir.model.fields,field_description:af_liaison.field_hm_expiry_document__af_reference
+msgid "Official Reference"
+msgstr "مرجع رسمی"
+
+#. module: af_liaison
+#: model:ir.model.fields,help:af_liaison.field_hm_expiry_document__af_reference
+msgid "The maktoob or file reference the issuing office quotes."
+msgstr "مکتوب یا نمبر دوسیه‌ای که اداره صادرکننده ذکر می‌کند."
+
+#. module: af_liaison
+#: model:ir.model.fields,help:af_liaison.field_hm_expiry_document__af_province_id
+msgid "The province that issued the document."
+msgstr "ولایتی که سند را صادر کرده است."
+
+#. module: af_liaison
+#: model:ir.model.fields,help:af_liaison.field_hm_expiry_document__employee_id
+msgid "The staff member this document belongs to."
+msgstr "کارمندی که این سند متعلق به اوست."
+
+#. module: af_liaison
+#: model:hm.expiry.document.type,name:af_liaison.type_vehicle_permit
+msgid "Vehicle Permit"
+msgstr "جواز وسیله نقلیه"
+
+#. module: af_liaison
+#: model:hm.expiry.document.type,name:af_liaison.type_visa
+msgid "Visa"
+msgstr "ویزه"
+
+#. module: af_liaison
+#: model:hm.expiry.document.type,name:af_liaison.type_weapon_licence
+msgid "Weapon Licence"
+msgstr "جواز سلاح"
+
+#. module: af_liaison
+#: model:hm.expiry.document.type,name:af_liaison.type_work_permit
+msgid "Work Permit"
+msgstr "جواز کار"
+
+#. module: af_liaison
+#. odoo-python
+#: code:addons/af_liaison/models/af_liaison_document.py:0
+msgid "employee_id"
+msgstr "employee_id"

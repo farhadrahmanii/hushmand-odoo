@@ -1,0 +1,469 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_license
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "%(actual)s users are active and the licence allows %(allowed)s."
+msgstr "%(actual)s کاربر فعال است و جواز %(allowed)s کاربر را اجازه می‌دهد."
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid ""
+"%(reason)s\n"
+"\n"
+"Contact your supplier to renew or extend the licence."
+msgstr ""
+"%(reason)s\n"
+"\n"
+"برای تمدید یا توسعه جواز با عرضه‌کننده خود تماس بگیرید."
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__message_needaction
+msgid "Action Needed"
+msgstr "نیازمند اقدام"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__message_attachment_count
+msgid "Attachment Count"
+msgstr "تعداد ضمایم"
+
+#. module: hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "Check Again"
+msgstr "کنترول دوباره"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__company_id
+msgid "Company"
+msgstr "شرکت"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__modules
+msgid "Covers"
+msgstr "پوشش می‌دهد"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__create_uid
+msgid "Created by"
+msgstr "ایجادکننده"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__create_date
+msgid "Created on"
+msgstr "تاریخ ایجاد"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__customer
+msgid "Customer"
+msgstr "مشتری"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__status_detail
+msgid "Detail"
+msgstr "جزئیات"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__display_name
+#: model:ir.model.fields,field_description:hm_license.field_hm_license_gate__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: hm_license
+#: model_terms:ir.actions.act_window,help:hm_license.action_hm_license
+msgid "Enter your licence key"
+msgstr "کلید جواز خود را وارد کنید"
+
+#. module: hm_license
+#: model:ir.model.fields.selection,name:hm_license.selection__hm_license__state__expired
+msgid "Expired"
+msgstr "منقضی‌شده"
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "Expired on %s."
+msgstr "در تاریخ %s منقضی شد."
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__expires
+msgid "Expires"
+msgstr "تاریخ انقضا"
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "Expires in %s day(s)."
+msgstr "تا %s روز دیگر منقضی می‌شود."
+
+#. module: hm_license
+#: model:ir.model.fields.selection,name:hm_license.selection__hm_license__state__expiring
+msgid "Expiring Soon"
+msgstr "به‌زودی منقضی می‌شود"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__features
+msgid "Features"
+msgstr "امکانات"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__message_follower_ids
+msgid "Followers"
+msgstr "دنبال‌کنندگان"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "دنبال‌کنندگان (مخاطبین)"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__has_message
+msgid "Has Message"
+msgstr "دارای پیام"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__id
+#: model:ir.model.fields,field_description:hm_license.field_hm_license_gate__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: hm_license
+#: model:ir.model.fields,help:hm_license.field_hm_license__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "در صورت انتخاب، پیام‌های جدید نیازمند توجه شماست."
+
+#. module: hm_license
+#: model:ir.model.fields,help:hm_license.field_hm_license__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "در صورت انتخاب، برخی پیام‌ها خطای ارسال دارند."
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__message_is_follower
+msgid "Is Follower"
+msgstr "دنبال‌کننده است"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__issued
+msgid "Issued"
+msgstr "صادرشده"
+
+#. module: hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "Key"
+msgstr "کلید"
+
+#. module: hm_license
+#: model:ir.model.fields.selection,name:hm_license.selection__hm_license__state__grace
+msgid "Lapsed - Grace Period"
+msgstr "منقضی - دوره مهلت"
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "Lapsed on %(date)s. This system stops accepting new work in %(days)s day(s)."
+msgstr "در تاریخ %(date)s منقضی شد. این سیستم تا %(days)s روز دیگر پذیرش کار جدید را متوقف می‌کند."
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__write_uid
+msgid "Last Updated by"
+msgstr "آخرین ویرایش توسط"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__write_date
+msgid "Last Updated on"
+msgstr "تاریخ آخرین ویرایش"
+
+#. module: hm_license
+#. odoo-javascript
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+#: code:addons/hm_license/static/src/js/license_systray.js:0
+#: code:addons/hm_license/static/src/xml/license_systray.xml:0
+#: model:ir.model,name:hm_license.model_hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__licence_id
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__name
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "Licence"
+msgstr "جواز"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__key
+msgid "Licence Key"
+msgstr "کلید جواز"
+
+#. module: hm_license
+#. odoo-javascript
+#: code:addons/hm_license/static/src/js/license_systray.js:0
+msgid "Licence expired"
+msgstr "جواز منقضی شده"
+
+#. module: hm_license
+#. odoo-javascript
+#: code:addons/hm_license/static/src/js/license_systray.js:0
+msgid "Licence expiring"
+msgstr "جواز رو به انقضا"
+
+#. module: hm_license
+#. odoo-javascript
+#: code:addons/hm_license/static/src/js/license_systray.js:0
+msgid "Licence lapsed"
+msgstr "جواز از اعتبار افتاده"
+
+#. module: hm_license
+#. odoo-javascript
+#: code:addons/hm_license/static/src/js/license_systray.js:0
+msgid "Licence not valid"
+msgstr "جواز معتبر نیست"
+
+#. module: hm_license
+#: model:ir.model,name:hm_license.model_hm_license_gate
+msgid "Licence-Gated Document"
+msgstr "سند مشروط به جواز"
+
+#. module: hm_license
+#: model:ir.actions.server,name:hm_license.cron_license_refresh_ir_actions_server
+msgid "Licence: refresh status"
+msgstr "جواز: تازه‌سازی وضعیت"
+
+#. module: hm_license
+#: model:ir.actions.act_window,name:hm_license.action_hm_license
+#: model:ir.ui.menu,name:hm_license.menu_hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_list
+msgid "Licences"
+msgstr "جوازها"
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "Licensed."
+msgstr "دارای جواز."
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__max_users
+msgid "Max Users"
+msgstr "حداکثر کاربران"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__message_has_error
+msgid "Message Delivery error"
+msgstr "خطای ارسال پیام"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__message_ids
+msgid "Messages"
+msgstr "پیام‌ها"
+
+#. module: hm_license
+#: model:ir.model.fields,help:hm_license.field_hm_license__modules
+msgid "Modules this licence entitles you to use."
+msgstr "ماژول‌هایی که این جواز حق استفاده از آن‌ها را به شما می‌دهد."
+
+#. module: hm_license
+#. odoo-javascript
+#: code:addons/hm_license/static/src/js/license_systray.js:0
+msgid "No licence"
+msgstr "بدون جواز"
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "No licence has been entered."
+msgstr "هیچ جوازی وارد نشده است."
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "No signing key has been configured for this build. Run tools/issue_license.py --generate-keys and put the public key into hm_license."
+msgstr "برای این نسخه هیچ کلید امضا تنظیم نشده است. tools/issue_license.py --generate-keys را اجرا کنید و کلید عمومی را در hm_license بگذارید."
+
+#. module: hm_license
+#: model:ir.model.fields.selection,name:hm_license.selection__hm_license__state__invalid
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "Not Valid"
+msgstr "معتبر نیست"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__message_needaction_counter
+msgid "Number of Actions"
+msgstr "تعداد اقدامات"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__message_has_error_counter
+msgid "Number of errors"
+msgstr "تعداد خطاها"
+
+#. module: hm_license
+#: model:ir.model.fields,help:hm_license.field_hm_license__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "تعداد پیام‌های نیازمند اقدام"
+
+#. module: hm_license
+#: model:ir.model.fields,help:hm_license.field_hm_license__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "تعداد پیام‌های دارای خطای ارسال"
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__over_user_limit
+msgid "Over User Limit"
+msgstr "بیش از حد کاربران"
+
+#. module: hm_license
+#. odoo-javascript
+#: code:addons/hm_license/static/src/js/license_systray.js:0
+msgid "Over user limit"
+msgstr "بیش از حد کاربران"
+
+#. module: hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "Paste a key below"
+msgstr "کلید را در پایین بچسپانید"
+
+#. module: hm_license
+#: model_terms:ir.actions.act_window,help:hm_license.action_hm_license
+msgid ""
+"Paste the block of text supplied with your purchase. It is\n"
+"               checked on this machine against the supplier's signature, so\n"
+"               nothing is sent anywhere and no connection is needed."
+msgstr ""
+"بلاک متنی را که همراه خرید شما داده شده بچسپانید. این بلاک\n"
+"               روی همین ماشین در برابر امضای عرضه‌کننده کنترول می‌شود، بنابراین\n"
+"               چیزی به جایی فرستاده نمی‌شود و به هیچ اتصالی ضرورت نیست."
+
+#. module: hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "Paste the whole block supplied with your purchase, including every line."
+msgstr "تمام بلاکی را که همراه خرید شما داده شده، با تمام سطرهایش، بچسپانید."
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__state
+msgid "State"
+msgstr "حالت"
+
+#. module: hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "Term"
+msgstr "مدت"
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "That does not look like a licence key. Paste the whole block exactly as it was supplied."
+msgstr "این به کلید جواز نمی‌ماند. تمام بلاک را دقیقاً همان‌طور که داده شده بچسپانید."
+
+#. module: hm_license
+#: model:ir.model.constraint,message:hm_license.constraint_hm_license_licence_unique
+msgid "That licence has already been entered."
+msgstr "آن جواز قبلاً وارد شده است."
+
+#. module: hm_license
+#: model:ir.model.fields,help:hm_license.field_hm_license__key
+msgid "The block of text supplied with your purchase. Paste it whole."
+msgstr "بلاک متنی که همراه خرید شما داده شده است. آن را کامل بچسپانید."
+
+#. module: hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid ""
+"The key is checked on this machine against the\n"
+"                        supplier's signature. Nothing is sent anywhere, and no\n"
+"                        internet connection is needed."
+msgstr ""
+"کلید روی همین ماشین در برابر امضای عرضه‌کننده\n"
+"                        کنترول می‌شود. چیزی به جایی فرستاده نمی‌شود و به اتصال\n"
+"                        انترنت ضرورت نیست."
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "The licence expired more than %s days ago."
+msgstr "جواز بیش از %s روز پیش منقضی شده است."
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "The licence is missing: %s"
+msgstr "این موارد در جواز موجود نیست: %s"
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "The licence key is empty."
+msgstr "کلید جواز خالی است."
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "The signature does not match. This key has been altered, or was not issued for this product."
+msgstr "امضا مطابقت ندارد. این کلید تغییر داده شده، یا برای این محصول صادر نشده است."
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "This installation cannot verify licences: the cryptography library is missing."
+msgstr "این نصب جوازها را تصدیق کرده نمی‌تواند: کتابخانه cryptography موجود نیست."
+
+#. module: hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "This licence allows"
+msgstr "این جواز اجازه می‌دهد"
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "This licence allows %(allowed)s users and %(actual)s are active."
+msgstr "این جواز %(allowed)s کاربر را اجازه می‌دهد و %(actual)s کاربر فعال است."
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "This licence does not cover %s."
+msgstr "این جواز %s را پوشش نمی‌دهد."
+
+#. module: hm_license
+#: model:ir.model.fields,field_description:hm_license.field_hm_license__active_users
+msgid "Users In Use"
+msgstr "کاربران در حال استفاده"
+
+#. module: hm_license
+#: model:ir.model.fields.selection,name:hm_license.selection__hm_license__state__valid
+msgid "Valid"
+msgstr "معتبر"
+
+#. module: hm_license
+#. odoo-python
+#: code:addons/hm_license/models/hm_license.py:0
+msgid "Valid until %s."
+msgstr "معتبر تا %s."
+
+#. module: hm_license
+#: model:ir.model.fields,help:hm_license.field_hm_license__status_detail
+msgid "Why the licence is in this state, in plain words."
+msgstr "اینکه چرا جواز در این حالت است، به زبان ساده."
+
+#. module: hm_license
+#: model:ir.model.fields,help:hm_license.field_hm_license__max_users
+msgid "Zero means no limit."
+msgstr "صفر یعنی بدون محدودیت."
+
+#. module: hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "are active. Contact your supplier to extend it."
+msgstr "کاربر فعال است. برای توسعه آن با عرضه‌کننده خود تماس بگیرید."
+
+#. module: hm_license
+#: model_terms:ir.ui.view,arch_db:hm_license.hm_license_view_form
+msgid "users and"
+msgstr "کاربر و"

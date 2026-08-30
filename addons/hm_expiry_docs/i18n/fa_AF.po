@@ -1,0 +1,628 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_expiry_docs
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: hm_expiry_docs
+#. odoo-python
+#: code:addons/hm_expiry_docs/models/hm_expiry_document.py:0
+msgid "%(document)s expired %(days)s day(s) ago."
+msgstr "%(document)s %(days)s روز پیش منقضی شد."
+
+#. module: hm_expiry_docs
+#. odoo-python
+#: code:addons/hm_expiry_docs/models/hm_expiry_document.py:0
+msgid "%(document)s expires in %(days)s day(s), on %(date)s."
+msgstr "%(document)s تا %(days)s روز دیگر، در تاریخ %(date)s، منقضی می‌شود."
+
+#. module: hm_expiry_docs
+#. odoo-python
+#: code:addons/hm_expiry_docs/models/hm_expiry_document.py:0
+msgid "%s is already closed."
+msgstr "%s قبلاً بسته شده است."
+
+#. module: hm_expiry_docs
+#. odoo-python
+#: code:addons/hm_expiry_docs/models/hm_expiry_document.py:0
+msgid "%s needs a document number."
+msgstr "%s به نمبر سند ضرورت دارد."
+
+#. module: hm_expiry_docs
+#: model:ir.model.constraint,message:hm_expiry_docs.constraint_hm_expiry_document_expiry_after_issue
+msgid "A document cannot expire before it was issued."
+msgstr "سند پیش از صدورش منقضی شده نمی‌تواند."
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document_type__requires_number
+msgid "A passport has a number; a signed undertaking may not."
+msgstr "پاسپورت نمبر دارد؛ یک تعهدنامه امضاشده شاید نداشته باشد."
+
+#. module: hm_expiry_docs
+#: model_terms:ir.actions.act_window,help:hm_expiry_docs.action_hm_expiry_document_type
+msgid "A type says how long a document is valid and how many days of warning you want. Set the types up once; the documents then look after themselves."
+msgstr "هر نوع تعیین می‌کند که سند تا چه مدت معتبر است و چند روز پیش از آن اخطار می‌خواهید. انواع را یک بار تنظیم کنید؛ پس از آن اسناد خودشان را اداره می‌کنند."
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__message_needaction
+msgid "Action Needed"
+msgstr "نیازمند اقدام"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__active
+msgid "Active"
+msgstr "فعال"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__activity_ids
+msgid "Activities"
+msgstr "فعالیت‌ها"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "نشانه استثنای فعالیت"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__activity_state
+msgid "Activity State"
+msgstr "حالت فعالیت"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "آیکن نوع فعالیت"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__message_attachment_count
+msgid "Attachment Count"
+msgstr "تعداد ضمایم"
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Cancel"
+msgstr "لغو"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields.selection,name:hm_expiry_docs.selection__hm_expiry_document__manual_state__cancelled
+#: model:ir.model.fields.selection,name:hm_expiry_docs.selection__hm_expiry_document__state__cancelled
+msgid "Cancelled"
+msgstr "لغوشده"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__manual_state
+msgid "Closed As"
+msgstr "بسته‌شده به‌عنوان"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__code
+msgid "Code"
+msgstr "کود"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__company_id
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__company_id
+msgid "Company"
+msgstr "شرکت"
+
+#. module: hm_expiry_docs
+#: model:ir.ui.menu,name:hm_expiry_docs.menu_hm_expiry_config
+msgid "Configuration"
+msgstr "تنظیمات"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__partner_id
+msgid "Contact"
+msgstr "مخاطب"
+
+#. module: hm_expiry_docs
+#: model_terms:ir.actions.act_window,help:hm_expiry_docs.action_hm_expiry_document_type
+msgid "Create a document type"
+msgstr "ایجاد یک نوع سند"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__create_uid
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__create_uid
+msgid "Created by"
+msgstr "ایجادکننده"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__create_date
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__create_date
+msgid "Created on"
+msgstr "تاریخ ایجاد"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__days_to_expiry
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_list
+msgid "Days Left"
+msgstr "روزهای باقی‌مانده"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document_type__reminder_days
+msgid "Days before expiry to raise an activity for the responsible person."
+msgstr "تعداد روزهای پیش از انقضا برای ایجاد یک فعالیت برای شخص مسئول."
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__display_name
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Document"
+msgstr "سند"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__document_count
+msgid "Document Count"
+msgstr "تعداد اسناد"
+
+#. module: hm_expiry_docs
+#: model:ir.model,name:hm_expiry_docs.model_hm_expiry_document_type
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_type_view_form
+msgid "Document Type"
+msgstr "نوع سند"
+
+#. module: hm_expiry_docs
+#: model:ir.actions.act_window,name:hm_expiry_docs.action_hm_expiry_document_type
+#: model:ir.ui.menu,name:hm_expiry_docs.menu_hm_expiry_document_type
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_type_view_list
+msgid "Document Types"
+msgstr "انواع اسناد"
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Document number"
+msgstr "نمبر سند"
+
+#. module: hm_expiry_docs
+#: model:ir.actions.act_window,name:hm_expiry_docs.action_hm_expiry_document
+#: model:ir.ui.menu,name:hm_expiry_docs.menu_hm_expiry_document
+#: model:ir.ui.menu,name:hm_expiry_docs.menu_hm_expiry_root
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_type_view_form
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_type_view_list
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_list
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Documents"
+msgstr "اسناد"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields.selection,name:hm_expiry_docs.selection__hm_expiry_document__state__expired
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Expired"
+msgstr "منقضی‌شده"
+
+#. module: hm_expiry_docs
+#. odoo-python
+#: code:addons/hm_expiry_docs/models/hm_expiry_document.py:0
+msgid "Expired: %s"
+msgstr "منقضی‌شده: %s"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__date_expiry
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Expires"
+msgstr "تاریخ انقضا"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__expiring_count
+msgid "Expiring Count"
+msgstr "تعداد رو به انقضا"
+
+#. module: hm_expiry_docs
+#: model:ir.model,name:hm_expiry_docs.model_hm_expiry_document
+msgid "Expiring Document"
+msgstr "سند دارای انقضا"
+
+#. module: hm_expiry_docs
+#: model:ir.actions.server,name:hm_expiry_docs.cron_expiry_reminders_ir_actions_server
+msgid "Expiring Documents: raise reminders"
+msgstr "اسناد رو به انقضا: ایجاد یادآوری‌ها"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields.selection,name:hm_expiry_docs.selection__hm_expiry_document__state__expiring
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Expiring Soon"
+msgstr "به‌زودی منقضی می‌شود"
+
+#. module: hm_expiry_docs
+#. odoo-python
+#: code:addons/hm_expiry_docs/models/hm_expiry_document.py:0
+msgid "Expiring: %s"
+msgstr "رو به انقضا: %s"
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Expiry Date"
+msgstr "تاریخ انقضا"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__message_follower_ids
+msgid "Followers"
+msgstr "دنبال‌کنندگان"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "دنبال‌کنندگان (مخاطبین)"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "آیکن Font Awesome، مثلاً fa-tasks"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__has_message
+msgid "Has Message"
+msgstr "دارای پیام"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__subject
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Held By"
+msgstr "در اختیار"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__id
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__activity_exception_icon
+msgid "Icon"
+msgstr "آیکن"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "آیکنی که فعالیت استثنایی را نشان می‌دهد."
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "در صورت انتخاب، پیام‌های جدید نیازمند توجه شماست."
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "در صورت انتخاب، برخی پیام‌ها خطای ارسال دارند."
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__message_is_follower
+msgid "Is Follower"
+msgstr "دنبال‌کننده است"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__date_issue
+msgid "Issued"
+msgstr "صادرشده"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__issuing_authority
+msgid "Issued By"
+msgstr "صادرکننده"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__write_uid
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__write_uid
+msgid "Last Updated by"
+msgstr "آخرین ویرایش توسط"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__write_date
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__write_date
+msgid "Last Updated on"
+msgstr "تاریخ آخرین ویرایش"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document_type__company_id
+msgid "Leave empty to share across companies."
+msgstr "برای مشترک ساختن میان شرکت‌ها خالی بگذارید."
+
+#. module: hm_expiry_docs
+#: model_terms:ir.actions.act_window,help:hm_expiry_docs.action_hm_expiry_document
+msgid ""
+"Licences, permits, visas, insurance, registrations,\n"
+"               certifications. Whoever is named as responsible gets an activity\n"
+"               before it lapses, so it does not depend on somebody remembering\n"
+"               to open a spreadsheet."
+msgstr ""
+"جوازها، اجازه‌نامه‌ها، ویزه‌ها، بیمه‌ها، راجسترها و\n"
+"               تصدیق‌نامه‌ها. هر کسی که مسئول تعیین شود، پیش از انقضا یک فعالیت\n"
+"               دریافت می‌کند، تا کار به یاد ماندن کسی برای باز کردن یک\n"
+"               صفحه اکسل وابسته نباشد."
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__message_has_error
+msgid "Message Delivery error"
+msgstr "خطای ارسال پیام"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__message_ids
+msgid "Messages"
+msgstr "پیام‌ها"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document_type__validity_months
+msgid "Months a document of this type is normally valid for. Used to suggest an expiry date; it can always be overridden."
+msgstr "تعداد ماه‌هایی که سند این نوع معمولاً معتبر است. برای پیشنهاد تاریخ انقضا به کار می‌رود؛ همیشه قابل تغییر است."
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "مهلت فعالیت من"
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "My Responsibility"
+msgstr "مسئولیت من"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__name
+msgid "Name"
+msgstr "نام"
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_type_view_list
+msgid "Need Attention"
+msgstr "نیازمند توجه"
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Needs Attention"
+msgstr "نیازمند توجه"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__days_to_expiry
+msgid "Negative once the document has lapsed."
+msgstr "پس از انقضای سند منفی می‌شود."
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "مهلت فعالیت بعدی"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__activity_summary
+msgid "Next Activity Summary"
+msgstr "خلاصه فعالیت بعدی"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع فعالیت بعدی"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__notes
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Notes"
+msgstr "یادداشت‌ها"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__name
+msgid "Number"
+msgstr "نمبر"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__requires_number
+msgid "Number Required"
+msgstr "نمبر لازم است"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__message_needaction_counter
+msgid "Number of Actions"
+msgstr "تعداد اقدامات"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__message_has_error_counter
+msgid "Number of errors"
+msgstr "تعداد خطاها"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "تعداد پیام‌های نیازمند اقدام"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "تعداد پیام‌های دارای خطای ارسال"
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Opens a replacement and closes this one."
+msgstr "یک سند جایگزین باز می‌کند و این یکی را می‌بندد."
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Or a vehicle, a building, the company"
+msgstr "یا یک وسیله نقلیه، یک تعمیر، یا خود اداره"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__reminder_days
+msgid "Remind Before"
+msgstr "یادآوری پیش از"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__reminder_sent
+msgid "Reminder Raised"
+msgstr "یادآوری ایجاد شد"
+
+#. module: hm_expiry_docs
+#. odoo-python
+#: code:addons/hm_expiry_docs/models/hm_expiry_document.py:0
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Renew"
+msgstr "تمدید"
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Renewal"
+msgstr "تمدید"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields.selection,name:hm_expiry_docs.selection__hm_expiry_document__manual_state__renewed
+#: model:ir.model.fields.selection,name:hm_expiry_docs.selection__hm_expiry_document__state__renewed
+msgid "Renewed"
+msgstr "تمدیدشده"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__renewal_ids
+msgid "Renewed By"
+msgstr "تمدیدشده توسط"
+
+#. module: hm_expiry_docs
+#. odoo-python
+#: code:addons/hm_expiry_docs/models/hm_expiry_document.py:0
+msgid "Renewed by %s."
+msgstr "توسط %s تمدید شد."
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__renewed_from_id
+msgid "Renews"
+msgstr "تمدید می‌کند"
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Reopen"
+msgstr "بازگشایی"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__responsible_id
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Responsible"
+msgstr "مسئول"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__activity_user_id
+msgid "Responsible User"
+msgstr "کاربر مسئول"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__sequence
+msgid "Sequence"
+msgstr "ترتیب"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__manual_state
+msgid "Set when a document is superseded or withdrawn. Overrides the date-driven status."
+msgstr "زمانی تعیین می‌شود که سند جایگزین یا مسترد شده باشد. بر وضعیت مبتنی بر تاریخ اولویت دارد."
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document_type__code
+msgid "Short code used on lists and references."
+msgstr "کود کوتاهی که در فهرست‌ها و مراجع به کار می‌رود."
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__state
+msgid "State"
+msgstr "حالت"
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Status"
+msgstr "وضعیت"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"حالت بر اساس فعالیت‌ها\n"
+"معوق: تاریخ سررسید گذشته است\n"
+"امروز: تاریخ فعالیت امروز است\n"
+"پلان‌شده: فعالیت‌های آینده."
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__renewed_from_id
+msgid "The document this one replaces."
+msgstr "سندی که این یکی جایگزین آن می‌شود."
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__name
+msgid "The document's own number or reference."
+msgstr "نمبر یا مرجع خود سند."
+
+#. module: hm_expiry_docs
+#: model:ir.model.constraint,message:hm_expiry_docs.constraint_hm_expiry_document_type_reminder_positive
+msgid "The reminder period cannot be negative."
+msgstr "مدت یادآوری منفی شده نمی‌تواند."
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "This expires in"
+msgstr "این منقضی می‌شود تا"
+
+#. module: hm_expiry_docs
+#: model_terms:ir.actions.act_window,help:hm_expiry_docs.action_hm_expiry_document
+msgid "Track a document that expires"
+msgstr "پیگیری یک سند دارای انقضا"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__type_id
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Type"
+msgstr "نوع"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع فعالیت استثنایی روی سند."
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__validity_months
+msgid "Usual Validity"
+msgstr "اعتبار معمول"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields.selection,name:hm_expiry_docs.selection__hm_expiry_document__state__valid
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_search
+msgid "Valid"
+msgstr "معتبر"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__state
+msgid "Valid, expiring and expired follow the dates. Renewed and cancelled are set by hand and stop the reminders."
+msgstr "حالت‌های معتبر، رو به انقضا و منقضی‌شده از تاریخ‌ها پیروی می‌کنند. تمدیدشده و لغوشده به‌صورت دستی تعیین می‌شوند و یادآوری‌ها را متوقف می‌کنند."
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "Validity"
+msgstr "اعتبار"
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__responsible_id
+msgid "Who gets the reminder. A document nobody owns is a document nobody renews."
+msgstr "اینکه چه کسی یادآوری را دریافت می‌کند. سندی که صاحب ندارد، سندی است که کسی تمدیدش نمی‌کند."
+
+#. module: hm_expiry_docs
+#: model:ir.model.fields,help:hm_expiry_docs.field_hm_expiry_document__subject
+msgid "Who or what the document belongs to, when that is not a contact -- a vehicle, a building, the company itself."
+msgstr "اینکه سند متعلق به چه کس یا چه چیزی است، وقتی مخاطب نباشد -- یک وسیله نقلیه، یک تعمیر، یا خود اداره."
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_type_view_form
+msgid "Work Permit"
+msgstr "جواز کار"
+
+#. module: hm_expiry_docs
+#: model_terms:ir.ui.view,arch_db:hm_expiry_docs.hm_expiry_document_view_form
+msgid "day(s)."
+msgstr "روز."

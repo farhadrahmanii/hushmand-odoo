@@ -1,0 +1,534 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_roster
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: hm_roster
+#. odoo-python
+#: code:addons/hm_roster/models/hm_roster.py:0
+msgid "%(count)s shift(s) on %(roster)s have nobody assigned. Assign them, or publish again from the button that confirms you meant to."
+msgstr "%(count)s نوبت در %(roster)s کسی به آن گماشته نشده است. کسی را بگمارید، یا از دکمه‌ای که قصد شما را تأیید می‌کند دوباره نشر کنید."
+
+#. module: hm_roster
+#. odoo-python
+#: code:addons/hm_roster/models/hm_roster.py:0
+msgid "%(date)s is outside the roster period %(start)s to %(end)s."
+msgstr "%(date)s خارج از دوره جدول نوبت %(start)s تا %(end)s است."
+
+#. module: hm_roster
+#. odoo-python
+#: code:addons/hm_roster/models/hm_roster.py:0
+msgid "%(employee)s is already on a shift from %(start)s to %(end)s."
+msgstr "%(employee)s از قبل در نوبتی از %(start)s تا %(end)s است."
+
+#. module: hm_roster
+#. odoo-python
+#: code:addons/hm_roster/models/hm_roster.py:0
+msgid "%(employee)s: %(date)s, %(start)s to %(end)s"
+msgstr "%(employee)s: %(date)s، %(start)s تا %(end)s"
+
+#. module: hm_roster
+#. odoo-python
+#: code:addons/hm_roster/models/hm_roster.py:0
+msgid "%s has no shifts."
+msgstr "%s هیچ نوبتی ندارد."
+
+#. module: hm_roster
+#. odoo-python
+#: code:addons/hm_roster/models/hm_roster.py:0
+msgid "A closed roster cannot be reopened. Copy it instead."
+msgstr "جدول نوبت بسته‌شده بازگشایی شده نمی‌تواند. به‌جای آن کاپی‌اش کنید."
+
+#. module: hm_roster
+#: model:ir.model.fields,help:hm_roster.field_hm_shift_template__crosses_midnight
+msgid "A night shift beginning at 18:00 and ending at 06:00 finishes on the following day."
+msgstr "نوبت شبی که در ۱۸:۰۰ آغاز و در ۰۶:۰۰ پایان می‌یابد، روز بعد ختم می‌شود."
+
+#. module: hm_roster
+#: model:ir.model.constraint,message:hm_roster.constraint_hm_roster_dates_in_order
+msgid "A roster cannot end before it starts."
+msgstr "جدول نوبت پیش از آغازش پایان یافته نمی‌تواند."
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__message_needaction
+msgid "Action Needed"
+msgstr "نیازمند اقدام"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_shift_template__active
+msgid "Active"
+msgstr "فعال"
+
+#. module: hm_roster
+#: model:ir.ui.menu,name:hm_roster.menu_hm_roster_shift
+msgid "All Shifts"
+msgstr "تمام نوبت‌ها"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__employee_id
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_shift_view_search
+msgid "Assigned To"
+msgstr "واگذارشده به"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__message_attachment_count
+msgid "Attachment Count"
+msgstr "تعداد ضمایم"
+
+#. module: hm_roster
+#: model_terms:ir.actions.act_window,help:hm_roster.action_hm_roster
+msgid "Build a roster"
+msgstr "ساختن یک جدول نوبت"
+
+#. module: hm_roster
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_form
+msgid "Close"
+msgstr "بستن"
+
+#. module: hm_roster
+#: model:ir.model.fields.selection,name:hm_roster.selection__hm_roster__state__closed
+msgid "Closed"
+msgstr "بسته"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_shift_template__color
+msgid "Colour"
+msgstr "رنگ"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__company_id
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__company_id
+#: model:ir.model.fields,field_description:hm_roster.field_hm_shift_template__company_id
+msgid "Company"
+msgstr "شرکت"
+
+#. module: hm_roster
+#: model:ir.ui.menu,name:hm_roster.menu_hm_roster_config
+msgid "Configuration"
+msgstr "تنظیمات"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__create_uid
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__create_uid
+#: model:ir.model.fields,field_description:hm_roster.field_hm_shift_template__create_uid
+msgid "Created by"
+msgstr "ایجادکننده"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__create_date
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__create_date
+#: model:ir.model.fields,field_description:hm_roster.field_hm_shift_template__create_date
+msgid "Created on"
+msgstr "تاریخ ایجاد"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__date
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_shift_view_search
+msgid "Date"
+msgstr "تاریخ"
+
+#. module: hm_roster
+#: model_terms:ir.actions.act_window,help:hm_roster.action_hm_shift_template
+msgid "Define a shift"
+msgstr "تعریف یک نوبت"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__display_name
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__display_name
+#: model:ir.model.fields,field_description:hm_roster.field_hm_shift_template__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: hm_roster
+#: model:ir.model.fields.selection,name:hm_roster.selection__hm_roster__state__draft
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_search
+msgid "Draft"
+msgstr "مسوده"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__duration_hours
+msgid "Duration Hours"
+msgstr "ساعات مدت"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__end_datetime
+msgid "End Datetime"
+msgstr "تاریخ و ساعت پایان"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__hour_to
+#: model:ir.model.fields,field_description:hm_roster.field_hm_shift_template__hour_to
+msgid "Ends"
+msgstr "پایان"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_shift_template__crosses_midnight
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_shift_template_view_list
+msgid "Ends Next Day"
+msgstr "روز بعد ختم می‌شود"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__message_follower_ids
+msgid "Followers"
+msgstr "دنبال‌کنندگان"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "دنبال‌کنندگان (مخاطبین)"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__date_from
+msgid "From"
+msgstr "از"
+
+#. module: hm_roster
+#: model:ir.model.fields,help:hm_roster.field_hm_roster__location
+msgid "Gate, building or site this roster covers."
+msgstr "دروازه، تعمیر یا محلی که این جدول نوبت پوشش می‌دهد."
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__has_message
+msgid "Has Message"
+msgstr "دارای پیام"
+
+#. module: hm_roster
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_search
+msgid "Has Uncovered Shifts"
+msgstr "نوبت‌های بدون پوشش دارد"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_shift_template__duration_hours
+msgid "Hours"
+msgstr "ساعات"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__id
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__id
+#: model:ir.model.fields,field_description:hm_roster.field_hm_shift_template__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: hm_roster
+#: model:ir.model.fields,help:hm_roster.field_hm_roster__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "در صورت انتخاب، پیام‌های جدید نیازمند توجه شماست."
+
+#. module: hm_roster
+#: model:ir.model.fields,help:hm_roster.field_hm_roster__message_has_error
+#: model:ir.model.fields,help:hm_roster.field_hm_roster__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "در صورت انتخاب، برخی پیام‌ها خطای ارسال دارند."
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__message_is_follower
+msgid "Is Follower"
+msgstr "دنبال‌کننده است"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__write_uid
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__write_uid
+#: model:ir.model.fields,field_description:hm_roster.field_hm_shift_template__write_uid
+msgid "Last Updated by"
+msgstr "آخرین ویرایش توسط"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__write_date
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__write_date
+#: model:ir.model.fields,field_description:hm_roster.field_hm_shift_template__write_date
+msgid "Last Updated on"
+msgstr "تاریخ آخرین ویرایش"
+
+#. module: hm_roster
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_form
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_shift_template_view_list
+msgid "Length"
+msgstr "مدت"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__location
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_search
+msgid "Location"
+msgstr "موقعیت"
+
+#. module: hm_roster
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_form
+msgid "Main gate, Sunbula 1405"
+msgstr "دروازه عمومی، سنبله ۱۴۰۵"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__message_has_error
+msgid "Message Delivery error"
+msgstr "خطای ارسال پیام"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__message_ids
+msgid "Messages"
+msgstr "پیام‌ها"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__name
+#: model:ir.model.fields,field_description:hm_roster.field_hm_shift_template__name
+msgid "Name"
+msgstr "نام"
+
+#. module: hm_roster
+#: model_terms:ir.actions.act_window,help:hm_roster.action_hm_roster_shift
+msgid "No shifts yet"
+msgstr "هنوز هیچ نوبتی نیست"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__notes
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__notes
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_form
+msgid "Notes"
+msgstr "یادداشت‌ها"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__message_needaction_counter
+msgid "Number of Actions"
+msgstr "تعداد اقدامات"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__message_has_error_counter
+msgid "Number of errors"
+msgstr "تعداد خطاها"
+
+#. module: hm_roster
+#: model:ir.model.fields,help:hm_roster.field_hm_roster__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "تعداد پیام‌های نیازمند اقدام"
+
+#. module: hm_roster
+#: model:ir.model.fields,help:hm_roster.field_hm_roster__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "تعداد پیام‌های دارای خطای ارسال"
+
+#. module: hm_roster
+#. odoo-python
+#: code:addons/hm_roster/models/hm_roster.py:0
+msgid "Only a draft roster can be published."
+msgstr "تنها جدول نوبت مسوده نشر شده می‌تواند."
+
+#. module: hm_roster
+#. odoo-python
+#: code:addons/hm_roster/models/hm_roster.py:0
+msgid "Only a published roster can be closed."
+msgstr "تنها جدول نوبت نشرشده بسته شده می‌تواند."
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__location
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_shift_view_list
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_form
+msgid "Post"
+msgstr "موقعیت"
+
+#. module: hm_roster
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_form
+msgid "Publish"
+msgstr "نشر"
+
+#. module: hm_roster
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_form
+msgid "Publish With Gaps"
+msgstr "نشر با خلاها"
+
+#. module: hm_roster
+#: model:ir.model.fields.selection,name:hm_roster.selection__hm_roster__state__published
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_shift_view_search
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_search
+msgid "Published"
+msgstr "نشرشده"
+
+#. module: hm_roster
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_form
+msgid "Reset to Draft"
+msgstr "بازگشت به مسوده"
+
+#. module: hm_roster
+#: model:ir.model,name:hm_roster.model_hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__roster_id
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_shift_view_search
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_form
+msgid "Roster"
+msgstr "جدول نوبت"
+
+#. module: hm_roster
+#: model:ir.model,name:hm_roster.model_hm_roster_shift
+msgid "Roster Shift"
+msgstr "نوبت جدول"
+
+#. module: hm_roster
+#: model:ir.actions.act_window,name:hm_roster.action_hm_roster
+#: model:ir.ui.menu,name:hm_roster.menu_hm_roster
+#: model:ir.ui.menu,name:hm_roster.menu_hm_roster_root
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_list
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_search
+msgid "Rosters"
+msgstr "جداول نوبت"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطای ارسال پیامک"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_shift_template__sequence
+msgid "Sequence"
+msgstr "ترتیب"
+
+#. module: hm_roster
+#: model_terms:ir.actions.act_window,help:hm_roster.action_hm_roster
+msgid ""
+"Set the period, add the shifts, assign people. Double-booking is\n"
+"               refused as it happens, and publishing a roster with uncovered\n"
+"               shifts takes a second, deliberate action."
+msgstr ""
+"دوره را تعیین کنید، نوبت‌ها را بیفزایید، اشخاص را بگمارید. گماشتن\n"
+"               دوباره یک نفر همان لحظه رد می‌شود، و نشر جدولی که نوبت‌های\n"
+"               بدون پوشش دارد به یک اقدام دوم و آگاهانه ضرورت دارد."
+
+#. module: hm_roster
+#: model:ir.model.fields,help:hm_roster.field_hm_roster_shift__template_id
+msgid "Sets the hours. They can still be overridden."
+msgstr "ساعات را تعیین می‌کند. این ساعات همچنان قابل تغییرند."
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__template_id
+msgid "Shift"
+msgstr "نوبت"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__shift_count
+msgid "Shift Count"
+msgstr "تعداد نوبت‌ها"
+
+#. module: hm_roster
+#: model:ir.model,name:hm_roster.model_hm_shift_template
+msgid "Shift Template"
+msgstr "قالب نوبت"
+
+#. module: hm_roster
+#: model:ir.actions.act_window,name:hm_roster.action_hm_shift_template
+#: model:ir.ui.menu,name:hm_roster.menu_hm_shift_template
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_shift_template_view_list
+msgid "Shift Templates"
+msgstr "قالب‌های نوبت"
+
+#. module: hm_roster
+#: model:ir.model.constraint,message:hm_roster.constraint_hm_roster_shift_hours_in_range
+#: model:ir.model.constraint,message:hm_roster.constraint_hm_shift_template_hours_in_range
+msgid "Shift hours must be between 0 and 24."
+msgstr "ساعات نوبت باید بین ۰ و ۲۴ باشد."
+
+#. module: hm_roster
+#. odoo-python
+#: code:addons/hm_roster/models/hm_roster.py:0
+#: model:ir.actions.act_window,name:hm_roster.action_hm_roster_shift
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__shift_ids
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_shift_view_list
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_shift_view_search
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_form
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_list
+msgid "Shifts"
+msgstr "نوبت‌ها"
+
+#. module: hm_roster
+#: model_terms:ir.actions.act_window,help:hm_roster.action_hm_roster_shift
+msgid "Shifts are usually created from a roster. Open Rosters, plan the week, and the shifts appear here."
+msgstr "نوبت‌ها معمولاً از یک جدول نوبت ساخته می‌شوند. جداول نوبت را باز کنید، هفته را پلان کنید، و نوبت‌ها اینجا ظاهر می‌شوند."
+
+#. module: hm_roster
+#: model:ir.model.fields,help:hm_roster.field_hm_roster__unassigned_count
+msgid "Shifts with nobody on them."
+msgstr "نوبت‌هایی که کسی در آن‌ها نیست."
+
+#. module: hm_roster
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_form
+msgid "Some shifts have nobody assigned. Publish anyway?"
+msgstr "به بعضی نوبت‌ها کسی گماشته نشده است. با آن‌هم نشر شود؟"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__start_datetime
+msgid "Start Datetime"
+msgstr "تاریخ و ساعت آغاز"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__hour_from
+#: model:ir.model.fields,field_description:hm_roster.field_hm_shift_template__hour_from
+msgid "Starts"
+msgstr "آغاز"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__state
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster_shift__state
+msgid "State"
+msgstr "حالت"
+
+#. module: hm_roster
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_search
+msgid "Status"
+msgstr "وضعیت"
+
+#. module: hm_roster
+#: model_terms:ir.actions.act_window,help:hm_roster.action_hm_shift_template
+msgid ""
+"The patterns you use over and over: Day 08:00-16:00,\n"
+"               Night 18:00-06:00. Building a month then means choosing a shift\n"
+"               and a person rather than typing times."
+msgstr ""
+"الگوهایی که بارها به کار می‌برید: روز ۰۸:۰۰-۱۶:۰۰،\n"
+"               شب ۱۸:۰۰-۰۶:۰۰. ساختن یک ماه پس از آن یعنی انتخاب یک نوبت و\n"
+"               یک شخص، نه تایپ کردن ساعات."
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__date_to
+msgid "To"
+msgstr "تا"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__unassigned_count
+msgid "Unassigned Count"
+msgstr "تعداد گماشته‌نشده"
+
+#. module: hm_roster
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_shift_view_search
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_list
+msgid "Uncovered"
+msgstr "بدون پوشش"
+
+#. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__website_message_ids
+msgid "Website Messages"
+msgstr "پیام‌های ویب‌سایت"
+
+#. module: hm_roster
+#: model:ir.model.fields,help:hm_roster.field_hm_roster__website_message_ids
+msgid "Website communication history"
+msgstr "تاریخچه ارتباطات ویب‌سایت"
+
+#. module: hm_roster
+#. odoo-python
+#: code:addons/hm_roster/models/hm_roster.py:0
+msgid "roster_id"
+msgstr "roster_id"
+
+#. module: hm_roster
+#: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_form
+msgid ""
+"shift(s) have nobody assigned. Publishing will refuse\n"
+"                        until they are covered, or you use Publish With Gaps."
+msgstr ""
+"نوبت کسی به آن گماشته نشده است. تا زمانی که پوشش داده\n"
+"                        نشوند نشر رد می‌شود، مگر اینکه از نشر با خلاها استفاده کنید."

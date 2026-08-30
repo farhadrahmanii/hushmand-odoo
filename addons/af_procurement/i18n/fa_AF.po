@@ -1,0 +1,533 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* af_procurement
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: af_procurement
+#. odoo-python
+#: code:addons/af_procurement/models/hm_purchase_request.py:0
+msgid "%(supplier)s is not the lowest quotation. Write down why it was chosen -- that sentence is what an auditor will ask for."
+msgstr "%(supplier)s پایین‌ترین نرخ را ارائه نکرده است. دلیل انتخابش را بنویسید -- همان یک جمله چیزی است که مفتش از شما خواهد پرسید."
+
+#. module: af_procurement
+#. odoo-python
+#: code:addons/af_procurement/models/hm_purchase_request.py:0
+msgid "%(supplier)s selected at %(amount)s, from %(count)s quotation(s)."
+msgstr "%(supplier)s به مبلغ %(amount)s، از میان %(count)s نرخ‌دهی انتخاب شد."
+
+#. module: af_procurement
+#. odoo-python
+#: code:addons/af_procurement/models/hm_purchase_request.py:0
+msgid "%s has to be submitted before quotations are compared."
+msgstr "%s باید پیش از مقایسه نرخ‌دهی‌ها ارائه شود."
+
+#. module: af_procurement
+#. odoo-python
+#: code:addons/af_procurement/models/hm_purchase_request.py:0
+msgid "A comparison needs at least two quotations. With one, nothing has been compared."
+msgstr "هر مقایسه به حداقل دو نرخ‌دهی ضرورت دارد. با یکی، چیزی مقایسه نشده است."
+
+#. module: af_procurement
+#. odoo-python
+#: code:addons/af_procurement/models/hm_purchase_request.py:0
+msgid "A completed comparison cannot be cancelled. It is part of the record of how the supplier was chosen."
+msgstr "مقایسه تکمیل‌شده لغو شده نمی‌تواند. این بخشی از سابقه چگونگی انتخاب عرضه‌کننده است."
+
+#. module: af_procurement
+#: model:ir.model.constraint,message:af_procurement.constraint_af_comparative_quote_amount_positive
+msgid "A quotation cannot be a negative amount."
+msgstr "نرخ‌دهی مبلغ منفی شده نمی‌تواند."
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__message_needaction
+msgid "Action Needed"
+msgstr "نیازمند اقدام"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__message_attachment_count
+msgid "Attachment Count"
+msgstr "تعداد ضمایم"
+
+#. module: af_procurement
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_form
+msgid "Cancel"
+msgstr "لغو"
+
+#. module: af_procurement
+#: model:ir.model.fields.selection,name:af_procurement.selection__af_comparative_form__state__cancelled
+msgid "Cancelled"
+msgstr "لغوشده"
+
+#. module: af_procurement
+#. odoo-python
+#: code:addons/af_procurement/models/hm_purchase_request.py:0
+msgid "Choose the quotation you are recommending."
+msgstr "نرخ‌دهی‌ای را که پیشنهاد می‌کنید انتخاب نمایید."
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_quote__is_selected
+msgid "Chosen"
+msgstr "انتخاب‌شده"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__company_id
+msgid "Company"
+msgstr "شرکت"
+
+#. module: af_procurement
+#. odoo-python
+#: code:addons/af_procurement/models/hm_purchase_request.py:0
+#: model:ir.model,name:af_procurement.model_af_comparative_form
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_form
+msgid "Comparative Form"
+msgstr "فورم مقایسوی"
+
+#. module: af_procurement
+#. odoo-python
+#: code:addons/af_procurement/models/hm_purchase_request.py:0
+#: model:ir.actions.act_window,name:af_procurement.action_af_comparative_form
+#: model:ir.model.fields,field_description:af_procurement.field_hm_purchase_request__af_comparative_ids
+#: model:ir.ui.menu,name:af_procurement.menu_af_comparative_form
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_list
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_search
+msgid "Comparative Forms"
+msgstr "فورم‌های مقایسوی"
+
+#. module: af_procurement
+#: model_terms:ir.ui.view,arch_db:af_procurement.hm_purchase_request_view_form_af
+msgid "Compare Quotations"
+msgstr "مقایسه نرخ‌دهی‌ها"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_quote__form_id
+msgid "Comparison"
+msgstr "مقایسه"
+
+#. module: af_procurement
+#. odoo-python
+#: code:addons/af_procurement/models/hm_purchase_request.py:0
+msgid "Comparison for %s"
+msgstr "مقایسه برای %s"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_hm_purchase_request__af_comparative_count
+#: model_terms:ir.ui.view,arch_db:af_procurement.hm_purchase_request_view_form_af
+msgid "Comparisons"
+msgstr "مقایسه‌ها"
+
+#. module: af_procurement
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_form
+msgid "Complete"
+msgstr "تکمیل"
+
+#. module: af_procurement
+#. odoo-python
+#: code:addons/af_procurement/models/hm_purchase_request.py:0
+msgid "Complete the comparison before applying it."
+msgstr "پیش از تطبیق مقایسه، آن را تکمیل کنید."
+
+#. module: af_procurement
+#: model:ir.model.fields.selection,name:af_procurement.selection__af_comparative_form__state__done
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_search
+msgid "Completed"
+msgstr "تکمیل‌شده"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__create_uid
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_quote__create_uid
+msgid "Created by"
+msgstr "ایجادکننده"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__create_date
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_quote__create_date
+msgid "Created on"
+msgstr "تاریخ ایجاد"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__currency_id
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_quote__currency_id
+msgid "Currency"
+msgstr "اسعار"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__date
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_search
+msgid "Date"
+msgstr "تاریخ"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_quote__delivery_days
+msgid "Delivery (days)"
+msgstr "تحویلی (روز)"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__display_name
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_quote__display_name
+#: model:ir.model.fields,field_description:af_procurement.field_hm_purchase_request__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: af_procurement
+#: model:ir.model.fields.selection,name:af_procurement.selection__af_comparative_form__state__draft
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_search
+msgid "Draft"
+msgstr "مسوده"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__message_follower_ids
+msgid "Followers"
+msgstr "دنبال‌کنندگان"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "دنبال‌کنندگان (مخاطبین)"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__has_message
+msgid "Has Message"
+msgstr "دارای پیام"
+
+#. module: af_procurement
+#: model:ir.model.fields,help:af_procurement.field_af_comparative_quote__delivery_days
+msgid "How long the supplier says it will take. Often the reason a dearer quotation is chosen."
+msgstr "مدتی که عرضه‌کننده می‌گوید طول می‌کشد. اغلب همین دلیل انتخاب نرخ‌دهی گران‌تر است."
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__id
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_quote__id
+#: model:ir.model.fields,field_description:af_procurement.field_hm_purchase_request__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: af_procurement
+#: model:ir.model.fields,help:af_procurement.field_af_comparative_form__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "در صورت انتخاب، پیام‌های جدید نیازمند توجه شماست."
+
+#. module: af_procurement
+#: model:ir.model.fields,help:af_procurement.field_af_comparative_form__message_has_error
+#: model:ir.model.fields,help:af_procurement.field_af_comparative_form__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "در صورت انتخاب، برخی پیام‌ها خطای ارسال دارند."
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__message_is_follower
+msgid "Is Follower"
+msgstr "دنبال‌کننده است"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__write_uid
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_quote__write_uid
+msgid "Last Updated by"
+msgstr "آخرین ویرایش توسط"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__write_date
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_quote__write_date
+msgid "Last Updated on"
+msgstr "تاریخ آخرین ویرایش"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__lowest_quote_id
+msgid "Lowest"
+msgstr "پایین‌ترین"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__message_has_error
+msgid "Message Delivery error"
+msgstr "خطای ارسال پیام"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__message_ids
+msgid "Messages"
+msgstr "پیام‌ها"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__name
+msgid "Name"
+msgstr "نام"
+
+#. module: af_procurement
+#. odoo-python
+#: code:addons/af_procurement/models/hm_purchase_request.py:0
+msgid "New"
+msgstr "جدید"
+
+#. module: af_procurement
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_list
+msgid "Not Lowest"
+msgstr "پایین‌ترین نیست"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__not_lowest
+msgid "Not the Lowest"
+msgstr "پایین‌ترین نیست"
+
+#. module: af_procurement
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_search
+msgid "Not the Lowest Quotation"
+msgstr "پایین‌ترین نرخ‌دهی نیست"
+
+#. module: af_procurement
+#. odoo-python
+#: code:addons/af_procurement/models/hm_purchase_request.py:0
+msgid "Not the lowest. Reason: %s"
+msgstr "پایین‌ترین نیست. دلیل: %s"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__notes
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_form
+msgid "Notes"
+msgstr "یادداشت‌ها"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__message_needaction_counter
+msgid "Number of Actions"
+msgstr "تعداد اقدامات"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__message_has_error_counter
+msgid "Number of errors"
+msgstr "تعداد خطاها"
+
+#. module: af_procurement
+#: model:ir.model.fields,help:af_procurement.field_af_comparative_form__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "تعداد پیام‌های نیازمند اقدام"
+
+#. module: af_procurement
+#: model:ir.model.fields,help:af_procurement.field_af_comparative_form__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "تعداد پیام‌های دارای خطای ارسال"
+
+#. module: af_procurement
+#. odoo-python
+#: code:addons/af_procurement/models/hm_purchase_request.py:0
+msgid "Only a cancelled comparison can be reset."
+msgstr "تنها مقایسه لغوشده بازنشانی شده می‌تواند."
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_quote__payment_terms
+msgid "Payment Terms"
+msgstr "شرایط پرداخت"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__prepared_by_id
+msgid "Prepared By"
+msgstr "ترتیب‌کننده"
+
+#. module: af_procurement
+#: model:ir.model,name:af_procurement.model_hm_purchase_request
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__request_id
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_search
+msgid "Purchase Request"
+msgstr "درخواست خریداری"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_quote__quotation_ref
+msgid "Quotation No."
+msgstr "نمبر نرخ‌دهی"
+
+#. module: af_procurement
+#: model:ir.model,name:af_procurement.model_af_comparative_quote
+msgid "Quotation on a Comparative Form"
+msgstr "نرخ‌دهی در فورم مقایسوی"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__quote_ids
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_form
+msgid "Quotations"
+msgstr "نرخ‌دهی‌ها"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__quote_count
+msgid "Quote Count"
+msgstr "تعداد نرخ‌دهی‌ها"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_quote__quotation_date
+msgid "Quoted On"
+msgstr "تاریخ نرخ‌دهی"
+
+#. module: af_procurement
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_list
+msgid "Quotes"
+msgstr "نرخ‌دهی‌ها"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__selection_reason
+msgid "Reason for Selection"
+msgstr "دلیل انتخاب"
+
+#. module: af_procurement
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_form
+msgid "Recommendation"
+msgstr "پیشنهاد"
+
+#. module: af_procurement
+#: model_terms:ir.actions.act_window,help:af_procurement.action_af_comparative_form
+msgid "Record a comparison"
+msgstr "ثبت یک مقایسه"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__reference
+msgid "Reference"
+msgstr "مرجع"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_quote__notes
+msgid "Remarks"
+msgstr "ملاحظات"
+
+#. module: af_procurement
+#: model:ir.model.fields,help:af_procurement.field_af_comparative_form__selection_reason
+msgid "Required when the chosen quotation is not the cheapest. This is the sentence an auditor reads."
+msgstr "زمانی لازم است که نرخ‌دهی انتخاب‌شده ارزان‌ترین نباشد. همین جمله است که مفتش می‌خواند."
+
+#. module: af_procurement
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_form
+msgid "Reset to Draft"
+msgstr "بازگشت به مسوده"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطای ارسال پیامک"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__selected_quote_id
+msgid "Selected"
+msgstr "انتخاب‌شده"
+
+#. module: af_procurement
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_form
+msgid "Set Supplier on Request"
+msgstr "تعیین عرضه‌کننده روی درخواست"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__state
+msgid "State"
+msgstr "حالت"
+
+#. module: af_procurement
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_search
+msgid "Status"
+msgstr "وضعیت"
+
+#. module: af_procurement
+#: model:ir.model.fields,help:af_procurement.field_af_comparative_form__not_lowest
+msgid "Stored so the search filter can find these forms; this flag is what an auditor filters on."
+msgstr "ذخیره می‌شود تا فلتر جستجو این فورم‌ها را یافته بتواند؛ مفتش بر همین نشانه فلتر می‌کند."
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_quote__partner_id
+msgid "Supplier"
+msgstr "عرضه‌کننده"
+
+#. module: af_procurement
+#. odoo-python
+#: code:addons/af_procurement/models/hm_purchase_request.py:0
+msgid "Supplier set from comparison %s."
+msgstr "عرضه‌کننده از روی مقایسه %s تعیین شد."
+
+#. module: af_procurement
+#: model:ir.model.fields,help:af_procurement.field_af_comparative_form__lowest_quote_id
+msgid "The cheapest quotation. Not necessarily the one chosen."
+msgstr "ارزان‌ترین نرخ‌دهی. لزوماً همان انتخاب‌شده نیست."
+
+#. module: af_procurement
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_search
+msgid "The comparisons an auditor looks at first."
+msgstr "مقایسه‌هایی که مفتش نخست به آن‌ها نگاه می‌کند."
+
+#. module: af_procurement
+#. odoo-python
+#: code:addons/af_procurement/models/hm_purchase_request.py:0
+msgid "The selected quotation belongs to another comparison."
+msgstr "نرخ‌دهی انتخاب‌شده متعلق به مقایسه دیگری است."
+
+#. module: af_procurement
+#: model:ir.model.fields,help:af_procurement.field_af_comparative_quote__quotation_ref
+msgid "The supplier's own reference, so the paper can be found again."
+msgstr "مرجع خود عرضه‌کننده، تا سند دوباره یافته شود."
+
+#. module: af_procurement
+#. odoo-python
+#: code:addons/af_procurement/models/hm_purchase_request.py:0
+msgid "This comparison is already completed."
+msgstr "این مقایسه از قبل تکمیل شده است."
+
+#. module: af_procurement
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_form
+msgid ""
+"This is not the lowest quotation. Write down why it\n"
+"                            was chosen — that sentence is what an auditor will\n"
+"                            ask for, and it is far easier to write now than to\n"
+"                            reconstruct next year."
+msgstr ""
+"این پایین‌ترین نرخ‌دهی نیست. دلیل انتخابش را\n"
+"                            بنویسید — همان یک جمله چیزی است که مفتش خواهد\n"
+"                            پرسید، و نوشتنش اکنون بسیار آسان‌تر از بازسازی آن\n"
+"                            در سال آینده است."
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_quote__total_amount
+msgid "Total"
+msgstr "مجموع"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_quote__warranty_months
+msgid "Warranty (months)"
+msgstr "ضمانت (ماه)"
+
+#. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__website_message_ids
+msgid "Website Messages"
+msgstr "پیام‌های ویب‌سایت"
+
+#. module: af_procurement
+#: model:ir.model.fields,help:af_procurement.field_af_comparative_form__website_message_ids
+msgid "Website communication history"
+msgstr "تاریخچه ارتباطات ویب‌سایت"
+
+#. module: af_procurement
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_form
+msgid "What is being compared"
+msgstr "آنچه مقایسه می‌شود"
+
+#. module: af_procurement
+#: model_terms:ir.actions.act_window,help:af_procurement.action_af_comparative_form
+msgid ""
+"Which suppliers were asked, what each quoted, and why the chosen\n"
+"               one was chosen. Odoo has no concept of this sheet, and it is\n"
+"               exactly the document a donor or an auditor asks for when they\n"
+"               want to know why a particular supplier was used."
+msgstr ""
+"اینکه از کدام عرضه‌کنندگان نرخ خواسته شد، هر یک چه نرخ داد، و چرا\n"
+"               همان یکی انتخاب شد. اودو مفهومی برای این ورق ندارد، و این\n"
+"               دقیقاً همان سندی است که تمویل‌کننده یا مفتش می‌خواهد وقتی\n"
+"               بداند چرا از یک عرضه‌کننده معین استفاده شده است."
+
+#. module: af_procurement
+#: model_terms:ir.ui.view,arch_db:af_procurement.af_comparative_form_view_form
+msgid "Why this supplier, in a sentence or two."
+msgstr "چرا این عرضه‌کننده، در یک یا دو جمله."
+
+#. module: af_procurement
+#. odoo-python
+#: code:addons/af_procurement/models/hm_purchase_request.py:0
+msgid "request_id"
+msgstr "request_id"

@@ -1,0 +1,385 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_account_reports
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_trial_balance
+msgid "Account"
+msgstr "حساب"
+
+#. module: hm_account_reports
+#: model:ir.model.fields.selection,name:hm_account_reports.selection__hm_account_report_wizard__report_type__balance_sheet
+msgid "Balance Sheet"
+msgstr "بیلانس"
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Bank and Cash"
+msgstr "بانک و نقد"
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__analytic_account_id
+msgid "Budget Line"
+msgstr "لین بودجه"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.hm_account_report_wizard_view_form
+msgid "Cancel"
+msgstr "لغو"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_trial_balance
+msgid "Closing"
+msgstr "اختتامیه"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_trial_balance
+msgid "Code"
+msgstr "کود"
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__company_ids
+msgid "Companies"
+msgstr "شرکت‌ها"
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Cost of Revenue"
+msgstr "مصارف عواید"
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__create_uid
+msgid "Created by"
+msgstr "ایجادکننده"
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__create_date
+msgid "Created on"
+msgstr "تاریخ ایجاد"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_trial_balance
+msgid "Credit"
+msgstr "بستانکار"
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Credit Card"
+msgstr "کارت اعتباری"
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Current Assets"
+msgstr "دارایی‌های جاری"
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Current Liabilities"
+msgstr "مکلفیت‌های جاری"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_balance_sheet
+msgid "Current Year Result"
+msgstr "نتیجه سال جاری"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_trial_balance
+msgid "Debit"
+msgstr "بدهکار"
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Depreciation"
+msgstr "استهلاک"
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report__display_name
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.hm_account_report_wizard_view_form
+msgid "Draft entries are included. Do not file this."
+msgstr "قیدهای مسوده شامل است. این را ارائه نکنید."
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Equity"
+msgstr "سرمایه"
+
+#. module: hm_account_reports
+#: model:ir.actions.report,name:hm_account_reports.action_report_financial
+#: model:ir.model,name:hm_account_reports.model_hm_account_report_wizard
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.hm_account_report_wizard_view_form
+msgid "Financial Report"
+msgstr "گزارش مالی"
+
+#. module: hm_account_reports
+#: model:ir.model,name:hm_account_reports.model_hm_account_report
+msgid "Financial Report Engine"
+msgstr "موتور گزارش مالی"
+
+#. module: hm_account_reports
+#: model:ir.actions.act_window,name:hm_account_reports.action_hm_account_report
+#: model:ir.ui.menu,name:hm_account_reports.menu_hm_account_report
+msgid "Financial Reports"
+msgstr "گزارش‌های مالی"
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Fixed Assets"
+msgstr "دارایی‌های ثابت"
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__date_from
+msgid "From"
+msgstr "از"
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__hide_zero
+msgid "Hide Empty Accounts"
+msgstr "پنهان کردن حسابات خالی"
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report__id
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_financial_header
+msgid "Includes draft entries. Not suitable for filing."
+msgstr "شامل قیدهای مسوده است. برای ارائه مناسب نیست."
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__journal_ids
+msgid "Journals"
+msgstr "روزنامچه‌ها"
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__write_uid
+msgid "Last Updated by"
+msgstr "آخرین ویرایش توسط"
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__write_date
+msgid "Last Updated on"
+msgstr "تاریخ آخرین ویرایش"
+
+#. module: hm_account_reports
+#: model:ir.model.fields,help:hm_account_reports.field_hm_account_report_wizard__journal_ids
+msgid "Leave empty for all journals."
+msgstr "برای تمام روزنامچه‌ها خالی بگذارید."
+
+#. module: hm_account_reports
+#: model:ir.model.fields,help:hm_account_reports.field_hm_account_report_wizard__posted_only
+msgid "Leave this on for anything you intend to file. Draft entries are not part of the books yet."
+msgstr "برای هر چیزی که قصد ارائه آن را دارید این را روشن بگذارید. قیدهای مسوده هنوز جزو دفاتر نیستند."
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.hm_account_report_wizard_view_form
+msgid "Narrow it down"
+msgstr "محدودتر کنید"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_profit_and_loss
+msgid "Net Loss"
+msgstr "ضرر خالص"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_profit_and_loss
+msgid "Net Profit"
+msgstr "مفاد خالص"
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Non-current Assets"
+msgstr "دارایی‌های غیرجاری"
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Non-current Liabilities"
+msgstr "مکلفیت‌های غیرجاری"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_trial_balance
+msgid "Opening"
+msgstr "افتتاحیه"
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Operating Expenses"
+msgstr "مصارف عملیاتی"
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Operating Income"
+msgstr "عواید عملیاتی"
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Other Expenses"
+msgstr "سایر مصارف"
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Other Income"
+msgstr "سایر عواید"
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Payables"
+msgstr "حسابات قابل پرداخت"
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__posted_only
+msgid "Posted Entries Only"
+msgstr "تنها قیدهای ثبت‌شده"
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Prepayments"
+msgstr "پیش‌پرداخت‌ها"
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Previous Years Earnings"
+msgstr "عواید سال‌های گذشته"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.hm_account_report_wizard_view_form
+msgid "Print"
+msgstr "چاپ"
+
+#. module: hm_account_reports
+#: model:ir.model.fields.selection,name:hm_account_reports.selection__hm_account_report_wizard__report_type__profit_and_loss
+msgid "Profit and Loss"
+msgstr "مفاد و ضرر"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_balance_sheet
+msgid "Profit or loss for the period, not yet closed to equity"
+msgstr "مفاد یا ضرر دوره، که هنوز به سرمایه بسته نشده است"
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/models/hm_account_report.py:0
+msgid "Receivables"
+msgstr "حسابات قابل دریافت"
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__report_type
+msgid "Report"
+msgstr "گزارش"
+
+#. module: hm_account_reports
+#: model:ir.model.fields,help:hm_account_reports.field_hm_account_report_wizard__analytic_account_id
+msgid "Restrict to entries carrying this analytic account."
+msgstr "محدود به قیدهایی که این حساب تحلیلی را دارند."
+
+#. module: hm_account_reports
+#. odoo-python
+#: code:addons/hm_account_reports/wizard/hm_account_report_wizard.py:0
+msgid "The start date is after the end date."
+msgstr "تاریخ آغاز پس از تاریخ پایان است."
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_balance_sheet
+msgid ""
+"These totals do not agree. Something is unbalanced in\n"
+"                        the underlying entries."
+msgstr ""
+"این مجموع‌ها مطابقت ندارند. چیزی در قیدهای زیرین\n"
+"                        متوازن نیست."
+
+#. module: hm_account_reports
+#: model:ir.model.fields,field_description:hm_account_reports.field_hm_account_report_wizard__date_to
+msgid "To"
+msgstr "تا"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_section_block
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_trial_balance
+msgid "Total"
+msgstr "مجموع"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_balance_sheet
+msgid "Total Assets"
+msgstr "مجموع دارایی‌ها"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_profit_and_loss
+msgid "Total Expenses"
+msgstr "مجموع مصارف"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_profit_and_loss
+msgid "Total Income"
+msgstr "مجموع عواید"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_balance_sheet
+msgid "Total Liabilities and Equity"
+msgstr "مجموع مکلفیت‌ها و سرمایه"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_trial_balance
+msgid ""
+"Total debit and total credit must agree. Income and expense\n"
+"            accounts carry no opening figure because they reset each financial\n"
+"            year."
+msgstr ""
+"مجموع بدهکار و مجموع بستانکار باید مطابقت کنند. حسابات عواید و\n"
+"            مصارف رقم افتتاحیه ندارند، زیرا در هر سال مالی از نو آغاز\n"
+"            می‌شوند."
+
+#. module: hm_account_reports
+#: model:ir.model.fields.selection,name:hm_account_reports.selection__hm_account_report_wizard__report_type__trial_balance
+msgid "Trial Balance"
+msgstr "بیلانس آزمایشی"
+
+#. module: hm_account_reports
+#: model:ir.actions.report,print_report_name:hm_account_reports.action_report_financial
+msgid "object.report_name"
+msgstr "object.report_name"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_financial_header
+msgid "to"
+msgstr "تا"
+
+#. module: hm_account_reports
+#: model_terms:ir.ui.view,arch_db:hm_account_reports.report_financial_header
+msgid "— as at"
+msgstr "— به تاریخ"

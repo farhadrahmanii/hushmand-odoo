@@ -116,6 +116,47 @@ All 20 install and pass their tests on Odoo 19 in CI (516 tests).
 
 ---
 
+## Translations
+
+1,911 translatable terms across the catalogue, of which 1,246 are distinct —
+the rest are the chatter and activity labels every model inherits.
+
+| Language | State |
+|----------|-------|
+| English | source |
+| Dari (`fa_AF`) | complete — **a first draft, not reviewed by a native speaker** |
+| Pashto (`ps_AF`) | not started — needs a translator |
+
+### How it fits together
+
+```bash
+python tools/analyse_pot.py                      # what is in the templates
+python tools/analyse_pot.py --untranslated fa_AF # coverage per module
+python tools/analyse_pot.py --missing fa_AF hm_payroll
+python tools/build_po.py fa_AF                   # write addons/*/i18n/fa_AF.po
+```
+
+Translations live in one memory per language, `tools/translations/<lang>.py`,
+and `build_po.py` projects it onto every module. That is what stops twenty
+modules inventing twenty words for "Cancel". The memory's docstring carries
+the glossary and the reasoning behind each Afghan-versus-Iranian choice —
+ولایت not استان, معاش not حقوق, مسوده not پیش‌نویس — which is the first thing a
+reviewer should read.
+
+### For a reviewer
+
+Edit `addons/<module>/i18n/fa_AF.po` directly. `build_po.py` **keeps your
+wording** where it differs from the memory and says so; `--harvest` then folds
+your decision back in, and every other module picks it up.
+
+Two things CI enforces, because both fail silently otherwise: the templates
+must match the source (a string added and never re-exported cannot be
+translated, because no translator ever sees it), and Dari must load — the
+Odoo job activates `fa_AF`, exports it back out of the database, and counts
+what came back.
+
+---
+
 ## Licence enforcement
 
 Every paid module depends on `hm_license` and gates its main document model
@@ -169,7 +210,12 @@ module that inherits no gate.
 - [ ] `banner.png` drawn and the `images` key re-enabled in the manifest
 - [x] Demo data loads and shows something meaningful — CI loads it, because
       `--without-demo` is deliberately not passed
-- [ ] Translations exported and `fa` / `ps` filled in
+- [x] Templates exported and current — CI regenerates them every push and
+      fails if they no longer match the source
+- [x] Dari (`fa_AF`) complete — **first draft, not yet reviewed by a native
+      speaker**
+- [ ] Dari reviewed by a professional translator
+- [ ] Pashto (`ps_AF`) — needs a translator; see below
 - [ ] RTL checked visually in Dari
 - [ ] `static/description/index.html` written, with screenshots
 - [ ] Version bumped, changelog updated

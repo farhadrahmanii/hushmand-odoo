@@ -1,0 +1,908 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_approvals
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_line.py:0
+msgid "%(document)s is waiting for your approval."
+msgstr "%(document)s در انتظار منظوری شماست."
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_process.py:0
+msgid "%(field)s is not a field on %(model)s."
+msgstr "%(field)s در %(model)s یک فیلد نیست."
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_process.py:0
+msgid "%(path)s is not a valid path on %(model)s: %(part)s does not exist."
+msgstr "%(path)s در %(model)s یک مسیر معتبر نیست: %(part)s وجود ندارد."
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_line.py:0
+msgid "%(step)s approved by %(user)s."
+msgstr "%(step)s توسط %(user)s منظور شد."
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_line.py:0
+msgid "%(step)s rejected by %(user)s."
+msgstr "%(step)s توسط %(user)s رد شد."
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_line.py:0
+msgid "%s cannot be rejected."
+msgstr "%s رد شده نمی‌تواند."
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_request.py:0
+msgid "%s has no steps yet, so there is nothing to approve."
+msgstr "%s هنوز هیچ مرحله‌ای ندارد، بنابراین چیزی برای منظوری نیست."
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_mixin.py:0
+msgid "%s has not been submitted for approval."
+msgstr "%s برای منظوری ارائه نشده است."
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_mixin.py:0
+msgid "%s is already awaiting approval."
+msgstr "%s از قبل در انتظار منظوری است."
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_line.py:0
+msgid "%s requires a comment."
+msgstr "%s به نظر ضرورت دارد."
+
+#. module: hm_approvals
+#: model:ir.model.fields,help:hm_approvals.field_hm_approval_step__approver_type
+msgid "A field approver is resolved from the document itself, for example the requester's manager or the project owner, so the process does not need rewriting when people change roles."
+msgstr "منظورکننده فیلدی از خود سند به دست می‌آید، مثلاً آمر درخواست‌کننده یا صاحب پروژه، تا هنگام تغییر وظایف اشخاص، پروسه نیاز به بازنویسی نداشته باشد."
+
+#. module: hm_approvals
+#: model:ir.model.fields,help:hm_approvals.field_hm_approval_step__condition_field
+msgid "A field on the document. Leave empty and the step always runs."
+msgstr "یک فیلد روی سند. خالی بگذارید و این مرحله همیشه اجرا می‌شود."
+
+#. module: hm_approvals
+#: model:ir.model.fields,help:hm_approvals.field_hm_approval_step__approver_field
+msgid "A path on the document leading to a user, for example employee_id.parent_id.user_id or project_id.user_id."
+msgstr "مسیری روی سند که به یک کاربر می‌رسد، مثلاً employee_id.parent_id.user_id یا project_id.user_id."
+
+#. module: hm_approvals
+#: model:ir.model.constraint,message:hm_approvals.constraint_hm_approval_process_name_model_uniq
+msgid "A process with this name already exists for that document."
+msgstr "پروسه‌ای با این نام برای آن سند از قبل وجود دارد."
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_line.py:0
+msgid "A reason is required to reject %s."
+msgstr "برای رد %s ذکر دلیل لازم است."
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/wizard/hm_approval_reject_wizard.py:0
+msgid "A reason is required."
+msgstr "ذکر دلیل لازم است."
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_step__approver_type__user
+msgid "A specific person"
+msgstr "یک شخص مشخص"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__message_needaction
+msgid "Action Needed"
+msgstr "نیازمند اقدام"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_process__active
+msgid "Active"
+msgstr "فعال"
+
+#. module: hm_approvals
+#: model:ir.ui.menu,name:hm_approvals.menu_hm_approval_requests
+msgid "All Requests"
+msgstr "تمام درخواست‌ها"
+
+#. module: hm_approvals
+#: model:ir.model.fields,help:hm_approvals.field_hm_approval_line__approver_ids
+msgid "Anyone here may act on this step. The first to do so decides it."
+msgstr "هر یک از این‌ها در این مرحله اقدام کرده می‌تواند. نخستین کسی که اقدام کند، تصمیم را می‌گیرد."
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_step__approver_type__group
+msgid "Anyone in a group"
+msgstr "هر کسی در یک گروه"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_process__model_id
+msgid "Applies To"
+msgstr "تطبیق می‌شود بر"
+
+#. module: hm_approvals
+#: model:ir.model,name:hm_approvals.model_hm_approval_mixin
+msgid "Approvable Document"
+msgstr "سند قابل منظوری"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_mixin__approval_request_id
+msgid "Approval"
+msgstr "منظوری"
+
+#. module: hm_approvals
+#: model:ir.model,name:hm_approvals.model_hm_approval_process
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_form
+msgid "Approval Process"
+msgstr "پروسه منظوری"
+
+#. module: hm_approvals
+#: model:ir.actions.act_window,name:hm_approvals.action_hm_approval_process
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_list
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_search
+msgid "Approval Processes"
+msgstr "پروسه‌های منظوری"
+
+#. module: hm_approvals
+#: model:ir.model,name:hm_approvals.model_hm_approval_request
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_request_view_form
+msgid "Approval Request"
+msgstr "درخواست منظوری"
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_process.py:0
+#: model:ir.actions.act_window,name:hm_approvals.action_hm_approval_request
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_request_view_list
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_request_view_search
+msgid "Approval Requests"
+msgstr "درخواست‌های منظوری"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_mixin__approval_state
+msgid "Approval Status"
+msgstr "وضعیت منظوری"
+
+#. module: hm_approvals
+#: model:ir.model,name:hm_approvals.model_hm_approval_step
+msgid "Approval Step"
+msgstr "مرحله منظوری"
+
+#. module: hm_approvals
+#: model:ir.model,name:hm_approvals.model_hm_approval_line
+msgid "Approval Step Instance"
+msgstr "نمونه مرحله منظوری"
+
+#. module: hm_approvals
+#: model_terms:ir.actions.act_window,help:hm_approvals.action_hm_approval_request
+msgid "Approval requests appear here by themselves when a document is submitted. Your own queue is under Waiting on Me."
+msgstr "درخواست‌های منظوری هنگام ارائه یک سند خودبه‌خود اینجا ظاهر می‌شوند. صف خود شما زیر «در انتظار من» است."
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_line.py:0
+msgid "Approval: %s"
+msgstr "منظوری: %s"
+
+#. module: hm_approvals
+#: model:ir.ui.menu,name:hm_approvals.menu_hm_approvals_root
+msgid "Approvals"
+msgstr "منظوری‌ها"
+
+#. module: hm_approvals
+#: model:res.groups,name:hm_approvals.group_approval_manager
+msgid "Approvals: Configure Processes"
+msgstr "منظوری‌ها: تنظیم پروسه‌ها"
+
+#. module: hm_approvals
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_form
+msgid "Approve"
+msgstr "منظوری"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__approve_label
+msgid "Approve Button"
+msgstr "دکمه منظوری"
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_line__state__approved
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_mixin__approval_state__approved
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_request__state__approved
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_purchase_request__approval_state__approved
+msgid "Approved"
+msgstr "منظورشده"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__approver_type
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_form
+msgid "Approver"
+msgstr "منظورکننده"
+
+#. module: hm_approvals
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_form
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_search
+msgid "Archived"
+msgstr "بایگانی‌شده"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__message_attachment_count
+msgid "Attachment Count"
+msgstr "تعداد ضمایم"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_mixin__approval_current_step
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__current_line_id
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_request_view_list
+msgid "Awaiting"
+msgstr "در انتظار"
+
+#. module: hm_approvals
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_form
+msgid "Behaviour"
+msgstr "رفتار"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_line__approver_ids
+msgid "Can Approve"
+msgstr "منظوری کرده می‌تواند"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__allow_reject
+msgid "Can Reject"
+msgstr "رد کرده می‌تواند"
+
+#. module: hm_approvals
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_reject_wizard_view_form
+msgid "Cancel"
+msgstr "لغو"
+
+#. module: hm_approvals
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_request_view_form
+msgid "Cancel Request"
+msgstr "لغو درخواست"
+
+#. module: hm_approvals
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_request_view_form
+msgid "Cancel this approval request?"
+msgstr "این درخواست منظوری لغو شود؟"
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_line__state__cancelled
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_mixin__approval_state__cancelled
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_request__state__cancelled
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_purchase_request__approval_state__cancelled
+msgid "Cancelled"
+msgstr "لغوشده"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_line__comment
+msgid "Comment"
+msgstr "نظر"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__require_comment
+msgid "Comment Required"
+msgstr "نظر لازم است"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_process__company_id
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__company_id
+msgid "Company"
+msgstr "شرکت"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__date_done
+msgid "Completed On"
+msgstr "تاریخ تکمیل"
+
+#. module: hm_approvals
+#: model:ir.ui.menu,name:hm_approvals.menu_hm_approvals_config
+msgid "Configuration"
+msgstr "تنظیمات"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_line__create_uid
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_process__create_uid
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_reject_wizard__create_uid
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__create_uid
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__create_uid
+msgid "Created by"
+msgstr "ایجادکننده"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_line__create_date
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_process__create_date
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_reject_wizard__create_date
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__create_date
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__create_date
+msgid "Created on"
+msgstr "تاریخ ایجاد"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__current_step_name
+msgid "Current Step"
+msgstr "مرحله جاری"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_line__acted_by_id
+msgid "Decided By"
+msgstr "تصمیم‌گیرنده"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_line__acted_on
+msgid "Decided On"
+msgstr "تاریخ تصمیم"
+
+#. module: hm_approvals
+#: model_terms:ir.actions.act_window,help:hm_approvals.action_hm_approval_process
+msgid "Define an approval process"
+msgstr "تعریف یک پروسه منظوری"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_process__description
+msgid "Description"
+msgstr "توضیحات"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_line__display_name
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_mixin__display_name
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_process__display_name
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_reject_wizard__display_name
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__display_name
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_request.py:0
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__reference
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_search
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_request_view_form
+msgid "Document"
+msgstr "سند"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__res_id
+msgid "Document ID"
+msgstr "شناسه سند"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__res_model
+msgid "Document Model"
+msgstr "مودل سند"
+
+#. module: hm_approvals
+#: model_terms:ir.actions.act_window,help:hm_approvals.action_hm_approval_my_approvals
+msgid ""
+"Documents routed to you for approval appear here, and in your\n"
+"               Odoo activities."
+msgstr ""
+"اسنادی که برای منظوری به شما ارجاع می‌شوند اینجا ظاهر می‌گردند، و\n"
+"               همچنین در فعالیت‌های اودوی شما."
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__approver_field
+msgid "Field Path"
+msgstr "مسیر فیلد"
+
+#. module: hm_approvals
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_form
+msgid "Finance review"
+msgstr "بررسی مالی"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__message_follower_ids
+msgid "Followers"
+msgstr "دنبال‌کنندگان"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "دنبال‌کنندگان (مخاطبین)"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__approver_group_id
+msgid "Group"
+msgstr "گروه"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__has_message
+msgid "Has Message"
+msgstr "دارای پیام"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_line__id
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_mixin__id
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_process__id
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_reject_wizard__id
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__id
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: hm_approvals
+#: model:ir.model.fields,help:hm_approvals.field_hm_approval_request__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "در صورت انتخاب، پیام‌های جدید نیازمند توجه شماست."
+
+#. module: hm_approvals
+#: model:ir.model.fields,help:hm_approvals.field_hm_approval_request__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "در صورت انتخاب، برخی پیام‌ها خطای ارسال دارند."
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__message_is_follower
+msgid "Is Follower"
+msgstr "دنبال‌کننده است"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_line__write_uid
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_process__write_uid
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_reject_wizard__write_uid
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__write_uid
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__write_uid
+msgid "Last Updated by"
+msgstr "آخرین ویرایش توسط"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_line__write_date
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_process__write_date
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_reject_wizard__write_date
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__write_date
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__write_date
+msgid "Last Updated on"
+msgstr "تاریخ آخرین ویرایش"
+
+#. module: hm_approvals
+#: model:ir.model.fields,help:hm_approvals.field_hm_approval_process__company_id
+msgid "Leave empty to apply in every company."
+msgstr "برای تطبیق در تمام شرکت‌ها خالی بگذارید."
+
+#. module: hm_approvals
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_form
+msgid ""
+"Leave the field empty and this step always runs.\n"
+"                                            Fill it in and the step is skipped unless the\n"
+"                                            condition holds, which is how one process can say\n"
+"                                            that large amounts need an extra signature."
+msgstr ""
+"فیلد را خالی بگذارید و این مرحله همیشه اجرا می‌شود.\n"
+"                                            آن را پر کنید و مرحله رد می‌شود مگر اینکه شرط\n"
+"                                            برقرار باشد، و یک پروسه از همین راه گفته می‌تواند\n"
+"                                            که مبالغ بزرگ به امضای اضافی ضرورت دارند."
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__message_has_error
+msgid "Message Delivery error"
+msgstr "خطای ارسال پیام"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__message_ids
+msgid "Messages"
+msgstr "پیام‌ها"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_process__model_name
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__model_name
+msgid "Model"
+msgstr "مودل"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_process__name
+msgid "Name"
+msgstr "نام"
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_mixin.py:0
+msgid "No approval process is configured for %s."
+msgstr "برای %s هیچ پروسه منظوری تنظیم نشده است."
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_mixin__approval_state__none
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_purchase_request__approval_state__none
+msgid "Not Submitted"
+msgstr "ارائه‌نشده"
+
+#. module: hm_approvals
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_form
+msgid "Notes"
+msgstr "یادداشت‌ها"
+
+#. module: hm_approvals
+#: model_terms:ir.actions.act_window,help:hm_approvals.action_hm_approval_my_approvals
+msgid "Nothing is waiting on you"
+msgstr "چیزی در انتظار شما نیست"
+
+#. module: hm_approvals
+#: model_terms:ir.actions.act_window,help:hm_approvals.action_hm_approval_request
+msgid "Nothing waiting here yet"
+msgstr "هنوز چیزی اینجا در انتظار نیست"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__message_needaction_counter
+msgid "Number of Actions"
+msgstr "تعداد اقدامات"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__message_has_error_counter
+msgid "Number of errors"
+msgstr "تعداد خطاها"
+
+#. module: hm_approvals
+#: model:ir.model.fields,help:hm_approvals.field_hm_approval_request__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "تعداد پیام‌های نیازمند اقدام"
+
+#. module: hm_approvals
+#: model:ir.model.fields,help:hm_approvals.field_hm_approval_request__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "تعداد پیام‌های دارای خطای ارسال"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__condition_field
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_form
+msgid "Only When"
+msgstr "تنها زمانی که"
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_request.py:0
+msgid "Only a pending request can be cancelled."
+msgstr "تنها درخواست در جریان لغو شده می‌تواند."
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__condition_operator
+msgid "Operator"
+msgstr "عملگر"
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_request__state__pending
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_request_view_search
+msgid "Pending"
+msgstr "در جریان"
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_mixin__approval_state__pending
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_purchase_request__approval_state__pending
+msgid "Pending Approval"
+msgstr "در انتظار منظوری"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__approver_user_id
+msgid "Person"
+msgstr "شخص"
+
+#. module: hm_approvals
+#: model_terms:ir.actions.act_window,help:hm_approvals.action_hm_approval_process
+msgid ""
+"Pick a document, add the steps it has to pass through, and say\n"
+"               who approves each one. Steps can be conditional, so a single\n"
+"               process can route small requests differently from large ones."
+msgstr ""
+"یک سند را انتخاب کنید، مراحلی را که باید طی کند بیفزایید، و بگویید\n"
+"               چه کسی هر مرحله را منظور می‌کند. مراحل شرطی شده می‌توانند، تا یک\n"
+"               پروسه واحد درخواست‌های کوچک را جدا از بزرگ مسیردهی کند."
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__process_id
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__process_id
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_request_view_search
+msgid "Process"
+msgstr "پروسه"
+
+#. module: hm_approvals
+#: model:ir.ui.menu,name:hm_approvals.menu_hm_approval_process
+msgid "Processes"
+msgstr "پروسه‌ها"
+
+#. module: hm_approvals
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_form
+msgid "Purchase request approval"
+msgstr "منظوری درخواست خریداری"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_reject_wizard__reason
+msgid "Reason"
+msgstr "دلیل"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__require_comment_on_reject
+msgid "Reason Required to Reject"
+msgstr "برای رد، دلیل لازم است"
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_mixin.py:0
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_reject_wizard_view_form
+msgid "Reject"
+msgstr "رد"
+
+#. module: hm_approvals
+#: model:ir.model,name:hm_approvals.model_hm_approval_reject_wizard
+msgid "Reject an Approval"
+msgstr "رد یک منظوری"
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_line__state__rejected
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_mixin__approval_state__rejected
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_request__state__rejected
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_purchase_request__approval_state__rejected
+msgid "Rejected"
+msgstr "ردشده"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_line__request_id
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_reject_wizard__request_id
+msgid "Request"
+msgstr "درخواست"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_process__request_count
+msgid "Request Count"
+msgstr "تعداد درخواست‌ها"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__requested_by_id
+msgid "Requested By"
+msgstr "درخواست‌کننده"
+
+#. module: hm_approvals
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_form
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_list
+msgid "Requests"
+msgstr "درخواست‌ها"
+
+#. module: hm_approvals
+#: model:ir.model.fields,help:hm_approvals.field_hm_approval_step__require_comment
+msgid "Require a comment when approving, not only when rejecting."
+msgstr "هنگام منظوری نیز نظر لازم باشد، نه تنها هنگام رد."
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_line__sequence
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_process__sequence
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__sequence
+msgid "Sequence"
+msgstr "ترتیب"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_line__state
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__state
+msgid "State"
+msgstr "حالت"
+
+#. module: hm_approvals
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_request_view_search
+msgid "Status"
+msgstr "وضعیت"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_line__step_id
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_reject_wizard__step_name
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__name
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_form
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_request_view_form
+msgid "Step"
+msgstr "مرحله"
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_process.py:0
+msgid "Step %s needs a field path."
+msgstr "مرحله %s به مسیر فیلد ضرورت دارد."
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_process.py:0
+msgid "Step %s needs a group."
+msgstr "مرحله %s به یک گروه ضرورت دارد."
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_process.py:0
+msgid "Step %s needs a person to approve it."
+msgstr "مرحله %s به شخصی ضرورت دارد که آن را منظور کند."
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_process__step_count
+msgid "Step Count"
+msgstr "تعداد مراحل"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_line__name
+msgid "Step Name"
+msgstr "نام مرحله"
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_process__step_ids
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__line_ids
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_form
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_list
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_request_view_form
+msgid "Steps"
+msgstr "مراحل"
+
+#. module: hm_approvals
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_request_view_list
+msgid "Submitted"
+msgstr "ارائه‌شده"
+
+#. module: hm_approvals
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_request_view_search
+msgid "Submitted by Me"
+msgstr "ارائه‌شده توسط من"
+
+#. module: hm_approvals
+#: model:ir.model.fields,help:hm_approvals.field_hm_approval_process__model_id
+msgid "The document this process approves."
+msgstr "سندی که این پروسه آن را منظور می‌کند."
+
+#. module: hm_approvals
+#: model:ir.model.fields,help:hm_approvals.field_hm_approval_request__reference
+msgid "The document under approval, as it names itself."
+msgstr "سند تحت منظوری، به همان نامی که خودش دارد."
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_request.py:0
+msgid "There is nothing awaiting approval."
+msgstr "چیزی در انتظار منظوری نیست."
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_request.py:0
+msgid "This request is already %s."
+msgstr "این درخواست از قبل %s است."
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_line.py:0
+msgid "This step has already been decided."
+msgstr "در مورد این مرحله از قبل تصمیم گرفته شده است."
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_request.py:0
+msgid "This step is waiting for %s."
+msgstr "این مرحله در انتظار %s است."
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_step__condition_value
+msgid "Value"
+msgstr "ارزش"
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_line__state__pending
+msgid "Waiting"
+msgstr "در انتظار"
+
+#. module: hm_approvals
+#: model:ir.actions.act_window,name:hm_approvals.action_hm_approval_my_approvals
+#: model:ir.ui.menu,name:hm_approvals.menu_hm_approval_my
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_request_view_search
+msgid "Waiting on Me"
+msgstr "در انتظار من"
+
+#. module: hm_approvals
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_form
+msgid "What this process is for, and who maintains it."
+msgstr "اینکه این پروسه برای چیست، و چه کسی آن را نگهداری می‌کند."
+
+#. module: hm_approvals
+#: model:ir.model.fields,help:hm_approvals.field_hm_approval_mixin__approval_can_act
+msgid "Whether the current user is an approver for the current step."
+msgstr "اینکه آیا کاربر فعلی در مرحله جاری منظورکننده است."
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_step__approver_type__field
+msgid "Whoever the document says"
+msgstr "هر کسی که سند تعیین می‌کند"
+
+#. module: hm_approvals
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_reject_wizard_view_form
+msgid "Why is this being rejected? The requester will see this."
+msgstr "چرا این رد می‌شود؟ درخواست‌کننده این را خواهد دید."
+
+#. module: hm_approvals
+#: model:ir.model.fields,help:hm_approvals.field_hm_approval_step__approve_label
+msgid "Wording for the approve button, for example Verify or Endorse."
+msgstr "عبارت دکمه منظوری، مثلاً تصدیق یا تأیید نهایی."
+
+#. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_mixin__approval_can_act
+msgid "You Can Approve"
+msgstr "شما می‌توانید منظور کنید"
+
+#. module: hm_approvals
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_form
+msgid "amount_total"
+msgstr "amount_total"
+
+#. module: hm_approvals
+#: model_terms:ir.ui.view,arch_db:hm_approvals.hm_approval_process_view_form
+msgid "employee_id.parent_id.user_id"
+msgstr "employee_id.parent_id.user_id"
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_step__condition_operator__=
+msgid "is equal to"
+msgstr "برابر است با"
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_step__condition_operator__>
+msgid "is greater than"
+msgstr "بزرگ‌تر است از"
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_step__condition_operator__>=
+msgid "is greater than or equal to"
+msgstr "بزرگ‌تر یا مساوی است با"
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_step__condition_operator__<
+msgid "is less than"
+msgstr "کوچک‌تر است از"
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_step__condition_operator__<=
+msgid "is less than or equal to"
+msgstr "کوچک‌تر یا مساوی است با"
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_step__condition_operator__!=
+msgid "is not equal to"
+msgstr "برابر نیست با"
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_step__condition_operator__not_in
+msgid "is not one of"
+msgstr "یکی از این‌ها نیست"
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_step__condition_operator__not_set
+msgid "is not set"
+msgstr "تعیین نشده است"
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_step__condition_operator__in
+msgid "is one of"
+msgstr "یکی از این‌هاست"
+
+#. module: hm_approvals
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_step__condition_operator__set
+msgid "is set"
+msgstr "تعیین شده است"
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_process.py:0
+msgid "process_id"
+msgstr "process_id"
+
+#. module: hm_approvals
+#. odoo-python
+#: code:addons/hm_approvals/models/hm_approval_request.py:0
+msgid "someone else"
+msgstr "شخص دیگری"

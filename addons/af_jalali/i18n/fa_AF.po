@@ -1,0 +1,200 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* af_jalali
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: af_jalali
+#: model:ir.model.fields.selection,name:af_jalali.selection__res_company__jalali_scheme__afghan
+msgid "Afghan (Hamal, Sawr, Jawza)"
+msgstr "افغانی (حمل، ثور، جوزا)"
+
+#. module: af_jalali
+#: model:ir.model.fields,help:af_jalali.field_res_company__jalali_scheme
+#: model:ir.model.fields,help:af_jalali.field_res_config_settings__jalali_scheme
+msgid "Afghanistan and Iran share the calendar but not the month names. Pick the naming your organisation uses."
+msgstr "افغانستان و ایران تقویم مشترک دارند اما نام ماه‌ها متفاوت است. نام‌گذاری مورد استفاده اداره خود را انتخاب کنید."
+
+#. module: af_jalali
+#: model:ir.model.fields.selection,name:af_jalali.selection__res_users__jalali_calendar__gregorian
+msgid "Always Gregorian"
+msgstr "همیشه میلادی"
+
+#. module: af_jalali
+#: model:ir.model.fields.selection,name:af_jalali.selection__res_users__jalali_calendar__jalali
+msgid "Always Jalali"
+msgstr "همیشه هجری شمسی"
+
+#. module: af_jalali
+#: model:ir.model.fields,field_description:af_jalali.field_res_users__jalali_calendar
+#: model_terms:ir.ui.view,arch_db:af_jalali.res_config_settings_view_form
+msgid "Calendar"
+msgstr "تقویم"
+
+#. module: af_jalali
+#: model:ir.model,name:af_jalali.model_res_company
+msgid "Companies"
+msgstr "شرکت‌ها"
+
+#. module: af_jalali
+#: model:ir.model,name:af_jalali.model_res_config_settings
+msgid "Config Settings"
+msgstr "تنظیمات پیکربندی"
+
+#. module: af_jalali
+#: model:ir.model.fields,field_description:af_jalali.field_res_company__jalali_date_format
+#: model:ir.model.fields,field_description:af_jalali.field_res_config_settings__jalali_date_format
+msgid "Date Format"
+msgstr "قالب تاریخ"
+
+#. module: af_jalali
+#: model:ir.model.fields,field_description:af_jalali.field_res_company__jalali_datetime_format
+#: model:ir.model.fields,field_description:af_jalali.field_res_config_settings__jalali_datetime_format
+msgid "Date and Time Format"
+msgstr "قالب تاریخ و ساعت"
+
+#. module: af_jalali
+#: model:ir.model.fields,field_description:af_jalali.field_af_jalali__display_name
+#: model:ir.model.fields,field_description:af_jalali.field_ir_qweb_field_jalali__display_name
+#: model:ir.model.fields,field_description:af_jalali.field_ir_qweb_field_jalali_datetime__display_name
+#: model:ir.model.fields,field_description:af_jalali.field_res_company__display_name
+#: model:ir.model.fields,field_description:af_jalali.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:af_jalali.field_res_users__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: af_jalali
+#: model:ir.model.fields,help:af_jalali.field_res_company__jalali_eastern_digits
+#: model:ir.model.fields,help:af_jalali.field_res_config_settings__jalali_eastern_digits
+msgid "Display dates with Persian numerals instead of 0-9."
+msgstr "نمایش تاریخ‌ها با ارقام فارسی به‌جای ارقام لاتین ۰-۹."
+
+#. module: af_jalali
+#: model:ir.model.fields.selection,name:af_jalali.selection__res_users__jalali_calendar__company
+msgid "Follow company setting"
+msgstr "پیروی از تنظیمات شرکت"
+
+#. module: af_jalali
+#: model:ir.model.fields,field_description:af_jalali.field_af_jalali__id
+#: model:ir.model.fields,field_description:af_jalali.field_ir_qweb_field_jalali__id
+#: model:ir.model.fields,field_description:af_jalali.field_ir_qweb_field_jalali_datetime__id
+#: model:ir.model.fields,field_description:af_jalali.field_res_company__id
+#: model:ir.model.fields,field_description:af_jalali.field_res_config_settings__id
+#: model:ir.model.fields,field_description:af_jalali.field_res_users__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: af_jalali
+#: model:ir.model.fields.selection,name:af_jalali.selection__res_company__jalali_scheme__iranian
+msgid "Iranian (Farvardin, Ordibehesht, Khordad)"
+msgstr "ایرانی (فروردین، اردیبهشت، خرداد)"
+
+#. module: af_jalali
+#: model:ir.model.fields,field_description:af_jalali.field_res_company__jalali_enabled
+#: model:ir.model.fields,field_description:af_jalali.field_res_config_settings__jalali_enabled
+#: model_terms:ir.ui.view,arch_db:af_jalali.res_config_settings_view_form
+msgid "Jalali Calendar"
+msgstr "تقویم هجری شمسی"
+
+#. module: af_jalali
+#: model:ir.model,name:af_jalali.model_af_jalali
+msgid "Jalali Calendar Service"
+msgstr "سرویس تقویم هجری شمسی"
+
+#. module: af_jalali
+#. odoo-javascript
+#: code:addons/af_jalali/static/src/js/jalali_date_field.js:0
+msgid "Jalali Date"
+msgstr "تاریخ هجری شمسی"
+
+#. module: af_jalali
+#. odoo-javascript
+#: code:addons/af_jalali/static/src/js/jalali_date_field.js:0
+msgid "Jalali Date & Time"
+msgstr "تاریخ و ساعت هجری شمسی"
+
+#. module: af_jalali
+#: model:ir.model,name:af_jalali.model_ir_qweb_field_jalali
+msgid "Jalali Date Field Converter"
+msgstr "مبدل فیلد تاریخ هجری شمسی"
+
+#. module: af_jalali
+#: model:ir.model,name:af_jalali.model_ir_qweb_field_jalali_datetime
+msgid "Jalali Datetime Field Converter"
+msgstr "مبدل فیلد تاریخ و ساعت هجری شمسی"
+
+#. module: af_jalali
+#: model:ir.model.fields,field_description:af_jalali.field_res_company__jalali_scheme
+#: model:ir.model.fields,field_description:af_jalali.field_res_config_settings__jalali_scheme
+msgid "Month Names"
+msgstr "نام ماه‌ها"
+
+#. module: af_jalali
+#. odoo-javascript
+#: code:addons/af_jalali/static/src/xml/jalali_date_field.xml:0
+msgid "Not a valid date"
+msgstr "تاریخ معتبر نیست"
+
+#. module: af_jalali
+#: model:ir.model.fields,help:af_jalali.field_res_company__jalali_datetime_format
+#: model:ir.model.fields,help:af_jalali.field_res_config_settings__jalali_datetime_format
+msgid "Pattern for date and time values. Adds HH, mm and ss to the date tokens."
+msgstr "الگوی مقادیر تاریخ و ساعت. توکن‌های HH، mm و ss را به توکن‌های تاریخ می‌افزاید."
+
+#. module: af_jalali
+#: model:ir.model.fields,help:af_jalali.field_res_company__jalali_date_format
+#: model:ir.model.fields,help:af_jalali.field_res_config_settings__jalali_date_format
+msgid "Pattern for dates. Tokens: yyyy, yy, MMMM, MMM, MM, M, dd, d, EEEE."
+msgstr "الگوی تاریخ‌ها. توکن‌ها: yyyy, yy, MMMM, MMM, MM, M, dd, d, EEEE."
+
+#. module: af_jalali
+#: model:ir.model.fields,field_description:af_jalali.field_res_company__jalali_eastern_digits
+#: model:ir.model.fields,field_description:af_jalali.field_res_config_settings__jalali_eastern_digits
+msgid "Persian Digits"
+msgstr "ارقام فارسی"
+
+#. module: af_jalali
+#: model:ir.model.fields,help:af_jalali.field_res_company__jalali_enabled
+#: model:ir.model.fields,help:af_jalali.field_res_config_settings__jalali_enabled
+msgid "Show dates in the Jalali (Hijri-Shamsi) calendar throughout the interface and on printed documents. Dates are still stored as Gregorian, so nothing else in Odoo is affected."
+msgstr "نمایش تاریخ‌ها به تقویم هجری شمسی در سراسر رابط کاربری و در اسناد چاپی. تاریخ‌ها همچنان به‌صورت میلادی ذخیره می‌شوند، بنابراین هیچ بخش دیگر اودو متأثر نمی‌شود."
+
+#. module: af_jalali
+#: model_terms:ir.ui.view,arch_db:af_jalali.res_config_settings_view_form
+msgid "Show dates in the Jalali (Hijri-Shamsi) calendar. Dates stay stored as Gregorian."
+msgstr "نمایش تاریخ‌ها به تقویم هجری شمسی. تاریخ‌ها به‌صورت میلادی ذخیره می‌مانند."
+
+#. module: af_jalali
+#: model_terms:ir.ui.view,arch_db:af_jalali.res_config_settings_view_form
+msgid "Tokens: yyyy, yy, MMMM, MMM, MM, M, dd, d, EEEE, HH, mm, ss"
+msgstr "توکن‌ها: yyyy, yy, MMMM, MMM, MM, M, dd, d, EEEE, HH, mm, ss"
+
+#. module: af_jalali
+#: model:ir.model,name:af_jalali.model_res_users
+msgid "User"
+msgstr "کاربر"
+
+#. module: af_jalali
+#: model:ir.model.fields,help:af_jalali.field_res_users__jalali_calendar
+msgid "Which calendar this user sees. Overrides the company default, so staff working with foreign partners can stay on Gregorian."
+msgstr "اینکه این کاربر کدام تقویم را می‌بیند. بر پیش‌فرض شرکت اولویت دارد، تا کارمندانی که با طرف‌های خارجی کار می‌کنند بتوانند روی تقویم میلادی بمانند."
+
+#. module: af_jalali
+#: model_terms:ir.ui.view,arch_db:af_jalali.res_config_settings_view_form
+msgid "yyyy/MM/dd"
+msgstr "yyyy/MM/dd"
+
+#. module: af_jalali
+#: model_terms:ir.ui.view,arch_db:af_jalali.res_config_settings_view_form
+msgid "yyyy/MM/dd HH:mm"
+msgstr "yyyy/MM/dd HH:mm"

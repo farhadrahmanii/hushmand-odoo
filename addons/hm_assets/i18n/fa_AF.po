@@ -1,0 +1,819 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_assets
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset.py:0
+msgid "%(asset)s is missing: %(missing)s"
+msgstr "%(asset)s این موارد را ندارد: %(missing)s"
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset.py:0
+msgid "%s already has posted depreciation and cannot be cancelled. Close it instead, so the entries stay."
+msgstr "%s از قبل استهلاک ثبت‌شده دارد و لغو شده نمی‌تواند. به‌جای آن ببندیدش، تا قیدها باقی بمانند."
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset.py:0
+msgid "%s has posted entries. Returning it to draft would detach them from the ledger."
+msgstr "%s قیدهای ثبت‌شده دارد. بازگرداندن آن به مسوده، این قیدها را از دفتر کل جدا می‌کند."
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset.py:0
+msgid "%s is closed."
+msgstr "%s بسته است."
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset_depreciation_line.py:0
+msgid "%s is not running. Confirm it first."
+msgstr "%s جاری نیست. نخست آن را تأیید کنید."
+
+#. module: hm_assets
+#: model_terms:ir.actions.act_window,help:hm_assets.action_hm_asset_category
+msgid "A category carries the defaults: the method, the years, the accounts. Recording a vehicle then takes one screen, not four decisions."
+msgstr "هر کتگوری پیش‌فرض‌ها را با خود دارد: روش، سال‌ها، حسابات. ثبت یک وسیله نقلیه پس از آن یک صفحه وقت می‌گیرد، نه چهار تصمیم."
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset_depreciation_line.py:0
+msgid "A posted period cannot be deleted. Reverse its journal entry instead, so the ledger keeps a record of both."
+msgstr "دوره ثبت‌شده حذف شده نمی‌تواند. به‌جای آن قید روزنامچه‌اش را برگردانید، تا دفتر کل سابقه هر دو را نگه دارد."
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Accounts"
+msgstr "حسابات"
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset.py:0
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__account_depreciation_id
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__account_depreciation_id
+msgid "Accumulated Depreciation"
+msgstr "استهلاک جمع‌شده"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__message_needaction
+msgid "Action Needed"
+msgstr "نیازمند اقدام"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__active
+msgid "Active"
+msgstr "فعال"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__activity_ids
+msgid "Activities"
+msgstr "فعالیت‌ها"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "نشانه استثنای فعالیت"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__activity_state
+msgid "Activity State"
+msgstr "حالت فعالیت"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "آیکن نوع فعالیت"
+
+#. module: hm_assets
+#: model:ir.model.constraint,message:hm_assets.constraint_hm_asset_periods_positive
+msgid "An asset needs at least one depreciation period."
+msgstr "هر دارایی به حداقل یک دوره استهلاک ضرورت دارد."
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__name
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_depreciation_line__asset_id
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Asset"
+msgstr "دارایی"
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset.py:0
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__account_asset_id
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__account_asset_id
+msgid "Asset Account"
+msgstr "حساب دارایی"
+
+#. module: hm_assets
+#: model:ir.actions.act_window,name:hm_assets.action_hm_asset_category
+#: model:ir.ui.menu,name:hm_assets.menu_hm_asset_category
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_category_view_list
+msgid "Asset Categories"
+msgstr "کتگوری‌های دارایی"
+
+#. module: hm_assets
+#: model:ir.model,name:hm_assets.model_hm_asset_category
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_category_view_form
+msgid "Asset Category"
+msgstr "کتگوری دارایی"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__asset_count
+msgid "Asset Count"
+msgstr "تعداد دارایی‌ها"
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_category_view_list
+msgid "Assets"
+msgstr "دارایی‌ها"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__message_attachment_count
+msgid "Attachment Count"
+msgstr "تعداد ضمایم"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__book_value
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_list
+msgid "Book Value"
+msgstr "ارزش دفتری"
+
+#. module: hm_assets
+#: model:ir.model.fields,help:hm_assets.field_hm_asset_depreciation_line__remaining_value
+msgid "Book value after this period, salvage value included."
+msgstr "ارزش دفتری پس از این دوره، با احتساب ارزش اسقاط."
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Cancel"
+msgstr "لغو"
+
+#. module: hm_assets
+#: model:ir.model.fields.selection,name:hm_assets.selection__hm_asset__state__cancelled
+msgid "Cancelled"
+msgstr "لغوشده"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__category_id
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_search
+msgid "Category"
+msgstr "کتگوری"
+
+#. module: hm_assets
+#: model:ir.model.fields,help:hm_assets.field_hm_asset__prorata
+msgid "Charge the first period only from the in-service date, rather than a full period for an asset bought on the last day."
+msgstr "دوره نخست تنها از تاریخ بهره‌برداری محاسبه شود، نه یک دوره کامل برای دارایی‌ای که در روز آخر خریداری شده است."
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Close"
+msgstr "بستن"
+
+#. module: hm_assets
+#: model:ir.model.fields.selection,name:hm_assets.selection__hm_asset__state__closed
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_search
+msgid "Closed"
+msgstr "بسته"
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset.py:0
+msgid "Closed with a book value of %s."
+msgstr "با ارزش دفتری %s بسته شد."
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Closing removes any unposted periods. Posted entries stay in the ledger. Continue?"
+msgstr "بستن، دوره‌های ثبت‌نشده را حذف می‌کند. قیدهای ثبت‌شده در دفتر کل باقی می‌مانند. ادامه می‌دهید؟"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__company_id
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__company_id
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_depreciation_line__company_id
+msgid "Company"
+msgstr "شرکت"
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Compute Depreciation"
+msgstr "محاسبه استهلاک"
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Confirm"
+msgstr "تأیید"
+
+#. module: hm_assets
+#: model_terms:ir.actions.act_window,help:hm_assets.action_hm_asset_category
+msgid "Create an asset category"
+msgstr "ایجاد یک کتگوری دارایی"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__create_uid
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__create_uid
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_depreciation_line__create_uid
+msgid "Created by"
+msgstr "ایجادکننده"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__create_date
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__create_date
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_depreciation_line__create_date
+msgid "Created on"
+msgstr "تاریخ ایجاد"
+
+#. module: hm_assets
+#: model:ir.model.fields,help:hm_assets.field_hm_asset__account_depreciation_id
+msgid "Credited each period. Usually a negative asset account."
+msgstr "در هر دوره بستانکار می‌شود. معمولاً یک حساب دارایی منفی."
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__currency_id
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_depreciation_line__currency_id
+msgid "Currency"
+msgstr "اسعار"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_depreciation_line__date
+msgid "Date"
+msgstr "تاریخ"
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_category_view_form
+msgid "Default Accounts"
+msgstr "حسابات پیش‌فرض"
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_category_view_form
+msgid "Default Schedule"
+msgstr "جدول پیش‌فرض"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__depreciable_value
+msgid "Depreciable"
+msgstr "قابل استهلاک"
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_list
+msgid "Depreciated"
+msgstr "مستهلک‌شده"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__depreciated_value
+msgid "Depreciated So Far"
+msgstr "مستهلک‌شده تا کنون"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__line_ids
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_depreciation_line__amount
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Depreciation"
+msgstr "استهلاک"
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset_depreciation_line.py:0
+msgid "Depreciation %(n)s: %(asset)s"
+msgstr "استهلاک %(n)s: %(asset)s"
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset.py:0
+msgid "Depreciation Entries"
+msgstr "قیدهای استهلاک"
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset.py:0
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__account_expense_id
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__account_expense_id
+msgid "Depreciation Expense"
+msgstr "مصرف استهلاک"
+
+#. module: hm_assets
+#: model:ir.model,name:hm_assets.model_hm_asset_depreciation_line
+msgid "Depreciation Period"
+msgstr "دوره استهلاک"
+
+#. module: hm_assets
+#: model:ir.model.fields,help:hm_assets.field_hm_asset__date_start
+msgid "Depreciation runs from this date, not the invoice date."
+msgstr "استهلاک از این تاریخ آغاز می‌شود، نه از تاریخ بل."
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__display_name
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__display_name
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_depreciation_line__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__date_disposal
+msgid "Disposed On"
+msgstr "تاریخ واگذاری"
+
+#. module: hm_assets
+#: model:ir.model.fields.selection,name:hm_assets.selection__hm_asset__state__draft
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_search
+msgid "Draft"
+msgstr "مسوده"
+
+#. module: hm_assets
+#: model:ir.model,name:hm_assets.model_hm_asset
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Fixed Asset"
+msgstr "دارایی ثابت"
+
+#. module: hm_assets
+#: model:ir.actions.act_window,name:hm_assets.action_hm_asset
+#: model:ir.ui.menu,name:hm_assets.menu_hm_asset
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_list
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_search
+msgid "Fixed Assets"
+msgstr "دارایی‌های ثابت"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__message_follower_ids
+msgid "Followers"
+msgstr "دنبال‌کنندگان"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "دنبال‌کنندگان (مخاطبین)"
+
+#. module: hm_assets
+#: model:ir.model.fields,help:hm_assets.field_hm_asset__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "آیکن Font Awesome، مثلاً fa-tasks"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__has_message
+msgid "Has Message"
+msgstr "دارای پیام"
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_search
+msgid "Has Unposted Periods"
+msgstr "دوره‌های ثبت‌نشده دارد"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__id
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__id
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_depreciation_line__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__activity_exception_icon
+msgid "Icon"
+msgstr "آیکن"
+
+#. module: hm_assets
+#: model:ir.model.fields,help:hm_assets.field_hm_asset__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "آیکنی که فعالیت استثنایی را نشان می‌دهد."
+
+#. module: hm_assets
+#: model:ir.model.fields,help:hm_assets.field_hm_asset__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "در صورت انتخاب، پیام‌های جدید نیازمند توجه شماست."
+
+#. module: hm_assets
+#: model:ir.model.fields,help:hm_assets.field_hm_asset__message_has_error
+#: model:ir.model.fields,help:hm_assets.field_hm_asset__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "در صورت انتخاب، برخی پیام‌ها خطای ارسال دارند."
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__date_start
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_search
+msgid "In Service"
+msgstr "در بهره‌برداری"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__message_is_follower
+msgid "Is Follower"
+msgstr "دنبال‌کننده است"
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset.py:0
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__journal_id
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__journal_id
+msgid "Journal"
+msgstr "روزنامچه"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_depreciation_line__move_id
+msgid "Journal Entry"
+msgstr "قید روزنامچه"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__write_uid
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__write_uid
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_depreciation_line__write_uid
+msgid "Last Updated by"
+msgstr "آخرین ویرایش توسط"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__write_date
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__write_date
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_depreciation_line__write_date
+msgid "Last Updated on"
+msgstr "تاریخ آخرین ویرایش"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__message_has_error
+msgid "Message Delivery error"
+msgstr "خطای ارسال پیام"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__message_ids
+msgid "Messages"
+msgstr "پیام‌ها"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__method
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__method
+msgid "Method"
+msgstr "روش"
+
+#. module: hm_assets
+#: model:ir.model.fields.selection,name:hm_assets.selection__hm_asset__period_length__1
+#: model:ir.model.fields.selection,name:hm_assets.selection__hm_asset_category__period_length__1
+msgid "Monthly"
+msgstr "ماهوار"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "مهلت فعالیت من"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__name
+msgid "Name"
+msgstr "نام"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "مهلت فعالیت بعدی"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__activity_summary
+msgid "Next Activity Summary"
+msgstr "خلاصه فعالیت بعدی"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع فعالیت بعدی"
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset_depreciation_line.py:0
+msgid "Nothing is due yet."
+msgstr "هنوز چیزی سررسید نشده است."
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__message_needaction_counter
+msgid "Number of Actions"
+msgstr "تعداد اقدامات"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__period_count
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__period_count
+msgid "Number of Periods"
+msgstr "تعداد دوره‌ها"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__message_has_error_counter
+msgid "Number of errors"
+msgstr "تعداد خطاها"
+
+#. module: hm_assets
+#: model:ir.model.fields,help:hm_assets.field_hm_asset__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "تعداد پیام‌های نیازمند اقدام"
+
+#. module: hm_assets
+#: model:ir.model.fields,help:hm_assets.field_hm_asset__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "تعداد پیام‌های دارای خطای ارسال"
+
+#. module: hm_assets
+#: model_terms:ir.actions.act_window,help:hm_assets.action_hm_asset
+msgid ""
+"Odoo Community has no asset management, so a vehicle you buy\n"
+"               stays on the balance sheet at full value forever. This computes\n"
+"               the depreciation schedule and posts it to the ledger — when you\n"
+"               tell it to, never on its own."
+msgstr ""
+"اودو کمیونیتی مدیریت دارایی ندارد، بنابراین وسیله نقلیه‌ای که\n"
+"               می‌خرید تا ابد به ارزش کامل در بیلانس می‌ماند. این ماژول جدول\n"
+"               استهلاک را محاسبه می‌کند و در دفتر کل ثبت می‌نماید — زمانی که\n"
+"               شما بگویید، هیچ‌گاه از خود."
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset.py:0
+msgid "Only a draft asset can be confirmed."
+msgstr "تنها دارایی مسوده تأیید شده می‌تواند."
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset.py:0
+msgid "Only a running asset can be closed."
+msgstr "تنها دارایی جاری بسته شده می‌تواند."
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__pending_count
+msgid "Pending"
+msgstr "در جریان"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__period_length
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__period_length
+msgid "Period"
+msgstr "دوره"
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset_depreciation_line.py:0
+msgid "Period %(n)s of %(asset)s is already posted."
+msgstr "دوره %(n)s از %(asset)s از قبل ثبت شده است."
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset_depreciation_line.py:0
+msgid "Period %(n)s posted: %(amount)s"
+msgstr "دوره %(n)s ثبت شد: %(amount)s"
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset_depreciation_line.py:0
+msgid "Period %s is posted and cannot be changed."
+msgstr "دوره %s ثبت شده و تغییر داده شده نمی‌تواند."
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Periods"
+msgstr "دوره‌ها"
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_search
+msgid "Periods Due Now"
+msgstr "دوره‌های سررسیدشده"
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Post"
+msgstr "ثبت"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__posted_count
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_depreciation_line__posted
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Posted"
+msgstr "ثبت‌شده"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__prorata
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__prorata
+msgid "Prorate First Period"
+msgstr "تناسب دوره نخست"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__purchase_value
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_list
+msgid "Purchase Value"
+msgstr "ارزش خریداری"
+
+#. module: hm_assets
+#: model:ir.model.fields,help:hm_assets.field_hm_asset__book_value
+msgid "Purchase value less everything posted to date."
+msgstr "ارزش خریداری منهای هر آنچه تا امروز ثبت شده است."
+
+#. module: hm_assets
+#: model:ir.model.fields.selection,name:hm_assets.selection__hm_asset__period_length__3
+#: model:ir.model.fields.selection,name:hm_assets.selection__hm_asset_category__period_length__3
+msgid "Quarterly"
+msgstr "ربع‌وار"
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Rebuilds the forecast. Posted periods are never touched."
+msgstr "پیش‌بینی را دوباره می‌سازد. دوره‌های ثبت‌شده هیچ‌گاه دست نمی‌خورند."
+
+#. module: hm_assets
+#: model_terms:ir.actions.act_window,help:hm_assets.action_hm_asset
+msgid "Record a fixed asset"
+msgstr "ثبت یک دارایی ثابت"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__method_progress_factor
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_category__method_progress_factor
+msgid "Reducing Factor"
+msgstr "ضریب کاهنده"
+
+#. module: hm_assets
+#: model:ir.model.fields.selection,name:hm_assets.selection__hm_asset__method__degressive
+#: model:ir.model.fields.selection,name:hm_assets.selection__hm_asset_category__method__degressive
+msgid "Reducing balance"
+msgstr "مانده کاهنده"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__code
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Reference"
+msgstr "مرجع"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset_depreciation_line__remaining_value
+msgid "Remaining"
+msgstr "باقی‌مانده"
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Reset to Draft"
+msgstr "بازگشت به مسوده"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__activity_user_id
+msgid "Responsible User"
+msgstr "کاربر مسئول"
+
+#. module: hm_assets
+#: model:ir.model.fields.selection,name:hm_assets.selection__hm_asset__state__running
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_search
+msgid "Running"
+msgstr "جاری"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطای ارسال پیامک"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__salvage_value
+msgid "Salvage Value"
+msgstr "ارزش اسقاط"
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset.py:0
+msgid "Salvage value cannot be negative."
+msgstr "ارزش اسقاط منفی شده نمی‌تواند."
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset.py:0
+msgid "Salvage value must be below the purchase value, or there is nothing to depreciate."
+msgstr "ارزش اسقاط باید کمتر از ارزش خریداری باشد، ورنه چیزی برای استهلاک نمی‌ماند."
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Schedule"
+msgstr "جدول زمانی"
+
+#. module: hm_assets
+#: model:ir.model.fields,help:hm_assets.field_hm_asset__method_progress_factor
+msgid "Share of the remaining value written off each period."
+msgstr "سهمی از ارزش باقی‌مانده که در هر دوره مستهلک می‌شود."
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__state
+msgid "State"
+msgstr "حالت"
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_search
+msgid "Status"
+msgstr "وضعیت"
+
+#. module: hm_assets
+#: model:ir.model.fields,help:hm_assets.field_hm_asset__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"حالت بر اساس فعالیت‌ها\n"
+"معوق: تاریخ سررسید گذشته است\n"
+"امروز: تاریخ فعالیت امروز است\n"
+"پلان‌شده: فعالیت‌های آینده."
+
+#. module: hm_assets
+#: model:ir.model.fields.selection,name:hm_assets.selection__hm_asset__method__linear
+#: model:ir.model.fields.selection,name:hm_assets.selection__hm_asset_category__method__linear
+msgid "Straight line"
+msgstr "خط مستقیم"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__partner_id
+msgid "Supplier"
+msgstr "عرضه‌کننده"
+
+#. module: hm_assets
+#: model:ir.model.fields,help:hm_assets.field_hm_asset__category_id
+msgid "Supplies the accounts and the default schedule."
+msgstr "حسابات و جدول پیش‌فرض را تأمین می‌کند."
+
+#. module: hm_assets
+#: model:ir.model.constraint,message:hm_assets.constraint_hm_asset_purchase_positive
+msgid "The purchase value must be greater than zero."
+msgstr "ارزش خریداری باید بزرگ‌تر از صفر باشد."
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset.py:0
+msgid "The reducing factor must be between 0 and 1."
+msgstr "ضریب کاهنده باید بین ۰ و ۱ باشد."
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_category_view_form
+msgid ""
+"These are copied onto a new asset when the category is\n"
+"                        chosen. Changing them later does not alter assets that\n"
+"                        already exist."
+msgstr ""
+"این‌ها هنگام انتخاب کتگوری روی دارایی جدید کاپی\n"
+"                        می‌شوند. تغییر بعدی آن‌ها دارایی‌های موجود را تغییر\n"
+"                        نمی‌دهد."
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Total"
+msgstr "مجموع"
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Toyota Hilux, 2026"
+msgstr "تویوتا هایلوکس، ۲۰۲۶"
+
+#. module: hm_assets
+#: model:ir.model.fields,help:hm_assets.field_hm_asset__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع فعالیت استثنایی روی سند."
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid "Value"
+msgstr "ارزش"
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_category_view_form
+msgid "Vehicles"
+msgstr "وسایط نقلیه"
+
+#. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__website_message_ids
+msgid "Website Messages"
+msgstr "پیام‌های ویب‌سایت"
+
+#. module: hm_assets
+#: model:ir.model.fields,help:hm_assets.field_hm_asset__website_message_ids
+msgid "Website communication history"
+msgstr "تاریخچه ارتباطات ویب‌سایت"
+
+#. module: hm_assets
+#: model:ir.model.fields,help:hm_assets.field_hm_asset__salvage_value
+msgid "What the asset is expected to be worth at the end. Never depreciated below this."
+msgstr "اینکه انتظار می‌رود دارایی در پایان چه ارزشی داشته باشد. هیچ‌گاه پایین‌تر از این مستهلک نمی‌شود."
+
+#. module: hm_assets
+#: model:ir.model.fields.selection,name:hm_assets.selection__hm_asset__period_length__12
+#: model:ir.model.fields.selection,name:hm_assets.selection__hm_asset_category__period_length__12
+msgid "Yearly"
+msgstr "سالانه"
+
+#. module: hm_assets
+#. odoo-python
+#: code:addons/hm_assets/models/hm_asset.py:0
+msgid "id"
+msgstr "شناسه"
+
+#. module: hm_assets
+#: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
+msgid ""
+"period(s) are forecast but not posted. Nothing reaches\n"
+"                        the ledger until you post it."
+msgstr ""
+"دوره پیش‌بینی شده اما ثبت نشده است. تا زمانی که شما\n"
+"                        ثبت نکنید، چیزی به دفتر کل نمی‌رسد."

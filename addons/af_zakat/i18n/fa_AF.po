@@ -1,0 +1,886 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* af_zakat
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: af_zakat
+#. odoo-python
+#: code:addons/af_zakat/models/af_zakat.py:0
+msgid "%(fund)s holds %(available)s undistributed, which is less than %(amount)s. Zakat cannot be paid out of money that has not been collected."
+msgstr "%(fund)s مبلغ %(available)s توزیع‌نشده دارد، که کمتر از %(amount)s است. زکات از پولی که جمع‌آوری نشده پرداخت شده نمی‌تواند."
+
+#. module: af_zakat
+#. odoo-python
+#: code:addons/af_zakat/models/af_zakat.py:0
+msgid "%(fund)s still holds %(amount)s that has not been distributed. Distribute it or carry it into another fund before closing this one."
+msgstr "%(fund)s هنوز %(amount)s توزیع‌نشده دارد. پیش از بستن این صندوق، آن را توزیع کنید یا به صندوق دیگری انتقال دهید."
+
+#. module: af_zakat
+#. odoo-python
+#: code:addons/af_zakat/models/af_zakat.py:0
+msgid "%s is already closed."
+msgstr "%s قبلاً بسته شده است."
+
+#. module: af_zakat
+#. odoo-python
+#: code:addons/af_zakat/models/af_zakat.py:0
+msgid "%s is already paid."
+msgstr "%s از قبل پرداخت شده است."
+
+#. module: af_zakat
+#. odoo-python
+#: code:addons/af_zakat/models/af_zakat.py:0
+msgid "%s is closed and cannot take further distributions."
+msgstr "%s بسته است و توزیع بیشتری گرفته نمی‌تواند."
+
+#. module: af_zakat
+#: model:ir.model.constraint,message:af_zakat.constraint_af_zakat_contribution_amount_positive
+msgid "A contribution must be greater than zero."
+msgstr "پرداخت باید بزرگ‌تر از صفر باشد."
+
+#. module: af_zakat
+#: model:ir.model.constraint,message:af_zakat.constraint_af_zakat_distribution_amount_positive
+msgid "A distribution must be greater than zero."
+msgstr "توزیع باید بزرگ‌تر از صفر باشد."
+
+#. module: af_zakat
+#: model:ir.model.constraint,message:af_zakat.constraint_af_zakat_fund_dates_in_order
+msgid "A fund cannot end before it starts."
+msgstr "صندوق پیش از آغازش پایان یافته نمی‌تواند."
+
+#. module: af_zakat
+#: model_terms:ir.actions.act_window,help:af_zakat.action_af_zakat_fund
+msgid ""
+"A fund holds what was collected for a period and everything\n"
+"               distributed from it, so the two can be reconciled and shown to\n"
+"               anyone who asks."
+msgstr ""
+"هر صندوق آنچه را در یک دوره جمع‌آوری شده و هر آنچه را از آن\n"
+"               توزیع گردیده نگه می‌دارد، تا این دو با هم مطابقت داده شود و به\n"
+"               هر کسی که بپرسد نشان داده شود."
+
+#. module: af_zakat
+#: model:ir.model.constraint,message:af_zakat.constraint_af_zakat_beneficiary_household_positive
+msgid "A household has at least one person in it."
+msgstr "هر فامیل حداقل یک نفر دارد."
+
+#. module: af_zakat
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_contribution__state
+msgid "A pledge is not money. Only received contributions count towards what can be distributed."
+msgstr "تعهد پول نیست. تنها پرداخت‌های دریافت‌شده در آنچه قابل توزیع است به حساب می‌آید."
+
+#. module: af_zakat
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_beneficiary__total_received
+msgid "Across every fund, so repeat assistance is visible."
+msgstr "در سراسر تمام صندوق‌ها، تا کمک تکراری دیده شود."
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__message_needaction
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__message_needaction
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__message_needaction
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__message_needaction
+msgid "Action Needed"
+msgstr "نیازمند اقدام"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__active
+msgid "Active"
+msgstr "فعال"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__address
+msgid "Address"
+msgstr "آدرس"
+
+#. module: af_zakat
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_beneficiary__category__amil
+msgid "Amil (administrators of zakat)"
+msgstr "عامل (کارگزاران زکات)"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__amount
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__amount
+msgid "Amount"
+msgstr "مبلغ"
+
+#. module: af_zakat
+#. odoo-python
+#: code:addons/af_zakat/models/af_zakat.py:0
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__anonymous
+msgid "Anonymous"
+msgstr "ناشناس"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__approved_by_id
+msgid "Approved By"
+msgstr "منظورکننده"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_beneficiary_view_form
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_beneficiary_view_search
+msgid "Archived"
+msgstr "بایگانی‌شده"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__assessment_notes
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_beneficiary_view_form
+msgid "Assessment"
+msgstr "ارزیابی"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__message_attachment_count
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__message_attachment_count
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__message_attachment_count
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__message_attachment_count
+msgid "Attachment Count"
+msgstr "تعداد ضمایم"
+
+#. module: af_zakat
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_contribution__payment_method__bank
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_distribution__payment_method__bank
+msgid "Bank Transfer"
+msgstr "انتقال بانکی"
+
+#. module: af_zakat
+#: model:ir.actions.act_window,name:af_zakat.action_af_zakat_beneficiary
+#: model:ir.ui.menu,name:af_zakat.menu_af_zakat_beneficiary
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_beneficiary_view_list
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_beneficiary_view_search
+msgid "Beneficiaries"
+msgstr "مستحقین"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__beneficiary_id
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_beneficiary_view_form
+msgid "Beneficiary"
+msgstr "مستحق"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__beneficiary_count
+msgid "Beneficiary Count"
+msgstr "تعداد مستحقین"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_distribution_view_form
+msgid "Cancel"
+msgstr "لغو"
+
+#. module: af_zakat
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_contribution__state__cancelled
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_distribution__state__cancelled
+msgid "Cancelled"
+msgstr "لغوشده"
+
+#. module: af_zakat
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_contribution__payment_method__cash
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_distribution__payment_method__cash
+msgid "Cash"
+msgstr "نقد"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__category
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__category
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_beneficiary_view_search
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_distribution_view_search
+msgid "Category"
+msgstr "کتگوری"
+
+#. module: af_zakat
+#: model_terms:ir.actions.act_window,help:af_zakat.action_af_zakat_distribution
+msgid "Choose the fund and the beneficiary. The system refuses to give out more than the fund actually holds."
+msgstr "صندوق و مستحق را انتخاب کنید. سیستم از پرداخت بیشتر از آنچه صندوق واقعاً دارد خودداری می‌کند."
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_fund_view_form
+msgid "Close Fund"
+msgstr "بستن صندوق"
+
+#. module: af_zakat
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_fund__state__closed
+msgid "Closed"
+msgstr "بسته"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_fund_view_form
+msgid "Closing is refused while any collected zakat remains undistributed. Continue?"
+msgstr "تا زمانی که زکات جمع‌آوری‌شده توزیع‌نشده باقی بماند، بستن رد می‌شود. ادامه می‌دهید؟"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__amount_collected
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_fund_view_list
+msgid "Collected"
+msgstr "جمع‌آوری‌شده"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__company_id
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__company_id
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__company_id
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__company_id
+msgid "Company"
+msgstr "شرکت"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__partner_id
+msgid "Contact"
+msgstr "مخاطب"
+
+#. module: af_zakat
+#: model:ir.actions.act_window,name:af_zakat.action_af_zakat_contribution
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__contribution_ids
+#: model:ir.ui.menu,name:af_zakat.menu_af_zakat_contribution
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_fund_view_form
+msgid "Contributions"
+msgstr "پرداخت‌ها"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__partner_id
+msgid "Contributor"
+msgstr "پرداخت‌کننده"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__create_uid
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__create_uid
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__create_uid
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__create_uid
+msgid "Created by"
+msgstr "ایجادکننده"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__create_date
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__create_date
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__create_date
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__create_date
+msgid "Created on"
+msgstr "تاریخ ایجاد"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__currency_id
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__currency_id
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__currency_id
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__currency_id
+msgid "Currency"
+msgstr "اسعار"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_distribution_view_search
+msgid "Date"
+msgstr "تاریخ"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__display_name
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__display_name
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__display_name
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__amount_distributed
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_fund_view_list
+msgid "Distributed"
+msgstr "توزیع‌شده"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_distribution_view_form
+msgid "Distribution"
+msgstr "توزیع"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__distribution_count
+msgid "Distribution Count"
+msgstr "تعداد توزیع‌ها"
+
+#. module: af_zakat
+#. odoo-python
+#: code:addons/af_zakat/models/af_zakat.py:0
+#: model:ir.actions.act_window,name:af_zakat.action_af_zakat_distribution
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__distribution_ids
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__distribution_ids
+#: model:ir.ui.menu,name:af_zakat.menu_af_zakat_distribution
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_beneficiary_view_form
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_distribution_view_list
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_distribution_view_search
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_fund_view_form
+msgid "Distributions"
+msgstr "توزیع‌ها"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__district_id
+msgid "District"
+msgstr "ولسوالی"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_beneficiary_view_form
+msgid "Eligibility"
+msgstr "استحقاق"
+
+#. module: af_zakat
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_beneficiary__category__faqir
+msgid "Faqir (the poor)"
+msgstr "فقیر (تنگدستان)"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__father_name
+msgid "Father's Name"
+msgstr "نام پدر"
+
+#. module: af_zakat
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_beneficiary__category__fisabilillah
+msgid "Fi Sabilillah (in the cause of God)"
+msgstr "فی سبیل الله (در راه خدا)"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__message_follower_ids
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__message_follower_ids
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__message_follower_ids
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__message_follower_ids
+msgid "Followers"
+msgstr "دنبال‌کنندگان"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__message_partner_ids
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__message_partner_ids
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__message_partner_ids
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "دنبال‌کنندگان (مخاطبین)"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__date_from
+msgid "From"
+msgstr "از"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__fund_id
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__fund_id
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_distribution_view_search
+msgid "Fund"
+msgstr "صندوق"
+
+#. module: af_zakat
+#: model:ir.ui.menu,name:af_zakat.menu_af_zakat_fund
+msgid "Funds"
+msgstr "صندوق‌ها"
+
+#. module: af_zakat
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_beneficiary__category__gharim
+msgid "Gharim (those in debt)"
+msgstr "غارم (قرضداران)"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__in_kind_description
+msgid "Goods Given"
+msgstr "اجناس داده‌شده"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__has_message
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__has_message
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__has_message
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__has_message
+msgid "Has Message"
+msgstr "دارای پیام"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_beneficiary_view_form
+msgid "History"
+msgstr "سابقه"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__household_size
+msgid "Household"
+msgstr "فامیل"
+
+#. module: af_zakat
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_beneficiary__household_size
+msgid "How many people depend on this person."
+msgstr "اینکه چند نفر به این شخص متکی‌اند."
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__id
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__id
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__id
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: af_zakat
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_beneficiary__category__ibnsabil
+msgid "Ibn al-Sabil (the traveller in need)"
+msgstr "ابن السبیل (مسافر نیازمند)"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_beneficiary_view_form
+msgid "Identity"
+msgstr "هویت"
+
+#. module: af_zakat
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_beneficiary__message_needaction
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_contribution__message_needaction
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_distribution__message_needaction
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_fund__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "در صورت انتخاب، پیام‌های جدید نیازمند توجه شماست."
+
+#. module: af_zakat
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_beneficiary__message_has_error
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_beneficiary__message_has_sms_error
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_contribution__message_has_error
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_contribution__message_has_sms_error
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_distribution__message_has_error
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_distribution__message_has_sms_error
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_fund__message_has_error
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_fund__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "در صورت انتخاب، برخی پیام‌ها خطای ارسال دارند."
+
+#. module: af_zakat
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_contribution__payment_method__in_kind
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_distribution__payment_method__in_kind
+msgid "In Kind"
+msgstr "جنسی"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__message_is_follower
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__message_is_follower
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__message_is_follower
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__message_is_follower
+msgid "Is Follower"
+msgstr "دنبال‌کننده است"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__last_received
+msgid "Last Received"
+msgstr "آخرین دریافت"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__write_uid
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__write_uid
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__write_uid
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__write_uid
+msgid "Last Updated by"
+msgstr "آخرین ویرایش توسط"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__write_date
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__write_date
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__write_date
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__write_date
+msgid "Last Updated on"
+msgstr "تاریخ آخرین ویرایش"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_distribution_view_form
+msgid "Mark Paid"
+msgstr "ثبت به‌عنوان پرداخت‌شده"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__message_has_error
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__message_has_error
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__message_has_error
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__message_has_error
+msgid "Message Delivery error"
+msgstr "خطای ارسال پیام"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__message_ids
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__message_ids
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__message_ids
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__message_ids
+msgid "Messages"
+msgstr "پیام‌ها"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_distribution_view_search
+msgid "Method"
+msgstr "روش"
+
+#. module: af_zakat
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_beneficiary__category__miskin
+msgid "Miskin (the needy)"
+msgstr "مسکین (نیازمندان)"
+
+#. module: af_zakat
+#: model_terms:ir.actions.act_window,help:af_zakat.action_af_zakat_contribution
+msgid "Money entering the fund is recorded here. Nothing can be distributed that was never collected."
+msgstr "پولی که وارد صندوق می‌شود اینجا ثبت می‌گردد. آنچه هرگز جمع‌آوری نشده، توزیع شده نمی‌تواند."
+
+#. module: af_zakat
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_beneficiary__category__muallaf
+msgid "Muallaf (those whose hearts are to be reconciled)"
+msgstr "مؤلفة القلوب (کسانی که دل‌هایشان به دست آورده می‌شود)"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__name
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__name
+msgid "Name"
+msgstr "نام"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_beneficiary_view_search
+msgid "Never Helped"
+msgstr "هیچ‌گاه کمک نشده"
+
+#. module: af_zakat
+#. odoo-python
+#: code:addons/af_zakat/models/af_zakat.py:0
+msgid "New"
+msgstr "جدید"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_distribution_view_search
+msgid "No Signed Receipt"
+msgstr "بدون رسید امضاشده"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_beneficiary_view_search
+msgid "Not Verified"
+msgstr "تصدیق‌نشده"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__notes
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__notes
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__notes
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_distribution_view_form
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_fund_view_form
+msgid "Notes"
+msgstr "یادداشت‌ها"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__message_needaction_counter
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__message_needaction_counter
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__message_needaction_counter
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__message_needaction_counter
+msgid "Number of Actions"
+msgstr "تعداد اقدامات"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__message_has_error_counter
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__message_has_error_counter
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__message_has_error_counter
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__message_has_error_counter
+msgid "Number of errors"
+msgstr "تعداد خطاها"
+
+#. module: af_zakat
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_beneficiary__message_needaction_counter
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_contribution__message_needaction_counter
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_distribution__message_needaction_counter
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_fund__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "تعداد پیام‌های نیازمند اقدام"
+
+#. module: af_zakat
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_beneficiary__message_has_error_counter
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_contribution__message_has_error_counter
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_distribution__message_has_error_counter
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_fund__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "تعداد پیام‌های دارای خطای ارسال"
+
+#. module: af_zakat
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_fund__state__open
+msgid "Open"
+msgstr "باز"
+
+#. module: af_zakat
+#: model_terms:ir.actions.act_window,help:af_zakat.action_af_zakat_fund
+msgid "Open a zakat fund"
+msgstr "افتتاح یک صندوق زکات"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__date
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_distribution__state__paid
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_distribution_view_search
+msgid "Paid"
+msgstr "پرداخت‌شده"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_distribution_view_list
+msgid "Pay"
+msgstr "پرداخت"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__payment_method
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__payment_method
+msgid "Payment Method"
+msgstr "روش پرداخت"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_fund_view_form
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_fund_view_list
+msgid "People Helped"
+msgstr "افراد کمک‌شده"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_fund_view_form
+msgid "Period"
+msgstr "دوره"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__phone
+msgid "Phone"
+msgstr "تیلفون"
+
+#. module: af_zakat
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_distribution__state__planned
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_distribution_view_search
+msgid "Planned"
+msgstr "پلان‌شده"
+
+#. module: af_zakat
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_contribution__state__pledged
+msgid "Pledged"
+msgstr "تعهدشده"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_fund_view_form
+msgid "Position"
+msgstr "بست"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__state_id
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_beneficiary_view_search
+msgid "Province"
+msgstr "ولایت"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_fund_view_form
+msgid "Ramadan 1447"
+msgstr "رمضان ۱۴۴۷"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__received_signature
+msgid "Receipt Signed"
+msgstr "رسید امضاشده"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__date
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_contribution__state__received
+msgid "Received"
+msgstr "دریافت‌شده"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_distribution_view_form
+msgid "Record"
+msgstr "ثبت"
+
+#. module: af_zakat
+#: model_terms:ir.actions.act_window,help:af_zakat.action_af_zakat_contribution
+msgid "Record a contribution"
+msgstr "ثبت یک پرداخت"
+
+#. module: af_zakat
+#: model_terms:ir.actions.act_window,help:af_zakat.action_af_zakat_distribution
+msgid "Record a distribution"
+msgstr "ثبت یک توزیع"
+
+#. module: af_zakat
+#: model_terms:ir.actions.act_window,help:af_zakat.action_af_zakat_beneficiary
+msgid ""
+"Recording who has been helped before, and how much, is what\n"
+"               stops the same households being reached twice while others are\n"
+"               missed."
+msgstr ""
+"ثبت اینکه پیش از این به چه کسی و چه اندازه کمک شده، همان چیزی\n"
+"               است که مانع می‌شود به یک فامیل دو بار رسیدگی شود در حالی که\n"
+"               دیگران از قلم بیفتند."
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__name
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__name
+msgid "Reference"
+msgstr "مرجع"
+
+#. module: af_zakat
+#: model_terms:ir.actions.act_window,help:af_zakat.action_af_zakat_beneficiary
+msgid "Register a beneficiary"
+msgstr "راجستر یک مستحق"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_fund_view_form
+msgid "Reopen"
+msgstr "بازگشایی"
+
+#. module: af_zakat
+#: model:ir.model.fields.selection,name:af_zakat.selection__af_zakat_beneficiary__category__riqab
+msgid "Riqab (freeing those in bondage)"
+msgstr "الرقاب (آزادی اسیران)"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__message_has_sms_error
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__message_has_sms_error
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__message_has_sms_error
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "خطای ارسال پیامک"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__state
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__state
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__state
+msgid "State"
+msgstr "حالت"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__tazkira
+msgid "Tazkira Number"
+msgstr "نمبر تذکره"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_beneficiary_view_list
+msgid "Times Helped"
+msgstr "دفعات کمک"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__date_to
+msgid "To"
+msgstr "تا"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_distribution_view_form
+msgid "To Whom"
+msgstr "به چه کسی"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_beneficiary_view_list
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_distribution_view_list
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_fund_view_form
+msgid "Total"
+msgstr "مجموع"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__total_received
+msgid "Total Received"
+msgstr "مجموع دریافت‌شده"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__amount_remaining
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_fund_view_list
+msgid "Undistributed"
+msgstr "توزیع‌نشده"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__verified_by_id
+msgid "Verified By"
+msgstr "تصدیق‌کننده"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__verified_date
+msgid "Verified On"
+msgstr "تاریخ تصدیق"
+
+#. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__website_message_ids
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__website_message_ids
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__website_message_ids
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__website_message_ids
+msgid "Website Messages"
+msgstr "پیام‌های ویب‌سایت"
+
+#. module: af_zakat
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_beneficiary__website_message_ids
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_contribution__website_message_ids
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_distribution__website_message_ids
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_fund__website_message_ids
+msgid "Website communication history"
+msgstr "تاریخچه ارتباطات ویب‌سایت"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_distribution_view_form
+msgid "What"
+msgstr "چه"
+
+#. module: af_zakat
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_fund__amount_remaining
+msgid "What is still held and owed to beneficiaries."
+msgstr "آنچه هنوز نگه داشته شده و به مستحقین تعلق دارد."
+
+#. module: af_zakat
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_distribution__in_kind_description
+msgid "What was actually handed over, when it was not money."
+msgstr "آنچه واقعاً تسلیم داده شد، وقتی پول نبود."
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_beneficiary_view_form
+msgid "Where"
+msgstr "کجا"
+
+#. module: af_zakat
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_distribution__received_signature
+msgid "Whether the beneficiary signed for what they were given."
+msgstr "اینکه آیا مستحق برای آنچه به او داده شد امضا کرده است."
+
+#. module: af_zakat
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_beneficiary__category
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_distribution__category
+msgid "Which of the eight eligible categories this person falls under."
+msgstr "اینکه این شخص در کدام‌یک از هشت مصرف مستحق زکات قرار می‌گیرد."
+
+#. module: af_zakat
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_beneficiary__assessment_notes
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_beneficiary_view_form
+msgid "Why this person qualifies, and who verified it."
+msgstr "اینکه چرا این شخص مستحق است، و چه کسی آن را تصدیق کرده."
+
+#. module: af_zakat
+#: model:ir.ui.menu,name:af_zakat.menu_af_zakat_root
+msgid "Zakat"
+msgstr "زکات"
+
+#. module: af_zakat
+#: model:ir.model,name:af_zakat.model_af_zakat_beneficiary
+msgid "Zakat Beneficiary"
+msgstr "مستحق زکات"
+
+#. module: af_zakat
+#: model:ir.model,name:af_zakat.model_af_zakat_contribution
+msgid "Zakat Contribution"
+msgstr "پرداخت زکات"
+
+#. module: af_zakat
+#: model:ir.model,name:af_zakat.model_af_zakat_distribution
+msgid "Zakat Distribution"
+msgstr "توزیع زکات"
+
+#. module: af_zakat
+#: model:ir.model,name:af_zakat.model_af_zakat_fund
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_fund_view_form
+msgid "Zakat Fund"
+msgstr "صندوق زکات"
+
+#. module: af_zakat
+#: model:ir.actions.act_window,name:af_zakat.action_af_zakat_fund
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_fund_view_list
+msgid "Zakat Funds"
+msgstr "صندوق‌های زکات"
+
+#. module: af_zakat
+#: model:ir.model.fields,help:af_zakat.field_af_zakat_contribution__anonymous
+msgid "Zakat is often given without the giver being named. The record still exists; the name simply is not shown."
+msgstr "زکات اغلب بدون ذکر نام دهنده پرداخت می‌شود. سابقه همچنان موجود است؛ تنها نام نشان داده نمی‌شود."
+
+#. module: af_zakat
+#. odoo-python
+#: code:addons/af_zakat/models/af_zakat.py:0
+msgid "fund_id"
+msgstr "fund_id"
+
+#. module: af_zakat
+#: model_terms:ir.ui.view,arch_db:af_zakat.af_zakat_fund_view_form
+msgid ""
+"has been collected and not yet distributed. It is owed\n"
+"                        to beneficiaries, not held by the organisation."
+msgstr ""
+"جمع‌آوری شده و هنوز توزیع نشده است. این مبلغ حق\n"
+"                        مستحقین است، نه دارایی اداره."

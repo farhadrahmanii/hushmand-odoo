@@ -185,6 +185,23 @@ jobs:
           fi
           echo "Templates match the source"
 
+      - name: The Dari translations must actually load
+        # A .po Odoo cannot parse is skipped with one log line: the module
+        # installs, the tests pass, and every screen stays English forever.
+        # So this does not check that nothing went wrong. It activates the
+        # language, exports Dari back OUT of the database, and counts what
+        # came back.
+        run: |
+          odoo i18n loadlang -c /tmp/odoo-i18n.conf -d ci -l fa_AF
+          odoo i18n export -c /tmp/odoo-i18n.conf -d ci -l fa_AF \
+            -o /tmp/fa_AF-loaded.po \
+            af_jalali af_l10n_base af_dual_currency af_hr hm_approvals \
+            hm_purchase_request hm_account_reports hm_assets hm_expiry_docs \
+            af_liaison af_correspondence hm_frontdesk hm_roster af_zakat \
+            hm_contracts hm_license af_l10n_account af_procurement \
+            hm_payroll af_hr_payroll
+          python3 tools/check_translations_loaded.py fa_AF /tmp/fa_AF-loaded.po
+
       - name: Upload the translation templates
         if: always()
         uses: actions/upload-artifact@v4

@@ -1,0 +1,523 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_frontdesk
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fa_AF\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#. module: hm_frontdesk
+#. odoo-python
+#: code:addons/hm_frontdesk/models/hm_visitor.py:0
+msgid "%(visitor)s has arrived at reception."
+msgstr "%(visitor)s به پذیرش رسید."
+
+#. module: hm_frontdesk
+#. odoo-python
+#: code:addons/hm_frontdesk/models/hm_visitor.py:0
+msgid "%(visitor)s was checked in on %(date)s and has not been checked out. Please confirm when they left."
+msgstr "%(visitor)s در تاریخ %(date)s ثبت ورود شده و ثبت خروج نشده است. لطفاً تأیید کنید که چه وقت رفت."
+
+#. module: hm_frontdesk
+#. odoo-python
+#: code:addons/hm_frontdesk/models/hm_visitor.py:0
+msgid "%s has already left. Register a new visit."
+msgstr "%s از قبل رفته است. یک ملاقات جدید راجستر کنید."
+
+#. module: hm_frontdesk
+#. odoo-python
+#: code:addons/hm_frontdesk/models/hm_visitor.py:0
+msgid "%s is already checked in."
+msgstr "%s از قبل ثبت ورود شده است."
+
+#. module: hm_frontdesk
+#. odoo-python
+#: code:addons/hm_frontdesk/models/hm_visitor.py:0
+msgid "%s is not on site."
+msgstr "%s در محل نیست."
+
+#. module: hm_frontdesk
+#. odoo-python
+#: code:addons/hm_frontdesk/models/hm_visitor.py:0
+msgid "%s is on site. Check them out rather than cancelling the visit."
+msgstr "%s در محل است. به‌جای لغو ملاقات، ثبت خروجش کنید."
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__accompanying_count
+msgid "Accompanying"
+msgstr "همراهان"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__message_needaction
+msgid "Action Needed"
+msgstr "نیازمند اقدام"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__activity_ids
+msgid "Activities"
+msgstr "فعالیت‌ها"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "نشانه استثنای فعالیت"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__activity_state
+msgid "Activity State"
+msgstr "حالت فعالیت"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "آیکن نوع فعالیت"
+
+#. module: hm_frontdesk
+#: model:ir.ui.menu,name:hm_frontdesk.menu_hm_visitor
+msgid "All Visitors"
+msgstr "تمام مهمانان"
+
+#. module: hm_frontdesk
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_form
+msgid "At the Desk"
+msgstr "در پذیرش"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__message_attachment_count
+msgid "Attachment Count"
+msgstr "تعداد ضمایم"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__badge_number
+msgid "Badge"
+msgstr "کارت مهمان"
+
+#. module: hm_frontdesk
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_form
+msgid "Cancel"
+msgstr "لغو"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields.selection,name:hm_frontdesk.selection__hm_visitor__state__cancelled
+msgid "Cancelled"
+msgstr "لغوشده"
+
+#. module: hm_frontdesk
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_form
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_list
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_search
+msgid "Check In"
+msgstr "ثبت ورود"
+
+#. module: hm_frontdesk
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_form
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_list
+msgid "Check Out"
+msgstr "ثبت خروج"
+
+#. module: hm_frontdesk
+#. odoo-python
+#: code:addons/hm_frontdesk/models/hm_visitor.py:0
+msgid "Check the visitor out first."
+msgstr "نخست ثبت خروج مهمان را انجام دهید."
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__check_in
+msgid "Checked In"
+msgstr "ثبت ورود شده"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__check_out
+msgid "Checked Out"
+msgstr "ثبت خروج شده"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__company_id
+msgid "Company"
+msgstr "شرکت"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__partner_id
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_form
+msgid "Contact"
+msgstr "مخاطب"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__create_uid
+msgid "Created by"
+msgstr "ایجادکننده"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__create_date
+msgid "Created on"
+msgstr "تاریخ ایجاد"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__display_name
+msgid "Display Name"
+msgstr "نام نمایشی"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__email
+msgid "Email"
+msgstr "ایمیل"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__expected_date
+#: model:ir.model.fields.selection,name:hm_frontdesk.selection__hm_visitor__state__expected
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_search
+msgid "Expected"
+msgstr "منتظَر"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,help:hm_frontdesk.field_hm_visitor__location
+msgid "Floor, room or department, so the desk knows where they went."
+msgstr "منزل، اتاق یا بخش، تا پذیرش بداند به کجا رفته است."
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__message_follower_ids
+msgid "Followers"
+msgstr "دنبال‌کنندگان"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "دنبال‌کنندگان (مخاطبین)"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,help:hm_frontdesk.field_hm_visitor__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "آیکن Font Awesome، مثلاً fa-tasks"
+
+#. module: hm_frontdesk
+#: model:ir.ui.menu,name:hm_frontdesk.menu_hm_frontdesk_root
+msgid "Front Desk"
+msgstr "پذیرش"
+
+#. module: hm_frontdesk
+#: model:ir.actions.server,name:hm_frontdesk.cron_overnight_visitors_ir_actions_server
+msgid "Front Desk: flag visitors never checked out"
+msgstr "پذیرش: نشانی‌گذاری مهمانانی که ثبت خروج نشده‌اند"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__location
+msgid "Going To"
+msgstr "می‌رود به"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__has_message
+msgid "Has Message"
+msgstr "دارای پیام"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__host_id
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_search
+msgid "Host"
+msgstr "میزبان"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,help:hm_frontdesk.field_hm_visitor__accompanying_count
+msgid "How many others came in with them."
+msgstr "اینکه چند نفر دیگر همراه او آمده‌اند."
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__id
+msgid "ID"
+msgstr "شناسه"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__id_document
+msgid "ID Presented"
+msgstr "هویت ارائه‌شده"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__activity_exception_icon
+msgid "Icon"
+msgstr "آیکن"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,help:hm_frontdesk.field_hm_visitor__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "آیکنی که فعالیت استثنایی را نشان می‌دهد."
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,help:hm_frontdesk.field_hm_visitor__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "در صورت انتخاب، پیام‌های جدید نیازمند توجه شماست."
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,help:hm_frontdesk.field_hm_visitor__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "در صورت انتخاب، برخی پیام‌ها خطای ارسال دارند."
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,help:hm_frontdesk.field_hm_visitor__partner_id
+msgid "If the visitor is already a known contact."
+msgstr "اگر مهمان از قبل مخاطب شناخته‌شده باشد."
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__message_is_follower
+msgid "Is Follower"
+msgstr "دنبال‌کننده است"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__write_uid
+msgid "Last Updated by"
+msgstr "آخرین ویرایش توسط"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__write_date
+msgid "Last Updated on"
+msgstr "تاریخ آخرین ویرایش"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields.selection,name:hm_frontdesk.selection__hm_visitor__state__left
+msgid "Left"
+msgstr "رفته"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__message_has_error
+msgid "Message Delivery error"
+msgstr "خطای ارسال پیام"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__message_ids
+msgid "Messages"
+msgstr "پیام‌ها"
+
+#. module: hm_frontdesk
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_list
+msgid "Minutes"
+msgstr "دقیقه"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__duration_minutes
+msgid "Minutes On Site"
+msgstr "دقایق حضور در محل"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "مهلت فعالیت من"
+
+#. module: hm_frontdesk
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_search
+msgid "My Visitors"
+msgstr "مهمانان من"
+
+#. module: hm_frontdesk
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_search
+msgid "Never Checked Out"
+msgstr "هیچ‌گاه ثبت خروج نشده"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "مهلت فعالیت بعدی"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__activity_summary
+msgid "Next Activity Summary"
+msgstr "خلاصه فعالیت بعدی"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__activity_type_id
+msgid "Next Activity Type"
+msgstr "نوع فعالیت بعدی"
+
+#. module: hm_frontdesk
+#: model_terms:ir.actions.act_window,help:hm_frontdesk.action_hm_visitor_on_site
+msgid "Nobody is in the building"
+msgstr "هیچ‌کس در تعمیر نیست"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__notes
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_form
+msgid "Notes"
+msgstr "یادداشت‌ها"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__message_needaction_counter
+msgid "Number of Actions"
+msgstr "تعداد اقدامات"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__message_has_error_counter
+msgid "Number of errors"
+msgstr "تعداد خطاها"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,help:hm_frontdesk.field_hm_visitor__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr "تعداد پیام‌های نیازمند اقدام"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,help:hm_frontdesk.field_hm_visitor__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "تعداد پیام‌های دارای خطای ارسال"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields.selection,name:hm_frontdesk.selection__hm_visitor__state__on_site
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_form
+msgid "On Site"
+msgstr "در محل"
+
+#. module: hm_frontdesk
+#: model:ir.actions.act_window,name:hm_frontdesk.action_hm_visitor_on_site
+#: model:ir.ui.menu,name:hm_frontdesk.menu_hm_visitor_on_site
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_search
+msgid "On Site Now"
+msgstr "اکنون در محل"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__organisation
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_form
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_search
+msgid "Organisation"
+msgstr "اداره"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__phone
+msgid "Phone"
+msgstr "تیلفون"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__purpose
+msgid "Purpose"
+msgstr "هدف"
+
+#. module: hm_frontdesk
+#: model_terms:ir.actions.act_window,help:hm_frontdesk.action_hm_visitor
+msgid ""
+"Record who came in, who they came to see and when they left.\n"
+"               Expected visitors can be registered in advance and checked in\n"
+"               with one click."
+msgstr ""
+"ثبت اینکه چه کسی آمد، به دیدن چه کسی آمد و چه وقت رفت.\n"
+"               مهمانان منتظَر پیشاپیش راجستر شده می‌توانند و با یک کلیک ثبت\n"
+"               ورود می‌شوند."
+
+#. module: hm_frontdesk
+#: model_terms:ir.actions.act_window,help:hm_frontdesk.action_hm_visitor
+msgid "Register a visitor"
+msgstr "راجستر یک مهمان"
+
+#. module: hm_frontdesk
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_form
+msgid "Reset"
+msgstr "بازنشانی"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__activity_user_id
+msgid "Responsible User"
+msgstr "کاربر مسئول"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,help:hm_frontdesk.field_hm_visitor__expected_date
+msgid "Set when a visit is arranged in advance."
+msgstr "زمانی تعیین می‌شود که ملاقات پیشاپیش ترتیب داده شده باشد."
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__state
+msgid "State"
+msgstr "حالت"
+
+#. module: hm_frontdesk
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_search
+msgid "Status"
+msgstr "وضعیت"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,help:hm_frontdesk.field_hm_visitor__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"حالت بر اساس فعالیت‌ها\n"
+"معوق: تاریخ سررسید گذشته است\n"
+"امروز: تاریخ فعالیت امروز است\n"
+"پلان‌شده: فعالیت‌های آینده."
+
+#. module: hm_frontdesk
+#: model:ir.model.constraint,message:hm_frontdesk.constraint_hm_visitor_accompanying_not_negative
+msgid "The number accompanying cannot be negative."
+msgstr "تعداد همراهان منفی شده نمی‌تواند."
+
+#. module: hm_frontdesk
+#: model_terms:ir.actions.act_window,help:hm_frontdesk.action_hm_visitor_on_site
+msgid ""
+"This is the list to open during a drill or an incident. It\n"
+"               answers who is on site without reading through a book."
+msgstr ""
+"این همان فهرستی است که هنگام تمرین یا حادثه باز می‌شود. این\n"
+"               فهرست بدون ورق زدن یک کتاب می‌گوید چه کسی در محل است."
+
+#. module: hm_frontdesk
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_form
+msgid "Timings"
+msgstr "زمان‌ها"
+
+#. module: hm_frontdesk
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_search
+msgid "Today"
+msgstr "امروز"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,help:hm_frontdesk.field_hm_visitor__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "نوع فعالیت استثنایی روی سند."
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__vehicle_plate
+msgid "Vehicle"
+msgstr "وسیله نقلیه"
+
+#. module: hm_frontdesk
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_form
+msgid "Visit"
+msgstr "ملاقات"
+
+#. module: hm_frontdesk
+#: model:ir.model,name:hm_frontdesk.model_hm_visitor
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__name
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_form
+msgid "Visitor"
+msgstr "مهمان"
+
+#. module: hm_frontdesk
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_form
+msgid "Visitor name"
+msgstr "نام مهمان"
+
+#. module: hm_frontdesk
+#. odoo-python
+#: code:addons/hm_frontdesk/models/hm_visitor.py:0
+msgid "Visitor never checked out: %s"
+msgstr "مهمانی که ثبت خروج نشده: %s"
+
+#. module: hm_frontdesk
+#: model:ir.actions.act_window,name:hm_frontdesk.action_hm_visitor
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_list
+#: model_terms:ir.ui.view,arch_db:hm_frontdesk.hm_visitor_view_search
+msgid "Visitors"
+msgstr "مهمانان"
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,help:hm_frontdesk.field_hm_visitor__id_document
+msgid "Whatever identification was shown at the desk, and its number."
+msgstr "هر سند هویتی که در پذیرش نشان داده شد، و نمبر آن."
+
+#. module: hm_frontdesk
+#: model:ir.model.fields,help:hm_frontdesk.field_hm_visitor__host_id
+msgid "Who they are here to see. The host is notified on arrival."
+msgstr "اینکه به دیدن چه کسی آمده است. میزبان هنگام رسیدن او اطلاع داده می‌شود."
