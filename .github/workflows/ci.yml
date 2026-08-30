@@ -86,6 +86,12 @@ jobs:
           print("XML, manifests and icons OK")
           PY
 
+      - name: Every module has a current listing page
+        # The listing page is the storefront. It is generated so that twenty
+        # of them cannot drift into twenty different greens, and checked here
+        # so that a hand-edit is not silently overwritten by the next build.
+        run: python tools/build_listing.py --check
+
       - name: No AGPL dependency anywhere
         # An AGPL dependency would force these modules to AGPL too, letting any
         # customer redistribute paid software for free. See README.md.

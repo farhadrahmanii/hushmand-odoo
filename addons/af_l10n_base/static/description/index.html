@@ -1,0 +1,39 @@
+<section style="padding:32px 0;font-family:Roboto,Helvetica,Arial,sans-serif;color:#2b3a34;">
+  <div style="max-width:900px;margin:0 auto;padding:0 24px;">
+
+    <p style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#0b6b57;font-weight:600;margin:0 0 10px;">Localization</p>
+    <h1 style="font-size:40px;line-height:1.1;margin:0 0 14px;font-weight:700;">Afghanistan Localization Base</h1>
+    <p style="font-size:19px;line-height:1.55;color:#4c5a55;max-width:640px;margin:0 0 28px;">The geography and identity fields every Afghan organisation needs, as real data rather than free-text boxes — 34 provinces, 546 districts, tazkira and TIN, in English, Dari and Pashto.</p>
+
+    <div style="background:#f6f7f5;border-left:3px solid #0b6b57;padding:18px 22px;margin:0 0 32px;font-size:16px;line-height:1.6;"><strong>This is the foundation.</strong> Provinces are loaded as Odoo country states, so they work in every address Odoo already has — partners, employees, invoices, delivery addresses — with nothing else to configure.</div>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">What is loaded</h2>
+    <table style="width:100%;border-collapse:collapse;margin:0 0 30px;font-size:15px;">
+      <thead><tr style="background:#edf0ec;">
+        <th style="text-align:left;padding:10px 14px;border-bottom:1px solid #dce1db;">Data</th>
+        <th style="text-align:left;padding:10px 14px;border-bottom:1px solid #dce1db;">Count</th>
+        <th style="text-align:left;padding:10px 14px;border-bottom:1px solid #dce1db;">Languages</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">Provinces (as country states)</td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">34</td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">English, Dari, Pashto</td></tr>
+        <tr><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">Districts</td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">546</td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">English, Dari, Pashto</td></tr>
+        <tr><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">Villages</td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">structure only — see below</td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">—</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">Also included</h2>
+    <ul style="font-size:16px;line-height:1.7;color:#4c5a55;margin:0 0 30px;padding-left:20px;">
+      <li><strong>Dari and Pashto as Odoo languages</strong> — Odoo ships Persian and nothing else from the region, so without this a customer cannot select their own language at all</li>
+      <li><strong>Tazkira and TIN on contacts</strong> — recorded as fields, not as a note</li>
+      <li><strong>Afghan address layout</strong> — on printed documents, including the district</li>
+      <li><strong>ISO 3166-2:AF codes</strong> — the published ones, so the data lines up with anyone else's</li>
+    </ul>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">Where the data comes from</h2>
+    <p style="font-size:16px;line-height:1.65;color:#4c5a55;margin:0 0 14px;">The province and district lists come from a production ERP that has been in daily use in Afghanistan for years, not from a scrape.</p>
+    <p style="font-size:16px;line-height:1.65;color:#4c5a55;margin:0 0 30px;">The village list starts <em>empty on purpose</em>. No reliable public dataset of Afghan villages exists, and shipping invented place names into a system people make decisions with would be worse than shipping none. The structure is there; you add the villages you actually work in.</p>
+
+    <div style="border-top:1px solid #dce1db;padding-top:20px;font-size:14px;color:#75837d;">Odoo 19.0 · depends on <code>base</code> and <code>contacts</code>.</div>
+
+  </div>
+</section>

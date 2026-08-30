@@ -222,7 +222,10 @@ module that inherits no gate.
 - [ ] Dari reviewed by a professional translator
 - [ ] Pashto (`ps_AF`) — needs a translator; see below
 - [ ] RTL checked visually in Dari
-- [ ] `static/description/index.html` written, with screenshots
+- [x] `static/description/index.html` — generated from
+      `tools/listings/<module>.py`; CI fails if a page is stale or a module
+      has no copy at all
+- [ ] Screenshots on the listing pages
 - [ ] Version bumped, changelog updated
 - [ ] Licence header on every file
 - [x] Gated behind `hm.license.gate`, or listed in `UNGATED` with a reason —

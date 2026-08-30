@@ -1,0 +1,35 @@
+<section style="padding:32px 0;font-family:Roboto,Helvetica,Arial,sans-serif;color:#2b3a34;">
+  <div style="max-width:900px;margin:0 auto;padding:0 24px;">
+
+    <p style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#0b6b57;font-weight:600;margin:0 0 10px;">Human Resources</p>
+    <h1 style="font-size:40px;line-height:1.1;margin:0 0 14px;font-weight:700;">Payroll for Odoo Community</h1>
+    <p style="font-size:19px;line-height:1.55;color:#4c5a55;max-width:640px;margin:0 0 28px;">Salary structures, a rule engine, payslips and journal entries. The single biggest gap in Odoo Community, filled.</p>
+
+    <div style="background:#f6f7f5;border-left:3px solid #0b6b57;padding:18px 22px;margin:0 0 32px;font-size:16px;line-height:1.6;"><strong>Community knows what an employee earns and stops there.</strong> <code>hr.version</code> carries the wage, and then nothing turns that wage into a payslip, a deduction or a journal entry. This module is that engine.</div>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">How a payslip is built</h2>
+    <ul style="font-size:16px;line-height:1.7;color:#4c5a55;margin:0 0 30px;padding-left:20px;">
+      <li><strong>Salary structures</strong> — an ordered list of rules, tied to a structure type from core <code>hr</code>, so employees pick them up naturally</li>
+      <li><strong>Salary rules</strong> — a fixed amount, a percentage of any base, or a Python expression with the employee, the contract version, the other inputs and the running category totals in scope</li>
+      <li><strong>Rules run in order</strong> — a Net rule sees what Gross came to — exactly the way a payroll officer works down a sheet</li>
+      <li><strong>Batches</strong> — one payslip per employee for a period, confirmed together</li>
+    </ul>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">Salary advances</h2>
+    <p style="font-size:16px;line-height:1.65;color:#4c5a55;margin:0 0 30px;">Money paid before it is earned, recovered over as many payslips as you choose. The schedule is built when the advance is approved, and each payslip claims the instalments due to it while it is still a draft — so two payslips can never take the same instalment, and cancelling one gives the instalments back.</p>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">It posts when you tell it to</h2>
+    <p style="font-size:16px;line-height:1.65;color:#4c5a55;margin:0 0 14px;">Confirming a payslip freezes it and creates a <strong>draft</strong> journal entry for the accountant to post. Nothing reaches the ledger on its own, and a payslip whose entry is already posted refuses to be reset — you reverse the entry, so the ledger keeps a record of both.</p>
+    <p style="font-size:16px;line-height:1.65;color:#4c5a55;margin:0 0 30px;">The entry is checked before it is written: if the debits and credits do not agree, the module says so and names the figures rather than posting something unbalanced.</p>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">Printed and understood</h2>
+    <ul style="font-size:16px;line-height:1.7;color:#4c5a55;margin:0 0 30px;padding-left:20px;">
+      <li><strong>A payslip document</strong> — with the net pay in words, the way a wage slip is signed for</li>
+      <li><strong>Advance recovery shown on the slip</strong> — the instalment taken and what is still owed, so the employee can see why the figure moved</li>
+      <li><strong>Rules can be hidden</strong> — intermediate lines still compute and still count toward their category, without appearing on the printed slip</li>
+    </ul>
+
+    <div style="border-top:1px solid #dce1db;padding-top:20px;font-size:14px;color:#75837d;">Odoo 19.0 Community · depends on <code>hr</code>, <code>account</code> and <code>mail</code>. Afghan wage withholding is a separate module, <code>af_hr_payroll</code>.</div>
+
+  </div>
+</section>

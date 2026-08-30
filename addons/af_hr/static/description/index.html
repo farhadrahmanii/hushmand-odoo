@@ -1,0 +1,40 @@
+<section style="padding:32px 0;font-family:Roboto,Helvetica,Arial,sans-serif;color:#2b3a34;">
+  <div style="max-width:900px;margin:0 auto;padding:0 24px;">
+
+    <p style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#0b6b57;font-weight:600;margin:0 0 10px;">Human Resources · Localization</p>
+    <h1 style="font-size:40px;line-height:1.1;margin:0 0 14px;font-weight:700;">Afghanistan HR</h1>
+    <p style="font-size:19px;line-height:1.55;color:#4c5a55;max-width:640px;margin:0 0 28px;">The employee fields an Afghan organisation actually files on: names without a surname, the tazkira as it really is, addresses two levels deeper than Odoo goes, and disciplinary actions Odoo has in neither edition.</p>
+
+    <div style="background:#f6f7f5;border-left:3px solid #0b6b57;padding:18px 22px;margin:0 0 32px;font-size:16px;line-height:1.6;"><strong>Added where they belong, not bolted on.</strong> These are fields on the employee and the contract version, so they appear in the ordinary HR screens, export like anything else, and are searchable without a custom view.</div>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">Names that identify a person</h2>
+    <p style="font-size:16px;line-height:1.65;color:#4c5a55;margin:0 0 30px;">Afghan names carry no inherited surname. Someone is identified by their own name plus their father's and grandfather's, and every official document is issued that way — <em>s/o</em> and <em>g/o</em> on the printed card, <bdi>ولد</bdi> and <bdi>بن</bdi> on the Dari one.</p>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">The tazkira as it actually is</h2>
+    <table style="width:100%;border-collapse:collapse;margin:0 0 30px;font-size:15px;">
+      <thead><tr style="background:#edf0ec;">
+        <th style="text-align:left;padding:10px 14px;border-bottom:1px solid #dce1db;">Document</th>
+        <th style="text-align:left;padding:10px 14px;border-bottom:1px solid #dce1db;">Identified by</th>
+        <th style="text-align:left;padding:10px 14px;border-bottom:1px solid #dce1db;">Recorded as</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">Paper tazkira</td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">volume, page and registration entry <em>together</em></td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">three fields, written the way a clerk reads them</td></tr>
+        <tr><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">e-Tazkira</td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">a national identity number</td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">one field</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">Why both, and not one</h2>
+    <p style="font-size:16px;line-height:1.65;color:#4c5a55;margin:0 0 30px;">Both are in circulation. Forcing a paper tazkira into a single serial number loses the only thing that identifies it, and forcing an e-Tazkira into three fields invents data. So both shapes are recorded, and the reference reads back as <em>Volume 12, Page 340, Register 1187</em> when that is what the person has.</p>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">Also included</h2>
+    <ul style="font-size:16px;line-height:1.7;color:#4c5a55;margin:0 0 30px;padding-left:20px;">
+      <li><strong>Addresses to village level</strong> — province, district and village, for where someone lives now <em>and</em> where they are from — different questions on every Afghan employment file</li>
+      <li><strong>Disciplinary actions</strong> — verbal warning through to termination, with issue and acknowledgement tracked <strong>separately</strong>, because whether the employee actually saw it is the part that matters later</li>
+      <li><strong>A review date</strong> — for probationary warnings, so the decision is taken rather than allowed to lapse</li>
+      <li><strong>An employee ID card</strong> — printable, with photo, identity and a return address</li>
+    </ul>
+
+    <div style="border-top:1px solid #dce1db;padding-top:20px;font-size:14px;color:#75837d;">Odoo 19.0 Community · depends on <code>hr</code> and <code>af_l10n_base</code>, which supplies the provinces and districts.</div>
+
+  </div>
+</section>

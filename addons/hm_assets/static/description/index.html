@@ -1,0 +1,42 @@
+<section style="padding:32px 0;font-family:Roboto,Helvetica,Arial,sans-serif;color:#2b3a34;">
+  <div style="max-width:900px;margin:0 auto;padding:0 24px;">
+
+    <p style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#0b6b57;font-weight:600;margin:0 0 10px;">Accounting</p>
+    <h1 style="font-size:40px;line-height:1.1;margin:0 0 14px;font-weight:700;">Fixed Assets for Odoo Community</h1>
+    <p style="font-size:19px;line-height:1.55;color:#4c5a55;max-width:640px;margin:0 0 28px;">An asset register and a depreciation schedule that posts to the ledger — when you tell it to, never on its own.</p>
+
+    <div style="background:#f6f7f5;border-left:3px solid #0b6b57;padding:18px 22px;margin:0 0 32px;font-size:16px;line-height:1.6;"><strong>Without this, a vehicle you buy stays on the balance sheet at full value forever.</strong> Odoo's asset management is Enterprise. A Community user who buys a vehicle has a bill and nothing else: no register, no depreciation, and a balance sheet that overstates what the company owns for the rest of the asset's life.</div>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">The schedule</h2>
+    <table style="width:100%;border-collapse:collapse;margin:0 0 30px;font-size:15px;">
+      <thead><tr style="background:#edf0ec;">
+        <th style="text-align:left;padding:10px 14px;border-bottom:1px solid #dce1db;">Option</th>
+        <th style="text-align:left;padding:10px 14px;border-bottom:1px solid #dce1db;">Choices</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">Method</td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">straight line, reducing balance</td></tr>
+        <tr><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">Frequency</td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">monthly, quarterly, yearly</td></tr>
+        <tr><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">First period</td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">prorated from the in-service date, or a full period</td></tr>
+        <tr><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">Salvage value</td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">never depreciated past</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">Nothing posts by itself</h2>
+    <p style="font-size:16px;line-height:1.65;color:#4c5a55;margin:0 0 14px;">The schedule is a forecast until somebody confirms a period. There is no cron quietly writing entries into a month that has been closed.</p>
+    <p style="font-size:16px;line-height:1.65;color:#4c5a55;margin:0 0 30px;">Recomputing leaves posted periods untouched and reschedules only what is left. A posted period cannot afterwards be edited or deleted — to change it you reverse its journal entry, so the ledger keeps a record of both.</p>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">Categories carry the defaults</h2>
+    <p style="font-size:16px;line-height:1.65;color:#4c5a55;margin:0 0 30px;">The method, the number of years and the three accounts live on the category, so recording a vehicle takes one screen rather than four decisions. Changing a category later does not reach back and alter assets that already exist — which is what you want, and not what a related field would have done.</p>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">What you can see</h2>
+    <ul style="font-size:16px;line-height:1.7;color:#4c5a55;margin:0 0 30px;padding-left:20px;">
+      <li><strong>Depreciated so far, and the remaining book value</strong> — on the asset, without opening the schedule</li>
+      <li><strong>Periods due now</strong> — a filter for the month-end run</li>
+      <li><strong>Unposted periods flagged</strong> — so an asset that has quietly stopped being depreciated is visible</li>
+      <li><strong>Closing tells you the book value it closed at</strong> — and refuses to lose posted entries on the way</li>
+    </ul>
+
+    <div style="border-top:1px solid #dce1db;padding-top:20px;font-size:14px;color:#75837d;">Odoo 19.0 Community · depends on <code>account</code>. Pairs with the asset and accumulated-depreciation accounts in <code>af_l10n_account</code>.</div>
+
+  </div>
+</section>

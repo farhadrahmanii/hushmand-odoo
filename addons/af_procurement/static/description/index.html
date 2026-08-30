@@ -1,0 +1,41 @@
+<section style="padding:32px 0;font-family:Roboto,Helvetica,Arial,sans-serif;color:#2b3a34;">
+  <div style="max-width:900px;margin:0 auto;padding:0 24px;">
+
+    <p style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#0b6b57;font-weight:600;margin:0 0 10px;">Purchase · Localization</p>
+    <h1 style="font-size:40px;line-height:1.1;margin:0 0 14px;font-weight:700;">The Comparative Form</h1>
+    <p style="font-size:19px;line-height:1.55;color:#4c5a55;max-width:640px;margin:0 0 28px;">Which suppliers were asked, what each quoted, and why the chosen one was chosen. The document a donor or an auditor asks for — and the one Odoo has no concept of.</p>
+
+    <div style="background:#f6f7f5;border-left:3px solid #0b6b57;padding:18px 22px;margin:0 0 32px;font-size:16px;line-height:1.6;"><strong>This sheet is the audit trail.</strong> In most offices it lives in a folder rather than in the system, which is exactly why it is so often missing when somebody finally asks for it.</div>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">Two rules, and both exist because of that question</h2>
+    <ul style="font-size:16px;line-height:1.7;color:#4c5a55;margin:0 0 30px;padding-left:20px;">
+      <li><strong>A comparison needs at least two quotations</strong> — with one, nothing has been compared, and calling the sheet a comparison would be a lie on the file</li>
+      <li><strong>Choosing anyone other than the cheapest requires a written reason</strong> — not optionally, and not later — the form will not complete without it</li>
+    </ul>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">Why the reason is compulsory</h2>
+    <p style="font-size:16px;line-height:1.65;color:#4c5a55;margin:0 0 14px;">That sentence is trivial to write on the day and close to impossible to reconstruct a year afterwards — which is when it gets asked for.</p>
+    <p style="font-size:16px;line-height:1.65;color:#4c5a55;margin:0 0 30px;">The module also stores the fact that the chosen quotation was not the lowest, as a searchable flag. That is what an auditor filters on, and a filter that cannot be searched is a filter nobody uses.</p>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">What each quotation records</h2>
+    <table style="width:100%;border-collapse:collapse;margin:0 0 30px;font-size:15px;">
+      <thead><tr style="background:#edf0ec;">
+        <th style="text-align:left;padding:10px 14px;border-bottom:1px solid #dce1db;">Field</th>
+        <th style="text-align:left;padding:10px 14px;border-bottom:1px solid #dce1db;">Why it is on the sheet</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">Supplier and amount</td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">the comparison itself</td></tr>
+        <tr><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">Quotation number and date</td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">the supplier's own reference, so the paper can be found again</td></tr>
+        <tr><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">Delivery in days</td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">often the reason a dearer quotation wins</td></tr>
+        <tr><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">Warranty in months</td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">the other common reason</td></tr>
+        <tr><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">Payment terms</td><td style="padding:9px 14px;border-bottom:1px solid #eef1ed;">a cheaper price on worse terms is not cheaper</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">It ends where Odoo begins</h2>
+    <p style="font-size:16px;line-height:1.65;color:#4c5a55;margin:0 0 30px;">Completing the form sets the supplier on the purchase request, which then becomes an ordinary Odoo quotation. The chain is: request, comparison, order — with the comparison kept as the record of how the middle step was decided.</p>
+
+    <div style="border-top:1px solid #dce1db;padding-top:20px;font-size:14px;color:#75837d;">Odoo 19.0 Community · depends on <code>hm_purchase_request</code>, which brings <code>purchase</code> and the approval engine with it.</div>
+
+  </div>
+</section>

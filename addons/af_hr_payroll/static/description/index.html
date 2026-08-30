@@ -1,0 +1,36 @@
+<section style="padding:32px 0;font-family:Roboto,Helvetica,Arial,sans-serif;color:#2b3a34;">
+  <div style="max-width:900px;margin:0 auto;padding:0 24px;">
+
+    <p style="font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#0b6b57;font-weight:600;margin:0 0 10px;">Human Resources · Localization</p>
+    <h1 style="font-size:40px;line-height:1.1;margin:0 0 14px;font-weight:700;">Afghanistan Payroll</h1>
+    <p style="font-size:19px;line-height:1.55;color:#4c5a55;max-width:640px;margin:0 0 28px;">Afghan wage withholding tax, on a dated and editable scale — with salaries paid in dollars assessed in afghani, the way the law reads.</p>
+
+    <div style="background:#f6f7f5;border-left:3px solid #0b6b57;padding:18px 22px;margin:0 0 32px;font-size:16px;line-height:1.6;"><strong>Neither edition of Odoo has an Afghanistan payroll.</strong> Community has no payroll engine at all, and Enterprise ships localizations for other countries. An Afghan employer withholding tax from salaries has, until now, had a spreadsheet.</div>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">The scale is data, and it is dated</h2>
+    <p style="font-size:16px;line-height:1.65;color:#4c5a55;margin:0 0 14px;">Tax law changes. A rate compiled into a Python file means every customer waits for a release — and every historical payslip silently recomputes on the new rate the moment somebody reopens it.</p>
+    <p style="font-size:16px;line-height:1.65;color:#4c5a55;margin:0 0 30px;">Here the brackets are an ordinary editable table with a start date, so a payslip for last year stays taxed the way last year was taxed. When rates change you close the scale with an end date and create the next one.</p>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">The scale is validated as a scale</h2>
+    <ul style="font-size:16px;line-height:1.7;color:#4c5a55;margin:0 0 30px;padding-left:20px;">
+      <li><strong>No gaps, no overlaps</strong> — a gap leaves some salaries untaxed and an overlap taxes some twice — neither is visible until a payslip is checked by hand, so the module refuses to save either</li>
+      <li><strong>The lowest bracket starts at zero</strong> — or salaries below it are not taxed at all</li>
+      <li><strong>The highest is open-ended</strong> — or a large enough salary falls off the top of the scale untaxed</li>
+      <li><strong>Each bracket carries the tax due at its floor</strong> — which is what keeps the rate applying only to the part of the salary inside the bracket</li>
+    </ul>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">Paid in dollars, taxed in afghani</h2>
+    <p style="font-size:16px;line-height:1.65;color:#4c5a55;margin:0 0 14px;">Afghan tax is assessed in afghani. A salary paid in dollars is therefore converted before the scale is applied — at the rate agreed for that month, from <code>af_dual_currency</code>, not at whatever the daily table happened to hold.</p>
+    <p style="font-size:16px;line-height:1.65;color:#4c5a55;margin:0 0 30px;">If no confirmed exchange period covers the payslip, the module refuses to compute rather than picking a rate. It tells you which month to confirm.</p>
+
+    <h2 style="font-size:24px;margin:0 0 16px;font-weight:600;">What it adds to a payslip</h2>
+    <ul style="font-size:16px;line-height:1.7;color:#4c5a55;margin:0 0 30px;padding-left:20px;">
+      <li><strong>A ready salary structure</strong> — using the scale, with income tax withheld as its own line</li>
+      <li><strong>Advance recovery</strong> — the instalment due, deducted and shown</li>
+      <li><strong>Statutory brackets preloaded</strong> — as a starting point you can edit — check them against current Afghanistan Revenue Department guidance before filing</li>
+    </ul>
+
+    <div style="border-top:1px solid #dce1db;padding-top:20px;font-size:14px;color:#75837d;">Odoo 19.0 Community · depends on <code>hm_payroll</code>, <code>af_hr</code> and <code>af_dual_currency</code>.</div>
+
+  </div>
+</section>
