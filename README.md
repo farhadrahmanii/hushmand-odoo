@@ -124,8 +124,13 @@ the rest are the chatter and activity labels every model inherits.
 | Language | State |
 |----------|-------|
 | English | source |
-| Dari (`fa_AF`) | complete — **a first draft, not reviewed by a native speaker** |
+| Dari (`fa_AF`) | all 1,911 terms — **a first draft, not reviewed by a native speaker** |
 | Pashto (`ps_AF`) | not started — needs a translator |
+
+CI installs the catalogue, activates `fa_AF` and reads Dari back out of the
+database: 1,896 of 1,911 terms. The other 15 are translated to themselves —
+date patterns and technical names — and Odoo stores no translation for a
+string that equals its source.
 
 ### How it fits together
 

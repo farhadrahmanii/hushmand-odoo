@@ -50,10 +50,21 @@ def translated(path):
 
 
 def committed(language, module):
+    """What this module ships that could possibly come back.
+
+    Terms translated to themselves -- a date pattern, a technical name, the
+    deliberate VERBATIM set -- are excluded. Odoo stores no translation for a
+    string that equals its source, so counting them would leave a permanent
+    unexplained shortfall in the table and teach everyone to ignore it.
+    """
     path = ADDONS / module / "i18n" / ("%s.po" % language)
     if not path.is_file():
         return set()
-    return translated(path)
+    return {
+        entry.msgid for entry in po.parse(path)
+        if not entry.is_header and entry.msgstr
+        and entry.msgstr != entry.msgid
+    }
 
 
 def main():
