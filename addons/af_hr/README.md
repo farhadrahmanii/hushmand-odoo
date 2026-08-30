@@ -94,6 +94,6 @@ history stays intact.
 ## Compatibility
 
 - Odoo **19.0** Community and Enterprise
-- Depends on `hr` and `af_l10n_base`
+- Depends on `hr`, `af_l10n_base` and `hm_license`
 - Pair with `af_jalali` for Jalali dates throughout
 - Installation instructions: see `af_jalali/INSTALL.md`

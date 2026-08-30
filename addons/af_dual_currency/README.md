@@ -115,5 +115,6 @@ most NGOs reporting to a donor in a different currency from the one they spend.
 ## Compatibility
 
 - Odoo **19.0** Community and Enterprise
-- Depends on `base`, `base_setup` and `account` (Invoicing, free in Community)
+- Depends on `base`, `base_setup`, `account` (Invoicing, free in Community)
+  and `hm_license`
 - Installation instructions: see `af_jalali/INSTALL.md`

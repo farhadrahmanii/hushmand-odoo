@@ -106,5 +106,6 @@ consumer module.
 ## Compatibility
 
 - Odoo **19.0** Community and Enterprise
-- Depends on `base` and `mail` only — no accounting, no HR, nothing country-specific
+- Depends on `base`, `mail` and `hm_license` — no accounting, no HR, nothing
+  country-specific
 - Installation instructions: see `af_jalali/INSTALL.md`

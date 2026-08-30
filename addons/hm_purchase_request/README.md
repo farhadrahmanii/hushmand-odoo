@@ -81,5 +81,5 @@ Approvers also reach the request through their normal Odoo activity.
 ## Compatibility
 
 - Odoo **19.0** Community and Enterprise
-- Depends on `purchase` and `hm_approvals`
+- Depends on `purchase`, `hm_approvals` and `hm_license`
 - Installation instructions: see `af_jalali/INSTALL.md`

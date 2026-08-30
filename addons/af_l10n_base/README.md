@@ -140,5 +140,5 @@ creating duplicates.
 ## Compatibility
 
 - Odoo **19.0** Community and Enterprise
-- Depends on `base` and `contacts` only
+- Depends on `base`, `contacts` and `hm_license`
 - Installation instructions: see `af_jalali/INSTALL.md`, which applies here too

@@ -225,6 +225,7 @@ module that inherits no gate.
 - [x] `static/description/index.html` — generated from
       `tools/listings/<module>.py`; CI fails if a page is stale or a module
       has no copy at all
+- [x] `README.md` in the module — CI fails if one is missing
 - [ ] Screenshots on the listing pages
 - [ ] Version bumped, changelog updated
 - [ ] Licence header on every file

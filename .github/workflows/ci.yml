@@ -70,6 +70,10 @@ jobs:
                   failures.append(
                       "%s: no static/description/icon.png "
                       "(run tools/generate_icons.py)" % module.name)
+              # Every module ships in a customer's zip on its own, so it has
+              # to explain itself without the rest of the catalogue around it.
+              if not (module / "README.md").is_file():
+                  failures.append("%s: no README.md" % module.name)
           for f in pathlib.Path("addons").rglob("*.xml"):
               for m in re.finditer(r'web_icon="([^"]+)"', f.read_text(encoding="utf-8")):
                   spec = m.group(1)

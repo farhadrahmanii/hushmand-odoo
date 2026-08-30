@@ -140,5 +140,6 @@ at the top of `static/src/js/jalali_date_field.js`.
 ## Compatibility
 
 - Odoo **19.0** Community and Enterprise
-- Depends on `base` and `web` only — no third-party libraries
+- Depends on `base`, `base_setup`, `web` and `hm_license` — no third-party
+  libraries
 - Jalali years −61 to 3177
