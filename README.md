@@ -86,30 +86,30 @@ python tools/verify_js_python_parity.py
 
 ## Modules
 
-All 20 install and pass their tests on Odoo 19 in CI (497 tests).
+All 20 install and pass their tests on Odoo 19 in CI (516 tests).
 
 | Module | Line | What it does | Tests |
 |--------|------|--------------|-------|
-| `af_correspondence` | Afghanistan | Incoming and outgoing official letters, numbered in order | 17 |
-| `af_dual_currency` | Afghanistan | One agreed AFN/USD rate per month, locked once reported, with totals shown in both currencies | 29 |
-| `af_hr` | Afghanistan | Tazkira, father and grandfather names, Afghan addresses, ID cards and disciplinary actions | 23 |
-| `af_hr_payroll` | Afghanistan | Afghan wage withholding tax on a dated, editable scale, with salaries paid in dollars taxed in afghani | 36 |
-| `af_jalali` | Afghanistan | Hijri-Shamsi dates across Odoo, with Afghan and Iranian month names | 62 |
-| `af_l10n_account` | Afghanistan | Chart of accounts and taxes for Afghanistan | 15 |
-| `af_l10n_base` | Afghanistan | Afghan provinces and districts, tazkira and TIN fields, trilingual and ready to use | 31 |
-| `af_liaison` | Afghanistan | Visas, work permits, vehicle permits, weapon licences, membership and CIP cards, with renewal reminders | 10 |
-| `af_procurement` | Afghanistan | The comparative form: which suppliers were asked, what each quoted, and why the chosen one was chosen | 18 |
-| `af_zakat` | Afghanistan | Collect, hold and distribute zakat, with a record that reconciles | 23 |
-| `hm_account_reports` | Horizontal | Trial balance, profit and loss, and balance sheet for Odoo Community | 17 |
-| `hm_approvals` | Horizontal | Route any document through a configurable multi-step approval chain, with conditions and dynamic approvers | 28 |
-| `hm_assets` | Horizontal | Asset register and depreciation for Odoo Community | 26 |
-| `hm_contracts` | Horizontal | Recurring contracts that know when they are due, without billing anyone behind your back | 27 |
-| `hm_expiry_docs` | Horizontal | Track anything with an expiry date, and be reminded before it lapses | 24 |
-| `hm_frontdesk` | Horizontal | Visitor register: who is in the building, and who they came to see | 21 |
-| `hm_license` | Horizontal | Offline licence verification for commercial Odoo modules | 27 |
-| `hm_payroll` | Horizontal | Salary structures, rules and payslips for Odoo Community | 20 |
-| `hm_purchase_request` | Horizontal | The step before the quotation: a department asks, and the request is approved on its own merits | 22 |
-| `hm_roster` | Horizontal | Schedule guards, drivers or a reception desk, and be told when the roster is broken | 21 |
+| `af_correspondence` | Afghanistan | Incoming and outgoing official letters, numbered in order | 25 |
+| `af_dual_currency` | Afghanistan | One agreed AFN/USD rate per month, locked once reported, with totals shown in both currencies | 33 |
+| `af_hr` | Afghanistan | Tazkira, father and grandfather names, Afghan addresses, ID cards and disciplinary actions | 29 |
+| `af_hr_payroll` | Afghanistan | Afghan wage withholding tax on a dated, editable scale, with salaries paid in dollars taxed in afghani | 46 |
+| `af_jalali` | Afghanistan | Hijri-Shamsi dates across Odoo, with Afghan and Iranian month names | 25 |
+| `af_l10n_account` | Afghanistan | Chart of accounts and taxes for Afghanistan | 17 |
+| `af_l10n_base` | Afghanistan | Afghan provinces and districts, tazkira and TIN fields, trilingual and ready to use | 41 |
+| `af_liaison` | Afghanistan | Visas, work permits, vehicle permits, weapon licences, membership and CIP cards, with renewal reminders | 12 |
+| `af_procurement` | Afghanistan | The comparative form: which suppliers were asked, what each quoted, and why the chosen one was chosen | 24 |
+| `af_zakat` | Afghanistan | Collect, hold and distribute zakat, with a record that reconciles | 33 |
+| `hm_account_reports` | Horizontal | Trial balance, profit and loss, and balance sheet for Odoo Community | 19 |
+| `hm_approvals` | Horizontal | Route any document through a configurable multi-step approval chain, with conditions and dynamic approvers | 40 |
+| `hm_assets` | Horizontal | Asset register and depreciation for Odoo Community | 28 |
+| `hm_contracts` | Horizontal | Recurring contracts that know when they are due, without billing anyone behind your back | 37 |
+| `hm_expiry_docs` | Horizontal | Track anything with an expiry date, and be reminded before it lapses | 48 |
+| `hm_frontdesk` | Horizontal | Visitor register: who is in the building, and who they came to see | 31 |
+| `hm_license` | Horizontal | Offline licence verification for commercial Odoo modules | 73 |
+| `hm_payroll` | Horizontal | Salary structures, rules and payslips for Odoo Community | 48 |
+| `hm_purchase_request` | Horizontal | The step before the quotation: a department asks, and the request is approved on its own merits | 28 |
+| `hm_roster` | Horizontal | Schedule guards, drivers or a reception desk, and be told when the roster is broken | 29 |
 
 `af_*` modules are Afghanistan and Persian-market localization.
 `hm_*` modules fill Odoo Community gaps and sell worldwide.
