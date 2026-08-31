@@ -306,3 +306,87 @@ jobs:
               sys.exit(1)
           print("all %d demo files loaded" % len(declared))
           PY
+
+  screens:
+    name: Every screen renders on Odoo 19
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: odoo
+          POSTGRES_PASSWORD: odoo
+          POSTGRES_DB: postgres
+        options: >-
+          --health-cmd "pg_isready -U odoo"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+    container:
+      image: odoo:19
+      options: --user root
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Write the Odoo configuration
+        run: |
+          cat > /tmp/odoo.conf <<EOF
+          [options]
+          db_host = postgres
+          db_user = odoo
+          db_password = odoo
+          data_dir = /tmp/odoo-data
+          addons_path = /usr/lib/python3/dist-packages/odoo/addons,$GITHUB_WORKSPACE/addons
+          EOF
+
+      - name: Install the catalogue with demo data
+        # Demo data, because a screen photographed empty proves the view
+        # renders but shows a customer nothing.
+        run: |
+          odoo -c /tmp/odoo.conf -d shots --with-demo \
+            -i af_jalali,af_l10n_base,af_dual_currency,af_hr,hm_approvals,hm_purchase_request,hm_account_reports,hm_assets,hm_expiry_docs,af_liaison,af_correspondence,hm_frontdesk,hm_roster,af_zakat,hm_contracts,hm_license,af_l10n_account,af_procurement,hm_payroll,af_hr_payroll \
+            --stop-after-init --log-level=warn
+
+      - name: Install a browser
+        run: |
+          pip install --break-system-packages playwright
+          playwright install --with-deps chromium
+
+      - name: Start Odoo
+        run: |
+          odoo -c /tmp/odoo.conf -d shots --http-port=8069 --log-level=warn \
+            > /tmp/odoo-server.log 2>&1 &
+          echo $! > /tmp/odoo.pid
+          for i in $(seq 1 60); do
+            if curl -sf http://localhost:8069/web/health > /dev/null; then
+              echo "Odoo answered after ${i}s"; exit 0
+            fi
+            sleep 1
+          done
+          echo "::error::Odoo never became healthy"
+          tail -50 /tmp/odoo-server.log
+          exit 1
+
+      - name: Every screen renders, and is photographed
+        run: python3 tools/take_screenshots.py --out screenshots/en
+
+      - name: Odoo logged nothing while the screens were open
+        # A screen can render and still have thrown server-side. The browser
+        # would not necessarily show it; the log always does.
+        run: |
+          if grep -qE "^[0-9-]+ [0-9:,]+ [0-9]+ (ERROR|CRITICAL)" /tmp/odoo-server.log; then
+            echo "::error::Odoo logged errors while the screens were being opened"
+            grep -E "^[0-9-]+ [0-9:,]+ [0-9]+ (ERROR|CRITICAL)" /tmp/odoo-server.log | head -20
+            exit 1
+          fi
+          echo "Server log clean"
+
+      - name: Upload the screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: screenshots
+          path: screenshots/
+          if-no-files-found: error
