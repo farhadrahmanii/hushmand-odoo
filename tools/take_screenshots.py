@@ -99,21 +99,27 @@ def check_rtl(page):
     interface is actually showing translated text rather than falling back to
     the English source.
     """
-    direction = page.evaluate("document.documentElement.getAttribute('dir')")
-    if direction != "rtl":
-        raise SystemExit(
-            "Expected a right-to-left interface, but the document direction "
-            "is %r. The language did not activate, or the user is still in "
-            "English." % direction
-        )
-
+    # The computed direction, not the dir attribute. Odoo renders <html> from
+    # a t-att dict that need not carry dir at all, and expresses right-to-left
+    # through generated RTL stylesheets instead. What matters is how the page
+    # actually lays out, which is what getComputedStyle reports however it was
+    # arrived at.
+    direction = page.evaluate("getComputedStyle(document.body).direction")
     navbar = page.locator(".o_main_navbar").inner_text()
-    if not any("؀" <= character <= "ۿ" for character in navbar):
-        raise SystemExit(
-            "The interface is right-to-left but the menus are still in "
-            "English: %r. Direction flipped without the translations "
-            "loading." % navbar[:120].replace("\n", " ")
-        )
+    translated = any("؀" <= character <= "ۿ" for character in navbar)
+
+    if direction == "rtl" and translated:
+        return
+
+    # Report both facts at once. Told only the first, the next run diagnoses
+    # the second, and each round trip through CI costs four minutes.
+    raise SystemExit(
+        "Expected a translated right-to-left interface.\n"
+        "  computed direction : %s\n"
+        "  menus translated   : %s\n"
+        "  menu text          : %r"
+        % (direction, translated, navbar[:160].replace("\n", " | "))
+    )
 
 
 def capture(page, base_url, module, action, label, out_dir, console_errors):

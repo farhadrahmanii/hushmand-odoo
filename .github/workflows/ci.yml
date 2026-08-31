@@ -397,7 +397,12 @@ jobs:
           kill $(cat /tmp/odoo.pid) 2>/dev/null || true
           sleep 3
           odoo i18n loadlang -c /tmp/odoo.conf -d shots -l fa_AF
-          echo "env['res.users'].browse(2).write({'lang': 'fa_AF'}); env.cr.commit()"             | odoo shell -c /tmp/odoo.conf -d shots --log-level=warn
+          odoo shell -c /tmp/odoo.conf -d shots --log-level=warn <<'PYSHELL'
+          env['res.users'].browse(2).write({'lang': 'fa_AF'})
+          env.cr.commit()
+          print('ADMIN LANG IS NOW:', env['res.users'].browse(2).lang)
+          print('ACTIVE LANGS:', env['res.lang'].search([]).mapped('code'))
+          PYSHELL
           odoo -c /tmp/odoo.conf -d shots --http-port=8069 --log-level=warn             > /tmp/odoo-dari.log 2>&1 &
           echo $! > /tmp/odoo.pid
           for i in $(seq 1 60); do
