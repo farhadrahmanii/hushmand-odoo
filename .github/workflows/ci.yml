@@ -387,12 +387,33 @@ jobs:
       - name: Every screen renders, and is photographed
         run: python3 tools/take_screenshots.py --out screenshots/en
 
+      - name: Switch to Dari and photograph it again
+        # The translation is only useful if it renders. This activates fa_AF,
+        # puts the admin into it, and drives the same twenty screens right to
+        # left -- asserting that the direction really flipped and the menus
+        # really are in Dari, because a language that fails to activate
+        # produces twenty good English screenshots in a folder named fa_AF.
+        run: |
+          kill $(cat /tmp/odoo.pid) 2>/dev/null || true
+          sleep 3
+          odoo i18n loadlang -c /tmp/odoo.conf -d shots -l fa_AF
+          echo "env['res.users'].browse(2).write({'lang': 'fa_AF'}); env.cr.commit()"             | odoo shell -c /tmp/odoo.conf -d shots --log-level=warn
+          odoo -c /tmp/odoo.conf -d shots --http-port=8069 --log-level=warn             > /tmp/odoo-dari.log 2>&1 &
+          echo $! > /tmp/odoo.pid
+          for i in $(seq 1 60); do
+            curl -sf http://localhost:8069/web/health > /dev/null && break
+            sleep 1
+          done
+          python3 tools/take_screenshots.py --out screenshots/fa_AF             --lang fa_AF --expect-rtl
+
       - name: Odoo logged nothing while the screens were open
         # A screen can render and still have thrown server-side. The browser
         # would not necessarily show it; the log always does.
         run: |
           cp /tmp/odoo-server.log screenshots/odoo-server.log || true
+          cp /tmp/odoo-dari.log screenshots/odoo-dari.log || true
           python3 tools/check_server_log.py /tmp/odoo-server.log
+          python3 tools/check_server_log.py /tmp/odoo-dari.log
 
       - name: Upload the screenshots
         if: always()

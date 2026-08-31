@@ -87,6 +87,35 @@ def log_in(page, base_url, password):
         raise SystemExit("Could not log in as admin: %s" % detail.strip())
 
 
+def check_rtl(page):
+    """Prove the run really is in a right-to-left language.
+
+    Without this the pass is a photo opportunity: if the language failed to
+    activate, or the user's lang did not take, the browser cheerfully produces
+    twenty perfectly good English screenshots in a directory named fa_AF, and
+    the right-to-left layout stays untested while looking tested.
+
+    So two things are asserted -- the document direction flipped, and the
+    interface is actually showing translated text rather than falling back to
+    the English source.
+    """
+    direction = page.evaluate("document.documentElement.getAttribute('dir')")
+    if direction != "rtl":
+        raise SystemExit(
+            "Expected a right-to-left interface, but the document direction "
+            "is %r. The language did not activate, or the user is still in "
+            "English." % direction
+        )
+
+    navbar = page.locator(".o_main_navbar").inner_text()
+    if not any("؀" <= character <= "ۿ" for character in navbar):
+        raise SystemExit(
+            "The interface is right-to-left but the menus are still in "
+            "English: %r. Direction flipped without the translations "
+            "loading." % navbar[:120].replace("\n", " ")
+        )
+
+
 def capture(page, base_url, module, action, label, out_dir, console_errors):
     target = "%s/odoo/action-%s" % (base_url, action)
     problems = []
@@ -124,6 +153,9 @@ def main():
     parser.add_argument("--out", default="screenshots")
     parser.add_argument("--lang", help="only used to label the run")
     parser.add_argument("--only", nargs="*", help="limit to these modules")
+    parser.add_argument("--expect-rtl", action="store_true",
+                        help="fail unless the web client is actually rendering "
+                             "right-to-left, in a language that is not English")
     args = parser.parse_args()
 
     out_dir = pathlib.Path(args.out)
@@ -142,6 +174,9 @@ def main():
         page.on("pageerror", lambda e: console_errors.append(str(e)))
 
         log_in(page, args.base_url, args.password)
+
+        if args.expect_rtl:
+            check_rtl(page)
 
         for module, action, label in screens:
             problems = capture(page, args.base_url, module, action, label,
