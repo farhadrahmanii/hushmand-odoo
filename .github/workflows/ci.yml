@@ -64,6 +64,11 @@ jobs:
                           continue
                       if not (pathlib.Path("addons") / asset).is_file():
                           failures.append("%s: missing asset %s" % (module.name, asset))
+              # A declared banner that is not there shows a broken image at
+              # the top of the page a customer is deciding from.
+              for image in meta.get("images", []):
+                  if not (module / image).is_file():
+                      failures.append("%s: missing image %s" % (module.name, image))
           # Every module needs a tile in the Apps list, and any web_icon must
           # point at a file that exists -- a missing one breaks the app
           # switcher rather than just looking wrong.
@@ -74,6 +79,10 @@ jobs:
               if not (module / "static/description/icon.png").is_file():
                   failures.append(
                       "%s: no static/description/icon.png "
+                      "(run tools/generate_icons.py)" % module.name)
+              if not (module / "static/description/banner.png").is_file():
+                  failures.append(
+                      "%s: no static/description/banner.png "
                       "(run tools/generate_icons.py)" % module.name)
               # Every module ships in a customer's zip on its own, so it has
               # to explain itself without the rest of the catalogue around it.

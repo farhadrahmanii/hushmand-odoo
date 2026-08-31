@@ -69,6 +69,7 @@ force before running real payroll. They are a starting point, not tax advice.
     "demo": [
         "demo/af_hr_payroll_demo.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": False,
     "auto_install": False,

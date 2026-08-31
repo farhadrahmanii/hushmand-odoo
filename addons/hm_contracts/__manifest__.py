@@ -50,6 +50,7 @@ Also included
     "demo": [
         "demo/hm_contracts_demo.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": False,
     "auto_install": False,

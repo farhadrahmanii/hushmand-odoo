@@ -38,6 +38,7 @@ the officer who has to do the renewing -- not the employee whose permit it is.
     "demo": [
         "demo/af_liaison_demo.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": False,
     "auto_install": False,

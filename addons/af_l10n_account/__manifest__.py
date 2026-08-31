@@ -45,6 +45,7 @@ empty database.
     # their own accounting tests, and a chart that installs itself would
     # change the chart under them. The customer installs it deliberately.
     "auto_install": False,
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": False,
 }

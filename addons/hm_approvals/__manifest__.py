@@ -63,6 +63,7 @@ That is the whole integration.
         "security/ir.model.access.csv",
         "views/hm_approval_views.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": True,
     "auto_install": False,

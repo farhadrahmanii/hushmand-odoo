@@ -44,6 +44,7 @@ a record that admits it does not know.
     "demo": [
         "demo/hm_frontdesk_demo.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": True,
     "auto_install": False,

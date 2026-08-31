@@ -41,6 +41,7 @@ reverse its journal entry, so the ledger keeps a record of both.
     "demo": [
         "demo/hm_assets_demo.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": False,
     "auto_install": False,

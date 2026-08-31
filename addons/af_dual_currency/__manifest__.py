@@ -54,6 +54,7 @@ than a floating one.
     "demo": [
         "demo/af_dual_currency_demo.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": False,
     "auto_install": False,

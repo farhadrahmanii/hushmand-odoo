@@ -52,6 +52,7 @@ notes whether a receipt was signed.
     "demo": [
         "demo/af_zakat_demo.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": True,
     "auto_install": False,

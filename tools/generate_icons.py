@@ -16,6 +16,8 @@ Run this after adding a module. The PNGs are committed; this script exists so
 they can be regenerated consistently rather than redrawn by hand.
 """
 
+import argparse
+import ast
 import pathlib
 import sys
 
@@ -24,6 +26,10 @@ from PIL import Image, ImageDraw, ImageFont
 SIZE = 140
 SUPERSAMPLE = 4
 RADIUS_RATIO = 0.22
+
+# The wide image Odoo shows at the top of a module page.
+BANNER_WIDTH = 1200
+BANNER_HEIGHT = 600
 
 # Warm for the Afghanistan localization, cool for the horizontal modules.
 ICONS = {
@@ -117,7 +123,109 @@ def draw_icon(monogram, colour):
     return tile.resize((SIZE, SIZE), Image.LANCZOS)
 
 
+def _wrap(pen, text, font, max_width):
+    """Break text to fit a pixel width. PIL will not do this for us."""
+    lines = []
+    line = []
+    for word in text.split():
+        candidate = " ".join(line + [word])
+        if line and pen.textlength(candidate, font=font) > max_width:
+            lines.append(" ".join(line))
+            line = [word]
+        else:
+            line.append(word)
+    if line:
+        lines.append(" ".join(line))
+    return lines
+
+
+def draw_banner(module, monogram, colour, title, summary):
+    """The wide image Odoo shows at the top of a module's page.
+
+    Same palette as the icon, so a customer who saw the tile in the Apps list
+    recognises the page it opens. The monogram is repeated as a watermark
+    rather than a second tile: at this size a tile reads as a logo, and this
+    product does not have one.
+    """
+    base = _rgb(colour)
+    canvas = Image.new("RGB", (BANNER_WIDTH, BANNER_HEIGHT))
+    pen = ImageDraw.Draw(canvas)
+
+    top = _lighten(base, 0.22)
+    bottom = tuple(int(c * 0.72) for c in base)
+    for y in range(BANNER_HEIGHT):
+        t = y / (BANNER_HEIGHT - 1)
+        pen.line(
+            [(0, y), (BANNER_WIDTH, y)],
+            fill=tuple(int(top[i] + (bottom[i] - top[i]) * t) for i in range(3)),
+        )
+
+    margin = int(BANNER_WIDTH * 0.07)
+    text_width = int(BANNER_WIDTH * 0.62)
+
+    # Watermark monogram, measured and placed rather than guessed. Sized by
+    # eye it bleeds off the edge and reads as a single letter -- which looks
+    # like a mistake, not a treatment.
+    mark_font = _font(int(BANNER_HEIGHT * 0.62))
+    mark = Image.new("RGBA", (BANNER_WIDTH, BANNER_HEIGHT), (0, 0, 0, 0))
+    mark_pen = ImageDraw.Draw(mark)
+    left, top_, right, bottom = mark_pen.textbbox((0, 0), monogram, font=mark_font)
+    mark_pen.text(
+        (BANNER_WIDTH - margin - (right - left) - left,
+         (BANNER_HEIGHT - (bottom - top_)) / 2 - top_),
+        monogram, font=mark_font, fill=(255, 255, 255, 30),
+    )
+    canvas = Image.alpha_composite(canvas.convert("RGBA"), mark).convert("RGB")
+    pen = ImageDraw.Draw(canvas)
+
+    title_font = _font(int(BANNER_HEIGHT * 0.115))
+    summary_font = _font(int(BANNER_HEIGHT * 0.048))
+    foot_font = _font(int(BANNER_HEIGHT * 0.036))
+
+    title_lines = _wrap(pen, title, title_font, text_width)
+    summary_lines = _wrap(pen, summary, summary_font, text_width)[:3]
+
+    title_step = int(BANNER_HEIGHT * 0.135)
+    summary_step = int(BANNER_HEIGHT * 0.068)
+    rule_y = BANNER_HEIGHT - int(BANNER_HEIGHT * 0.135)
+
+    # Centre the text in the space above the rule, not in the whole canvas:
+    # the footer strip is not empty space and centring against it leaves a
+    # dead band the eye reads as a mistake.
+    block = len(title_lines) * title_step + 24 + len(summary_lines) * summary_step
+    y = (rule_y - block) / 2
+
+    for line in title_lines:
+        pen.text((margin, y), line, font=title_font, fill=(255, 255, 255))
+        y += title_step
+    y += 24
+    for line in summary_lines:
+        pen.text((margin, y), line, font=summary_font, fill=_lighten(base, 0.86))
+        y += summary_step
+
+    pen.line([(margin, rule_y), (BANNER_WIDTH - margin, rule_y)],
+             fill=_lighten(base, 0.35), width=2)
+    line_label = ("Afghanistan localization" if module.startswith("af_")
+                  else "For every Odoo Community user")
+    pen.text((margin, rule_y + int(BANNER_HEIGHT * 0.038)),
+             "Odoo 19.0  ·  %s" % line_label,
+             font=foot_font, fill=_lighten(base, 0.72))
+    return canvas
+
+
+def read_manifest(path):
+    text = path.read_text(encoding="utf-8")
+    return ast.literal_eval(text[text.index("{"):text.rindex("}") + 1])
+
+
 def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--icons-only", action="store_true",
+                        help="skip the banners")
+    parser.add_argument("--banners-only", action="store_true",
+                        help="skip the icons")
+    args = parser.parse_args()
+
     addons = pathlib.Path(__file__).resolve().parent.parent / "addons"
     present = {p.name for p in addons.iterdir() if p.is_dir()}
 
@@ -132,10 +240,19 @@ def main():
             continue
         target = addons / module / "static" / "description"
         target.mkdir(parents=True, exist_ok=True)
-        draw_icon(monogram, colour).save(target / "icon.png")
+
+        if not args.banners_only:
+            draw_icon(monogram, colour).save(target / "icon.png")
+        if not args.icons_only:
+            manifest = read_manifest(addons / module / "__manifest__.py")
+            draw_banner(module, monogram, colour,
+                        manifest.get("name", module),
+                        manifest.get("summary", "")).save(target / "banner.png")
         print("%-22s %s  %s" % (module, monogram, colour))
 
-    print("\n%d icons written" % len(present))
+    what = ("icons" if args.icons_only
+            else "banners" if args.banners_only else "icons and banners")
+    print("\n%d %s written" % (len(present), what))
     return 0
 
 

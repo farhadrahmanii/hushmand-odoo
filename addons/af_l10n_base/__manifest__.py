@@ -44,6 +44,7 @@ daily use in Afghanistan for years, not from a scraped list.
         "views/res_partner_views.xml",
         "views/menus.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": False,
     "auto_install": False,

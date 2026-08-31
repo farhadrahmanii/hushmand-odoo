@@ -44,6 +44,7 @@ its face that it is not suitable for filing.
         "report/hm_account_report_templates.xml",
         "views/hm_account_report_views.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": False,
     "auto_install": False,

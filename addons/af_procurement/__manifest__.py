@@ -48,6 +48,7 @@ reasoning sits on the document people actually open.
     "demo": [
         "demo/af_procurement_demo.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": False,
     "auto_install": False,

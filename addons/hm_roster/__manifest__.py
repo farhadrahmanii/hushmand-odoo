@@ -43,6 +43,7 @@ shift and a person rather than typing times.
     "demo": [
         "demo/hm_roster_demo.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": True,
     "auto_install": False,

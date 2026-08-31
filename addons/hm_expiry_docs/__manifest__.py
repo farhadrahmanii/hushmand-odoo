@@ -44,6 +44,7 @@ would still read valid years after it lapsed.
     "demo": [
         "demo/hm_expiry_docs_demo.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": True,
     "auto_install": False,

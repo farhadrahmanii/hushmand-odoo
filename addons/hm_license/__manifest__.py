@@ -67,6 +67,7 @@ licences. The private key never leaves the supplier.
             "hm_license/static/src/scss/license.scss",
         ],
     },
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": False,
     "auto_install": False,

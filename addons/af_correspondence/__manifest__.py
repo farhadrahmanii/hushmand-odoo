@@ -44,6 +44,7 @@ record of what happened, not a scratchpad.
     "demo": [
         "demo/af_correspondence_demo.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": True,
     "auto_install": False,

@@ -50,6 +50,7 @@ before.
     "demo": [
         "demo/af_hr_demo.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": False,
     "auto_install": False,

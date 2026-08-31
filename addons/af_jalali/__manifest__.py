@@ -41,7 +41,7 @@ Solar Hijri calendar is.
             "af_jalali/static/src/scss/jalali.scss",
         ],
     },
-    # "images": ["static/description/banner.png"],  # add before release
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": False,
     "auto_install": False,

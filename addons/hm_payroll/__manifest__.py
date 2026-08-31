@@ -77,6 +77,7 @@ engine stays generic so that it works anywhere.
     "demo": [
         "demo/hm_payroll_demo.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": True,
     "auto_install": False,

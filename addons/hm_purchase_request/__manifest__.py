@@ -43,6 +43,7 @@ Purchasing sees everything.
     "demo": [
         "demo/hm_purchase_request_demo.xml",
     ],
+    "images": ["static/description/banner.png"],
     "installable": True,
     "application": False,
     "auto_install": False,
