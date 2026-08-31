@@ -203,6 +203,50 @@ module that inherits no gate.
 
 ---
 
+## Packaging a release
+
+```bash
+python tools/build_release.py --all --plan        # what needs what
+python tools/build_release.py af_jalali           # one module
+python tools/build_release.py af_procurement --with-deps
+python tools/build_release.py --suite hr          # a bundle
+python tools/build_release.py --all               # every module, separately
+```
+
+`--plan` writes nothing and needs no signing key, so it works on any checkout.
+Use it before quoting: it answers *what does this customer have to be licensed
+for*, which is the dependency closure and not the one module they asked about.
+
+### Dependencies are the thing that goes wrong
+
+`af_procurement` needs `hm_purchase_request`, which needs `hm_approvals`, and
+every paid module needs `hm_license`. Ship the one module a customer asked for
+and Odoo refuses to install it — at their site, on the day they try. So the
+closure is always computed: `--with-deps` bundles it, and without that flag the
+tool prints exactly what else that customer must already have.
+
+### Suites
+
+| Suite | Sold as | Resolves to |
+|---|---|---|
+| `hr` | payroll, Afghan payroll, HR, rosters | 7 modules |
+| `finance` | reports, assets, contracts, chart, dual currency, zakat | 8 |
+| `office` | approvals, requests, comparison, letters, expiry, liaison, front desk | 9 |
+| `afghanistan` | the whole `af_*` line | 15 |
+| `complete` | everything | 20 |
+
+**Note what `afghanistan` resolves to.** Selling the Afghan line alone hands
+the customer `hm_approvals`, `hm_payroll`, `hm_purchase_request` and
+`hm_expiry_docs` as dependencies — four of the horizontal modules, which are
+the ones with the larger market. Price the suite accordingly, or the
+localization line quietly gives away Line B.
+
+Every run rewrites `dist/SHA256SUMS`, so a customer receiving a link can check
+they got what was sent. `dist/` is git-ignored: archives are uploaded, never
+committed, and a stale one in a working copy is a delivery waiting to go wrong.
+
+---
+
 ## Before releasing any module
 
 - [x] Installs on a clean database with no other addon present — the CI
@@ -227,7 +271,11 @@ module that inherits no gate.
       has no copy at all
 - [x] `README.md` in the module — CI fails if one is missing
 - [ ] Screenshots on the listing pages
-- [ ] Version bumped, changelog updated
+- [x] `CHANGELOG.md` written, with the versioning scheme recorded
+- [ ] Version bumped for the release being cut
+- [x] Delivery carries the modules it depends on — packaging resolves the
+      closure, and refuses to leave a customer with an archive Odoo cannot
+      install
 - [ ] Licence header on every file
 - [x] Gated behind `hm.license.gate`, or listed in `UNGATED` with a reason —
       CI fails if a module checks no licence, and packaging refuses it

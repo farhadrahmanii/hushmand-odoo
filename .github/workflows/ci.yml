@@ -22,6 +22,11 @@ jobs:
       - name: Tier 0 tests (no Odoo required)
         run: python tools/run_core_tests.py
 
+      - name: Packaging tests (no Odoo required)
+        # What these protect is a delivery, and a delivery fails at the
+        # customer's site on the day they try to install it.
+        run: python -m unittest discover -s tools/tests
+
       - name: Python and JavaScript must agree
         # Reports render in Python, forms render in JavaScript. If these two
         # drift, a printed document shows a different date from the screen it
