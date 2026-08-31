@@ -267,12 +267,20 @@ committed, and a stale one in a working copy is a delivery waiting to go wrong.
       speaker**
 - [ ] Dari reviewed by a professional translator
 - [ ] Pashto (`ps_AF`) — needs a translator; see below
-- [ ] RTL checked visually in Dari
+- [x] RTL checked in Dari — the screens job activates `fa_AF`, drives all
+      twenty screens again, and asserts the rendered direction really is
+      right-to-left *and* the menus really are translated, because a
+      language that fails to activate photographs perfectly in English
 - [x] `static/description/index.html` — generated from
       `tools/listings/<module>.py`; CI fails if a page is stale or a module
       has no copy at all
 - [x] `README.md` in the module — CI fails if one is missing
-- [ ] Screenshots on the listing pages
+- [x] Every screen photographed on a real Odoo, in both languages, as a
+      CI artifact
+- [ ] Demo data rich enough for those photographs to sell — most modules
+      ship 1–10 demo records and six ship none, so the shots prove the
+      screens render and show a customer an empty list
+- [ ] Screenshots embedded in the listing pages (blocked on the above)
 - [x] `CHANGELOG.md` written, with the versioning scheme recorded
 - [ ] Version bumped for the release being cut
 - [x] Delivery carries the modules it depends on — packaging resolves the
