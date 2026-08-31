@@ -69,11 +69,22 @@ VIEW_SELECTORS = ".o_list_view, .o_form_view, .o_kanban_view, .o_calendar_view, 
 
 
 def log_in(page, base_url, password):
+    """Log in and wait for the web client, not for the network.
+
+    Never wait for "networkidle" against Odoo: the bus holds a long poll open
+    for the life of the session, so the network is never idle and the wait can
+    only ever time out.
+    """
     page.goto("%s/web/login" % base_url, wait_until="domcontentloaded")
     page.fill("input[name='login']", "admin")
     page.fill("input[name='password']", password)
     page.click("button[type='submit']")
-    page.wait_for_load_state("networkidle")
+    try:
+        page.wait_for_selector(".o_main_navbar", timeout=60000)
+    except Exception:
+        alert = page.locator(".alert-danger")
+        detail = alert.first.inner_text() if alert.count() else "still at %s" % page.url
+        raise SystemExit("Could not log in as admin: %s" % detail.strip())
 
 
 def capture(page, base_url, module, action, label, out_dir, console_errors):

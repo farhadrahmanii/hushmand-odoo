@@ -389,4 +389,7 @@ jobs:
         with:
           name: screenshots
           path: screenshots/
-          if-no-files-found: error
+          # warn, not error: when the run fails before the first shutter the
+          # real cause is the step above, and a second red X here only buries
+          # it.
+          if-no-files-found: warn
