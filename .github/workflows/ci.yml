@@ -391,9 +391,15 @@ jobs:
         # A screen can render and still have thrown server-side. The browser
         # would not necessarily show it; the log always does.
         run: |
+          cp /tmp/odoo-server.log screenshots/odoo-server.log || true
           if grep -qE "^[0-9-]+ [0-9:,]+ [0-9]+ (ERROR|CRITICAL)" /tmp/odoo-server.log; then
             echo "::error::Odoo logged errors while the screens were being opened"
-            grep -E "^[0-9-]+ [0-9:,]+ [0-9]+ (ERROR|CRITICAL)" /tmp/odoo-server.log | head -20
+            # The first traceback with its context. A bare list of ERROR lines
+            # says something broke and not what, which costs a whole CI cycle
+            # to find out.
+            grep -n -A 30 -m 1 -E "^[0-9-]+ [0-9:,]+ [0-9]+ (ERROR|CRITICAL)" /tmp/odoo-server.log
+            echo "--- all error lines ---"
+            grep -cE "^[0-9-]+ [0-9:,]+ [0-9]+ (ERROR|CRITICAL)" /tmp/odoo-server.log
             exit 1
           fi
           echo "Server log clean"
