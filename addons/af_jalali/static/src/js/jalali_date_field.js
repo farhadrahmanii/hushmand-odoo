@@ -5,17 +5,24 @@
  * It is deliberately built on a plain <input> rather than Odoo's internal
  * DateTimePicker, because that picker is the part of the web client that
  * changes most between releases. Porting to a new Odoo version should mean
- * checking the four imports below and nothing else.
+ * checking the imports below, and how luxon is exposed, and nothing else.
  */
 
 import { Component, onWillStart, useState } from "@odoo/owl";
-import { DateTime } from "luxon";
 import { _t } from "@web/core/l10n/translation";
 import { registry } from "@web/core/registry";
 import { useService } from "@web/core/utils/hooks";
 import { standardFieldProps } from "@web/views/fields/standard_field_props";
 
 import { formatJalali, parseJalali } from "./jalali";
+
+// Odoo loads web/static/lib/luxon/luxon.js as a plain script defining a
+// global, not as a module the loader can resolve. `import { DateTime } from
+// "luxon"` therefore fails to link -- and because this file sits in
+// web.assets_backend, that failure was logged on every page of the web
+// client, not only the ones showing a Jalali field. Odoo's own code reads the
+// global the same way: see web/static/src/core/l10n/dates.js.
+const { DateTime } = luxon; // eslint-disable-line no-undef
 
 const DEFAULTS = {
     enabled: true,

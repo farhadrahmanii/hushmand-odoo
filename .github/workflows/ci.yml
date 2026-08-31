@@ -104,6 +104,21 @@ jobs:
           print("XML, manifests and icons OK")
           PY
 
+      - name: No JavaScript imports a library Odoo does not expose as a module
+        # Odoo ships luxon and friends as plain scripts defining globals, not
+        # as modules its loader can resolve. `import { DateTime } from "luxon"`
+        # links to nothing -- and because our assets sit in web.assets_backend,
+        # that failure was logged on every page of the web client while every
+        # Python test still passed. Read the global the way Odoo's own code
+        # does instead.
+        run: |
+          if grep -rnE 'from "[^@./]' addons/*/static/src/ 2>/dev/null; then
+            echo "::error::bare import above: Odoo resolves @web/..., @odoo/... and relative paths only"
+            exit 1
+          fi
+          echo "no unresolvable imports"
+
+
       - name: Every module has a current listing page
         # The listing page is the storefront. It is generated so that twenty
         # of them cannot drift into twenty different greens, and checked here
