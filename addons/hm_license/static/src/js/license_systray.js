@@ -28,12 +28,19 @@ export class LicenceIndicator extends Component {
 
         onWillStart(async () => {
             try {
-                const status = await this.orm.call("hm.license", "status", [[]]);
+                // No leading ids argument. status() is @api.model, and for
+                // those call_kw passes args straight through instead of
+                // taking the first element as the recordset -- so [[]] arrived
+                // in Python as status(self, []) and raised on every page load.
+                const status = await this.orm.call("hm.license", "status", []);
                 Object.assign(this.state, status);
                 this.state.canOpen = await user.hasGroup("base.group_system");
-            } catch {
+            } catch (error) {
                 // A licence check that breaks the web client would be a far
-                // worse bug than the one it is reporting. Stay quiet.
+                // worse bug than the one it is reporting, so the page carries
+                // on regardless. But it says so: staying quiet is exactly how
+                // the argument bug above survived being written.
+                console.error("hm_license: could not read licence status", error);
                 this.state.level = "off";
             }
         });
