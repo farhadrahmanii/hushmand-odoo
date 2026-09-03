@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!--
+          Self-contained on purpose. Pointing at another module's demo records
+          makes this file depend on demo data that may not have loaded, and a
+          demo file that fails is worse than one that repeats a little setup.
+        -->
+
+        <record id="demo_project_water" model="project.project">
+            <field name="name">Rural Water Supply</field>
+            <field name="allow_timesheets" eval="True"/>
+        </record>
+
+        <record id="demo_task_survey" model="project.task">
+            <field name="name">Village survey</field>
+            <field name="project_id" ref="demo_project_water"/>
+        </record>
+
+        <record id="demo_task_report" model="project.task">
+            <field name="name">Donor report</field>
+            <field name="project_id" ref="demo_project_water"/>
+        </record>
+
+        <record id="demo_employee_engineer" model="hr.employee">
+            <field name="name">Nasir Ahmad</field>
+            <field name="job_title">Field Engineer</field>
+        </record>
+
+        <!--
+          Entries only. The sheet builds itself around them, which is also the
+          quickest way to show that it does: nothing here creates one.
+        -->
+
+        <record id="demo_line_1" model="account.analytic.line">
+            <field name="name">Surveyed Qala-e-Naw, wells 1 to 4</field>
+            <field name="project_id" ref="demo_project_water"/>
+            <field name="task_id" ref="demo_task_survey"/>
+            <field name="employee_id" ref="demo_employee_engineer"/>
+            <field name="unit_amount">7.5</field>
+            <field name="date" eval="(DateTime.today() - relativedelta(days=3)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_line_2" model="account.analytic.line">
+            <field name="name">Surveyed Qala-e-Naw, wells 5 to 9</field>
+            <field name="project_id" ref="demo_project_water"/>
+            <field name="task_id" ref="demo_task_survey"/>
+            <field name="employee_id" ref="demo_employee_engineer"/>
+            <field name="unit_amount">8.0</field>
+            <field name="date" eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_line_3" model="account.analytic.line">
+            <field name="name">Drafted the quarterly donor report</field>
+            <field name="project_id" ref="demo_project_water"/>
+            <field name="task_id" ref="demo_task_report"/>
+            <field name="employee_id" ref="demo_employee_engineer"/>
+            <field name="unit_amount">4.0</field>
+            <field name="date" eval="(DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_line_4" model="account.analytic.line">
+            <field name="name">Site visit, Zinda Jan</field>
+            <field name="project_id" ref="demo_project_water"/>
+            <field name="employee_id" ref="demo_employee_engineer"/>
+            <field name="unit_amount">6.5</field>
+            <field name="date" eval="DateTime.today().strftime('%Y-%m-%d')"/>
+        </record>
+
+    </data>
+</odoo>

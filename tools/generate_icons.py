@@ -53,6 +53,7 @@ ICONS = {
     "hm_payroll":          ("PY", "#1E6B4A"),
     "hm_purchase_request": ("PR", "#26707E"),
     "hm_roster":           ("RS", "#504A9E"),
+    "hm_timesheet":        ("TS", "#3E7CB1"),
 }
 
 FONT_CANDIDATES = [

@@ -62,7 +62,8 @@ UNGATED = {
 SUITES = {
     "hr": {
         "title": "HR and Payroll",
-        "modules": ["hm_payroll", "af_hr_payroll", "af_hr", "hm_roster"],
+        "modules": ["hm_payroll", "af_hr_payroll", "af_hr", "hm_roster",
+                    "hm_timesheet"],
     },
     "finance": {
         "title": "Finance",

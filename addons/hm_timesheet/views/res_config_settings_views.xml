@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.form.hm.timesheet</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="base_setup.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <!--
+              The General Settings container is <app name="general_settings">.
+              It is not named after base_setup, the module that defines it,
+              and guessing otherwise costs a CI cycle every time.
+            -->
+            <xpath expr="//app[@name='general_settings']" position="inside">
+                <block title="Timesheets" name="hm_timesheet_block">
+                    <setting id="hm_timesheet_week_start_setting"
+                             string="Timesheet week starts"
+                             help="The first day of a timesheet week. Saturday in Afghanistan.">
+                        <field name="hm_timesheet_week_start"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

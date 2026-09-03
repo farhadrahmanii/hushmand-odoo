@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hm_timesheet_sheet_user,hm.timesheet.sheet own,model_hm_timesheet_sheet,hr_timesheet.group_hr_timesheet_user,1,1,1,0
+access_hm_timesheet_sheet_approver,hm.timesheet.sheet approve,model_hm_timesheet_sheet,hr_timesheet.group_hr_timesheet_approver,1,1,1,0
+access_hm_timesheet_sheet_manager,hm.timesheet.sheet manage,model_hm_timesheet_sheet,hr_timesheet.group_timesheet_manager,1,1,1,1

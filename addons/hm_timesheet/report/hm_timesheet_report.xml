@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_hm_timesheet" model="ir.actions.report">
+        <field name="name">Timesheet</field>
+        <field name="model">hm.timesheet.sheet</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">hm_timesheet.report_timesheet</field>
+        <field name="report_file">hm_timesheet.report_timesheet</field>
+        <field name="binding_model_id" ref="model_hm_timesheet_sheet"/>
+        <field name="binding_type">report</field>
+        <field name="print_report_name">'Timesheet - %s' % (object.employee_id.name or '')</field>
+    </record>
+
+    <template id="report_timesheet_document">
+        <t t-call="web.external_layout">
+            <t t-set="grid" t-value="doc._report_grid()"/>
+            <div class="page">
+
+                <h2 class="mb-1">Timesheet</h2>
+                <div class="row mb-4">
+                    <div class="col-6">
+                        <strong>Employee:</strong> <span t-field="doc.employee_id.name"/><br/>
+                        <strong>Department:</strong> <span t-field="doc.department_id.name"/><br/>
+                        <strong>Manager:</strong> <span t-field="doc.manager_id.name"/>
+                    </div>
+                    <div class="col-6">
+                        <strong>Week:</strong>
+                        <span t-field="doc.date_start"/> &#8211; <span t-field="doc.date_end"/><br/>
+                        <strong>Status:</strong> <span t-field="doc.state"/><br/>
+                        <strong>Total hours:</strong>
+                        <span t-esc="'%.2f' % doc.total_hours"/>
+                    </div>
+                </div>
+
+                <table class="table table-sm o_main_table">
+                    <thead>
+                        <tr>
+                            <th>Project</th>
+                            <th>Task</th>
+                            <th t-foreach="grid['days']" t-as="day" class="text-end">
+                                <span t-esc="day.strftime('%a')"/><br/>
+                                <span t-esc="day.strftime('%d/%m')"/>
+                            </th>
+                            <th class="text-end">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr t-foreach="grid['rows']" t-as="row">
+                            <td><span t-esc="row['project']"/></td>
+                            <td><span t-esc="row['task']"/></td>
+                            <td t-foreach="grid['days']" t-as="day" class="text-end">
+                                <span t-if="row['hours'][day]"
+                                      t-esc="'%.2f' % row['hours'][day]"/>
+                            </td>
+                            <td class="text-end">
+                                <strong t-esc="'%.2f' % row['total']"/>
+                            </td>
+                        </tr>
+                        <tr t-if="not grid['rows']">
+                            <td colspan="10">No time was recorded in this week.</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="2"><strong>Total</strong></td>
+                            <td t-foreach="grid['days']" t-as="day" class="text-end">
+                                <strong t-if="grid['day_totals'][day]"
+                                        t-esc="'%.2f' % grid['day_totals'][day]"/>
+                            </td>
+                            <td class="text-end">
+                                <strong t-esc="'%.2f' % grid['total']"/>
+                            </td>
+                        </tr>
+                    </tfoot>
+                </table>
+
+                <div class="row mt-5">
+                    <div class="col-4">
+                        <div style="border-top:1px solid #000;padding-top:4px;">
+                            Employee
+                        </div>
+                    </div>
+                    <div class="col-4 offset-4">
+                        <div style="border-top:1px solid #000;padding-top:4px;">
+                            Approved by
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </t>
+    </template>
+
+    <template id="report_timesheet">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="hm_timesheet.report_timesheet_document"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

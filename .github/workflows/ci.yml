@@ -167,8 +167,8 @@ jobs:
             --db_host=postgres --db_user=odoo --db_password=odoo \
             --data-dir=/tmp/odoo-data \
             --addons-path=/usr/lib/python3/dist-packages/odoo/addons,$GITHUB_WORKSPACE/addons \
-            -i af_jalali,af_l10n_base,af_dual_currency,af_hr,hm_approvals,hm_purchase_request,hm_account_reports,hm_assets,hm_expiry_docs,af_liaison,af_correspondence,hm_frontdesk,hm_roster,af_zakat,hm_contracts,hm_license,af_l10n_account,af_procurement,hm_payroll,af_hr_payroll \
-            --test-enable --test-tags /af_jalali,/af_l10n_base,/af_dual_currency,/af_hr,/hm_approvals,/hm_purchase_request,/hm_account_reports,/hm_assets,/hm_expiry_docs,/af_liaison,/af_correspondence,/hm_frontdesk,/hm_roster,/af_zakat,/hm_contracts,/hm_license,/af_l10n_account,/af_procurement,/hm_payroll,/af_hr_payroll \
+            -i af_jalali,af_l10n_base,af_dual_currency,af_hr,hm_approvals,hm_purchase_request,hm_account_reports,hm_assets,hm_expiry_docs,af_liaison,af_correspondence,hm_frontdesk,hm_roster,af_zakat,hm_contracts,hm_license,af_l10n_account,af_procurement,hm_payroll,af_hr_payroll,hm_timesheet \
+            --test-enable --test-tags /af_jalali,/af_l10n_base,/af_dual_currency,/af_hr,/hm_approvals,/hm_purchase_request,/hm_account_reports,/hm_assets,/hm_expiry_docs,/af_liaison,/af_correspondence,/hm_frontdesk,/hm_roster,/af_zakat,/hm_contracts,/hm_license,/af_l10n_account,/af_procurement,/hm_payroll,/af_hr_payroll,/hm_timesheet \
             --stop-after-init --log-level=info 2>&1 | tee odoo.log
           # Odoo exits 0 even when tests fail, so inspect the log.
           if grep -qE "^[0-9-]+ [0-9:,]+ [0-9]+ (ERROR|CRITICAL)" odoo.log; then
@@ -206,7 +206,7 @@ jobs:
             hm_purchase_request hm_account_reports hm_assets hm_expiry_docs \
             af_liaison af_correspondence hm_frontdesk hm_roster af_zakat \
             hm_contracts hm_license af_l10n_account af_procurement \
-            hm_payroll af_hr_payroll
+            hm_payroll af_hr_payroll hm_timesheet
           python3 tools/normalise_pot.py
           echo "Exported:"
           wc -l addons/*/i18n/*.pot
@@ -292,7 +292,7 @@ jobs:
             --db_host=postgres --db_user=odoo --db_password=odoo \
             --data-dir=/tmp/odoo-data \
             --addons-path=/usr/lib/python3/dist-packages/odoo/addons,$GITHUB_WORKSPACE/addons \
-            -i af_jalali,af_l10n_base,af_dual_currency,af_hr,hm_approvals,hm_purchase_request,hm_account_reports,hm_assets,hm_expiry_docs,af_liaison,af_correspondence,hm_frontdesk,hm_roster,af_zakat,hm_contracts,hm_license,af_l10n_account,af_procurement,hm_payroll,af_hr_payroll \
+            -i af_jalali,af_l10n_base,af_dual_currency,af_hr,hm_approvals,hm_purchase_request,hm_account_reports,hm_assets,hm_expiry_docs,af_liaison,af_correspondence,hm_frontdesk,hm_roster,af_zakat,hm_contracts,hm_license,af_l10n_account,af_procurement,hm_payroll,af_hr_payroll,hm_timesheet \
             --stop-after-init --log-level=info 2>&1 | tee demo.log
           if grep -qE "^[0-9-]+ [0-9:,]+ [0-9]+ (ERROR|CRITICAL)" demo.log; then
             echo "::error::Odoo reported errors while installing demo data"
@@ -361,7 +361,7 @@ jobs:
         # renders but shows a customer nothing.
         run: |
           odoo -c /tmp/odoo.conf -d shots --with-demo \
-            -i af_jalali,af_l10n_base,af_dual_currency,af_hr,hm_approvals,hm_purchase_request,hm_account_reports,hm_assets,hm_expiry_docs,af_liaison,af_correspondence,hm_frontdesk,hm_roster,af_zakat,hm_contracts,hm_license,af_l10n_account,af_procurement,hm_payroll,af_hr_payroll \
+            -i af_jalali,af_l10n_base,af_dual_currency,af_hr,hm_approvals,hm_purchase_request,hm_account_reports,hm_assets,hm_expiry_docs,af_liaison,af_correspondence,hm_frontdesk,hm_roster,af_zakat,hm_contracts,hm_license,af_l10n_account,af_procurement,hm_payroll,af_hr_payroll,hm_timesheet \
             --stop-after-init --log-level=warn
 
       - name: Install a browser

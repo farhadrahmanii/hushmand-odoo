@@ -51,6 +51,7 @@ SCREENS = [
     ("hm_payroll", "hm_payroll.action_hm_payslip", "Payslips"),
     ("hm_purchase_request", "hm_purchase_request.action_hm_purchase_request", "Purchase requests"),
     ("hm_roster", "hm_roster.action_hm_roster", "Rosters"),
+    ("hm_timesheet", "hm_timesheet.action_hm_timesheet_sheet_all", "Timesheets"),
 ]
 
 VIEWPORT = {"width": 1600, "height": 1000}

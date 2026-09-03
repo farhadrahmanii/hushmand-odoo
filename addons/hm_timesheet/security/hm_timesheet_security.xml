@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!--
+      No new groups. hr_timesheet already divides the world into people who
+      see their own timesheets, people who see everyone's, and administrators,
+      and inventing a fourth axis would only mean two places to get wrong.
+
+      What is added is what those groups may do with a *sheet*, which is a
+      different question from what they may do with an entry.
+    -->
+
+    <record id="hm_timesheet_sheet_rule_own" model="ir.rule">
+        <field name="name">Timesheet: own weeks</field>
+        <field name="model_id" ref="model_hm_timesheet_sheet"/>
+        <field name="domain_force">[('employee_id.user_id', '=', user.id)]</field>
+        <field name="groups" eval="[(4, ref('hr_timesheet.group_hr_timesheet_user'))]"/>
+    </record>
+
+    <record id="hm_timesheet_sheet_rule_approver" model="ir.rule">
+        <field name="name">Timesheet: every week</field>
+        <field name="model_id" ref="model_hm_timesheet_sheet"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+        <field name="groups" eval="[(4, ref('hr_timesheet.group_hr_timesheet_approver'))]"/>
+    </record>
+
+    <!--
+      A manager approving somebody's week has to be able to read it even
+      though it is not theirs, and an employee must never be able to read
+      their colleague's hours. Multi-company is separate from both: a sheet
+      belongs to the company that employs the person on it.
+    -->
+    <record id="hm_timesheet_sheet_rule_company" model="ir.rule">
+        <field name="name">Timesheet: multi-company</field>
+        <field name="model_id" ref="model_hm_timesheet_sheet"/>
+        <field name="domain_force">['|', ('company_id', '=', False), ('company_id', 'in', company_ids)]</field>
+        <field name="global" eval="True"/>
+    </record>
+
+</odoo>
