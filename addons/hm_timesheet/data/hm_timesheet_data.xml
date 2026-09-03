@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <!--
+          A working approval process, shipped as data rather than demo.
+
+          The approval engine refuses to submit a document no process covers,
+          which is correct -- but it means that without this record a customer
+          installs Timesheets, fills in a week, presses Submit and is told no
+          process is configured. The feature would be unusable out of the box
+          for the one thing it exists to do.
+
+          One step, to the employee's own manager, resolved from the sheet so
+          the process survives people changing roles. noupdate, so a customer
+          who edits it or adds a second step keeps their version through every
+          upgrade.
+        -->
+
+        <record id="approval_process_timesheet" model="hm.approval.process">
+            <field name="name">Timesheet Approval</field>
+            <field name="model_id" ref="model_hm_timesheet_sheet"/>
+            <field name="description">Submitted timesheets go to the employee's
+                manager. Add steps, or a condition on the hours, to send longer
+                weeks further up.</field>
+        </record>
+
+        <record id="approval_step_timesheet_manager" model="hm.approval.step">
+            <field name="name">Manager</field>
+            <field name="sequence">10</field>
+            <field name="process_id" ref="approval_process_timesheet"/>
+            <field name="approver_type">field</field>
+            <field name="approver_field">employee_id.parent_id.user_id</field>
+            <field name="allow_reject" eval="True"/>
+        </record>
+
+    </data>
+</odoo>

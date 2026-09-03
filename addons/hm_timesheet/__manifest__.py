@@ -65,6 +65,7 @@ Also included
     "data": [
         "security/hm_timesheet_security.xml",
         "security/ir.model.access.csv",
+        "data/hm_timesheet_data.xml",
         "views/hm_timesheet_sheet_views.xml",
         "views/res_config_settings_views.xml",
         "report/hm_timesheet_report.xml",

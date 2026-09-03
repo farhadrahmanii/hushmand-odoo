@@ -27,8 +27,23 @@ class TimesheetCase(common.TransactionCase):
             "name": "Water Supply",
             "allow_timesheets": True,
         })
-        cls.employee = cls.env["hr.employee"].create({"name": "Nasir Ahmad"})
-        cls.other_employee = cls.env["hr.employee"].create({"name": "Zarmina Popal"})
+        # The shipped approval process resolves the approver through
+        # employee_id.parent_id.user_id, so the employee needs a manager who
+        # is a user or nothing can be submitted.
+        cls.manager_user = cls.env["res.users"].create({
+            "name": "Rahima Sadat",
+            "login": "timesheet_manager",
+        })
+        cls.manager = cls.env["hr.employee"].create({
+            "name": "Rahima Sadat",
+            "user_id": cls.manager_user.id,
+        })
+        cls.employee = cls.env["hr.employee"].create({
+            "name": "Nasir Ahmad", "parent_id": cls.manager.id,
+        })
+        cls.other_employee = cls.env["hr.employee"].create({
+            "name": "Zarmina Popal", "parent_id": cls.manager.id,
+        })
         cls.Sheet = cls.env["hm.timesheet.sheet"]
         cls.Line = cls.env["account.analytic.line"]
 
@@ -109,7 +124,12 @@ class TestEntriesFindTheirWeek(TimesheetCase):
         """Time logged before anyone opened a timesheet still belongs to the
         week it was worked in."""
         line = self._line()
-        line.sudo().sheet_id = False
+        # Logging time already made a sheet. Clear both it and the link, so
+        # what is tested is a fresh sheet finding an entry that predates it
+        # rather than the one that created it.
+        line.sheet_id.sudo().unlink()
+        self.assertFalse(line.sheet_id)
+
         sheet = self.Sheet.create({
             "employee_id": self.employee.id,
             "date_start": self.saturday,
