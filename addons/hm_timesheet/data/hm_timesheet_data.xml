@@ -5,8 +5,8 @@
         <!--
           A working approval process, shipped as data rather than demo.
 
-          The approval engine refuses to submit a document no process covers,
-          which is correct -- but it means that without this record a customer
+          The approval engine refuses to submit a document no process covers.
+          That is correct, but it means that without this record a customer
           installs Timesheets, fills in a week, presses Submit and is told no
           process is configured. The feature would be unusable out of the box
           for the one thing it exists to do.
