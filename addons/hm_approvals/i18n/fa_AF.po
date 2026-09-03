@@ -230,6 +230,7 @@ msgstr "دکمه منظوری"
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_mixin__approval_state__approved
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_request__state__approved
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_purchase_request__approval_state__approved
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_timesheet_sheet__approval_state__approved
 msgid "Approved"
 msgstr "منظورشده"
 
@@ -292,6 +293,7 @@ msgstr "این درخواست منظوری لغو شود؟"
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_mixin__approval_state__cancelled
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_request__state__cancelled
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_purchase_request__approval_state__cancelled
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_timesheet_sheet__approval_state__cancelled
 msgid "Cancelled"
 msgstr "لغوشده"
 
@@ -523,6 +525,7 @@ msgstr "برای %s هیچ پروسه منظوری تنظیم نشده است."
 #. module: hm_approvals
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_mixin__approval_state__none
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_purchase_request__approval_state__none
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_timesheet_sheet__approval_state__none
 msgid "Not Submitted"
 msgstr "ارائه‌نشده"
 
@@ -587,6 +590,7 @@ msgstr "در جریان"
 #. module: hm_approvals
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_mixin__approval_state__pending
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_purchase_request__approval_state__pending
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_timesheet_sheet__approval_state__pending
 msgid "Pending Approval"
 msgstr "در انتظار منظوری"
 
@@ -624,6 +628,11 @@ msgid "Purchase request approval"
 msgstr "منظوری درخواست خریداری"
 
 #. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__rating_ids
+msgid "Ratings"
+msgstr "امتیازها"
+
+#. module: hm_approvals
 #: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_reject_wizard__reason
 msgid "Reason"
 msgstr "دلیل"
@@ -650,6 +659,7 @@ msgstr "رد یک منظوری"
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_mixin__approval_state__rejected
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_request__state__rejected
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_purchase_request__approval_state__rejected
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_timesheet_sheet__approval_state__rejected
 msgid "Rejected"
 msgstr "ردشده"
 

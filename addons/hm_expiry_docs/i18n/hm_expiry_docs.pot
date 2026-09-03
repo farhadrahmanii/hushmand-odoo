@@ -452,6 +452,11 @@ msgid "Or a vehicle, a building, the company"
 msgstr ""
 
 #. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: hm_expiry_docs
 #: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__reminder_days
 msgid "Remind Before"
 msgstr ""

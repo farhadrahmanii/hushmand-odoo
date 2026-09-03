@@ -568,6 +568,11 @@ msgid "Quarterly"
 msgstr ""
 
 #. module: hm_contracts
+#: model:ir.model.fields,field_description:hm_contracts.field_hm_contract__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: hm_contracts
 #: model_terms:ir.actions.act_window,help:hm_contracts.action_hm_contract
 msgid "Record a service contract"
 msgstr ""

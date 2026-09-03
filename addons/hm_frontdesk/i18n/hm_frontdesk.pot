@@ -396,6 +396,11 @@ msgid "Purpose"
 msgstr ""
 
 #. module: hm_frontdesk
+#: model:ir.model.fields,field_description:hm_frontdesk.field_hm_visitor__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: hm_frontdesk
 #: model_terms:ir.actions.act_window,help:hm_frontdesk.action_hm_visitor
 msgid ""
 "Record who came in, who they came to see and when they left.\n"

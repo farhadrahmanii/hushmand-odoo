@@ -1162,6 +1162,12 @@ msgid "Rate (%)"
 msgstr ""
 
 #. module: hm_payroll
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_payslip__rating_ids
+#: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: hm_payroll
 #: model:ir.model.fields,field_description:hm_payroll.field_hm_salary_advance__reason
 #: model_terms:ir.ui.view,arch_db:hm_payroll.hm_salary_advance_view_form
 msgid "Reason"

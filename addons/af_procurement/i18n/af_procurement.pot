@@ -375,6 +375,11 @@ msgid "Quotes"
 msgstr ""
 
 #. module: af_procurement
+#: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: af_procurement
 #: model:ir.model.fields,field_description:af_procurement.field_af_comparative_form__selection_reason
 msgid "Reason for Selection"
 msgstr ""

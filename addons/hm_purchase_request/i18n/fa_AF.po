@@ -438,6 +438,11 @@ msgid "Raise a purchase request"
 msgstr "ثبت یک درخواست خریداری"
 
 #. module: hm_purchase_request
+#: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__rating_ids
+msgid "Ratings"
+msgstr "امتیازها"
+
+#. module: hm_purchase_request
 #: model:ir.model.fields,field_description:hm_purchase_request.field_hm_purchase_request__name
 msgid "Reference"
 msgstr "مرجع"

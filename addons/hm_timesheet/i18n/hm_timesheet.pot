@@ -1,0 +1,733 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_timesheet
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 19.0-20260817\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hm_timesheet
+#. odoo-python
+#: code:addons/hm_timesheet/models/account_analytic_line.py:0
+msgid ""
+"%(week)s has been %(state)s, so its entries can no longer be %(action)s.\n"
+"\n"
+"Reopen the timesheet first, or ask whoever approved it to."
+msgstr ""
+
+#. module: hm_timesheet
+#. odoo-python
+#: code:addons/hm_timesheet/models/hm_timesheet_sheet.py:0
+msgid "%s has already been submitted."
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.actions.report,print_report_name:hm_timesheet.action_report_hm_timesheet
+msgid "'Timesheet - %s' % (object.employee_id.name or '')"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.report_timesheet_document
+msgid ""
+"<br/>\n"
+"                        <strong>Department:</strong>"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.report_timesheet_document
+msgid ""
+"<br/>\n"
+"                        <strong>Manager:</strong>"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.report_timesheet_document
+msgid ""
+"<br/>\n"
+"                        <strong>Status:</strong>"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.report_timesheet_document
+msgid ""
+"<br/>\n"
+"                        <strong>Total hours:</strong>"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_form
+msgid "<span class=\"o_stat_text\">Approval</span>"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.report_timesheet_document
+msgid "<strong>Employee:</strong>"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.report_timesheet_document
+msgid "<strong>Total</strong>"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.report_timesheet_document
+msgid "<strong>Week:</strong>"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.actions.act_window,help:hm_timesheet.action_hm_timesheet_sheet_all
+msgid ""
+"A timesheet appears here as soon as somebody logs time, one per\n"
+"               employee per week."
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.actions.act_window,name:hm_timesheet.action_hm_timesheet_sheet_all
+#: model:ir.ui.menu,name:hm_timesheet.menu_hm_timesheet_all
+msgid "All Timesheets"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model,name:hm_timesheet.model_account_analytic_line
+msgid "Analytic Line"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__approval_request_id
+msgid "Approval"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__approval_state
+msgid "Approval Status"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_form
+msgid "Approve"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields.selection,name:hm_timesheet.selection__hm_timesheet_sheet__state__approved
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_search
+msgid "Approved"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.report_timesheet_document
+msgid "Approved by"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_form
+msgid ""
+"Approved. The hours below are final; to change them,\n"
+"                        the approval has to be cancelled first."
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__approval_current_step
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_list
+msgid "Awaiting"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model,name:hm_timesheet.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__company_id
+msgid "Company"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model,name:hm_timesheet.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__department_id
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_search
+msgid "Department"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_form
+msgid "Description"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__difference_hours
+msgid "Difference"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_account_analytic_line__display_name
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__display_name
+#: model:ir.model.fields,field_description:hm_timesheet.field_res_company__display_name
+#: model:ir.model.fields,field_description:hm_timesheet.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields.selection,name:hm_timesheet.selection__hm_timesheet_sheet__state__draft
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_search
+msgid "Draft"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__employee_id
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_search
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.report_timesheet_document
+msgid "Employee"
+msgstr ""
+
+#. module: hm_timesheet
+#. odoo-python
+#: code:addons/hm_timesheet/models/hm_timesheet_sheet.py:0
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__line_ids
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_form
+msgid "Entries"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__expected_hours
+msgid "Expected"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,help:hm_timesheet.field_hm_timesheet_sheet__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields.selection,name:hm_timesheet.selection__res_company__hm_timesheet_week_start__5
+msgid "Friday"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__total_hours
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_form
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_list
+msgid "Hours"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_account_analytic_line__id
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__id
+#: model:ir.model.fields,field_description:hm_timesheet.field_res_company__id
+#: model:ir.model.fields,field_description:hm_timesheet.field_res_config_settings__id
+msgid "ID"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,help:hm_timesheet.field_hm_timesheet_sheet__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,help:hm_timesheet.field_hm_timesheet_sheet__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,help:hm_timesheet.field_hm_timesheet_sheet__message_has_error
+#: model:ir.model.fields,help:hm_timesheet.field_hm_timesheet_sheet__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:hm.approval.step,name:hm_timesheet.approval_step_timesheet_manager
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__manager_id
+msgid "Manager"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields.selection,name:hm_timesheet.selection__res_company__hm_timesheet_week_start__1
+msgid "Monday"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.actions.act_window,name:hm_timesheet.action_hm_timesheet_sheet_my
+#: model:ir.ui.menu,name:hm_timesheet.menu_hm_timesheet_my
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_search
+msgid "My Timesheets"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: hm_timesheet
+#. odoo-python
+#: code:addons/hm_timesheet/models/hm_timesheet_sheet.py:0
+msgid "No project"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.report_timesheet_document
+msgid "No time was recorded in this week."
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.actions.act_window,help:hm_timesheet.action_hm_timesheet_sheet_all
+msgid "No timesheets yet"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.actions.act_window,help:hm_timesheet.action_hm_timesheet_sheet_to_approve
+msgid "Nothing waiting"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,help:hm_timesheet.field_hm_timesheet_sheet__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,help:hm_timesheet.field_hm_timesheet_sheet__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: hm_timesheet
+#. odoo-python
+#: code:addons/hm_timesheet/models/hm_timesheet_sheet.py:0
+msgid ""
+"Only a submitted or rejected timesheet can be reopened. %s is approved, and "
+"its hours have been signed off."
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.report_timesheet_document
+msgid "Project"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.actions.act_window,help:hm_timesheet.action_hm_timesheet_sheet_my
+msgid ""
+"Record what you worked on, then submit the week for approval.\n"
+"               Once it is submitted the entries are locked, so the hours your\n"
+"               manager signs off are the hours you sent."
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,help:hm_timesheet.field_hm_timesheet_sheet__difference_hours
+msgid "Recorded minus expected. Negative means the week is short."
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_form
+msgid "Reject"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields.selection,name:hm_timesheet.selection__hm_timesheet_sheet__state__rejected
+msgid "Rejected"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,help:hm_timesheet.field_hm_timesheet_sheet__user_id
+msgid "Related user name for the resource to manage its access."
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_form
+msgid "Reopen"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields.selection,name:hm_timesheet.selection__res_company__hm_timesheet_week_start__6
+msgid "Saturday"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_search
+msgid "Short of Expected"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,help:hm_timesheet.field_hm_timesheet_sheet__date_start
+msgid "Snapped to the first day of the week when saved."
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.actions.act_window,help:hm_timesheet.action_hm_timesheet_sheet_my
+msgid "Start this week's timesheet"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__state
+msgid "State"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_search
+msgid "Status"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,help:hm_timesheet.field_hm_timesheet_sheet__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_form
+msgid "Submit"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields.selection,name:hm_timesheet.selection__hm_timesheet_sheet__state__submitted
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_search
+msgid "Submitted"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.actions.act_window,help:hm_timesheet.action_hm_timesheet_sheet_to_approve
+msgid ""
+"Submitted timesheets appear here until they are approved or\n"
+"               sent back."
+msgstr ""
+
+#. module: hm_timesheet
+#: model:hm.approval.process,description:hm_timesheet.approval_process_timesheet
+msgid ""
+"Submitted timesheets go to the employee's\n"
+"                manager. Add steps, or a condition on the hours, to send longer\n"
+"                weeks further up."
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields.selection,name:hm_timesheet.selection__res_company__hm_timesheet_week_start__7
+msgid "Sunday"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.report_timesheet_document
+msgid "Task"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.constraint,message:hm_timesheet.constraint_hm_timesheet_sheet_one_sheet_per_week
+msgid "That employee already has a timesheet for this week."
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,help:hm_timesheet.field_res_company__hm_timesheet_week_start
+#: model:ir.model.fields,help:hm_timesheet.field_res_config_settings__hm_timesheet_week_start
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.res_config_settings_view_form
+msgid "The first day of a timesheet week. Saturday in Afghanistan."
+msgstr ""
+
+#. module: hm_timesheet
+#. odoo-python
+#: code:addons/hm_timesheet/models/hm_timesheet_sheet.py:0
+msgid "There is no time recorded on %s. An empty week is not a timesheet."
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_form
+msgid ""
+"This timesheet has been submitted, so its entries can no\n"
+"                        longer be changed. Reopen it to edit them."
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields.selection,name:hm_timesheet.selection__res_company__hm_timesheet_week_start__4
+msgid "Thursday"
+msgstr ""
+
+#. module: hm_timesheet
+#. odoo-python
+#: code:addons/hm_timesheet/models/hm_timesheet_sheet.py:0
+#: model:ir.actions.report,name:hm_timesheet.action_report_hm_timesheet
+#: model:ir.model,name:hm_timesheet.model_hm_timesheet_sheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_account_analytic_line__sheet_id
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_form
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.report_timesheet_document
+msgid "Timesheet"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:hm.approval.process,name:hm_timesheet.approval_process_timesheet
+msgid "Timesheet Approval"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_account_analytic_line__sheet_state
+msgid "Timesheet Status"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_res_company__hm_timesheet_week_start
+#: model:ir.model.fields,field_description:hm_timesheet.field_res_config_settings__hm_timesheet_week_start
+msgid "Timesheet Week Starts"
+msgstr ""
+
+#. module: hm_timesheet
+#. odoo-python
+#: code:addons/hm_timesheet/models/hm_timesheet_sheet.py:0
+msgid "Timesheet approved. The entries are now locked."
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.res_config_settings_view_form
+msgid "Timesheet week starts"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.ui.menu,name:hm_timesheet.menu_hm_timesheet_root
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_list
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_search
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.res_config_settings_view_form
+msgid "Timesheets"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.actions.act_window,name:hm_timesheet.action_hm_timesheet_sheet_to_approve
+#: model:ir.ui.menu,name:hm_timesheet.menu_hm_timesheet_to_approve
+msgid "To Approve"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.report_timesheet_document
+msgid "Total"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields.selection,name:hm_timesheet.selection__res_company__hm_timesheet_week_start__2
+msgid "Tuesday"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,help:hm_timesheet.field_hm_timesheet_sheet__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__user_id
+msgid "User"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_search
+msgid "Waiting on Me"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__website_message_ids
+msgid "Website Messages"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,help:hm_timesheet.field_hm_timesheet_sheet__website_message_ids
+msgid "Website communication history"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields.selection,name:hm_timesheet.selection__res_company__hm_timesheet_week_start__3
+msgid "Wednesday"
+msgstr ""
+
+#. module: hm_timesheet
+#: model_terms:ir.ui.view,arch_db:hm_timesheet.hm_timesheet_sheet_view_search
+msgid "Week"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__date_start
+msgid "Week Beginning"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__date_end
+msgid "Week Ending"
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,help:hm_timesheet.field_hm_timesheet_sheet__expected_hours
+msgid "What the employee's working calendar asks for in a full week."
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,help:hm_timesheet.field_hm_timesheet_sheet__approval_can_act
+msgid "Whether the current user is an approver for the current step."
+msgstr ""
+
+#. module: hm_timesheet
+#: model:ir.model.fields,field_description:hm_timesheet.field_hm_timesheet_sheet__approval_can_act
+msgid "You Can Approve"
+msgstr ""
+
+#. module: hm_timesheet
+#. odoo-python
+#: code:addons/hm_timesheet/models/account_analytic_line.py:0
+msgid "added to"
+msgstr ""
+
+#. module: hm_timesheet
+#. odoo-python
+#: code:addons/hm_timesheet/models/account_analytic_line.py:0
+msgid "approved"
+msgstr ""
+
+#. module: hm_timesheet
+#. odoo-python
+#: code:addons/hm_timesheet/models/account_analytic_line.py:0
+msgid "changed"
+msgstr ""
+
+#. module: hm_timesheet
+#. odoo-python
+#: code:addons/hm_timesheet/models/account_analytic_line.py:0
+msgid "deleted"
+msgstr ""
+
+#. module: hm_timesheet
+#. odoo-python
+#: code:addons/hm_timesheet/models/hm_timesheet_sheet.py:0
+msgid "sheet_id"
+msgstr ""
+
+#. module: hm_timesheet
+#. odoo-python
+#: code:addons/hm_timesheet/models/account_analytic_line.py:0
+msgid "submitted"
+msgstr ""

@@ -453,6 +453,11 @@ msgid "Or a vehicle, a building, the company"
 msgstr "یا یک وسیله نقلیه، یک تعمیر، یا خود اداره"
 
 #. module: hm_expiry_docs
+#: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document__rating_ids
+msgid "Ratings"
+msgstr "امتیازها"
+
+#. module: hm_expiry_docs
 #: model:ir.model.fields,field_description:hm_expiry_docs.field_hm_expiry_document_type__reminder_days
 msgid "Remind Before"
 msgstr "یادآوری پیش از"

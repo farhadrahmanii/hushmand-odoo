@@ -68,6 +68,8 @@ OVERRIDES = {
 
 VERBATIM = {
     "'ID Card - %s' % (object.name)",
+    "'Timesheet - %s' % (object.employee_id.name or '')",
+    'sheet_id',
     "'Payslip - %s' % (object.number or object.employee_id.name)",
     'amount_total',
     'employee_id',
@@ -1316,4 +1318,116 @@ TRANSLATIONS = {
     "to": "تا",
     "users and": "کاربر و",
     "— as at": "— به تاریخ",
+
+    # hm_timesheet. "Timesheet" is تایم‌شیت, the borrowed word Afghan offices
+    # actually use and write, in the same spirit as کتگوری and لیازون
+    # elsewhere in this file. جدول اوقات کاری is more correct and nobody says
+    # it. "Manager" is آمر, the Afghan administrative title, not مدیر.
+    "All Timesheets": "همه تایم‌شیت‌ها",
+    "Analytic Line": "قلم تحلیلی",
+    "Approved by": "منظورکننده",
+    "Difference": "تفاوت",
+    "Entries": "اقلام",
+    "Friday": "جمعه",
+    "Manager": "آمر",
+    "Monday": "دوشنبه",
+    "My Timesheets": "تایم‌شیت‌های من",
+    "No project": "بدون پروژه",
+    "No time was recorded in this week.": "در این هفته هیچ وقتی ثبت نشده است.",
+    "No timesheets yet": "هنوز تایم‌شیتی وجود ندارد",
+    "Nothing waiting": "چیزی در انتظار نیست",
+    "Project": "پروژه",
+    "Ratings": "امتیازها",
+    "Saturday": "شنبه",
+    "Short of Expected": "کمتر از حد انتظار",
+    "Submit": "ارسال",
+    "Sunday": "یکشنبه",
+    "Task": "وظیفه",
+    "Thursday": "پنجشنبه",
+    "Timesheet": "تایم‌شیت",
+    "Timesheet Approval": "منظوری تایم‌شیت",
+    "Timesheet Status": "وضعیت تایم‌شیت",
+    "Timesheet Week Starts": "آغاز هفته تایم‌شیت",
+    "Timesheet week starts": "آغاز هفته تایم‌شیت",
+    "Timesheets": "تایم‌شیت‌ها",
+    "To Approve": "برای منظوری",
+    "Tuesday": "سه‌شنبه",
+    "Wednesday": "چهارشنبه",
+    "Week": "هفته",
+    "Week Beginning": "آغاز هفته",
+    "Week Ending": "پایان هفته",
+    "added to": "اضافه",
+    "approved": "منظور",
+    "changed": "تغییر",
+    "deleted": "حذف",
+    "submitted": "ارسال",
+
+    "Timesheet approved. The entries are now locked.":
+        "تایم‌شیت منظور شد. اقلام آن اکنون قفل است.",
+    "That employee already has a timesheet for this week.":
+        "این کارمند برای این هفته از قبل تایم‌شیت دارد.",
+    "The first day of a timesheet week. Saturday in Afghanistan.":
+        "نخستین روز هفته تایم‌شیت. در افغانستان شنبه.",
+    "Snapped to the first day of the week when saved.":
+        "هنگام ذخیره به نخستین روز هفته تنظیم می‌شود.",
+    "Recorded minus expected. Negative means the week is short.":
+        "ثبت‌شده منهای حد انتظار. عدد منفی یعنی هفته کم است.",
+    "What the employee's working calendar asks for in a full week.":
+        "آنچه تقویم کاری کارمند برای یک هفته کامل می‌خواهد.",
+    "Related user name for the resource to manage its access.":
+        "نام کاربر مرتبط با منبع، برای مدیریت دسترسی آن.",
+    "Start this week's timesheet": "تایم‌شیت این هفته را آغاز کنید",
+    "There is no time recorded on %s. An empty week is not a timesheet.":
+        "در %s هیچ وقتی ثبت نشده است. هفته خالی تایم‌شیت نیست.",
+    "Only a submitted or rejected timesheet can be reopened. %s is approved, "
+    "and its hours have been signed off.":
+        "تنها تایم‌شیت ارسال‌شده یا ردشده را می‌توان دوباره باز کرد. %s منظور "
+        "شده و ساعات آن امضا شده است.",
+    "%(week)s has been %(state)s, so its entries can no longer be "
+    "%(action)s.\n\nReopen the timesheet first, or ask whoever approved it to.":
+        "%(week)s %(state)s شده است، بنابراین اقلام آن دیگر %(action)s شده "
+        "نمی‌تواند.\n\nنخست تایم‌شیت را دوباره باز کنید، یا از کسی که آن را "
+        "منظور کرده است بخواهید.",
+
+    # Report and view fragments. The markup is part of the term, so it is
+    # reproduced exactly and only the words inside change.
+    "<strong>Employee:</strong>": "<strong>کارمند:</strong>",
+    "<strong>Total</strong>": "<strong>مجموع</strong>",
+    "<strong>Week:</strong>": "<strong>هفته:</strong>",
+    '<span class="o_stat_text">Approval</span>':
+        '<span class="o_stat_text">منظوری</span>',
+    "<br/>\n                        <strong>Department:</strong>":
+        "<br/>\n                        <strong>بخش:</strong>",
+    "<br/>\n                        <strong>Manager:</strong>":
+        "<br/>\n                        <strong>آمر:</strong>",
+    "<br/>\n                        <strong>Status:</strong>":
+        "<br/>\n                        <strong>وضعیت:</strong>",
+    "<br/>\n                        <strong>Total hours:</strong>":
+        "<br/>\n                        <strong>مجموع ساعات:</strong>",
+    "This timesheet has been submitted, so its entries can no\n"
+    "                        longer be changed. Reopen it to edit them.":
+        "این تایم‌شیت ارسال شده است، بنابراین اقلام آن دیگر تغییر کرده\n"
+        "                        نمی‌تواند. برای ویرایش، آن را دوباره باز کنید.",
+    "Approved. The hours below are final; to change them,\n"
+    "                        the approval has to be cancelled first.":
+        "منظور شد. ساعات زیر نهایی است؛ برای تغییر آنها نخست باید منظوری\n"
+        "                        لغو شود.",
+    "A timesheet appears here as soon as somebody logs time, one per\n"
+    "               employee per week.":
+        "به محض اینکه کسی وقتی ثبت کند تایم‌شیت اینجا ظاهر می‌شود، یکی برای\n"
+        "               هر کارمند در هر هفته.",
+    "Submitted timesheets appear here until they are approved or\n"
+    "               sent back.":
+        "تایم‌شیت‌های ارسال‌شده تا زمان منظوری یا بازگرداندن اینجا می‌مانند.",
+    "Record what you worked on, then submit the week for approval.\n"
+    "               Once it is submitted the entries are locked, so the hours your\n"
+    "               manager signs off are the hours you sent.":
+        "آنچه روی آن کار کرده‌اید ثبت کنید، سپس هفته را برای منظوری ارسال\n"
+        "               کنید. پس از ارسال اقلام قفل می‌شوند، بنابراین ساعاتی که\n"
+        "               آمر شما امضا می‌کند همان ساعاتی است که فرستاده‌اید.",
+    "Submitted timesheets go to the employee's\n"
+    "                manager. Add steps, or a condition on the hours, to send longer\n"
+    "                weeks further up.":
+        "تایم‌شیت‌های ارسال‌شده به آمر کارمند می‌روند. برای فرستادن هفته‌های\n"
+        "                طولانی‌تر به سطح بالاتر، مرحله یا شرطی روی ساعات اضافه کنید.",
 }

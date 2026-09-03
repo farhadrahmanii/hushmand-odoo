@@ -236,6 +236,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_mixin__approval_state__approved
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_request__state__approved
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_purchase_request__approval_state__approved
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_timesheet_sheet__approval_state__approved
 msgid "Approved"
 msgstr ""
 
@@ -298,6 +299,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_mixin__approval_state__cancelled
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_request__state__cancelled
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_purchase_request__approval_state__cancelled
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_timesheet_sheet__approval_state__cancelled
 msgid "Cancelled"
 msgstr ""
 
@@ -523,6 +525,7 @@ msgstr ""
 #. module: hm_approvals
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_mixin__approval_state__none
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_purchase_request__approval_state__none
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_timesheet_sheet__approval_state__none
 msgid "Not Submitted"
 msgstr ""
 
@@ -587,6 +590,7 @@ msgstr ""
 #. module: hm_approvals
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_mixin__approval_state__pending
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_purchase_request__approval_state__pending
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_timesheet_sheet__approval_state__pending
 msgid "Pending Approval"
 msgstr ""
 
@@ -621,6 +625,11 @@ msgid "Purchase request approval"
 msgstr ""
 
 #. module: hm_approvals
+#: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_request__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: hm_approvals
 #: model:ir.model.fields,field_description:hm_approvals.field_hm_approval_reject_wizard__reason
 msgid "Reason"
 msgstr ""
@@ -647,6 +656,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_mixin__approval_state__rejected
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_approval_request__state__rejected
 #: model:ir.model.fields.selection,name:hm_approvals.selection__hm_purchase_request__approval_state__rejected
+#: model:ir.model.fields.selection,name:hm_approvals.selection__hm_timesheet_sheet__approval_state__rejected
 msgid "Rejected"
 msgstr ""
 

@@ -352,6 +352,11 @@ msgid "Published"
 msgstr "نشرشده"
 
 #. module: hm_roster
+#: model:ir.model.fields,field_description:hm_roster.field_hm_roster__rating_ids
+msgid "Ratings"
+msgstr "امتیازها"
+
+#. module: hm_roster
 #: model_terms:ir.ui.view,arch_db:hm_roster.hm_roster_view_form
 msgid "Reset to Draft"
 msgstr "بازگشت به مسوده"

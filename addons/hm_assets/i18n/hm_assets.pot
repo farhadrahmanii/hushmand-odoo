@@ -623,6 +623,11 @@ msgid "Quarterly"
 msgstr ""
 
 #. module: hm_assets
+#: model:ir.model.fields,field_description:hm_assets.field_hm_asset__rating_ids
+msgid "Ratings"
+msgstr ""
+
+#. module: hm_assets
 #: model_terms:ir.ui.view,arch_db:hm_assets.hm_asset_view_form
 msgid "Rebuilds the forecast. Posted periods are never touched."
 msgstr ""

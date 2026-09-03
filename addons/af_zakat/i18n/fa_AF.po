@@ -660,6 +660,14 @@ msgid "Ramadan 1447"
 msgstr "رمضان ۱۴۴۷"
 
 #. module: af_zakat
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_beneficiary__rating_ids
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_contribution__rating_ids
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__rating_ids
+#: model:ir.model.fields,field_description:af_zakat.field_af_zakat_fund__rating_ids
+msgid "Ratings"
+msgstr "امتیازها"
+
+#. module: af_zakat
 #: model:ir.model.fields,field_description:af_zakat.field_af_zakat_distribution__received_signature
 msgid "Receipt Signed"
 msgstr "رسید امضاشده"

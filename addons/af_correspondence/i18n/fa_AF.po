@@ -367,6 +367,11 @@ msgid "Overdue"
 msgstr "معوق"
 
 #. module: af_correspondence
+#: model:ir.model.fields,field_description:af_correspondence.field_af_correspondence__rating_ids
+msgid "Ratings"
+msgstr "امتیازها"
+
+#. module: af_correspondence
 #. odoo-python
 #: code:addons/af_correspondence/models/af_correspondence.py:0
 msgid "Re: %s"

@@ -487,6 +487,11 @@ msgid "Position"
 msgstr "بست"
 
 #. module: af_hr
+#: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__rating_ids
+msgid "Ratings"
+msgstr "امتیازها"
+
+#. module: af_hr
 #: model:ir.model.fields,field_description:af_hr.field_af_employee_discipline__reason
 #: model_terms:ir.ui.view,arch_db:af_hr.af_employee_discipline_view_form
 msgid "Reason"
