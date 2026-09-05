@@ -277,9 +277,9 @@ committed, and a stale one in a working copy is a delivery waiting to go wrong.
 - [x] `README.md` in the module — CI fails if one is missing
 - [x] Every screen photographed on a real Odoo, in both languages, as a
       CI artifact
-- [ ] Demo data rich enough for those photographs to sell — most modules
-      ship 1–10 demo records and six ship none, so the shots prove the
-      screens render and show a customer an empty list
+- [x] Demo data rich enough for those photographs to sell — payroll shows a
+      computed payroll, timesheets show a submitted week and one in progress,
+      and that submission is what puts a real request in the approvals queue
 - [ ] Screenshots embedded in the listing pages (blocked on the above)
 - [x] `CHANGELOG.md` written, with the versioning scheme recorded
 - [ ] Version bumped for the release being cut
