@@ -86,7 +86,7 @@ python tools/verify_js_python_parity.py
 
 ## Modules
 
-All 20 install and pass their tests on Odoo 19 in CI (516 tests).
+All 21 install and pass their tests on Odoo 19 in CI (546 tests).
 
 | Module | Line | What it does | Tests |
 |--------|------|--------------|-------|
@@ -110,6 +110,7 @@ All 20 install and pass their tests on Odoo 19 in CI (516 tests).
 | `hm_payroll` | Horizontal | Salary structures, rules and payslips for Odoo Community | 48 |
 | `hm_purchase_request` | Horizontal | The step before the quotation: a department asks, and the request is approved on its own merits | 28 |
 | `hm_roster` | Horizontal | Schedule guards, drivers or a reception desk, and be told when the roster is broken | 29 |
+| `hm_timesheet` | Horizontal | Weekly timesheets that get submitted, approved, locked and printed | 42 |
 
 `af_*` modules are Afghanistan and Persian-market localization.
 `hm_*` modules fill Odoo Community gaps and sell worldwide.
@@ -118,19 +119,20 @@ All 20 install and pass their tests on Odoo 19 in CI (516 tests).
 
 ## Translations
 
-1,911 translatable terms across the catalogue, of which 1,246 are distinct —
-the rest are the chatter and activity labels every model inherits.
+2,051 translatable terms across the catalogue. Roughly a third are distinct;
+the rest are the chatter and activity labels every model inherits, which is why
+one memory projected onto every module goes a very long way.
 
 | Language | State |
 |----------|-------|
 | English | source |
-| Dari (`fa_AF`) | all 1,911 terms — **a first draft, not reviewed by a native speaker** |
+| Dari (`fa_AF`) | all 2,051 terms — **a first draft, not reviewed by a native speaker** |
 | Pashto (`ps_AF`) | not started — needs a translator |
 
 CI installs the catalogue, activates `fa_AF` and reads Dari back out of the
-database: 1,896 of 1,911 terms. The other 15 are translated to themselves —
-date patterns and technical names — and Odoo stores no translation for a
-string that equals its source.
+database: 2,034 of 2,051 terms. The rest are translated to themselves — date
+patterns, field paths, a report's Python expression — and Odoo stores no
+translation for a string that equals its source.
 
 ### How it fits together
 
