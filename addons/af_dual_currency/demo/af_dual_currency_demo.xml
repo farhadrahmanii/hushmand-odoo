@@ -11,4 +11,24 @@
         <field name="note">A sample rate. Change it to the rate your office
 agreed for this month, then press Confirm.</field>
     </record>
+
+    <!-- The point of the module is a rate per period and a history of them,
+         which one period cannot show. -->
+
+    <record id="demo_period_last" model="af.exchange.period">
+        <field name="name">Last Month (Demo)</field>
+        <field name="currency_id" ref="base.AFN"/>
+        <field name="date_from" eval="(DateTime.today() + relativedelta(months=-1, day=1)).strftime('%Y-%m-%d')"/>
+        <field name="date_to" eval="(DateTime.today() + relativedelta(day=1, days=-1)).strftime('%Y-%m-%d')"/>
+        <field name="rate">69.8</field>
+    </record>
+
+    <record id="demo_period_before" model="af.exchange.period">
+        <field name="name">Two Months Ago (Demo)</field>
+        <field name="currency_id" ref="base.AFN"/>
+        <field name="date_from" eval="(DateTime.today() + relativedelta(months=-2, day=1)).strftime('%Y-%m-%d')"/>
+        <field name="date_to" eval="(DateTime.today() + relativedelta(months=-1, day=1, days=-1)).strftime('%Y-%m-%d')"/>
+        <field name="rate">71.2</field>
+    </record>
+
 </odoo>

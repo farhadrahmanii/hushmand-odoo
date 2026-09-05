@@ -14,4 +14,28 @@
         <field name="correspondent_name">Ministry of Economy</field>
         <field name="reply_to_id" ref="demo_incoming"/>
     </record>
+
+    <record id="demo_incoming_tax" model="af.correspondence">
+        <field name="direction">incoming</field>
+        <field name="subject">Tax clearance enquiry, 1404 (Demo)</field>
+        <field name="correspondent_name">Afghanistan Revenue Department</field>
+        <field name="letter_reference">ARD/1404/0881</field>
+        <field name="department">Finance</field>
+    </record>
+
+    <record id="demo_incoming_municipality" model="af.correspondence">
+        <field name="direction">incoming</field>
+        <field name="subject">Notice of road works, Shahr-e-Naw (Demo)</field>
+        <field name="correspondent_name">Kabul Municipality</field>
+        <field name="letter_reference">KM/1405/0342</field>
+        <field name="department">Administration</field>
+    </record>
+
+    <record id="demo_outgoing_bank" model="af.correspondence">
+        <field name="direction">outgoing</field>
+        <field name="subject">Change of authorised signatories (Demo)</field>
+        <field name="correspondent_name">Azizi Bank</field>
+        <field name="department">Finance</field>
+    </record>
+
 </odoo>

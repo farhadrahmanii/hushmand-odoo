@@ -7,4 +7,41 @@
         <field name="af_grandfather_name">Abdul Ghani</field>
         <field name="af_tin">9001112223</field>
     </record>
+
+    <!-- Disciplinary actions are what Odoo has in neither edition, so the
+         screen should show the range: a verbal warning closed, a written one
+         acknowledged, and a suspension still running. -->
+
+    <record id="demo_discipline_verbal" model="af.employee.discipline">
+        <field name="employee_id" ref="demo_employee"/>
+        <field name="date" eval="(DateTime.today() + relativedelta(months=-3)).strftime('%Y-%m-%d')"/>
+        <field name="action_type">verbal</field>
+        <field name="reason">Repeated late arrival (Demo)</field>
+        <field name="description">Spoken to by the department head. No further
+occurrences in the month that followed.</field>
+        <field name="state">closed</field>
+    </record>
+
+    <record id="demo_discipline_written" model="af.employee.discipline">
+        <field name="employee_id" ref="demo_employee"/>
+        <field name="date" eval="(DateTime.today() + relativedelta(months=-1)).strftime('%Y-%m-%d')"/>
+        <field name="action_type">written</field>
+        <field name="reason">Vehicle used without a movement order (Demo)</field>
+        <field name="description">Letter issued and acknowledged. Follow-up
+review set for the end of the probation period.</field>
+        <field name="state">acknowledged</field>
+        <field name="acknowledged_date" eval="(DateTime.today() + relativedelta(months=-1, days=2)).strftime('%Y-%m-%d')"/>
+        <field name="follow_up_date" eval="(DateTime.today() + relativedelta(months=1)).strftime('%Y-%m-%d')"/>
+    </record>
+
+    <record id="demo_discipline_suspension" model="af.employee.discipline">
+        <field name="employee_id" ref="demo_employee"/>
+        <field name="date" eval="(DateTime.today() + relativedelta(days=-4)).strftime('%Y-%m-%d')"/>
+        <field name="action_type">suspension</field>
+        <field name="reason">Absence without leave, three days (Demo)</field>
+        <field name="state">issued</field>
+        <field name="suspension_date_from" eval="(DateTime.today() + relativedelta(days=-3)).strftime('%Y-%m-%d')"/>
+        <field name="suspension_date_to" eval="(DateTime.today() + relativedelta(days=4)).strftime('%Y-%m-%d')"/>
+    </record>
+
 </odoo>

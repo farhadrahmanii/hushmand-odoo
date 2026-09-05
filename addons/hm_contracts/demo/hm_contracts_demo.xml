@@ -16,4 +16,31 @@
         <field name="notes">A sample contract. Press Start to begin its
 schedule; it will tell you when the first invoice is due.</field>
     </record>
+
+    <record id="demo_customer_ngo" model="res.partner">
+        <field name="name">Hewad Relief Organisation (Demo)</field>
+    </record>
+
+    <record id="demo_contract_security" model="hm.contract">
+        <field name="title">Guard service, Herat office (Demo)</field>
+        <field name="partner_id" ref="demo_customer_ngo"/>
+        <field name="date_start" eval="(DateTime.today() + relativedelta(months=-4, day=1)).strftime('%Y-%m-%d')"/>
+        <field name="line_ids" eval="[(0, 0, {
+            'name': 'Four guards, 24 hour cover',
+            'quantity': 4.0,
+            'price_unit': 11000.0,
+        })]"/>
+    </record>
+
+    <record id="demo_contract_lease" model="hm.contract">
+        <field name="title">Office lease, Shahr-e-Naw (Demo)</field>
+        <field name="partner_id" ref="demo_customer"/>
+        <field name="date_start" eval="(DateTime.today() + relativedelta(months=-9, day=1)).strftime('%Y-%m-%d')"/>
+        <field name="line_ids" eval="[(0, 0, {
+            'name': 'Ground and first floor, annual lease',
+            'quantity': 1.0,
+            'price_unit': 240000.0,
+        })]"/>
+    </record>
+
 </odoo>
