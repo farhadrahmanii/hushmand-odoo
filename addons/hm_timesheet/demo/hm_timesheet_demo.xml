@@ -23,15 +23,44 @@
             <field name="project_id" ref="demo_project_water"/>
         </record>
 
+        <!--
+          The engineer reports to somebody, because the approval process
+          shipped with this module resolves the approver through
+          employee_id.parent_id.user_id. Without a manager who is a user, a
+          submitted timesheet would have nobody to go to.
+        -->
+        <record id="demo_employee_manager" model="hr.employee">
+            <field name="name">Rahima Sadat (Demo)</field>
+            <field name="job_title">Programme Manager</field>
+            <field name="user_id" ref="base.user_admin"/>
+        </record>
+
         <record id="demo_employee_engineer" model="hr.employee">
-            <field name="name">Nasir Ahmad</field>
+            <field name="name">Nasir Ahmad (Demo)</field>
             <field name="job_title">Field Engineer</field>
+            <field name="parent_id" ref="demo_employee_manager"/>
         </record>
 
         <!--
-          Entries only. The sheet builds itself around them, which is also the
-          quickest way to show that it does: nothing here creates one.
+          Two weeks, so the list shows what the module is for: last week
+          submitted and waiting on the manager, this week still being filled
+          in. One row of each beats four rows of the same thing.
+
+          The sheets are created explicitly only so they can be referred to
+          below. Nothing else needs to: entries find their own week.
         -->
+
+        <record id="demo_sheet_last_week" model="hm.timesheet.sheet">
+            <field name="employee_id" ref="demo_employee_engineer"/>
+            <field name="date_start" eval="(DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_sheet_this_week" model="hm.timesheet.sheet">
+            <field name="employee_id" ref="demo_employee_engineer"/>
+            <field name="date_start" eval="DateTime.today().strftime('%Y-%m-%d')"/>
+        </record>
+
+        <!-- Last week: a full week's work, about to be submitted. -->
 
         <record id="demo_line_1" model="account.analytic.line">
             <field name="name">Surveyed Qala-e-Naw, wells 1 to 4</field>
@@ -39,7 +68,7 @@
             <field name="task_id" ref="demo_task_survey"/>
             <field name="employee_id" ref="demo_employee_engineer"/>
             <field name="unit_amount">7.5</field>
-            <field name="date" eval="(DateTime.today() - relativedelta(days=3)).strftime('%Y-%m-%d')"/>
+            <field name="date" eval="(DateTime.today() - relativedelta(days=7)).strftime('%Y-%m-%d')"/>
         </record>
 
         <record id="demo_line_2" model="account.analytic.line">
@@ -48,25 +77,54 @@
             <field name="task_id" ref="demo_task_survey"/>
             <field name="employee_id" ref="demo_employee_engineer"/>
             <field name="unit_amount">8.0</field>
-            <field name="date" eval="(DateTime.today() - relativedelta(days=2)).strftime('%Y-%m-%d')"/>
+            <field name="date" eval="(DateTime.today() - relativedelta(days=6)).strftime('%Y-%m-%d')"/>
         </record>
 
         <record id="demo_line_3" model="account.analytic.line">
+            <field name="name">Pump testing, Zinda Jan</field>
+            <field name="project_id" ref="demo_project_water"/>
+            <field name="task_id" ref="demo_task_survey"/>
+            <field name="employee_id" ref="demo_employee_engineer"/>
+            <field name="unit_amount">8.0</field>
+            <field name="date" eval="(DateTime.today() - relativedelta(days=5)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <record id="demo_line_4" model="account.analytic.line">
             <field name="name">Drafted the quarterly donor report</field>
             <field name="project_id" ref="demo_project_water"/>
             <field name="task_id" ref="demo_task_report"/>
             <field name="employee_id" ref="demo_employee_engineer"/>
-            <field name="unit_amount">4.0</field>
-            <field name="date" eval="(DateTime.today() - relativedelta(days=1)).strftime('%Y-%m-%d')"/>
+            <field name="unit_amount">6.5</field>
+            <field name="date" eval="(DateTime.today() - relativedelta(days=4)).strftime('%Y-%m-%d')"/>
         </record>
 
-        <record id="demo_line_4" model="account.analytic.line">
-            <field name="name">Site visit, Zinda Jan</field>
+        <record id="demo_line_5" model="account.analytic.line">
+            <field name="name">Donor report, figures and annexes</field>
             <field name="project_id" ref="demo_project_water"/>
+            <field name="task_id" ref="demo_task_report"/>
+            <field name="employee_id" ref="demo_employee_engineer"/>
+            <field name="unit_amount">7.0</field>
+            <field name="date" eval="(DateTime.today() - relativedelta(days=3)).strftime('%Y-%m-%d')"/>
+        </record>
+
+        <!-- This week: in progress. -->
+
+        <record id="demo_line_6" model="account.analytic.line">
+            <field name="name">Site visit, Guzara district</field>
+            <field name="project_id" ref="demo_project_water"/>
+            <field name="task_id" ref="demo_task_survey"/>
             <field name="employee_id" ref="demo_employee_engineer"/>
             <field name="unit_amount">6.5</field>
             <field name="date" eval="DateTime.today().strftime('%Y-%m-%d')"/>
         </record>
+
+        <!--
+          Submitting last week populates the approval queue as well, which is
+          the only place in the catalogue a real approval request comes from
+          with demo data loaded.
+        -->
+        <function model="hm.timesheet.sheet" name="action_submit"
+                  eval="[[ref('demo_sheet_last_week')]]"/>
 
     </data>
 </odoo>

@@ -82,4 +82,27 @@ Copy it, rename it, and change the numbers to yours.</field>
         <field name="name">First Month (Demo)</field>
         <field name="structure_id" ref="demo_structure"/>
     </record>
+
+    <!-- Last month's payslips, so the Payslips list shows a payroll rather
+         than an empty table. The figures are computed by the rules above,
+         not typed here: demo data that hard-codes a Net nobody can reproduce
+         teaches the reader the wrong thing about how the module works. -->
+
+    <record id="demo_payslip_1" model="hm.payslip">
+        <field name="employee_id" ref="demo_employee_1"/>
+        <field name="structure_id" ref="demo_structure"/>
+        <field name="date_from" eval="(DateTime.today().replace(day=1) - relativedelta(months=1)).strftime('%Y-%m-%d')"/>
+        <field name="date_to" eval="(DateTime.today().replace(day=1) - relativedelta(days=1)).strftime('%Y-%m-%d')"/>
+    </record>
+
+    <record id="demo_payslip_2" model="hm.payslip">
+        <field name="employee_id" ref="demo_employee_2"/>
+        <field name="structure_id" ref="demo_structure"/>
+        <field name="date_from" eval="(DateTime.today().replace(day=1) - relativedelta(months=1)).strftime('%Y-%m-%d')"/>
+        <field name="date_to" eval="(DateTime.today().replace(day=1) - relativedelta(days=1)).strftime('%Y-%m-%d')"/>
+    </record>
+
+    <function model="hm.payslip" name="action_compute_sheet"
+              eval="[[ref('demo_payslip_1'), ref('demo_payslip_2')]]"/>
+
 </odoo>

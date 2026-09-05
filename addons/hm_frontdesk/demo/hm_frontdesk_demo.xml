@@ -16,4 +16,37 @@
         <field name="purpose">Interview</field>
         <field name="expected_date" eval="(DateTime.now() + relativedelta(hours=3)).strftime('%Y-%m-%d %H:%M:%S')"/>
     </record>
+
+    <!-- On Site Now is the screen this module exists for, and it answers a
+         question only when there is more than one person in the building. -->
+
+    <record id="demo_visitor_auditor" model="hm.visitor">
+        <field name="name">Mr. Wahidullah Noor (Demo)</field>
+        <field name="organisation">Ministry of Finance</field>
+        <field name="purpose">Quarterly audit visit</field>
+        <field name="state">on_site</field>
+        <field name="check_in" eval="(DateTime.now() + relativedelta(hours=-3)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="badge_number">V-02</field>
+        <field name="accompanying_count">2</field>
+    </record>
+
+    <record id="demo_visitor_courier" model="hm.visitor">
+        <field name="name">Najibullah (Demo)</field>
+        <field name="organisation">Kabul Express Courier</field>
+        <field name="purpose">Document delivery</field>
+        <field name="state">left</field>
+        <field name="check_in" eval="(DateTime.now() + relativedelta(hours=-6)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="check_out" eval="(DateTime.now() + relativedelta(hours=-6, minutes=12)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="badge_number">V-01</field>
+    </record>
+
+    <record id="demo_visitor_contractor" model="hm.visitor">
+        <field name="name">Eng. Farid Sahak (Demo)</field>
+        <field name="organisation">Hewad Construction</field>
+        <field name="purpose">Roof repair survey</field>
+        <field name="state">on_site</field>
+        <field name="check_in" eval="(DateTime.now() + relativedelta(minutes=-25)).strftime('%Y-%m-%d %H:%M:%S')"/>
+        <field name="badge_number">V-05</field>
+    </record>
+
 </odoo>

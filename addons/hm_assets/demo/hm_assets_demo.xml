@@ -17,4 +17,41 @@
         <field name="salvage_value">3000</field>
         <field name="date_start" eval="(DateTime.today() + relativedelta(months=-2, day=1)).strftime('%Y-%m-%d')"/>
     </record>
+
+    <!-- A register with one line in it does not read as a register. These
+         three are the shapes an asset register actually holds: a vehicle
+         depreciating over years, equipment over months, and something bought
+         recently enough to still be at nearly full value. -->
+
+    <record id="demo_category_equipment" model="hm.asset.category">
+        <field name="name">Office Equipment (Demo)</field>
+        <field name="company_id" ref="base.main_company"/>
+        <field name="method">linear</field>
+        <field name="period_length">1</field>
+        <field name="period_count">36</field>
+    </record>
+
+    <record id="demo_asset_generator" model="hm.asset">
+        <field name="name">Perkins 100kVA generator (Demo)</field>
+        <field name="category_id" ref="demo_category_equipment"/>
+        <field name="purchase_value">48000</field>
+        <field name="salvage_value">4000</field>
+        <field name="date_start" eval="(DateTime.today() + relativedelta(months=-14, day=1)).strftime('%Y-%m-%d')"/>
+    </record>
+
+    <record id="demo_asset_laptops" model="hm.asset">
+        <field name="name">Field laptops, batch of six (Demo)</field>
+        <field name="category_id" ref="demo_category_equipment"/>
+        <field name="purchase_value">7200</field>
+        <field name="date_start" eval="(DateTime.today() + relativedelta(months=-5, day=1)).strftime('%Y-%m-%d')"/>
+    </record>
+
+    <record id="demo_asset_pickup" model="hm.asset">
+        <field name="name">Toyota Land Cruiser, Herat office (Demo)</field>
+        <field name="category_id" ref="demo_category"/>
+        <field name="purchase_value">62000</field>
+        <field name="salvage_value">8000</field>
+        <field name="date_start" eval="(DateTime.today() + relativedelta(months=-1, day=1)).strftime('%Y-%m-%d')"/>
+    </record>
+
 </odoo>
