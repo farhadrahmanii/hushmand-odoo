@@ -28,11 +28,23 @@
           shipped with this module resolves the approver through
           employee_id.parent_id.user_id. Without a manager who is a user, a
           submitted timesheet would have nobody to go to.
+
+          Her own user, not the administrator's. hr enforces one employee per
+          user per company (hr_employee_user_uniq), and Odoo's own hr demo has
+          already attached an employee to the admin. Borrowing that user fails
+          the whole demo file, which Odoo then downgrades to a warning and
+          installs without any demo data at all.
         -->
+        <record id="demo_user_manager" model="res.users">
+            <field name="name">Rahima Sadat (Demo)</field>
+            <field name="login">rahima.demo</field>
+            <field name="group_ids" eval="[(4, ref('base.group_user'))]"/>
+        </record>
+
         <record id="demo_employee_manager" model="hr.employee">
             <field name="name">Rahima Sadat (Demo)</field>
             <field name="job_title">Programme Manager</field>
-            <field name="user_id" ref="base.user_admin"/>
+            <field name="user_id" ref="demo_user_manager"/>
         </record>
 
         <record id="demo_employee_engineer" model="hr.employee">
