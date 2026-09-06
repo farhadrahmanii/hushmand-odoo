@@ -64,7 +64,8 @@ class TestArming(GateCase):
 
     def test_an_unarmed_gate_lets_everything_through(self):
         """No licence, no key, no complaint."""
-        self.gate._licence_gate_check()
+        with self.unarmed():
+            self.gate._licence_gate_check()
 
 
 class TestTheGateRefuses(GateCase):
@@ -137,7 +138,8 @@ class TestTheGraceMonth(GateCase):
 class TestTheIndicator(GateCase):
 
     def test_an_unarmed_build_shows_nothing(self):
-        self.assertEqual(self.Licence.status()["level"], "off")
+        with self.unarmed():
+            self.assertEqual(self.Licence.status()["level"], "off")
 
     def test_a_missing_licence_is_a_danger(self):
         with self.armed():

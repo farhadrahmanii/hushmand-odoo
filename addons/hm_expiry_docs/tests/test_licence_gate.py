@@ -60,7 +60,8 @@ class TestLicenceGate(LicenceKeyMixin, common.TransactionCase):
         self.assertIn("No licence", str(caught.exception))
 
     def test_an_unlicensed_database_cannot_edit_documents(self):
-        document = self.Document.create(self._values())
+        with self.unarmed():
+            document = self.Document.create(self._values())
         with self.armed():
             with self.assertRaises(UserError):
                 document.name = "WP-002"
@@ -69,14 +70,16 @@ class TestLicenceGate(LicenceKeyMixin, common.TransactionCase):
         """The gate refuses new work. It does not hold a customer's own
         records hostage -- that turns a late renewal into a dispute, and it is
         the behaviour that gets a supplier talked about."""
-        document = self.Document.create(self._values())
+        with self.unarmed():
+            document = self.Document.create(self._values())
         with self.armed():
             self.assertEqual(document.name, "WP-001")
             self.assertEqual(document.type_id, self.doc_type)
             self.assertTrue(self.Document.search([("id", "=", document.id)]))
 
     def test_the_customer_can_still_delete(self):
-        document = self.Document.create(self._values())
+        with self.unarmed():
+            document = self.Document.create(self._values())
         with self.armed():
             document.unlink()
         self.assertFalse(document.exists())
@@ -149,6 +152,10 @@ class TestLicenceGate(LicenceKeyMixin, common.TransactionCase):
     # ------------------------------------------------------------------
 
     def test_an_unarmed_build_is_unaffected(self):
-        """Without a vendor key there is nothing to enforce, which is why the
-        other 500-odd tests in this catalogue need no licence at all."""
-        self.assertTrue(self.Document.create(self._values()).exists())
+        """Without a vendor key there is nothing to enforce.
+
+        That is no longer this checkout's state, so the test says which state
+        it is about rather than assuming the repository is still in it.
+        """
+        with self.unarmed():
+            self.assertTrue(self.Document.create(self._values()).exists())

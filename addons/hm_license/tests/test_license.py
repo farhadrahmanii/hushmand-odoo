@@ -73,8 +73,9 @@ class TestVerification(LicenceCase):
     def test_an_unconfigured_build_says_so(self):
         """A fresh checkout has no signing key. It should say that, not
         report a mystifying signature mismatch."""
-        with self.assertRaises(UserError) as caught:
-            self.Licence.create({"key": self._key()})
+        with self.unarmed():
+            with self.assertRaises(UserError) as caught:
+                self.Licence.create({"key": self._key()})
         self.assertIn("signing key", str(caught.exception).lower())
 
     def test_gibberish_is_refused_clearly(self):

@@ -92,6 +92,19 @@ class LicenceKeyMixin:
     #: Reads better at the call site of a gate test than ``_with_key``.
     armed = _with_key
 
+    def unarmed(self):
+        """Put the placeholder key back, whatever this checkout carries.
+
+        A test about how an unconfigured build behaves must say so, rather
+        than relying on the repository not yet having a vendor key. That
+        assumption held until the day it stopped holding, and then six tests
+        failed at once for a reason that had nothing to do with them.
+        """
+        module = __import__(LICENCE_MODULE, fromlist=["x"])
+        return patch.object(
+            module, "VENDOR_PUBLIC_KEY", module.PLACEHOLDER_PUBLIC_KEY
+        )
+
     def _install(self, payload=None, signer=None):
         with self._with_key():
             return self.env["hm.license"].create({"key": self._key(payload, signer)})
