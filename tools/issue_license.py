@@ -36,17 +36,29 @@ try:
     from cryptography.hazmat.primitives.asymmetric.ed25519 import (
         Ed25519PrivateKey,
     )
-except ImportError:
-    sys.exit(
-        "This tool needs the cryptography package:\n"
-        "    pip install cryptography"
-    )
+except ImportError:  # pragma: no cover - present wherever licences are issued
+    # Not sys.exit. Importing a module must not kill the process: half of this
+    # file is module-graph arithmetic that needs no cryptography at all, and
+    # the tests for it run in a job that has none installed. Refuse at the
+    # point a key is actually touched instead.
+    serialization = None
+    Ed25519PrivateKey = None
+
+
+def _require_cryptography():
+    if Ed25519PrivateKey is None:
+        raise SystemExit(
+            "This tool needs the cryptography package to sign or read a key. "
+            "Install it with: pip install cryptography"
+        )
+
 
 DEFAULT_KEY_PATH = pathlib.Path.home() / ".hushmand" / "licence_signing_key.pem"
 
 
 def generate_keys(path):
     """Create a signing keypair and print the public half."""
+    _require_cryptography()
     path = pathlib.Path(path)
     if path.exists():
         sys.exit(
@@ -80,6 +92,7 @@ def generate_keys(path):
 
 
 def load_private_key(path):
+    _require_cryptography()
     path = pathlib.Path(path)
     if not path.exists():
         sys.exit(
