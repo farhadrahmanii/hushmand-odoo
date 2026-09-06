@@ -53,7 +53,7 @@ PLACEHOLDER_PUBLIC_KEY = "REPLACE-WITH-YOUR-OWN-PUBLIC-KEY"
 #:
 #: The private half must never reach this repository or a customer. It is the
 #: only thing preventing anyone from minting their own licences.
-VENDOR_PUBLIC_KEY = PLACEHOLDER_PUBLIC_KEY
+VENDOR_PUBLIC_KEY = "MnlbtFCv2OmZp61U/YaQ36vwm1WloZ97iQXDeDWEA5c="
 
 #: Payload fields a licence must carry to be considered well-formed.
 REQUIRED_CLAIMS = ("licence_id", "customer", "modules", "expires")
