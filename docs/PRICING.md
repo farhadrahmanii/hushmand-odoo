@@ -1,13 +1,19 @@
 # Pricing the catalogue
 
-**The numbers below are a starting point, not a decision.** They are grounded
-in what the market charges and in what each module costs to deliver, but only
-you know your cost base, your pipeline, and what an Afghan ministry will
-actually sign. Change them.
+**Decided 2026-09-06.** The prices live in `tools/pricing.py`, not in this
+document — a number repeated in a document, a spreadsheet and an email is
+three numbers that will disagree within a quarter, and the one the customer
+remembers is whichever was lowest.
 
-What this document is really for is the structural problem in the middle
-section, which is not a matter of opinion and would cost real money to
-discover after the first contract.
+```bash
+python tools/quote.py af_hr_payroll --customer "Herat NGO"
+python tools/quote.py --suite afghanistan
+python tools/quote.py --check          # look for arbitrage
+```
+
+`--check` runs in CI. It refuses a price list where some combination undercuts
+the catalogue, where a suite costs more than its own modules, or where a module
+has no band at all.
 
 ---
 
@@ -54,10 +60,10 @@ The Afghanistan suite is the problem. Priced as "the Afghan localization" it
 hands over four of the horizontal modules — the ones whose market is every
 Odoo Community user on earth, not just Afghanistan.
 
-**Recommendation: do not sell `afghanistan` as a discount tier.** Price it at
-or near the complete catalogue, or drop it and sell `complete` instead. The
-five modules it excludes (`hm_account_reports`, `hm_assets`, `hm_contracts`,
-`hm_frontdesk`, `hm_roster`) are not worth the discount it implies.
+**Decided: keep the suite, priced near the catalogue.** 3,300 against 5,000
+for everything — 66% of the price for 71% of the modules. It is not a
+localization discount tier, and the four Line B modules it carries are paid
+for rather than given away.
 
 ---
 
@@ -116,13 +122,13 @@ and no competitor.
 
 ---
 
-## 4. A structure to start from
+## 4. The price list
 
 **Per-module, one-off licence**, banded rather than individually priced.
 Banding stops a customer negotiating each module and stops you maintaining
 twenty-one prices.
 
-| Band | Modules | Suggested one-off |
+| Band | Modules | One-off |
 |---|---|---|
 | **A — engines** | `hm_payroll`, `hm_approvals`, `af_jalali` | USD 600 |
 | **B — Enterprise replacements** | `hm_assets`, `hm_timesheet`, `hm_contracts`, `hm_account_reports`, `hm_roster`, `hm_frontdesk` | USD 400 |
@@ -130,15 +136,25 @@ twenty-one prices.
 | **D — supporting** | `hm_expiry_docs`, `hm_purchase_request` | USD 300 |
 | — | `hm_license` | included, never sold alone |
 
-### Suites, at a discount that reflects the closure
+### Suites
 
-| Suite | Sum of parts | Suggested | Discount |
-|---|---|---|---|
-| `hr` | ~2,500 | 1,800 | 28% |
-| `finance` | ~2,100 | 1,500 | 29% |
-| `office` | ~2,300 | 1,600 | 30% |
-| `afghanistan` | ~4,400 | **3,600** | 18% — deliberately shallow, see §1 |
-| `complete` | ~7,800 | 5,000 | 36% |
+| Suite | Modules | List | Ad hoc | **Price** |
+|---|---|---|---|---|
+| `hr` | 9 | 3,200 | 2,300 | **1,800** |
+| `finance` | 8 | 2,400 | 1,750 | **1,500** |
+| `office` | 9 | 2,800 | 2,000 | **1,600** |
+| `afghanistan` | 15 | 5,100 | 3,400 | **3,300** |
+| `complete` | 21 | 7,500 | 5,000 | **5,000** |
+
+*Ad hoc* is what those same modules cost bought individually with the volume
+discount. A suite must never exceed it, or the bundle is not a bundle.
+
+**`afghanistan` was set at 3,600 and is 3,300.** The intent — price it near
+`complete` so the four Line B modules it drags in are paid for — is unchanged,
+but its fifteen modules bought ad hoc come to 3,400, so at 3,600 the suite cost
+more than not buying the suite. A customer would have found that. It is now
+66% of the catalogue price for 71% of the modules, and it is the cheapest way
+to buy them, which is what a bundle is for.
 
 ### Annual maintenance
 
@@ -155,17 +171,17 @@ the renewal on the strength of having delivered.
 
 ## 5. One-off or subscription
 
-The plan left this open. The recommendation is **one-off licence plus optional
-annual maintenance**, for one reason:
+The plan left this open. **Decided: one-off licence plus optional annual
+maintenance.** The argument against is real:
 
 > A subscription funds version upgrades. A one-off does not, and Odoo ships a
 > new major version every year.
 
 But an Afghan ministry or NGO buying software has a procurement process built
-around a purchase, not a subscription, and the annual renewal is the thing
-most likely to fail their process rather than yours. Sell the way the customer
-can actually buy, and price the first licence high enough that carrying one
-version upgrade unpaid is survivable.
+around a purchase, not a subscription, and the annual renewal is the thing most
+likely to fail their process rather than yours. Sell the way the customer can
+actually buy, and price the first licence high enough that carrying one version
+upgrade unpaid is survivable — which at 600 for an engine, it is.
 
 Revisit once you have five customers and know how many of them renewed.
 

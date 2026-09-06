@@ -104,6 +104,13 @@ jobs:
           print("XML, manifests and icons OK")
           PY
 
+      - name: The price list has no arbitrage in it
+        # A price list where some combination of suites undercuts the
+        # catalogue is a price list a customer will eventually solve, and
+        # they will solve it after hearing the first number from somebody
+        # who paid more.
+        run: python tools/quote.py --check
+
       - name: No JavaScript imports a library Odoo does not expose as a module
         # Odoo ships luxon and friends as plain scripts defining globals, not
         # as modules its loader can resolve. `import { DateTime } from "luxon"`

@@ -205,6 +205,71 @@ class TestTheLicenceCoversWhatTheGateDemands(unittest.TestCase):
         self.assertIn("af_mining", str(caught.exception))
 
 
+class TestThePriceList(unittest.TestCase):
+    """A price list is coherent only if nothing on it undercuts anything else.
+
+    Customers solve price lists. It is much cheaper to have the arithmetic
+    find the arbitrage than the second customer to find it, having heard the
+    number from the first.
+    """
+
+    def setUp(self):
+        import pricing
+        import quote
+        self.pricing = pricing
+        self.quote = quote
+
+    def test_every_module_has_a_price_band(self):
+        """A module without a band raises mid-quotation, in front of whoever
+        asked what it costs."""
+        for module in build_release.all_modules():
+            with self.subTest(module=module):
+                self.assertIn(module, self.pricing.MODULES)
+
+    def test_no_suite_costs_more_than_its_own_modules(self):
+        """A bundle dearer than its parts is not a bundle, and the customer
+        who works that out tells the next one."""
+        for suite, price in self.pricing.SUITE_PRICES.items():
+            wanted = (build_release.SUITES[suite]["modules"]
+                      or build_release.all_modules())
+            ad_hoc = self.pricing.price_for(
+                build_release.resolve_dependencies(wanted)
+            )["price"]
+            with self.subTest(suite=suite):
+                self.assertLessEqual(price, ad_hoc)
+
+    def test_the_coherence_check_passes_on_the_real_list(self):
+        self.assertEqual(self.quote.check(), 0)
+
+    def test_a_quote_covers_what_the_gate_will_demand(self):
+        """The whole reason this tool exists: quoting af_hr_payroll alone
+        would price 300 dollars of software that licenses 1,800."""
+        quoted = self.quote.quote_for(["af_hr_payroll"])
+        self.assertIn("hm_payroll", quoted["modules"])
+        self.assertGreater(quoted["price"], self.pricing.BANDS["C"])
+
+    def test_buying_more_never_costs_less(self):
+        """Adding a module to a quote must not reduce the price. The volume
+        discount steps, and a step can invert the total if the bands are
+        wrong."""
+        catalogue = [m for m in build_release.all_modules()
+                     if self.pricing.BANDS_OF(m)]
+        previous = 0
+        for size in range(1, len(catalogue) + 1):
+            price = self.pricing.price_for(catalogue[:size])["price"]
+            with self.subTest(modules=size):
+                self.assertGreaterEqual(price, previous)
+            previous = price
+
+    def test_maintenance_is_a_fifth_of_the_licence(self):
+        quoted = self.pricing.with_maintenance(
+            self.pricing.price_for(["hm_payroll"])
+        )
+        self.assertAlmostEqual(
+            quoted["maintenance"], quoted["price"] * 0.2, delta=50
+        )
+
+
 class TestChecksums(unittest.TestCase):
 
     def test_a_checksum_file_lists_every_archive(self):
