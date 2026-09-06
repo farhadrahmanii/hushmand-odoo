@@ -109,6 +109,23 @@ def check_rtl(page):
     # actually lays out, which is what getComputedStyle reports however it was
     # arrived at.
     direction = page.evaluate("getComputedStyle(document.body).direction")
+
+    # The navbar element exists before its menus are in it: the web client
+    # fetches them separately, and on a slow runner the bar reads as
+    # "1 | YourCompany" for a second or so. Reading it straight after login
+    # therefore fails an assertion the interface is about to satisfy, so wait
+    # for the menus rather than for the element that will hold them.
+    try:
+        page.wait_for_function(
+            "() => { const nav = document.querySelector('.o_main_navbar');"
+            " if (!nav) return false;"
+            " return [...nav.innerText].some(c => c.charCodeAt(0) >= 0x0600"
+            " && c.charCodeAt(0) <= 0x06FF); }",
+            timeout=20000,
+        )
+    except Exception:
+        pass  # Report it below, with everything else that is known.
+
     navbar = page.locator(".o_main_navbar").inner_text()
     translated = any("؀" <= character <= "ۿ" for character in navbar)
 
