@@ -127,7 +127,9 @@ one memory projected onto every module goes a very long way.
 |----------|-------|
 | English | source |
 | Dari (`fa_AF`) | all 2,051 terms — **a first draft, not reviewed by a native speaker** |
-| Pashto (`ps_AF`) | not started — needs a translator |
+| Pashto (`ps_AF`) | not started — needs a translator. The pipeline is
+  ready: `tools/translations/ps_AF.py` carries the terms that must not be
+  translated, and `build_po.py ps_AF` works today |
 
 CI installs the catalogue, activates `fa_AF` and reads Dari back out of the
 database: 2,034 of 2,051 terms. The rest are translated to themselves — date
@@ -151,6 +153,11 @@ the glossary and the reasoning behind each Afghan-versus-Iranian choice —
 reviewer should read.
 
 ### For a reviewer
+
+Send them [`docs/TRANSLATOR-BRIEF.md`](docs/TRANSLATOR-BRIEF.md) first. It
+carries the Afghan-versus-Iranian glossary, the terms that must survive
+untranslated, the placeholder rule, and the workflow — everything a translator
+needs before opening a file.
 
 Edit `addons/<module>/i18n/fa_AF.po` directly. `build_po.py` **keeps your
 wording** where it differs from the memory and says so; `--harvest` then folds
@@ -268,7 +275,8 @@ committed, and a stale one in a working copy is a delivery waiting to go wrong.
 - [x] Dari (`fa_AF`) complete — **first draft, not yet reviewed by a native
       speaker**
 - [ ] Dari reviewed by a professional translator
-- [ ] Pashto (`ps_AF`) — needs a translator; see below
+- [ ] Pashto (`ps_AF`) — needs a translator; the pipeline and the brief are
+      ready, only the words are missing
 - [x] RTL checked in Dari — the screens job activates `fa_AF`, drives all
       twenty screens again, and asserts the rendered direction really is
       right-to-left *and* the menus really are translated, because a
@@ -286,7 +294,8 @@ committed, and a stale one in a working copy is a delivery waiting to go wrong.
       job, trimmed to their content, and CI fails if a page declares one
       that is not there
 - [x] `CHANGELOG.md` written, with the versioning scheme recorded
-- [ ] Version bumped for the release being cut
+- [x] Version — 19.0.1.0.0 is the first release, so there is nothing to
+      bump until something has shipped
 - [x] Delivery carries the modules it depends on — packaging resolves the
       closure, and refuses to leave a customer with an archive Odoo cannot
       install
