@@ -127,6 +127,28 @@ def render(listing):
             "",
         ]
 
+    if listing.get("screenshot"):
+        # A real screen, early. A customer scrolling a catalogue decides from
+        # the picture long before they read the second heading, and prose
+        # about an approval chain proves nothing that a photograph of one
+        # does not prove better.
+        # A div rather than <figure>. Odoo runs this page through
+        # html_sanitize before showing it, and a plain div with inline styles
+        # is the shape the rest of the catalogue already survives on. The
+        # relative src is deliberate: Odoo rewrites any src without "//" or
+        # "static/" in it to /<module>/static/description/<src>, so making it
+        # absolute here would stop that rewrite and break the image.
+        out += [
+            '    <div style="margin:0 0 34px;">',
+            '      <img src="screenshot.png" alt="%s"'
+            ' style="width:100%%;height:auto;display:block;border:1px solid %s;'
+            'border-radius:3px;"/>' % (listing["screenshot"], RULE),
+            '      <div style="font-size:13px;color:%s;padding-top:8px;">'
+            "%s</div>" % (FAINT, listing["screenshot"]),
+            "    </div>",
+            "",
+        ]
+
     for block in listing.get("blocks", []):
         for line in render_block(block):
             out.append("    " + line)
@@ -184,6 +206,18 @@ def main():
             print("::error::no listing copy for: %s. Add "
                   "tools/listings/<module>.py" % ", ".join(uncovered))
             failed = True
+
+        # A page that declares a screenshot and does not have one renders a
+        # broken image at the top of the thing a customer is deciding from.
+        for module in wanted:
+            if not load(module).get("screenshot"):
+                continue
+            shot = ADDONS / module / "static" / "description" / "screenshot.png"
+            if not shot.is_file():
+                print("::error::%s declares a screenshot but %s is missing. "
+                      "Download the screenshots artifact from the screens job."
+                      % (module, shot.relative_to(ROOT)))
+                failed = True
         if failed:
             return 1
         print("All %d listing pages are current." % len(wanted))

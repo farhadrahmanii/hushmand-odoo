@@ -282,7 +282,9 @@ committed, and a stale one in a working copy is a delivery waiting to go wrong.
 - [x] Demo data rich enough for those photographs to sell — payroll shows a
       computed payroll, timesheets show a submitted week and one in progress,
       and that submission is what puts a real request in the approvals queue
-- [ ] Screenshots embedded in the listing pages (blocked on the above)
+- [x] Screenshots embedded in the listing pages — captured by the screens
+      job, trimmed to their content, and CI fails if a page declares one
+      that is not there
 - [x] `CHANGELOG.md` written, with the versioning scheme recorded
 - [ ] Version bumped for the release being cut
 - [x] Delivery carries the modules it depends on — packaging resolves the

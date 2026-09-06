@@ -9,6 +9,7 @@ LISTING = {
         "A Community user with a recurring agreement has an invoice they remember to "
         "raise, or forget to.",
     ),
+    "screenshot": "Contracts, and when each is next due to be billed",
     "blocks": [
         {
             "h2": "Nothing is billed automatically",

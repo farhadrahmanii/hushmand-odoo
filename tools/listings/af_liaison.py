@@ -10,6 +10,7 @@ LISTING = {
         "<strong>Expiring Documents</strong>, because a visa and a vehicle "
         "registration are the same shape and did not need six separate models.",
     ),
+    "screenshot": "Visas, permits and licences, with what expires when",
     "blocks": [
         {
             "h2": "What it actually adds",

@@ -9,6 +9,7 @@ LISTING = {
         "In most offices it lives in a folder rather than in the system, which is "
         "exactly why it is so often missing when somebody finally asks for it.",
     ),
+    "screenshot": "Comparative forms: who was asked, and who was chosen",
     "blocks": [
         {
             "h2": "Two rules, and both exist because of that question",

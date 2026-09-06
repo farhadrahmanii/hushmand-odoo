@@ -9,6 +9,7 @@ LISTING = {
         "By then somebody has already decided what to buy and from whom. Most "
         "organisations have a step before that, and Community has nothing for it.",
     ),
+    "screenshot": "Requests, with what each is estimated to cost",
     "blocks": [
         {
             "h2": "What a request carries",

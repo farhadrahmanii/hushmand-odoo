@@ -10,6 +10,7 @@ LISTING = {
         "the part that matters: the link between what was collected and what it paid "
         "for.",
     ),
+    "screenshot": "Funds, showing what was collected and what is still owed",
     "blocks": [
         {
             "h2": "Two rules the software enforces",

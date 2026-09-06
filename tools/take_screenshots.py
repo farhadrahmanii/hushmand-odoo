@@ -21,6 +21,9 @@ import argparse
 import pathlib
 import sys
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+import screenshot_trim  # noqa: E402
+
 try:
     from playwright.sync_api import sync_playwright
 except ImportError:
@@ -149,7 +152,11 @@ def capture(page, base_url, module, action, label, out_dir, console_errors):
         problems.append("console: %s" % console_errors[0][:160])
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    page.screenshot(path=str(out_dir / ("%s.png" % module)), full_page=False)
+    shot = out_dir / ("%s.png" % module)
+    page.screenshot(path=str(shot), full_page=False)
+    # A browser window is 1000px tall and a list of three rows is not. Trim
+    # here so the artifact is already the shape a listing page wants.
+    screenshot_trim.trim(shot)
     return problems
 
 

@@ -9,6 +9,7 @@ LISTING = {
         "back to a paper book at the desk — which answers “who is here now?” only by "
         "reading every page.",
     ),
+    "screenshot": "On Site Now: who is in the building, and who they came to see",
     "blocks": [
         {
             "h2": "At the desk",

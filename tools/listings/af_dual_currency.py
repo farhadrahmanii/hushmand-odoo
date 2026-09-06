@@ -9,6 +9,7 @@ LISTING = {
         "organisation that fixes one rate for a month and uses it for payroll, tax "
         "filings and every document issued in that month.",
     ),
+    "screenshot": "One agreed rate per period, and the months before it",
     "blocks": [
         {
             "h2": "Two things the daily rate table cannot do",

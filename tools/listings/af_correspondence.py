@@ -8,6 +8,7 @@ LISTING = {
         "Attaching a scan to a contact loses it. Numbers are issued in order, and a gap "
         "in the outgoing numbers is a question somebody has to answer.",
     ),
+    "screenshot": "The register: incoming and outgoing letters, each numbered in its own series",
     "blocks": [
         {
             "h2": "Two independent series",

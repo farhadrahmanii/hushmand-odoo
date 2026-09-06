@@ -9,6 +9,7 @@ LISTING = {
         "other countries. An Afghan employer withholding tax from salaries has, until "
         "now, had a spreadsheet.",
     ),
+    "screenshot": "The wage withholding scale, dated and editable",
     "blocks": [
         {
             "h2": "The scale is data, and it is dated",

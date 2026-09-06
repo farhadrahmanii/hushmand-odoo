@@ -10,6 +10,7 @@ LISTING = {
         "chain in front of a document that already exists, which is what an "
         "organisation actually needs.",
     ),
+    "screenshot": "The approval queue: what is waiting, and on whom",
     "blocks": [
         {
             "h2": "Who approves a step",

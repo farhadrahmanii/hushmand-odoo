@@ -8,6 +8,7 @@ LISTING = {
         "Odoo's dynamic reports are Enterprise, so a Community user who has to file "
         "accounts or hand something to an auditor has nothing to hand them.",
     ),
+    "screenshot": "The three statements Odoo Community does not have",
     "blocks": [
         {
             "h2": "The three statements",

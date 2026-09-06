@@ -8,6 +8,7 @@ LISTING = {
         "<code>hr.version</code> carries the wage, and then nothing turns that wage "
         "into a payslip, a deduction or a journal entry. This module is that engine.",
     ),
+    "screenshot": "A month's payroll, every figure computed by the salary rules",
     "blocks": [
         {
             "h2": "How a payslip is built",

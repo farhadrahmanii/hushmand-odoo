@@ -11,6 +11,7 @@ LISTING = {
         "connectivity is unreliable — and to anyone who would rather their ERP did not "
         "phone home.",
     ),
+    "screenshot": "The licence, every field read out of the signed key",
     "blocks": [
         {
             "h2": "Nothing can be edited into it",

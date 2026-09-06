@@ -9,6 +9,7 @@ LISTING = {
         "And nobody opens it until something has already expired. A reminder that "
         "depends on somebody remembering to look is not a reminder.",
     ),
+    "screenshot": "Everything with an expiry date, in one list",
     "blocks": [
         {
             "h2": "One model, not six",

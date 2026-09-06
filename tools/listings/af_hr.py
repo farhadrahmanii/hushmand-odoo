@@ -11,6 +11,7 @@ LISTING = {
         "the ordinary HR screens, export like anything else, and are searchable "
         "without a custom view.",
     ),
+    "screenshot": "Disciplinary actions, from a verbal warning closed to a suspension still running",
     "blocks": [
         {
             "h2": "Names that identify a person",

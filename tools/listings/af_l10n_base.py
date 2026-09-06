@@ -10,6 +10,7 @@ LISTING = {
         "Odoo already has — partners, employees, invoices, delivery addresses — with "
         "nothing else to configure.",
     ),
+    "screenshot": "All 34 provinces, with their districts counted",
     "blocks": [
         {
             "h2": "What is loaded",

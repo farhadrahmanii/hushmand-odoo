@@ -10,6 +10,7 @@ LISTING = {
         "has a bill and nothing else: no register, no depreciation, and a balance "
         "sheet that overstates what the company owns for the rest of the asset's life.",
     ),
+    "screenshot": "The asset register, with what each asset is still worth",
     "blocks": [
         {
             "h2": "The schedule",

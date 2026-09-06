@@ -10,6 +10,7 @@ LISTING = {
         "every Afghan document. This one carries Hamal, Sawr and Jawza alongside "
         "Farvardin, Ordibehesht and Khordad — and Pashto month names too.",
     ),
+    "screenshot": "The Jalali settings, per company and overridable per user",
     "blocks": [
         {
             "h2": "Afghan or Iranian, your choice",

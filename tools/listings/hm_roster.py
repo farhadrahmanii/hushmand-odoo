@@ -9,6 +9,7 @@ LISTING = {
         "two ways: somebody ends up on two shifts at once, or a night nobody is "
         "covering goes unnoticed until it is that night.",
     ),
+    "screenshot": "A week's roster, with uncovered shifts counted",
     "blocks": [
         {
             "h2": "Both failures are checked",

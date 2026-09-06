@@ -10,6 +10,7 @@ LISTING = {
         "work. There is nothing to approve, nothing that locks once approved, "
         "and nothing to print and sign. That is Enterprise's Timesheets Grid.",
     ),
+    "screenshot": "A submitted week and one in progress, against expected hours",
     "blocks": [
         {
             "h2": "A window, not a second place to type",

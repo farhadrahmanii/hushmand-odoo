@@ -11,6 +11,7 @@ LISTING = {
         "but confirm them against current Afghanistan Revenue Department guidance "
         "before filing. They are ordinary Odoo taxes and can be edited.",
     ),
+    "screenshot": "The Afghan chart of accounts, applied to a company",
     "blocks": [
         {
             "h2": "The chart",
