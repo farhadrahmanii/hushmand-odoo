@@ -27,6 +27,8 @@ import json
 import pathlib
 import sys
 import uuid
+
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
 from datetime import date
 
 try:
@@ -86,13 +88,41 @@ def load_private_key(path):
     return serialization.load_pem_private_key(path.read_bytes(), password=None)
 
 
+def licence_closure(modules):
+    """Every module of ours the gate will demand, given what was sold.
+
+    A customer who buys af_hr_payroll and receives a licence naming only
+    af_hr_payroll cannot use it: the first payslip they create is refused,
+    because hm.payslip is declared in hm_payroll and the gate asks for a
+    licence covering *that*. The archive already ships the dependency; the
+    licence has to cover it too, or the sale fails at their site on the day
+    they try it.
+
+    So the list is expanded here rather than left to whoever is typing the
+    command at the time.
+    """
+    import build_release  # noqa: PLC0415  -- same directory, same catalogue
+
+    ours = set(build_release.all_modules())
+    unknown = sorted(set(modules) - ours)
+    if unknown:
+        raise SystemExit(
+            "Not modules in this catalogue: %s. Available: %s"
+            % (", ".join(unknown), ", ".join(sorted(ours)))
+        )
+    return build_release.resolve_dependencies(list(modules))
+
+
 def issue(args):
     private_key = load_private_key(args.key)
+
+    asked = [m.strip() for m in args.modules.split(",") if m.strip()]
+    covered = asked if args.exactly else licence_closure(asked)
 
     payload = {
         "licence_id": args.licence_id or str(uuid.uuid4()),
         "customer": args.customer,
-        "modules": [m.strip() for m in args.modules.split(",") if m.strip()],
+        "modules": covered,
         "features": [f.strip() for f in (args.features or "").split(",") if f.strip()],
         "issued": (args.issued or date.today().isoformat()),
         "expires": args.expires,
@@ -117,6 +147,12 @@ def issue(args):
     print("Licence for %s" % payload["customer"])
     print("  id       %s" % payload["licence_id"])
     print("  covers   %s" % ", ".join(payload["modules"]))
+    pulled_in = sorted(set(covered) - set(asked))
+    if pulled_in:
+        print("  of which %s came in as dependencies of what was sold."
+              % ", ".join(pulled_in))
+        print("           Without them the gate refuses the work the customer")
+        print("           actually bought. Price accordingly.")
     print("  expires  %s" % payload["expires"])
     print("  users    %s" % (payload["max_users"] or "unlimited"))
     print("\nSend the customer everything between the lines.\n")
@@ -137,6 +173,11 @@ def main():
                         help="Path to the signing key.")
     parser.add_argument("--customer")
     parser.add_argument("--modules", help="Comma-separated module names.")
+    parser.add_argument("--exactly", action="store_true",
+                        help="Cover only the modules named, without the ones "
+                             "they depend on. Produces a licence that will "
+                             "refuse work the customer paid for; for testing "
+                             "the gate, not for selling.")
     parser.add_argument("--expires", help="YYYY-MM-DD.")
     parser.add_argument("--max-users", type=int, default=0,
                         help="0 for unlimited.")

@@ -161,6 +161,50 @@ class TestWhatEndsUpInTheArchive(unittest.TestCase):
         self.assertIn("AGPL-3", str(caught.exception))
 
 
+class TestTheLicenceCoversWhatTheGateDemands(unittest.TestCase):
+    """A licence naming only what was sold is a licence that does not work.
+
+    The gate asks for a licence covering the module that *declares* the model
+    being written. hm.payslip is declared in hm_payroll, so a customer who
+    bought af_hr_payroll and holds a licence naming only af_hr_payroll is
+    refused the first payslip they try to create -- at their site, after
+    paying, which is the worst possible moment to discover it.
+    """
+
+    def closure(self, modules):
+        import issue_license
+        return issue_license.licence_closure(modules)
+
+    def test_buying_the_afghan_payroll_licenses_the_engine_under_it(self):
+        covered = self.closure(["af_hr_payroll"])
+        self.assertIn("hm_payroll", covered,
+                      "without this the customer cannot create a payslip")
+        self.assertIn("af_hr_payroll", covered)
+
+    def test_the_licence_module_is_always_covered(self):
+        """Every gate check runs through hm_license, so every licence needs
+        it or nothing works at all."""
+        for module in build_release.all_modules():
+            with self.subTest(module=module):
+                self.assertIn("hm_license", self.closure([module]))
+
+    def test_a_licence_covers_every_gated_module_it_depends_on(self):
+        """The general form of the payslip problem, checked across the
+        catalogue rather than on the one example that prompted it."""
+        for module in build_release.all_modules():
+            covered = set(self.closure([module]))
+            for dependency in build_release.resolve_dependencies([module]):
+                if dependency in build_release.UNGATED:
+                    continue
+                with self.subTest(module=module, needs=dependency):
+                    self.assertIn(dependency, covered)
+
+    def test_an_unknown_module_is_refused_before_anything_is_signed(self):
+        with self.assertRaises(SystemExit) as caught:
+            self.closure(["af_mining"])
+        self.assertIn("af_mining", str(caught.exception))
+
+
 class TestChecksums(unittest.TestCase):
 
     def test_a_checksum_file_lists_every_archive(self):

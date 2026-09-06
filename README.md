@@ -192,6 +192,19 @@ to gate, and `af_liaison` gates through `hm_expiry_docs`, whose documents it
 extends. A test reads that list rather than repeating it, so the packaging
 guard and the test cannot drift apart.
 
+### Issuing a licence
+
+```bash
+python tools/issue_license.py --customer "Ministry of X"     --modules af_hr_payroll --expires 2027-12-31 --max-users 40
+```
+
+The module list is **expanded to its dependency closure automatically**. A
+customer who buys `af_hr_payroll` and holds a licence naming only that module
+is refused the first payslip they create: `hm.payslip` is declared in
+`hm_payroll`, and the gate asks for a licence covering the module that declares
+the record. The tool prints what it pulled in, because that is also the
+pricing signal — see [`docs/PRICING.md`](docs/PRICING.md).
+
 ### Arming it — the one manual step before any sale
 
 The gate enforces nothing until a real vendor public key replaces the
