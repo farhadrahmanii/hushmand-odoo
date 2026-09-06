@@ -29,7 +29,14 @@ class GateCase(LicenceKeyMixin, common.TransactionCase):
         cls.Licence = cls.env["hm.license"]
         # The mixin itself is the smallest thing carrying the gate, and unlike
         # any concrete model it is present wherever hm_license is.
-        cls.gate = cls.env["hm.license.gate"]
+        #
+        # The context flag is what makes these tests test anything: the gate
+        # stands down under --test-enable so that the other twenty modules can
+        # create records without a licence, and this is the one suite that has
+        # to opt back in.
+        cls.gate = cls.env["hm.license.gate"].with_context(
+            hm_licence_gate_live=True
+        )
 
     def setUp(self):
         super().setUp()
@@ -41,10 +48,14 @@ class TestArming(GateCase):
     def test_a_development_checkout_enforces_nothing(self):
         """The placeholder key means there is no vendor to enforce for.
 
-        That is what keeps every other module in the catalogue testable
-        without a signed licence, so it is worth stating as a test rather
-        than leaving as an accident of the code.
+        Skipped once a real vendor key is configured, because then the
+        statement is simply not true any more -- and a test that has to be
+        deleted the day the product ships is worse than one that says so.
         """
+        source = (ROOT / "addons" / "hm_license" / "models"
+                  / "hm_license.py").read_text(encoding="utf-8")
+        if "VENDOR_PUBLIC_KEY = PLACEHOLDER_PUBLIC_KEY" not in source:
+            self.skipTest("a real vendor key is configured in this checkout")
         self.assertFalse(self.Licence.enforced())
 
     def test_a_real_key_arms_the_gate(self):

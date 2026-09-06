@@ -34,6 +34,11 @@ When the gate is inert
 """
 
 from odoo import api, models
+from odoo.tools import config
+
+#: Context flag that keeps the gate checking while tests run. Only
+#: hm_license's own tests set it -- see :meth:`_licence_gate_active`.
+UNDER_TEST = "hm_licence_gate_live"
 
 
 class HmLicenseGate(models.AbstractModel):
@@ -46,15 +51,36 @@ class HmLicenseGate(models.AbstractModel):
     #: module gates a model it inherited from another one -- so set it.
     _licence_module = None
 
-    def _licence_gate_check(self):
-        """Refuse the write unless the licence covers this module."""
+    def _licence_gate_active(self):
+        """Whether the gate should be checking anything right now."""
         if not self.env.registry.ready:
             # Installing or upgrading. There is no licence yet by definition.
+            return False
+
+        # The catalogue's own suite runs without a licence. Every module would
+        # otherwise need one before it could create a payslip in a test that
+        # has nothing to do with licensing: 546 tests carrying setup for a
+        # feature none of them are about.
+        #
+        # This is a hole and worth naming rather than hiding. It is a narrow
+        # one: --test-enable cannot be set in odoo.conf, only on the command
+        # line, and it also runs the entire test suite against whatever
+        # database it is pointed at. Anyone willing to do that could as easily
+        # delete this method, which is true of every check in a product that
+        # ships as readable Python, and which this module's own documentation
+        # says plainly.
+        if config["test_enable"] and not self.env.context.get(UNDER_TEST):
+            return False
+
+        return self.env["hm.license"].enforced()
+
+    def _licence_gate_check(self):
+        """Refuse the write unless the licence covers this module."""
+        if not self._licence_gate_active():
             return
-        licence = self.env["hm.license"]
-        if not licence.enforced():
-            return
-        licence.require(self._licence_module or self._original_module)
+        self.env["hm.license"].require(
+            self._licence_module or self._original_module
+        )
 
     @api.model_create_multi
     def create(self, vals_list):
