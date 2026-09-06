@@ -302,6 +302,8 @@ committed, and a stale one in a working copy is a delivery waiting to go wrong.
 - [x] Licence header on every file — all 157 Python files carry one
 - [x] Gated behind `hm.license.gate`, or listed in `UNGATED` with a reason —
       CI fails if a module checks no licence, and packaging refuses it
-- [ ] `VENDOR_PUBLIC_KEY` set to a real key — until then the gate is inert,
-      and `tools/build_release.py` will not package anything
+- [x] `VENDOR_PUBLIC_KEY` set to a real key — the gate is armed and packaging
+      works. The private half lives at `~/.hushmand/licence_signing_key.pem`
+      and exists nowhere else; losing it means reissuing every licence, and
+      leaking it means rotating the public key and reissuing every licence
 - [x] No AGPL dependency anywhere in the tree — CI fails on the string
