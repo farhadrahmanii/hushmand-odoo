@@ -26,7 +26,12 @@ class TestLicenceGate(LicenceKeyMixin, common.TransactionCase):
     def setUpClass(cls):
         super().setUpClass()
         cls.setUpLicenceKeys()
-        cls.Document = cls.env["hm.expiry.document"]
+        # The gate stands down under --test-enable so that the rest of the
+        # catalogue can create records without a licence. This suite is the
+        # end-to-end proof that it does not, so it opts back in.
+        cls.Document = cls.env["hm.expiry.document"].with_context(
+            hm_licence_gate_live=True
+        )
         cls.doc_type = cls.env["hm.expiry.document.type"].create({
             "name": "Work Permit",
             "validity_months": 12,
