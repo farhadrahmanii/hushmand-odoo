@@ -19,13 +19,16 @@ them does.
 
 ---
 
-## 19.0.1.0.0 — unreleased
+## 19.0.1.0.0
 
-The first sellable build of the catalogue. Twenty modules, two product lines.
+The first sellable build of the catalogue. Twenty-one modules, two product
+lines, and archives that build.
 
-**Nothing here has been sold yet, and one step remains before anything can be:
-the vendor signing key.** See *Arming it* in `README.md`. Packaging refuses to
-run until it exists, deliberately.
+**Nothing has been sold yet.** The code is complete and packageable: the vendor
+signing key exists, the gate is armed, and `tools/build_release.py` produces
+twenty-one module archives and five suite bundles with checksums. What remains
+before a customer sees it is commercial rather than technical — pricing, a
+support SLA, and a native-speaker review of the Dari.
 
 ### Line A — Afghanistan and the Persian-calendar market
 
@@ -56,6 +59,7 @@ run until it exists, deliberately.
 | `hm_frontdesk` | Frontdesk is Enterprise |
 | `hm_roster` | Planning is Enterprise |
 | `hm_license` | licence enforcement, for this catalogue and resellable |
+| `hm_timesheet` | Community records hours; it has no week to submit or approve |
 
 ### Also in this build
 
@@ -63,19 +67,25 @@ run until it exists, deliberately.
   document model. Blocks new work when unlicensed; never blocks reading,
   printing or exporting what the customer already produced. Thirty-day grace
   period after expiry, with a countdown in the systray throughout.
-- **Dari (`fa_AF`) translation** of all 1,911 terms — **a first draft, not
+- **Dari (`fa_AF`) translation** of all 2,051 terms — **a first draft, not
   reviewed by a native speaker.** Do not ship it to a customer as finished.
-- **Translation templates** for all twenty modules, with CI failing if a
+- **Translation templates** for all twenty-one modules, with CI failing if a
   source string changes and the template is not regenerated.
-- **A listing page and a README** for every module.
+- **A listing page, a README, an icon, a banner and a screenshot** for
+  every module. The screenshot is taken from a real Odoo by CI, which
+  also fails if any screen stops rendering.
 - **Dependency-resolving packaging.** `tools/build_release.py` computes what
   else a customer needs, bundles suites, and writes SHA-256 checksums.
 
 ### Known gaps
 
-- Pashto (`ps_AF`) is not translated. No translator identified.
-- No screenshots on the listing pages, and no `banner.png` — the `images`
-  manifest key is still commented out in every module.
+- Pashto (`ps_AF`) is not translated. The pipeline and
+  `docs/TRANSLATOR-BRIEF.md` are ready; no translator has been engaged.
+- The Dari is a first draft by an AI and has not been reviewed by a native
+  speaker.
+- The licence gate stands down under `--test-enable`, so the catalogue's own
+  546 tests need no licence. Named here because it is a real hole, if a narrow
+  one.
 - Villages ship as structure with no data, on purpose: no reliable public
   dataset of Afghan villages exists.
 - Afghan tax rates are the long-standing statutory ones and are editable
