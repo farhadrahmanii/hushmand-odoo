@@ -104,6 +104,15 @@ services:
         else
           curl -fsSL "$${MODULE_ARCHIVE_URL}" -o /tmp/modules.zip
         fi
+        echo "Downloaded $$(wc -c < /tmp/modules.zip) bytes"
+        if ! unzip -tq /tmp/modules.zip >/dev/null 2>&1; then
+          echo "ERROR: the download is not a zip file. First bytes received:"
+          head -c 300 /tmp/modules.zip; echo
+          echo "Check MODULE_ARCHIVE_URL: it must be a direct link to the .zip"
+          echo "(not a web page, Google Drive or GitHub page). Private GitHub"
+          echo "needs GITHUB_TOKEN and the api.github.com asset URL."
+          exit 1
+        fi
         rm -rf /tmp/unpacked /addons/*
         mkdir -p /tmp/unpacked
         unzip -q /tmp/modules.zip -d /tmp/unpacked
