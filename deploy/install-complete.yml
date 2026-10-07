@@ -1,0 +1,188 @@
+# =============================================================================
+#  HUSHMAND COMPLETE -- one stack, no editing.
+#  PostgreSQL 16 + Odoo 19 + all 21 Hushmand modules, installed on first start.
+#
+#  HOW TO USE (Portainer / any Docker manager)
+#    1. Create a new Stack and paste this file.
+#    2. Under "Environment variables" add ONE variable:
+#           GITHUB_TOKEN   a GitHub token with read access to the repo
+#                          (needed because the release is private; leave it
+#                          out if you point MODULE_ARCHIVE_URL at a public link)
+#    3. Deploy. First boot takes 3-6 minutes (needs 2 GB RAM).
+#    4. Open  http://SERVER_IP:8069  and log in as  admin.
+#
+#  PASSWORDS: nothing to choose. The database password, the Odoo master
+#  password and the admin login password are generated on first start and kept
+#  in the "hushmand-secrets" volume. The admin login is printed once in the
+#  log of the "hushmand-secrets" container. To choose your own instead, add
+#  ADMIN_PASSWORD as an environment variable before the first deploy.
+#
+#  OPTIONAL VARIABLES (all have defaults)
+#    GITHUB_TOKEN, ADMIN_PASSWORD, MODULE_ARCHIVE_URL, ODOO_PORT (default 8069)
+#
+#  The database is never published; only Odoo can reach it.
+# =============================================================================
+
+services:
+
+  # ---------------------------------------------------------------------------
+  # Generates the passwords once. Re-running keeps the existing ones.
+  # ---------------------------------------------------------------------------
+  secrets:
+    image: alpine:3
+    container_name: hushmand-secrets
+    restart: "no"
+    environment:
+      ADMIN_PASSWORD: "${ADMIN_PASSWORD:-}"
+    volumes:
+      - hushmand-secrets:/secrets
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        set -e
+        gen() { head -c 48 /dev/urandom | base64 | tr -dc 'A-Za-z0-9' | head -c 24; }
+        [ -f /secrets/db_password ]    || gen > /secrets/db_password
+        [ -f /secrets/master_password ] || gen > /secrets/master_password
+        if [ ! -f /secrets/admin_password ]; then
+          if [ -n "$${ADMIN_PASSWORD}" ]; then
+            printf '%s' "$${ADMIN_PASSWORD}" > /secrets/admin_password
+          else
+            gen > /secrets/admin_password
+          fi
+          echo "=============================================="
+          echo " Odoo login (shown once, also kept in the volume)"
+          echo "   user:     admin"
+          echo "   password: $$(cat /secrets/admin_password)"
+          echo "=============================================="
+        fi
+        chmod 644 /secrets/*
+
+  db:
+    image: postgres:16
+    container_name: hushmand-odoo-db
+    depends_on:
+      secrets:
+        condition: service_completed_successfully
+    environment:
+      POSTGRES_USER: odoo
+      POSTGRES_PASSWORD_FILE: /secrets/db_password
+      POSTGRES_DB: postgres
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data
+      - hushmand-secrets:/secrets:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U odoo"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    restart: unless-stopped
+
+  # ---------------------------------------------------------------------------
+  # Downloads and unpacks the modules, then exits.
+  # ---------------------------------------------------------------------------
+  modules:
+    image: alpine:3
+    container_name: hushmand-odoo-modules
+    restart: "no"
+    environment:
+      MODULE_ARCHIVE_URL: "${MODULE_ARCHIVE_URL:-https://api.github.com/repos/farhadrahmanii/hushmand-odoo/releases/assets/617865652}"
+      GITHUB_TOKEN: "${GITHUB_TOKEN:-}"
+    volumes:
+      - odoo-addons:/addons
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        set -e
+        apk add --no-cache curl unzip >/dev/null
+        echo "Downloading modules..."
+        if [ -n "$${GITHUB_TOKEN}" ]; then
+          curl -fsSL -H "Authorization: Bearer $${GITHUB_TOKEN}" -H "Accept: application/octet-stream" "$${MODULE_ARCHIVE_URL}" -o /tmp/modules.zip
+        else
+          curl -fsSL "$${MODULE_ARCHIVE_URL}" -o /tmp/modules.zip
+        fi
+        rm -rf /tmp/unpacked /addons/*
+        mkdir -p /tmp/unpacked
+        unzip -q /tmp/modules.zip -d /tmp/unpacked
+        found=0
+        for manifest in $$(find /tmp/unpacked -maxdepth 3 -name __manifest__.py); do
+          moddir=$$(dirname "$$manifest")
+          echo "  installing $$(basename $$moddir)"
+          cp -r "$$moddir" /addons/
+          found=1
+        done
+        if [ "$$found" = "0" ]; then
+          echo "ERROR: no Odoo module found in the archive."
+          exit 1
+        fi
+        chmod -R a+rX /addons
+        echo "Done. Modules ready:"
+        ls -1 /addons
+
+  # ---------------------------------------------------------------------------
+  # Creates the database, installs every module, sets the admin password.
+  # Runs to completion, then exits. Safe to re-run.
+  # ---------------------------------------------------------------------------
+  odoo-init:
+    image: odoo:19
+    container_name: hushmand-odoo-init
+    restart: "no"
+    depends_on:
+      db:
+        condition: service_healthy
+      modules:
+        condition: service_completed_successfully
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - odoo-addons:/mnt/extra-addons:ro
+      - hushmand-secrets:/secrets:ro
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        set -e
+        COMMON="--addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons --db_host=db --db_user=odoo --db_password=$$(cat /secrets/db_password) --database=hushmand"
+        odoo $$COMMON --init=af_correspondence,af_dual_currency,af_hr,af_hr_payroll,af_jalali,af_l10n_account,af_l10n_base,af_liaison,af_procurement,af_zakat,hm_account_reports,hm_approvals,hm_assets,hm_contracts,hm_expiry_docs,hm_frontdesk,hm_license,hm_payroll,hm_purchase_request,hm_roster,hm_timesheet --without-demo=all --stop-after-init --load-language=en_US --limit-time-real=3600 --limit-time-cpu=1800 --log-level=info
+        if [ ! -f /var/lib/odoo/.admin_password_set ]; then
+          echo "env.ref('base.user_admin').password = open('/secrets/admin_password').read().strip(); env.cr.commit()" | odoo shell $$COMMON --no-http --log-level=warn
+          touch /var/lib/odoo/.admin_password_set
+        fi
+
+  odoo:
+    image: odoo:19
+    container_name: hushmand-odoo
+    depends_on:
+      db:
+        condition: service_healthy
+      odoo-init:
+        condition: service_completed_successfully
+    ports:
+      - "${ODOO_PORT:-8069}:8069"
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - odoo-addons:/mnt/extra-addons:ro
+      - hushmand-secrets:/secrets:ro
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        exec odoo --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons --db_host=db --db_user=odoo --db_password=$$(cat /secrets/db_password) --database=hushmand --db-filter='^hushmand$$' --no-database-list --admin-passwd=$$(cat /secrets/master_password) --workers=0 --limit-time-real=600 --limit-time-cpu=300 --log-level=info
+    restart: unless-stopped
+
+volumes:
+  odoo-db-data:
+  odoo-web-data:
+  odoo-addons:
+  hushmand-secrets:
+
+# =============================================================================
+#  UPDATING   Re-deploy the stack with a new MODULE_ARCHIVE_URL, then in Odoo
+#             use Apps -> Upgrade on the modules (data is kept in the volumes).
+#  HTTPS      Put a reverse proxy (Caddy, Traefik, Nginx Proxy Manager) in
+#             front of port 8069 and add --proxy-mode to the odoo command.
+#  WARNING    Deleting the hushmand-secrets volume while odoo-db-data exists
+#             loses the database password. Delete both or neither.
+# =============================================================================
