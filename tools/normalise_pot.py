@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Strip the two volatile headers Odoo stamps into every exported template.
+"""Strip the volatile headers Odoo stamps into every exported template.
 
     python tools/normalise_pot.py
 
@@ -8,6 +8,10 @@ it exports. Left in place, a freshly generated template differs from the
 committed one on every single run, which makes it impossible to ask the only
 question worth asking of a template: **has the source text changed since this
 was last exported?**
+
+``Project-Id-Version`` is the third: it carries the build date of whatever
+``odoo:19`` image CI pulled ("Odoo Server 19.0-20260926"), so the image moving
+forward a month failed the comparison with no string having changed.
 
 The dates carry nothing anyway. A template is generated, not authored, and git
 already records when it changed and by whom. So they go, and what remains
@@ -23,7 +27,11 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 ADDONS = ROOT / "addons"
 
-VOLATILE = ('"POT-Creation-Date:', '"PO-Revision-Date:')
+VOLATILE = (
+    '"POT-Creation-Date:',
+    '"PO-Revision-Date:',
+    '"Project-Id-Version:',
+)
 
 
 def normalise(path):
